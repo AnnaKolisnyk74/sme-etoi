@@ -38,7 +38,7 @@ between company-level process evidence and these technology questions.
 ## Pilot design
 
 - **Pilot:** 20 candidate companies, five per process stratum.
-- **Main study:** 120 eligible companies, 30 per stratum.
+- **Final study:** 100 eligible companies?
 - **Unit of analysis:** one German operating company/legal entity.
 - **Strata:** food and beverage; plastics processing; metal surface treatment
   and heat treatment; glass and technical ceramics.
@@ -49,8 +49,9 @@ between company-level process evidence and these technology questions.
   relationships where public evidence permits.
 
 `data/pilot_candidates.csv` is a research queue, not a finished empirical
-sample. Every candidate remains `TO_VERIFY` until its legal entity, group links
-and SME eligibility have been checked.
+sample. A candidate moves from `TO_VERIFY` only after its legal entity, group
+links and SME eligibility have been checked. Excluded records remain visible
+and are replaced transparently.
 
 ## Index structure
 
@@ -79,6 +80,10 @@ sme-etoi/
 │   ├── company_template.csv
 │   ├── pilot_candidates.csv
 │   └── synthetic_demo.csv
+├── evidence/
+│   ├── README.md
+│   ├── source_register.csv
+│   └── companies/<candidate_id>_<legal_entity>/evidence.md
 ├── src/
 │   └── score_companies.py
 ├── outputs/
@@ -104,7 +109,7 @@ It must never be reported as empirical evidence.
 2. Replace ineligible candidates without silently changing the sampling rule.
 3. Collect and independently double-code the 20-company pilot.
 4. Test inter-rater reliability and weight sensitivity.
-5. Freeze SME-ETOI v1.0 before collecting the 120-company main sample.
+5. Freeze SME-ETOI v1.0 before expanding the validated pilot to the 100-company final sample.
 6. Analyse process-stratum differences and evidence coverage in Python.
 7. Build a Power BI dashboard and a 10–15 page research report.
 
