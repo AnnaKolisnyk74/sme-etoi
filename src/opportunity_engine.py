@@ -5,6 +5,15 @@ from pathlib import Path
 
 CONFIDENCE_ORDER = {"A": 0, "B": 1, "C": 2, "UNKNOWN": 3, "": 3}
 
+DEPLOYMENT_FIELDS = {
+    "energy_management": "energy_management_deployed",
+    "industrial_heat": "industrial_heat_electrification_deployed",
+    "heat_recovery": "heat_recovery_deployed",
+    "thermal_storage": "thermal_storage_deployed",
+    "battery_storage": "battery_storage_deployed",
+    "power_quality": "power_quality_solution_deployed",
+}
+
 
 def read_csv(path):
     with open(path, newline="", encoding="utf-8-sig") as handle:
@@ -20,12 +29,16 @@ def write_csv(path, rows):
         "rule_id",
         "opportunity_type",
         "opportunity_level",
+        "technical_status",
+        "commercial_status",
         "confidence",
         "process_id",
         "process_name",
         "reason",
         "company_signal",
         "process_signal",
+        "deployment_field",
+        "deployment_value",
         "engine_version",
     ]
     with open(path, "w", newline="", encoding="utf-8") as handle:
@@ -69,6 +82,19 @@ def worst_confidence(*grades):
     return max(normalised, key=lambda g: CONFIDENCE_ORDER.get(g, 3)) if normalised else "UNKNOWN"
 
 
+def commercial_status(company, opportunity_type):
+    deployment_field = DEPLOYMENT_FIELDS.get(opportunity_type, "")
+    if not deployment_field:
+        return "RESEARCH_REQUIRED", "", "NOT_MODELLED"
+
+    value = str(company.get(deployment_field, "UNKNOWN") or "UNKNOWN").strip().upper()
+    if value == "YES":
+        return "ALREADY_DEPLOYED", deployment_field, value
+    if value == "NO":
+        return "WHITE_SPACE_POSSIBLE", deployment_field, value
+    return "RESEARCH_REQUIRED", deployment_field, value
+
+
 def generate_opportunities(companies, process_map, processes, rules):
     companies_by_id = {row["company_id"]: row for row in companies}
     processes_by_id = {row["process_id"]: row for row in processes}
@@ -99,6 +125,9 @@ def generate_opportunities(companies, process_map, processes, rules):
                 company.get("evidence_confidence", "C"),
                 mapping.get("confidence", "C"),
             )
+            commercial, deployment_field, deployment_value = commercial_status(
+                company, rule.get("opportunity_type", "")
+            )
             outputs.append(
                 {
                     "company_id": company["company_id"],
@@ -106,13 +135,17 @@ def generate_opportunities(companies, process_map, processes, rules):
                     "rule_id": rule.get("rule_id", ""),
                     "opportunity_type": rule.get("opportunity_type", ""),
                     "opportunity_level": rule.get("output_level", ""),
+                    "technical_status": "TECHNICALLY_RELEVANT",
+                    "commercial_status": commercial,
                     "confidence": confidence,
                     "process_id": process.get("process_id", ""),
                     "process_name": process.get("process_name", ""),
                     "reason": rule.get("reason_template", ""),
                     "company_signal": required_company,
                     "process_signal": required_process,
-                    "engine_version": "0.1.0",
+                    "deployment_field": deployment_field,
+                    "deployment_value": deployment_value,
+                    "engine_version": "0.2.0",
                 }
             )
 
@@ -120,7 +153,7 @@ def generate_opportunities(companies, process_map, processes, rules):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate transparent SME-ETOI technology opportunity signals.")
+    parser = argparse.ArgumentParser(description="Generate transparent SME-ETOI technical and commercial opportunity signals.")
     parser.add_argument("--companies", default="data/company_intelligence.csv")
     parser.add_argument("--process-map", default="data/company_process_map.csv")
     parser.add_argument("--processes", default="data/process_library.csv")
