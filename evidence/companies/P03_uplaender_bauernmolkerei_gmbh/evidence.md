@@ -13,6 +13,15 @@
   million band.
 - Company material describes regional farmer participation.
 
+## Certificate review
+
+The mandatory checks for ISO 50001, ISO 14001 and EMAS are all
+`NOT_FOUND_AFTER_CHECK`. No direct public certificate or official certificate
+entry was located on the [official company website](https://www.bauernmolkerei.team/)
+or in exact-legal-name searches on 12 September 2026. This records absence of
+public evidence, not proof that Upländer Bauernmolkerei GmbH has no
+certification. See `certificate_register.csv` for the auditable status rows.
+
 ## Open checks
 
 - Verify the latest financial threshold from an official filing.
