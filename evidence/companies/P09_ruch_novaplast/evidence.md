@@ -10,6 +10,6 @@
 
 - `S-P09-01` reports 400 employees throughout Europe and EUR 50 million
   turnover.
-- `S-P09-02` confirms the wider RUCH Group structure.
+- `S-P09-02` confirms a cross-border linked manufacturing relationship:
+  MORAplast states that it was founded by RUCH NOVAPLAST and Delkeskamp.
 - The reported headcount exceeds the EU SME ceiling of fewer than 250 employees.
-
