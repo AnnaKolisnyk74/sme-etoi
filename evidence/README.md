@@ -36,6 +36,9 @@ This directory is the audit trail for the SME-ETOI research dataset.
 - `VERIFIED_INDEX`: a stable index opens and provides the named report.
 - `REDIRECT_VERIFIED`: the URL redirects to a relevant current page; the
   destination is recorded in `final_url`.
+- `VERIFIED_EXPIRED`: the certificate or time-limited document opens and is
+  authentic/relevant, but its stated validity ended before the access date.
+  It is retained as historical evidence and must not prove current status.
 - `EXISTS_ACCESS_CHALLENGE`: the URL resolves, but automated access is blocked
   (for example by Cloudflare); content was cross-checked in a search index and
   still requires manual review.
