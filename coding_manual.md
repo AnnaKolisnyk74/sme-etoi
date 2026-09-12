@@ -104,6 +104,20 @@ Gap scores may be assigned only after the corresponding source checks.
 - `investment_gap_score` (0/2/3/5): several recent investments, one,
   announcement/pilot only, or none found in the lookback period.
 
+## Certificate validity
+
+1. Open the certificate document; an index page or company claim alone is not
+   sufficient to prove current certification.
+2. Record the certificate holder, standard, scope, certificate number, issue
+   date and validity end date where available.
+3. Compare the validity end date with the research access date.
+4. Use `VERIFIED_EXPIRED` when the document is authentic and relevant but no
+   longer valid. An expired certificate is historical evidence and cannot be
+   coded as a verified current management system.
+5. Search for a successor certificate before assigning the management-system
+   gap. If none is found, state this explicitly rather than assuming that the
+   management system was discontinued.
+
 ## Status fields
 
 - `sme_status`: `confirmed`, `probable`, `uncertain`, `excluded`
