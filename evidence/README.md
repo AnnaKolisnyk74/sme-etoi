@@ -5,6 +5,8 @@ This directory is the audit trail for the SME-ETOI research dataset.
 ## Structure
 
 - `source_register.csv`: one row per source document or webpage.
+- `certificate_register.csv`: mandatory ISO 50001, ISO 14001 and EMAS check for
+  every eligible or scored company, including direct document links.
 - `companies/<candidate_id>_<legal_entity>/evidence.md`: company-level identity,
   eligibility decision, evidence statements and unresolved questions.
 - `documents/`: optional local copies only when redistribution is permitted.
