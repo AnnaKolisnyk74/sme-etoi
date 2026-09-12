@@ -31,6 +31,9 @@ def write_csv(path, rows):
         "opportunity_level",
         "technical_status",
         "commercial_status",
+        "priority",
+        "why_now",
+        "next_action",
         "confidence",
         "process_id",
         "process_name",
@@ -95,6 +98,53 @@ def commercial_status(company, opportunity_type):
     return "RESEARCH_REQUIRED", deployment_field, value
 
 
+def prioritise(company, opportunity_type, opportunity_level, commercial, confidence):
+    if commercial == "ALREADY_DEPLOYED":
+        return "LOW", "Relevant technology is already publicly documented as deployed.", "Monitor for expansion, replacement or optimisation signals rather than treating this as greenfield white-space."
+
+    if commercial == "RESEARCH_REQUIRED":
+        signals = []
+        if truthy(company.get("three_shift_operation")):
+            signals.append("three-shift operation")
+        if truthy(company.get("multi_shift_or_batch_signal")):
+            signals.append("multi-shift or batch production")
+        targets = str(company.get("public_targets_summary", "")).strip()
+        if targets and "no separate target" not in targets.lower():
+            signals.append("public transition target")
+        why = ", ".join(signals) if signals else "Technical relevance is visible, but deployment evidence is incomplete."
+        next_action = f"Verify whether {opportunity_type.replace('_', ' ')} is already deployed using company reports, project references, vendor cases and recent press releases."
+        return "RESEARCH", why, next_action
+
+    score = 0
+    if str(opportunity_level).upper() == "HIGH":
+        score += 2
+    elif str(opportunity_level).upper() == "MEDIUM":
+        score += 1
+    if str(confidence).upper() in {"A", "B"}:
+        score += 1
+    if truthy(company.get("three_shift_operation")):
+        score += 1
+    if truthy(company.get("multi_shift_or_batch_signal")):
+        score += 1
+    targets = str(company.get("public_targets_summary", "")).strip()
+    if targets and "no separate target" not in targets.lower():
+        score += 1
+
+    priority = "HIGH" if score >= 5 else "MEDIUM" if score >= 3 else "LOW"
+    why_parts = []
+    if str(opportunity_level).upper() in {"HIGH", "MEDIUM"}:
+        why_parts.append(f"{opportunity_level.upper()} technical relevance")
+    if truthy(company.get("three_shift_operation")):
+        why_parts.append("three-shift operation")
+    if truthy(company.get("multi_shift_or_batch_signal")):
+        why_parts.append("multi-shift/batch production")
+    if targets and "no separate target" not in targets.lower():
+        why_parts.append("public transition target")
+    why = "; ".join(why_parts) if why_parts else "Possible white-space with limited urgency signals."
+    next_action = f"Validate site-specific need, incumbent solution and decision context for {opportunity_type.replace('_', ' ')} before sales outreach."
+    return priority, why, next_action
+
+
 def generate_opportunities(companies, process_map, processes, rules):
     companies_by_id = {row["company_id"]: row for row in companies}
     processes_by_id = {row["process_id"]: row for row in processes}
@@ -128,6 +178,13 @@ def generate_opportunities(companies, process_map, processes, rules):
             commercial, deployment_field, deployment_value = commercial_status(
                 company, rule.get("opportunity_type", "")
             )
+            priority, why_now, next_action = prioritise(
+                company,
+                rule.get("opportunity_type", ""),
+                rule.get("output_level", ""),
+                commercial,
+                confidence,
+            )
             outputs.append(
                 {
                     "company_id": company["company_id"],
@@ -137,6 +194,9 @@ def generate_opportunities(companies, process_map, processes, rules):
                     "opportunity_level": rule.get("output_level", ""),
                     "technical_status": "TECHNICALLY_RELEVANT",
                     "commercial_status": commercial,
+                    "priority": priority,
+                    "why_now": why_now,
+                    "next_action": next_action,
                     "confidence": confidence,
                     "process_id": process.get("process_id", ""),
                     "process_name": process.get("process_name", ""),
@@ -145,15 +205,15 @@ def generate_opportunities(companies, process_map, processes, rules):
                     "process_signal": required_process,
                     "deployment_field": deployment_field,
                     "deployment_value": deployment_value,
-                    "engine_version": "0.2.0",
+                    "engine_version": "0.3.0",
                 }
             )
 
-    return sorted(outputs, key=lambda r: (r["company_id"], r["opportunity_type"], r["rule_id"]))
+    return sorted(outputs, key=lambda r: (r["company_id"], r["priority"], r["opportunity_type"], r["rule_id"]))
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate transparent SME-ETOI technical and commercial opportunity signals.")
+    parser = argparse.ArgumentParser(description="Generate transparent SME-ETOI technical, commercial and prioritisation signals.")
     parser.add_argument("--companies", default="data/company_intelligence.csv")
     parser.add_argument("--process-map", default="data/company_process_map.csv")
     parser.add_argument("--processes", default="data/process_library.csv")
