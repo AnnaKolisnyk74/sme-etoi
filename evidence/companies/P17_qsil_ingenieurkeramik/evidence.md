@@ -8,9 +8,9 @@
 
 ## Evidence
 
-- `S-P17-01` identifies the current company and its integration into STEREON
-  Materials across six production locations.
-- `S-P17-02` documents the earlier QSIL acquisition and reports group scale of
-  approximately 750 employees and more than EUR 115 million turnover.
+- `S-P17-01` records that the former FCT web address now redirects to the
+  current STEREON Materials / former QSIL group website.
+- `S-P17-02` documents the 2019 QSIL acquisition of FCT Ingenieurkeramik and
+  reports group scale of approximately 750 employees and more than EUR 115
+  million turnover.
 - The linked group exceeds the EU SME thresholds.
-
