@@ -38,9 +38,10 @@ The study proceeds in two stages:
    The pilot tests the coding manual, evidence availability, scoring anchors and
    reviewer agreement. Excluded candidates are replaced so that the completed
    pilot contains 20 eligible companies.
-2. **Main sample:** 100 eligible companies. Collection starts only after the
-   pilot has been reviewed and the scoring model has been frozen. The same
-   identity, eligibility, evidence and scoring rules apply to every record.
+2. **Main sample:** 100 eligible companies in total. After the pilot has been
+   reviewed and the scoring model frozen, the 20 eligible pilot records are
+   rechecked under the frozen rules and 80 additional companies are added. The
+   same identity, eligibility, evidence and scoring rules apply to every record.
 
 Candidates are deliberately heterogeneous in region, scale, process and apparent
 transition maturity. Pilot records are not presented as the final main sample.
