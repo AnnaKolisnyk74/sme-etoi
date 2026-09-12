@@ -1,142 +1,146 @@
-# Methodology v0.1
+# Methodology v0.2
 
 ## 1. Analytical claim
 
-This study tests whether public information is sufficient for a **reproducible opportunity classification**. It does not test whether a company will buy a solution, and it does not infer actual consumption from silence on a website.
+This study tests whether public information is sufficient for a reproducible
+classification of industrial electrification and grid-readiness opportunities
+in German SMEs. It does not predict purchases or infer actual energy use,
+connection capacity or electrical demand from generic company characteristics.
 
-The central output is the Energy Transition Opportunity Index (ETOI), ranging from 0 to 100. A separate evidence-confidence grade prevents poorly researched companies from being classified merely because few measures were found.
+The central output is SME-ETOI, ranging from 0 to 100. A separate
+evidence-confidence grade prevents poorly documented companies from being
+classified merely because few measures were found.
 
 ## 2. Sub-questions
 
-1. How much of the information needed for the ETOI is publicly observable?
-2. Which sectors show the highest median demand potential and solution applicability?
-3. How strongly does the observed transition gap change the overall ranking?
-4. Do classifications remain stable under plausible alternative weights and thresholds?
-5. Can a second reviewer reproduce the coding of a 20% subsample?
+1. How much of the process and energy information required by SME-ETOI is
+   publicly observable?
+2. Which process strata show the strongest observable electrification,
+   power-electronics and flexibility relevance?
+3. Which public process signals are useful proxies for grid and power-quality
+   relevance without claiming actual load?
+4. How strongly does the publicly observed transition gap affect the ranking?
+5. Do classifications remain stable under alternative weights and thresholds?
+6. Can a second reviewer reproduce the coding of a 20% subsample?
 
-## 3. Hypotheses
+## 3. Pilot strata
 
-- **H1:** At least 70% of sampled firms can be assigned an A or B evidence-confidence grade.
-- **H2:** The distribution of demand-potential scores differs across the four sector strata.
-- **H3:** ISO 50001 or EMAS evidence is positively associated with visible concrete transition measures, but does not perfectly predict them.
-- **H4:** At least 80% of classified firms retain their Low/Medium/High band when each dimension weight is varied by plus or minus 20% and weights are re-normalised.
+| Stratum | Typical observable processes | Research relevance |
+| --- | --- | --- |
+| Food and beverage | refrigeration, hot water, steam, drying, cleaning | heat pumps, heat recovery, thermal storage, flexible cold loads |
+| Plastics processing | injection moulding, extrusion, compounding, cooling | drives, electric heating, power conversion, process cooling |
+| Metal surface/heat treatment | galvanising, anodising, coating, drying, furnaces | rectifiers, electric heat, harmonics, compressed air, power quality |
+| Glass and technical ceramics | melting, reheating, firing, sintering | high-temperature electrification, continuous loads, grid reinforcement |
 
-H1 and H4 are provisional feasibility thresholds, not findings.
+The pilot uses five candidate firms per stratum. Candidates are deliberately
+heterogeneous in region, scale, process and apparent transition maturity.
 
 ## 4. Inclusion and exclusion
 
-Include a company when all conditions are met:
+Include a company only when all conditions are met:
 
-- it has a manufacturing site in Germany;
-- its main activity fits one of the selected NACE divisions;
+- it operates a manufacturing site in Germany;
+- firm-specific public evidence identifies at least one relevant process;
 - public evidence supports probable SME status;
 - the legal entity and relevant group relationship can be identified;
-- at least a company website and one independent or official source can be checked.
+- a company source and at least one official or credible independent source can
+  be checked.
 
-Exclude or hold as unresolved when:
+Exclude or hold as unresolved when the company belongs to a non-SME group, the
+German site is not manufacturing, the legal entity cannot be resolved, or SME
+eligibility cannot be supported. Record every replacement and exclusion.
 
-- it is clearly controlled by a non-SME group;
-- the German site is only sales, administration or logistics;
-- company identity cannot be resolved;
-- evidence is too sparse to assess SME eligibility.
+## 5. Index definition
 
-Record every exclusion and reason. Never silently replace difficult cases.
-
-## 5. Sampling
-
-### Pilot
-
-Select 20 firms across the four strata, with variation in region and apparent company size. The pilot is deliberately heterogeneous to reveal coding failures.
-
-### Main study
-
-Select 30 eligible firms per stratum. Within each stratum, document the candidate list, ordering rule, replacements and exclusions. Because no complete open national sampling frame is assumed, the design is stratified purposive rather than probabilistic. No prevalence claim for all German SMEs is permitted.
-
-## 6. Index definition
-
-### A. Demand potential: 0–40
+### A. Process-electrification potential: 0–25
 
 | Component | Range | Meaning |
 | --- | ---: | --- |
-| Sector energy profile | 0–15 | Typical heat, cold, compressed-air or electricity intensity of the activity |
-| Process evidence | 0–15 | Firm-specific evidence of relevant production processes or equipment |
-| Site scale | 0–10 | Observable indicators of production scale, not assumed energy use |
+| Temperature/technology fit | 0–10 | Process fit with established electric-heat technologies |
+| Process-electrification maturity | 0–10 | Technical maturity and applicability for the identified process |
+| Fossil-heat displacement potential | 0–5 | Evidence that material thermal service could plausibly be displaced |
 
-### B. Solution applicability: 0–30
-
-| Component | Range | Meaning |
-| --- | ---: | --- |
-| Low/medium-temperature fit | 0–10 | Potential for heat pumps, heat recovery or related solutions |
-| Electrification fit | 0–10 | Technical maturity of electrification for the observed process |
-| Flexibility/onsite fit | 0–10 | Observable fit for PV, storage, load management or cold-storage flexibility |
-
-### C. Observed transition gap: 0–30
+### B. Power-electronics relevance: 0–20
 
 | Component | Range | Meaning |
 | --- | ---: | --- |
-| Concrete-measures gap | 0–12 | Few or no publicly documented implemented measures after adequate search |
-| Management-system gap | 0–6 | No verified ISO 50001/EMAS evidence after registry and website checks |
-| Target/roadmap gap | 0–6 | No specific dated target or implementation roadmap found |
-| Recent-investment gap | 0–6 | No relevant investment announced in the defined lookback period |
+| Motor and drive intensity | 0–8 | Relevance of pumps, compressors, fans, extruders or drives |
+| Power-conversion intensity | 0–8 | Use cases for converters, rectifiers or controlled electric heat |
+| Automation and control relevance | 0–4 | Potential value of sensing and coordinated control |
 
-Higher values indicate a larger *publicly observed* gap. They never establish that no internal action exists.
+### C. Load-flexibility potential: 0–15
 
-### Overall score
+| Component | Range | Meaning |
+| --- | ---: | --- |
+| Production-scheduling flexibility | 0–8 | Batch, buffer or schedulable processes that may shift load |
+| Thermal-storage flexibility | 0–7 | Cold stores, hot-water buffers or thermal inertia |
+
+### D. Grid and power-quality relevance: 0–15
+
+| Component | Range | Meaning |
+| --- | ---: | --- |
+| Incremental-load relevance | 0–8 | Plausible scale of new electrical demand from process conversion |
+| Power-quality relevance | 0–4 | Potential relevance of harmonics, reactive power, peaks or voltage stability |
+| Onsite-energy integration | 0–3 | Fit with PV, storage, microgrids or load management |
+
+These are ordinal public-data proxies. They are not estimates of kW, MW, MWh,
+grid voltage level or connection cost.
+
+### E. Publicly observed transition gap: 0–25
+
+| Component | Range | Meaning |
+| --- | ---: | --- |
+| Concrete-measures gap | 0–10 | Few documented implemented measures after adequate search |
+| Management-system gap | 0–5 | No verified ISO 50001/EMAS evidence after defined checks |
+| Target/roadmap gap | 0–5 | No specific dated target or implementation roadmap found |
+| Recent-investment gap | 0–5 | No relevant investment found in the lookback period |
+
+Higher gap values mean a larger **publicly observed** gap, not proof that no
+internal action exists.
 
 ```text
-ETOI = Demand potential + Solution applicability + Observed transition gap
+SME-ETOI = Electrification + Power electronics + Flexibility + Grid relevance + Gap
 ```
 
-Provisional bands:
+Provisional bands: 0–39 Low, 40–69 Medium, 70–100 High. A band is assigned only
+with evidence confidence A or B; confidence C produces `RESEARCH_REQUIRED`.
 
-- 0–39: Low
-- 40–69: Medium
-- 70–100: High
+## 6. Evidence confidence
 
-Bands are assigned only for confidence A or B. Confidence C produces `RESEARCH_REQUIRED`.
+Each completed source family contributes 20 coverage points: company website;
+annual, sustainability or environmental report; official company/register
+information; certification source; credible independent source.
 
-## 7. Evidence confidence
-
-Coverage weights:
-
-- company website checked: 20 points;
-- annual, sustainability or environmental report checked: 20 points;
-- official company/register information checked: 20 points;
-- ISO/EMAS or equivalent certification source checked: 20 points;
-- credible independent source checked: 20 points.
-
-Confidence additionally depends on the most recent relevant evidence:
-
-- **A:** coverage at least 80 and newest evidence no older than 24 months;
-- **B:** coverage at least 60 and newest evidence no older than 48 months;
+- **A:** coverage at least 80 and newest relevant evidence no older than 24 months;
+- **B:** coverage at least 60 and newest relevant evidence no older than 48 months;
 - **C:** otherwise.
 
-The rules distinguish `not found after a defined search` from `not researched`.
-
-## 8. Source hierarchy
+## 7. Source hierarchy
 
 1. Official registers, government sources and certification databases.
 2. Company annual, sustainability and environmental reports.
-3. Company website, press releases and technical project descriptions.
-4. Reputable trade press, funding-project pages and technology-provider case studies.
-5. Search-result snippets are discovery aids only and cannot support a final code.
+3. Company process pages, press releases and technical descriptions.
+4. Reputable trade press, public funding pages and provider case studies.
+5. Search-result snippets only for discovery, never final coding.
 
-For every scored claim, store at least one source URL and an evidence note. A company statement proves that the statement was made, not that the measure achieved the claimed effect.
+Every numeric code requires a source URL and evidence note. A corporate claim
+proves that the claim was published, not that the stated effect was achieved.
 
-## 9. Validation plan
+## 8. Validation
 
-- Independently double-code 20% of the pilot records.
-- Calculate Cohen's kappa for categorical fields and intraclass correlation or absolute score differences for numeric components.
-- Manually reconcile disagreements and revise ambiguous coding instructions.
-- Vary each dimension weight by plus/minus 20%, re-normalise to 100 and report band stability.
-- Compare companies with verified ISO 50001/EMAS evidence against those without verified evidence, while avoiding causal language.
-- Report missingness, excluded firms, source coverage and classification rate by sector.
+- independently double-code 20% of pilot records;
+- calculate Cohen's kappa for categorical fields and agreement for numeric scores;
+- reconcile disagreements and revise ambiguous anchors;
+- vary each dimension weight by plus/minus 20%, re-normalise and report band stability;
+- report missingness, exclusions, evidence coverage and classification rate;
+- freeze the model before collecting the main sample.
 
-## 10. Main limitations
+## 9. Limitations
 
-- Public communication differs by firm size and marketing sophistication.
+- Public disclosure differs by company size and communication capacity.
 - Absence of public evidence is not absence of action.
-- SME status and corporate links may be uncertain.
-- Sector-level process assumptions can misclassify unusual firms.
-- The sample is not representative of all German industrial SMEs.
-- The ETOI is a transparent index, not a validated predictive model.
+- SME status and group links can remain uncertain.
+- Process proxies may not reflect site-specific operating conditions.
+- Grid relevance cannot be converted into actual load without site and network data.
+- The purposive sample is not nationally representative.
+- SME-ETOI is a transparent exploratory index, not a predictive model.
