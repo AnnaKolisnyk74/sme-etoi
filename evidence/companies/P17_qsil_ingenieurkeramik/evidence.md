@@ -14,3 +14,10 @@
   reports group scale of approximately 750 employees and more than EUR 115
   million turnover.
 - The linked group exceeds the EU SME thresholds.
+
+## Certificate review
+
+ISO 50001, ISO 14001 and EMAS are each marked
+`NOT_REQUIRED_EXCLUDED`. The candidate failed the SME eligibility gate, so
+certificate research is not used for scoring.
+
