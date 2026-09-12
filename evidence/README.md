@@ -22,10 +22,25 @@ This directory is the audit trail for the SME-ETOI research dataset.
    copyrighted passages.
 6. Do not upload third-party reports or webpages unless their licence permits
    redistribution. Use `LINK_ONLY` for externally hosted material.
-7. If a source disappears, retain its metadata and mark it `UNAVAILABLE`; do
+7. Validate every URL before accepting the source. Record the result,
+   validation date and resolved destination in `link_check_status`,
+   `link_check_date` and `final_url`.
+8. If a source disappears, retain its metadata and mark it `UNAVAILABLE`; do
    not silently replace it with a weaker source.
-8. Every company file must be reviewed before the record can enter the final
+9. Every company file must be reviewed before the record can enter the final
    100-company sample.
+
+## Link-check states
+
+- `VERIFIED`: the page or document opens and supports the recorded fact.
+- `VERIFIED_INDEX`: a stable index opens and provides the named report.
+- `REDIRECT_VERIFIED`: the URL redirects to a relevant current page; the
+  destination is recorded in `final_url`.
+- `EXISTS_ACCESS_CHALLENGE`: the URL resolves, but automated access is blocked
+  (for example by Cloudflare); content was cross-checked in a search index and
+  still requires manual review.
+- `UNAVAILABLE`: the source no longer resolves or no longer contains the
+  recorded evidence.
 
 ## Review states
 
@@ -34,4 +49,3 @@ This directory is the audit trail for the SME-ETOI research dataset.
 - `USER_REVIEWED`
 - `REVISION_REQUIRED`
 - `APPROVED`
-
