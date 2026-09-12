@@ -4,7 +4,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from opportunity_engine import generate_opportunities, process_signal_present, worst_confidence
+from opportunity_engine import (
+    commercial_status,
+    generate_opportunities,
+    process_signal_present,
+    worst_confidence,
+)
 
 
 class OpportunityEngineTests(unittest.TestCase):
@@ -17,6 +22,9 @@ class OpportunityEngineTests(unittest.TestCase):
                 "pv_present": "UNKNOWN",
                 "public_load_profile_available": "NO",
                 "iso_50001_status": "NOT_FOUND_AFTER_CHECK",
+                "energy_management_deployed": "UNKNOWN",
+                "heat_recovery_deployed": "UNKNOWN",
+                "battery_storage_deployed": "UNKNOWN",
                 "evidence_confidence": "B",
             }
         ]
@@ -42,7 +50,7 @@ class OpportunityEngineTests(unittest.TestCase):
         self.assertTrue(process_signal_present(self.processes[0], "MEDIUM_schedulability"))
         self.assertFalse(process_signal_present(self.processes[0], "HIGH_process_heat_relevance"))
 
-    def test_three_shift_injection_moulding_triggers_energy_management(self):
+    def test_three_shift_injection_moulding_triggers_technical_relevance(self):
         rules = [
             {
                 "rule_id": "R001",
@@ -58,10 +66,36 @@ class OpportunityEngineTests(unittest.TestCase):
         ]
         rows = generate_opportunities(self.companies, self.process_map, self.processes, rules)
         self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["company_id"], "P10")
-        self.assertEqual(rows[0]["opportunity_type"], "energy_management")
-        self.assertEqual(rows[0]["opportunity_level"], "HIGH")
+        self.assertEqual(rows[0]["technical_status"], "TECHNICALLY_RELEVANT")
+        self.assertEqual(rows[0]["commercial_status"], "RESEARCH_REQUIRED")
         self.assertEqual(rows[0]["confidence"], "B")
+
+    def test_deployed_technology_is_not_white_space(self):
+        company = dict(self.companies[0])
+        company["heat_recovery_deployed"] = "YES"
+        status, field, value = commercial_status(company, "heat_recovery")
+        self.assertEqual(status, "ALREADY_DEPLOYED")
+        self.assertEqual(field, "heat_recovery_deployed")
+        self.assertEqual(value, "YES")
+
+    def test_explicit_no_can_create_possible_white_space(self):
+        company = dict(self.companies[0])
+        company["energy_management_deployed"] = "NO"
+        status, field, value = commercial_status(company, "energy_management")
+        self.assertEqual(status, "WHITE_SPACE_POSSIBLE")
+        self.assertEqual(field, "energy_management_deployed")
+        self.assertEqual(value, "NO")
+
+    def test_unknown_deployment_requires_research(self):
+        status, _, value = commercial_status(self.companies[0], "energy_management")
+        self.assertEqual(status, "RESEARCH_REQUIRED")
+        self.assertEqual(value, "UNKNOWN")
+
+    def test_unmodelled_opportunity_requires_research(self):
+        status, field, value = commercial_status(self.companies[0], "flexibility")
+        self.assertEqual(status, "RESEARCH_REQUIRED")
+        self.assertEqual(field, "")
+        self.assertEqual(value, "NOT_MODELLED")
 
     def test_blocking_signal_prevents_rule(self):
         company = dict(self.companies[0])
