@@ -47,6 +47,28 @@ This directory is the audit trail for the SME-ETOI research dataset.
 - `UNAVAILABLE`: the source no longer resolves or no longer contains the
   recorded evidence.
 
+## Certificate-review states
+
+Every included or still-eligible researched company must have one reviewed row
+for each of `ISO 50001`, `ISO 14001` and `EMAS` in
+`certificate_register.csv`. No final opportunity classification is allowed
+while any of these rows remains `PENDING_CHECK`.
+
+- `VALID`: a direct document or authoritative register entry proves current
+  validity on the research date.
+- `EXPIRED`: the document is authentic and relevant, but validity ended
+  before the research date and no current successor was located.
+- `DOCUMENT_FOUND_VALIDITY_UNCLEAR`: a direct relevant document exists, but
+  current validity cannot be established from the accessible metadata.
+- `CLAIM_ONLY`: a public claim exists, but no direct certificate or
+  authoritative register evidence was located.
+- `NOT_FOUND_AFTER_CHECK`: no public evidence was located in the defined
+  official-site and exact-legal-name checks. This is not proof that the company
+  has no certification.
+- `PENDING_CHECK`: research is incomplete.
+- `NOT_REQUIRED_EXCLUDED`: the candidate was excluded at the SME eligibility
+  gate, so certificate research is not used for scoring.
+
 ## Review states
 
 - `NOT_REVIEWED`
