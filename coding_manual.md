@@ -104,6 +104,25 @@ Gap scores may be assigned only after the corresponding source checks.
 - `investment_gap_score` (0/2/3/5): several recent investments, one,
   announcement/pilot only, or none found in the lookback period.
 
+## Mandatory certificate links
+
+For every company that reaches the eligibility or scoring review, check at least
+ISO 50001, ISO 14001 and EMAS. Record each check in
+`evidence/certificate_register.csv`.
+
+- Store the direct certificate or EMAS document URL in
+  `direct_certificate_url`; a general sustainability page is not a substitute.
+- Store the official certificate/download index separately in
+  `certificate_index_url`.
+- Record the exact legal certificate holder, standard, certificate number,
+  issuer, validity dates, access date and review status.
+- Use `NOT_FOUND_AFTER_CHECK` when the defined official checks find no public
+  certificate. Leave the direct URL blank; never invent or infer one.
+- Use `CLAIM_ONLY` when a company states that it is certified but no public
+  certificate document can be verified.
+- A company cannot receive a final score until all three required checks have a
+  non-pending status.
+
 ## Certificate validity
 
 1. Open the certificate document; an index page or company claim alone is not
