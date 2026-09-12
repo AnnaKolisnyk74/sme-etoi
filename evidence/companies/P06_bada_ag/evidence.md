@@ -44,6 +44,24 @@ No final score band is assigned before that eligibility gate is closed.
   in the Spanish plant, but does not identify those investments as
   decarbonisation investments (`S-P06-03`).
 
+## Certificate review
+
+The mandatory certificate checks are complete:
+
+- **ISO 50001 — `VALID`:**
+  [direct official certificate](https://bada.de/app/uploads/Zertifikat-Bada-50001-2024.pdf),
+  certificate 130721BadaEM01, valid through 12 July 2027.
+- **ISO 14001 — `VALID`:**
+  [direct official certificate](https://bada.de/app/uploads/Zertifikat-BADA-14001-2023.pdf),
+  certificate 121211Bada01, valid through 11 December 2026.
+- **EMAS — `DOCUMENT_FOUND_VALIDITY_UNCLEAR`:**
+  [direct official EMAS document](https://bada.de/app/uploads/EMAS_Urkunde_Bada_AG_2024_DE.pdf);
+  exact current validity metadata still requires extraction.
+
+All documents are also linked from the
+[official certificate index](https://bada.de/de/zertifikate) and recorded in
+`certificate_register.csv`.
+
 ## Provisional scoring interpretation
 
 Scoring remains **open**, not zero. The available evidence supports material
