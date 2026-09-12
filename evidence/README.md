@@ -14,15 +14,17 @@ This directory is the audit trail for the SME-ETOI research dataset.
 1. The exact legal entity is anchored to the official company imprint and,
    where necessary, an official register.
 2. Every decision and numeric field must point to a row in the source register.
-3. Record the original URL, publisher, document title, publication/reporting
-   period, access date and the page or section used.
-4. Keep short evidence statements in the company file. Do not reproduce large
+3. Record the original URL in `source_link`, plus publisher, document title,
+   publication/reporting period, access date and the page or section used.
+4. Record the separately verifiable fact in `evidence_fact`. A document title or
+   link alone is never treated as evidence.
+5. Keep short evidence statements in the company file. Do not reproduce large
    copyrighted passages.
-5. Do not upload third-party reports or webpages unless their licence permits
+6. Do not upload third-party reports or webpages unless their licence permits
    redistribution. Use `LINK_ONLY` for externally hosted material.
-6. If a source disappears, retain its metadata and mark it `UNAVAILABLE`; do
+7. If a source disappears, retain its metadata and mark it `UNAVAILABLE`; do
    not silently replace it with a weaker source.
-7. Every company file must be reviewed before the record can enter the final
+8. Every company file must be reviewed before the record can enter the final
    100-company sample.
 
 ## Review states
