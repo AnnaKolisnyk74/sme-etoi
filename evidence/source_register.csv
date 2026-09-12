@@ -1,4 +1,4 @@
-source_id,candidate_id,legal_entity,source_type,publisher,document_title,reporting_period,publication_date,access_date,url,relevant_location,claim_supported,archive_status,review_status
+source_id,candidate_id,legal_entity,source_type,publisher,document_title,reporting_period,publication_date,access_date,source_link,relevant_location,evidence_fact,archive_status,review_status
 S-P01-01,P01,Burgis GmbH,company_imprint,Burgis GmbH,Impressum,current,,2026-09-12,https://burgis.de/impressum/,Impressum,"Legal entity; address; register number",LINK_ONLY,RESEARCHED
 S-P01-02,P01,Burgis GmbH,company_database,Implisense GmbH,Burgis GmbH company profile,2024,2025-05-14,2026-09-12,https://implisense.com/en/companies/burgis-gmbh-neumarkt-i-d-opf-DEDQLPVA6E69,Company size,"142 employees; EUR 41.113 million turnover",LINK_ONLY,RESEARCHED
 S-P02-01,P02,Teigwaren Riesa GmbH,company_imprint,Teigwaren Riesa GmbH,Impressum,current,,2026-09-12,https://www.teigwaren-riesa.de/impressum/,Impressum,"Legal entity; address; register number",LINK_ONLY,RESEARCHED
