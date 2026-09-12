@@ -32,10 +32,25 @@ classified merely because few measures were found.
 | Metal surface/heat treatment | galvanising, anodising, coating, drying, furnaces | rectifiers, electric heat, harmonics, compressed air, power quality |
 | Glass and technical ceramics | melting, reheating, firing, sintering | high-temperature electrification, continuous loads, grid reinforcement |
 
-The pilot uses five candidate firms per stratum. Candidates are deliberately
-heterogeneous in region, scale, process and apparent transition maturity.
+The study proceeds in two stages:
+
+1. **Pilot sample:** 20 eligible companies, with five firms per process stratum.
+   The pilot tests the coding manual, evidence availability, scoring anchors and
+   reviewer agreement. Excluded candidates are replaced so that the completed
+   pilot contains 20 eligible companies.
+2. **Main sample:** 100 eligible companies. Collection starts only after the
+   pilot has been reviewed and the scoring model has been frozen. The same
+   identity, eligibility, evidence and scoring rules apply to every record.
+
+Candidates are deliberately heterogeneous in region, scale, process and apparent
+transition maturity. Pilot records are not presented as the final main sample.
 
 ## 4. Inclusion and exclusion
+
+Company identity is anchored to the exact legal-entity name shown in the
+company imprint and, where necessary, verified against an official register.
+Brands, trading names, plants, shops and locations are recorded separately and
+must not replace the legal entity name.
 
 Include a company only when all conditions are met:
 
