@@ -9,6 +9,28 @@ in `evidence_note` and supporting links in `source_urls`.
 Never convert process descriptions into invented kW, MW, MWh, temperature,
 connection voltage or savings values.
 
+## Company identity and naming
+
+The exact legal-entity name is the primary company identifier for all pilot and
+main-sample records.
+
+1. Copy the legal name, including its legal form, from the official company
+   imprint (`Impressum`).
+2. Verify it against an official company or commercial-register source whenever
+   the imprint is ambiguous, outdated or inconsistent.
+3. Store the legal name in `legal_entity` and the public brand or commonly used
+   market name separately in `company_name`.
+4. Treat plant names, shops, product brands and campaign names as site or brand
+   attributes, not as separate companies, unless a distinct legal entity is
+   documented.
+5. Record the manufacturing site separately from the registered office when
+   they differ.
+6. Apply this rule consistently to all 20 pilot records and all 100 main-sample
+   records.
+
+Example: `Burgis GmbH` is the legal entity; `Burgis` or `Burgis Knödelliebe` is
+the public brand; `Knödel-Retter Werksverkauf` is a shop/site designation.
+
 ## Search sequence
 
 1. Resolve the legal entity, manufacturing location and group relationship.
