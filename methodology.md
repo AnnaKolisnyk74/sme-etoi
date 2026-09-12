@@ -131,6 +131,15 @@ information; certification source; credible independent source.
 - **B:** coverage at least 60 and newest relevant evidence no older than 48 months;
 - **C:** otherwise.
 
+### Certificate evidence protocol
+
+Every eligible or scored company receives separate ISO 50001, ISO 14001 and EMAS
+checks. The study stores direct certificate-document links separately from
+certificate index pages. Certificate holder, standard, number, issuer, validity
+dates, check date and current status are recorded in
+`evidence/certificate_register.csv`. Missing, claim-only and expired evidence
+remain visible and cannot be treated as current certification.
+
 ## 7. Source hierarchy
 
 1. Official registers, government sources and certification databases.
