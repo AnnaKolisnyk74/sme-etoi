@@ -13,3 +13,9 @@
 - Available group-size evidence indicates that the linked group exceeds the SME
   threshold; exclusion is conservative pending any contradictory official data.
 
+## Certificate review
+
+ISO 50001, ISO 14001 and EMAS are each marked
+`NOT_REQUIRED_EXCLUDED`. The candidate failed the SME eligibility gate, so
+certificate research is not used for scoring.
+
