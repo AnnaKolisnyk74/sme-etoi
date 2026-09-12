@@ -38,7 +38,7 @@ between company-level process evidence and these technology questions.
 ## Pilot design
 
 - **Pilot:** 20 candidate companies, five per process stratum.
-- **Final study:** 100 eligible companies?
+- **Final study:** 100 eligible companies in total, 25 per stratum (the 20 validated pilot records plus 80 additional records).
 - **Unit of analysis:** one German operating company/legal entity.
 - **Strata:** food and beverage; plastics processing; metal surface treatment
   and heat treatment; glass and technical ceramics.
