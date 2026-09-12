@@ -7,6 +7,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from opportunity_engine import (
     commercial_status,
     generate_opportunities,
+    prioritise,
     process_signal_present,
     worst_confidence,
 )
@@ -19,12 +20,14 @@ class OpportunityEngineTests(unittest.TestCase):
                 "company_id": "P10",
                 "legal_entity": "Oskar Lehmann GmbH & Co. KG",
                 "three_shift_operation": "YES",
+                "multi_shift_or_batch_signal": "YES",
                 "pv_present": "UNKNOWN",
                 "public_load_profile_available": "NO",
                 "iso_50001_status": "NOT_FOUND_AFTER_CHECK",
                 "energy_management_deployed": "UNKNOWN",
                 "heat_recovery_deployed": "UNKNOWN",
                 "battery_storage_deployed": "UNKNOWN",
+                "public_targets_summary": "Climate-neutrality-by-2030 initiative is publicly visible.",
                 "evidence_confidence": "B",
             }
         ]
@@ -68,6 +71,7 @@ class OpportunityEngineTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["technical_status"], "TECHNICALLY_RELEVANT")
         self.assertEqual(rows[0]["commercial_status"], "RESEARCH_REQUIRED")
+        self.assertEqual(rows[0]["priority"], "RESEARCH")
         self.assertEqual(rows[0]["confidence"], "B")
 
     def test_deployed_technology_is_not_white_space(self):
@@ -77,19 +81,27 @@ class OpportunityEngineTests(unittest.TestCase):
         self.assertEqual(status, "ALREADY_DEPLOYED")
         self.assertEqual(field, "heat_recovery_deployed")
         self.assertEqual(value, "YES")
+        priority, _, action = prioritise(company, "heat_recovery", "HIGH", status, "B")
+        self.assertEqual(priority, "LOW")
+        self.assertIn("Monitor", action)
 
-    def test_explicit_no_can_create_possible_white_space(self):
+    def test_explicit_no_can_create_high_priority_white_space(self):
         company = dict(self.companies[0])
         company["energy_management_deployed"] = "NO"
-        status, field, value = commercial_status(company, "energy_management")
+        status, _, _ = commercial_status(company, "energy_management")
+        priority, why, _ = prioritise(company, "energy_management", "HIGH", status, "B")
         self.assertEqual(status, "WHITE_SPACE_POSSIBLE")
-        self.assertEqual(field, "energy_management_deployed")
-        self.assertEqual(value, "NO")
+        self.assertEqual(priority, "HIGH")
+        self.assertIn("three-shift operation", why)
+        self.assertIn("public transition target", why)
 
     def test_unknown_deployment_requires_research(self):
         status, _, value = commercial_status(self.companies[0], "energy_management")
         self.assertEqual(status, "RESEARCH_REQUIRED")
         self.assertEqual(value, "UNKNOWN")
+        priority, _, action = prioritise(self.companies[0], "energy_management", "HIGH", status, "B")
+        self.assertEqual(priority, "RESEARCH")
+        self.assertIn("Verify whether energy management", action)
 
     def test_unmodelled_opportunity_requires_research(self):
         status, field, value = commercial_status(self.companies[0], "flexibility")
