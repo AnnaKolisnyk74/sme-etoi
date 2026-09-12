@@ -13,3 +13,10 @@
 - `S-P09-02` confirms a cross-border linked manufacturing relationship:
   MORAplast states that it was founded by RUCH NOVAPLAST and Delkeskamp.
 - The reported headcount exceeds the EU SME ceiling of fewer than 250 employees.
+
+## Certificate review
+
+ISO 50001, ISO 14001 and EMAS are each marked
+`NOT_REQUIRED_EXCLUDED`. The candidate failed the SME eligibility gate, so
+certificate research is not used for scoring.
+
