@@ -121,8 +121,9 @@ action. No company-level score is published until the evidence threshold is met.
 
 ## Project status
 
-**Current phase:** pilot-candidate verification and synthetic pipeline
-validation. No real company has yet been scored.
+**Current phase:** pilot-candidate verification and real-company pilot coding.
+Two real companies (P07 and P10) have provisional evidence-based scores; these
+remain subject to user review and final linked-enterprise checks.
 
 ## Licence
 
