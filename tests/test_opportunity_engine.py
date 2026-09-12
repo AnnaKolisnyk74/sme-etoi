@@ -1,0 +1,92 @@
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+from opportunity_engine import generate_opportunities, process_signal_present, worst_confidence
+
+
+class OpportunityEngineTests(unittest.TestCase):
+    def setUp(self):
+        self.companies = [
+            {
+                "company_id": "P10",
+                "legal_entity": "Oskar Lehmann GmbH & Co. KG",
+                "three_shift_operation": "YES",
+                "pv_present": "UNKNOWN",
+                "public_load_profile_available": "NO",
+                "iso_50001_status": "NOT_FOUND_AFTER_CHECK",
+                "evidence_confidence": "B",
+            }
+        ]
+        self.process_map = [
+            {"company_id": "P10", "process_id": "PR001", "confidence": "B"}
+        ]
+        self.processes = [
+            {
+                "process_id": "PR001",
+                "process_name": "injection_moulding",
+                "drive_relevance": "HIGH",
+                "process_heat_relevance": "MEDIUM",
+                "cooling_relevance": "HIGH",
+                "schedulability": "MEDIUM",
+                "thermal_inertia_storage": "MEDIUM",
+                "power_electronics_relevance": "HIGH",
+                "power_quality_relevance": "MEDIUM",
+            }
+        ]
+
+    def test_process_signal_matching(self):
+        self.assertTrue(process_signal_present(self.processes[0], "HIGH_drive_relevance"))
+        self.assertTrue(process_signal_present(self.processes[0], "MEDIUM_schedulability"))
+        self.assertFalse(process_signal_present(self.processes[0], "HIGH_process_heat_relevance"))
+
+    def test_three_shift_injection_moulding_triggers_energy_management(self):
+        rules = [
+            {
+                "rule_id": "R001",
+                "opportunity_type": "energy_management",
+                "required_process_signal": "HIGH_drive_relevance",
+                "required_company_signal": "three_shift_operation",
+                "blocking_signal": "",
+                "output_level": "HIGH",
+                "reason_template": "test reason",
+                "confidence_cap": "B",
+                "rule_status": "DRAFT",
+            }
+        ]
+        rows = generate_opportunities(self.companies, self.process_map, self.processes, rules)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["company_id"], "P10")
+        self.assertEqual(rows[0]["opportunity_type"], "energy_management")
+        self.assertEqual(rows[0]["opportunity_level"], "HIGH")
+        self.assertEqual(rows[0]["confidence"], "B")
+
+    def test_blocking_signal_prevents_rule(self):
+        company = dict(self.companies[0])
+        company["pv_present"] = "YES"
+        company["public_load_profile_available"] = "YES"
+        rules = [
+            {
+                "rule_id": "R007",
+                "opportunity_type": "battery_storage",
+                "required_process_signal": "",
+                "required_company_signal": "pv_present",
+                "blocking_signal": "public_load_profile_available",
+                "output_level": "RESEARCH_REQUIRED",
+                "reason_template": "test reason",
+                "confidence_cap": "C",
+                "rule_status": "DRAFT",
+            }
+        ]
+        rows = generate_opportunities([company], self.process_map, self.processes, rules)
+        self.assertEqual(rows, [])
+
+    def test_confidence_never_exceeds_weakest_input(self):
+        self.assertEqual(worst_confidence("A", "B", "A"), "B")
+        self.assertEqual(worst_confidence("A", "B", "C"), "C")
+
+
+if __name__ == "__main__":
+    unittest.main()
