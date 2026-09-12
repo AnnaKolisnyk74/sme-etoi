@@ -47,12 +47,18 @@ The reviewed sources document:
 - automated inline processes and resource-saving PVD/coating;
 - battery storage and fast-charging infrastructure announced for 2025.
 
-The [ISO 14001 certificate](https://varioplast.de/images/downloads/pdf/zertifikate/Varioplast_Zertifikat_14001_de_2023-2026.pdf)
-was valid only through 25 July 2026. It was expired on the research date, and no
-replacement certificate was located. Therefore it is evidence of a prior
-environmental-management system, not proof of current certification
-(`S-P07-03`). No verified ISO 50001 or EMAS evidence was found in the defined
-checks.
+## Certificate review
+
+- **ISO 50001 — `NOT_FOUND_AFTER_CHECK`:** no certificate was listed on the
+  [official download page](https://varioplast.de/de/downloads) on 12 September
+  2026. This is not proof that no certification exists.
+- **ISO 14001 — `EXPIRED`:** the
+  [direct certificate](https://varioplast.de/images/downloads/pdf/zertifikate/Varioplast_Zertifikat_14001_de_2023-2026.pdf)
+  was valid through 25 July 2026; no current successor was located
+  (`S-P07-03`).
+- **EMAS — `NOT_FOUND_AFTER_CHECK`:** no EMAS document was listed on the
+  official download page on the research date. This is not proof that no EMAS
+  registration exists.
 
 ## Provisional SME-ETOI coding
 
