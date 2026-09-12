@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Calculate the Energy Transition Opportunity Index from coded public evidence."""
+"""Calculate SME-ETOI from coded public evidence."""
 
 from __future__ import annotations
 
@@ -9,17 +9,38 @@ from datetime import date, datetime
 from pathlib import Path
 
 
+DIMENSIONS = {
+    "process_electrification_potential": {
+        "temperature_fit_score": 10,
+        "process_electrification_score": 10,
+        "fossil_heat_displacement_score": 5,
+    },
+    "power_electronics_relevance": {
+        "motor_drive_score": 8,
+        "power_conversion_score": 8,
+        "automation_control_score": 4,
+    },
+    "load_flexibility_potential": {
+        "scheduling_flex_score": 8,
+        "thermal_storage_flex_score": 7,
+    },
+    "grid_power_quality_relevance": {
+        "incremental_load_score": 8,
+        "power_quality_score": 4,
+        "onsite_integration_score": 3,
+    },
+    "observed_transition_gap": {
+        "measures_gap_score": 10,
+        "management_gap_score": 5,
+        "targets_gap_score": 5,
+        "investment_gap_score": 5,
+    },
+}
+
 SCORE_FIELDS = {
-    "sector_energy_profile_score": 15,
-    "process_evidence_score": 15,
-    "site_scale_score": 10,
-    "low_temp_fit_score": 10,
-    "electrification_fit_score": 10,
-    "flexibility_fit_score": 10,
-    "measures_gap_score": 12,
-    "management_gap_score": 6,
-    "targets_gap_score": 6,
-    "investment_gap_score": 6,
+    field: maximum
+    for components in DIMENSIONS.values()
+    for field, maximum in components.items()
 }
 
 SOURCE_CHECK_FIELDS = (
@@ -59,18 +80,11 @@ def score_row(row: dict[str, str], as_of: date) -> dict[str, str]:
         field: parse_int(row, field, maximum)
         for field, maximum in SCORE_FIELDS.items()
     }
-
-    demand = sum(values[field] for field in (
-        "sector_energy_profile_score", "process_evidence_score", "site_scale_score"
-    ))
-    applicability = sum(values[field] for field in (
-        "low_temp_fit_score", "electrification_fit_score", "flexibility_fit_score"
-    ))
-    gap = sum(values[field] for field in (
-        "measures_gap_score", "management_gap_score", "targets_gap_score",
-        "investment_gap_score"
-    ))
-    total = demand + applicability + gap
+    dimension_scores = {
+        dimension: sum(values[field] for field in components)
+        for dimension, components in DIMENSIONS.items()
+    }
+    total = sum(dimension_scores.values())
 
     checks = [parse_int(row, field, 1) for field in SOURCE_CHECK_FIELDS]
     coverage = 20 * sum(checks)
@@ -81,6 +95,8 @@ def score_row(row: dict[str, str], as_of: date) -> dict[str, str]:
     if latest_text:
         latest = datetime.strptime(latest_text, "%Y-%m-%d").date()
         age = months_between(latest, as_of)
+        if age < 0:
+            raise ValueError("latest_evidence_date is after the as-of date")
         evidence_age_months = str(age)
         if coverage >= 80 and age <= 24:
             confidence = "A"
@@ -91,10 +107,8 @@ def score_row(row: dict[str, str], as_of: date) -> dict[str, str]:
     status = "CLASSIFIED" if band else "RESEARCH_REQUIRED"
 
     result = dict(row)
+    result.update({key: str(value) for key, value in dimension_scores.items()})
     result.update({
-        "demand_potential_score": str(demand),
-        "solution_applicability_score": str(applicability),
-        "observed_transition_gap_score": str(gap),
         "opportunity_score": str(total),
         "evidence_coverage": str(coverage),
         "evidence_age_months": evidence_age_months,
@@ -119,8 +133,7 @@ def run(input_path: Path, output_path: Path, as_of: date) -> None:
                 raise ValueError(f"Row {line_number} ({company}): {exc}") from exc
 
     extra_fields = [
-        "demand_potential_score", "solution_applicability_score",
-        "observed_transition_gap_score", "opportunity_score", "evidence_coverage",
+        *DIMENSIONS.keys(), "opportunity_score", "evidence_coverage",
         "evidence_age_months", "confidence_grade", "opportunity_band",
         "classification_status",
     ]
