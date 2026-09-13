@@ -175,9 +175,12 @@ action. No company-level score is published until the evidence threshold is met.
 ## Project status
 
 **Current phase:** staged real-company pilot expansion. Company Intelligence and
-process mappings now cover five provisional real-company cases (P03, P04, P05,
-P07 and P10). Only P07 and P10 currently have provisional SME-ETOI scores; the
-new food-and-beverage cases are not scored until their coding has been reviewed.
+process mappings now cover ten provisional real-company cases: P03-P05, P07,
+P10, P12-P13, P16 and P18-P19. The second expansion adds metal-surface,
+technical-ceramics and glass-melting cases with direct certificate and process
+evidence. Only P07 and P10 currently have provisional SME-ETOI scores; all
+expansion cases remain unscored until their coding and EU SME eligibility have
+been reviewed.
 All five remain subject to user review and any stated linked-enterprise checks.
 
 ## Licence
