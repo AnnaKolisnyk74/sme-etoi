@@ -11,6 +11,13 @@
 - `S-P04-01` establishes the exact legal entity, address and register identity.
 - `S-P04-02` reports 142 employees and EUR 31.7 million turnover for 2024.
 - Public company information describes the business as family-owned.
+- `S-P04-06`, the official 2023 sustainability report with integrated EMAS
+  declaration, documents the brewing, malting and cooling processes; an
+  operational energy-management system and software; 125 kWp PV; and a
+  predominantly gas-based heat supply.
+- The same report documents a 42% Scope 1 and 2 reduction target by 2030 and
+  plans to electrify heat supply using, among other measures, heat pumps and
+  solar systems. Planned measures are not coded as deployed.
 
 ## Certificate review
 
@@ -32,4 +39,5 @@ The supporting sources are recorded as `S-P04-03` to `S-P04-05`.
 ## Open checks
 
 - Verify linked entities in the official register before final approval.
-
+- Verify current EMAS and ISO 14001 validity metadata.
+- Verify whether planned heat-electrification measures have been commissioned.
