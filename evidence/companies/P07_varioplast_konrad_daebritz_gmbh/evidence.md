@@ -94,6 +94,19 @@ remaining hydraulic equipment.
 5. What are the site's measured peak load, load profile and controllable-load
    windows?
 
+## Research Queue check — 2026-09-13
+
+Task `RQ-P07-BATTERY-20260913` checked the current official production and
+download pages, exact-legal-name searches and public project/vendor-reference
+discovery searches. The June 2025 regional report still provides the only
+located company-specific storage signal: battery storage and fast-charging
+infrastructure were *planned* for 2025 (`S-P07-04`). No direct commissioning
+announcement, operating-project page or vendor case was located.
+
+Result: `battery_storage_deployed` remains `UNKNOWN`. The search outcome is
+`NOT_FOUND_AFTER_CHECK`, not evidence of non-deployment and not commercial
+white space. Recheck by 2027-03-13.
+
 ## Review
 
 - Research status: `RESEARCHED`

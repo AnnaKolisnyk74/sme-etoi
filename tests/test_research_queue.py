@@ -135,6 +135,67 @@ class ResearchQueueTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual([task["research_rank"] for task in first], ["1", "2", "3"])
 
+    def test_unsuccessful_search_creates_recheck_without_changing_unknown(self):
+        results = [
+            {
+                "company_id": "P07",
+                "opportunity_type": "battery_storage",
+                "missing_fact": "battery_storage_deployed",
+                "research_status": "NOT_FOUND_AFTER_CHECK",
+                "resulting_value": "UNKNOWN",
+                "finding_summary": "Announcement found; commissioning not confirmed.",
+                "source_ids": "S-P07-04 | S-P07-06",
+                "checked_date": "2026-09-13",
+                "next_review_date": "2027-03-13",
+            }
+        ]
+        queue = generate_research_queue(self.companies, self.rows, results)
+        task = next(task for task in queue if task["opportunity_type"] == "battery_storage")
+        self.assertEqual(task["task_status"], "RECHECK_DUE")
+        self.assertEqual(task["last_research_status"], "NOT_FOUND_AFTER_CHECK")
+        self.assertEqual(task["current_value"], "UNKNOWN")
+        self.assertEqual(task["commercial_status"], "RESEARCH_REQUIRED")
+
+    def test_partial_evidence_is_visible_but_does_not_resolve_deployment(self):
+        results = [
+            {
+                "company_id": "P10",
+                "opportunity_type": "energy_management",
+                "missing_fact": "energy_management_deployed",
+                "research_status": "PARTIAL_EVIDENCE",
+                "resulting_value": "UNKNOWN",
+                "finding_summary": "Historical energy-management activity is documented.",
+                "source_ids": "S-P10-08 | S-P10-09",
+                "checked_date": "2026-09-13",
+                "next_review_date": "2027-03-13",
+            }
+        ]
+        queue = generate_research_queue(self.companies, self.rows, results)
+        task = next(task for task in queue if task["opportunity_type"] == "energy_management")
+        self.assertEqual(task["task_status"], "RECHECK_DUE")
+        self.assertEqual(task["last_research_status"], "PARTIAL_EVIDENCE")
+        self.assertIn("Historical energy-management", task["last_finding"])
+
+    def test_latest_research_result_wins_deterministically(self):
+        older = {
+            "company_id": "P10",
+            "opportunity_type": "flexibility",
+            "missing_fact": "flexibility_solution_deployed",
+            "research_status": "IN_PROGRESS",
+            "resulting_value": "UNKNOWN",
+            "checked_date": "2026-09-12",
+        }
+        newer = dict(
+            older,
+            research_status="NOT_FOUND_AFTER_CHECK",
+            checked_date="2026-09-13",
+            next_review_date="2027-03-13",
+        )
+        queue = generate_research_queue(self.companies, self.rows, [newer, older])
+        task = next(task for task in queue if task["opportunity_type"] == "flexibility")
+        self.assertEqual(task["task_status"], "RECHECK_DUE")
+        self.assertEqual(task["last_checked_date"], "2026-09-13")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -50,6 +50,14 @@ actual site demand, peak load, power quality or remaining fossil-heat use.
 
 Public evidence identifies:
 
+- a company-hosted 2019 technical report naming an internal
+  energy-management officer and documenting internal evaluations of energy
+  savings from new servo-driven injection-moulding equipment (`S-P10-08`);
+- historical participation in Energieeffizienz-Netzwerk LEEN OWL II with a
+  company statement that saved energy costs had resulted (`S-P10-09`);
+- a BDE system used to monitor machine availability, production flows and
+  process data; this is not coded as an energy-management or load-management
+  system without direct evidence (`S-P10-08`);
 - process-efficiency and automation improvements in the 2023 management report;
 - reuse of internal plastic waste and purchased recycled materials
   (`S-P10-07`);
@@ -116,6 +124,31 @@ scale and comparatively sparse public disclosure of quantified energy measures.
 4. Are PV, heat recovery, storage or load-management systems already operating
    but not publicly disclosed?
 5. Does a non-public or successor ISO 50001, ISO 14001 or EMAS record exist?
+
+## Research Queue checks — 2026-09-13
+
+### Energy management
+
+Task `RQ-P10-EMS-20260913` found positive historical energy-management
+activity: an internal energy-management officer, energy-saving evaluations and
+LEEN participation (`S-P10-08`, `S-P10-09`). The current official certificate
+index and exact-legal-name searches did not establish a valid ISO 50001
+certificate or a clearly defined operational EnMS.
+
+Result: `PARTIAL_EVIDENCE`; `energy_management_deployed` remains `UNKNOWN`.
+An energy-management role or activity is not treated as proof of a deployed
+system or certification.
+
+### Flexibility
+
+Task `RQ-P10-FLEX-20260913` checked the official website and news archive, the
+company-hosted technical report, exact-name searches and energy-efficiency
+network sources. The BDE system, LEEN participation and three-shift production
+do not demonstrate load management, demand response, flexibility-market
+participation or controllable-load operation.
+
+Result: `NOT_FOUND_AFTER_CHECK`; `flexibility_solution_deployed` remains
+`UNKNOWN`. Recheck both tasks by 2027-03-13.
 
 ## Review
 
