@@ -130,7 +130,24 @@ Every important fact or score should support:
 
 No undocumented manual override should affect a published result.
 
-### 6. Monitoring & Change Detection
+### 6. Research Queue
+
+The Research Queue converts unresolved opportunity outputs into ordered,
+auditable research tasks. It joins the canonical company record to the
+opportunity row, identifies the exact missing fact, proposes a focused research
+question and records both research priority and decision impact.
+
+Its deterministic first-match rules distinguish time-sensitive commissioning
+checks, high-relevance deployment checks, standard deployment checks and gaps
+in the evidence model. Each task exposes its rule ID and reasons. There is no
+opaque aggregate score and no inference of buying intent.
+
+Research priority answers *which fact should be checked first*. Decision impact
+answers *how much resolving that fact can change the current commercial status
+or next action*. A failed public search leaves the value `UNKNOWN` or may be
+recorded as `NOT_FOUND_AFTER_CHECK`; it never creates commercial white space.
+
+### 7. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.
 
@@ -181,6 +198,9 @@ opportunity_engine
       |                  |
       v                  v
 SME-ETOI         technology opportunities
+                          |
+                          v
+                   research_queue
       |
       v
 Power BI / web / exports

@@ -11,6 +11,7 @@ DEPLOYMENT_FIELDS = {
     "heat_recovery": "heat_recovery_deployed",
     "thermal_storage": "thermal_storage_deployed",
     "battery_storage": "battery_storage_deployed",
+    "flexibility": "flexibility_solution_deployed",
     "power_quality": "power_quality_solution_deployed",
 }
 
@@ -45,7 +46,7 @@ def write_csv(path, rows):
         "engine_version",
     ]
     with open(path, "w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
