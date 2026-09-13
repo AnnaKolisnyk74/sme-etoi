@@ -179,6 +179,26 @@ certificate rows, certificate validity logic, process/source coverage and the
 20-row second-pass QA matrix. It deliberately does not label its own check as
 an independent human double-code.
 
+## Independent pilot validation
+
+The independent reviewer works from the neutral source manifest rather than
+the first coder's company facts or dossiers:
+
+```bash
+python src/build_double_code_package.py
+# Fill data/pilot_double_code.csv independently.
+python src/inter_rater_reliability.py
+```
+
+The comparison writes field-level agreement and Cohen's kappa to
+`outputs/inter_rater_reliability.csv`. Every disagreement is written to
+`outputs/double_code_conflicts.csv` for explicit adjudication. Until another
+person completes the template, the output correctly reports zero completed
+reviews and `UNKNOWN` reliability rather than manufacturing agreement.
+
+See `docs/double_coding_protocol.md` for the blind-review rules and allowed
+values.
+
 ## Research integrity
 
 No internal employer, CRM, customer or non-public data may enter this project.

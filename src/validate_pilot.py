@@ -40,6 +40,8 @@ def validate(root: Path = ROOT) -> list[str]:
     sources = read_csv(root, "evidence/source_register.csv")
     certificates = read_csv(root, "evidence/certificate_register.csv")
     qa_rows = read_csv(root, "evidence/qa_review.csv")
+    double_code_rows = read_csv(root, "data/pilot_double_code.csv")
+    review_sources = read_csv(root, "data/pilot_review_sources.csv")
 
     company_duplicates = duplicate_keys(companies, ("company_id",))
     if company_duplicates:
@@ -134,6 +136,26 @@ def validate(root: Path = ROOT) -> list[str]:
                 errors.append(f"QA field {field} is not {expected} for {company_id}")
         if qa["independent_human_review_status"] != "PENDING":
             errors.append(f"unsupported human-review claim for {company_id}")
+
+    if duplicate_keys(double_code_rows, ("company_id",)):
+        errors.append("duplicate independent double-code rows")
+    double_code_by_id = {row["company_id"]: row for row in double_code_rows}
+    if set(double_code_by_id) != company_ids:
+        errors.append("independent double-code template does not cover the canonical sample")
+    for company_id, row in double_code_by_id.items():
+        if row["legal_entity"] != company_by_id[company_id]["legal_entity"]:
+            errors.append(f"double-code legal entity mismatch for {company_id}")
+        if row["source_manifest_filter"] != company_id:
+            errors.append(f"incorrect source-manifest filter for {company_id}")
+        if row["review_status"] not in {"PENDING", "COMPLETE"}:
+            errors.append(f"invalid double-code status for {company_id}")
+
+    review_source_ids = {row["company_id"] for row in review_sources}
+    if review_source_ids != company_ids:
+        errors.append("neutral review-source manifest does not cover the canonical sample")
+    forbidden_review_source_fields = {"evidence_fact", "review_status"}
+    if review_sources and forbidden_review_source_fields.intersection(review_sources[0]):
+        errors.append("neutral review-source manifest leaks prior coding fields")
 
     return errors
 

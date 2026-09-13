@@ -233,6 +233,7 @@ without manually researching every company from scratch.
 
 - run the deterministic cross-file QA for the complete provisional 20-company pilot;
 - independently human-review and double-code the QA-checked pilot before the v1.0 freeze;
+- calculate field-level agreement and Cohen's kappa, then adjudicate every disagreement;
 - validate inclusion / exclusion logic;
 - complete evidence dossiers;
 - double-code a subsample;

@@ -1,0 +1,84 @@
+company_id,legal_entity,source_id,source_type,publisher,document_title,reporting_period,publication_date,source_url
+P03,Upländer Bauernmolkerei GmbH,S-P03-01,company_imprint,Upländer Bauernmolkerei GmbH,Impressum,current,,https://www.bauernmolkerei.team/impressum
+P03,Upländer Bauernmolkerei GmbH,S-P03-02,company_database,wer-zu-wem GmbH,Upländer company profile,current,,https://www.wer-zu-wem.de/firma/uplaender.html
+P03,Upländer Bauernmolkerei GmbH,S-P03-03,company_process_page,Upländer Bauernmolkerei GmbH,Der Weg der Milch,current,,https://www.bauernmolkerei.de/ueber-uns/produktion-mitarbeiter/produktion/der-weg-der-milch
+P03,Upländer Bauernmolkerei GmbH,S-P03-04,company_investment_page,Upländer Bauernmolkerei GmbH,Bauernmolkerei investiert in Mehrweg-Glas,2020-2021,2021,https://www.bauernmolkerei.de/aktuelles/neuigkeiten/detailansicht/bauernmolkerei-investiert-in-mehrweg-glas
+P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,S-P04-01,company_imprint,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,Impressum,current,,https://www.lammsbraeu.de/impressum
+P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,S-P04-02,company_factsheet,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,Unternehmens-Informationen 2025,2024,2025,https://www.lammsbraeu.de/hubfs/Dachmarke/resources/documents/Pressemitteilungen/NL_Factsheet_2025.pdf
+P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,S-P04-03,company_certificate_index,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,Unsere Zertifizierungen,current,,https://www.lammsbraeu.de/blog/unsere-zertifizierungen
+P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,S-P04-04,environmental_management_certificate,Intechnica Cert GmbH,ISO 14001 certificate,2022-2025,2022-06-02,https://www.lammsbraeu.de/hubfs/NeumarkterLammsbraeu/blog/images/2022/2022%20-%20Blog%20-%20Zertifizierungen/Zert._2022-06-02_Re-ZA%2014k_Neumarkter%20Lammsbr%C3%A4u.pdf
+P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,S-P04-05,emas_document,IHK / Neumarkter Lammsbräu,EMAS document,current unclear,,https://www.lammsbraeu.de/hubfs/NeumarkterLammsbraeu/blog/images/2022/2022%20-%20Blog%20-%20Zertifizierungen/IHK%20Urkunde%20EMAS.pdf
+P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,S-P04-06,sustainability_report,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,Nachhaltigkeitsbericht 2023,2023,2024-09-13,https://www.lammsbraeu.de/hubfs/Dachmarke/resources/documents/Nachhaltigkeitsberichte/GRI-Bericht2023_Neumarkter%20Lammsbr%C3%A4u_final%2020240913.pdf
+P05,Einbecker Brauhaus AG,S-P05-01,company_imprint,Einbecker Brauhaus AG,Impressum,current,,https://www.einbecker-brauhaus.de/impressum
+P05,Einbecker Brauhaus AG,S-P05-02,annual_report_index,Einbecker Brauhaus AG,Geschäftsbericht 2025,2025,2026,https://www.einbecker-brauhaus.de/aktionaere/berichte
+P05,Einbecker Brauhaus AG,S-P05-03,company_sustainability_page,Einbecker Brauhaus AG,Nachhaltigkeit,current,,https://www.einbecker-brauhaus.de/leitbild-werte/nachhaltigkeit
+P05,Einbecker Brauhaus AG,S-P05-04,emas_environmental_statement,Einbecker Brauhaus AG,Umwelterklärung 2025,2024-2025,2025,https://www.einbecker-brauhaus.de/files/einbecker_gruppe/content/leitbild-und-werte/nachhaltigkeit/umwelterklaerung-ebag-2025.pdf
+P07,VARIOPLAST Konrad Däbritz GmbH,S-P07-01,company_imprint,VARIOPLAST Konrad Däbritz GmbH,Impressum,current,,https://varioplast.de/de/impressum
+P07,VARIOPLAST Konrad Däbritz GmbH,S-P07-02,company_process_and_energy_page,VARIOPLAST Konrad Däbritz GmbH,Ressourcenschonende Produktion,current,,https://varioplast.de/de/serienfertigung/ressourcenschonende-produktion
+P07,VARIOPLAST Konrad Däbritz GmbH,S-P07-03,environmental_management_certificate,SKZ - Cert GmbH,DIN EN ISO 14001:2015 certificate,2023-2026,2023-07-24,https://varioplast.de/images/downloads/pdf/zertifikate/Varioplast_Zertifikat_14001_de_2023-2026.pdf
+P07,VARIOPLAST Konrad Däbritz GmbH,S-P07-04,regional_transformation_report,Wirtschaftskraft / Wirtschaftsförderung Nordschwarzwald GmbH,Das Hightech-Herz der Zukunftsschmiede Varioplast schlägt im Nordschwarzwald,2025,2025-06-05,https://wirtschaftskraft.de/artikel/das-hightech-herz-der-zukunftsschmiede-varioplast-schlaegt-im-nordschwarzwald
+P07,VARIOPLAST Konrad Däbritz GmbH,S-P07-05,published_annual_report_mirror,handelsregister.ai,Public filing profile and annual-report text,2023-2024,2024,https://handelsregister.ai/de/organizations/oetisheim/bearbeitung-und-veredlung-von-kunststoffwaren/varioplast-konrad-dabritz-gmbh-617b93fba0a74b122588036fdad447e8
+P07,VARIOPLAST Konrad Däbritz GmbH,S-P07-06,company_process_and_energy_page,VARIOPLAST Konrad Däbritz GmbH,Ressourcenschonende Produktion,current,,https://varioplast.de/de/serienfertigung/ressourcenschonende-produktion
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-01,company_imprint,Oskar Lehmann GmbH & Co. KG,Imprint,current,,https://www.oskar-lehmann.de/en/imprint.html
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-02,company_profile,Oskar Lehmann GmbH & Co. KG,About us,current,,https://www.oskar-lehmann.de/en/about-us.html
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-03,company_process_page,Oskar Lehmann GmbH & Co. KG,Areas of expertise,current,,https://www.oskar-lehmann.de/en/areas-of-expertise.html
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-04,published_annual_report_mirror,Fusionbase / public filing,Jahresabschluss und Lagebericht 2023,2023,2024-03-07,https://fusionbase.com/de/data/organization/3618ca1a59de35582bf50c464d9b2472/Oskar%2BLehmann%2BGmbH%2B%26%2BCo.%2BKG
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-05,company_certificate_index,Oskar Lehmann GmbH & Co. KG,Download,current,,https://www.oskar-lehmann.de/en/download-en.html
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-06,climate_initiative,IHK Ostwestfalen zu Bielefeld,IHKs starten Klimainitiative gemeinsam klimaneutral 2030,2022-2030,2022-04-13,https://www.ihk.de/ostwestfalen/ihre-ihk/presse/pressemeldungen/pressemeldungen2022/ihks-starten-klimainitiative-6981412
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-07,regional_news,Blomberg erleben,Pilotprojekt von Oskar Lehmann war ein voller Erfolg,current,,https://blomberg-erleben.de/pilotprojekt-von-oskar-lehmann-war-ein-voller-erfolg/
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-08,company_hosted_technical_report,Plastverarbeiter / Oskar Lehmann GmbH & Co. KG / Dr. Boy GmbH & Co. KG,Mehr Flexibilität bei geringen Betriebskosten,2019,2019-04,https://www.oskar-lehmann.de/files/ol/news/Reportage%20im%20Magazin.pdf
+P10,Oskar Lehmann GmbH & Co. KG,S-P10-09,federal_initiative_network_page,Fraunhofer ISI / Initiative Energieeffizienz-Netzwerke,Zitate von Netzwerkakteuren,historical,,https://energie-effizienz-netzwerke.de/een-de/netzwerkidee/stimmen.php
+P11,B+T Oberflächentechnik GmbH,S-P11-01,company_group_history,B+T Unternehmensgruppe,175 Jahre geballte Erfahrung,current,,https://bt-unternehmensgruppe.de/175jahre
+P11,B+T Oberflächentechnik GmbH,S-P11-02,company_technical_page,B+T Unternehmensgruppe,Galvanik 4.1 zum Mitmachen,2022,,https://bt-unternehmensgruppe.de/mitmachworkshop22
+P11,B+T Oberflächentechnik GmbH,S-P11-03,direct_combined_iso_certificate,LRQA Limited,ISO 50001 and ISO 14001 Certificate of Approval,2026-2029,2026-03-02,https://bt-unternehmensgruppe.de/assets/bt-unternehmensgruppe.de/downloads/2026_14001-50001-ENGUS-UKAS.pdf
+P12,Richard Henkel GmbH,S-P12-01,company_imprint,Richard Henkel GmbH,Impressum,current,,https://www.richard-henkel.de/impressum.html
+P12,Richard Henkel GmbH,S-P12-02,company_process_page,Richard Henkel GmbH,Oberflächentechnik,current,,https://www.richard-henkel.de/oberfl%C3%A4chentechnik.html
+P12,Richard Henkel GmbH,S-P12-03,emas_environmental_statement,Richard Henkel GmbH,Umwelterklärung 2024,2024-2025,2025-11-21,https://www.richard-henkel.de/downloads.html?file=files/downloads/2024_Umwelterklaerung_Richard_Henkel.pdf
+P12,Richard Henkel GmbH,S-P12-04,direct_emas_certificate,EMAS / Richard Henkel GmbH,Registrierungsurkunde geprüftes Umweltmanagement,current,,https://www.richard-henkel.de/downloads.html?file=files/downloads/EMAS+Urkunde_bis_2026.pdf
+P12,Richard Henkel GmbH,S-P12-05,sustainability_report,Richard Henkel GmbH,Klimawin BW Bericht 2024,2024,2025,https://www.richard-henkel.de/downloads.html?file=files/downloads/2024_Klimawin-BW_Bericht.pdf
+P13,Schmalriede-Zink GmbH,S-P13-01,company_imprint,Schmalriede-Zink GmbH,Impressum,current,,https://www.schmalriede.de/impressum
+P13,Schmalriede-Zink GmbH,S-P13-02,company_profile,Schmalriede-Zink GmbH,Über Schmalriede-Zink,current,,https://www.schmalriede.de/unternehmen
+P13,Schmalriede-Zink GmbH,S-P13-03,company_process_page,Schmalriede-Zink GmbH,Oberflächenveredelung und Leistungen,current,,https://www.schmalriede.de/
+P15,ELOXAL BARZ GmbH & Co KG,S-P15-01,company_imprint,ELOXAL BARZ GmbH & Co KG,Impressum,current,,https://eloxal-barz.de/
+P15,ELOXAL BARZ GmbH & Co KG,S-P15-02,public_filing_mirror,Fusionbase,Jahresabschluss 2023,2023,,https://fusionbase.com/de/data/organization/4c73ef37b41ee4186a5fcce34e18f119/eloxal-barz-gmbh-%26-co.-kg
+P16,Sembach GmbH & Co. KG,S-P16-01,company_imprint,Sembach GmbH & Co. KG,Imprint,current,,https://www.sembach.de/en/imprint/
+P16,Sembach GmbH & Co. KG,S-P16-02,company_profile,Sembach GmbH & Co. KG,About Sembach,current,,https://www.sembach.de/en/company/
+P16,Sembach GmbH & Co. KG,S-P16-03,company_process_page,Sembach GmbH & Co. KG,Production process of technical ceramics,current,,https://www.sembach.de/en/production/
+P16,Sembach GmbH & Co. KG,S-P16-04,direct_iso_certificate,Intechnica Cert GmbH,ISO 50001 certificate EG0057-2025,2025-2028,2025-06-16,https://www.sembach.de/wp-content/uploads/ISO-50001-bis-2028-E.pdf
+P16,Sembach GmbH & Co. KG,S-P16-05,direct_iso_certificate,Intechnica Cert GmbH,ISO 14001 certificate UG0668-2025,2025-2028,2025-06-16,https://www.sembach.de/wp-content/uploads/ISO-14001-bis-2028-E.pdf
+P18,Glashütte Lamberts Waldsassen GmbH,S-P18-01,company_imprint,Glashütte Lamberts Waldsassen GmbH,Impressum,current,,https://lamberts.de/impressum-2
+P18,Glashütte Lamberts Waldsassen GmbH,S-P18-02,company_process_page,Glashütte Lamberts Waldsassen GmbH,Lamberts glassmaking company,current,,https://lamberts.de/home
+P18,Glashütte Lamberts Waldsassen GmbH,S-P18-03,company_energy_page,Glashütte Lamberts Waldsassen GmbH,Der Zukunft verpflichtet,current,,https://lamberts.de/der-zukunft-verpflichtet
+P18,Glashütte Lamberts Waldsassen GmbH,S-P18-04,direct_iso_certificate,OmniCert Umweltgutachter GmbH,ISO 50001 certificate Z-EM-13067-2023-001,2023-2026,2023-12-20,https://lamberts.de/files/content/Mainpage/Unsere%20Glashuette/Zukunft/Zertifikat_Z-EM-13067-2023-001_Glashuette_Lamberts_Waldsassen.pdf
+P19,Glasfabrik Lamberts GmbH & Co. KG,S-P19-01,company_imprint,Glasfabrik Lamberts GmbH & Co. KG,Impressum,current,,https://www.lamberts.info/impressum
+P19,Glasfabrik Lamberts GmbH & Co. KG,S-P19-02,company_profile,Glasfabrik Lamberts GmbH & Co. KG,Unternehmen,current,,https://www.lamberts.info/unternehmen
+P19,Glasfabrik Lamberts GmbH & Co. KG,S-P19-03,company_energy_page,Glasfabrik Lamberts GmbH & Co. KG,iEcoGlass Ecology,current,,https://www.lamberts.info/en/iecoglass/ecology
+P19,Glasfabrik Lamberts GmbH & Co. KG,S-P19-04,direct_iso_certificate,TÜV NORD CERT GmbH,ISO 50001 certificate 44 764 232462,2025-2028,2025-02-13,https://www.lamberts.info/fileadmin/user_upload/ecoglass/ISO_50001_Zertifizierung__Energiemanagement__062028.pdf
+P19,Glasfabrik Lamberts GmbH & Co. KG,S-P19-05,direct_iso_certificate,TÜV NORD CERT GmbH,ISO 14001 certificate 44 104 232462,2024-2027,2024-03-04,https://www.lamberts.info/fileadmin/user_upload/ecoglass/ISO_14001_Zertifizierung_ab_2024_Umweltmanagement.pdf
+P19,Glasfabrik Lamberts GmbH & Co. KG,S-P19-06,regional_trade_press,Frankenpost,Lamberts investiert 30 Millionen Euro am Standort Wunsiedel,2025,2025-11-21,https://www.frankenpost.de/inhalt.freudige-nachricht-rieseninvestition-in-holenbrunn.54fc6b3d-9ea0-4a78-96f6-b22af96cd3b1.html
+P20,DERIX Glasstudios GmbH & Co. KG,S-P20-01,company_imprint,DERIX Glasstudios GmbH & Co. KG,Impressum,current,,https://www.derix.com/impressum
+P20,DERIX Glasstudios GmbH & Co. KG,S-P20-02,official_award_profile,Hessischer Exportpreis,DERIX Glasstudios GmbH & Co. KG,2019,2019,https://exportpreis-hessen.de/2019-235/
+P20,DERIX Glasstudios GmbH & Co. KG,S-P20-03,industry_network_profile,Flachglas Markenkreis,DERIX Glasstudios GmbH & Co. KG,current,,https://flachglas-markenkreis.de/glasnetzwerk/mitglieder/derix-glasstudios-gmbh-co-kg/
+P20,DERIX Glasstudios GmbH & Co. KG,S-P20-04,company_process_page,DERIX Glasstudios GmbH & Co. KG,Glas heißverformen,current,,https://www.derix.com/heissversformen
+P21,Privatbrauerei MORITZ FIEGE GmbH & Co. KG,S-P21-01,company_profile,Privatbrauerei MORITZ FIEGE GmbH & Co. KG,Company homepage,current,,https://moritzfiege.de/
+P21,Privatbrauerei MORITZ FIEGE GmbH & Co. KG,S-P21-02,public_agency_case,Effizienz-Agentur NRW,Förderprogramme belohnen Unternehmen die innovativ sind,2020-2023,2023-07-17,https://www.efa.nrw/aktuell/details/foerderprogramme-belohnen-unternehmen-die-innovativ-sind-interview-mit-marc-zinkler-braumeister-und-betriebsleiter-der-privatbrauerei-moritz-fiege
+P21,Privatbrauerei MORITZ FIEGE GmbH & Co. KG,S-P21-03,independent_company_profile,Die Deutsche Wirtschaft,Privatbrauerei Moritz Fiege company profile,2026,2026-04-29,https://die-deutsche-wirtschaft.de/unternehmen/privatbrauerei-moritz-fiege-gmbh-co-kg-bochum/
+P22,RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG,S-P22-01,company_imprint,RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG,Impressum,current,,https://www.riedenburger.de/about/
+P22,RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG,S-P22-02,company_project_page,RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG,Die Zukunft des Bieres ist fossilfrei,2026,2026-04-23,https://www.riedenburger.de/neues/fossilfreie-bierherstellung/
+P22,RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG,S-P22-03,regional_official_profile,Regionales Bayern,Riedenburger Brauhaus,current,,https://www.regionales-bayern.de/anbieter/riedenburger-brauhaus-michael-krieger-gmbh-co-kg-15003/
+P23,FM-Plast GmbH,S-P23-01,company_imprint,FM-Plast GmbH,Impressum,current,,https://www.fm-plast.de/deutsch/impressum
+P23,FM-Plast GmbH,S-P23-02,company_energy_page,FM-Plast GmbH,Reduce Reuse Reinvent,current,,https://www.fm-plast.de/deutsch/environment/
+P23,FM-Plast GmbH,S-P23-03,regional_industry_ranking,Regio Manager,Kunststoffverarbeiter Südwestfalen,2026,2026,https://www.regiomanager.de/ranking/produktion/kunststoffverarbeiter/suedwestfalen/
+P23,FM-Plast GmbH,S-P23-04,direct_iso_certificate,TÜV NORD CERT GmbH,ISO 50001 certificate 04 764 950027,2024-2027,2024-05-14,https://www.fm-plast.de/media/wysiwyg/PDF/50001_de.pdf
+P24,H&K Müller GmbH & Co. KG,S-P24-01,company_imprint,H&K Müller GmbH & Co. KG,Impressum,current,,https://www.hk-mueller.de/de/impressum/
+P24,H&K Müller GmbH & Co. KG,S-P24-02,company_profile,H&K Müller GmbH & Co. KG,Kunststoffspritzguss Hersteller,current,,https://www.hk-mueller.de/de/
+P24,H&K Müller GmbH & Co. KG,S-P24-03,direct_iso_certificate,SKZ-Cert GmbH,ISO 50001 certificate 001070.E,2026-2029,2026-07-02,https://www.hk-mueller.de/fileadmin/Dokumente/Zertifikate/50001_deutsch_H_K_Mueller_26.pdf
+P25,Scheplast GmbH,S-P25-01,company_imprint,Scheplast GmbH,Impressum,current,,https://scheplast.de/impressum/
+P25,Scheplast GmbH,S-P25-02,company_profile,Scheplast GmbH,Company and sustainability facts,current,,https://scheplast.de/
+P25,Scheplast GmbH,S-P25-03,company_process_page,Scheplast GmbH,Kunststoffspritzerei,current,,https://scheplast.de/kunststoffspritzerei/
+P25,Scheplast GmbH,S-P25-04,direct_expired_iso_certificate,TÜV SÜD Management Service GmbH,ISO 14001 certificate 12 104 23864 TMS,2021-2024,2021-02-24,https://scheplast.de/wp-content/uploads/2021/02/Scheplast-Zertifikat-ISO-14001_2015-g%C3%BCltig-bis-2024.pdf
+P26,Barth Galvanik GmbH,S-P26-01,company_profile,Barth Galvanik GmbH,Oberflächenbeschichtung,current,,https://barth-galvanik.de/
+P26,Barth Galvanik GmbH,S-P26-02,official_trade_fair_profile,Deutsche Messe SurfaceTechnology GERMANY,Barth Galvanik GmbH,2024,2024-03,https://www.surface-technology-germany.de/aussteller-produkte/aussteller/surface-technology-germany/barth-galvanik-gmbh/107846
+P27,BCE Special Ceramics GmbH,S-P27-01,company_profile,BCE Special Ceramics GmbH,Company,current,,https://www.bce-special-ceramics.com/company/
+P27,BCE Special Ceramics GmbH,S-P27-02,company_research_page,BCE Special Ceramics GmbH,ENITEC energy-efficient ceramic production,current,,https://www.bce-special-ceramics.com/company/
+P27,BCE Special Ceramics GmbH,S-P27-03,company_research_page,BCE Special Ceramics GmbH,ENITEC energy-efficient processes for ceramic production,2009-2012,,https://www.bce-special-ceramics.com/research-project-enitec/
