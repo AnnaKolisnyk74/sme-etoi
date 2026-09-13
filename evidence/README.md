@@ -7,6 +7,9 @@ This directory is the audit trail for the SME-ETOI research dataset.
 - `source_register.csv`: one row per source document or webpage.
 - `certificate_register.csv`: mandatory ISO 50001, ISO 14001 and EMAS check for
   every eligible or scored company, including direct document links.
+- `qa_review.csv`: one second-pass cross-file review row per selected pilot
+  company, with unresolved eligibility limits and the independent-human-review
+  state kept separate.
 - `companies/<candidate_id>_<legal_entity>/evidence.md`: company-level identity,
   eligibility decision, evidence statements and unresolved questions.
 - `documents/`: optional local copies only when redistribution is permitted.
@@ -76,3 +79,8 @@ while any of these rows remains `PENDING_CHECK`.
 - `USER_REVIEWED`
 - `REVISION_REQUIRED`
 - `APPROVED`
+
+The automated/Codex second pass is a consistency and evidence QA, not an
+independent human double-code. `qa_review.csv` therefore keeps
+`independent_human_review_status=PENDING` until a different human reviewer has
+checked the record.

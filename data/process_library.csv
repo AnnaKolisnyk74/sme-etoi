@@ -7,3 +7,4 @@ PR005,electroplating,metal_surface_heat,,,electrochemical_and_heat,MEDIUM,MEDIUM
 PR006,anodising,metal_surface_heat,,,electrochemical_and_heat,MEDIUM,MEDIUM,MEDIUM,batch,MEDIUM,MEDIUM,HIGH,HIGH,,,TO_RESEARCH
 PR007,ceramic_firing,glass_ceramics,,,high_temperature_heat,LOW,HIGH,LOW,batch,MEDIUM,HIGH,HIGH,MEDIUM,,,TO_RESEARCH
 PR008,glass_melting,glass_ceramics,,,high_temperature_heat,MEDIUM,HIGH,LOW,continuous,LOW,HIGH,HIGH,HIGH,,,TO_RESEARCH
+PR009,powder_coating,metal_surface_heat,,,process_heat_and_mechanical,MEDIUM,HIGH,LOW,batch,MEDIUM,MEDIUM,HIGH,MEDIUM,,,TO_RESEARCH

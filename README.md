@@ -37,7 +37,8 @@ between company-level process evidence and these technology questions.
 
 ## Pilot design
 
-- **Pilot:** 20 candidate companies, five per process stratum.
+- **Pilot:** 20 selected companies, five per process stratum, plus a retained
+  audit trail of excluded and unresolved candidates.
 - **Final study:** 100 eligible companies in total, 25 per stratum (the 20 validated pilot records plus 80 additional records).
 - **Unit of analysis:** one German operating company/legal entity.
 - **Strata:** food and beverage; plastics processing; metal surface treatment
@@ -157,14 +158,26 @@ becoming a factual claim.
 
 ## Research roadmap
 
-1. Verify the legal entity, group relationship and SME eligibility of all pilot
-   candidates.
-2. Replace ineligible candidates without silently changing the sampling rule.
-3. Collect and independently double-code the 20-company pilot.
+1. Independently review the provisional legal-entity, group and SME decisions
+   for the complete 20-company pilot.
+2. Keep excluded and unresolved candidates visible without silently changing
+   the sampling rule.
+3. Independently double-code the 20-company pilot.
 4. Test inter-rater reliability and weight sensitivity.
 5. Freeze SME-ETOI v1.0 before expanding the validated pilot to the 100-company final sample.
 6. Analyse process-stratum differences and evidence coverage in Python.
 7. Build a Power BI dashboard and a 10–15 page research report.
+
+Run the deterministic pilot QA before reviewing or merging pilot-data changes:
+
+```bash
+python src/validate_pilot.py
+```
+
+The validator checks sample balance, legal-entity consistency, duplicate
+certificate rows, certificate validity logic, process/source coverage and the
+20-row second-pass QA matrix. It deliberately does not label its own check as
+an independent human double-code.
 
 ## Research integrity
 
@@ -174,11 +187,14 @@ action. No company-level score is published until the evidence threshold is met.
 
 ## Project status
 
-**Current phase:** staged real-company pilot expansion. Company Intelligence and
-process mappings now cover five provisional real-company cases (P03, P04, P05,
-P07 and P10). Only P07 and P10 currently have provisional SME-ETOI scores; the
-new food-and-beverage cases are not scored until their coding has been reviewed.
-All five remain subject to user review and any stated linked-enterprise checks.
+**Current phase:** QA-checked provisional 20-company pilot. Company Intelligence
+and process mappings contain five selected cases in each of the four process
+strata. The candidate register retains three exclusions and four unresolved
+linked-enterprise cases. Inclusion is not a final eligibility certification:
+each record keeps its open financial or group checks, evidence confidence and
+review status. A deterministic second-pass QA is recorded for all 20 cases;
+independent human double-coding remains explicit and must occur before
+SME-ETOI v1.0 is frozen.
 
 ## Licence
 
