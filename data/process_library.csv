@@ -1,0 +1,9 @@
+process_id,process_name,process_family,typical_temperature_min_c,typical_temperature_max_c,dominant_energy_service,drive_relevance,process_heat_relevance,cooling_relevance,batch_continuous,schedulability,thermal_inertia_storage,power_electronics_relevance,power_quality_relevance,generic_evidence_url,generic_evidence_note,review_status
+PR001,injection_moulding,plastics_processing,,,mechanical_and_thermal,HIGH,MEDIUM,HIGH,semi_continuous,MEDIUM,MEDIUM,HIGH,MEDIUM,,,TO_RESEARCH
+PR002,extrusion,plastics_processing,,,mechanical_and_thermal,HIGH,HIGH,MEDIUM,continuous,LOW,LOW,HIGH,MEDIUM,,,TO_RESEARCH
+PR003,brewing_boiling,food_beverage,,,process_heat,MEDIUM,HIGH,MEDIUM,batch,MEDIUM,HIGH,MEDIUM,LOW,,,TO_RESEARCH
+PR004,refrigeration,food_beverage,,,cooling,HIGH,LOW,HIGH,continuous,MEDIUM,HIGH,HIGH,MEDIUM,,,TO_RESEARCH
+PR005,electroplating,metal_surface_heat,,,electrochemical_and_heat,MEDIUM,MEDIUM,MEDIUM,batch,MEDIUM,MEDIUM,HIGH,HIGH,,,TO_RESEARCH
+PR006,anodising,metal_surface_heat,,,electrochemical_and_heat,MEDIUM,MEDIUM,MEDIUM,batch,MEDIUM,MEDIUM,HIGH,HIGH,,,TO_RESEARCH
+PR007,ceramic_firing,glass_ceramics,,,high_temperature_heat,LOW,HIGH,LOW,batch,MEDIUM,HIGH,HIGH,MEDIUM,,,TO_RESEARCH
+PR008,glass_melting,glass_ceramics,,,high_temperature_heat,MEDIUM,HIGH,LOW,continuous,LOW,HIGH,HIGH,HIGH,,,TO_RESEARCH

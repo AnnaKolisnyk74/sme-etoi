@@ -1,0 +1,3 @@
+company_id,process_id,process_name_raw,process_evidence_url,process_evidence_note,confidence,review_status
+P07,PR001,"injection moulding","https://varioplast.de/de/serienfertigung/ressourcenschonende-produktion","Firm-specific evidence supports electric injection moulding and related automated production.",B,PROVISIONAL
+P10,PR001,"injection moulding","https://www.oskar-lehmann.de/en/areas-of-expertise.html","Firm-specific evidence supports more than 100 injection-moulding machines in three-shift production.",B,PROVISIONAL

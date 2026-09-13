@@ -85,10 +85,16 @@ sme-etoi/
 │   ├── source_register.csv
 │   └── companies/<candidate_id>_<legal_entity>/evidence.md
 ├── src/
+│   ├── opportunity_engine.py
+│   ├── research_queue.py
 │   └── score_companies.py
 ├── outputs/
+│   ├── opportunities.csv
+│   ├── research_queue.csv
 │   └── scored_demo.csv
 └── tests/
+    ├── test_opportunity_engine.py
+    ├── test_research_queue.py
     └── test_scoring.py
 ```
 
@@ -96,11 +102,36 @@ sme-etoi/
 
 ```bash
 python src/score_companies.py data/synthetic_demo.csv outputs/scored_demo.csv --as-of 2026-09-12
+python src/opportunity_engine.py
+python src/research_queue.py
 python -m unittest discover -s tests -v
 ```
 
 The synthetic demo contains fictional records used only to test the pipeline.
 It must never be reported as empirical evidence.
+
+## Research Queue
+
+`src/research_queue.py` joins `data/company_intelligence.csv` to
+`outputs/opportunities.csv` and writes the next unresolved research tasks to
+`outputs/research_queue.csv`. It uses a first-match rule hierarchy, not an
+aggregate or probabilistic score:
+
+1. verify a dated announced or planned deployment whose commissioning remains
+   unresolved;
+2. define a missing deployment-evidence model;
+3. verify unknown deployment for a HIGH technical opportunity with A/B
+   confidence;
+4. verify unknown deployment for another HIGH/MEDIUM technical opportunity;
+5. defer provisional technical cases behind better-supported research.
+
+`research_priority` controls ordering; `decision_impact` states how strongly a
+resolved fact could alter commercial status or next action. The rule ID and
+plain-language reasons are exported with every task. `UNKNOWN` and
+`NOT_FOUND_AFTER_CHECK` remain uncertainty states: neither creates
+`WHITE_SPACE_POSSIBLE`. A task moves to a different commercial status only
+after direct positive or explicit negative evidence is coded in the company
+fact layer and the opportunity engine is rerun.
 
 ## Research roadmap
 

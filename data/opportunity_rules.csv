@@ -1,0 +1,9 @@
+rule_id,opportunity_type,required_process_signal,required_company_signal,blocking_signal,output_level,reason_template,confidence_cap,rule_status
+R001,energy_management,HIGH_drive_relevance,three_shift_operation,,HIGH,"High drive relevance combined with multi-shift production supports energy-management relevance",B,DRAFT
+R002,energy_management,HIGH_drive_relevance,iso_50001_valid,,HIGH,"High drive relevance plus verified ISO 50001 indicates mature energy-management relevance",A,DRAFT
+R003,industrial_heat,HIGH_process_heat_relevance,public_fossil_heat_signal,,HIGH,"High process-heat relevance and public fossil-heat evidence support an industrial-heat electrification opportunity",B,DRAFT
+R004,heat_recovery,HIGH_cooling_relevance,refrigeration_or_compressor_signal,,HIGH,"Cooling/compression evidence supports recoverable-heat relevance",B,DRAFT
+R005,thermal_storage,HIGH_thermal_inertia_storage,batch_or_refrigeration_signal,,MEDIUM,"Thermal inertia or cold/heat buffering supports flexibility through thermal storage",B,DRAFT
+R006,power_quality,HIGH_power_quality_relevance,rectifier_converter_furnace_signal,,HIGH,"Nonlinear or high-power conversion equipment supports power-quality relevance",C,DRAFT
+R007,battery_storage,,pv_present,public_load_profile_available,RESEARCH_REQUIRED,"PV alone is insufficient for a strong battery-storage recommendation without load and tariff context",C,DRAFT
+R008,flexibility,MEDIUM_schedulability,multi_shift_or_batch_signal,,MEDIUM,"Schedulable process evidence supports a provisional flexibility opportunity",B,DRAFT
