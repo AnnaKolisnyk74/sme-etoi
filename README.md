@@ -79,6 +79,7 @@ sme-etoi/
 ├── data/
 │   ├── company_template.csv
 │   ├── pilot_candidates.csv
+│   ├── research_results.csv
 │   └── synthetic_demo.csv
 ├── evidence/
 │   ├── README.md
@@ -113,8 +114,9 @@ It must never be reported as empirical evidence.
 ## Research Queue
 
 `src/research_queue.py` joins `data/company_intelligence.csv` to
-`outputs/opportunities.csv` and writes the next unresolved research tasks to
-`outputs/research_queue.csv`. It uses a first-match rule hierarchy, not an
+`outputs/opportunities.csv`, annotates tasks with the latest auditable result
+from `data/research_results.csv`, and writes the next unresolved research tasks
+to `outputs/research_queue.csv`. It uses a first-match rule hierarchy, not an
 aggregate or probabilistic score:
 
 1. verify a dated announced or planned deployment whose commissioning remains
@@ -132,6 +134,26 @@ plain-language reasons are exported with every task. `UNKNOWN` and
 `WHITE_SPACE_POSSIBLE`. A task moves to a different commercial status only
 after direct positive or explicit negative evidence is coded in the company
 fact layer and the opportunity engine is rerun.
+
+### Research-result lifecycle
+
+`data/research_results.csv` is an append-only research log. It records the
+defined search scope, checked date, finding, evidence URLs, prior and resulting
+values, reviewer and next review date. The queue selects the latest result for
+the exact `(company_id, opportunity_type, missing_fact)` key and exposes:
+
+- `OPEN` when no research result exists;
+- `IN_PROGRESS` while a defined check is running;
+- `RECHECK_DUE` when research produced only partial evidence or no public
+  deployment evidence;
+- `BLOCKED` when the result conflicts with the current company/opportunity
+  state or an external blocker is recorded;
+- `RESOLVED` only when the coded company fact and result agree.
+
+Research results never overwrite company facts automatically. A reviewer must
+code supported changes in `company_intelligence.csv`, rerun the Opportunity
+Engine and then regenerate the queue. This prevents a search log from silently
+becoming a factual claim.
 
 ## Research roadmap
 

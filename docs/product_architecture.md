@@ -147,6 +147,17 @@ answers *how much resolving that fact can change the current commercial status
 or next action*. A failed public search leaves the value `UNKNOWN` or may be
 recorded as `NOT_FOUND_AFTER_CHECK`; it never creates commercial white space.
 
+Completed checks are appended to `data/research_results.csv`. This log stores
+the exact task key, search scope, finding, source IDs and URLs, prior and
+resulting values, checked date, next review date and reviewer. The queue reads
+the most recent result and assigns a visible lifecycle state: `OPEN`,
+`IN_PROGRESS`, `RECHECK_DUE`, `BLOCKED` or `RESOLVED`.
+
+The results log cannot mutate company intelligence. Positive deployment
+evidence must first be reviewed and coded in the canonical company fact layer;
+the Opportunity Engine is then rerun. Partial evidence and unsuccessful public
+searches remain visible without being converted to negative deployment claims.
+
 ### 7. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.

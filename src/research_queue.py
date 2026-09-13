@@ -25,6 +25,11 @@ QUEUE_FIELDS = [
     "process_name",
     "opportunity_rule_id",
     "task_status",
+    "last_research_status",
+    "last_checked_date",
+    "next_review_date",
+    "last_finding",
+    "research_result_source_ids",
     "engine_version",
 ]
 
@@ -72,6 +77,57 @@ def company_by_id(companies):
             raise ValueError(f"Duplicate company_id in company intelligence: {company_id}")
         indexed[company_id] = company
     return indexed
+
+
+def latest_results_by_task(results):
+    indexed = {}
+    for result in results:
+        key = (
+            normalise(result.get("company_id")),
+            normalise(result.get("opportunity_type")),
+            normalise(result.get("missing_fact")),
+        )
+        if not all(key):
+            continue
+        checked_date = normalise(result.get("checked_date"))
+        current = indexed.get(key)
+        if current is None or checked_date > normalise(current.get("checked_date")):
+            indexed[key] = result
+    return indexed
+
+
+def lifecycle_for(result, current_value):
+    if not result:
+        return {
+            "task_status": "OPEN",
+            "last_research_status": "",
+            "last_checked_date": "",
+            "next_review_date": "",
+            "last_finding": "",
+            "research_result_source_ids": "",
+        }
+
+    research_status = normalise(result.get("research_status")).upper()
+    resulting_value = normalise(result.get("resulting_value"), "UNKNOWN").upper()
+    if research_status == "IN_PROGRESS":
+        task_status = "IN_PROGRESS"
+    elif research_status == "BLOCKED":
+        task_status = "BLOCKED"
+    elif resulting_value in {"UNKNOWN", "NOT_FOUND_AFTER_CHECK", "NOT_MODELLED"}:
+        task_status = "RECHECK_DUE"
+    elif resulting_value == current_value:
+        task_status = "RESOLVED"
+    else:
+        task_status = "BLOCKED"
+
+    return {
+        "task_status": task_status,
+        "last_research_status": research_status,
+        "last_checked_date": normalise(result.get("checked_date")),
+        "next_review_date": normalise(result.get("next_review_date")),
+        "last_finding": normalise(result.get("finding_summary")),
+        "research_result_source_ids": normalise(result.get("source_ids")),
+    }
 
 
 def announced_deployment_signal(company, opportunity_type):
@@ -228,8 +284,9 @@ def preferred_opportunity_row(row):
     )
 
 
-def generate_research_queue(companies, opportunities):
+def generate_research_queue(companies, opportunities, research_results=None):
     companies_by_id = company_by_id(companies)
+    results_by_task = latest_results_by_task(research_results or [])
     candidates_by_key = {}
 
     for row in opportunities:
@@ -253,6 +310,9 @@ def generate_research_queue(companies, opportunities):
         company = companies_by_id[company_id]
         _, current_value = missing_fact_for(row)
         classification = classify_task(row, company, current_value)
+        lifecycle = lifecycle_for(
+            results_by_task.get((company_id, opportunity_type, missing_fact)), current_value
+        )
         candidates.append(
             {
                 "company_id": company_id,
@@ -274,8 +334,8 @@ def generate_research_queue(companies, opportunities):
                 "evidence_urls": normalise(company.get("source_urls")),
                 "process_name": normalise(row.get("process_name")),
                 "opportunity_rule_id": normalise(row.get("rule_id")),
-                "task_status": "OPEN",
-                "engine_version": "0.2.0",
+                **lifecycle,
+                "engine_version": "0.3.0",
             }
         )
 
@@ -299,10 +359,15 @@ def main():
     )
     parser.add_argument("--companies", default="data/company_intelligence.csv")
     parser.add_argument("--opportunities", default="outputs/opportunities.csv")
+    parser.add_argument("--results", default="data/research_results.csv")
     parser.add_argument("--output", default="outputs/research_queue.csv")
     args = parser.parse_args()
 
-    rows = generate_research_queue(read_csv(args.companies), read_csv(args.opportunities))
+    rows = generate_research_queue(
+        read_csv(args.companies),
+        read_csv(args.opportunities),
+        read_csv(args.results) if Path(args.results).exists() else [],
+    )
     write_csv(args.output, rows)
     print(f"Wrote {len(rows)} research tasks to {args.output}")
 
