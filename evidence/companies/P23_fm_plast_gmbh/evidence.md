@@ -14,11 +14,11 @@
   linked-enterprise reconciliation.
 - `S-P23-02` documents electric injection-moulding machines, closed-loop mould
   cooling and use of machine waste heat for production and warehouse heating.
-- The company states ISO 50001 certification, but a current direct certificate
-  was not located; certificate status is `CLAIM_ONLY` while operational energy
-  management and heat recovery are coded `YES`.
+- `S-P23-04` is a direct TÜV NORD ISO 50001 certificate valid through 21 May
+  2027. Certificate status is `VALID`; operational energy management and heat
+  recovery remain coded `YES`.
 
 ## Open checks
 
-- Reconcile the acquired entity and obtain the current direct certificate.
+- Reconcile the acquired entity under the EU linked-enterprise rule.
 - Research operating schedule, load management and storage.

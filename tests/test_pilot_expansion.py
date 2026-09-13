@@ -1,9 +1,13 @@
 import csv
+import sys
 import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from validate_pilot import validate
 
 
 def read_csv(relative_path):
@@ -69,8 +73,42 @@ class PilotExpansionDataTests(unittest.TestCase):
         self.assertEqual(companies["P12"]["emas_status"], "VALID")
         self.assertEqual(companies["P12"]["pv_present"], "UNKNOWN")
         self.assertEqual(companies["P12"]["heat_recovery_deployed"], "UNKNOWN")
-        self.assertEqual(companies["P11"]["iso_50001_status"], "CLAIM_ONLY")
-        self.assertEqual(companies["P23"]["iso_50001_status"], "CLAIM_ONLY")
+        self.assertEqual(companies["P11"]["iso_50001_status"], "VALID")
+        self.assertEqual(companies["P11"]["iso_14001_status"], "VALID")
+        self.assertEqual(companies["P23"]["iso_50001_status"], "VALID")
+        self.assertEqual(companies["P25"]["iso_14001_status"], "EXPIRED")
+
+    def test_second_pass_qa_finds_no_cross_file_errors(self):
+        self.assertEqual(validate(ROOT), [])
+
+    def test_certificate_register_has_one_row_per_candidate_and_standard(self):
+        certificates = read_csv("evidence/certificate_register.csv")
+        keys = [(row["candidate_id"], row["standard"]) for row in certificates]
+        self.assertEqual(len(keys), len(set(keys)))
+
+    def test_uncertain_process_mappings_are_strengthened_without_deployment_inference(self):
+        companies = {
+            row["company_id"]: row for row in read_csv("data/company_intelligence.csv")
+        }
+        mappings = {
+            row["company_id"]: row for row in read_csv("data/company_process_map.csv")
+            if row["company_id"] in {"P20", "P27"}
+        }
+        for company_id in ("P20", "P27"):
+            self.assertEqual(mappings[company_id]["confidence"], "B")
+            self.assertEqual(mappings[company_id]["review_status"], "QA_REVIEWED")
+            self.assertEqual(
+                companies[company_id]["industrial_heat_electrification_deployed"],
+                "UNKNOWN",
+            )
+
+    def test_qa_matrix_keeps_independent_human_review_explicit(self):
+        qa_rows = read_csv("evidence/qa_review.csv")
+        self.assertEqual(len(qa_rows), 20)
+        self.assertEqual(
+            {row["independent_human_review_status"] for row in qa_rows},
+            {"PENDING"},
+        )
 
     def test_every_pilot_company_has_a_generated_opportunity(self):
         companies = {row["company_id"] for row in read_csv("data/company_intelligence.csv")}

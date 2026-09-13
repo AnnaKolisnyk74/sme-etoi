@@ -13,10 +13,11 @@
   annual solar generation.
 - `S-P25-03` documents injection moulding. PV is not treated as evidence of
   battery storage, and no load-management deployment is inferred.
-- ISO 14001 remains `CLAIM_ONLY` because no current direct certificate was
-  located.
+- `S-P25-04` is a direct ISO 14001 certificate, but it expired on 26 February
+  2024. The status is therefore `EXPIRED`, not `CLAIM_ONLY` or `VALID`.
 
 ## Open checks
 
-- Verify the financial threshold and obtain a direct ISO 14001 certificate.
+- Verify the financial threshold and check for a successor ISO 14001
+  certificate.
 - Research load profile, cooling and storage.

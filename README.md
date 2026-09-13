@@ -168,6 +168,17 @@ becoming a factual claim.
 6. Analyse process-stratum differences and evidence coverage in Python.
 7. Build a Power BI dashboard and a 10–15 page research report.
 
+Run the deterministic pilot QA before reviewing or merging pilot-data changes:
+
+```bash
+python src/validate_pilot.py
+```
+
+The validator checks sample balance, legal-entity consistency, duplicate
+certificate rows, certificate validity logic, process/source coverage and the
+20-row second-pass QA matrix. It deliberately does not label its own check as
+an independent human double-code.
+
 ## Research integrity
 
 No internal employer, CRM, customer or non-public data may enter this project.
@@ -176,13 +187,14 @@ action. No company-level score is published until the evidence threshold is met.
 
 ## Project status
 
-**Current phase:** complete provisional 20-company pilot. Company Intelligence
+**Current phase:** QA-checked provisional 20-company pilot. Company Intelligence
 and process mappings contain five selected cases in each of the four process
 strata. The candidate register retains three exclusions and four unresolved
 linked-enterprise cases. Inclusion is not a final eligibility certification:
 each record keeps its open financial or group checks, evidence confidence and
-review status. All pilot records remain subject to independent user review and
-double-coding before SME-ETOI v1.0 is frozen.
+review status. A deterministic second-pass QA is recorded for all 20 cases;
+independent human double-coding remains explicit and must occur before
+SME-ETOI v1.0 is frozen.
 
 ## Licence
 

@@ -12,11 +12,14 @@
   managing shareholder.
 - `S-P20-02` and `S-P20-03` document the architectural art-glass business and
   specialised glass processing. Public profiles report about 70 employees.
-- The kiln-based batch-process mapping is provisional at confidence C. It does
-  not establish energy management, storage or flexibility deployment.
+- `S-P20-04` directly documents manual hot forming with firing materials at
+  approximately 800 C. The kiln-based batch-process mapping is therefore
+  strengthened to confidence B. It does not establish energy management,
+  storage or flexibility deployment.
 
 ## Open checks
 
 - Verify current financial thresholds and independence from similarly named
   Derix workshops.
-- Obtain direct evidence for firing equipment, load profile and energy systems.
+- Research the load profile and energy systems; firing-process relevance is
+  now directly supported.

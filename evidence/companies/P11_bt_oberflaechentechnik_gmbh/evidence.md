@@ -13,11 +13,12 @@
   is provisional.
 - `S-P11-02` documents electroplating and digital process-data work. It does
   not prove load management, demand response or a power-quality solution.
-- The company states ISO 50001 and ISO 14001 certification, but no current
-  direct certificates were located. Both remain `CLAIM_ONLY`.
+- `S-P11-03` is a direct LRQA certificate for ISO 50001 and ISO 14001 at the
+  Hüttenberg and Wetzlar sites, valid through 1 March 2029. Both statuses are
+  therefore `VALID` rather than `CLAIM_ONLY`.
 
 ## Open checks
 
 - Verify consolidated turnover or balance-sheet total.
-- Obtain current direct management-system certificates and research deployed
-  rectifier, power-quality and flexibility solutions.
+- Research deployed rectifier, power-quality and flexibility solutions beyond
+  the certified management systems.
