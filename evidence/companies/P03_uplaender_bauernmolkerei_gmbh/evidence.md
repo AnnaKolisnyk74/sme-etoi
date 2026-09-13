@@ -12,6 +12,10 @@
 - `S-P03-02` reports about 45 employees and turnover within the EUR 10-50
   million band.
 - Company material describes regional farmer participation.
+- `S-P03-03` documents 72-74 °C pasteurisation, seven-day equipment
+  operation, two filling shifts, cleaning and temperature-controlled handling.
+- `S-P03-04` documents the approximately EUR 20 million production expansion
+  and reusable-glass filling line.
 
 ## Certificate review
 
@@ -26,4 +30,5 @@ certification. See `certificate_register.csv` for the auditable status rows.
 
 - Verify the latest financial threshold from an official filing.
 - Confirm the complete shareholder structure.
-
+- Verify site refrigeration, heat supply and energy-management deployments;
+  none is inferred from the dairy process alone.
