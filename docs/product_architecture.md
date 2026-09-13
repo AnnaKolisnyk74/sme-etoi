@@ -231,7 +231,7 @@ without manually researching every company from scratch.
 
 ### Phase A — research foundation
 
-- complete the 20-company pilot;
+- independently review and double-code the complete provisional 20-company pilot;
 - validate inclusion / exclusion logic;
 - complete evidence dossiers;
 - double-code a subsample;

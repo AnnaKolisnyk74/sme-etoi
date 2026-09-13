@@ -7,3 +7,4 @@ R005,thermal_storage,HIGH_thermal_inertia_storage,batch_or_refrigeration_signal,
 R006,power_quality,HIGH_power_quality_relevance,rectifier_converter_furnace_signal,,HIGH,"Nonlinear or high-power conversion equipment supports power-quality relevance",C,DRAFT
 R007,battery_storage,,pv_present,public_load_profile_available,RESEARCH_REQUIRED,"PV alone is insufficient for a strong battery-storage recommendation without load and tariff context",C,DRAFT
 R008,flexibility,MEDIUM_schedulability,multi_shift_or_batch_signal,,MEDIUM,"Schedulable process evidence supports a provisional flexibility opportunity",B,DRAFT
+R009,heat_recovery,HIGH_cooling_relevance,heat_recovery_deployed,,HIGH,"Publicly documented heat recovery remains relevant for optimisation, expansion, replacement and integration rather than greenfield white-space",B,DRAFT

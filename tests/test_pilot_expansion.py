@@ -12,12 +12,29 @@ def read_csv(relative_path):
 
 
 class PilotExpansionDataTests(unittest.TestCase):
-    def test_second_expansion_batch_contains_ten_canonical_companies(self):
+    def test_complete_pilot_contains_twenty_canonical_companies(self):
         companies = read_csv("data/company_intelligence.csv")
         by_id = {row["company_id"]: row for row in companies}
+        self.assertEqual(len(by_id), 20)
+
+        candidates = read_csv("data/pilot_candidates.csv")
+        included = {
+            row["candidate_id"] for row in candidates if row["eligibility_status"] == "INCLUDE"
+        }
+        self.assertEqual(set(by_id), included)
+
+        strata = {}
+        for row in candidates:
+            if row["candidate_id"] in included:
+                strata[row["process_stratum"]] = strata.get(row["process_stratum"], 0) + 1
         self.assertEqual(
-            set(by_id),
-            {"P03", "P04", "P05", "P07", "P10", "P12", "P13", "P16", "P18", "P19"},
+            strata,
+            {
+                "food_beverage": 5,
+                "plastics_processing": 5,
+                "metal_surface_heat": 5,
+                "glass_ceramics": 5,
+            },
         )
         self.assertEqual(
             by_id["P04"]["legal_entity"],
@@ -29,6 +46,11 @@ class PilotExpansionDataTests(unittest.TestCase):
             by_id["P19"]["legal_entity"],
             "Glasfabrik Lamberts GmbH & Co. KG",
         )
+        self.assertEqual(
+            by_id["P22"]["legal_entity"],
+            "RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG",
+        )
+        self.assertEqual(by_id["P24"]["legal_entity"], "H&K Müller GmbH & Co. KG")
 
     def test_current_direct_certificates_drive_only_supported_facts(self):
         companies = {
@@ -37,7 +59,7 @@ class PilotExpansionDataTests(unittest.TestCase):
         certificates = read_csv("evidence/certificate_register.csv")
         by_key = {(row["candidate_id"], row["standard"]): row for row in certificates}
 
-        for company_id in ("P16", "P18", "P19"):
+        for company_id in ("P16", "P18", "P19", "P24"):
             self.assertEqual(companies[company_id]["iso_50001_status"], "VALID")
             self.assertEqual(companies[company_id]["energy_management_deployed"], "YES")
             certificate = by_key[(company_id, "ISO 50001")]
@@ -47,6 +69,44 @@ class PilotExpansionDataTests(unittest.TestCase):
         self.assertEqual(companies["P12"]["emas_status"], "VALID")
         self.assertEqual(companies["P12"]["pv_present"], "UNKNOWN")
         self.assertEqual(companies["P12"]["heat_recovery_deployed"], "UNKNOWN")
+        self.assertEqual(companies["P11"]["iso_50001_status"], "CLAIM_ONLY")
+        self.assertEqual(companies["P23"]["iso_50001_status"], "CLAIM_ONLY")
+
+    def test_every_pilot_company_has_a_generated_opportunity(self):
+        companies = {row["company_id"] for row in read_csv("data/company_intelligence.csv")}
+        opportunity_companies = {row["company_id"] for row in read_csv("outputs/opportunities.csv")}
+        self.assertEqual(opportunity_companies, companies)
+
+        fm_plast = [
+            row
+            for row in read_csv("outputs/opportunities.csv")
+            if row["company_id"] == "P23" and row["opportunity_type"] == "heat_recovery"
+        ]
+        self.assertEqual(len(fm_plast), 1)
+        self.assertEqual(fm_plast[0]["commercial_status"], "ALREADY_DEPLOYED")
+        self.assertEqual(fm_plast[0]["priority"], "LOW")
+
+    def test_every_selected_company_has_auditable_evidence_assets(self):
+        company_ids = {row["company_id"] for row in read_csv("data/company_intelligence.csv")}
+
+        source_ids = {
+            row["candidate_id"] for row in read_csv("evidence/source_register.csv")
+        }
+        self.assertTrue(company_ids.issubset(source_ids))
+
+        certificate_rows = read_csv("evidence/certificate_register.csv")
+        certificate_keys = {
+            (row["candidate_id"], row["standard"]) for row in certificate_rows
+        }
+        for company_id in company_ids:
+            for standard in ("ISO 50001", "ISO 14001", "EMAS"):
+                self.assertIn((company_id, standard), certificate_keys)
+
+        dossier_ids = {
+            path.parent.name.split("_", 1)[0]
+            for path in (ROOT / "evidence" / "companies").glob("*/evidence.md")
+        }
+        self.assertTrue(company_ids.issubset(dossier_ids))
 
     def test_new_process_strata_are_represented(self):
         processes = {row["process_id"]: row for row in read_csv("data/process_library.csv")}
