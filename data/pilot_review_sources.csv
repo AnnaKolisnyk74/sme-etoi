@@ -158,3 +158,43 @@ P68,TechnoKer GmbH,S-P68-01,official_company,TechnoKer,Imprint,current,,https://
 P68,TechnoKer GmbH,S-P68-02,official_company_process,TechnoKer,Process and eligibility evidence,current,,https://technoker.de/
 P70,ceram GmbH,S-P70-01,official_company,CERAM Ingenieurkeramik,Imprint,current,,https://www.ceram-gmbh.de/impressum/
 P70,ceram GmbH,S-P70-02,official_company_process,CERAM Ingenieurkeramik,Production and service scope,current,,https://www.ceram-gmbh.de/leistungsspektrum/
+P71,Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG,S-P71-01,official_company,Flötzinger Brauerei,Legal entity and company information,current,,https://www.floetzinger.de/
+P71,Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG,S-P71-02,official_company_process,Flötzinger Brauerei,Brewery and product information,current,,https://www.floetzinger.de/
+P72,Hofbräuhaus Traunstein Josef Sailer GmbH & Co. KG,S-P72-01,official_company,Hofbräuhaus Traunstein,Legal entity and company information,current,,https://www.hb-ts.de/
+P72,Hofbräuhaus Traunstein Josef Sailer GmbH & Co. KG,S-P72-02,official_company_process,Hofbräuhaus Traunstein,Brewery and company information,current,,https://www.hb-ts.de/
+P73,Brauerei-Gasthof Kundmüller GmbH,S-P73-01,official_company,Brauerei-Gasthof Kundmüller,Legal entity and company information,current,,https://www.brauerei-kundmueller.de/
+P73,Brauerei-Gasthof Kundmüller GmbH,S-P73-02,official_company_process,Brauerei-Gasthof Kundmüller,Brewery information,current,,https://www.brauerei-kundmueller.de/
+P74,Brauerei Gebr. Maisel GmbH & Co. KG,S-P74-01,official_company,Brauerei Gebr. Maisel,Legal entity and company information,current,,https://www.maisel.com/
+P74,Brauerei Gebr. Maisel GmbH & Co. KG,S-P74-02,official_company_process,Brauerei Gebr. Maisel,Brewery and brewing-tradition information,current,,https://www.maisel.com/
+P75,Privatbrauerei J.B. Falter Regen KG,S-P75-01,official_company,Privatbrauerei J.B. Falter,Legal entity and company information,current,,https://www.jb-falter.de/service/impressum
+P75,Privatbrauerei J.B. Falter Regen KG,S-P75-02,official_company_process,Privatbrauerei J.B. Falter,Brewery and product information,current,,https://www.jb-falter.de/
+P76,Si-Tech Singer GmbH,S-P76-01,official_company,Si-Tech Singer,Legal entity and company information,current,,https://si-tech-gmbh.com/impressum/
+P76,Si-Tech Singer GmbH,S-P76-02,official_company_process,Si-Tech Singer,Injection-moulding service scope,current,,https://si-tech-gmbh.com/
+P77,metak GmbH & Co. KG,S-P77-01,official_company,metak,Legal entity and company information,current,,https://www.metak.de/impressum
+P77,metak GmbH & Co. KG,S-P77-02,official_company_process,metak,Injection-moulding and production scope,current,,https://www.metak.de/
+P78,Erlemann & Huckenbeck GmbH & Co. KG,S-P78-01,official_company,Erlemann & Huckenbeck,Legal entity and company information,current,,https://www.erlemann-huckenbeck.de/
+P78,Erlemann & Huckenbeck GmbH & Co. KG,S-P78-02,official_company_process,Erlemann & Huckenbeck,Moulded-parts production scope,current,,https://www.erlemann-huckenbeck.de/
+P79,Langer GmbH & Co. KG,S-P79-01,official_company,Langer Group,Legal entity and company information,current,,https://www.langer-group.de/Impressum-Langer-Group
+P79,Langer GmbH & Co. KG,S-P79-02,official_company_process,Langer Group,Injection-moulding production scope,current,,https://www.langer-group.de/
+P80,MKT Metall- und Kunststofftechnik GmbH,S-P80-01,official_company,MKT Metall- und Kunststofftechnik,Legal entity and company information,current,,https://www.mkt-gmbh.org/impressum/
+P80,MKT Metall- und Kunststofftechnik GmbH,S-P80-02,official_company_process,MKT Metall- und Kunststofftechnik,Injection-moulding production scope,current,,https://www.mkt-gmbh.org/
+P81,Eloxalwerk Ludwigsburg Helmut Zerrer GmbH,S-P81-01,official_company,Eloxalwerk Ludwigsburg,Legal entity and company information,current,,https://ceranod.de/impressum/
+P81,Eloxalwerk Ludwigsburg Helmut Zerrer GmbH,S-P81-02,official_company_process,Eloxalwerk Ludwigsburg,Anodising and surface-finishing scope,current,,https://ceranod.de/
+P82,Galvanotec-Hagen GmbH & Co. KG,S-P82-01,official_company,Galvanotec-Hagen,Legal entity and company information,current,,https://www.galvanotec-hagen.de/
+P82,Galvanotec-Hagen GmbH & Co. KG,S-P82-02,official_company_process,Galvanotec-Hagen,Electroplating and production capabilities,current,,https://www.galvanotec-hagen.de/
+P83,Gerbracht & Mönch Galvanotechnik GmbH,S-P83-01,official_company,Gerbracht & Mönch Galvanotechnik,Legal entity and company information,current,,https://www.galvanotec.de/impressum/
+P83,Gerbracht & Mönch Galvanotechnik GmbH,S-P83-02,official_company_process,Gerbracht & Mönch Galvanotechnik,Electroplating and anodising scope,current,,https://www.galvanotec.de/
+P84,Sauer Oberflächentechnik GmbH,S-P84-01,official_company,Sauer Oberflächentechnik,Legal entity and company information,current,,https://sa-oberflaechen.de/impressum/
+P84,Sauer Oberflächentechnik GmbH,S-P84-02,official_company_process,Sauer Oberflächentechnik,Powder-coating production,current,,https://sa-oberflaechen.de/unsere-produktion/
+P85,Die Schweizer Galvanotechnic GmbH & Co. KG,S-P85-01,official_company,Schweizer Galvanotechnic,Legal entity and company information,current,,https://www.galvanotechnic.de/
+P85,Die Schweizer Galvanotechnic GmbH & Co. KG,S-P85-02,official_company_process,Schweizer Galvanotechnic,Galvanic surface-finishing scope,current,,https://www.galvanotechnic.de/
+P86,GIESS- TECHNISCHE- SONDERKERAMIK GmbH & Co. KG,S-P86-01,official_company,GTS Keramik,Legal entity and company information,current,,https://gts-keramik.de/
+P86,GIESS- TECHNISCHE- SONDERKERAMIK GmbH & Co. KG,S-P86-02,official_company_process,GTS Keramik,Special-ceramics product and production scope,current,,https://gts-keramik.de/
+P87,Ceramany GmbH,S-P87-01,official_company,Ceramany,Legal entity and company information,current,,https://ceramany.com/impressum/
+P87,Ceramany GmbH,S-P87-02,official_company_process,Ceramany,High-performance ceramic production scope,current,,https://ceramany.com/kontakt/
+P88,Ceramaret Meissen GmbH,S-P88-01,official_company,Ceramaret,Legal entity and company information,current,,https://ceramaret.com/de/legal/impressum
+P88,Ceramaret Meissen GmbH,S-P88-02,official_company_process,Ceramaret,German production site and ceramic capabilities,current,,https://ceramaret.com/
+P89,TECHNISCHE KERAMIK FRÖMGEN GMBH,S-P89-01,official_company,Technische Keramik Frömgen,Legal entity and company information,current,,https://www.tkf-froemgen.de/
+P89,TECHNISCHE KERAMIK FRÖMGEN GMBH,S-P89-02,official_company_process,Technische Keramik Frömgen,Technical-ceramics materials and services,current,,https://www.tkf-froemgen.de/
+P90,InnoKeramik & Technik GmbH,S-P90-01,official_company,InnoKeramik & Technik,Legal entity and company information,current,,https://innokeramik.de/impressum/
+P90,InnoKeramik & Technik GmbH,S-P90-02,official_company_process,InnoKeramik & Technik,Technical-ceramics product scope,current,,https://innokeramik.de/

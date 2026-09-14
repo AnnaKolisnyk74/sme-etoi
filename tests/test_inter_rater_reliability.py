@@ -35,7 +35,7 @@ class InterRaterReliabilityTests(unittest.TestCase):
             }
 
     def test_pending_template_covers_exactly_current_sample(self):
-        self.assertEqual(len(self.reviews), 60)
+        self.assertEqual(len(self.reviews), 80)
         self.assertEqual(
             {row["company_id"] for row in self.reviews}, set(self.canonical)
         )

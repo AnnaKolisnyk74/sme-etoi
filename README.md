@@ -39,7 +39,7 @@ between company-level process evidence and these technology questions.
 
 - **Initial pilot:** 20 selected companies, five per process stratum, plus a
   retained audit trail of excluded and unresolved candidates.
-- **Current expansion:** 60 provisional companies, fifteen per process stratum.
+- **Current expansion:** 80 provisional companies, twenty per process stratum.
 - **Final study:** 100 eligible companies in total, 25 per stratum. Following
   the project-owner decision, independent source review is performed after all
   100 provisional records have been assembled.
@@ -210,8 +210,8 @@ action. No company-level score is published until the evidence threshold is met.
 
 ## Project status
 
-**Current phase:** QA-checked provisional 60-company sample. Company
-Intelligence and process mappings contain fifteen selected cases in each of the
+**Current phase:** QA-checked provisional 80-company sample. Company
+Intelligence and process mappings contain twenty selected cases in each of the
 four process strata. The candidate register retains exclusions and unresolved
 linked-enterprise cases. Inclusion is not a final eligibility certification:
 each record keeps its open financial or group checks, evidence confidence and
