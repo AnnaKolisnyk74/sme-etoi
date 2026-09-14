@@ -118,3 +118,43 @@ P46,Porzellanfabrik Hermsdorf GmbH,S-P46-01,company_imprint,Porzellanfabrik Herm
 P46,Porzellanfabrik Hermsdorf GmbH,S-P46-02,company_process,Porzellanfabrik Hermsdorf,Technical ceramics,current,,https://www.pofahermsdorf.de/
 P47,hofmann CERAMiC GmbH,S-P47-01,company_imprint,hofmann CERAMiC,Imprint,current,,https://www.hofmann-ceramic.de/en/imprint/
 P47,hofmann CERAMiC GmbH,S-P47-02,company_process,hofmann CERAMiC,Technical ceramic products,current,,https://www.hofmann-ceramic.de/
+P50,Brauerei Aying Franz Inselkammer KG,S-P50-01,official_company,Ayinger Privatbrauerei,Official imprint,current,,https://www.brauerei-ayinger.de/impressum/
+P50,Brauerei Aying Franz Inselkammer KG,S-P50-02,official_company_process,Ayinger Privatbrauerei,Process and eligibility evidence,current,,https://www.brauerei-ayinger.de/
+P51,Distelhäuser Brauerei Ernst Bauer GmbH & Co. KG,S-P51-01,official_company,Distelhäuser Brauerei,Imprint,current,,https://www.distelhaeuser.de/impressumdatenschutz/
+P51,Distelhäuser Brauerei Ernst Bauer GmbH & Co. KG,S-P51-02,official_company_process,Distelhäuser Brauerei,Process and eligibility evidence,current,,https://www.distelhaeuser.de/unsere-brauerei/regionalitaet/
+P52,Glauner GmbH,S-P52-01,official_company,Alpirsbacher Klosterbräu,Imprint,current,,https://alpirsbacher.de/rechtliches/impressum/
+P52,Glauner GmbH,S-P52-02,official_company_process,Alpirsbacher Klosterbräu,Process and eligibility evidence,current,,https://alpirsbacher.de/ueber-uns/unsere-werte/
+P53,Brauerei Rittmayer Hallerndorf GmbH & Co. KG,S-P53-01,official_company,Brauerei Rittmayer,Imprint,current,,https://rittmayer.de/impressum
+P53,Brauerei Rittmayer Hallerndorf GmbH & Co. KG,S-P53-02,official_company_process,Brauerei Rittmayer,Process and eligibility evidence,current,,https://rittmayer.de/nachhaltigkeit
+P54,Privatbrauerei Waldhaus Joh. Schmid GmbH,S-P54-01,official_company,Privatbrauerei Waldhaus,Imprint,current,,https://www.waldhaus-bier.de/impressum/
+P54,Privatbrauerei Waldhaus Joh. Schmid GmbH,S-P54-02,official_company_process,Privatbrauerei Waldhaus,Process and eligibility evidence,current,,https://www.waldhaus-bier.de/privatbrauerei/
+P55,Merschbrock Kunststoff Spritzguss GmbH,S-P55-01,official_company,Merschbrock,Company contact,current,,https://www.merschbrock.de/kontakt/
+P55,Merschbrock Kunststoff Spritzguss GmbH,S-P55-02,official_company_process,Merschbrock,Process and eligibility evidence,current,,https://www.merschbrock.de/leistungen/
+P56,Spritzguß Müller GmbH,S-P56-01,official_company,Spritzguss Müller,Imprint,current,,https://www.spritzguss-mueller.de/en/impressum/
+P56,Spritzguß Müller GmbH,S-P56-02,official_company_process,Spritzguss Müller,Process and eligibility evidence,current,,https://www.spritzguss-mueller.de/
+P57,Stocker Kunststoff GmbH,S-P57-01,official_company,Stocker Kunststoff,Imprint,current,,https://www.stocker-kunststoff.de/impressum/
+P57,Stocker Kunststoff GmbH,S-P57-02,official_company_process,Stocker Kunststoff,Process and eligibility evidence,current,,https://www.stocker-kunststoff.de/
+P58,Dorn Spritzguss GmbH,S-P58-01,official_company,Dorn Spritzguss,Imprint,current,,https://www.dorn-spritzguss.de/impressum/
+P58,Dorn Spritzguss GmbH,S-P58-02,official_company_process,Dorn Spritzguss,Process and eligibility evidence,current,,https://www.dorn-spritzguss.de/leistungen/spritzguss/
+P59,AK Kunststoffspritzguss GmbH & Co. KG,S-P59-01,official_company,AK Kunststoffspritzguss,Imprint,current,,https://ak-kunststoffspritzguss.com/impressum/
+P59,AK Kunststoffspritzguss GmbH & Co. KG,S-P59-02,official_company_process,AK Kunststoffspritzguss,Process and eligibility evidence,current,,https://ak-kunststoffspritzguss.com/
+P60,HARTCHROM Beck GmbH,S-P60-01,official_company,Hartchrom Beck,Company website,current,,https://www.hartchrom-beck.de/
+P60,HARTCHROM Beck GmbH,S-P60-02,official_company_process,Hartchrom Beck,Process and eligibility evidence,current,,https://www.hartchrom-beck.de/einsatzmoeglichkeiten/
+P61,Galvanik-Horstmann GmbH,S-P61-01,official_company,Galvanik-Horstmann,Imprint,current,,https://www.galvanik-horstmann.de/impressum/
+P61,Galvanik-Horstmann GmbH,S-P61-02,official_company_process,Galvanik-Horstmann,Process and eligibility evidence,current,,https://www.galvanik-horstmann.de/galvanotechnik/
+P62,Galvanotechnik Kessel GmbH & Co. KG,S-P62-01,official_company,Galvanotechnik Kessel,Imprint,current,,https://www.galvanotechnik-kessel.de/impressum/
+P62,Galvanotechnik Kessel GmbH & Co. KG,S-P62-02,trade_association,Zentralverband Oberflächentechnik,Process and eligibility evidence,current,,https://www.zvo.org/verband/mitgliedsunternehmen
+P63,OTK Oberflächentechnik Kaltenkirchen GmbH,S-P63-01,official_company,OTK,Imprint and company site,current,,https://otk-galvanik.de/
+P63,OTK Oberflächentechnik Kaltenkirchen GmbH,S-P63-02,trade_association,Zentralverband Oberflächentechnik,Process and eligibility evidence,current,,https://www.zvo.org/verband/mitgliedsunternehmen
+P64,Wieland Metalloberflächentechnik GmbH,S-P64-01,official_company,Wieland Metalloberflächentechnik,Imprint and operator notice,current,,https://www.wieland-oberflaeche.de/impressum
+P64,Wieland Metalloberflächentechnik GmbH,S-P64-02,official_company_process,Wieland Metalloberflächentechnik,Process and eligibility evidence,current,,https://www.wieland-oberflaeche.de/
+P65,Porzellanmanufaktur FÜRSTENBERG GmbH,S-P65-01,official_company,FÜRSTENBERG,Company website and legal footer,current,,https://www.fuerstenberg-porzellan.com/
+P65,Porzellanmanufaktur FÜRSTENBERG GmbH,S-P65-02,public_company_summary,Wikipedia,Process and eligibility evidence,current,,https://de.wikipedia.org/wiki/Porzellanmanufaktur_F%C3%BCrstenberg
+P66,KPM Königliche Porzellan-Manufaktur Berlin GmbH,S-P66-01,official_company,KPM Berlin,Company website and imprint,current,,https://www.kpm-berlin.com/
+P66,KPM Königliche Porzellan-Manufaktur Berlin GmbH,S-P66-02,official_company_process,KPM Berlin,Process and eligibility evidence,current,,https://www.stiftung-kpm.de/
+P67,DOCERAM GmbH,S-P67-01,official_company,MOESCHTER Group,DOCERAM overview,current,,https://www.moeschter-group.com/de/doceram/uebersicht/
+P67,DOCERAM GmbH,S-P67-02,official_company_process,MOESCHTER Group,Process and eligibility evidence,current,,https://www.moeschter-group.com/
+P68,TechnoKer GmbH,S-P68-01,official_company,TechnoKer,Imprint,current,,https://technoker.de/impressum
+P68,TechnoKer GmbH,S-P68-02,official_company_process,TechnoKer,Process and eligibility evidence,current,,https://technoker.de/
+P70,ceram GmbH,S-P70-01,official_company,CERAM Ingenieurkeramik,Imprint,current,,https://www.ceram-gmbh.de/impressum/
+P70,ceram GmbH,S-P70-02,official_company_process,CERAM Ingenieurkeramik,Production and service scope,current,,https://www.ceram-gmbh.de/leistungsspektrum/
