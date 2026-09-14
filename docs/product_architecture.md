@@ -231,8 +231,9 @@ without manually researching every company from scratch.
 
 ### Phase A — research foundation
 
-- run the deterministic cross-file QA for the complete provisional 20-company pilot;
-- independently human-review and double-code the QA-checked pilot before the v1.0 freeze;
+- run deterministic cross-file QA at every balanced expansion stage;
+- expand the provisional sample from 20 to 100 companies, 25 per stratum;
+- independently human-review and double-code all 100 records before the v1.0 freeze;
 - calculate field-level agreement and Cohen's kappa, then adjudicate every disagreement;
 - validate inclusion / exclusion logic;
 - complete evidence dossiers;
@@ -249,7 +250,7 @@ without manually researching every company from scratch.
 
 ### Phase C — scalable dataset
 
-- expand to 100 companies;
+- complete and freeze the reviewed 100-company v1.0 dataset;
 - measure missingness and evidence quality;
 - automate validation and score generation;
 - expose Power BI views and CSV exports.

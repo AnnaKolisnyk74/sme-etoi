@@ -2,7 +2,8 @@
 
 ## Purpose
 
-The second reviewer checks the 20-company pilot independently. The goal is to
+The second reviewer checks the complete 100-company sample independently after
+all provisional records have been assembled. The goal is to
 measure whether another person reaches the same categorical decisions from the
 registered public evidence. This is a research-validity check, not a request to
 make the existing coding look consistent.
@@ -33,7 +34,7 @@ changes only after the two coders document why one interpretation is better.
 | `review_status` | `PENDING`, `COMPLETE` |
 | `entity_check` | `CONFIRMED`, `CORRECTION_REQUIRED`, `UNKNOWN` |
 | `sme_status` | `eligible`, `probable`, `ineligible`, `UNKNOWN` |
-| `group_check` | `independent`, `probable_independent`, `small_group`, `partner_or_linked_sme`, `UNKNOWN` |
+| `group_check` | the canonical group categories, including `independent`, `probable_independent`, `family_owned`, `small_group`, `partner_or_linked_sme`, `linked_enterprise_check`, `foundation_owned`, `unknown`, or reviewer value `UNKNOWN` |
 | `process_ids` | one or more IDs from `data/process_library.csv`, separated by `|` |
 | ISO/EMAS status | `VALID`, `EXPIRED`, `DOCUMENT_FOUND_VALIDITY_UNCLEAR`, `CLAIM_ONLY`, `NOT_FOUND_AFTER_CHECK`, `UNKNOWN` |
 | deployment fields | `YES`, `UNKNOWN` |

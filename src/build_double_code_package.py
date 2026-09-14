@@ -1,4 +1,4 @@
-"""Build a neutral source manifest for independent pilot double-coding."""
+"""Build a neutral source manifest for independent sample double-coding."""
 
 from __future__ import annotations
 
@@ -63,7 +63,7 @@ def write_manifest(root: Path = ROOT) -> list[dict[str, str]]:
 def main() -> int:
     rows = write_manifest()
     companies = len({row["company_id"] for row in rows})
-    print(f"Wrote {len(rows)} neutral source rows for {companies} pilot companies.")
+    print(f"Wrote {len(rows)} neutral source rows for {companies} sample companies.")
     return 0
 
 

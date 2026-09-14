@@ -48,19 +48,23 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append(f"duplicate company ids: {company_duplicates}")
     company_by_id = {row["company_id"]: row for row in companies}
     company_ids = set(company_by_id)
-    if len(company_ids) != 20:
-        errors.append(f"expected 20 canonical companies, found {len(company_ids)}")
+    if len(company_ids) < 20 or len(company_ids) > 100 or len(company_ids) % 4:
+        errors.append(
+            "canonical sample size must be a balanced four-stratum expansion "
+            f"between 20 and 100 companies, found {len(company_ids)}"
+        )
 
     included_rows = [row for row in candidates if row["eligibility_status"] == "INCLUDE"]
     included_ids = {row["candidate_id"] for row in included_rows}
     if included_ids != company_ids:
         errors.append("INCLUDE candidates and canonical company ids differ")
     strata = Counter(row["process_stratum"] for row in included_rows)
+    expected_per_stratum = len(company_ids) // 4
     expected_strata = {
-        "food_beverage": 5,
-        "plastics_processing": 5,
-        "metal_surface_heat": 5,
-        "glass_ceramics": 5,
+        "food_beverage": expected_per_stratum,
+        "plastics_processing": expected_per_stratum,
+        "metal_surface_heat": expected_per_stratum,
+        "glass_ceramics": expected_per_stratum,
     }
     if dict(strata) != expected_strata:
         errors.append(f"unbalanced selected sample: {dict(strata)}")
@@ -166,8 +170,15 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("Pilot QA passed: 20 companies, balanced strata, unique evidence and certificate checks.")
-    print("Independent human review remains explicitly PENDING for all 20 records.")
+    companies = read_csv(ROOT, "data/company_intelligence.csv")
+    print(
+        f"Sample QA passed: {len(companies)} companies, balanced strata, "
+        "unique evidence and certificate checks."
+    )
+    print(
+        "Independent human review remains explicitly PENDING for all "
+        f"{len(companies)} records."
+    )
     return 0
 
 

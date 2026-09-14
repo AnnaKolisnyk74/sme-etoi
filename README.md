@@ -35,11 +35,14 @@ semiconductors and drives, transformers, voltage regulation, power quality and
 distribution-grid planning. SME-ETOI creates a transparent public-data layer
 between company-level process evidence and these technology questions.
 
-## Pilot design
+## Study design
 
-- **Pilot:** 20 selected companies, five per process stratum, plus a retained
-  audit trail of excluded and unresolved candidates.
-- **Final study:** 100 eligible companies in total, 25 per stratum (the 20 validated pilot records plus 80 additional records).
+- **Initial pilot:** 20 selected companies, five per process stratum, plus a
+  retained audit trail of excluded and unresolved candidates.
+- **Current expansion:** 40 provisional companies, ten per process stratum.
+- **Final study:** 100 eligible companies in total, 25 per stratum. Following
+  the project-owner decision, independent source review is performed after all
+  100 provisional records have been assembled.
 - **Unit of analysis:** one German operating company/legal entity.
 - **Strata:** food and beverage; plastics processing; metal surface treatment
   and heat treatment; glass and technical ceramics.
@@ -158,28 +161,28 @@ becoming a factual claim.
 
 ## Research roadmap
 
-1. Independently review the provisional legal-entity, group and SME decisions
-   for the complete 20-company pilot.
+1. Expand the balanced provisional sample to 100 companies, 25 per stratum.
 2. Keep excluded and unresolved candidates visible without silently changing
    the sampling rule.
-3. Independently double-code the 20-company pilot.
-4. Test inter-rater reliability and weight sensitivity.
-5. Freeze SME-ETOI v1.0 before expanding the validated pilot to the 100-company final sample.
+3. Build a neutral source manifest and independent-coding row for every record.
+4. After assembly, independently review and double-code all 100 companies.
+5. Test inter-rater reliability, adjudicate every conflict and freeze
+   SME-ETOI v1.0.
 6. Analyse process-stratum differences and evidence coverage in Python.
 7. Build a Power BI dashboard and a 10–15 page research report.
 
-Run the deterministic pilot QA before reviewing or merging pilot-data changes:
+Run the deterministic sample QA before reviewing or merging data changes:
 
 ```bash
 python src/validate_pilot.py
 ```
 
-The validator checks sample balance, legal-entity consistency, duplicate
-certificate rows, certificate validity logic, process/source coverage and the
-20-row second-pass QA matrix. It deliberately does not label its own check as
-an independent human double-code.
+The validator checks balanced expansion stages from 20 to 100 records,
+legal-entity consistency, duplicate certificate rows, certificate validity
+logic, process/source coverage and the second-pass QA matrix. It deliberately
+does not label its own check as an independent human double-code.
 
-## Independent pilot validation
+## Independent sample validation
 
 The independent reviewer works from the neutral source manifest rather than
 the first coder's company facts or dossiers:
@@ -207,14 +210,14 @@ action. No company-level score is published until the evidence threshold is met.
 
 ## Project status
 
-**Current phase:** QA-checked provisional 20-company pilot. Company Intelligence
-and process mappings contain five selected cases in each of the four process
-strata. The candidate register retains three exclusions and four unresolved
+**Current phase:** QA-checked provisional 40-company sample. Company
+Intelligence and process mappings contain ten selected cases in each of the
+four process strata. The candidate register retains exclusions and unresolved
 linked-enterprise cases. Inclusion is not a final eligibility certification:
 each record keeps its open financial or group checks, evidence confidence and
-review status. A deterministic second-pass QA is recorded for all 20 cases;
-independent human double-coding remains explicit and must occur before
-SME-ETOI v1.0 is frozen.
+review status. A deterministic second-pass QA is recorded for all 40 cases;
+independent human source review is deliberately pending until the 100-company
+sample is assembled and must occur before SME-ETOI v1.0 is frozen.
 
 ## Licence
 

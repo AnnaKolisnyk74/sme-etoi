@@ -34,8 +34,8 @@ class InterRaterReliabilityTests(unittest.TestCase):
                 row["process_id"] for row in csv.DictReader(handle)
             }
 
-    def test_pending_template_covers_exactly_twenty_companies(self):
-        self.assertEqual(len(self.reviews), 20)
+    def test_pending_template_covers_exactly_current_sample(self):
+        self.assertEqual(len(self.reviews), 40)
         self.assertEqual(
             {row["company_id"] for row in self.reviews}, set(self.canonical)
         )

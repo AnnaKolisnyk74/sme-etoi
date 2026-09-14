@@ -1,4 +1,4 @@
-"""Compare an independent pilot double-code with the canonical SME-ETOI data."""
+"""Compare an independent sample double-code with the canonical SME-ETOI data."""
 
 from __future__ import annotations
 
@@ -93,7 +93,7 @@ def validate_review(
     if duplicate_ids:
         errors.append(f"duplicate review rows: {duplicate_ids}")
     if set(ids) != set(canonical):
-        errors.append("double-code file must contain exactly the 20 canonical company ids")
+        errors.append("double-code file must contain exactly the canonical company ids")
 
     allowed_by_field = {
         "entity_check": {"CONFIRMED", "CORRECTION_REQUIRED", "UNKNOWN"},
@@ -290,7 +290,8 @@ def main() -> int:
     completed = next(row for row in results if row["field"] == "entity_check")[
         "completed_pairs"
     ]
-    print(f"Double-code analysis complete: {completed}/20 company reviews completed.")
+    total = len(read_csv(ROOT / REVIEW_PATH))
+    print(f"Double-code analysis complete: {completed}/{total} company reviews completed.")
     print(f"Open field conflicts: {len(conflicts)}")
     return 0
 

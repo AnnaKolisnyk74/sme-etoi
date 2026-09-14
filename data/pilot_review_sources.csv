@@ -82,3 +82,39 @@ P26,Barth Galvanik GmbH,S-P26-02,official_trade_fair_profile,Deutsche Messe Surf
 P27,BCE Special Ceramics GmbH,S-P27-01,company_profile,BCE Special Ceramics GmbH,Company,current,,https://www.bce-special-ceramics.com/company/
 P27,BCE Special Ceramics GmbH,S-P27-02,company_research_page,BCE Special Ceramics GmbH,ENITEC energy-efficient ceramic production,current,,https://www.bce-special-ceramics.com/company/
 P27,BCE Special Ceramics GmbH,S-P27-03,company_research_page,BCE Special Ceramics GmbH,ENITEC energy-efficient processes for ceramic production,2009-2012,,https://www.bce-special-ceramics.com/research-project-enitec/
+P28,Berg Brauerei Ulrich Zimmermann GmbH & Co. KG,S-P28-01,company_imprint,Berg Brauerei,Impressum,current,,https://www.bergbier.de/impressum
+P28,Berg Brauerei Ulrich Zimmermann GmbH & Co. KG,S-P28-02,company_process,Berg Brauerei,Brauerei and open-vat fermentation,current,,https://www.bergbier.de/
+P29,Meckatzer Löwenbräu Benedikt Weiß KG,S-P29-01,company_imprint,Meckatzer,Impressum,current,,https://www.meckatzer.de/impressum/
+P29,Meckatzer Löwenbräu Benedikt Weiß KG,S-P29-02,company_process,Meckatzer,Braukunst and sustainability,current,,https://www.meckatzer.de/
+P30,Privat-Brauerei Zötler GmbH,S-P30-01,company_imprint,Privat-Brauerei Zötler,Impressum,current,,https://www.familien-braukunst.de/impressum/
+P30,Privat-Brauerei Zötler GmbH,S-P30-02,company_sustainability,Privat-Brauerei Zötler,Quality and sustainability,current,,https://www.zoetler.de/
+P31,Brauerei Clemens Härle KG,S-P31-01,company_imprint,Brauerei Clemens Härle,Impressum,current,,https://www.haerle.de/impressum
+P31,Brauerei Clemens Härle KG,S-P31-02,government_case,Baden-Württemberg Ministry of the Environment,Environmental award 2024: Brauerei Clemens Härle,current,,https://um.baden-wuerttemberg.de/de/umwelt-natur/umwelt-und-wirtschaft/angebote-fuer-unternehmen/umweltpreis-fuer-unternehmen/umweltpreis-2024/brauerei-clemens-haerle
+P32,Kronenbrauerei Otto Haizmann KG,S-P32-01,company_imprint,Hochdorfer Kronenbrauerei,Impressum and company website,current,,https://hochdorfer.de/
+P33,Gindele GmbH,S-P33-01,company_imprint,Gindele,Company website and imprint,current,,https://www.gindele.de/
+P33,Gindele GmbH,S-P33-02,municipal_directory,Municipality of Neuhausen,Gindele company entry,current,,https://www.neuhausen-enzkreis.de/
+P34,KTS Kunststoff Technik Schmölln GmbH,S-P34-01,company_imprint,KTS Kunststoff Technik Schmölln,Company website and imprint,current,,https://www.kts-schmoelln.de/
+P34,KTS Kunststoff Technik Schmölln GmbH,S-P34-02,official_labour_directory,Federal Employment Agency,KTS employer profile,current,,https://web.arbeitsagentur.de/
+P35,MACK KUNSTSTOFFTECHNIK GMBH & CO. KG,S-P35-01,company_imprint,MACK Kunststofftechnik,Impressum,current,,https://mack-kunststoff.com/impressum/
+P35,MACK KUNSTSTOFFTECHNIK GMBH & CO. KG,S-P35-02,company_process,MACK Kunststofftechnik,Kunststofftechnik,current,,https://mack-kunststoff.com/
+P36,Kunststofftechnik Borgmann GmbH,S-P36-01,company_imprint,Kunststofftechnik Borgmann,"Company website, imprint and downloads",current,,https://www.bogm.de/
+P36,Kunststofftechnik Borgmann GmbH,S-P36-02,official_labour_directory,Federal Employment Agency,Kunststofftechnik Borgmann employer profile,current,,https://web.arbeitsagentur.de/
+P37,atka Kunststoffverarbeitung GmbH,S-P37-01,company_imprint,atka Kunststoffverarbeitung,Company website and imprint,current,,https://www.atka.de/
+P38,Krämer + Eckert GmbH & Co. KG,S-P38-01,company_contact,Eloxalwerk Ehingen,Contact and legal entity,current,,https://www.eloxalwerk-ehingen.com/kontakt/anfahrt/
+P38,Krämer + Eckert GmbH & Co. KG,S-P38-02,company_process,Eloxalwerk Ehingen,Company and process overview,current,,https://eloxalwerk-ehingen.com/
+P39,Eloxal Höfler GmbH,S-P39-01,company_contact,Eloxal Höfler,Contact,current,,https://www.eloxal-hoefler.de/kontakt.html
+P39,Eloxal Höfler GmbH,S-P39-02,company_process,Eloxal Höfler,Eloxal services and certificates,current,,https://www.eloxal-hoefler.de/
+P40,OFTECH Oberflächentechnik GmbH & Co. KG,S-P40-01,company_imprint,OFTECH,Company website and imprint,current,,https://oftech.de/
+P41,"Galvano Weis, Weis GmbH & Co., Galvanische-Werkstätte KG",S-P41-01,company_imprint,Galvano Weis,Company website and imprint,current,,https://www.galvano-weis.com/
+P41,"Galvano Weis, Weis GmbH & Co., Galvanische-Werkstätte KG",S-P41-02,government_business_directory,Bayern International,Galvano Weis company profile,current,,https://www.keytobavaria.com/
+P42,OT Oberflächentechnik GmbH & Co. KG,S-P42-01,company_imprint,OT Oberflächentechnik,Company website and imprint,current,,https://www.ot-schwerin.de/
+P43,WZR ceramic solutions GmbH,S-P43-01,company_imprint,WZR ceramic solutions,Impressum,current,,https://wzr-ceramic.de/impressum/
+P43,WZR ceramic solutions GmbH,S-P43-02,government_case,VDI Centre for Resource Efficiency,WZR ceramic solutions SME profile,current,,https://www.ressource-deutschland.de/
+P44,OXIDKERAMIK J. Cardenas GmbH,S-P44-01,company_imprint,OXIDKERAMIK J. Cardenas,Impressum and company website,current,,https://oxidkeramik.de/
+P44,OXIDKERAMIK J. Cardenas GmbH,S-P44-02,trade_directory,Ceramic Applications,OXIDKERAMIK company profile,current,,https://www.ceramic-applications.com/
+P45,Glasmanufaktur HARZKRISTALL GmbH,S-P45-01,company_imprint,Glasmanufaktur HARZKRISTALL,Impressum,current,,https://www.harzkristall.de/impressum
+P45,Glasmanufaktur HARZKRISTALL GmbH,S-P45-02,company_process,Glasmanufaktur HARZKRISTALL,Active glassworks and production tour,current,,https://www.harzkristall.de/
+P46,Porzellanfabrik Hermsdorf GmbH,S-P46-01,company_imprint,Porzellanfabrik Hermsdorf,Impressum,current,,https://www.pofahermsdorf.de/impressum/
+P46,Porzellanfabrik Hermsdorf GmbH,S-P46-02,company_process,Porzellanfabrik Hermsdorf,Technical ceramics,current,,https://www.pofahermsdorf.de/
+P47,hofmann CERAMiC GmbH,S-P47-01,company_imprint,hofmann CERAMiC,Imprint,current,,https://www.hofmann-ceramic.de/en/imprint/
+P47,hofmann CERAMiC GmbH,S-P47-02,company_process,hofmann CERAMiC,Technical ceramic products,current,,https://www.hofmann-ceramic.de/

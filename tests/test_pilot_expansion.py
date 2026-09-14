@@ -16,10 +16,10 @@ def read_csv(relative_path):
 
 
 class PilotExpansionDataTests(unittest.TestCase):
-    def test_complete_pilot_contains_twenty_canonical_companies(self):
+    def test_current_expansion_contains_forty_canonical_companies(self):
         companies = read_csv("data/company_intelligence.csv")
         by_id = {row["company_id"]: row for row in companies}
-        self.assertEqual(len(by_id), 20)
+        self.assertEqual(len(by_id), 40)
 
         candidates = read_csv("data/pilot_candidates.csv")
         included = {
@@ -34,10 +34,10 @@ class PilotExpansionDataTests(unittest.TestCase):
         self.assertEqual(
             strata,
             {
-                "food_beverage": 5,
-                "plastics_processing": 5,
-                "metal_surface_heat": 5,
-                "glass_ceramics": 5,
+                "food_beverage": 10,
+                "plastics_processing": 10,
+                "metal_surface_heat": 10,
+                "glass_ceramics": 10,
             },
         )
         self.assertEqual(
@@ -104,7 +104,7 @@ class PilotExpansionDataTests(unittest.TestCase):
 
     def test_qa_matrix_keeps_independent_human_review_explicit(self):
         qa_rows = read_csv("evidence/qa_review.csv")
-        self.assertEqual(len(qa_rows), 20)
+        self.assertEqual(len(qa_rows), 40)
         self.assertEqual(
             {row["independent_human_review_status"] for row in qa_rows},
             {"PENDING"},
