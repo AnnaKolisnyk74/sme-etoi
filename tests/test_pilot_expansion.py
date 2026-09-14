@@ -16,10 +16,10 @@ def read_csv(relative_path):
 
 
 class PilotExpansionDataTests(unittest.TestCase):
-    def test_complete_pilot_contains_twenty_canonical_companies(self):
+    def test_current_expansion_contains_eighty_canonical_companies(self):
         companies = read_csv("data/company_intelligence.csv")
         by_id = {row["company_id"]: row for row in companies}
-        self.assertEqual(len(by_id), 20)
+        self.assertEqual(len(by_id), 80)
 
         candidates = read_csv("data/pilot_candidates.csv")
         included = {
@@ -34,10 +34,10 @@ class PilotExpansionDataTests(unittest.TestCase):
         self.assertEqual(
             strata,
             {
-                "food_beverage": 5,
-                "plastics_processing": 5,
-                "metal_surface_heat": 5,
-                "glass_ceramics": 5,
+                "food_beverage": 20,
+                "plastics_processing": 20,
+                "metal_surface_heat": 20,
+                "glass_ceramics": 20,
             },
         )
         self.assertEqual(
@@ -55,6 +55,15 @@ class PilotExpansionDataTests(unittest.TestCase):
             "RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG",
         )
         self.assertEqual(by_id["P24"]["legal_entity"], "H&K Müller GmbH & Co. KG")
+        self.assertEqual(
+            by_id["P53"]["legal_entity"],
+            "Brauerei Rittmayer Hallerndorf GmbH & Co. KG",
+        )
+        self.assertEqual(by_id["P67"]["legal_entity"], "DOCERAM GmbH")
+        self.assertEqual(by_id["P72"]["legal_entity"], "Hofbräuhaus Traunstein Josef Sailer GmbH & Co. KG")
+        self.assertEqual(by_id["P76"]["legal_entity"], "Si-Tech Singer GmbH")
+        self.assertEqual(by_id["P83"]["legal_entity"], "Gerbracht & Mönch Galvanotechnik GmbH")
+        self.assertEqual(by_id["P88"]["legal_entity"], "Ceramaret Meissen GmbH")
 
     def test_current_direct_certificates_drive_only_supported_facts(self):
         companies = {
@@ -104,7 +113,7 @@ class PilotExpansionDataTests(unittest.TestCase):
 
     def test_qa_matrix_keeps_independent_human_review_explicit(self):
         qa_rows = read_csv("evidence/qa_review.csv")
-        self.assertEqual(len(qa_rows), 20)
+        self.assertEqual(len(qa_rows), 80)
         self.assertEqual(
             {row["independent_human_review_status"] for row in qa_rows},
             {"PENDING"},

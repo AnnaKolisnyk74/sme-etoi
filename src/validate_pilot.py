@@ -40,25 +40,31 @@ def validate(root: Path = ROOT) -> list[str]:
     sources = read_csv(root, "evidence/source_register.csv")
     certificates = read_csv(root, "evidence/certificate_register.csv")
     qa_rows = read_csv(root, "evidence/qa_review.csv")
+    double_code_rows = read_csv(root, "data/pilot_double_code.csv")
+    review_sources = read_csv(root, "data/pilot_review_sources.csv")
 
     company_duplicates = duplicate_keys(companies, ("company_id",))
     if company_duplicates:
         errors.append(f"duplicate company ids: {company_duplicates}")
     company_by_id = {row["company_id"]: row for row in companies}
     company_ids = set(company_by_id)
-    if len(company_ids) != 20:
-        errors.append(f"expected 20 canonical companies, found {len(company_ids)}")
+    if len(company_ids) < 20 or len(company_ids) > 100 or len(company_ids) % 4:
+        errors.append(
+            "canonical sample size must be a balanced four-stratum expansion "
+            f"between 20 and 100 companies, found {len(company_ids)}"
+        )
 
     included_rows = [row for row in candidates if row["eligibility_status"] == "INCLUDE"]
     included_ids = {row["candidate_id"] for row in included_rows}
     if included_ids != company_ids:
         errors.append("INCLUDE candidates and canonical company ids differ")
     strata = Counter(row["process_stratum"] for row in included_rows)
+    expected_per_stratum = len(company_ids) // 4
     expected_strata = {
-        "food_beverage": 5,
-        "plastics_processing": 5,
-        "metal_surface_heat": 5,
-        "glass_ceramics": 5,
+        "food_beverage": expected_per_stratum,
+        "plastics_processing": expected_per_stratum,
+        "metal_surface_heat": expected_per_stratum,
+        "glass_ceramics": expected_per_stratum,
     }
     if dict(strata) != expected_strata:
         errors.append(f"unbalanced selected sample: {dict(strata)}")
@@ -135,6 +141,26 @@ def validate(root: Path = ROOT) -> list[str]:
         if qa["independent_human_review_status"] != "PENDING":
             errors.append(f"unsupported human-review claim for {company_id}")
 
+    if duplicate_keys(double_code_rows, ("company_id",)):
+        errors.append("duplicate independent double-code rows")
+    double_code_by_id = {row["company_id"]: row for row in double_code_rows}
+    if set(double_code_by_id) != company_ids:
+        errors.append("independent double-code template does not cover the canonical sample")
+    for company_id, row in double_code_by_id.items():
+        if row["legal_entity"] != company_by_id[company_id]["legal_entity"]:
+            errors.append(f"double-code legal entity mismatch for {company_id}")
+        if row["source_manifest_filter"] != company_id:
+            errors.append(f"incorrect source-manifest filter for {company_id}")
+        if row["review_status"] not in {"PENDING", "COMPLETE"}:
+            errors.append(f"invalid double-code status for {company_id}")
+
+    review_source_ids = {row["company_id"] for row in review_sources}
+    if review_source_ids != company_ids:
+        errors.append("neutral review-source manifest does not cover the canonical sample")
+    forbidden_review_source_fields = {"evidence_fact", "review_status"}
+    if review_sources and forbidden_review_source_fields.intersection(review_sources[0]):
+        errors.append("neutral review-source manifest leaks prior coding fields")
+
     return errors
 
 
@@ -144,8 +170,15 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("Pilot QA passed: 20 companies, balanced strata, unique evidence and certificate checks.")
-    print("Independent human review remains explicitly PENDING for all 20 records.")
+    companies = read_csv(ROOT, "data/company_intelligence.csv")
+    print(
+        f"Sample QA passed: {len(companies)} companies, balanced strata, "
+        "unique evidence and certificate checks."
+    )
+    print(
+        "Independent human review remains explicitly PENDING for all "
+        f"{len(companies)} records."
+    )
     return 0
 
 
