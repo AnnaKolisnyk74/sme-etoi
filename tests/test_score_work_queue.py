@@ -110,9 +110,11 @@ class ScoreWorkQueueTests(unittest.TestCase):
         p16 = [row for row in numeric if row["company_id"] == "P16"]
         p05 = [row for row in numeric if row["company_id"] == "P05"]
         p18 = [row for row in numeric if row["company_id"] == "P18"]
+        p22 = [row for row in numeric if row["company_id"] == "P22"]
+        p24 = [row for row in numeric if row["company_id"] == "P24"]
         remaining = [
             row for row in numeric
-            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18"}
+            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24"}
         ]
 
         self.assertEqual(len(p04), 5)
@@ -175,7 +177,22 @@ class ScoreWorkQueueTests(unittest.TestCase):
         )
         self.assertTrue(all(row["research_gap_fields"] for row in p18))
 
-        self.assertEqual(len(remaining), 410)
+        self.assertEqual(len(p22), 5)
+        self.assertEqual(
+            {row["task_status"] for row in p22},
+            {"AWAITING_HUMAN_REVIEW"},
+        )
+        self.assertTrue(all(row["proposal_covered_fields"] for row in p22))
+        self.assertTrue(all(not row["research_gap_fields"] for row in p22))
+
+        self.assertEqual(len(p24), 5)
+        self.assertEqual(
+            {row["task_status"] for row in p24},
+            {"RESEARCH_NEEDED"},
+        )
+        self.assertTrue(all(row["research_gap_fields"] for row in p24))
+
+        self.assertEqual(len(remaining), 400)
         self.assertEqual(
             {row["task_status"] for row in remaining},
             {"READY_TO_CODE"},
