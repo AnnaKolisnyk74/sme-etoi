@@ -382,14 +382,22 @@ function renderFunctional(view){
     const work=all.flatMap(c=>(c.score_work_tasks||[]).map(t=>({...t,company:c}))).sort((a,b)=>(a.work_rank||999999)-(b.work_rank||999999));
     const summary=state.data.score_readiness_summary||{};
     const workSummary=state.data.score_work_summary||{};
+    const companyWorkSummary=state.data.company_work_summary||{};
+    const workflowCounts=companyWorkSummary.workflow_action_counts||{};
+    const nextBest=companyWorkSummary.next_best_company||{};
+    const codingCompanies=all.filter(c=>c.workflow_priority?.workflow_action==="CODE_NOW").sort((a,b)=>(a.workflow_priority?.coding_rank||9999)-(b.workflow_priority?.coding_rank||9999));
     const humanDone=all.filter(c=>["APPROVED","COMPLETE","COMPLETED","REVIEWED","DONE"].includes(c.score_readiness?.independent_human_review_status)).length;
     root.innerHTML=
       '<div class="functional-kpis">'+
-        '<div class="functional-kpi"><span>Eligibility-Gates</span><strong>'+((workSummary.workstream_counts||{}).ELIGIBILITY||0)+'</strong></div>'+
-        '<div class="functional-kpi"><span>Coding-Pakete</span><strong>'+((workSummary.workstream_counts||{}).NUMERIC_CODING||0)+'</strong></div>'+
-        '<div class="functional-kpi"><span>Zu codierende Firmen</span><strong>'+(summary.NEEDS_NUMERIC_CODING||0)+'</strong></div>'+
-        '<div class="functional-kpi"><span>Final score-ready</span><strong>'+(summary.FINAL_SCORE_READY||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Code now</span><strong>'+(workflowCounts.CODE_NOW||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Research first</span><strong>'+(workflowCounts.RESEARCH_FIRST||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Review proposals</span><strong>'+(workflowCounts.REVIEW_PROPOSALS||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Eligibility first</span><strong>'+(workflowCounts.ELIGIBILITY_FIRST||0)+'</strong></div>'+
       '</div>'+
+      (nextBest.company_id?'<section class="functional-card next-best-card" data-company-id="'+esc(nextBest.company_id)+'"><div class="secondary-kicker">Next Best Company to Code</div><h3>#'+esc(nextBest.coding_rank||1)+' · '+esc(nextBest.legal_entity)+'</h3><div class="next-best-grid"><span><strong>'+esc(nextBest.company_id)+'</strong><small>Company ID</small></span><span><strong>'+esc(nextBest.work_priority||"—")+'</strong><small>Work Priority</small></span><span><strong>'+esc(nextBest.evidence_confidence||"—")+'</strong><small>Evidence</small></span><span><strong>'+esc(nextBest.process_confidence||"—")+'</strong><small>Process</small></span><span><strong>'+esc(nextBest.source_count??"—")+'</strong><small>Sources</small></span></div><p>'+esc(nextBest.priority_reason||"")+'</p><div class="action-text">'+esc(nextBest.next_action||"")+'</div></section>':"")+
+      '<section class="functional-card"><h3>Next Best Coding Companies</h3>'+
+        genericTable(["Coding Rank","Unternehmen","Priority","Evidence","Process","Quellen"],codingCompanies.slice(0,10).map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td>'+esc(c.workflow_priority?.coding_rank??"—")+'</td><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(c.workflow_priority?.work_priority||"—")+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.process_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.source_count??"—")+'</td></tr>'))+
+      '</section>'+
       '<section class="functional-card"><h3>Scoring Work Queue · '+work.length+' Arbeitspakete</h3>'+
         genericTable(["Rang","Unternehmen","Workstream","Dimension","Status","Priorität","Proposal / Research","Offene Felder","Nächste Aktion"],work.map(t=>
           '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td><span class="status-badge '+(t.task_status==="RESEARCH_NEEDED"?"status-blocked":t.task_status==="AWAITING_HUMAN_REVIEW"?"status-review":t.task_status==="READY_TO_CODE"?"status-qualified":"status-watch")+'">'+esc(titleCase(t.task_status||"UNKNOWN"))+'</span></td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.research_gap_fields||t.proposal_status_summary||t.proposal_covered_fields||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'

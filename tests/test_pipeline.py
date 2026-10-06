@@ -45,6 +45,11 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(summary["ready_to_code_tasks"], 400)
         self.assertEqual(summary["research_needed_tasks"], 21)
         self.assertEqual(summary["awaiting_human_review_tasks"], 19)
+        self.assertEqual(summary["code_now_companies"], 80)
+        self.assertEqual(summary["research_first_companies"], 5)
+        self.assertEqual(summary["review_proposal_companies"], 3)
+        self.assertEqual(summary["eligibility_first_companies"], 12)
+        self.assertEqual(summary["next_to_code_company"], "P23")
         self.assertIsNone(summary["double_code_conflicts"])
 
     def test_summary_matches_generated_eligibility_blocks(self):

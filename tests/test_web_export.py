@@ -22,6 +22,7 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["research_task_count"], 198)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
+        self.assertEqual(meta["code_now_company_count"], 80)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -119,6 +120,46 @@ class WebExportTests(unittest.TestCase):
         )
         self.assertTrue(
             all("opportunity_score" not in task for task in all_tasks)
+        )
+
+    def test_company_work_priority_exposes_next_best_company(self):
+        summary = self.payload["company_work_summary"]
+        self.assertEqual(summary["company_count"], 100)
+        self.assertEqual(
+            summary["workflow_action_counts"],
+            {
+                "CODE_NOW": 80,
+                "ELIGIBILITY_FIRST": 12,
+                "RESEARCH_FIRST": 5,
+                "REVIEW_PROPOSALS": 3,
+            },
+        )
+        next_best = summary["next_best_company"]
+        self.assertEqual(next_best["company_id"], "P23")
+        self.assertEqual(next_best["legal_entity"], "FM-Plast GmbH")
+        self.assertEqual(next_best["coding_rank"], 1)
+
+        companies = {
+            company["company_id"]: company
+            for company in self.payload["companies"]
+        }
+        self.assertEqual(
+            companies["P23"]["workflow_priority"]["workflow_action"],
+            "CODE_NOW",
+        )
+        self.assertEqual(
+            companies["P23"]["workflow_priority"]["is_next_to_code"],
+            "YES",
+        )
+        self.assertEqual(
+            companies["P23"]["workflow_priority"]["coding_rank"],
+            1,
+        )
+        self.assertTrue(
+            all(
+                company["workflow_priority"]["workflow_action"]
+                for company in self.payload["companies"]
+            )
         )
 
     def test_every_company_exposes_score_readiness(self):

@@ -96,6 +96,7 @@ sme-etoi/
 │   ├── validate_score_coding_proposals.py
 │   ├── score_readiness.py
 │   ├── score_work_queue.py
+│   ├── company_work_priority.py
 │   ├── run_pipeline.py
 │   ├── validate_pilot.py
 │   └── score_companies.py
@@ -104,6 +105,7 @@ sme-etoi/
 │   ├── research_queue.csv
 │   ├── score_readiness.csv
 │   ├── score_work_queue.csv
+│   ├── company_work_priority.csv
 │   └── scored_demo.csv
 ├── web/
 │   ├── index.html
@@ -226,6 +228,19 @@ P24 H&K Müller is the opposite pattern: ISO 50001 and the absence of a dated
 public target support two numeric proposals, while 13 fields remain
 `NEEDS_RESEARCH`. Generic injection-moulding assumptions are not used because
 the PR001 process-library row is still `TO_RESEARCH`.
+
+Company-level prioritisation is now generated in
+`outputs/company_work_priority.csv`. It collapses the 452 task rows into one
+workflow decision per company:
+
+- `CODE_NOW`: all five coding packages are ready;
+- `RESEARCH_FIRST`: at least one dimension contains an explicit research gap;
+- `REVIEW_PROPOSALS`: first-pass numeric proposals already cover the coding work;
+- `ELIGIBILITY_FIRST`: SME/group eligibility still blocks scoring.
+
+Within `CODE_NOW`, the system assigns a dense `coding_rank` and exactly one
+`is_next_to_code=YES` flag. The current next-best coding company is
+**P23 FM-Plast GmbH**.
 
 Current generated workload:
 
