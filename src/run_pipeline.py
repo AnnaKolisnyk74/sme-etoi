@@ -148,6 +148,7 @@ def build_score_work_queue(
         read_csv(root, "evidence/qa_review.csv"),
         read_csv(root, "data/pilot_coded.csv"),
         research_tasks,
+        read_csv(root, "data/score_coding_proposals.csv"),
     )
 
 
@@ -198,15 +199,38 @@ def validate_score_work_queue(
     if blocked_ids & coding_ids:
         errors.append("eligibility-blocked companies received numeric coding tasks")
 
+    allowed_numeric_statuses = {
+        "READY_TO_CODE",
+        "IN_PROGRESS",
+        "RESEARCH_NEEDED",
+        "REWORK_REQUIRED",
+        "AWAITING_HUMAN_REVIEW",
+        "AWAITING_CANONICAL_UPDATE",
+    }
     for row in work_queue:
         if row.get("workstream") == "NUMERIC_CODING":
             if int(row.get("missing_field_count", "0")) <= 0:
                 errors.append(
                     f"{row['task_key']} is a numeric-coding task without missing fields"
                 )
-            if row.get("task_status") != "READY_TO_CODE":
+            if row.get("task_status") not in allowed_numeric_statuses:
                 errors.append(
-                    f"{row['task_key']} numeric-coding task is not READY_TO_CODE"
+                    f"{row['task_key']} has invalid numeric-coding task status "
+                    f"{row.get('task_status')}"
+                )
+            if (
+                row.get("task_status") == "RESEARCH_NEEDED"
+                and not row.get("research_gap_fields")
+            ):
+                errors.append(
+                    f"{row['task_key']} requires research but has no research_gap_fields"
+                )
+            if (
+                row.get("task_status") == "AWAITING_HUMAN_REVIEW"
+                and not row.get("proposal_covered_fields")
+            ):
+                errors.append(
+                    f"{row['task_key']} awaits review but has no proposal coverage"
                 )
 
     return errors
