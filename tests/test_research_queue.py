@@ -306,14 +306,14 @@ class ResearchQueueTests(unittest.TestCase):
         self.assertEqual(task["research_review_status"], "APPROVED")
 
     def test_exclusion_result_also_requires_review(self):
-        companies = self.companies + [
-            {
-                "company_id": "P10",
-                "legal_entity": "Oskar Lehmann GmbH & Co. KG",
-                "sme_status": "probable",
-                "group_check": "partner_or_linked_sme",
-                "evidence_confidence": "B",
-            }
+        companies = [
+            dict(self.companies[0]),
+            dict(
+                self.companies[1],
+                sme_status="probable",
+                group_check="partner_or_linked_sme",
+                evidence_confidence="B",
+            ),
         ]
         results = [
             {
