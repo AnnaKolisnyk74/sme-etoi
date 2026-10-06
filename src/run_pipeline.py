@@ -6,6 +6,7 @@ import argparse
 import csv
 from pathlib import Path
 
+import company_work_priority
 import export_web_data
 import inter_rater_reliability
 import opportunity_engine
@@ -152,6 +153,65 @@ def build_score_work_queue(
     )
 
 
+
+def build_company_work_priority(
+    score_work: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    return company_work_priority.generate_company_work_priority(score_work)
+
+
+def validate_company_work_priority(
+    companies: list[dict[str, str]],
+    priority_rows: list[dict[str, str]],
+) -> list[str]:
+    errors: list[str] = []
+    company_ids = {row["company_id"] for row in companies}
+    priority_ids = {row["company_id"] for row in priority_rows}
+
+    if priority_ids != company_ids:
+        missing = sorted(company_ids - priority_ids)
+        unexpected = sorted(priority_ids - company_ids)
+        errors.append(
+            "company-work priority differs from canonical sample: "
+            f"missing={missing}, unexpected={unexpected}"
+        )
+
+    code_now = [
+        row for row in priority_rows
+        if row.get("workflow_action") == "CODE_NOW"
+    ]
+    coding_ranks = sorted(
+        int(row["coding_rank"]) for row in code_now if row.get("coding_rank")
+    )
+    if coding_ranks != list(range(1, len(code_now) + 1)):
+        errors.append("CODE_NOW coding ranks are not dense")
+
+    next_rows = [
+        row for row in priority_rows
+        if row.get("is_next_to_code") == "YES"
+    ]
+    if code_now:
+        if len(next_rows) != 1:
+            errors.append("exactly one CODE_NOW company must be next to code")
+        elif next_rows[0].get("coding_rank") != "1":
+            errors.append("next-to-code company must have coding_rank=1")
+    elif next_rows:
+        errors.append("next-to-code flag exists without any CODE_NOW company")
+
+    for row in priority_rows:
+        if row.get("workflow_action") == "ELIGIBILITY_FIRST":
+            if row.get("coding_rank"):
+                errors.append(
+                    f"{row['company_id']} eligibility-first company has coding rank"
+                )
+            if row.get("is_next_to_code") == "YES":
+                errors.append(
+                    f"{row['company_id']} eligibility-first company marked next to code"
+                )
+
+    return errors
+
+
 def validate_score_work_queue(
     readiness: list[dict[str, str]],
     work_queue: list[dict[str, str]],
@@ -292,8 +352,9 @@ def pipeline_summary(
     queue: list[dict[str, str]],
     readiness: list[dict[str, str]] | None = None,
     score_work: list[dict[str, str]] | None = None,
+    company_priority: list[dict[str, str]] | None = None,
     conflict_count: int | None = None,
-) -> dict[str, int | None]:
+) -> dict[str, int | str | None]:
     return {
         "companies": len(companies),
         "opportunities": len(opportunities),
@@ -328,6 +389,30 @@ def pipeline_summary(
             row.get("task_status") == "AWAITING_HUMAN_REVIEW"
             for row in (score_work or [])
         ),
+        "code_now_companies": sum(
+            row.get("workflow_action") == "CODE_NOW"
+            for row in (company_priority or [])
+        ),
+        "research_first_companies": sum(
+            row.get("workflow_action") == "RESEARCH_FIRST"
+            for row in (company_priority or [])
+        ),
+        "review_proposal_companies": sum(
+            row.get("workflow_action") == "REVIEW_PROPOSALS"
+            for row in (company_priority or [])
+        ),
+        "eligibility_first_companies": sum(
+            row.get("workflow_action") == "ELIGIBILITY_FIRST"
+            for row in (company_priority or [])
+        ),
+        "next_to_code_company": next(
+            (
+                row.get("company_id")
+                for row in (company_priority or [])
+                if row.get("is_next_to_code") == "YES"
+            ),
+            "",
+        ),
         "double_code_conflicts": conflict_count,
     }
 
@@ -349,9 +434,13 @@ def run_pipeline(
     companies, opportunities, queue = build_outputs(root)
     readiness = build_score_readiness(root, companies)
     score_work = build_score_work_queue(root, companies, readiness, queue)
+    company_priority = build_company_work_priority(score_work)
     generated_errors = validate_generated_outputs(companies, opportunities, queue)
     generated_errors.extend(validate_score_readiness(companies, readiness))
     generated_errors.extend(validate_score_work_queue(readiness, score_work))
+    generated_errors.extend(
+        validate_company_work_priority(companies, company_priority)
+    )
     if generated_errors:
         raise ValueError("Generated-output QA failed: " + "; ".join(generated_errors))
 
@@ -361,6 +450,10 @@ def run_pipeline(
         research_queue.write_csv(root / "outputs/research_queue.csv", queue)
         score_readiness.write_csv(root / "outputs/score_readiness.csv", readiness)
         score_work_queue.write_csv(root / "outputs/score_work_queue.csv", score_work)
+        company_work_priority.write_csv(
+            root / "outputs/company_work_priority.csv",
+            company_priority,
+        )
         if include_reliability:
             _, conflicts = inter_rater_reliability.run(root)
             conflict_count = len(conflicts)
@@ -376,6 +469,7 @@ def run_pipeline(
         queue,
         readiness=readiness,
         score_work=score_work,
+        company_priority=company_priority,
         conflict_count=conflict_count,
     )
 
@@ -424,7 +518,9 @@ def main() -> int:
         f"{summary['numeric_coding_tasks']} numeric-coding tasks, "
         f"{summary['ready_to_code_tasks']} ready to code, "
         f"{summary['research_needed_tasks']} research needed, "
-        f"{summary['awaiting_human_review_tasks']} awaiting human review."
+        f"{summary['awaiting_human_review_tasks']} awaiting human review, "
+        f"{summary['code_now_companies']} companies ready to code. "
+        f"Next to code: {summary['next_to_code_company']}."
     )
     if summary["double_code_conflicts"] is not None:
         print(f"Open double-code conflicts: {summary['double_code_conflicts']}")
