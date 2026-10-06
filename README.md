@@ -188,7 +188,9 @@ The current proposal-aware score-work queue therefore contains:
 - 5 P16 dimension packages `RESEARCH_NEEDED`;
 - 5 P05 dimension packages `AWAITING_HUMAN_REVIEW`;
 - 5 P18 dimension packages `RESEARCH_NEEDED`;
-- 410 dimension packages `READY_TO_CODE`.
+- 5 P22 dimension packages `AWAITING_HUMAN_REVIEW`;
+- 5 P24 dimension packages `RESEARCH_NEEDED`;
+- 400 dimension packages `READY_TO_CODE`.
 
 P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
 score fields have review-pending numeric proposals, while
@@ -214,6 +216,16 @@ with seven evidence-supported numeric proposals and eight explicit research
 gaps. Known gas firing supports fossil-heat and ordinal load relevance, while
 the electric-furnace route, motor/converter evidence, thermal buffering,
 power-quality/onsite integration and investment history remain unresolved.
+
+P22 RIEDENBURGER BRAUHAUS is a fully covered high-evidence case. All 15
+fields have numeric review-pending proposals based on directly documented heat
+pumps, vapour compression, PV, thermal storage and flexible operation. The
+proposal arithmetic sums to 74/100 but remains non-canonical.
+
+P24 H&K Müller is the opposite pattern: ISO 50001 and the absence of a dated
+public target support two numeric proposals, while 13 fields remain
+`NEEDS_RESEARCH`. Generic injection-moulding assumptions are not used because
+the PR001 process-library row is still `TO_RESEARCH`.
 
 Current generated workload:
 
