@@ -42,12 +42,13 @@ FIELD_TO_DIMENSION = {
 
 ALLOWED_STATUSES = {
     "AWAITING_HUMAN_REVIEW",
+    "NEEDS_RESEARCH",
     "APPROVED",
     "REJECTED",
     "SUPERSEDED",
 }
 
-ALLOWED_CONFIDENCE = {"A", "B", "C"}
+ALLOWED_CONFIDENCE = {"A", "B", "C", "UNKNOWN"}
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -85,6 +86,7 @@ def validate(
         reviewer = str(row.get("reviewer", "")).strip()
         review_date = str(row.get("review_date", "")).strip()
         value_raw = str(row.get("proposed_value", "")).strip()
+        missing_fact = str(row.get("missing_fact", "")).strip()
 
         key = (company_id, field)
         if key in seen:
@@ -102,17 +104,27 @@ def validate(
                 f"not {dimension}"
             )
 
-        try:
-            value = int(value_raw)
-        except ValueError:
-            errors.append(
-                f"line {line_number}: {field} proposed_value={value_raw!r} is not an integer"
-            )
-        else:
-            if value not in ALLOWED_ANCHORS[field]:
+        if status == "NEEDS_RESEARCH":
+            if value_raw:
                 errors.append(
-                    f"line {line_number}: {field} proposed_value={value} is not an allowed anchor"
+                    f"line {line_number}: NEEDS_RESEARCH must not carry a numeric proposed_value"
                 )
+            if not missing_fact:
+                errors.append(
+                    f"line {line_number}: NEEDS_RESEARCH requires missing_fact"
+                )
+        else:
+            try:
+                value = int(value_raw)
+            except ValueError:
+                errors.append(
+                    f"line {line_number}: {field} proposed_value={value_raw!r} is not an integer"
+                )
+            else:
+                if value not in ALLOWED_ANCHORS[field]:
+                    errors.append(
+                        f"line {line_number}: {field} proposed_value={value} is not an allowed anchor"
+                    )
 
         try:
             max_value = int(str(row.get("max_value", "")).strip())
@@ -149,10 +161,10 @@ def validate(
 
         if status not in ALLOWED_STATUSES:
             errors.append(f"line {line_number}: invalid proposal_status={status!r}")
-        elif status == "AWAITING_HUMAN_REVIEW":
+        elif status in {"AWAITING_HUMAN_REVIEW", "NEEDS_RESEARCH"}:
             if reviewer or review_date:
                 errors.append(
-                    f"line {line_number}: awaiting-review proposal cannot claim reviewer/date"
+                    f"line {line_number}: unresolved proposal cannot claim reviewer/date"
                 )
         elif status in {"APPROVED", "REJECTED"}:
             if not reviewer or not review_date:
