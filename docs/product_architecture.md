@@ -114,6 +114,25 @@ Reason: process evidence + operating-pattern evidence
 
 This is not a sales-propensity score unless future validated data supports such a claim.
 
+Opportunity outputs also expose sample eligibility separately from technical and
+commercial status:
+
+- `sample_eligibility_status`: `ELIGIBILITY_PENDING`, `PROVISIONAL_PASS`,
+  `CONFIRMED` or `EXCLUDED`;
+- `actionability_status`: `ELIGIBILITY_BLOCKED`, `PROVISIONAL` or
+  `ACTIONABLE`;
+- `eligibility_next_action`: the explicit next step required before the case
+  can be treated as an actionable SME opportunity.
+
+An unresolved group or ownership check therefore does not erase technical
+relevance or deployment evidence. It blocks actionability instead. This keeps
+three distinct questions separate:
+
+1. Is the technology technically relevant?
+2. What is publicly known about deployment?
+3. Is the company currently eligible and reviewed enough to be treated as an
+   actionable SME-pilot case?
+
 ### 5. Evidence & Audit Layer
 
 Every important fact or score should support:
