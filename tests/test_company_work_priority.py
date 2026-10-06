@@ -30,20 +30,20 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(
             counts,
             {
-                "CODE_NOW": 72,
-                "RESEARCH_FIRST": 13,
+                "CODE_NOW": 70,
+                "RESEARCH_FIRST": 15,
                 "REVIEW_PROPOSALS": 3,
                 "ELIGIBILITY_FIRST": 12,
             },
         )
 
-    def test_p43_is_next_best_company_to_code(self):
+    def test_p25_is_next_best_company_to_code(self):
         next_rows = [
             row for row in self.rows if row["is_next_to_code"] == "YES"
         ]
         self.assertEqual(len(next_rows), 1)
-        self.assertEqual(next_rows[0]["company_id"], "P43")
-        self.assertEqual(next_rows[0]["legal_entity"], "WZR ceramic solutions GmbH")
+        self.assertEqual(next_rows[0]["company_id"], "P25")
+        self.assertEqual(next_rows[0]["legal_entity"], "Scheplast GmbH")
         self.assertEqual(next_rows[0]["coding_rank"], "1")
         self.assertEqual(next_rows[0]["workflow_action"], "CODE_NOW")
 
@@ -52,7 +52,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
             row for row in self.rows if row["workflow_action"] == "CODE_NOW"
         ]
         ranks = sorted(int(row["coding_rank"]) for row in rows)
-        self.assertEqual(ranks, list(range(1, 73)))
+        self.assertEqual(ranks, list(range(1, 71)))
 
     def test_research_first_companies_are_exactly_known_gap_cases(self):
         self.assertEqual(
@@ -61,7 +61,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "RESEARCH_FIRST"
             },
-            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31"},
+            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13"},
         )
 
     def test_p11_moves_from_code_now_to_research_first(self):

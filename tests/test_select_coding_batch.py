@@ -109,9 +109,10 @@ class BatchSelectionTests(unittest.TestCase):
 
     def test_web_history_separates_frozen_selection_from_live_status_without_scores(self):
         batches = build_web_payload(ROOT)['coding_batches']
-        self.assertEqual(len(batches), 2)
-        self.assertEqual([r['company_id'] for r in batches[-1]['companies']], ['P30', 'P31'])
-        for company in batches[-1]['companies']:
+        self.assertEqual(len(batches), 3)
+        batch = next(b for b in batches if b["batch_id"] == "NBCC-2026-10-06-02")
+        self.assertEqual([r['company_id'] for r in batch['companies']], ['P30', 'P31'])
+        for company in batch['companies']:
             self.assertEqual(company['selection_rank'], 1 if company['company_id'] == 'P30' else 2)
             self.assertEqual(company['current_workflow_action'], 'RESEARCH_FIRST')
             self.assertEqual(company['awaiting_human_review_fields'], 7)

@@ -125,3 +125,14 @@ The current work queue remains **12 OPEN_GATE, 360 READY_TO_CODE,
 57 RESEARCH_NEEDED and 23 AWAITING_HUMAN_REVIEW**. No proposals were approved,
 no missing field was filled and no total score was published. P43 remains the
 live next coding company, but coding stayed paused during this audit.
+
+
+## Subsequent coding follow-up
+
+The counts above describe the PR #38 audit snapshot. Batch NBCC-2026-10-06-03
+subsequently adds company-specific evidence and retrieval checks. P43's generic
+VDI homepage was available but failed the content attribution check; it remains
+visible with CONTENT_REVIEW_REQUIRED beside its located company-specific profile.
+This illustrates the stated distinction between retrieval and claim validation.
+The live audit CSV/web view includes later checks; frozen audit counts do not
+claim that every historical factual assertion has passed human review.

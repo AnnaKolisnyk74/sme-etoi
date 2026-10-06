@@ -380,3 +380,11 @@ sample is assembled and must occur before SME-ETOI v1.0 is frozen.
 
 No licence has been selected yet. Until one is added, standard copyright rules
 apply.
+
+
+The ranked batch `NBCC-2026-10-06-03` assesses P43 WZR ceramic solutions and
+P13 Schmalriede-Zink: six human-review-pending numeric proposals and nine research
+gaps each. Source content inspection corrects WZR's generic VDI citation and
+records Schmalriede's direct current ISO 14001 certificate and dated 2025 ambition,
+without inferring an EnMS, target achievement or energy deployment. See
+[the batch audit](docs/next_best_company.md#frozen-batch-nbcc-2026-10-06-03).

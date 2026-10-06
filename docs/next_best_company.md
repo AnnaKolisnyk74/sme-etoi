@@ -151,9 +151,9 @@ electricity self-sufficiency target is not a detailed roadmap.
 All fourteen numeric proposals remain `AWAITING_HUMAN_REVIEW`, with blank
 reviewer/date. The sixteen gaps retain blank values and UNKNOWN confidence.
 No canonical coding, deployment/certificate record or human approval changes.
-The current queue has **360 ready, 57 research-needed, 23 review-pending and
-12 gate tasks**. Both companies are `RESEARCH_FIRST`; **P43 WZR ceramic
-solutions GmbH** is the next coding company. The company queue contains
+After batch 02 the queue had **360 ready, 57 research-needed, 23 review-pending and
+12 gate tasks**. Both companies became `RESEARCH_FIRST`; **P43 WZR ceramic
+solutions GmbH** was the next coding company. The company queue contained
 72 CODE_NOW, 13 RESEARCH_FIRST, 3 REVIEW_PROPOSALS and 12 ELIGIBILITY_FIRST.
 
 ## Automated selection and history
@@ -192,3 +192,38 @@ Outputs and the web snapshot share the same v2 metadata. Behavioral tests cover
 source deduplication and ownership, unverified links, QA gating, confidence
 ordering, independence from inherited task ranks, incomplete review coverage,
 no numeric score mutation and the frozen selection audit.
+
+
+## Frozen batch NBCC-2026-10-06-03
+
+Starting main: `5fe71bedd651de2d3e0c5843d41f2eb24c1bb482` (PR #38).
+Selection was frozen before enrichment: P43 WZR ceramic solutions (B/B,
+HIGH, PROCESS and ENERGY_TRANSITION, two verified URLs) and P13 Schmalriede-Zink
+(B/B, MEDIUM, PROCESS, three verified URLs), both QA PASS and 15 unassessed fields.
+
+Content inspection exposed a limitation of documentary ranking: P43's old VDI
+homepage was retrievable but did not substantiate its company claim. It is now
+CONTENT_REVIEW_REQUIRED. A concrete named profile was found and registered,
+and the process map now cites the company's own extrusion page. The original
+selection is retained as history; it is not rewritten to hide this limitation.
+Retrieval metadata plus an old evidence fact is not a content-validation guarantee.
+Pinned pre-batch source/process fixtures reproduce this selection.
+
+Each company has six numeric proposals and nine research gaps. P43 documents
+its own extruder and control plus limited stage scheduling; own electricity
+reduction remains an intention. Customer savings, coating lower bounds and
+research equipment are not treated as site heat electrification or storage.
+P13 supports limited drives, DC conversion, weak scheduling and possible power
+quality, with explicit engineering-inference confidence. A direct current ISO
+14001 document supports a conservative partial/other management anchor, not an
+EnMS; the expired 2025 target deadline does not prove achievement.
+
+The direct certificate and target evidence correct P13's factual records.
+Deployment UNKNOWNs, canonical numeric scoring, previous proposals and all
+human-review records remain unchanged. All new numeric proposals remain
+AWAITING_HUMAN_REVIEW with blank reviewer/date; no aggregate score is published.
+
+After batch 03 the work queue has **350 READY_TO_CODE, 67 RESEARCH_NEEDED,
+23 AWAITING_HUMAN_REVIEW and 12 OPEN_GATE**. There are 70 CODE_NOW,
+15 RESEARCH_FIRST, three REVIEW_PROPOSALS and 12 ELIGIBILITY_FIRST companies.
+P25 Scheplast GmbH is next automatically; no additional batch is frozen here.

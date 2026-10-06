@@ -22,7 +22,7 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["research_task_count"], 198)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
-        self.assertEqual(meta["code_now_company_count"], 72)
+        self.assertEqual(meta["code_now_company_count"], 70)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -101,8 +101,8 @@ class WebExportTests(unittest.TestCase):
             status_counts,
             {
                 "AWAITING_HUMAN_REVIEW": 23,
-                "READY_TO_CODE": 360,
-                "RESEARCH_NEEDED": 57,
+                "READY_TO_CODE": 350,
+                "RESEARCH_NEEDED": 67,
             },
         )
         self.assertTrue(
@@ -129,21 +129,21 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             summary["workflow_action_counts"],
             {
-                "CODE_NOW": 72,
+                "CODE_NOW": 70,
                 "ELIGIBILITY_FIRST": 12,
-                "RESEARCH_FIRST": 13,
+                "RESEARCH_FIRST": 15,
                 "REVIEW_PROPOSALS": 3,
             },
         )
         next_best = summary["next_best_company"]
-        self.assertEqual(next_best["company_id"], "P43")
-        self.assertEqual(next_best["legal_entity"], "WZR ceramic solutions GmbH")
+        self.assertEqual(next_best["company_id"], "P25")
+        self.assertEqual(next_best["legal_entity"], "Scheplast GmbH")
         self.assertEqual(next_best["coding_rank"], 1)
         self.assertEqual(next_best["priority_version"], "2.0.0")
         self.assertEqual(next_best["qa_result"], "PASS")
-        self.assertEqual(next_best["expected_information_gain"], "HIGH")
+        self.assertEqual(next_best["expected_information_gain"], "MEDIUM")
         self.assertIn("PROCESS", next_best["source_coverage"])
-        self.assertIn("ENERGY_TRANSITION", next_best["source_coverage"])
+        self.assertNotIn("ENERGY_TRANSITION", next_best["source_coverage"])
         self.assertTrue(next_best["coverage_source_ids"])
         self.assertNotIn("opportunity_score", next_best)
 
@@ -170,15 +170,15 @@ class WebExportTests(unittest.TestCase):
             )
         )
         self.assertEqual(
-            companies["P43"]["workflow_priority"]["workflow_action"],
+            companies["P25"]["workflow_priority"]["workflow_action"],
             "CODE_NOW",
         )
         self.assertEqual(
-            companies["P43"]["workflow_priority"]["is_next_to_code"],
+            companies["P25"]["workflow_priority"]["is_next_to_code"],
             "YES",
         )
         self.assertEqual(
-            companies["P43"]["workflow_priority"]["coding_rank"],
+            companies["P25"]["workflow_priority"]["coding_rank"],
             1,
         )
         self.assertEqual(
