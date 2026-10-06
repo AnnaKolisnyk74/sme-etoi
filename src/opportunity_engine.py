@@ -4,6 +4,14 @@ from pathlib import Path
 
 
 CONFIDENCE_ORDER = {"A": 0, "B": 1, "C": 2, "UNKNOWN": 3, "": 3}
+UNRESOLVED_GROUP_CHECKS = {
+    "unknown",
+    "linked_enterprise_check",
+    "partner_or_linked_sme",
+    "state_owned_sme_check",
+}
+CONFIRMED_SME_STATUSES = {"confirmed", "confirmed_sme", "eligible"}
+EXCLUDED_SME_STATUSES = {"excluded", "not_sme", "ineligible"}
 
 DEPLOYMENT_FIELDS = {
     "energy_management": "energy_management_deployed",
@@ -36,6 +44,9 @@ def write_csv(path, rows):
         "why_now",
         "next_action",
         "confidence",
+        "sample_eligibility_status",
+        "actionability_status",
+        "eligibility_next_action",
         "process_id",
         "process_name",
         "reason",
@@ -84,6 +95,32 @@ def process_signal_present(process, signal):
 def worst_confidence(*grades):
     normalised = [str(g or "").strip().upper() for g in grades]
     return max(normalised, key=lambda g: CONFIDENCE_ORDER.get(g, 3)) if normalised else "UNKNOWN"
+
+
+
+def sample_eligibility(company):
+    sme_status = str(company.get("sme_status", "") or "").strip().lower()
+    group_check = str(company.get("group_check", "") or "").strip().lower()
+
+    if sme_status in EXCLUDED_SME_STATUSES:
+        return (
+            "EXCLUDED",
+            "ELIGIBILITY_BLOCKED",
+            "Do not treat this company as an SME-pilot opportunity; resolve sample replacement and preserve the exclusion evidence.",
+        )
+    if group_check in UNRESOLVED_GROUP_CHECKS:
+        return (
+            "ELIGIBILITY_PENDING",
+            "ELIGIBILITY_BLOCKED",
+            "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating this case as actionable.",
+        )
+    if sme_status in CONFIRMED_SME_STATUSES:
+        return "CONFIRMED", "ACTIONABLE", ""
+    return (
+        "PROVISIONAL_PASS",
+        "PROVISIONAL",
+        "Keep the opportunity provisional until final SME/source review is completed.",
+    )
 
 
 def commercial_status(company, opportunity_type):
@@ -179,6 +216,7 @@ def generate_opportunities(companies, process_map, processes, rules):
             commercial, deployment_field, deployment_value = commercial_status(
                 company, rule.get("opportunity_type", "")
             )
+            eligibility_status, actionability_status, eligibility_next_action = sample_eligibility(company)
             priority, why_now, next_action = prioritise(
                 company,
                 rule.get("opportunity_type", ""),
@@ -199,6 +237,9 @@ def generate_opportunities(companies, process_map, processes, rules):
                     "why_now": why_now,
                     "next_action": next_action,
                     "confidence": confidence,
+                    "sample_eligibility_status": eligibility_status,
+                    "actionability_status": actionability_status,
+                    "eligibility_next_action": eligibility_next_action,
                     "process_id": process.get("process_id", ""),
                     "process_name": process.get("process_name", ""),
                     "reason": rule.get("reason_template", ""),
@@ -206,7 +247,7 @@ def generate_opportunities(companies, process_map, processes, rules):
                     "process_signal": required_process,
                     "deployment_field": deployment_field,
                     "deployment_value": deployment_value,
-                    "engine_version": "0.3.0",
+                    "engine_version": "0.4.0",
                 }
             )
 
