@@ -13,6 +13,7 @@ import research_queue
 import score_readiness
 import score_work_queue
 import validate_pilot
+import validate_score_coding_proposals
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -302,6 +303,10 @@ def run_pipeline(
     include_reliability: bool = True,
 ) -> dict[str, int | None]:
     preflight_errors = validate_pilot.validate(root)
+    proposal_errors = validate_score_coding_proposals.validate(root)
+    preflight_errors.extend(
+        f"score coding proposal: {error}" for error in proposal_errors
+    )
     if preflight_errors:
         raise ValueError("Preflight QA failed: " + "; ".join(preflight_errors))
 
