@@ -271,6 +271,11 @@ function renderDetail(){
         '</div>'+
         '<div class="action-text" style="margin-top:10px"><strong>Nächster Score-Schritt:</strong> '+esc(sr.next_action||"—")+'</div>'+
         (sr.blocking_reasons?'<div class="action-text" style="margin-top:7px"><strong>Blocker:</strong> '+esc(sr.blocking_reasons)+'</div>':"")+
+      '</div></section>'+
+      '<section class="section-card"><div class="section-card-title">Scoring Work Queue · '+(c.score_work_tasks||[]).length+'</div><div class="section-card-body source-list">'+
+        ((c.score_work_tasks||[]).length?(c.score_work_tasks||[]).map(t=>
+          '<div class="source-item"><strong>#'+esc(t.work_rank??"—")+' · '+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</strong><div class="action-text">'+esc(t.missing_fields||"Keine offenen Felder")+'</div><div class="source-meta">'+esc(t.workstream)+' · '+esc(t.work_priority)+' · '+esc(t.task_status)+'</div><div class="action-text">'+esc(t.next_action||"")+'</div></div>'
+        ).join(""):'Keine offene Scoring-Arbeit.')+
       '</div></section></div>';
   }else if(state.detailTab==="research"){
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
@@ -369,24 +374,34 @@ function renderFunctional(view){
 
   if(view==="analysis"){
     title.textContent="ETOI Analyse";
-    sub.textContent="Scoring-Arbeitsliste nach Methodik v0.2. Ein Score wird nur dann als final behandelt, wenn Eligibility, Pflichtchecks, numerische Codierung und unabhängiger Human Review abgeschlossen sind.";
+    sub.textContent="Scoring-Arbeitsliste nach Methodik v0.2. Eligibility-Gates stehen vor numerischer Codierung; fehlende Werte werden nie automatisch aus generischen Prozessannahmen erzeugt.";
     const rows=all.slice().sort((a,b)=>{
       const order={"NOT_SCOREABLE_ELIGIBILITY":0,"NOT_SCOREABLE_CERTIFICATES":1,"NEEDS_NUMERIC_CODING":2,"PROVISIONAL_SCORE_ONLY":3,"FINAL_SCORE_READY":4};
       return (order[a.score_readiness?.score_status]??9)-(order[b.score_readiness?.score_status]??9)||a.legal_entity.localeCompare(b.legal_entity);
     });
+    const work=all.flatMap(c=>(c.score_work_tasks||[]).map(t=>({...t,company:c}))).sort((a,b)=>(a.work_rank||999999)-(b.work_rank||999999));
     const summary=state.data.score_readiness_summary||{};
+    const workSummary=state.data.score_work_summary||{};
     const humanDone=all.filter(c=>["APPROVED","COMPLETE","COMPLETED","REVIEWED","DONE"].includes(c.score_readiness?.independent_human_review_status)).length;
     root.innerHTML=
       '<div class="functional-kpis">'+
-        '<div class="functional-kpi"><span>Eligibility blockiert</span><strong>'+(summary.NOT_SCOREABLE_ELIGIBILITY||0)+'</strong></div>'+
-        '<div class="functional-kpi"><span>Numerische Codierung offen</span><strong>'+(summary.NEEDS_NUMERIC_CODING||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Eligibility-Gates</span><strong>'+((workSummary.workstream_counts||{}).ELIGIBILITY||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Coding-Pakete</span><strong>'+((workSummary.workstream_counts||{}).NUMERIC_CODING||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Zu codierende Firmen</span><strong>'+(summary.NEEDS_NUMERIC_CODING||0)+'</strong></div>'+
         '<div class="functional-kpi"><span>Final score-ready</span><strong>'+(summary.FINAL_SCORE_READY||0)+'</strong></div>'+
-        '<div class="functional-kpi"><span>Human Review abgeschlossen</span><strong>'+humanDone+'</strong></div>'+
       '</div>'+
-      genericTable(["Unternehmen","ETOI Score","Band","Score Status","Nächster Score-Schritt","Signale","Confidence","Eligibility"],rows.map(c=>{
-        const sr=c.score_readiness||{};
-        return '<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunity_score??"—")+'</td><td>'+esc(c.opportunity_band||"—")+'</td><td><span class="status-badge '+scoreStatusClass(c)+'">'+esc(titleCase(sr.score_status||"UNKNOWN"))+'</span></td><td class="wrap-cell">'+esc(sr.next_action||"—")+'</td><td>'+(c.opportunities||[]).length+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(titleCase(eligibility(c)))+'</td></tr>';
-      }));
+      '<section class="functional-card"><h3>Scoring Work Queue · '+work.length+' Arbeitspakete</h3>'+
+        genericTable(["Rang","Unternehmen","Workstream","Dimension","Priorität","Offene Felder","Nächste Aktion"],work.map(t=>
+          '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'
+        ))+
+      '</section>'+
+      '<section class="functional-card"><h3>Score Readiness nach Unternehmen</h3>'+
+        genericTable(["Unternehmen","ETOI Score","Band","Score Status","Nächster Score-Schritt","Signale","Confidence","Eligibility"],rows.map(c=>{
+          const sr=c.score_readiness||{};
+          return '<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunity_score??"—")+'</td><td>'+esc(c.opportunity_band||"—")+'</td><td><span class="status-badge '+scoreStatusClass(c)+'">'+esc(titleCase(sr.score_status||"UNKNOWN"))+'</span></td><td class="wrap-cell">'+esc(sr.next_action||"—")+'</td><td>'+(c.opportunities||[]).length+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(titleCase(eligibility(c)))+'</td></tr>';
+        }))+
+      '</section>'+
+      '<div class="functional-card"><strong>Human Review abgeschlossen:</strong> '+humanDone+' / '+all.length+'</div>';
     bindFunctionalCompanyRows();return;
   }
 
