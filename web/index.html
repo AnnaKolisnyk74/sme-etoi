@@ -1,272 +1,207 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SME-ETOI public-data energy intelligence dashboard for German industrial SMEs.">
-  <title>SME-ETOI — Industrial Energy Intelligence</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SME-ETOI Industrial Energy Intelligence">
+  <title>SME ETOI — Industrial Energy Intelligence</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="bi-shell">
-    <header class="bi-topbar">
-      <div class="bi-brand">
-        <div class="bi-logo">SE</div>
-        <div>
-          <div class="bi-title">SME-ETOI</div>
-          <div class="bi-subtitle">Industrial Energy Intelligence</div>
-        </div>
-      </div>
-      <div class="bi-top-actions">
-        <span class="snapshot-dot"></span>
-        <span id="snapshotLabel">Loading snapshot…</span>
-        <span class="top-separator"></span>
-        <span class="prototype-label">Public-data prototype</span>
+  <div class="app">
+    <header class="appbar">
+      <button class="waffle" aria-label="App-Menü"><span>⠿</span></button>
+      <div class="suite">SME ETOI</div>
+      <div class="appbar-divider"></div>
+      <div class="appname">Industrial Energy Intelligence</div>
+      <label class="global-search">
+        <span class="search-icon">⌕</span>
+        <input id="globalSearch" type="search" placeholder="Suchen">
+      </label>
+      <div class="appbar-actions">
+        <button title="Hinweise">♧</button>
+        <button title="Neu">＋</button>
+        <button title="Einstellungen">⚙</button>
+        <button title="Hilfe">?</button>
+        <div class="avatar">AK</div>
       </div>
     </header>
 
-    <aside class="bi-sidebar" aria-label="Dashboard pages">
-      <button class="page-tab active" data-view="overview" title="Executive overview">
-        <span class="page-icon">▦</span>
-        <span>Overview</span>
-      </button>
-      <button class="page-tab" data-view="companies" title="Company explorer">
-        <span class="page-icon">▤</span>
-        <span>Companies</span>
-      </button>
-      <button class="page-tab" data-view="research" title="Research queue">
-        <span class="page-icon">⌕</span>
-        <span>Research</span>
-      </button>
-      <div class="sidebar-spacer"></div>
-      <div class="sidebar-caption">SME-ETOI</div>
+    <div class="commandbar">
+      <div class="commandbar-left">
+        <button id="backCommand">←</button>
+        <button id="newViewCommand">＋ Ansicht</button>
+        <button id="refreshCommand">↻ Aktualisieren</button>
+        <button id="exportCommand">▣ CSV exportieren</button>
+        <button id="chartsCommand">▥ Diagramme anzeigen</button>
+        <button id="methodCommand">▤ Methodik</button>
+        <button class="more-command">•••</button>
+      </div>
+      <div class="commandbar-right">
+        <span>Ansicht</span>
+        <select id="viewModeSelect">
+          <option value="analysis">Analyse</option>
+          <option value="table">Tabelle</option>
+        </select>
+      </div>
+    </div>
+
+    <aside class="leftnav">
+      <button class="nav-toggle">☰</button>
+      <nav>
+        <button class="nav-row"><span>⌂</span>Startseite</button>
+        <button class="nav-row"><span>◷</span>Letzte</button>
+        <button class="nav-row"><span>☆</span>Angeheftet</button>
+
+        <div class="nav-group">Mein Bereich</div>
+        <button class="nav-row" data-nav="dashboard"><span>▦</span>Dashboard</button>
+        <button class="nav-row"><span>☑</span>Aufgaben</button>
+        <button class="nav-row"><span>▤</span>Notizen</button>
+
+        <div class="nav-group">Zielunternehmen</div>
+        <button class="nav-row active" data-nav="companies"><span>♟</span>Zielunternehmen</button>
+        <button class="nav-row" data-nav="research"><span>⌕</span>Research Queue</button>
+        <button class="nav-row"><span>◇</span>Opportunities</button>
+
+        <div class="nav-group">Analyse</div>
+        <button class="nav-row" data-nav="analysis"><span>▥</span>ETOI Analyse</button>
+        <button class="nav-row"><span>▧</span>Marktanalyse</button>
+        <button class="nav-row"><span>◎</span>Regionen</button>
+        <button class="nav-row"><span>⌘</span>Branchen</button>
+        <button class="nav-row"><span>◉</span>Technologien</button>
+
+        <div class="nav-group">Projekt</div>
+        <button class="nav-row" id="methodNav"><span>▣</span>Methodik</button>
+        <button class="nav-row"><span>▤</span>Dokumentation</button>
+      </nav>
     </aside>
 
-    <main class="bi-main">
-      <section class="global-filter-bar" aria-label="Global dashboard filters">
-        <div class="filter-title">
-          <span class="filter-title-main">Filters</span>
-          <span id="filterResultLabel" class="filter-result-label">100 companies</span>
+    <main class="workspace">
+      <section class="page-head">
+        <div class="page-title-line">
+          <h1>Zielunternehmen</h1>
+          <span class="chevron">⌄</span>
         </div>
-        <label class="slicer">
-          <span>Process stratum</span>
-          <select id="globalStratumFilter"><option value="">All</option></select>
-        </label>
-        <label class="slicer">
-          <span>State</span>
-          <select id="globalStateFilter"><option value="">All</option></select>
-        </label>
-        <label class="slicer">
-          <span>Evidence confidence</span>
-          <select id="globalConfidenceFilter">
-            <option value="">All</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-          </select>
-        </label>
-        <label class="slicer">
-          <span>Eligibility</span>
-          <select id="globalEligibilityFilter"><option value="">All</option></select>
-        </label>
-        <label class="slicer">
-          <span>Opportunity type</span>
-          <select id="globalOpportunityFilter"><option value="">All</option></select>
-        </label>
-        <button id="clearFilters" class="clear-filters">Clear filters</button>
-      </section>
-
-      <section id="overviewView" class="bi-view active">
-        <div class="page-header-row">
-          <div>
-            <div class="page-kicker">Executive overview</div>
-            <h1>Energy transition opportunity landscape</h1>
-          </div>
-          <div class="page-context">
-            <span class="context-chip">German SMEs</span>
-            <span class="context-chip">100-company pilot</span>
-          </div>
-        </div>
-
-        <div id="kpiGrid" class="kpi-grid"></div>
-
-        <div class="visual-grid">
-          <section class="visual visual-wide">
-            <div class="visual-header">
-              <div>
-                <div class="visual-title">Opportunity signals by technology</div>
-                <div class="visual-subtitle">Click a bar to cross-filter the dashboard</div>
-              </div>
-              <div class="visual-menu">•••</div>
-            </div>
-            <div id="opportunityChart" class="hbar-chart"></div>
-          </section>
-
-          <section class="visual">
-            <div class="visual-header">
-              <div>
-                <div class="visual-title">Sample eligibility</div>
-                <div class="visual-subtitle">Actionability gate</div>
-              </div>
-              <div class="visual-menu">•••</div>
-            </div>
-            <div id="eligibilityVisual" class="donut-layout"></div>
-          </section>
-
-          <section class="visual">
-            <div class="visual-header">
-              <div>
-                <div class="visual-title">Evidence confidence</div>
-                <div class="visual-subtitle">Current company-level grade</div>
-              </div>
-              <div class="visual-menu">•••</div>
-            </div>
-            <div id="confidenceVisual" class="column-chart"></div>
-          </section>
-
-          <section class="visual visual-matrix">
-            <div class="visual-header">
-              <div>
-                <div class="visual-title">Company opportunity matrix</div>
-                <div class="visual-subtitle">Sorted by number of derived opportunity signals</div>
-              </div>
-              <div class="visual-header-actions">
-                <input id="overviewCompanySearch" class="mini-search" type="search" placeholder="Search company…">
-                <div class="visual-menu">•••</div>
-              </div>
-            </div>
-            <div class="matrix-wrap">
-              <table class="bi-matrix">
-                <thead>
-                  <tr>
-                    <th>Company</th>
-                    <th>Stratum</th>
-                    <th>State</th>
-                    <th>Confidence</th>
-                    <th>Eligibility</th>
-                    <th class="num">Signals</th>
-                    <th class="num">Tasks</th>
-                  </tr>
-                </thead>
-                <tbody id="overviewMatrixBody"></tbody>
-              </table>
-            </div>
-          </section>
-
-          <section class="visual">
-            <div class="visual-header">
-              <div>
-                <div class="visual-title">Research workload</div>
-                <div class="visual-subtitle">Current queue state</div>
-              </div>
-              <div class="visual-menu">•••</div>
-            </div>
-            <div id="researchStateVisual" class="research-state-visual"></div>
-          </section>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-scope="all">Aktive Zielunternehmen</button>
+          <button class="tab" data-scope="mine">Meine Ansichten</button>
+          <button class="tab" data-scope="region">Nach Region</button>
+          <button class="tab" data-scope="sector">Nach Branche</button>
+          <button class="tab" data-scope="potential">Top Potenzial</button>
+          <button class="tab" data-scope="research">Research Queue</button>
+          <button class="tab">•••</button>
         </div>
       </section>
 
-      <section id="companiesView" class="bi-view">
-        <div class="page-header-row">
-          <div>
-            <div class="page-kicker">Company explorer</div>
-            <h1>Company intelligence</h1>
-          </div>
-          <label class="page-search">
-            <span>⌕</span>
-            <input id="companySearch" type="search" placeholder="Search company, city or process…">
-          </label>
-        </div>
+      <section id="analyticsBand" class="analytics-band">
+        <div id="kpiTotal" class="metric-card"></div>
+        <div id="kpiQuality" class="metric-card"></div>
+        <div id="kpiReview" class="metric-card"></div>
+        <div id="kpiSignals" class="metric-card"></div>
 
-        <section class="visual explorer-visual">
-          <div class="visual-header">
-            <div>
-              <div class="visual-title">Companies</div>
-              <div id="companyCountLabel" class="visual-subtitle">0 companies</div>
-            </div>
-            <div class="visual-menu">•••</div>
-          </div>
-          <div class="matrix-wrap explorer-matrix-wrap">
-            <table class="bi-matrix explorer-matrix">
-              <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>City</th>
-                  <th>Process</th>
-                  <th>Employees</th>
-                  <th>Revenue €m</th>
-                  <th>Eligibility</th>
-                  <th>Confidence</th>
-                  <th class="num">Signals</th>
-                  <th class="num">Tasks</th>
-                </tr>
-              </thead>
-              <tbody id="companyTableBody"></tbody>
-            </table>
-          </div>
+        <section class="chart-card region-card">
+          <div class="card-title">Zielunternehmen nach Region</div>
+          <div id="regionChart" class="region-chart"></div>
+        </section>
+
+        <section class="chart-card priority-card">
+          <div class="card-title">Priorisierung</div>
+          <div id="priorityDonut" class="priority-layout"></div>
         </section>
       </section>
 
-      <section id="researchView" class="bi-view">
-        <div class="page-header-row">
-          <div>
-            <div class="page-kicker">Research queue</div>
-            <h1>Highest-value missing facts</h1>
-          </div>
-          <label class="page-search">
-            <span>⌕</span>
-            <input id="researchSearch" type="search" placeholder="Search company or research question…">
-          </label>
-        </div>
-
-        <div class="research-kpi-row" id="researchKpis"></div>
-
-        <section class="visual explorer-visual">
-          <div class="visual-header">
-            <div>
-              <div class="visual-title">Ranked research tasks</div>
-              <div class="visual-subtitle">Eligibility gates rank before downstream deployment checks</div>
-            </div>
-            <div class="research-local-filters">
-              <select id="researchPriorityFilter">
-                <option value="">All priorities</option>
-                <option value="HIGH">High</option>
-                <option value="MEDIUM">Medium</option>
-                <option value="LOW">Low</option>
+      <section class="master-detail">
+        <section class="master-panel">
+          <div class="table-toolbar">
+            <label class="focus-filter">
+              <span>Fokusfilter:</span>
+              <select id="focusFilter">
+                <option value="">Alle Zielunternehmen</option>
+                <option value="pending">SME Eligibility offen</option>
+                <option value="high">Hohe Priorität</option>
+                <option value="score">Mit ETOI Score</option>
               </select>
-              <select id="researchStatusFilter"><option value="">All task states</option></select>
+            </label>
+            <div class="table-tools">
+              <button id="filterButton" title="Filter">▽</button>
+              <label class="table-search">
+                <span>⌕</span>
+                <input id="tableSearch" type="search" placeholder="Nach Name, Branche etc. suchen">
+              </label>
             </div>
           </div>
-          <div class="matrix-wrap explorer-matrix-wrap">
-            <table class="bi-matrix research-matrix">
+
+          <div class="table-wrap">
+            <table class="entity-table">
               <thead>
                 <tr>
-                  <th class="num">Rank</th>
-                  <th>Company</th>
-                  <th>Type</th>
-                  <th>Research question</th>
-                  <th>Priority</th>
-                  <th>Impact</th>
+                  <th class="select-col"></th>
+                  <th>Name ↑</th>
+                  <th>Branche</th>
+                  <th>Region</th>
+                  <th>ETOI Score</th>
+                  <th>Priorität</th>
+                  <th>ISO 50001</th>
                   <th>Status</th>
+                  <th>Confidence</th>
+                  <th>Nächster Schritt</th>
+                  <th class="more-col"></th>
                 </tr>
               </thead>
-              <tbody id="researchTableBody"></tbody>
+              <tbody id="companyRows"></tbody>
             </table>
           </div>
+
+          <div class="pager">
+            <span id="pagerText">0 Zielunternehmen</span>
+            <div class="pager-actions">
+              <button id="prevPage">‹</button>
+              <span id="pageLabel">Seite 1</span>
+              <button id="nextPage">›</button>
+            </div>
+          </div>
         </section>
+
+        <aside class="detail-panel">
+          <div id="detailContent" class="detail-content"></div>
+        </aside>
+      </section>
+
+      <section id="researchPage" class="secondary-page" hidden>
+        <div class="secondary-header">
+          <div>
+            <div class="secondary-kicker">Research Queue</div>
+            <h2>Priorisierte offene Fakten</h2>
+          </div>
+          <label class="table-search secondary-search">
+            <span>⌕</span>
+            <input id="researchSearch" type="search" placeholder="Research Queue durchsuchen">
+          </label>
+        </div>
+        <div class="research-table-wrap">
+          <table class="entity-table">
+            <thead>
+              <tr>
+                <th>Rang</th>
+                <th>Unternehmen</th>
+                <th>Typ</th>
+                <th>Research Question</th>
+                <th>Priorität</th>
+                <th>Impact</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="researchRows"></tbody>
+          </table>
+        </div>
       </section>
     </main>
   </div>
 
-  <div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
-  <aside id="companyDrawer" class="drawer" aria-hidden="true">
-    <button id="drawerClose" class="drawer-close" aria-label="Close">×</button>
-    <div id="drawerContent"></div>
-  </aside>
-
+  <div id="toast" class="toast" hidden></div>
   <div id="errorState" class="error-state" hidden>
-    <strong>Unable to load SME-ETOI data.</strong>
-    <span>Serve the <code>web/</code> directory over HTTP so the browser can read <code>data/sme_etoi.json</code>.</span>
+    <strong>Daten konnten nicht geladen werden.</strong>
+    <span>Bitte die Web-App über den lokalen HTTP-Server öffnen.</span>
   </div>
 
   <script src="app.js" defer></script>

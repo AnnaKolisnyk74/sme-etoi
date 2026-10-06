@@ -147,7 +147,11 @@
           "evidence_fact": "injection-moulding production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P37",
@@ -235,7 +239,11 @@
           "evidence_fact": "Exact legal entity, more than 100 employees, injection moulding and toolmaking",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P11",
@@ -370,7 +378,11 @@
           "evidence_fact": "ISO 50001 approval 00012633 and ISO 14001 approval 00008130; valid through 1 March 2029; Hüttenberg and Wetzlar surface-treatment sites in scope",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P26",
@@ -496,7 +508,11 @@
           "evidence_fact": "Employee band 101-250 and revenue band EUR 10-50 million",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P27",
@@ -631,7 +647,11 @@
           "evidence_fact": "Official page documents small electrically heated ovens plus debinding and sintering processes at BCE; historical project evidence supports furnace-process relevance but does not prove current technology deployment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P28",
@@ -757,7 +777,11 @@
           "evidence_fact": "Brewing, fermentation and maturation process",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P50",
@@ -883,7 +907,11 @@
           "evidence_fact": "active beer production and brewing process",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P31",
@@ -1009,7 +1037,11 @@
           "evidence_fact": "Beer production, family ownership and renewable-energy measures",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P74",
@@ -1135,7 +1167,11 @@
           "evidence_fact": "brewing; boiling; fermentation; maturation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P53",
@@ -1277,7 +1313,11 @@
           "evidence_fact": "biomass heat; process heat recovery; heat storage and PV",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P91",
@@ -1403,7 +1443,11 @@
           "evidence_fact": "brewing; boiling; fermentation; maturation and filling",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P93",
@@ -1529,7 +1573,11 @@
           "evidence_fact": "brewing; open fermentation; beverage filling",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P94",
@@ -1655,7 +1703,11 @@
           "evidence_fact": "wheat-beer brewing; boiling; fermentation; maturation and filling",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P73",
@@ -1781,7 +1833,11 @@
           "evidence_fact": "brewing; boiling; fermentation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P70",
@@ -1907,7 +1963,11 @@
           "evidence_fact": "ceramic spray powders; melt products; sinter products and pilot sintering",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P87",
@@ -2033,7 +2093,11 @@
           "evidence_fact": "ceramic injection moulding; pressing; finishing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P88",
@@ -2172,7 +2236,11 @@
           "evidence_fact": "technical ceramic component production; precision finishing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P20",
@@ -2316,7 +2384,11 @@
           "evidence_fact": "Official company page documents manual hot forming of glass with firing materials at approximately 800 C; supports kiln-based batch-process relevance but not energy-system deployment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P107",
@@ -2442,7 +2514,11 @@
           "evidence_fact": "fine bone china forming; glazing and firing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P85",
@@ -2568,7 +2644,11 @@
           "evidence_fact": "electroplating; metal surface finishing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P51",
@@ -2694,7 +2774,11 @@
           "evidence_fact": "wort-cooling heat recovery for hot-water generation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P67",
@@ -2833,7 +2917,11 @@
           "evidence_fact": "technical ceramics and group-level 178-employee statement",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P58",
@@ -2930,7 +3018,11 @@
           "evidence_fact": "injection moulding and ISO 14001 download listing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P105",
@@ -3056,7 +3148,11 @@
           "evidence_fact": "rack and barrel electroplating; precious-metal and nickel coating",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P05",
@@ -3346,7 +3442,11 @@
           "evidence_fact": "Brewing and cooling processes; heat recovery; biogas CHP and absorption chilling; PV; process-control renewal; 2045 net-zero and 2031 reduction target; planned electric clean steam and process monitoring",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P15",
@@ -3472,7 +3572,11 @@
           "evidence_fact": "2023 assets total approximately EUR 4.097 million",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P39",
@@ -3598,7 +3702,11 @@
           "evidence_fact": "Anodising process and ISO 14001 listing; direct validity evidence open",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P81",
@@ -3724,7 +3832,11 @@
           "evidence_fact": "technical; functional and decorative anodising",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P78",
@@ -3850,7 +3962,11 @@
           "evidence_fact": "thermoplastic and thermoset injection moulding; compression moulding",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P92",
@@ -3976,7 +4092,11 @@
           "evidence_fact": "brewing; boiling; fermentation; maturation and filling",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P106",
@@ -4102,7 +4222,11 @@
           "evidence_fact": "custom technical-ceramic components; material selection and production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P71",
@@ -4228,7 +4352,11 @@
           "evidence_fact": "brewing; boiling; fermentation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P23",
@@ -4345,7 +4473,11 @@
           "evidence_fact": "ISO 50001:2018 valid from 22 May 2024 through 21 May 2027 for injection-moulded plastic parts at Lennestadt",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P61",
@@ -4471,7 +4603,11 @@
           "evidence_fact": "electrolytic deposition plus pretreatment and post-treatment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P41",
@@ -4597,7 +4733,11 @@
           "evidence_fact": "Independent Bavarian company and sector corroboration",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P82",
@@ -4723,7 +4863,11 @@
           "evidence_fact": "rack electroplating; zinc deposition; passivation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P62",
@@ -4849,7 +4993,11 @@
           "evidence_fact": "technical galvanic coating services",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P83",
@@ -4975,7 +5123,11 @@
           "evidence_fact": "zinc-nickel electroplating; anodising; passivation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P86",
@@ -5101,7 +5253,11 @@
           "evidence_fact": "special ceramic casting products; ceramic forming and firing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P33",
@@ -5198,7 +5354,11 @@
           "evidence_fact": "Independent location and process corroboration",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P19",
@@ -5331,7 +5491,11 @@
           "evidence_fact": "About 120 employees and a reported EUR 30 million site investment; investment details require direct-company corroboration before technology deployment coding",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P18",
@@ -5504,7 +5668,11 @@
           "evidence_fact": "ISO 50001:2018 valid through 19 December 2026 for glass manufacture at Waldsassen",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P45",
@@ -5601,7 +5769,11 @@
           "evidence_fact": "Glass melting, manual forming, pressing and annealing equipment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P52",
@@ -5727,7 +5899,11 @@
           "evidence_fact": "resource use across the brewing process",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P24",
@@ -5819,7 +5995,11 @@
           "evidence_fact": "ISO 50001:2018 valid 4 July 2026 through 3 July 2029 and covering all consumed energy quantities",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P60",
@@ -5945,7 +6125,11 @@
           "evidence_fact": "hard chromium plating of industrial materials",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P72",
@@ -6071,7 +6255,11 @@
           "evidence_fact": "brewing; boiling; fermentation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P47",
@@ -6210,7 +6398,11 @@
           "evidence_fact": "Technical ceramic production and approximately 150 group employees",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P104",
@@ -6349,7 +6541,11 @@
           "evidence_fact": "zinc; zinc-nickel; chemical nickel; anodising and heat treatment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P90",
@@ -6475,7 +6671,11 @@
           "evidence_fact": "technical ceramic components; ceramic processing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P100",
@@ -6601,7 +6801,11 @@
           "evidence_fact": "plastic injection moulding; toolmaking and series production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P66",
@@ -6727,7 +6931,11 @@
           "evidence_fact": "porcelain manufacture and public heritage documentation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P32",
@@ -6857,7 +7065,11 @@
           "evidence_fact": "Exact legal entity, location and brewery production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P38",
@@ -6983,7 +7195,11 @@
           "evidence_fact": "150 employees; anodising, powder coating and heat treatment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P34",
@@ -7093,7 +7309,11 @@
           "evidence_fact": "Independent SME and injection-moulding description",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P36",
@@ -7190,7 +7410,11 @@
           "evidence_fact": "125 employees and family-owned SME description",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P99",
@@ -7316,7 +7540,11 @@
           "evidence_fact": "plastic injection moulding; toolmaking; finishing and assembly",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P79",
@@ -7442,7 +7670,11 @@
           "evidence_fact": "plastic injection moulding; toolmaking; series production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P35",
@@ -7539,7 +7771,11 @@
           "evidence_fact": "Plastic-parts production process",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P29",
@@ -7665,7 +7901,11 @@
           "evidence_fact": "Brewing process and environmental-management statement",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P55",
@@ -7762,7 +8002,11 @@
           "evidence_fact": "more than 75 injection-moulding machines",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P77",
@@ -7888,7 +8132,11 @@
           "evidence_fact": "plastic injection moulding; toolmaking; assembly",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P103",
@@ -8014,7 +8262,11 @@
           "evidence_fact": "anodising; zinc-nickel; chemical nickel and galvanic coating",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P101",
@@ -8140,7 +8392,11 @@
           "evidence_fact": "band; rack and barrel electroplating; selective plating",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P80",
@@ -8266,7 +8522,11 @@
           "evidence_fact": "plastic injection moulding; toolmaking; assembly",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P110",
@@ -8392,7 +8652,11 @@
           "evidence_fact": "porcelain forming; glazing; decoration and firing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P04",
@@ -8697,7 +8961,11 @@
           "evidence_fact": "Energy-management system and software; process-level Power BI reports; gas heat; central cooling; 125 kWp PV; planned heat electrification and heat-pump/solar combination; 42 percent Scope 1 and 2 reduction target by 2030",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P40",
@@ -8827,7 +9095,11 @@
           "evidence_fact": "Exact legal entity; rack, barrel and galvanising work; company describes itself as medium-sized",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P10",
@@ -9029,7 +9301,11 @@
           "evidence_fact": "Alexander Maiß is identified for Oskar Lehmann GmbH & Co. KG and states that network participation produced saved energy costs; the page links the company statement to Energieeffizienz-Netzwerk LEEN OWL II. This does not establish a current EnMS, ISO 50001 certificate, demand-response participation or load-management deployment.",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": 70,
+      "opportunity_band": "HIGH",
+      "score_confidence_grade": "B",
+      "score_classification_status": "CLASSIFIED"
     },
     {
       "company_id": "P42",
@@ -9130,7 +9406,11 @@
           "evidence_fact": "Exact legal entity and industrial surface-treatment activity",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P63",
@@ -9256,7 +9536,11 @@
           "evidence_fact": "functional galvanic and anodising services",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P44",
@@ -9382,7 +9666,11 @@
           "evidence_fact": "Alumina and direct-sintered silicon-carbide products",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P96",
@@ -9508,7 +9796,11 @@
           "evidence_fact": "technical thermoplastic injection moulding; development and series production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P97",
@@ -9634,7 +9926,11 @@
           "evidence_fact": "technical thermoplastic injection moulding; insert moulding; assembly",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P109",
@@ -9760,7 +10056,11 @@
           "evidence_fact": "porcelain forming; glazing; painting and firing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P46",
@@ -9899,7 +10199,11 @@
           "evidence_fact": "Technical porcelain and ceramic manufacturing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P65",
@@ -10038,7 +10342,11 @@
           "evidence_fact": "porcelain production and reported SME-scale employment",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P108",
@@ -10164,7 +10472,11 @@
           "evidence_fact": "porcelain forming; glazing; decoration and firing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P30",
@@ -10290,7 +10602,11 @@
           "evidence_fact": "Brewing and EMAS company statement; registration validity open",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P75",
@@ -10416,7 +10732,11 @@
           "evidence_fact": "brewing; boiling; fermentation",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P21",
@@ -10551,7 +10871,11 @@
           "evidence_fact": "About 90 employees and estimated EUR 22.5 million turnover; estimates remain provisional",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P54",
@@ -10706,7 +11030,11 @@
           "evidence_fact": "beer production and a 458.4 kWp PV system",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P12",
@@ -10859,7 +11187,11 @@
           "evidence_fact": "35 employees; third-generation management; process-heat and compressed-air efficiency results; Scope 1 baseline and 2026 target",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P22",
@@ -11013,7 +11345,11 @@
           "evidence_fact": "About 40 employees and approximately 30,000 hl annual output",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P98",
@@ -11139,7 +11475,11 @@
           "evidence_fact": "toolmaking; injection moulding; component assembly",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P102",
@@ -11265,7 +11605,11 @@
           "evidence_fact": "electroplating; silvering; tinning; zinc coating and hard anodising",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P84",
@@ -11362,7 +11706,11 @@
           "evidence_fact": "powder coating; pretreatment; shift production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P25",
@@ -11477,7 +11825,11 @@
           "evidence_fact": "Direct certificate for Scheplast GmbH was valid from 27 February 2021 through 26 February 2024; no current successor was located",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P13",
@@ -11612,7 +11964,11 @@
           "evidence_fact": "Zinc, zinc-iron and zinc-nickel electroplating; heat treatment; phosphating and powder coating",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P16",
@@ -11765,7 +12121,11 @@
           "evidence_fact": "ISO 14001:2015 valid from 18 June 2025 through 17 June 2028 for the Lauf production site",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P76",
@@ -11891,7 +12251,11 @@
           "evidence_fact": "technical thermoplastic injection moulding; toolmaking",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P56",
@@ -11988,7 +12352,11 @@
           "evidence_fact": "injection moulding and toolmaking",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P57",
@@ -12085,7 +12453,11 @@
           "evidence_fact": "industrial injection moulding",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P89",
@@ -12211,7 +12583,11 @@
           "evidence_fact": "technical ceramic parts; forming; machining and firing",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P68",
@@ -12337,7 +12713,11 @@
           "evidence_fact": "technical ceramic extrusion and production",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P03",
@@ -12481,7 +12861,11 @@
           "evidence_fact": "Approximately EUR 20 million new production building; capacity expansion and reusable-glass filling line",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P07",
@@ -12659,7 +13043,11 @@
           "evidence_fact": "Current official page documents PV generation and planned expansion; central material drying; more than 50 percent fully electric injection-moulding machines; geothermal cooling; heat recovery and solar technology. It contains no battery-storage commissioning statement on the check date.",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": 63,
+      "opportunity_band": "MEDIUM",
+      "score_confidence_grade": "A",
+      "score_classification_status": "CLASSIFIED"
     },
     {
       "company_id": "P64",
@@ -12785,7 +13173,11 @@
           "evidence_fact": "independent precision contract electroplating",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P95",
@@ -12911,7 +13303,11 @@
           "evidence_fact": "brewing; open fermentation; maturation and filling",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     },
     {
       "company_id": "P43",
@@ -13037,7 +13433,11 @@
           "evidence_fact": "12 employees and technical-ceramics development",
           "review_status": "RESEARCHED"
         }
-      ]
+      ],
+      "opportunity_score": null,
+      "opportunity_band": "",
+      "score_confidence_grade": "",
+      "score_classification_status": ""
     }
   ]
 }
