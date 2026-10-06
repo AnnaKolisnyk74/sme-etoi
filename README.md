@@ -187,7 +187,8 @@ The current proposal-aware score-work queue therefore contains:
 - 1 P12 dimension package `RESEARCH_NEEDED`;
 - 5 P16 dimension packages `RESEARCH_NEEDED`;
 - 5 P05 dimension packages `AWAITING_HUMAN_REVIEW`;
-- 415 dimension packages `READY_TO_CODE`.
+- 5 P18 dimension packages `RESEARCH_NEEDED`;
+- 410 dimension packages `READY_TO_CODE`.
 
 P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
 score fields have review-pending numeric proposals, while
@@ -207,6 +208,12 @@ score fields have review-pending numeric anchors based on the environmental
 statement, including electric clean-steam planning, cooling, CHP/PV,
 heat-recovery and process-control evidence. The proposal arithmetic sums to
 59/100, but this remains a review artifact and is not a published score.
+
+P18 Glashütte Lamberts Waldsassen GmbH is a natural-gas-fired glass case
+with seven evidence-supported numeric proposals and eight explicit research
+gaps. Known gas firing supports fossil-heat and ordinal load relevance, while
+the electric-furnace route, motor/converter evidence, thermal buffering,
+power-quality/onsite integration and investment history remain unresolved.
 
 Current generated workload:
 
