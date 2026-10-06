@@ -54,12 +54,18 @@ def build_web_payload(root: Path = ROOT) -> dict:
     process_library = read_csv(root, "data/process_library.csv")
     opportunities = read_csv(root, "outputs/opportunities.csv")
     pilot_scores = read_csv(root, "outputs/pilot_scored.csv")
+    score_readiness = read_csv(root, "outputs/score_readiness.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
 
     score_by_id = {
         row["company_id"]: row
         for row in pilot_scores
+        if row.get("company_id")
+    }
+    readiness_by_id = {
+        row["company_id"]: row
+        for row in score_readiness
         if row.get("company_id")
     }
     candidate_by_id = {
@@ -94,6 +100,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
         company_id = company["company_id"]
         candidate = candidate_by_id.get(company_id, {})
         score = score_by_id.get(company_id, {})
+        readiness = readiness_by_id.get(company_id, {})
         mappings = mappings_by_company.get(company_id, [])
 
         processes = []
@@ -177,6 +184,17 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "opportunity_band": normalise(score.get("opportunity_band")),
                 "score_confidence_grade": normalise(score.get("confidence_grade")),
                 "score_classification_status": normalise(score.get("classification_status")),
+                "score_readiness": {
+                    "score_status": normalise(readiness.get("score_status")),
+                    "eligibility_gate": normalise(readiness.get("eligibility_gate")),
+                    "process_mapping_status": normalise(readiness.get("process_mapping_status")),
+                    "certificate_check_status": normalise(readiness.get("certificate_check_status")),
+                    "numeric_coding_status": normalise(readiness.get("numeric_coding_status")),
+                    "independent_human_review_status": normalise(readiness.get("independent_human_review_status")),
+                    "existing_score_status": normalise(readiness.get("existing_score_status")),
+                    "blocking_reasons": normalise(readiness.get("blocking_reasons")),
+                    "next_action": normalise(readiness.get("next_action")),
+                },
                 "process_stratum": normalise(candidate.get("process_stratum")),
                 "evidence_confidence": normalise(company.get("evidence_confidence")),
                 "review_status": normalise(company.get("review_status")),
@@ -230,6 +248,11 @@ def build_web_payload(root: Path = ROOT) -> dict:
         for row in research_queue
     )
 
+    score_status_counts = Counter(
+        normalise(row.get("score_status")) or "UNKNOWN"
+        for row in score_readiness
+    )
+
     verified_dates = [
         normalise(row.get("last_verified_date"))
         for row in companies
@@ -262,6 +285,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
             "task_status_counts": dict(sorted(task_status_counts.items())),
             "priority_counts": dict(sorted(priority_counts.items())),
         },
+        "score_readiness_summary": dict(sorted(score_status_counts.items())),
         "companies": web_companies,
     }
 
