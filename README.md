@@ -98,6 +98,7 @@ sme-etoi/
 ├── outputs/
 │   ├── opportunities.csv
 │   ├── research_queue.csv
+│   ├── score_readiness.csv
 │   └── scored_demo.csv
 ├── web/
 │   ├── index.html
@@ -144,6 +145,12 @@ It must never be reported as empirical evidence.
 
 The integrated pipeline also refreshes the static web data snapshot at
 `web/data/sme_etoi.json`.
+
+The same run also refreshes `outputs/score_readiness.csv`, which records why
+each canonical company is or is not ready for a final SME-ETOI score. It keeps
+existing provisional scores visible without treating them as final when SME
+eligibility, numeric coding or independent human review is still open.
+
 
 ### Web prototype
 
