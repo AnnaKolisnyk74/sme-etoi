@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -97,19 +98,18 @@ class WebExportTests(unittest.TestCase):
 
     def test_collection_dom_queries_use_query_selector_all(self):
         app = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
-        bad_patterns = [
-            '$(".nav-row").forEach',
-            '$("#functionalContent [data-company-id]").forEach',
-            '$("#companyRows tr[data-id]").forEach',
-            '$("#researchRows tr[data-id]").forEach',
-            '$(".note-item[data-company-id]").forEach',
-            '$("[data-nav]").forEach',
+        collection_selectors = [
+            ".nav-row",
+            "#functionalContent [data-company-id]",
+            "#companyRows tr[data-id]",
+            "#researchRows tr[data-id]",
+            ".note-item[data-company-id]",
+            "[data-nav]",
         ]
-        for pattern in bad_patterns:
-            self.assertNotIn(pattern, app)
-        self.assertIn('$("[data-nav]").forEach', app)
-        self.assertIn('$("#researchRows tr[data-id]").forEach', app)
-
+        for selector in collection_selectors:
+            self.assertIn(f'$$("{selector}").forEach', app)
+            bad = rf'(?<!\$)\$\("{re.escape(selector)}"\)\.forEach'
+            self.assertIsNone(re.search(bad, app))
 
 
 if __name__ == "__main__":
