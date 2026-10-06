@@ -141,6 +141,14 @@ def validate(
             errors.append(
                 f"line {line_number}: invalid proposal_confidence={confidence!r}"
             )
+        elif status == "NEEDS_RESEARCH" and confidence != "UNKNOWN":
+            errors.append(
+                f"line {line_number}: NEEDS_RESEARCH requires proposal_confidence=UNKNOWN"
+            )
+        elif status != "NEEDS_RESEARCH" and confidence == "UNKNOWN":
+            errors.append(
+                f"line {line_number}: numeric/review proposal cannot use UNKNOWN confidence"
+            )
 
         source_ids = split_source_ids(row.get("evidence_source_ids", ""))
         if not source_ids:
@@ -155,6 +163,9 @@ def validate(
                 errors.append(
                     f"line {line_number}: source {source_id} belongs to {owner}, not {company_id}"
                 )
+
+        if not str(row.get("anchor_interpretation", "")).strip():
+            errors.append(f"line {line_number}: anchor_interpretation is blank")
 
         if not str(row.get("evidence_basis", "")).strip():
             errors.append(f"line {line_number}: evidence_basis is blank")
