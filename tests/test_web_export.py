@@ -98,9 +98,9 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "AWAITING_HUMAN_REVIEW": 14,
-                "READY_TO_CODE": 410,
-                "RESEARCH_NEEDED": 16,
+                "AWAITING_HUMAN_REVIEW": 19,
+                "READY_TO_CODE": 400,
+                "RESEARCH_NEEDED": 21,
             },
         )
         self.assertTrue(

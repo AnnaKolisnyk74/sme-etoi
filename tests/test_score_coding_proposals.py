@@ -218,6 +218,48 @@ class ScoreCodingProposalTests(unittest.TestCase):
             self.assertEqual(row["proposal_confidence"], "UNKNOWN")
             self.assertTrue(row["missing_fact"])
 
+    def test_p22_complete_proposals_cover_all_fields_and_sum_to_74(self):
+        rows = [
+            row
+            for row in read_csv(ROOT / "data" / "score_coding_proposals.csv")
+            if row["company_id"] == "P22"
+        ]
+        self.assertEqual(len(rows), 15)
+        self.assertEqual({row["score_field"] for row in rows}, set(SCORE_FIELDS))
+        self.assertEqual(
+            {row["proposal_status"] for row in rows},
+            {"AWAITING_HUMAN_REVIEW"},
+        )
+        self.assertEqual(sum(int(row["proposed_value"]) for row in rows), 74)
+
+    def test_p24_is_two_numeric_proposals_plus_thirteen_research_gaps(self):
+        rows = [
+            row
+            for row in read_csv(ROOT / "data" / "score_coding_proposals.csv")
+            if row["company_id"] == "P24"
+        ]
+        self.assertEqual(len(rows), 15)
+        self.assertEqual({row["score_field"] for row in rows}, set(SCORE_FIELDS))
+        numeric = [
+            row for row in rows
+            if row["proposal_status"] == "AWAITING_HUMAN_REVIEW"
+        ]
+        gaps = [
+            row for row in rows
+            if row["proposal_status"] == "NEEDS_RESEARCH"
+        ]
+        self.assertEqual(len(numeric), 2)
+        self.assertEqual(len(gaps), 13)
+        self.assertEqual(
+            {row["score_field"] for row in numeric},
+            {"management_gap_score", "targets_gap_score"},
+        )
+        self.assertEqual(sum(int(row["proposed_value"]) for row in numeric), 5)
+        for row in gaps:
+            self.assertEqual(row["proposed_value"], "")
+            self.assertEqual(row["proposal_confidence"], "UNKNOWN")
+            self.assertTrue(row["missing_fact"])
+
     def test_p04_proposals_do_not_mutate_canonical_scoring_inputs_or_outputs(self):
         coded_ids = {
             row["company_id"]
@@ -239,6 +281,10 @@ class ScoreCodingProposalTests(unittest.TestCase):
         self.assertNotIn("P05", scored_ids)
         self.assertNotIn("P18", coded_ids)
         self.assertNotIn("P18", scored_ids)
+        self.assertNotIn("P22", coded_ids)
+        self.assertNotIn("P22", scored_ids)
+        self.assertNotIn("P24", coded_ids)
+        self.assertNotIn("P24", scored_ids)
 
 
 if __name__ == "__main__":
