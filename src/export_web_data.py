@@ -55,6 +55,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     opportunities = read_csv(root, "outputs/opportunities.csv")
     pilot_scores = read_csv(root, "outputs/pilot_scored.csv")
     score_readiness = read_csv(root, "outputs/score_readiness.csv")
+    score_work_queue = read_csv(root, "outputs/score_work_queue.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
 
@@ -90,6 +91,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
     queue_by_company: dict[str, list[dict[str, str]]] = {}
     for row in research_queue:
         queue_by_company.setdefault(row["company_id"], []).append(row)
+
+    score_work_by_company: dict[str, list[dict[str, str]]] = {}
+    for row in score_work_queue:
+        score_work_by_company.setdefault(row["company_id"], []).append(row)
 
     sources_by_company: dict[str, list[dict[str, str]]] = {}
     for row in sources:
@@ -164,6 +169,33 @@ def build_web_payload(root: Path = ROOT) -> dict:
             }
             for row in company_tasks
         ]
+        company_score_work = sorted(
+            score_work_by_company.get(company_id, []),
+            key=lambda row: int(normalise(row.get("work_rank")) or 999999),
+        )
+        web_score_work = [
+            {
+                "work_rank": numeric_or_none(row.get("work_rank")),
+                "company_work_rank": numeric_or_none(row.get("company_work_rank")),
+                "task_key": normalise(row.get("task_key")),
+                "workstream": normalise(row.get("workstream")),
+                "task_type": normalise(row.get("task_type")),
+                "dimension": normalise(row.get("dimension")),
+                "required_fields": normalise(row.get("required_fields")),
+                "missing_fields": normalise(row.get("missing_fields")),
+                "missing_field_count": numeric_or_none(row.get("missing_field_count")),
+                "task_status": normalise(row.get("task_status")),
+                "work_priority": normalise(row.get("work_priority")),
+                "evidence_confidence": normalise(row.get("evidence_confidence")),
+                "process_confidence": normalise(row.get("process_confidence")),
+                "source_count": numeric_or_none(row.get("source_count")),
+                "research_rank": numeric_or_none(row.get("research_rank")),
+                "queue_reason": normalise(row.get("queue_reason")),
+                "next_action": normalise(row.get("next_action")),
+            }
+            for row in company_score_work
+        ]
+
 
         web_companies.append(
             {
@@ -221,6 +253,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "processes": processes,
                 "opportunities": web_opportunities,
                 "research_tasks": web_tasks,
+                "score_work_tasks": web_score_work,
                 "sources": [
                     compact_source(source)
                     for source in sources_by_company.get(company_id, [])
@@ -251,6 +284,15 @@ def build_web_payload(root: Path = ROOT) -> dict:
     score_status_counts = Counter(
         normalise(row.get("score_status")) or "UNKNOWN"
         for row in score_readiness
+    )
+
+    score_workstream_counts = Counter(
+        normalise(row.get("workstream")) or "UNKNOWN"
+        for row in score_work_queue
+    )
+    score_work_priority_counts = Counter(
+        normalise(row.get("work_priority")) or "UNKNOWN"
+        for row in score_work_queue
     )
 
     verified_dates = [
@@ -286,6 +328,11 @@ def build_web_payload(root: Path = ROOT) -> dict:
             "priority_counts": dict(sorted(priority_counts.items())),
         },
         "score_readiness_summary": dict(sorted(score_status_counts.items())),
+        "score_work_summary": {
+            "workstream_counts": dict(sorted(score_workstream_counts.items())),
+            "priority_counts": dict(sorted(score_work_priority_counts.items())),
+            "task_count": len(score_work_queue),
+        },
         "companies": web_companies,
     }
 
