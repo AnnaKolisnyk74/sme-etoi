@@ -192,7 +192,9 @@ The current proposal-aware score-work queue therefore contains:
 - 5 P18 dimension packages `RESEARCH_NEEDED`;
 - 5 P22 dimension packages `AWAITING_HUMAN_REVIEW`;
 - 5 P24 dimension packages `RESEARCH_NEEDED`;
-- 395 dimension packages `READY_TO_CODE`.
+- 4 P11 dimension packages `RESEARCH_NEEDED`;
+- 1 P11 dimension package `AWAITING_HUMAN_REVIEW`;
+- 390 dimension packages `READY_TO_CODE`.
 
 P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
 score fields have review-pending numeric proposals, while
@@ -241,6 +243,12 @@ workflow decision per company:
 Within `CODE_NOW`, the system assigns a dense `coding_rank` and exactly one
 `is_next_to_code=YES` flag. The current next-best coding company is
 **P23 FM-Plast GmbH**.
+
+P11 B+T Oberflächentechnik GmbH is the first case processed by the
+company-level Next Best Company ranking. Five score fields receive numeric
+first-pass proposals, while ten technical fields remain `NEEDS_RESEARCH`.
+After that assessment the company automatically moves from `CODE_NOW` to
+`RESEARCH_FIRST`, and P53 Brauerei Rittmayer becomes the next company to code.
 
 Current generated workload:
 
