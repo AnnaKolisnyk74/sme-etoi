@@ -151,7 +151,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P37",
@@ -243,7 +254,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P11",
@@ -382,7 +404,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P26",
@@ -512,7 +545,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P27",
@@ -651,7 +695,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P28",
@@ -781,7 +836,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P50",
@@ -911,7 +977,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P31",
@@ -1041,7 +1118,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P74",
@@ -1171,7 +1259,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P53",
@@ -1317,7 +1416,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P91",
@@ -1447,7 +1557,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P93",
@@ -1577,7 +1698,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P94",
@@ -1707,7 +1839,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P73",
@@ -1837,7 +1980,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P70",
@@ -1967,7 +2121,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P87",
@@ -2097,7 +2262,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P88",
@@ -2240,7 +2416,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=linked_enterprise_check | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P20",
@@ -2388,7 +2575,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P107",
@@ -2518,7 +2716,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P85",
@@ -2648,7 +2857,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P51",
@@ -2778,7 +2998,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P67",
@@ -2921,7 +3152,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=linked_enterprise_check | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P58",
@@ -3022,7 +3264,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P105",
@@ -3152,7 +3405,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P05",
@@ -3446,7 +3710,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P15",
@@ -3576,7 +3851,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P39",
@@ -3706,7 +3992,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P81",
@@ -3836,7 +4133,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P78",
@@ -3966,7 +4274,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P92",
@@ -4096,7 +4415,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P106",
@@ -4226,7 +4556,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P71",
@@ -4356,7 +4697,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P23",
@@ -4477,7 +4829,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P61",
@@ -4607,7 +4970,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P41",
@@ -4737,7 +5111,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P82",
@@ -4867,7 +5252,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P62",
@@ -4997,7 +5393,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P83",
@@ -5127,7 +5534,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P86",
@@ -5257,7 +5675,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P33",
@@ -5358,7 +5787,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P19",
@@ -5495,7 +5935,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P18",
@@ -5672,7 +6123,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P45",
@@ -5773,7 +6235,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P52",
@@ -5903,7 +6376,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P24",
@@ -5999,7 +6483,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P60",
@@ -6129,7 +6624,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P72",
@@ -6259,7 +6765,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P47",
@@ -6402,7 +6919,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=linked_enterprise_check | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P104",
@@ -6545,7 +7073,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=linked_enterprise_check | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P90",
@@ -6675,7 +7214,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P100",
@@ -6805,7 +7355,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P66",
@@ -6935,7 +7496,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P32",
@@ -7069,7 +7641,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=unknown | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P38",
@@ -7199,7 +7782,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P34",
@@ -7313,7 +7907,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=unknown | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P36",
@@ -7414,7 +8019,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P99",
@@ -7544,7 +8160,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P79",
@@ -7674,7 +8301,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P35",
@@ -7775,7 +8413,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P29",
@@ -7905,7 +8554,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P55",
@@ -8006,7 +8666,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P77",
@@ -8136,7 +8807,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P103",
@@ -8266,7 +8948,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P101",
@@ -8396,7 +9089,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P80",
@@ -8526,7 +9230,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P110",
@@ -8656,7 +9371,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P04",
@@ -8965,7 +9691,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P40",
@@ -9099,7 +9836,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=unknown | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P10",
@@ -9305,7 +10053,18 @@
       "opportunity_score": 70,
       "opportunity_band": "HIGH",
       "score_confidence_grade": "B",
-      "score_classification_status": "CLASSIFIED"
+      "score_classification_status": "CLASSIFIED",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "COMPLETE",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "LEGACY_PROVISIONAL_NOT_FINAL",
+        "blocking_reasons": "group_check=partner_or_linked_sme | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P42",
@@ -9410,7 +10169,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=unknown | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P63",
@@ -9540,7 +10310,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P44",
@@ -9670,7 +10451,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P96",
@@ -9800,7 +10592,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P97",
@@ -9930,7 +10733,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P109",
@@ -10060,7 +10874,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P46",
@@ -10203,7 +11028,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=linked_enterprise_check | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P65",
@@ -10346,7 +11182,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "group_check=state_owned_sme_check | numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P108",
@@ -10476,7 +11323,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P30",
@@ -10606,7 +11464,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P75",
@@ -10736,7 +11605,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P21",
@@ -10875,7 +11755,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P54",
@@ -11034,7 +11925,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P12",
@@ -11191,7 +12093,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P22",
@@ -11349,7 +12262,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P98",
@@ -11479,7 +12403,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P102",
@@ -11609,7 +12544,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P84",
@@ -11710,7 +12656,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P25",
@@ -11829,7 +12786,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P13",
@@ -11968,7 +12936,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P16",
@@ -12125,7 +13104,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P76",
@@ -12255,7 +13245,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P56",
@@ -12356,7 +13357,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P57",
@@ -12457,7 +13469,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P89",
@@ -12587,7 +13610,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P68",
@@ -12717,7 +13751,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P03",
@@ -12865,7 +13910,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P07",
@@ -13047,7 +14103,18 @@
       "opportunity_score": 63,
       "opportunity_band": "MEDIUM",
       "score_confidence_grade": "A",
-      "score_classification_status": "CLASSIFIED"
+      "score_classification_status": "CLASSIFIED",
+      "score_readiness": {
+        "score_status": "NOT_SCOREABLE_ELIGIBILITY",
+        "eligibility_gate": "UNRESOLVED",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "COMPLETE",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "LEGACY_PROVISIONAL_NOT_FINAL",
+        "blocking_reasons": "group_check=partner_or_linked_sme | independent human review=PENDING",
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
+      }
     },
     {
       "company_id": "P64",
@@ -13177,7 +14244,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P95",
@@ -13307,7 +14385,18 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     },
     {
       "company_id": "P43",
@@ -13437,7 +14526,22 @@
       "opportunity_score": null,
       "opportunity_band": "",
       "score_confidence_grade": "",
-      "score_classification_status": ""
+      "score_classification_status": "",
+      "score_readiness": {
+        "score_status": "NEEDS_NUMERIC_CODING",
+        "eligibility_gate": "PROVISIONAL_PASS",
+        "process_mapping_status": "PRESENT",
+        "certificate_check_status": "COMPLETE",
+        "numeric_coding_status": "MISSING",
+        "independent_human_review_status": "PENDING",
+        "existing_score_status": "NONE",
+        "blocking_reasons": "numeric ETOI coding missing | independent human review=PENDING",
+        "next_action": "Code the existing methodology v0.2 numeric anchors with source-linked justifications; do not infer missing values from generic process data."
+      }
     }
-  ]
+  ],
+  "score_readiness_summary": {
+    "NEEDS_NUMERIC_CODING": 88,
+    "NOT_SCOREABLE_ELIGIBILITY": 12
+  }
 }

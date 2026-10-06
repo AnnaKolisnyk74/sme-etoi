@@ -23,6 +23,14 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
+        self.assertEqual(
+            self.payload["score_readiness_summary"]["NEEDS_NUMERIC_CODING"],
+            88,
+        )
+        self.assertEqual(
+            self.payload["score_readiness_summary"]["NOT_SCOREABLE_ELIGIBILITY"],
+            12,
+        )
 
     def test_every_company_has_public_evidence_and_opportunity_output(self):
         for company in self.payload["companies"]:
@@ -54,6 +62,26 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             [row["company_id"] for row in committed["companies"]],
             [row["company_id"] for row in self.payload["companies"]],
+        )
+
+    def test_every_company_exposes_score_readiness(self):
+        for company in self.payload["companies"]:
+            readiness = company["score_readiness"]
+            self.assertTrue(readiness["score_status"])
+            self.assertTrue(readiness["next_action"])
+        self.assertEqual(
+            {
+                company["company_id"]
+                for company in self.payload["companies"]
+                if company["score_readiness"]["score_status"]
+                == "NOT_SCOREABLE_ELIGIBILITY"
+            },
+            {
+                company["company_id"]
+                for company in self.payload["companies"]
+                if company["opportunities"][0]["sample_eligibility_status"]
+                == "ELIGIBILITY_PENDING"
+            },
         )
 
     def test_static_ui_assets_exist_and_use_local_data(self):
