@@ -53,9 +53,15 @@ def build_web_payload(root: Path = ROOT) -> dict:
     process_map = read_csv(root, "data/company_process_map.csv")
     process_library = read_csv(root, "data/process_library.csv")
     opportunities = read_csv(root, "outputs/opportunities.csv")
+    pilot_scores = read_csv(root, "outputs/pilot_scored.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
 
+    score_by_id = {
+        row["company_id"]: row
+        for row in pilot_scores
+        if row.get("company_id")
+    }
     candidate_by_id = {
         row["candidate_id"]: row
         for row in candidates
@@ -87,6 +93,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     for company in sorted(companies, key=lambda row: row["legal_entity"].lower()):
         company_id = company["company_id"]
         candidate = candidate_by_id.get(company_id, {})
+        score = score_by_id.get(company_id, {})
         mappings = mappings_by_company.get(company_id, [])
 
         processes = []
@@ -166,6 +173,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "sme_status": normalise(company.get("sme_status")),
                 "group_check": normalise(company.get("group_check")),
                 "candidate_eligibility_status": normalise(candidate.get("eligibility_status")),
+                "opportunity_score": numeric_or_none(score.get("opportunity_score")),
+                "opportunity_band": normalise(score.get("opportunity_band")),
+                "score_confidence_grade": normalise(score.get("confidence_grade")),
+                "score_classification_status": normalise(score.get("classification_status")),
                 "process_stratum": normalise(candidate.get("process_stratum")),
                 "evidence_confidence": normalise(company.get("evidence_confidence")),
                 "review_status": normalise(company.get("review_status")),
