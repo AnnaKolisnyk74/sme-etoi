@@ -99,8 +99,8 @@ class WebExportTests(unittest.TestCase):
             status_counts,
             {
                 "AWAITING_HUMAN_REVIEW": 14,
-                "READY_TO_CODE": 415,
-                "RESEARCH_NEEDED": 11,
+                "READY_TO_CODE": 410,
+                "RESEARCH_NEEDED": 16,
             },
         )
         self.assertTrue(

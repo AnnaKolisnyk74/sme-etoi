@@ -175,3 +175,20 @@ The proposed anchors sum arithmetically to 59/100. This value remains a
 review artifact only. All five dimension packages stay
 `AWAITING_HUMAN_REVIEW` until a real reviewer approves or rejects the field
 proposals and a separate canonical update is performed.
+
+## P18 known-fossil / partial-evidence example
+
+P18 — Glashütte Lamberts Waldsassen GmbH documents natural-gas firing in glass
+production and a current ISO 50001 system.
+
+Seven score fields receive numeric first-pass proposals, including fossil-heat
+displacement relevance, weak scheduling flexibility, ordinal incremental-load
+relevance and transition-gap fields. Eight fields remain
+`NEEDS_RESEARCH`.
+
+The unresolved fields include the firm-specific electric-melting route,
+motor/converter/control evidence, thermal storage, power quality, onsite
+integration and recent transition investment evidence.
+
+The seven numeric proposals sum to 22, but no aggregate score is calculated
+while eight required fields remain unresolved.

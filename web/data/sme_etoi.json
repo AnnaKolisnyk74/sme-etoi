@@ -10564,17 +10564,17 @@
           "required_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
+          "research_gap_fields": "process_electrification_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=2 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: process_electrification_score: Firm-specific glass-melting/reheating electrification route or documented electric furnace concept"
         },
         {
           "work_rank": 39,
@@ -10586,17 +10586,17 @@
           "required_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "motor_drive_score | power_conversion_score | automation_control_score",
+          "research_gap_fields": "motor_drive_score | power_conversion_score | automation_control_score",
+          "proposal_status_summary": "NEEDS_RESEARCH=3",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Firm-specific motor/drive applications and their materiality; power_conversion_score: Any firm-specific converter/rectifier/electric-furnace or controlled-electric-heat application; automation_control_score: Firm-specific automation, sensing or coordinated process/energy-control evidence"
         },
         {
           "work_rank": 40,
@@ -10608,17 +10608,17 @@
           "required_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_field_count": 2,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "research_gap_fields": "thermal_storage_flex_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=1 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Company-specific thermal buffer/storage or evidence-backed usable thermal inertia"
         },
         {
           "work_rank": 41,
@@ -10630,17 +10630,17 @@
           "required_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
+          "research_gap_fields": "power_quality_score | onsite_integration_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=1 | NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: power_quality_score: Firm-specific power-quality, converter-load or electrical peak evidence; onsite_integration_score: Onsite generation, battery, microgrid or coordinated load-management evidence"
         },
         {
           "work_rank": 42,
@@ -10652,17 +10652,17 @@
           "required_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_field_count": 4,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
+          "research_gap_fields": "investment_gap_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: investment_gap_score: Recent energy-transition investments or a defined negative investment search over the lookback period"
         }
       ]
     },
@@ -24704,8 +24704,8 @@
     "task_status_counts": {
       "AWAITING_HUMAN_REVIEW": 14,
       "OPEN_GATE": 12,
-      "READY_TO_CODE": 415,
-      "RESEARCH_NEEDED": 11
+      "READY_TO_CODE": 410,
+      "RESEARCH_NEEDED": 16
     },
     "task_count": 452
   }

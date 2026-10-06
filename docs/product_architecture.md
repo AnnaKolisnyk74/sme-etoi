@@ -235,8 +235,8 @@ For the current 100-company snapshot this produces:
 - 440 numeric-coding packages;
 - 452 work items in total;
 - 14 packages awaiting human review;
-- 11 packages requiring additional field-level research;
-- 415 packages still ready for first-pass coding.
+- 16 packages requiring additional field-level research;
+- 410 packages still ready for first-pass coding.
 
 The mixed state is intentional. P12, for example, has four dimensions fully
 covered by review-pending proposals while load-flexibility remains
@@ -249,6 +249,11 @@ five dimension packages still contain at least one unresolved technical fact.
 P05 is a fully covered review-pending case: all five dimensions have complete
 numeric proposals, but they still cannot enter canonical scoring until human
 review is completed.
+
+P18 demonstrates how a known fossil energy carrier can resolve some fields
+without resolving the whole score: natural-gas firing supports fossil-heat and
+incremental-load relevance, while firm-specific electric-furnace, converter,
+thermal-buffer and power-quality evidence remains open.
 
 ### 8. Research Queue
 
