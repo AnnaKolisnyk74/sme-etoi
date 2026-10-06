@@ -10,7 +10,7 @@
 <body>
   <div class="app">
     <header class="appbar">
-      <button class="waffle" aria-label="App-Menü"><span>⠿</span></button>
+      <button class="waffle" id="waffleCommand" aria-label="Navigation ein-/ausklappen"><span>⠿</span></button>
       <div class="suite">SME ETOI</div>
       <div class="appbar-divider"></div>
       <div class="appname">Industrial Energy Intelligence</div>
@@ -19,10 +19,10 @@
         <input id="globalSearch" type="search" placeholder="Suchen">
       </label>
       <div class="appbar-actions">
-        <button title="Hinweise">♧</button>
-        <button title="Neu">＋</button>
-        <button title="Einstellungen">⚙</button>
-        <button title="Hilfe">?</button>
+        <button id="alertsCommand" title="Hinweise">♧</button>
+        <button id="createCommand" title="Neue Notiz">＋</button>
+        <button id="settingsCommand" title="Darstellung">⚙</button>
+        <button id="helpCommand" title="Dokumentation">?</button>
         <div class="avatar">AK</div>
       </div>
     </header>
@@ -35,7 +35,7 @@
         <button id="exportCommand">▣ CSV exportieren</button>
         <button id="chartsCommand">▥ Diagramme anzeigen</button>
         <button id="methodCommand">▤ Methodik</button>
-        <button class="more-command">•••</button>
+        <button class="more-command" id="moreCommand">•••</button>
       </div>
       <div class="commandbar-right">
         <span>Ansicht</span>
