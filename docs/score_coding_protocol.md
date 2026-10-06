@@ -126,3 +126,16 @@ pattern, power-quality evidence and onsite-integration evidence.
 
 No total P19 score is calculated from these three fields. The twelve unresolved
 fields stay explicitly unresolved.
+
+## P12 mixed-state example
+
+P12 — Richard Henkel GmbH demonstrates that one company can have different
+proposal states across dimensions.
+
+Four dimensions are fully covered by numeric proposals and therefore wait for
+human review. Load-flexibility remains `RESEARCH_NEEDED` because the current
+sources do not establish a thermal buffer, thermal store or sufficiently
+documented usable thermal inertia.
+
+Fourteen numeric proposals sum arithmetically to 50. This partial sum is not a
+published SME-ETOI score because one required field remains unresolved.
