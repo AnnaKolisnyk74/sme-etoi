@@ -36,6 +36,12 @@ QUEUE_FIELDS = [
 PRIORITY_ORDER = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
 CONFIDENCE_ORDER = {"A": 0, "B": 1, "C": 2, "UNKNOWN": 3, "": 3}
 OPPORTUNITY_LEVEL_ORDER = {"HIGH": 0, "MEDIUM": 1, "LOW": 2, "RESEARCH_REQUIRED": 3, "": 4}
+UNRESOLVED_GROUP_CHECKS = {
+    "unknown",
+    "linked_enterprise_check",
+    "partner_or_linked_sme",
+    "state_owned_sme_check",
+}
 
 OPPORTUNITY_TERMS = {
     "battery_storage": ("battery", "bess", "storage"),
@@ -113,7 +119,7 @@ def lifecycle_for(result, current_value):
         task_status = "IN_PROGRESS"
     elif research_status == "BLOCKED":
         task_status = "BLOCKED"
-    elif resulting_value in {"UNKNOWN", "NOT_FOUND_AFTER_CHECK", "NOT_MODELLED"}:
+    elif resulting_value in {"UNKNOWN", "UNRESOLVED", "NOT_FOUND_AFTER_CHECK", "NOT_MODELLED"}:
         task_status = "RECHECK_DUE"
     elif resulting_value == current_value:
         task_status = "RESOLVED"
@@ -276,6 +282,67 @@ def classify_task(row, company, current_value):
     }
 
 
+
+def eligibility_task_for(company, results_by_task):
+    company_id = normalise(company.get("company_id"))
+    group_check = normalise(company.get("group_check")).lower()
+    if not company_id or group_check not in UNRESOLVED_GROUP_CHECKS:
+        return None
+
+    legal_entity = normalise(company.get("legal_entity"), company_id)
+    current_value = "UNRESOLVED"
+
+    if group_check == "state_owned_sme_check":
+        research_question = (
+            f"Does {legal_entity} satisfy the EU SME independence rules given its public ownership, "
+            "and do the relevant aggregated employee and financial figures remain within SME thresholds?"
+        )
+    else:
+        research_question = (
+            f"What is the ownership and group structure of {legal_entity}, which partner or linked "
+            "enterprises must be aggregated under EU SME rules, and do the aggregated employee and "
+            "financial figures remain within SME thresholds?"
+        )
+
+    lifecycle = lifecycle_for(
+        results_by_task.get((company_id, "sme_eligibility", "sme_eligibility")),
+        current_value,
+    )
+
+    return {
+        "company_id": company_id,
+        "legal_entity": legal_entity,
+        "opportunity_type": "sme_eligibility",
+        "technical_status": "NOT_APPLICABLE",
+        "commercial_status": "RESEARCH_REQUIRED",
+        "current_priority": "ELIGIBILITY_GATE",
+        "current_confidence": normalise(company.get("evidence_confidence"), "UNKNOWN"),
+        "missing_fact": "sme_eligibility",
+        "current_value": current_value,
+        "research_question": research_question,
+        "research_priority": "HIGH",
+        "decision_impact": "HIGH",
+        "decision_impact_reason": (
+            "The result can determine whether the company is eligible to remain in the SME pilot sample; "
+            "deployment research should not outrank unresolved sample eligibility."
+        ),
+        "queue_rule_id": "RQ00_SME_ELIGIBILITY_GATE",
+        "queue_reason": (
+            f"Company intelligence flags group_check={group_check}; ownership, aggregation and SME status "
+            "must be resolved before the sample is frozen."
+        ),
+        "recommended_source_types": (
+            "official ownership or group page | Unternehmensregister/Bundesanzeiger filing | "
+            "annual accounts | parent-company filing | authoritative shareholder or transaction source"
+        ),
+        "evidence_urls": normalise(company.get("source_urls")),
+        "process_name": "",
+        "opportunity_rule_id": "",
+        **lifecycle,
+        "engine_version": "0.4.0",
+    }
+
+
 def preferred_opportunity_row(row):
     return (
         OPPORTUNITY_LEVEL_ORDER.get(normalise(row.get("opportunity_level")).upper(), 5),
@@ -335,12 +402,18 @@ def generate_research_queue(companies, opportunities, research_results=None):
                 "process_name": normalise(row.get("process_name")),
                 "opportunity_rule_id": normalise(row.get("rule_id")),
                 **lifecycle,
-                "engine_version": "0.3.0",
+                "engine_version": "0.4.0",
             }
         )
 
+    for company in companies_by_id.values():
+        eligibility_task = eligibility_task_for(company, results_by_task)
+        if eligibility_task:
+            candidates.append(eligibility_task)
+
     candidates.sort(
         key=lambda task: (
+            0 if task["queue_rule_id"] == "RQ00_SME_ELIGIBILITY_GATE" else 1,
             PRIORITY_ORDER[task["research_priority"]],
             PRIORITY_ORDER[task["decision_impact"]],
             task["company_id"],
