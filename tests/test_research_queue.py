@@ -239,6 +239,104 @@ class ResearchQueueTests(unittest.TestCase):
 
 
 
+
+    def test_confirmed_sme_result_waits_for_review(self):
+        companies = self.companies + [
+            {
+                "company_id": "P67",
+                "legal_entity": "DOCERAM GmbH",
+                "sme_status": "probable",
+                "group_check": "linked_enterprise_check",
+                "evidence_confidence": "B",
+            }
+        ]
+        results = [
+            {
+                "company_id": "P67",
+                "opportunity_type": "sme_eligibility",
+                "missing_fact": "sme_eligibility",
+                "research_status": "CONFIRMED",
+                "resulting_value": "CONFIRMED_SME",
+                "finding_summary": "Aggregated SME thresholds are satisfied.",
+                "decision_effect": "Propose final inclusion after human review.",
+                "review_status": "PROVISIONAL",
+                "checked_date": "2026-10-06",
+            }
+        ]
+        queue = generate_research_queue(companies, self.rows, results)
+        task = next(
+            task for task in queue
+            if task["company_id"] == "P67" and task["opportunity_type"] == "sme_eligibility"
+        )
+        self.assertEqual(task["task_status"], "AWAITING_REVIEW")
+        self.assertEqual(task["last_resulting_value"], "CONFIRMED_SME")
+        self.assertEqual(task["research_review_status"], "PROVISIONAL")
+        self.assertIn("final inclusion", task["decision_effect"])
+
+    def test_approved_sme_result_waits_for_canonical_update(self):
+        companies = self.companies + [
+            {
+                "company_id": "P67",
+                "legal_entity": "DOCERAM GmbH",
+                "sme_status": "probable",
+                "group_check": "linked_enterprise_check",
+                "evidence_confidence": "B",
+            }
+        ]
+        results = [
+            {
+                "company_id": "P67",
+                "opportunity_type": "sme_eligibility",
+                "missing_fact": "sme_eligibility",
+                "research_status": "CONFIRMED",
+                "resulting_value": "CONFIRMED_SME",
+                "finding_summary": "Aggregated SME thresholds are satisfied.",
+                "decision_effect": "Approve final inclusion and update canonical SME fields.",
+                "review_status": "APPROVED",
+                "checked_date": "2026-10-06",
+            }
+        ]
+        queue = generate_research_queue(companies, self.rows, results)
+        task = next(
+            task for task in queue
+            if task["company_id"] == "P67" and task["opportunity_type"] == "sme_eligibility"
+        )
+        self.assertEqual(task["task_status"], "AWAITING_CANONICAL_UPDATE")
+        self.assertEqual(task["last_resulting_value"], "CONFIRMED_SME")
+        self.assertEqual(task["research_review_status"], "APPROVED")
+
+    def test_exclusion_result_also_requires_review(self):
+        companies = self.companies + [
+            {
+                "company_id": "P10",
+                "legal_entity": "Oskar Lehmann GmbH & Co. KG",
+                "sme_status": "probable",
+                "group_check": "partner_or_linked_sme",
+                "evidence_confidence": "B",
+            }
+        ]
+        results = [
+            {
+                "company_id": "P10",
+                "opportunity_type": "sme_eligibility",
+                "missing_fact": "sme_eligibility",
+                "research_status": "CONFIRMED",
+                "resulting_value": "EXCLUDE",
+                "finding_summary": "Aggregated group exceeds the SME employee threshold.",
+                "decision_effect": "Propose sample exclusion and replacement.",
+                "review_status": "PROVISIONAL",
+                "checked_date": "2026-10-06",
+            }
+        ]
+        queue = generate_research_queue(companies, self.rows, results)
+        task = next(
+            task for task in queue
+            if task["company_id"] == "P10" and task["opportunity_type"] == "sme_eligibility"
+        )
+        self.assertEqual(task["task_status"], "AWAITING_REVIEW")
+        self.assertEqual(task["last_resulting_value"], "EXCLUDE")
+
+
     def test_real_pilot_risk_flags_create_eligibility_tasks(self):
         repo_root = Path(__file__).resolve().parents[1]
         companies = read_csv(repo_root / "data" / "company_intelligence.csv")
