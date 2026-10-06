@@ -235,12 +235,16 @@ For the current 100-company snapshot this produces:
 - 440 numeric-coding packages;
 - 452 work items in total;
 - 9 packages awaiting human review;
-- 6 packages requiring additional field-level research;
-- 425 packages still ready for first-pass coding.
+- 11 packages requiring additional field-level research;
+- 420 packages still ready for first-pass coding.
 
 The mixed state is intentional. P12, for example, has four dimensions fully
 covered by review-pending proposals while load-flexibility remains
 `RESEARCH_NEEDED` because thermal-storage evidence is insufficient.
+
+P16 shows why company-level evidence confidence must not be mistaken for
+score-field completeness: despite A-level company and process evidence, all
+five dimension packages still contain at least one unresolved technical fact.
 
 ### 8. Research Queue
 
