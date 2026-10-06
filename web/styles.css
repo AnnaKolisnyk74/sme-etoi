@@ -190,6 +190,13 @@ tr.selected .radio{background:#0f6cbd;border-color:#0f6cbd;color:#fff}
 .functional-two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .functional-card{border:1px solid var(--line);background:#fff;padding:14px;min-width:0}
 .functional-card h3{margin:0 0 10px;font-size:13px}
+.next-best-card{cursor:pointer;border-left:4px solid var(--blue);margin-bottom:12px;background:linear-gradient(90deg,#f7fbff 0,#fff 42%)}
+.next-best-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.next-best-card h3{font-size:18px;margin:4px 0 12px}
+.next-best-grid{display:grid;grid-template-columns:repeat(5,minmax(80px,1fr));gap:10px;margin:10px 0}
+.next-best-grid span{border:1px solid var(--line2);background:#fff;padding:9px 10px;display:grid;gap:3px}
+.next-best-grid strong{font-size:15px}
+.next-best-grid small{font-size:9px;color:#605e5c;text-transform:uppercase;letter-spacing:.03em}
 .functional-card p{font-size:11px;line-height:1.6;color:#605e5c}
 .functional-card pre,.functional-card code{font-family:Consolas,"Courier New",monospace;font-size:10px}
 .functional-table-wrap{overflow:auto;max-height:680px;border:1px solid var(--line)}
