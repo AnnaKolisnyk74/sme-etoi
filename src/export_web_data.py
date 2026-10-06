@@ -60,6 +60,36 @@ def priority_evidence(row: dict[str, str]) -> dict:
     }
 
 
+def coding_batch_history(selections, proposals, priority_rows):
+    """Show frozen workflow decisions and live field states, without score sums."""
+    by_company = {r['company_id']: r for r in priority_rows}
+    field_states = {}
+    for proposal in proposals:
+        field_states.setdefault(proposal['company_id'], Counter())[proposal['proposal_status']] += 1
+    groups = {}
+    for selection in selections:
+        groups.setdefault(selection['batch_id'], []).append(selection)
+    batches = []
+    for batch_id, rows in groups.items():
+        batches.append({
+            'batch_id': batch_id,
+            'selected_date': rows[0]['selected_date'],
+            'companies': [{
+                'company_id': r['company_id'], 'legal_entity': r['legal_entity'],
+                'selection_rank': numeric_or_none(r['selection_rank']),
+                'priority_version': r['priority_version'],
+                'expected_information_gain_at_selection': r['expected_information_gain'],
+                'source_coverage_at_selection': r['source_coverage'],
+                'coverage_source_ids_at_selection': r['coverage_source_ids'],
+                'priority_reason_at_selection': r['priority_reason'],
+                'current_workflow_action': by_company.get(r['company_id'], {}).get('workflow_action', 'UNKNOWN'),
+                'awaiting_human_review_fields': field_states.get(r['company_id'], {}).get('AWAITING_HUMAN_REVIEW', 0),
+                'needs_research_fields': field_states.get(r['company_id'], {}).get('NEEDS_RESEARCH', 0),
+            } for r in sorted(rows, key=lambda r: int(r['selection_rank']))],
+        })
+    return sorted(batches, key=lambda b: (b['selected_date'], b['batch_id']))
+
+
 def build_web_payload(root: Path = ROOT) -> dict:
     companies = read_csv(root, "data/company_intelligence.csv")
     candidates = read_csv(root, "data/pilot_candidates.csv")
@@ -415,6 +445,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "priority_reason": normalise(next_best_company.get("priority_reason")),
             },
         },
+        "coding_batches": coding_batch_history(
+            read_csv(root, "data/coding_batch_selections.csv"),
+            read_csv(root, "data/score_coding_proposals.csv"), company_work_priority,
+        ),
         "companies": web_companies,
     }
 

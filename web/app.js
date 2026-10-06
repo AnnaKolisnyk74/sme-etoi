@@ -386,6 +386,9 @@ function renderFunctional(view){
     const workflowCounts=companyWorkSummary.workflow_action_counts||{};
     const nextBest=companyWorkSummary.next_best_company||{};
     const codingCompanies=all.filter(c=>c.workflow_priority?.workflow_action==="CODE_NOW").sort((a,b)=>(a.workflow_priority?.coding_rank||9999)-(b.workflow_priority?.coding_rank||9999));
+    const batches=state.data.coding_batches||[];
+    const latestBatch=batches.length?batches[batches.length-1]:null;
+    const batchCard=latestBatch?'<section class="functional-card"><h3>Zuletzt ausgewählter Coding-Batch · '+esc(latestBatch.batch_id)+'</h3><p>Auswahl vom '+esc(latestBatch.selected_date)+'. Die Auswahl bleibt festgehalten; Feldstatus und Workflow zeigen den aktuellen Stand. Feldzahlen sind keine SME-ETOI Scores.</p>'+genericTable(["Auswahlrang","Unternehmen","Proposals warten auf Human Review","Recherchelücken","Workflow jetzt"],latestBatch.companies.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td>'+esc(c.selection_rank)+'</td><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(c.awaiting_human_review_fields)+'</td><td>'+esc(c.needs_research_fields)+'</td><td>'+esc(titleCase(c.current_workflow_action))+'</td></tr>'))+'</section>':"";
     const humanDone=all.filter(c=>["APPROVED","COMPLETE","COMPLETED","REVIEWED","DONE"].includes(c.score_readiness?.independent_human_review_status)).length;
     root.innerHTML=
       '<div class="functional-kpis">'+
@@ -398,6 +401,7 @@ function renderFunctional(view){
       '<section class="functional-card"><h3>Next Best Coding Companies</h3>'+
         genericTable(["Coding Rank","Unternehmen","Priority","Evidence","Process","QA","Informationsgewinn (Proxy)","Quellenabdeckung","Verifizierte URLs"],codingCompanies.slice(0,10).map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td>'+esc(c.workflow_priority?.coding_rank??"—")+'</td><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(c.workflow_priority?.work_priority||"—")+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.process_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.qa_result||"—")+'</td><td>'+esc(titleCase(c.workflow_priority?.expected_information_gain||"UNKNOWN"))+'</td><td class="wrap-cell">'+esc(c.workflow_priority?.source_coverage||"—")+'</td><td>'+esc(c.workflow_priority?.verified_source_count??"—")+'</td></tr>'))+
       '</section>'+
+      batchCard+
       '<section class="functional-card"><h3>Scoring Work Queue · '+work.length+' Arbeitspakete</h3>'+
         genericTable(["Rang","Unternehmen","Workstream","Dimension","Status","Priorität","Proposal / Research","Offene Felder","Nächste Aktion"],work.map(t=>
           '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td><span class="status-badge '+(t.task_status==="RESEARCH_NEEDED"?"status-blocked":t.task_status==="AWAITING_HUMAN_REVIEW"?"status-review":t.task_status==="READY_TO_CODE"?"status-qualified":"status-watch")+'">'+esc(titleCase(t.task_status||"UNKNOWN"))+'</span></td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.research_gap_fields||t.proposal_status_summary||t.proposal_covered_fields||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'

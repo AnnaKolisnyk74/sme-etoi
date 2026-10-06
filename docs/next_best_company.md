@@ -111,17 +111,74 @@ All numeric proposals remain `AWAITING_HUMAN_REVIEW`, with blank reviewer/date.
 No canonical score input, scored output, company deployment fact or human-review
 record is changed by this batch. Uncertainty rows have blank numeric values,
 UNKNOWN confidence and exact missing facts. No aggregate company score is
-published. The live queue now has 370 ready, 49 research-needed, 21
-review-pending and 12 gate tasks. Both selected firms are `RESEARCH_FIRST`;
-P30 Zötler becomes coding rank 1 automatically.
+published. After this first batch the queue had 370 ready, 49 research-needed,
+21 review-pending and 12 gate tasks. Both selected firms became `RESEARCH_FIRST`;
+P30 Zötler became coding rank 1 automatically.
+
+## Frozen batch NBCC-2026-10-06-02
+
+`main` was checked at `6a39490ebf5d0bc35c4ae08eacda66a0e5ba230e` (merged
+PR #36). The selector rebuilt validated inputs and froze these companies before
+source enrichment or proposals:
+
+| Rank | Company | Evidence / Process | QA | Gain | Verified URLs | Coverage source IDs |
+| --- | --- | --- | --- | --- | ---: | --- |
+| 1 | P30 Privat-Brauerei Zötler | B / B | PASS | HIGH | 2 | S-P30-02 |
+| 2 | P31 Brauerei Clemens Härle | B / B | PASS | HIGH | 2 | S-P31-02 |
+
+Both covered PROCESS and ENERGY_TRANSITION, with 15 unassessed fields. All
+substantive components tied, so natural ID resolved their ordering; ID did not
+create eligibility or documentary coverage. No sector quota was applied.
+The reconstruction test excludes five newly registered sources and both
+companies' proposals, then reproduces the frozen manifest exactly.
+
+P30 has seven numeric proposals and eight research gaps. The company describes
+a completed 2025 cellar investment and individually controlled tank cooling.
+Its energy/EMAS claims support only limited first-pass anchors: the linked
+2023 environmental report returned HTTP 404 on recheck, leaving validity open.
+Fermentation and maturation durations support a weak scheduling interpretation
+at confidence C, not a thermal-buffer or usable load-shifting claim.
+
+P31 also has seven numeric proposals and eight research gaps. The 2024 state
+agency case documents a renewable heat baseline, supporting a zero fossil-heat
+displacement proposal for that documented baseline rather than from missing
+evidence. Wood/biogas heat does not prove process electrification. Company
+evidence of PV and dated electric delivery-truck investments supports measures
+and investment anchors; vehicle electrification is not process-heat deployment.
+KLIMAWIN is a partial management framework, not a verified EnMS. The 2028
+electricity self-sufficiency target is not a detailed roadmap.
+
+All fourteen numeric proposals remain `AWAITING_HUMAN_REVIEW`, with blank
+reviewer/date. The sixteen gaps retain blank values and UNKNOWN confidence.
+No canonical coding, deployment/certificate record or human approval changes.
+The current queue has **360 ready, 57 research-needed, 23 review-pending and
+12 gate tasks**. Both companies are `RESEARCH_FIRST`; **P43 WZR ceramic
+solutions GmbH** is the next coding company. The company queue contains
+72 CODE_NOW, 13 RESEARCH_FIRST, 3 REVIEW_PROPOSALS and 12 ELIGIBILITY_FIRST.
+
+## Automated selection and history
+
+`src/select_coding_batch.py` runs deterministic preflight and rebuilds priorities
+in memory; it does not rely on a potentially stale output CSV. Only QA-passing
+CODE_NOW candidates with dense unique ranks and no open eligibility gate may
+be selected. A small remaining queue yields a smaller batch; an empty queue
+fails without writing a selection.
+
+Selection is appended atomically to `data/coding_batch_selections.csv`.
+An identical snapshot retry preserves bytes; a different snapshot using the
+same batch ID fails instead of replacing history. After a batch is assessed,
+use a new ID for the next selection. The web export retains frozen selection
+components alongside live field counts/workflow, without publishing sums.
 
 ## Reproduction
 
 ```bash
 python src/run_pipeline.py
 python src/run_pipeline.py --check-only
+python src/select_coding_batch.py --batch-id <new-batch-id> --selected-date YYYY-MM-DD --size 2
 python -m unittest discover -s tests -v
 node --check web/app.js
+node tests/test_web_priority.cjs
 ```
 
 Outputs and the web snapshot share the same v2 metadata. Behavioral tests cover

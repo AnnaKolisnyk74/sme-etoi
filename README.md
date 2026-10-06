@@ -188,14 +188,16 @@ Current coding assessments (all numeric values remain non-canonical):
 | P20 DERIX Glasstudios | 6 | 9 |
 | P21 Moritz Fiege | 4 | 11 |
 | P27 BCE Special Ceramics | 5 | 10 |
+| P30 Privat-Brauerei Zötler | 7 | 8 |
+| P31 Brauerei Clemens Härle | 7 | 8 |
 
-Current generated work queue: **12 OPEN_GATE, 370 READY_TO_CODE,
-49 RESEARCH_NEEDED and 21 AWAITING_HUMAN_REVIEW**. These are task counts,
+Current generated work queue: **12 OPEN_GATE, 360 READY_TO_CODE,
+57 RESEARCH_NEEDED and 23 AWAITING_HUMAN_REVIEW**. These are task counts,
 not proposal-field counts. All 88 companies with numeric-coding work still
 await canonical coding and independent human review; no final score is ready.
 
 `outputs/company_work_priority.csv` collapses work into company decisions:
-74 `CODE_NOW`, 11 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
+72 `CODE_NOW`, 13 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
 `ELIGIBILITY_FIRST`. Failed or missing deterministic QA yields `QA_FIRST`;
 partially covered coding stays `IN_PROGRESS` rather than claiming complete
 review coverage.
@@ -207,11 +209,22 @@ verified URLs. It never estimates numeric scores or assumes deployment.
 See [the priority protocol](docs/next_best_company.md) for exact ordering,
 limitations, source-type rules and the reproducible batch audit.
 
-The first v2 batch selected **P21 Moritz Fiege and P27 BCE Special Ceramics**
-before any new source enrichment or coding. The selection is frozen in
-`data/coding_batch_selections.csv`. Both now require field-specific research;
-the live ranking therefore promotes **P30 Privat-Brauerei Zötler GmbH**.
-The web scoring view exposes QA, coverage and the information-gain proxy.
+The v2 batches selected **P21/P27**, then **P30 Zötler/P31 Härle**, before
+their source enrichment or coding. Both selections are frozen in
+`data/coding_batch_selections.csv`; all four now require field-specific research.
+The live ranking promotes **P43 WZR ceramic solutions GmbH**. The web scoring
+view exposes QA, coverage, the information-gain proxy and the latest frozen
+batch with live review/research field counts.
+
+Freeze the next batch from validated, freshly rebuilt inputs before researching
+or coding its companies (choose a new batch ID and the actual selection date):
+
+```bash
+python src/select_coding_batch.py --batch-id <new-batch-id> --selected-date YYYY-MM-DD --size 2
+```
+
+This command appends an immutable selection snapshot. It does not generate
+proposals, approve reviews or publish scores.
 
 ### Web prototype
 

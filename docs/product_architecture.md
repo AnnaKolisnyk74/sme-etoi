@@ -273,12 +273,15 @@ documentary coverage, expected information gain (qualitative proxy), unassessed
 fields and deduplicated verified URLs determine order. Exactly one company is
 marked `is_next_to_code=YES`; raw task ranks no longer choose that company.
 
-Current state: 74 `CODE_NOW`, 11 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`,
+Current state: 72 `CODE_NOW`, 13 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`,
 12 `ELIGIBILITY_FIRST`. `QA_FIRST` and `IN_PROGRESS` are explicit additional
 states for QA blockers and partially completed coding.
 
-The frozen v2 batch selected P21 and P27. Their assessments moved them to
-`RESEARCH_FIRST`, making P30 the next coding company. Selection provenance,
+The frozen v2 batches selected P21/P27, then P30/P31. Their assessments moved
+them to `RESEARCH_FIRST`, making P43 the next coding company. The batch-selection
+CLI validates and rebuilds inputs before appending an immutable selection;
+the web snapshot joins this history to live field status without score totals.
+Selection provenance,
 source categories and proxy limitations are documented in
 [`next_best_company.md`](next_best_company.md). This is a workflow ranking,
 not SME-ETOI scoring or human approval.
