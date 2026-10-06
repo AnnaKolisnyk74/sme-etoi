@@ -201,7 +201,29 @@ Research Queue
 This separation prevents the research automation from silently validating its
 own assumptions.
 
-### 7. Integrated Execution Pipeline
+### 7. Product Interface
+
+The first user-facing prototype is a dependency-free static web application in
+`web/`. It is intentionally read-only and consumes a generated public-data
+snapshot rather than mutating canonical research files.
+
+Current views:
+
+- **Overview** — pilot size, opportunity mix, research backlog and eligibility
+  gates;
+- **Company Explorer** — searchable and filterable company intelligence with
+  process mappings, confidence, opportunity signals and evidence links;
+- **Research Queue** — ranked missing facts with priority, decision impact and
+  lifecycle state.
+
+Company detail panels keep technical relevance, commercial deployment status,
+sample eligibility and evidence confidence visible as separate dimensions.
+
+The browser payload is produced by `src/export_web_data.py` and written to
+`web/data/sme_etoi.json`. The integrated pipeline refreshes this snapshot after
+derived outputs pass QA.
+
+### 8. Integrated Execution Pipeline
 
 `src/run_pipeline.py` is the canonical orchestration entry point for the
 current prototype. It turns the individual analytical components into one
@@ -241,7 +263,7 @@ A `--check-only` mode executes the same preflight and derived-output checks
 without modifying generated files. This is intended for CI and reproducibility
 checks.
 
-### 7. Monitoring & Change Detection
+### 9. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.
 
