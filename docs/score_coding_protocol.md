@@ -250,3 +250,18 @@ Because four of the five dimension packages now contain research gaps, P11
 moves from `CODE_NOW` to `RESEARCH_FIRST`. The dynamic priority engine
 automatically promotes P53 — Brauerei Rittmayer Hallerndorf GmbH & Co. KG —
 to coding rank 1.
+
+## P53 biomass-heat / storage example
+
+P53 — Brauerei Rittmayer Hallerndorf GmbH & Co. KG documents biomass heat,
+process-heat recovery, a heat store and photovoltaic generation.
+
+Eight fields receive numeric first-pass proposals, including clear thermal
+buffering, onsite integration and several observed transition measures.
+Seven fields remain `NEEDS_RESEARCH`, including the firm-specific
+electrification route, remaining fossil heat, motor/control evidence,
+incremental load and investment timing.
+
+The numeric proposals sum to 25, but no aggregate score is calculated while
+required fields remain unresolved. P53 therefore moves from `CODE_NOW` to
+`RESEARCH_FIRST`, and P20 DERIX Glasstudios becomes the next company to code.
