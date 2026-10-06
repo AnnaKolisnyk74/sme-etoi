@@ -11,7 +11,7 @@
     "data_scope": "Public repository evidence only",
     "score_work_task_count": 452,
     "numeric_coding_task_count": 440,
-    "code_now_company_count": 80
+    "code_now_company_count": 79
   },
   "opportunity_types": [
     {
@@ -279,8 +279,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 32,
-        "coding_rank": 32,
+        "company_rank": 31,
+        "coding_rank": 31,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 208,
@@ -510,8 +510,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 79,
-        "coding_rank": 79,
+        "company_rank": 78,
+        "coding_rank": 78,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 443,
@@ -788,10 +788,10 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 2,
-        "coding_rank": 2,
+        "company_rank": 1,
+        "coding_rank": 1,
         "workflow_action": "CODE_NOW",
-        "is_next_to_code": "NO",
+        "is_next_to_code": "YES",
         "first_work_rank": 58,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
@@ -1057,8 +1057,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 10,
-        "coding_rank": 10,
+        "company_rank": 9,
+        "coding_rank": 9,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 98,
@@ -1335,8 +1335,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 8,
-        "coding_rank": 8,
+        "company_rank": 7,
+        "coding_rank": 7,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 88,
@@ -1604,8 +1604,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 11,
-        "coding_rank": 11,
+        "company_rank": 10,
+        "coding_rank": 10,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 103,
@@ -1873,8 +1873,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 24,
-        "coding_rank": 24,
+        "company_rank": 23,
+        "coding_rank": 23,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 168,
@@ -2142,8 +2142,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 14,
-        "coding_rank": 14,
+        "company_rank": 13,
+        "coding_rank": 13,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 118,
@@ -2411,8 +2411,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 44,
-        "coding_rank": 44,
+        "company_rank": 43,
+        "coding_rank": 43,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 268,
@@ -2696,8 +2696,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 3,
-        "coding_rank": 3,
+        "company_rank": 2,
+        "coding_rank": 2,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 63,
@@ -2965,8 +2965,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 60,
-        "coding_rank": 60,
+        "company_rank": 59,
+        "coding_rank": 59,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 348,
@@ -3234,8 +3234,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 62,
-        "coding_rank": 62,
+        "company_rank": 61,
+        "coding_rank": 61,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 358,
@@ -3503,8 +3503,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 63,
-        "coding_rank": 63,
+        "company_rank": 62,
+        "coding_rank": 62,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 363,
@@ -3772,8 +3772,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 43,
-        "coding_rank": 43,
+        "company_rank": 42,
+        "coding_rank": 42,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 263,
@@ -4041,8 +4041,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 40,
-        "coding_rank": 40,
+        "company_rank": 39,
+        "coding_rank": 39,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 248,
@@ -4310,8 +4310,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 57,
-        "coding_rank": 57,
+        "company_rank": 56,
+        "coding_rank": 56,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 333,
@@ -4791,8 +4791,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 4,
-        "coding_rank": 4,
+        "company_rank": 3,
+        "coding_rank": 3,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 68,
@@ -5060,8 +5060,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 75,
-        "coding_rank": 75,
+        "company_rank": 74,
+        "coding_rank": 74,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 423,
@@ -5329,8 +5329,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 55,
-        "coding_rank": 55,
+        "company_rank": 54,
+        "coding_rank": 54,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 323,
@@ -5598,8 +5598,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 25,
-        "coding_rank": 25,
+        "company_rank": 24,
+        "coding_rank": 24,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 173,
@@ -6032,8 +6032,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 31,
-        "coding_rank": 31,
+        "company_rank": 30,
+        "coding_rank": 30,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 203,
@@ -6301,8 +6301,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 73,
-        "coding_rank": 73,
+        "company_rank": 72,
+        "coding_rank": 72,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 413,
@@ -7003,8 +7003,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 9,
-        "coding_rank": 9,
+        "company_rank": 8,
+        "coding_rank": 8,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 93,
@@ -7272,8 +7272,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 19,
-        "coding_rank": 19,
+        "company_rank": 18,
+        "coding_rank": 18,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 143,
@@ -7541,8 +7541,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 51,
-        "coding_rank": 51,
+        "company_rank": 50,
+        "coding_rank": 50,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 303,
@@ -7810,8 +7810,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 48,
-        "coding_rank": 48,
+        "company_rank": 47,
+        "coding_rank": 47,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 288,
@@ -8079,8 +8079,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 61,
-        "coding_rank": 61,
+        "company_rank": 60,
+        "coding_rank": 60,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 353,
@@ -8348,8 +8348,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 74,
-        "coding_rank": 74,
+        "company_rank": 73,
+        "coding_rank": 73,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 418,
@@ -8617,8 +8617,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 41,
-        "coding_rank": 41,
+        "company_rank": 40,
+        "coding_rank": 40,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 253,
@@ -8775,17 +8775,17 @@
           "required_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
+          "research_gap_fields": "fossil_heat_displacement_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=2 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "A",
           "process_confidence": "B",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: fossil_heat_displacement_score: Current process-heat energy carrier and whether any material fossil thermal service remains at the Lennestadt site"
         },
         {
           "work_rank": 54,
@@ -8797,17 +8797,17 @@
           "required_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "motor_drive_score | power_conversion_score | automation_control_score",
+          "research_gap_fields": "power_conversion_score | automation_control_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=1 | NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "A",
           "process_confidence": "B",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Firm-specific servo/converter/rectifier or controlled-electric-heating topology of the injection-moulding equipment; automation_control_score: Firm-specific automation, sensing and coordinated machine/energy-control evidence"
         },
         {
           "work_rank": 55,
@@ -8819,17 +8819,17 @@
           "required_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_field_count": 2,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "research_gap_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "proposal_status_summary": "NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "A",
           "process_confidence": "B",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Operating schedule, shift pattern and evidence of schedulable injection-moulding production; thermal_storage_flex_score: Dedicated thermal/cold storage, buffer capacity or evidence-backed usable thermal inertia"
         },
         {
           "work_rank": 56,
@@ -8841,17 +8841,17 @@
           "required_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
+          "research_gap_fields": "incremental_load_score | onsite_integration_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=1 | NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "A",
           "process_confidence": "B",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined new electrification pathway or expansion sufficient for ordinal incremental-load relevance; onsite_integration_score: Onsite generation, battery storage, microgrid or coordinated load-management evidence"
         },
         {
           "work_rank": 57,
@@ -8863,34 +8863,34 @@
           "required_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_field_count": 4,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
+          "research_gap_fields": "investment_gap_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "A",
           "process_confidence": "B",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: investment_gap_score: Dates and scope of recent energy-transition investments or a defined negative investment search over the lookback period"
         }
       ],
       "workflow_priority": {
-        "company_rank": 1,
-        "coding_rank": 1,
-        "workflow_action": "CODE_NOW",
-        "is_next_to_code": "YES",
+        "company_rank": 85,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
         "first_work_rank": 53,
-        "ready_to_code_tasks": 5,
-        "research_needed_tasks": 0,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
         "open_gate_tasks": 0,
         "work_priority": "P2",
         "process_confidence": "B",
         "source_count": 4,
-        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
-        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+        "next_action": "Research the unresolved score evidence before proposing an anchor: fossil_heat_displacement_score: Current process-heat energy carrier and whether any material fossil thermal service remains at the Lennestadt site",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: fossil_heat_displacement_score; power_conversion_score | automation_control_score; scheduling_flex_score | thermal_storage_flex_score"
       }
     },
     {
@@ -9146,8 +9146,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 34,
-        "coding_rank": 34,
+        "company_rank": 33,
+        "coding_rank": 33,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 218,
@@ -9415,8 +9415,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 20,
-        "coding_rank": 20,
+        "company_rank": 19,
+        "coding_rank": 19,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 148,
@@ -9684,8 +9684,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 52,
-        "coding_rank": 52,
+        "company_rank": 51,
+        "coding_rank": 51,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 308,
@@ -9953,8 +9953,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 35,
-        "coding_rank": 35,
+        "company_rank": 34,
+        "coding_rank": 34,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 223,
@@ -10222,8 +10222,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 53,
-        "coding_rank": 53,
+        "company_rank": 52,
+        "coding_rank": 52,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 313,
@@ -10491,8 +10491,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 56,
-        "coding_rank": 56,
+        "company_rank": 55,
+        "coding_rank": 55,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 328,
@@ -10731,8 +10731,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 15,
-        "coding_rank": 15,
+        "company_rank": 14,
+        "coding_rank": 14,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 123,
@@ -11007,7 +11007,7 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 81,
+        "company_rank": 80,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -11323,7 +11323,7 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 84,
+        "company_rank": 83,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -11563,8 +11563,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 23,
-        "coding_rank": 23,
+        "company_rank": 22,
+        "coding_rank": 22,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 163,
@@ -11832,8 +11832,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 26,
-        "coding_rank": 26,
+        "company_rank": 25,
+        "coding_rank": 25,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 178,
@@ -12067,7 +12067,7 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 85,
+        "company_rank": 84,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -12336,8 +12336,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 33,
-        "coding_rank": 33,
+        "company_rank": 32,
+        "coding_rank": 32,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 213,
@@ -12605,8 +12605,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 42,
-        "coding_rank": 42,
+        "company_rank": 41,
+        "coding_rank": 41,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 258,
@@ -13262,8 +13262,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 59,
-        "coding_rank": 59,
+        "company_rank": 58,
+        "coding_rank": 58,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 343,
@@ -13531,8 +13531,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 69,
-        "coding_rank": 69,
+        "company_rank": 68,
+        "coding_rank": 68,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 393,
@@ -13800,8 +13800,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 38,
-        "coding_rank": 38,
+        "company_rank": 37,
+        "coding_rank": 37,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 238,
@@ -14254,8 +14254,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 18,
-        "coding_rank": 18,
+        "company_rank": 17,
+        "coding_rank": 17,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 138,
@@ -14659,8 +14659,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 17,
-        "coding_rank": 17,
+        "company_rank": 16,
+        "coding_rank": 16,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 133,
@@ -14928,8 +14928,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 68,
-        "coding_rank": 68,
+        "company_rank": 67,
+        "coding_rank": 67,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 388,
@@ -15197,8 +15197,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 49,
-        "coding_rank": 49,
+        "company_rank": 48,
+        "coding_rank": 48,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 293,
@@ -15437,8 +15437,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 16,
-        "coding_rank": 16,
+        "company_rank": 15,
+        "coding_rank": 15,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 128,
@@ -15706,8 +15706,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 12,
-        "coding_rank": 12,
+        "company_rank": 11,
+        "coding_rank": 11,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 108,
@@ -15946,8 +15946,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 28,
-        "coding_rank": 28,
+        "company_rank": 27,
+        "coding_rank": 27,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 188,
@@ -16215,8 +16215,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 47,
-        "coding_rank": 47,
+        "company_rank": 46,
+        "coding_rank": 46,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 283,
@@ -16484,8 +16484,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 72,
-        "coding_rank": 72,
+        "company_rank": 71,
+        "coding_rank": 71,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 408,
@@ -16753,8 +16753,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 70,
-        "coding_rank": 70,
+        "company_rank": 69,
+        "coding_rank": 69,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 398,
@@ -17022,8 +17022,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 50,
-        "coding_rank": 50,
+        "company_rank": 49,
+        "coding_rank": 49,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 298,
@@ -17291,8 +17291,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 78,
-        "coding_rank": 78,
+        "company_rank": 77,
+        "coding_rank": 77,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 438,
@@ -18606,8 +18606,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 36,
-        "coding_rank": 36,
+        "company_rank": 35,
+        "coding_rank": 35,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 228,
@@ -18875,8 +18875,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 22,
-        "coding_rank": 22,
+        "company_rank": 21,
+        "coding_rank": 21,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 158,
@@ -19144,8 +19144,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 65,
-        "coding_rank": 65,
+        "company_rank": 64,
+        "coding_rank": 64,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 373,
@@ -19413,8 +19413,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 66,
-        "coding_rank": 66,
+        "company_rank": 65,
+        "coding_rank": 65,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 378,
@@ -19682,8 +19682,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 77,
-        "coding_rank": 77,
+        "company_rank": 76,
+        "coding_rank": 76,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 433,
@@ -20339,8 +20339,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 76,
-        "coding_rank": 76,
+        "company_rank": 75,
+        "coding_rank": 75,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 428,
@@ -20608,8 +20608,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 13,
-        "coding_rank": 13,
+        "company_rank": 12,
+        "coding_rank": 12,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 113,
@@ -20877,8 +20877,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 45,
-        "coding_rank": 45,
+        "company_rank": 44,
+        "coding_rank": 44,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 273,
@@ -21155,8 +21155,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 7,
-        "coding_rank": 7,
+        "company_rank": 6,
+        "coding_rank": 6,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 83,
@@ -21453,8 +21453,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 27,
-        "coding_rank": 27,
+        "company_rank": 26,
+        "coding_rank": 26,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 183,
@@ -21749,7 +21749,7 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 82,
+        "company_rank": 81,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -22315,8 +22315,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 67,
-        "coding_rank": 67,
+        "company_rank": 66,
+        "coding_rank": 66,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 383,
@@ -22584,8 +22584,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 71,
-        "coding_rank": 71,
+        "company_rank": 70,
+        "coding_rank": 70,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 403,
@@ -22824,8 +22824,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 54,
-        "coding_rank": 54,
+        "company_rank": 53,
+        "coding_rank": 53,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 318,
@@ -23082,8 +23082,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 5,
-        "coding_rank": 5,
+        "company_rank": 4,
+        "coding_rank": 4,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 73,
@@ -23360,8 +23360,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 6,
-        "coding_rank": 6,
+        "company_rank": 5,
+        "coding_rank": 5,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 78,
@@ -23656,7 +23656,7 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 83,
+        "company_rank": 82,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -23925,8 +23925,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 46,
-        "coding_rank": 46,
+        "company_rank": 45,
+        "coding_rank": 45,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 278,
@@ -24165,8 +24165,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 29,
-        "coding_rank": 29,
+        "company_rank": 28,
+        "coding_rank": 28,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 193,
@@ -24405,8 +24405,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 30,
-        "coding_rank": 30,
+        "company_rank": 29,
+        "coding_rank": 29,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 198,
@@ -24674,8 +24674,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 58,
-        "coding_rank": 58,
+        "company_rank": 57,
+        "coding_rank": 57,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 338,
@@ -24943,8 +24943,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 39,
-        "coding_rank": 39,
+        "company_rank": 38,
+        "coding_rank": 38,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 243,
@@ -25230,8 +25230,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 80,
-        "coding_rank": 80,
+        "company_rank": 79,
+        "coding_rank": 79,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 448,
@@ -25732,8 +25732,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 37,
-        "coding_rank": 37,
+        "company_rank": 36,
+        "coding_rank": 36,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 233,
@@ -26001,8 +26001,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 64,
-        "coding_rank": 64,
+        "company_rank": 63,
+        "coding_rank": 63,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 368,
@@ -26270,8 +26270,8 @@
         }
       ],
       "workflow_priority": {
-        "company_rank": 21,
-        "coding_rank": 21,
+        "company_rank": 20,
+        "coding_rank": 20,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 153,
@@ -26305,27 +26305,27 @@
     "task_status_counts": {
       "AWAITING_HUMAN_REVIEW": 19,
       "OPEN_GATE": 12,
-      "READY_TO_CODE": 400,
-      "RESEARCH_NEEDED": 21
+      "READY_TO_CODE": 395,
+      "RESEARCH_NEEDED": 26
     },
     "task_count": 452
   },
   "company_work_summary": {
     "workflow_action_counts": {
-      "CODE_NOW": 80,
+      "CODE_NOW": 79,
       "ELIGIBILITY_FIRST": 12,
-      "RESEARCH_FIRST": 5,
+      "RESEARCH_FIRST": 6,
       "REVIEW_PROPOSALS": 3
     },
     "company_count": 100,
     "next_best_company": {
-      "company_id": "P23",
-      "legal_entity": "FM-Plast GmbH",
+      "company_id": "P11",
+      "legal_entity": "B+T Oberflächentechnik GmbH",
       "coding_rank": 1,
       "work_priority": "P2",
       "evidence_confidence": "A",
       "process_confidence": "B",
-      "source_count": 4,
+      "source_count": 3,
       "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
       "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
     }
