@@ -318,6 +318,11 @@ def build_web_payload(root: Path = ROOT) -> dict:
             "company_count": len(web_companies),
             "opportunity_count": len(opportunities),
             "research_task_count": len(research_queue),
+            "score_work_task_count": len(score_work_queue),
+            "numeric_coding_task_count": sum(
+                normalise(row.get("workstream")) == "NUMERIC_CODING"
+                for row in score_work_queue
+            ),
             "eligibility_gate_count": eligibility_gate_count,
             "eligibility_blocked_company_count": len(eligibility_blocked_companies),
             "data_scope": "Public repository evidence only",
