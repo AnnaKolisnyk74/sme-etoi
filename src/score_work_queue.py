@@ -58,6 +58,9 @@ OUTPUT_FIELDS = [
     "required_fields",
     "missing_fields",
     "missing_field_count",
+    "proposal_covered_fields",
+    "research_gap_fields",
+    "proposal_status_summary",
     "task_status",
     "work_priority",
     "evidence_confidence",
@@ -124,6 +127,94 @@ def missing_fields_for_dimension(
     return [field for field in fields if not normalise(coded_row.get(field))]
 
 
+def proposal_state_for_dimension(
+    company_id: str,
+    missing_fields: list[str],
+    proposals_by_key: dict[tuple[str, str], dict[str, str]],
+) -> tuple[str, list[str], list[str], str, str]:
+    proposals = {
+        field: proposals_by_key[(company_id, field)]
+        for field in missing_fields
+        if (company_id, field) in proposals_by_key
+    }
+    covered = [field for field in missing_fields if field in proposals]
+    research_gaps = [
+        field
+        for field in missing_fields
+        if normalise(proposals.get(field, {}).get("proposal_status")).upper()
+        == "NEEDS_RESEARCH"
+    ]
+    statuses = [
+        normalise(proposals[field].get("proposal_status")).upper()
+        for field in covered
+    ]
+
+    counts: dict[str, int] = {}
+    for status in statuses:
+        counts[status] = counts.get(status, 0) + 1
+    summary = " | ".join(
+        f"{status}={counts[status]}" for status in sorted(counts)
+    )
+
+    if research_gaps:
+        missing_facts = [
+            (
+                f"{field}: "
+                f"{normalise(proposals[field].get('missing_fact')) or 'research gap'}"
+            )
+            for field in research_gaps
+        ]
+        return (
+            "RESEARCH_NEEDED",
+            covered,
+            research_gaps,
+            summary,
+            "Research the unresolved score evidence before proposing an anchor: "
+            + "; ".join(missing_facts),
+        )
+
+    if any(status in {"REJECTED", "SUPERSEDED"} for status in statuses):
+        return (
+            "REWORK_REQUIRED",
+            covered,
+            [],
+            summary,
+            "Rework rejected or superseded coding proposals before human review.",
+        )
+
+    if len(covered) == len(missing_fields) and missing_fields:
+        if all(status == "APPROVED" for status in statuses):
+            return (
+                "AWAITING_CANONICAL_UPDATE",
+                covered,
+                [],
+                summary,
+                "Transfer the approved anchors in a separate canonical update, then rerun the pipeline.",
+            )
+        if all(
+            status in {"APPROVED", "AWAITING_HUMAN_REVIEW"}
+            for status in statuses
+        ):
+            return (
+                "AWAITING_HUMAN_REVIEW",
+                covered,
+                [],
+                summary,
+                "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete.",
+            )
+
+    if covered:
+        return (
+            "IN_PROGRESS",
+            covered,
+            [],
+            summary,
+            "Complete proposals for the remaining fields in this dimension.",
+        )
+
+    return "READY_TO_CODE", [], [], "", ""
+
+
 def generate_score_work_queue(
     companies: list[dict[str, str]],
     readiness_rows: list[dict[str, str]],
@@ -132,6 +223,7 @@ def generate_score_work_queue(
     qa_review: list[dict[str, str]],
     coded_rows: list[dict[str, str]],
     research_queue_rows: list[dict[str, str]],
+    coding_proposals: list[dict[str, str]],
 ) -> list[dict[str, str]]:
     company_by_id = {
         normalise(row.get("company_id")): row
@@ -164,6 +256,16 @@ def generate_score_work_queue(
         normalise(row.get("company_id")): row
         for row in coded_rows
         if normalise(row.get("company_id"))
+    }
+
+    proposals_by_key = {
+        (
+            normalise(row.get("company_id")),
+            normalise(row.get("score_field")),
+        ): row
+        for row in coding_proposals
+        if normalise(row.get("company_id"))
+        and normalise(row.get("score_field"))
     }
 
     eligibility_research_rank: dict[str, str] = {}
@@ -233,7 +335,7 @@ def generate_score_work_queue(
                 readiness.get("independent_human_review_status")
             ),
             "score_status": status,
-            "work_queue_version": "1.0.0",
+            "work_queue_version": "1.1.0",
         }
 
         if status == "NOT_SCOREABLE_ELIGIBILITY":
@@ -247,6 +349,9 @@ def generate_score_work_queue(
                     "required_fields": "sme_status | group_check",
                     "missing_fields": "group_check",
                     "missing_field_count": "1",
+                    "proposal_covered_fields": "",
+                    "research_gap_fields": "",
+                    "proposal_status_summary": "",
                     "task_status": "OPEN_GATE",
                     "work_priority": "GATE",
                     "research_rank": eligibility_research_rank.get(company_id, ""),
@@ -270,6 +375,9 @@ def generate_score_work_queue(
                     "required_fields": "company_process_map",
                     "missing_fields": "company_process_map",
                     "missing_field_count": "1",
+                    "proposal_covered_fields": "",
+                    "research_gap_fields": "",
+                    "proposal_status_summary": "",
                     "task_status": "OPEN_PREREQUISITE",
                     "work_priority": "P1",
                     "research_rank": "",
@@ -290,6 +398,9 @@ def generate_score_work_queue(
                     "required_fields": "ISO 50001 | ISO 14001 | EMAS",
                     "missing_fields": "pending certificate checks",
                     "missing_field_count": "1",
+                    "proposal_covered_fields": "",
+                    "research_gap_fields": "",
+                    "proposal_status_summary": "",
                     "task_status": "OPEN_PREREQUISITE",
                     "work_priority": "P1",
                     "research_rank": "",
@@ -311,6 +422,22 @@ def generate_score_work_queue(
                 if not missing:
                     continue
                 required = list(DIMENSIONS[dimension].keys())
+                (
+                    task_status,
+                    proposal_covered,
+                    research_gaps,
+                    proposal_summary,
+                    proposal_next_action,
+                ) = proposal_state_for_dimension(
+                    company_id,
+                    missing,
+                    proposals_by_key,
+                )
+                next_action = (
+                    proposal_next_action
+                    if proposal_next_action
+                    else DIMENSION_INSTRUCTIONS[dimension]
+                )
                 tasks.append(
                     {
                         **common,
@@ -321,15 +448,18 @@ def generate_score_work_queue(
                         "required_fields": " | ".join(required),
                         "missing_fields": " | ".join(missing),
                         "missing_field_count": str(len(missing)),
-                        "task_status": "READY_TO_CODE",
+                        "proposal_covered_fields": " | ".join(proposal_covered),
+                        "research_gap_fields": " | ".join(research_gaps),
+                        "proposal_status_summary": proposal_summary,
+                        "task_status": task_status,
                         "work_priority": work_priority,
                         "research_rank": "",
                         "queue_reason": (
                             "Eligibility, process mapping and certificate gates pass. "
-                            "Explicit numeric anchors remain uncoded; higher-evidence "
-                            "companies are queued first."
+                            "Canonical numeric anchors remain uncoded; proposal state "
+                            "is tracked separately and never mutates canonical values."
                         ),
-                        "next_action": DIMENSION_INSTRUCTIONS[dimension],
+                        "next_action": next_action,
                     }
                 )
             continue
@@ -345,6 +475,9 @@ def generate_score_work_queue(
                     "required_fields": "independent_human_review_status",
                     "missing_fields": "independent_human_review_status",
                     "missing_field_count": "1",
+                    "proposal_covered_fields": "",
+                    "research_gap_fields": "",
+                    "proposal_status_summary": "",
                     "task_status": "AWAITING_HUMAN_REVIEW",
                     "work_priority": "P1",
                     "research_rank": "",
@@ -368,6 +501,9 @@ def generate_score_work_queue(
                     "required_fields": "",
                     "missing_fields": "",
                     "missing_field_count": "0",
+                    "proposal_covered_fields": "",
+                    "research_gap_fields": "",
+                    "proposal_status_summary": "",
                     "task_status": "READY_FOR_FINAL_SCORE",
                     "work_priority": "P1",
                     "research_rank": "",
@@ -418,6 +554,7 @@ def run(root: Path = ROOT, output: Path | None = None) -> list[dict[str, str]]:
         read_csv(root / "evidence" / "qa_review.csv"),
         read_csv(root / "data" / "pilot_coded.csv"),
         read_csv(root / "outputs" / "research_queue.csv"),
+        read_csv(root / "data" / "score_coding_proposals.csv"),
     )
     write_csv(output or root / "outputs" / "score_work_queue.csv", rows)
     return rows

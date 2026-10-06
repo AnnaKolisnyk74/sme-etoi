@@ -184,6 +184,9 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "required_fields": normalise(row.get("required_fields")),
                 "missing_fields": normalise(row.get("missing_fields")),
                 "missing_field_count": numeric_or_none(row.get("missing_field_count")),
+                "proposal_covered_fields": normalise(row.get("proposal_covered_fields")),
+                "research_gap_fields": normalise(row.get("research_gap_fields")),
+                "proposal_status_summary": normalise(row.get("proposal_status_summary")),
                 "task_status": normalise(row.get("task_status")),
                 "work_priority": normalise(row.get("work_priority")),
                 "evidence_confidence": normalise(row.get("evidence_confidence")),
@@ -294,6 +297,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
         normalise(row.get("work_priority")) or "UNKNOWN"
         for row in score_work_queue
     )
+    score_work_status_counts = Counter(
+        normalise(row.get("task_status")) or "UNKNOWN"
+        for row in score_work_queue
+    )
 
     verified_dates = [
         normalise(row.get("last_verified_date"))
@@ -336,6 +343,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
         "score_work_summary": {
             "workstream_counts": dict(sorted(score_workstream_counts.items())),
             "priority_counts": dict(sorted(score_work_priority_counts.items())),
+            "task_status_counts": dict(sorted(score_work_status_counts.items())),
             "task_count": len(score_work_queue),
         },
         "companies": web_companies,

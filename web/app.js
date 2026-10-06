@@ -274,7 +274,7 @@ function renderDetail(){
       '</div></section>'+
       '<section class="section-card"><div class="section-card-title">Scoring Work Queue · '+(c.score_work_tasks||[]).length+'</div><div class="section-card-body source-list">'+
         ((c.score_work_tasks||[]).length?(c.score_work_tasks||[]).map(t=>
-          '<div class="source-item"><strong>#'+esc(t.work_rank??"—")+' · '+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</strong><div class="action-text">'+esc(t.missing_fields||"Keine offenen Felder")+'</div><div class="source-meta">'+esc(t.workstream)+' · '+esc(t.work_priority)+' · '+esc(t.task_status)+'</div><div class="action-text">'+esc(t.next_action||"")+'</div></div>'
+          '<div class="source-item"><strong>#'+esc(t.work_rank??"—")+' · '+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</strong><div class="action-text"><strong>Canonical missing:</strong> '+esc(t.missing_fields||"Keine offenen Felder")+'</div>'+(t.proposal_status_summary?'<div class="action-text"><strong>Proposal:</strong> '+esc(t.proposal_status_summary)+'</div>':"")+(t.research_gap_fields?'<div class="action-text"><strong>Research gaps:</strong> '+esc(t.research_gap_fields)+'</div>':"")+'<div class="source-meta">'+esc(t.workstream)+' · '+esc(t.work_priority)+' · '+esc(t.task_status)+'</div><div class="action-text">'+esc(t.next_action||"")+'</div></div>'
         ).join(""):'Keine offene Scoring-Arbeit.')+
       '</div></section></div>';
   }else if(state.detailTab==="research"){
@@ -391,8 +391,8 @@ function renderFunctional(view){
         '<div class="functional-kpi"><span>Final score-ready</span><strong>'+(summary.FINAL_SCORE_READY||0)+'</strong></div>'+
       '</div>'+
       '<section class="functional-card"><h3>Scoring Work Queue · '+work.length+' Arbeitspakete</h3>'+
-        genericTable(["Rang","Unternehmen","Workstream","Dimension","Priorität","Offene Felder","Nächste Aktion"],work.map(t=>
-          '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'
+        genericTable(["Rang","Unternehmen","Workstream","Dimension","Status","Priorität","Proposal / Research","Offene Felder","Nächste Aktion"],work.map(t=>
+          '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td><span class="status-badge '+(t.task_status==="RESEARCH_NEEDED"?"status-blocked":t.task_status==="AWAITING_HUMAN_REVIEW"?"status-review":t.task_status==="READY_TO_CODE"?"status-qualified":"status-watch")+'">'+esc(titleCase(t.task_status||"UNKNOWN"))+'</span></td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.research_gap_fields||t.proposal_status_summary||t.proposal_covered_fields||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'
         ))+
       '</section>'+
       '<section class="functional-card"><h3>Score Readiness nach Unternehmen</h3>'+

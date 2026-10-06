@@ -86,11 +86,35 @@ class WebExportTests(unittest.TestCase):
             ),
             list(range(1, 13)),
         )
+        numeric_tasks = [
+            task
+            for task in all_tasks
+            if task["workstream"] == "NUMERIC_CODING"
+        ]
+        status_counts = {}
+        for task in numeric_tasks:
+            status = task["task_status"]
+            status_counts[status] = status_counts.get(status, 0) + 1
+        self.assertEqual(
+            status_counts,
+            {
+                "AWAITING_HUMAN_REVIEW": 5,
+                "READY_TO_CODE": 430,
+                "RESEARCH_NEEDED": 5,
+            },
+        )
         self.assertTrue(
             all(
-                task["task_status"] == "READY_TO_CODE"
-                for task in all_tasks
-                if task["workstream"] == "NUMERIC_CODING"
+                task["research_gap_fields"]
+                for task in numeric_tasks
+                if task["task_status"] == "RESEARCH_NEEDED"
+            )
+        )
+        self.assertTrue(
+            all(
+                task["proposal_covered_fields"]
+                for task in numeric_tasks
+                if task["task_status"] == "AWAITING_HUMAN_REVIEW"
             )
         )
         self.assertTrue(

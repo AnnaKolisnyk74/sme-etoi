@@ -148,6 +148,7 @@ def build_score_work_queue(
         read_csv(root, "evidence/qa_review.csv"),
         read_csv(root, "data/pilot_coded.csv"),
         research_tasks,
+        read_csv(root, "data/score_coding_proposals.csv"),
     )
 
 
@@ -198,15 +199,38 @@ def validate_score_work_queue(
     if blocked_ids & coding_ids:
         errors.append("eligibility-blocked companies received numeric coding tasks")
 
+    allowed_numeric_statuses = {
+        "READY_TO_CODE",
+        "IN_PROGRESS",
+        "RESEARCH_NEEDED",
+        "REWORK_REQUIRED",
+        "AWAITING_HUMAN_REVIEW",
+        "AWAITING_CANONICAL_UPDATE",
+    }
     for row in work_queue:
         if row.get("workstream") == "NUMERIC_CODING":
             if int(row.get("missing_field_count", "0")) <= 0:
                 errors.append(
                     f"{row['task_key']} is a numeric-coding task without missing fields"
                 )
-            if row.get("task_status") != "READY_TO_CODE":
+            if row.get("task_status") not in allowed_numeric_statuses:
                 errors.append(
-                    f"{row['task_key']} numeric-coding task is not READY_TO_CODE"
+                    f"{row['task_key']} has invalid numeric-coding task status "
+                    f"{row.get('task_status')}"
+                )
+            if (
+                row.get("task_status") == "RESEARCH_NEEDED"
+                and not row.get("research_gap_fields")
+            ):
+                errors.append(
+                    f"{row['task_key']} requires research but has no research_gap_fields"
+                )
+            if (
+                row.get("task_status") == "AWAITING_HUMAN_REVIEW"
+                and not row.get("proposal_covered_fields")
+            ):
+                errors.append(
+                    f"{row['task_key']} awaits review but has no proposal coverage"
                 )
 
     return errors
@@ -290,6 +314,18 @@ def pipeline_summary(
         "score_work_tasks": len(score_work or []),
         "numeric_coding_tasks": sum(
             row.get("workstream") == "NUMERIC_CODING"
+            for row in (score_work or [])
+        ),
+        "ready_to_code_tasks": sum(
+            row.get("task_status") == "READY_TO_CODE"
+            for row in (score_work or [])
+        ),
+        "research_needed_tasks": sum(
+            row.get("task_status") == "RESEARCH_NEEDED"
+            for row in (score_work or [])
+        ),
+        "awaiting_human_review_tasks": sum(
+            row.get("task_status") == "AWAITING_HUMAN_REVIEW"
             for row in (score_work or [])
         ),
         "double_code_conflicts": conflict_count,
@@ -385,7 +421,10 @@ def main() -> int:
         f"{summary['score_readiness_rows']} score-readiness rows, "
         f"{summary['final_score_ready']} final-score-ready companies, "
         f"{summary['score_work_tasks']} score-work tasks, "
-        f"{summary['numeric_coding_tasks']} numeric-coding tasks."
+        f"{summary['numeric_coding_tasks']} numeric-coding tasks, "
+        f"{summary['ready_to_code_tasks']} ready to code, "
+        f"{summary['research_needed_tasks']} research needed, "
+        f"{summary['awaiting_human_review_tasks']} awaiting human review."
     )
     if summary["double_code_conflicts"] is not None:
         print(f"Open double-code conflicts: {summary['double_code_conflicts']}")

@@ -31,6 +31,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
             read_readiness_csv(ROOT / "evidence" / "qa_review.csv"),
             read_readiness_csv(ROOT / "data" / "pilot_coded.csv"),
             read_readiness_csv(ROOT / "outputs" / "research_queue.csv"),
+            read_readiness_csv(ROOT / "data" / "score_coding_proposals.csv"),
         )
 
     def test_current_sample_produces_expected_workload(self):
@@ -97,6 +98,45 @@ class ScoreWorkQueueTests(unittest.TestCase):
                 )
             self.assertEqual(set(fields), expected_fields, company_id)
             self.assertEqual(len(fields), len(expected_fields), company_id)
+
+    def test_proposal_state_advances_work_without_mutating_canonical_fields(self):
+        numeric = [
+            row for row in self.rows
+            if row["workstream"] == "NUMERIC_CODING"
+        ]
+        p04 = [row for row in numeric if row["company_id"] == "P04"]
+        p19 = [row for row in numeric if row["company_id"] == "P19"]
+        remaining = [
+            row for row in numeric
+            if row["company_id"] not in {"P04", "P19"}
+        ]
+
+        self.assertEqual(len(p04), 5)
+        self.assertEqual(
+            {row["task_status"] for row in p04},
+            {"AWAITING_HUMAN_REVIEW"},
+        )
+        self.assertTrue(
+            all(row["proposal_covered_fields"] for row in p04)
+        )
+        self.assertTrue(
+            all(not row["research_gap_fields"] for row in p04)
+        )
+
+        self.assertEqual(len(p19), 5)
+        self.assertEqual(
+            {row["task_status"] for row in p19},
+            {"RESEARCH_NEEDED"},
+        )
+        self.assertTrue(
+            all(row["research_gap_fields"] for row in p19)
+        )
+
+        self.assertEqual(len(remaining), 430)
+        self.assertEqual(
+            {row["task_status"] for row in remaining},
+            {"READY_TO_CODE"},
+        )
 
     def test_queue_never_assigns_numeric_values(self):
         forbidden_columns = set(SCORE_FIELDS)

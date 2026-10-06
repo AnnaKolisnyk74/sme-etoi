@@ -23,6 +23,7 @@ Every proposal records:
 - proposal confidence;
 - evidence source IDs;
 - evidence basis;
+- missing fact when additional research is required;
 - proposal status;
 - coder;
 - proposal date;
@@ -32,10 +33,13 @@ Every proposal records:
 
 ```text
 Scoring Work Queue
-    -> coding proposal
-    -> AWAITING_HUMAN_REVIEW
-    -> APPROVED or REJECTED
-    -> separate canonical update
+    -> coding assessment
+        -> NEEDS_RESEARCH
+        -> new evidence -> new coding assessment
+        or
+        -> AWAITING_HUMAN_REVIEW
+        -> APPROVED or REJECTED
+        -> separate canonical update
     -> rerun Score Readiness
     -> rerun scoring pipeline
 ```
@@ -74,9 +78,20 @@ technical score field.
 If evidence does not support an anchor, do not manufacture one from generic
 sector assumptions.
 
-Where a conservative anchor is proposed from weak but relevant evidence, the
-proposal confidence should reflect that limitation and the evidence basis must
-state it explicitly.
+Use `NEEDS_RESEARCH` when the current repository evidence is insufficient for
+a field-level numeric anchor. Such a row must:
+
+- leave `proposed_value` blank;
+- use `proposal_confidence=UNKNOWN`;
+- identify the exact `missing_fact`;
+- cite the existing source IDs that establish the current evidence boundary.
+
+This is intentionally different from a numeric zero. Zero is an allowed coding
+anchor only when the stored evidence actually supports the zero anchor.
+
+Where a conservative numeric anchor is proposed from weak but relevant
+evidence, the proposal confidence should reflect that limitation and the
+evidence basis must state it explicitly.
 
 ## P04 first-pass example
 
@@ -92,3 +107,22 @@ score.
 
 P04 must remain absent from canonical scored output until human review and a
 separate canonical update are complete.
+
+## P19 uncertainty example
+
+P19 — Glasfabrik Lamberts GmbH & Co. KG demonstrates the field-level
+uncertainty path.
+
+The current repository evidence supports only three numeric first-pass
+proposals:
+
+- `measures_gap_score = 7`;
+- `management_gap_score = 0`;
+- `targets_gap_score = 5`.
+
+The other twelve score fields remain `NEEDS_RESEARCH`. Examples include the
+current furnace energy carrier, firm-specific electrification route, operating
+pattern, power-quality evidence and onsite-integration evidence.
+
+No total P19 score is calculated from these three fields. The twelve unresolved
+fields stay explicitly unresolved.
