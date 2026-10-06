@@ -149,7 +149,41 @@ Every important fact or score should support:
 
 No undocumented manual override should affect a published result.
 
-### 6. Research Queue
+### 6. Score Readiness & SME-ETOI Scoring
+
+The canonical 0–100 SME-ETOI methodology remains the model defined in
+`methodology.md` and implemented by `src/score_companies.py`. The platform
+must not create a second aggregate score from opportunity-engine outputs merely
+because those signals are already available.
+
+Before a company can receive a final SME-ETOI score, the Score Readiness layer
+checks the prerequisites required by the existing methodology:
+
+- SME / linked-enterprise eligibility is sufficiently resolved;
+- at least one firm-specific process mapping exists;
+- ISO 50001, ISO 14001 and EMAS checks each have a non-pending result;
+- every numeric scoring anchor has been explicitly coded from evidence;
+- independent human review has been completed.
+
+The deterministic output is written to `outputs/score_readiness.csv`.
+
+Possible score states include:
+
+- `NOT_SCOREABLE_ELIGIBILITY`
+- `NOT_SCOREABLE_PROCESS`
+- `NOT_SCOREABLE_CERTIFICATES`
+- `NEEDS_NUMERIC_CODING`
+- `PROVISIONAL_SCORE_ONLY`
+- `FINAL_SCORE_READY`
+- `EXCLUDED`
+
+Existing pilot scores remain visible for auditability, but if a gate is still
+open they are labelled `LEGACY_PROVISIONAL_NOT_FINAL` rather than silently
+presented as final results.
+
+This layer deliberately separates **score existence** from **score validity**.
+
+### 7. Research Queue
 
 The Research Queue converts unresolved opportunity outputs into ordered,
 auditable research tasks. It joins the canonical company record to the
@@ -201,7 +235,7 @@ Research Queue
 This separation prevents the research automation from silently validating its
 own assumptions.
 
-### 7. Product Interface
+### 8. Product Interface
 
 The first user-facing prototype is a dependency-free static web application in
 `web/`. It is intentionally read-only and consumes a generated public-data
@@ -223,7 +257,7 @@ The browser payload is produced by `src/export_web_data.py` and written to
 `web/data/sme_etoi.json`. The integrated pipeline refreshes this snapshot after
 derived outputs pass QA.
 
-### 8. Integrated Execution Pipeline
+### 9. Integrated Execution Pipeline
 
 `src/run_pipeline.py` is the canonical orchestration entry point for the
 current prototype. It turns the individual analytical components into one
@@ -240,6 +274,9 @@ Opportunity Engine
         |
         v
 Research Queue
+        |
+        v
+Score Readiness
         |
         v
 cross-output integrity checks
@@ -263,7 +300,7 @@ A `--check-only` mode executes the same preflight and derived-output checks
 without modifying generated files. This is intended for CI and reproducibility
 checks.
 
-### 9. Monitoring & Change Detection
+### 10. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.
 
