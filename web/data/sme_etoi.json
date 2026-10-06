@@ -6730,132 +6730,6 @@
       ]
     },
     {
-      "company_id": "P38",
-      "legal_entity": "Krämer + Eckert GmbH & Co. KG",
-      "website": "https://eloxalwerk-ehingen.com/",
-      "city": "Ehingen",
-      "state": "Baden-Württemberg",
-      "nace_code": "25.61",
-      "nace_label": "Treatment and coating of metals",
-      "employees": 150,
-      "revenue_eur_m": null,
-      "balance_sheet_eur_m": null,
-      "sme_status": "probable",
-      "group_check": "family_owned",
-      "candidate_eligibility_status": "INCLUDE",
-      "process_stratum": "metal_surface_heat",
-      "evidence_confidence": "B",
-      "review_status": "PROVISIONAL",
-      "last_verified_date": "2026-09-14",
-      "next_review_date": "2027-03-14",
-      "certifications": {
-        "iso_50001": "NOT_FOUND_AFTER_CHECK",
-        "iso_14001": "NOT_FOUND_AFTER_CHECK",
-        "emas": "NOT_FOUND_AFTER_CHECK"
-      },
-      "public_signals": {
-        "three_shift_operation": "UNKNOWN",
-        "pv_present": "UNKNOWN",
-        "public_fossil_heat_signal": "UNKNOWN",
-        "refrigeration_or_compressor_signal": "UNKNOWN",
-        "rectifier_converter_furnace_signal": "YES",
-        "public_targets_summary": "No dated site-specific energy or decarbonisation target was found in the checked public sources.",
-        "public_investments_summary": "No quantified site-specific energy investment was found in the checked public sources."
-      },
-      "processes": [
-        {
-          "process_id": "PR006",
-          "process_name": "anodising",
-          "process_family": "metal_surface_heat",
-          "process_name_raw": "anodising; powder coating and heat treatment",
-          "confidence": "B",
-          "evidence_url": "https://eloxalwerk-ehingen.com/"
-        }
-      ],
-      "opportunities": [
-        {
-          "rule_id": "R008",
-          "opportunity_type": "flexibility",
-          "opportunity_level": "MEDIUM",
-          "technical_status": "TECHNICALLY_RELEVANT",
-          "commercial_status": "RESEARCH_REQUIRED",
-          "priority": "RESEARCH",
-          "confidence": "B",
-          "actionability_status": "PROVISIONAL",
-          "sample_eligibility_status": "PROVISIONAL_PASS",
-          "eligibility_next_action": "Keep the opportunity provisional until final SME/source review is completed.",
-          "why_now": "multi-shift or batch production, public transition target",
-          "next_action": "Verify whether flexibility is already deployed using company reports, project references, vendor cases and recent press releases.",
-          "process_name": "anodising",
-          "deployment_value": "UNKNOWN"
-        },
-        {
-          "rule_id": "R006",
-          "opportunity_type": "power_quality",
-          "opportunity_level": "HIGH",
-          "technical_status": "TECHNICALLY_RELEVANT",
-          "commercial_status": "RESEARCH_REQUIRED",
-          "priority": "RESEARCH",
-          "confidence": "C",
-          "actionability_status": "PROVISIONAL",
-          "sample_eligibility_status": "PROVISIONAL_PASS",
-          "eligibility_next_action": "Keep the opportunity provisional until final SME/source review is completed.",
-          "why_now": "multi-shift or batch production, public transition target",
-          "next_action": "Verify whether power quality is already deployed using company reports, project references, vendor cases and recent press releases.",
-          "process_name": "anodising",
-          "deployment_value": "UNKNOWN"
-        }
-      ],
-      "research_tasks": [
-        {
-          "research_rank": 92,
-          "opportunity_type": "flexibility",
-          "missing_fact": "flexibility_solution_deployed",
-          "research_priority": "MEDIUM",
-          "decision_impact": "HIGH",
-          "task_status": "OPEN",
-          "research_question": "Are load-management, demand-response or documented controllable-load arrangements already operating at Krämer + Eckert GmbH & Co. KG?",
-          "queue_reason": "Technical relevance is visible, but either its level or the evidence confidence does not meet the high-priority rule.",
-          "last_research_status": "",
-          "last_resulting_value": "",
-          "last_finding": ""
-        },
-        {
-          "research_rank": 93,
-          "opportunity_type": "power_quality",
-          "missing_fact": "power_quality_solution_deployed",
-          "research_priority": "MEDIUM",
-          "decision_impact": "HIGH",
-          "task_status": "OPEN",
-          "research_question": "Is power quality publicly documented as deployed at Krämer + Eckert GmbH & Co. KG?",
-          "queue_reason": "Technical relevance is visible, but either its level or the evidence confidence does not meet the high-priority rule.",
-          "last_research_status": "",
-          "last_resulting_value": "",
-          "last_finding": ""
-        }
-      ],
-      "sources": [
-        {
-          "source_id": "S-P38-01",
-          "source_type": "company_contact",
-          "publisher": "Eloxalwerk Ehingen",
-          "document_title": "Contact and legal entity",
-          "final_url": "https://www.eloxalwerk-ehingen.com/kontakt/anfahrt/",
-          "evidence_fact": "Exact legal entity and location",
-          "review_status": "RESEARCHED"
-        },
-        {
-          "source_id": "S-P38-02",
-          "source_type": "company_process",
-          "publisher": "Eloxalwerk Ehingen",
-          "document_title": "Company and process overview",
-          "final_url": "https://eloxalwerk-ehingen.com/",
-          "evidence_fact": "150 employees; anodising, powder coating and heat treatment",
-          "review_status": "RESEARCHED"
-        }
-      ]
-    },
-    {
       "company_id": "P32",
       "legal_entity": "Kronenbrauerei Otto Haizmann KG",
       "website": "https://hochdorfer.de/",
@@ -6981,6 +6855,132 @@
           "document_title": "Impressum and company website",
           "final_url": "https://hochdorfer.de/",
           "evidence_fact": "Exact legal entity, location and brewery production",
+          "review_status": "RESEARCHED"
+        }
+      ]
+    },
+    {
+      "company_id": "P38",
+      "legal_entity": "Krämer + Eckert GmbH & Co. KG",
+      "website": "https://eloxalwerk-ehingen.com/",
+      "city": "Ehingen",
+      "state": "Baden-Württemberg",
+      "nace_code": "25.61",
+      "nace_label": "Treatment and coating of metals",
+      "employees": 150,
+      "revenue_eur_m": null,
+      "balance_sheet_eur_m": null,
+      "sme_status": "probable",
+      "group_check": "family_owned",
+      "candidate_eligibility_status": "INCLUDE",
+      "process_stratum": "metal_surface_heat",
+      "evidence_confidence": "B",
+      "review_status": "PROVISIONAL",
+      "last_verified_date": "2026-09-14",
+      "next_review_date": "2027-03-14",
+      "certifications": {
+        "iso_50001": "NOT_FOUND_AFTER_CHECK",
+        "iso_14001": "NOT_FOUND_AFTER_CHECK",
+        "emas": "NOT_FOUND_AFTER_CHECK"
+      },
+      "public_signals": {
+        "three_shift_operation": "UNKNOWN",
+        "pv_present": "UNKNOWN",
+        "public_fossil_heat_signal": "UNKNOWN",
+        "refrigeration_or_compressor_signal": "UNKNOWN",
+        "rectifier_converter_furnace_signal": "YES",
+        "public_targets_summary": "No dated site-specific energy or decarbonisation target was found in the checked public sources.",
+        "public_investments_summary": "No quantified site-specific energy investment was found in the checked public sources."
+      },
+      "processes": [
+        {
+          "process_id": "PR006",
+          "process_name": "anodising",
+          "process_family": "metal_surface_heat",
+          "process_name_raw": "anodising; powder coating and heat treatment",
+          "confidence": "B",
+          "evidence_url": "https://eloxalwerk-ehingen.com/"
+        }
+      ],
+      "opportunities": [
+        {
+          "rule_id": "R008",
+          "opportunity_type": "flexibility",
+          "opportunity_level": "MEDIUM",
+          "technical_status": "TECHNICALLY_RELEVANT",
+          "commercial_status": "RESEARCH_REQUIRED",
+          "priority": "RESEARCH",
+          "confidence": "B",
+          "actionability_status": "PROVISIONAL",
+          "sample_eligibility_status": "PROVISIONAL_PASS",
+          "eligibility_next_action": "Keep the opportunity provisional until final SME/source review is completed.",
+          "why_now": "multi-shift or batch production, public transition target",
+          "next_action": "Verify whether flexibility is already deployed using company reports, project references, vendor cases and recent press releases.",
+          "process_name": "anodising",
+          "deployment_value": "UNKNOWN"
+        },
+        {
+          "rule_id": "R006",
+          "opportunity_type": "power_quality",
+          "opportunity_level": "HIGH",
+          "technical_status": "TECHNICALLY_RELEVANT",
+          "commercial_status": "RESEARCH_REQUIRED",
+          "priority": "RESEARCH",
+          "confidence": "C",
+          "actionability_status": "PROVISIONAL",
+          "sample_eligibility_status": "PROVISIONAL_PASS",
+          "eligibility_next_action": "Keep the opportunity provisional until final SME/source review is completed.",
+          "why_now": "multi-shift or batch production, public transition target",
+          "next_action": "Verify whether power quality is already deployed using company reports, project references, vendor cases and recent press releases.",
+          "process_name": "anodising",
+          "deployment_value": "UNKNOWN"
+        }
+      ],
+      "research_tasks": [
+        {
+          "research_rank": 92,
+          "opportunity_type": "flexibility",
+          "missing_fact": "flexibility_solution_deployed",
+          "research_priority": "MEDIUM",
+          "decision_impact": "HIGH",
+          "task_status": "OPEN",
+          "research_question": "Are load-management, demand-response or documented controllable-load arrangements already operating at Krämer + Eckert GmbH & Co. KG?",
+          "queue_reason": "Technical relevance is visible, but either its level or the evidence confidence does not meet the high-priority rule.",
+          "last_research_status": "",
+          "last_resulting_value": "",
+          "last_finding": ""
+        },
+        {
+          "research_rank": 93,
+          "opportunity_type": "power_quality",
+          "missing_fact": "power_quality_solution_deployed",
+          "research_priority": "MEDIUM",
+          "decision_impact": "HIGH",
+          "task_status": "OPEN",
+          "research_question": "Is power quality publicly documented as deployed at Krämer + Eckert GmbH & Co. KG?",
+          "queue_reason": "Technical relevance is visible, but either its level or the evidence confidence does not meet the high-priority rule.",
+          "last_research_status": "",
+          "last_resulting_value": "",
+          "last_finding": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S-P38-01",
+          "source_type": "company_contact",
+          "publisher": "Eloxalwerk Ehingen",
+          "document_title": "Contact and legal entity",
+          "final_url": "https://www.eloxalwerk-ehingen.com/kontakt/anfahrt/",
+          "evidence_fact": "Exact legal entity and location",
+          "review_status": "RESEARCHED"
+        },
+        {
+          "source_id": "S-P38-02",
+          "source_type": "company_process",
+          "publisher": "Eloxalwerk Ehingen",
+          "document_title": "Company and process overview",
+          "final_url": "https://eloxalwerk-ehingen.com/",
+          "evidence_fact": "150 employees; anodising, powder coating and heat treatment",
           "review_status": "RESEARCHED"
         }
       ]
