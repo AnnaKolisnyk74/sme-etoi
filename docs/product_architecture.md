@@ -234,9 +234,9 @@ For the current 100-company snapshot this produces:
 - 12 eligibility-gate work items;
 - 440 numeric-coding packages;
 - 452 work items in total;
-- 9 packages awaiting human review;
+- 14 packages awaiting human review;
 - 11 packages requiring additional field-level research;
-- 420 packages still ready for first-pass coding.
+- 415 packages still ready for first-pass coding.
 
 The mixed state is intentional. P12, for example, has four dimensions fully
 covered by review-pending proposals while load-flexibility remains
@@ -245,6 +245,10 @@ covered by review-pending proposals while load-flexibility remains
 P16 shows why company-level evidence confidence must not be mistaken for
 score-field completeness: despite A-level company and process evidence, all
 five dimension packages still contain at least one unresolved technical fact.
+
+P05 is a fully covered review-pending case: all five dimensions have complete
+numeric proposals, but they still cannot enter canonical scoring until human
+review is completed.
 
 ### 8. Research Queue
 

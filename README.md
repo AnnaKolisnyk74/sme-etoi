@@ -186,7 +186,8 @@ The current proposal-aware score-work queue therefore contains:
 - 4 P12 dimension packages `AWAITING_HUMAN_REVIEW`;
 - 1 P12 dimension package `RESEARCH_NEEDED`;
 - 5 P16 dimension packages `RESEARCH_NEEDED`;
-- 420 dimension packages `READY_TO_CODE`.
+- 5 P05 dimension packages `AWAITING_HUMAN_REVIEW`;
+- 415 dimension packages `READY_TO_CODE`.
 
 P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
 score fields have review-pending numeric proposals, while
@@ -200,6 +201,12 @@ review-pending proposals, while eleven fields remain `NEEDS_RESEARCH`,
 primarily because the current furnace energy carrier, electrical topology,
 drive/control evidence and concrete recent transition measures are not yet
 publicly established.
+
+P05 Einbecker Brauhaus AG is the second fully covered proposal case. All 15
+score fields have review-pending numeric anchors based on the environmental
+statement, including electric clean-steam planning, cooling, CHP/PV,
+heat-recovery and process-control evidence. The proposal arithmetic sums to
+59/100, but this remains a review artifact and is not a published score.
 
 Current generated workload:
 

@@ -176,6 +176,21 @@ class ScoreCodingProposalTests(unittest.TestCase):
             self.assertEqual(row["proposal_confidence"], "UNKNOWN")
             self.assertTrue(row["missing_fact"])
 
+    def test_p05_complete_proposals_cover_all_fields_and_sum_to_59(self):
+        rows = [
+            row
+            for row in read_csv(ROOT / "data" / "score_coding_proposals.csv")
+            if row["company_id"] == "P05"
+        ]
+        self.assertEqual(len(rows), 15)
+        self.assertEqual({row["score_field"] for row in rows}, set(SCORE_FIELDS))
+        self.assertEqual(
+            {row["proposal_status"] for row in rows},
+            {"AWAITING_HUMAN_REVIEW"},
+        )
+        self.assertEqual(sum(int(row["proposed_value"]) for row in rows), 59)
+        self.assertTrue(all(row["proposal_confidence"] != "UNKNOWN" for row in rows))
+
     def test_p04_proposals_do_not_mutate_canonical_scoring_inputs_or_outputs(self):
         coded_ids = {
             row["company_id"]
@@ -193,6 +208,8 @@ class ScoreCodingProposalTests(unittest.TestCase):
         self.assertNotIn("P12", scored_ids)
         self.assertNotIn("P16", coded_ids)
         self.assertNotIn("P16", scored_ids)
+        self.assertNotIn("P05", coded_ids)
+        self.assertNotIn("P05", scored_ids)
 
 
 if __name__ == "__main__":

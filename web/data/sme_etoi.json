@@ -6247,17 +6247,17 @@
           "required_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
+          "proposal_covered_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3",
+          "task_status": "AWAITING_HUMAN_REVIEW",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
+          "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         },
         {
           "work_rank": 34,
@@ -6269,17 +6269,17 @@
           "required_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
+          "proposal_covered_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3",
+          "task_status": "AWAITING_HUMAN_REVIEW",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
+          "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         },
         {
           "work_rank": 35,
@@ -6291,17 +6291,17 @@
           "required_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_field_count": 2,
-          "proposal_covered_fields": "",
+          "proposal_covered_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=2",
+          "task_status": "AWAITING_HUMAN_REVIEW",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
+          "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         },
         {
           "work_rank": 36,
@@ -6313,17 +6313,17 @@
           "required_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
+          "proposal_covered_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3",
+          "task_status": "AWAITING_HUMAN_REVIEW",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
+          "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         },
         {
           "work_rank": 37,
@@ -6335,17 +6335,17 @@
           "required_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_field_count": 4,
-          "proposal_covered_fields": "",
+          "proposal_covered_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=4",
+          "task_status": "AWAITING_HUMAN_REVIEW",
           "work_priority": "P1",
           "evidence_confidence": "A",
           "process_confidence": "A",
           "source_count": 4,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
+          "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         }
       ]
     },
@@ -24702,9 +24702,9 @@
       "P3": 5
     },
     "task_status_counts": {
-      "AWAITING_HUMAN_REVIEW": 9,
+      "AWAITING_HUMAN_REVIEW": 14,
       "OPEN_GATE": 12,
-      "READY_TO_CODE": 420,
+      "READY_TO_CODE": 415,
       "RESEARCH_NEEDED": 11
     },
     "task_count": 452
