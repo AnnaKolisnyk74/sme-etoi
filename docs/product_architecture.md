@@ -151,12 +151,36 @@ Completed checks are appended to `data/research_results.csv`. This log stores
 the exact task key, search scope, finding, source IDs and URLs, prior and
 resulting values, checked date, next review date and reviewer. The queue reads
 the most recent result and assigns a visible lifecycle state: `OPEN`,
-`IN_PROGRESS`, `RECHECK_DUE`, `BLOCKED` or `RESOLVED`.
+`IN_PROGRESS`, `RECHECK_DUE`, `AWAITING_REVIEW`,
+`AWAITING_CANONICAL_UPDATE`, `BLOCKED` or `RESOLVED`.
+
+SME and group eligibility is treated as an upstream gate. If `group_check`
+is unresolved, the queue creates a high-priority `RQ00_SME_ELIGIBILITY_GATE`
+task before downstream deployment research. A research result may propose
+`CONFIRMED_SME` or `EXCLUDE`, but a provisional result is shown as
+`AWAITING_REVIEW`. Only an explicitly approved result progresses to
+`AWAITING_CANONICAL_UPDATE`.
 
 The results log cannot mutate company intelligence. Positive deployment
-evidence must first be reviewed and coded in the canonical company fact layer;
-the Opportunity Engine is then rerun. Partial evidence and unsuccessful public
-searches remain visible without being converted to negative deployment claims.
+evidence or an SME-eligibility decision must first be reviewed and coded in the
+canonical company fact layer; the Opportunity Engine and Research Queue are
+then rerun. Partial evidence and unsuccessful public searches remain visible
+without being converted to negative deployment claims or sample decisions.
+
+The intended eligibility feedback loop is:
+
+```text
+Research Queue
+    -> research result
+    -> AWAITING_REVIEW
+    -> approved decision
+    -> AWAITING_CANONICAL_UPDATE
+    -> canonical company/sample update
+    -> rerun engines and queue
+```
+
+This separation prevents the research automation from silently validating its
+own assumptions.
 
 ### 7. Monitoring & Change Detection
 
