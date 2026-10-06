@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -93,6 +94,22 @@ class WebExportTests(unittest.TestCase):
         self.assertIn("function showNav(view)", app)
         self.assertIn("localStorage", app)
 
+
+
+    def test_collection_dom_queries_use_query_selector_all(self):
+        app = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+        collection_selectors = [
+            ".nav-row",
+            "#functionalContent [data-company-id]",
+            "#companyRows tr[data-id]",
+            "#researchRows tr[data-id]",
+            ".note-item[data-company-id]",
+            "[data-nav]",
+        ]
+        for selector in collection_selectors:
+            self.assertIn(f'$$("{selector}").forEach', app)
+            bad = rf'(?<!\$)\$\("{re.escape(selector)}"\)\.forEach'
+            self.assertIsNone(re.search(bad, app))
 
 
 if __name__ == "__main__":
