@@ -183,7 +183,45 @@ presented as final results.
 
 This layer deliberately separates **score existence** from **score validity**.
 
-### 7. Research Queue
+### 7. Scoring Work Queue
+
+Score Readiness answers whether a company may be scored. The Scoring Work Queue
+answers what should be worked on next.
+
+The deterministic queue is produced by `src/score_work_queue.py` and written
+to `outputs/score_work_queue.csv`.
+
+Work is ordered in two stages:
+
+1. unresolved SME / linked-enterprise eligibility gates first;
+2. numeric coding only for companies whose eligibility, process-mapping and
+   certificate-check prerequisites already pass.
+
+Numeric work is grouped into the five SME-ETOI dimensions rather than split
+into 15 disconnected field tasks:
+
+- process-electrification potential;
+- power-electronics relevance;
+- load-flexibility potential;
+- grid and power-quality relevance;
+- publicly observed transition gap.
+
+Every package exposes the exact `required_fields`, currently
+`missing_fields`, evidence and process confidence, source count, queue reason
+and the next coding instruction. Higher-evidence cases are queued before weaker
+ones so the first coding passes are both efficient and methodologically
+defensible.
+
+The queue never assigns a numeric anchor. It only identifies explicit coding
+work. Eligibility-blocked companies cannot receive numeric-coding tasks.
+
+For the current 100-company snapshot this produces:
+
+- 12 eligibility-gate work items;
+- 440 numeric-coding packages;
+- 452 work items in total.
+
+### 8. Research Queue
 
 The Research Queue converts unresolved opportunity outputs into ordered,
 auditable research tasks. It joins the canonical company record to the
@@ -235,7 +273,7 @@ Research Queue
 This separation prevents the research automation from silently validating its
 own assumptions.
 
-### 8. Product Interface
+### 9. Product Interface
 
 The first user-facing prototype is a dependency-free static web application in
 `web/`. It is intentionally read-only and consumes a generated public-data
@@ -257,7 +295,7 @@ The browser payload is produced by `src/export_web_data.py` and written to
 `web/data/sme_etoi.json`. The integrated pipeline refreshes this snapshot after
 derived outputs pass QA.
 
-### 9. Integrated Execution Pipeline
+### 10. Integrated Execution Pipeline
 
 `src/run_pipeline.py` is the canonical orchestration entry point for the
 current prototype. It turns the individual analytical components into one
@@ -277,6 +315,9 @@ Research Queue
         |
         v
 Score Readiness
+        |
+        v
+Scoring Work Queue
         |
         v
 cross-output integrity checks
@@ -300,7 +341,7 @@ A `--check-only` mode executes the same preflight and derived-output checks
 without modifying generated files. This is intended for CI and reproducibility
 checks.
 
-### 10. Monitoring & Change Detection
+### 11. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.
 

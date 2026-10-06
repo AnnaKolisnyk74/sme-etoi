@@ -11,6 +11,7 @@ import inter_rater_reliability
 import opportunity_engine
 import research_queue
 import score_readiness
+import score_work_queue
 import validate_pilot
 
 
@@ -131,6 +132,85 @@ def build_score_readiness(
     )
 
 
+
+def build_score_work_queue(
+    root: Path,
+    companies: list[dict[str, str]],
+    readiness: list[dict[str, str]],
+    research_tasks: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    return score_work_queue.generate_score_work_queue(
+        companies,
+        readiness,
+        read_csv(root, "data/company_process_map.csv"),
+        read_csv(root, "evidence/source_register.csv"),
+        read_csv(root, "evidence/qa_review.csv"),
+        read_csv(root, "data/pilot_coded.csv"),
+        research_tasks,
+    )
+
+
+def validate_score_work_queue(
+    readiness: list[dict[str, str]],
+    work_queue: list[dict[str, str]],
+) -> list[str]:
+    errors: list[str] = []
+    ranks = [int(row["work_rank"]) for row in work_queue]
+    if ranks != list(range(1, len(work_queue) + 1)):
+        errors.append("score-work queue ranks are not dense and ordered")
+
+    task_keys = [row["task_key"] for row in work_queue]
+    if len(task_keys) != len(set(task_keys)):
+        errors.append("score-work queue contains duplicate task keys")
+
+    blocked_ids = {
+        row["company_id"]
+        for row in readiness
+        if row.get("score_status") == "NOT_SCOREABLE_ELIGIBILITY"
+    }
+    gate_rows = [
+        row for row in work_queue if row.get("workstream") == "ELIGIBILITY"
+    ]
+    gate_ids = {row["company_id"] for row in gate_rows}
+    if gate_ids != blocked_ids:
+        errors.append("score-work eligibility gates differ from score-readiness blocks")
+
+    if any(
+        row.get("workstream") != "ELIGIBILITY"
+        for row in work_queue[: len(blocked_ids)]
+    ):
+        errors.append("score-work eligibility gates do not occupy the first ranks")
+
+    coding_ids = {
+        row["company_id"]
+        for row in work_queue
+        if row.get("workstream") == "NUMERIC_CODING"
+    }
+    expected_coding_ids = {
+        row["company_id"]
+        for row in readiness
+        if row.get("score_status") == "NEEDS_NUMERIC_CODING"
+    }
+    if coding_ids != expected_coding_ids:
+        errors.append("score-work numeric-coding coverage differs from score readiness")
+
+    if blocked_ids & coding_ids:
+        errors.append("eligibility-blocked companies received numeric coding tasks")
+
+    for row in work_queue:
+        if row.get("workstream") == "NUMERIC_CODING":
+            if int(row.get("missing_field_count", "0")) <= 0:
+                errors.append(
+                    f"{row['task_key']} is a numeric-coding task without missing fields"
+                )
+            if row.get("task_status") != "READY_TO_CODE":
+                errors.append(
+                    f"{row['task_key']} numeric-coding task is not READY_TO_CODE"
+                )
+
+    return errors
+
+
 def validate_score_readiness(
     companies: list[dict[str, str]],
     readiness: list[dict[str, str]],
@@ -186,6 +266,7 @@ def pipeline_summary(
     opportunities: list[dict[str, str]],
     queue: list[dict[str, str]],
     readiness: list[dict[str, str]] | None = None,
+    score_work: list[dict[str, str]] | None = None,
     conflict_count: int | None = None,
 ) -> dict[str, int | None]:
     return {
@@ -205,6 +286,11 @@ def pipeline_summary(
             row.get("score_status") == "FINAL_SCORE_READY"
             for row in (readiness or [])
         ),
+        "score_work_tasks": len(score_work or []),
+        "numeric_coding_tasks": sum(
+            row.get("workstream") == "NUMERIC_CODING"
+            for row in (score_work or [])
+        ),
         "double_code_conflicts": conflict_count,
     }
 
@@ -221,8 +307,10 @@ def run_pipeline(
 
     companies, opportunities, queue = build_outputs(root)
     readiness = build_score_readiness(root, companies)
+    score_work = build_score_work_queue(root, companies, readiness, queue)
     generated_errors = validate_generated_outputs(companies, opportunities, queue)
     generated_errors.extend(validate_score_readiness(companies, readiness))
+    generated_errors.extend(validate_score_work_queue(readiness, score_work))
     if generated_errors:
         raise ValueError("Generated-output QA failed: " + "; ".join(generated_errors))
 
@@ -231,6 +319,7 @@ def run_pipeline(
         opportunity_engine.write_csv(root / "outputs/opportunities.csv", opportunities)
         research_queue.write_csv(root / "outputs/research_queue.csv", queue)
         score_readiness.write_csv(root / "outputs/score_readiness.csv", readiness)
+        score_work_queue.write_csv(root / "outputs/score_work_queue.csv", score_work)
         if include_reliability:
             _, conflicts = inter_rater_reliability.run(root)
             conflict_count = len(conflicts)
@@ -245,6 +334,7 @@ def run_pipeline(
         opportunities,
         queue,
         readiness=readiness,
+        score_work=score_work,
         conflict_count=conflict_count,
     )
 
@@ -288,7 +378,9 @@ def main() -> int:
         f"{summary['eligibility_gates']} eligibility gates, "
         f"{summary['eligibility_blocked_opportunities']} eligibility-blocked opportunity rows, "
         f"{summary['score_readiness_rows']} score-readiness rows, "
-        f"{summary['final_score_ready']} final-score-ready companies."
+        f"{summary['final_score_ready']} final-score-ready companies, "
+        f"{summary['score_work_tasks']} score-work tasks, "
+        f"{summary['numeric_coding_tasks']} numeric-coding tasks."
     )
     if summary["double_code_conflicts"] is not None:
         print(f"Open double-code conflicts: {summary['double_code_conflicts']}")

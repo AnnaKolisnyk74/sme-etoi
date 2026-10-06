@@ -1,0 +1,113 @@
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from score_companies import SCORE_FIELDS
+from score_readiness import generate_score_readiness, read_csv as read_readiness_csv
+from score_work_queue import generate_score_work_queue
+
+
+class ScoreWorkQueueTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.companies = read_readiness_csv(ROOT / "data" / "company_intelligence.csv")
+        cls.process_map = read_readiness_csv(ROOT / "data" / "company_process_map.csv")
+        cls.readiness = generate_score_readiness(
+            cls.companies,
+            cls.process_map,
+            read_readiness_csv(ROOT / "evidence" / "certificate_register.csv"),
+            read_readiness_csv(ROOT / "evidence" / "qa_review.csv"),
+            read_readiness_csv(ROOT / "data" / "pilot_coded.csv"),
+            read_readiness_csv(ROOT / "outputs" / "pilot_scored.csv"),
+        )
+        cls.rows = generate_score_work_queue(
+            cls.companies,
+            cls.readiness,
+            cls.process_map,
+            read_readiness_csv(ROOT / "evidence" / "source_register.csv"),
+            read_readiness_csv(ROOT / "evidence" / "qa_review.csv"),
+            read_readiness_csv(ROOT / "data" / "pilot_coded.csv"),
+            read_readiness_csv(ROOT / "outputs" / "research_queue.csv"),
+        )
+
+    def test_current_sample_produces_expected_workload(self):
+        self.assertEqual(len(self.rows), 452)
+        self.assertEqual(
+            sum(row["workstream"] == "ELIGIBILITY" for row in self.rows),
+            12,
+        )
+        self.assertEqual(
+            sum(row["workstream"] == "NUMERIC_CODING" for row in self.rows),
+            440,
+        )
+
+    def test_eligibility_gates_are_first_and_follow_research_rank(self):
+        gates = [row for row in self.rows if row["workstream"] == "ELIGIBILITY"]
+        self.assertEqual([int(row["work_rank"]) for row in gates], list(range(1, 13)))
+        research_ranks = [int(row["research_rank"]) for row in gates]
+        self.assertEqual(research_ranks, sorted(research_ranks))
+
+    def test_blocked_companies_never_receive_numeric_coding_tasks(self):
+        blocked = {
+            row["company_id"]
+            for row in self.readiness
+            if row["score_status"] == "NOT_SCOREABLE_ELIGIBILITY"
+        }
+        coding_companies = {
+            row["company_id"]
+            for row in self.rows
+            if row["workstream"] == "NUMERIC_CODING"
+        }
+        self.assertTrue(blocked.isdisjoint(coding_companies))
+
+    def test_each_ready_company_receives_five_dimension_packages(self):
+        expected = {
+            row["company_id"]
+            for row in self.readiness
+            if row["score_status"] == "NEEDS_NUMERIC_CODING"
+        }
+        by_company = {}
+        for row in self.rows:
+            if row["workstream"] != "NUMERIC_CODING":
+                continue
+            by_company.setdefault(row["company_id"], []).append(row)
+        self.assertEqual(set(by_company), expected)
+        self.assertEqual(len(expected), 88)
+        for company_id, rows in by_company.items():
+            self.assertEqual(len(rows), 5, company_id)
+
+    def test_dimension_packages_cover_all_numeric_fields_once(self):
+        by_company = {}
+        for row in self.rows:
+            if row["workstream"] != "NUMERIC_CODING":
+                continue
+            by_company.setdefault(row["company_id"], []).append(row)
+
+        expected_fields = set(SCORE_FIELDS)
+        for company_id, rows in by_company.items():
+            fields = []
+            for row in rows:
+                fields.extend(
+                    field.strip()
+                    for field in row["missing_fields"].split("|")
+                    if field.strip()
+                )
+            self.assertEqual(set(fields), expected_fields, company_id)
+            self.assertEqual(len(fields), len(expected_fields), company_id)
+
+    def test_queue_never_assigns_numeric_values(self):
+        forbidden_columns = set(SCORE_FIELDS)
+        for row in self.rows:
+            self.assertTrue(forbidden_columns.isdisjoint(row))
+            self.assertNotIn("opportunity_score", row)
+
+    def test_work_ranks_are_dense_and_unique(self):
+        ranks = [int(row["work_rank"]) for row in self.rows]
+        self.assertEqual(ranks, list(range(1, len(self.rows) + 1)))
+
+
+if __name__ == "__main__":
+    unittest.main()

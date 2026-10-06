@@ -40,6 +40,8 @@ class PipelineTests(unittest.TestCase):
         self.assertGreater(summary["research_tasks"], 0)
         self.assertEqual(summary["score_readiness_rows"], 100)
         self.assertEqual(summary["final_score_ready"], 0)
+        self.assertEqual(summary["score_work_tasks"], 452)
+        self.assertEqual(summary["numeric_coding_tasks"], 440)
         self.assertIsNone(summary["double_code_conflicts"])
 
     def test_summary_matches_generated_eligibility_blocks(self):
