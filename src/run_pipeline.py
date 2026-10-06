@@ -6,6 +6,7 @@ import argparse
 import csv
 from pathlib import Path
 
+import export_web_data
 import inter_rater_reliability
 import opportunity_engine
 import research_queue
@@ -158,6 +159,11 @@ def run_pipeline(
         if include_reliability:
             _, conflicts = inter_rater_reliability.run(root)
             conflict_count = len(conflicts)
+        web_payload = export_web_data.build_web_payload(root)
+        export_web_data.write_web_payload(
+            root / "web" / "data" / "sme_etoi.json",
+            web_payload,
+        )
 
     return pipeline_summary(
         companies,
