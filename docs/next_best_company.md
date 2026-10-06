@@ -158,6 +158,13 @@ solutions GmbH** is the next coding company. The company queue contains
 
 ## Automated selection and history
 
+The subsequent [public-source audit](public_source_audit_2026-10-06.md) rechecked
+all 100 companies and updated live link health. Frozen selections retain their
+original inputs: reconstruction tests use pinned pre-audit register/process-map
+fixtures rather than substituting current link status into historical decisions.
+The selector now also runs offline audit-completeness preflight. Audit recovery
+does not approve a score or start a coding batch.
+
 `src/select_coding_batch.py` runs deterministic preflight and rebuilds priorities
 in memory; it does not rely on a potentially stale output CSV. Only QA-passing
 CODE_NOW candidates with dense unique ranks and no open eligibility gate may

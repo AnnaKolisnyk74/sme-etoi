@@ -15,6 +15,7 @@ import score_readiness
 import score_work_queue
 import validate_pilot
 import validate_score_coding_proposals
+import source_audit_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -434,6 +435,7 @@ def run_pipeline(
     include_reliability: bool = True,
 ) -> dict[str, int | None]:
     preflight_errors = validate_pilot.validate(root)
+    preflight_errors.extend(source_audit_summary.validate(root))
     proposal_errors = validate_score_coding_proposals.validate(root)
     preflight_errors.extend(
         f"score coding proposal: {error}" for error in proposal_errors
@@ -456,6 +458,7 @@ def run_pipeline(
 
     conflict_count: int | None = None
     if write_outputs:
+        source_audit_summary.write_company_summary(root)
         opportunity_engine.write_csv(root / "outputs/opportunities.csv", opportunities)
         research_queue.write_csv(root / "outputs/research_queue.csv", queue)
         score_readiness.write_csv(root / "outputs/score_readiness.csv", readiness)

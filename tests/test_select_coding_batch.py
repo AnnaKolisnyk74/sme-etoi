@@ -71,9 +71,9 @@ class BatchSelectionTests(unittest.TestCase):
                     if r['batch_id'] == 'NBCC-2026-10-06-02']
         self.assertEqual(len(manifest), 2)
         companies, _, queue = build_outputs(ROOT)
-        process = read_csv(ROOT / 'data/company_process_map.csv')
+        process = read_csv(ROOT / 'tests/fixtures/company_process_map_before_20261006_audit.csv')
         new_sources = {'S-P30-03', 'S-P30-04', 'S-P30-05', 'S-P31-03', 'S-P31-04'}
-        sources = [r for r in read_csv(ROOT / 'evidence/source_register.csv') if r['source_id'] not in new_sources]
+        sources = [r for r in read_csv(ROOT / 'tests/fixtures/source_register_before_20261006_audit.csv') if r['source_id'] not in new_sources]
         work = generate_score_work_queue(companies, build_score_readiness(ROOT, companies), process, sources,
             read_csv(ROOT / 'evidence/qa_review.csv'), read_csv(ROOT / 'data/pilot_coded.csv'), queue,
             [r for r in read_csv(ROOT / 'data/score_coding_proposals.csv') if r['company_id'] not in {'P30', 'P31'}])

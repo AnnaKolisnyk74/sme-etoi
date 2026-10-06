@@ -7,6 +7,7 @@ import csv
 import json
 from collections import Counter
 from pathlib import Path
+import source_audit_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,7 +36,8 @@ def numeric_or_none(value: object):
     return int(number) if number.is_integer() else number
 
 
-def compact_source(row: dict[str, str]) -> dict[str, str]:
+def compact_source(row: dict[str, str], audit: dict | None = None) -> dict[str, str]:
+    audit = audit or {}
     return {
         "source_id": normalise(row.get("source_id")),
         "source_type": normalise(row.get("source_type")),
@@ -44,6 +46,11 @@ def compact_source(row: dict[str, str]) -> dict[str, str]:
         "final_url": normalise(row.get("final_url") or row.get("source_link")),
         "evidence_fact": normalise(row.get("evidence_fact")),
         "review_status": normalise(row.get("review_status")),
+        "source_link": normalise(row.get("source_link")),
+        "link_check_status": normalise(row.get("link_check_status")),
+        "link_check_date": normalise(row.get("link_check_date")),
+        "retrieval_status": normalise(audit.get("retrieval_status") or 'NOT_CHECKED'),
+        "retrieval_checked_at": normalise(audit.get("checked_at")),
     }
 
 
@@ -102,6 +109,9 @@ def build_web_payload(root: Path = ROOT) -> dict:
     company_work_priority = read_csv(root, "outputs/company_work_priority.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
+    audits = {r['url']: r for r in read_csv(root, 'evidence/source_link_audit.csv')}
+    audit_summary = source_audit_summary.build(root)
+    audit_by_company = {r['company_id']: r for r in audit_summary['companies']}
 
     score_by_id = {
         row["company_id"]: row
@@ -324,9 +334,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "priority_reason": normalise(company_priority.get("priority_reason")),
                 },
                 "sources": [
-                    compact_source(source)
+                    compact_source(source, audits.get(source['source_link']))
                     for source in sources_by_company.get(company_id, [])
                 ],
+                "source_audit": audit_by_company.get(company_id, {}),
             }
         )
 
@@ -397,6 +408,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     }
 
     return {
+        "source_audit_summary": audit_summary,
         "meta": {
             "project": "SME-ETOI",
             "subtitle": "Energy Transition Opportunity Index for German SMEs",

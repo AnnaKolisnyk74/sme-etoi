@@ -105,8 +105,9 @@ class NextBestCodingTests(unittest.TestCase):
         manifest = [r for r in read_csv(ROOT / 'data/coding_batch_selections.csv') if r['batch_id'] == 'NBCC-2026-10-06-01']
         selected = {r['company_id'] for r in manifest}
         companies, _, queue = build_outputs(ROOT)
-        process = read_csv(ROOT / 'data/company_process_map.csv')
-        sources = [r for r in read_csv(ROOT / 'evidence/source_register.csv') if r['source_id'] not in {'S-P21-04', 'S-P27-04'}]
+        # Frozen decisions use their historical evidence inputs, not later link health.
+        process = read_csv(ROOT / 'tests/fixtures/company_process_map_before_20261006_audit.csv')
+        sources = [r for r in read_csv(ROOT / 'tests/fixtures/source_register_before_20261006_audit.csv') if r['source_id'] not in {'S-P21-04', 'S-P27-04'}]
         work = generate_score_work_queue(companies, build_score_readiness(ROOT, companies), process, sources,
             read_csv(ROOT / 'evidence/qa_review.csv'), read_csv(ROOT / 'data/pilot_coded.csv'), queue,
             [r for r in read_csv(ROOT / 'data/score_coding_proposals.csv') if r['company_id'] not in selected])

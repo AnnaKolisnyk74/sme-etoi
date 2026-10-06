@@ -283,7 +283,8 @@ function renderDetail(){
       '</div></section></div>';
   }else{
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Evidence Trail · '+(c.sources||[]).length+' Quellen</div><div class="section-card-body source-list">'+
-      ((c.sources||[]).length?(c.sources||[]).map(s=>'<div class="source-item"><a href="'+esc(s.final_url||"#")+'" target="_blank" rel="noopener">'+esc(s.document_title||s.publisher||s.source_id)+' ↗</a><div class="source-meta">'+esc([s.source_id,titleCase(s.source_type),s.publisher].filter(Boolean).join(" · "))+'</div></div>').join(""):'Keine Quellen im Register')+
+      '<p>AI-Abrufprüfung: Erreichbarkeit bestätigt keine Aussage, Zertifikatsgültigkeit oder Human Review.</p>'+
+      ((c.sources||[]).length?(c.sources||[]).map(s=>'<div class="source-item"><a href="'+esc(s.final_url||"#")+'" target="_blank" rel="noopener">'+esc(s.document_title||s.publisher||s.source_id)+' ↗</a><div class="source-meta">'+esc([s.source_id,titleCase(s.source_type),s.publisher].filter(Boolean).join(" · "))+'</div><div class="source-meta">Abruf: '+esc(titleCase(s.retrieval_status||"NOT_CHECKED"))+' · Belegstatus: '+esc(s.link_check_status||"UNKNOWN")+' · '+esc(s.link_check_date||"—")+'</div></div>').join(""):'Keine Quellen im Register')+
       '</div></section></div>';
   }
   const isPinned=pinnedIds().includes(c.company_id);
@@ -310,6 +311,17 @@ function renderFunctional(view){
   const all=state.data.companies;
   kicker.textContent="SME-ETOI";
   actions.innerHTML="";
+
+  if(view==="sources"){
+    title.textContent="Quellenprüfung";
+    sub.textContent="Abrufprüfung für bearbeitete und noch nicht codierte Firmen. Ersatzbelege gelten nur im dokumentierten Aussageumfang.";
+    const audit=state.data.source_audit_summary||{};
+    const cases=audit.recovery_cases||[];
+    root.innerHTML='<section class="functional-card"><h3>Öffentliche Quellen · AI-Abrufprüfung</h3><p>'+esc(audit.checked_company_count??0)+' / '+esc(audit.sample_company_count??0)+' Sample-Firmen geprüft · '+esc(audit.retrievable_url_count??0)+' / '+esc(audit.audited_url_count??0)+' URLs abrufbar · Stand '+esc(audit.last_checked_at||"—")+'</p><p>Die URL-Zahlen enthalten auch ausgeschlossene Kandidaten, Weiterleitungsziele und Ersatzbelege. HTTP 200 bestätigt keine Unternehmenszuordnung, aktuelle Zertifikatsgültigkeit oder Human Review. UNKNOWN bleibt UNKNOWN.</p></section>'+
+      '<section class="functional-card"><h3>Ersatzbelege und offene Aussagegrenzen</h3>'+genericTable(["Firma","Originalquelle","Ergebnis","Ersatz-/Kontext-IDs","Belegter Umfang","Offene Lücke"],cases.map(r=>'<tr data-company-id="'+esc(r.company_id)+'"><td>'+esc(r.company_id)+'</td><td class="wrap-cell"><a href="'+esc(r.original_url)+'" target="_blank" rel="noopener">'+esc(r.original_url)+'</a></td><td>'+esc(titleCase(r.resolution_status))+'</td><td>'+esc(r.replacement_source_ids||"—")+'</td><td class="wrap-cell">'+esc(r.supported_scope)+'</td><td class="wrap-cell">'+esc(r.remaining_gap||"—")+'</td></tr>'))+'</section>'+
+      '<section class="functional-card"><h3>Prüfabdeckung aller Sample-Firmen</h3>'+genericTable(["Firma","Coding bereits begonnen","Geprüfte URLs","Abrufbar","Abrufprobleme","Offene Beleggrenzen"],(audit.companies||[]).map(r=>'<tr data-company-id="'+esc(r.company_id)+'"><td><strong>'+esc(r.company_id)+' · '+esc(r.legal_entity)+'</strong></td><td>'+esc(r.has_coding_assessment==="YES"?"Ja":"Nein")+'</td><td>'+esc(r.audited_url_count)+'</td><td>'+esc(r.retrievable_url_count)+'</td><td>'+esc(r.retrieval_issue_count)+'</td><td>'+esc(r.scope_gap_count)+'</td></tr>'))+'</section>';
+    bindFunctionalCompanyRows();return;
+  }
 
   if(view==="home"){
     title.textContent="Startseite";
