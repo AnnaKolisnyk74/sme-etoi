@@ -99,6 +99,11 @@ sme-etoi/
 │   ├── opportunities.csv
 │   ├── research_queue.csv
 │   └── scored_demo.csv
+├── web/
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
+│   └── data/sme_etoi.json
 └── tests/
     ├── test_opportunity_engine.py
     ├── test_research_queue.py
@@ -136,6 +141,31 @@ python -m unittest discover -s tests -v
 
 The synthetic demo contains fictional records used only to test the pipeline.
 It must never be reported as empirical evidence.
+
+The integrated pipeline also refreshes the static web data snapshot at
+`web/data/sme_etoi.json`.
+
+### Web prototype
+
+The first product-facing prototype is a dependency-free static web app with
+three views:
+
+- Overview
+- Company Explorer
+- Research Queue
+
+Serve it locally from the repository root:
+
+```bash
+python -m http.server 8000 --directory web
+```
+
+Then open `http://localhost:8000`.
+
+The frontend reads only the generated public repository snapshot in
+`web/data/sme_etoi.json`. It does not call employer systems, CRM data or
+private APIs.
+
 
 ## Integrated pipeline
 
