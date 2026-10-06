@@ -113,9 +113,10 @@ class ScoreWorkQueueTests(unittest.TestCase):
         p22 = [row for row in numeric if row["company_id"] == "P22"]
         p24 = [row for row in numeric if row["company_id"] == "P24"]
         p23 = [row for row in numeric if row["company_id"] == "P23"]
+        p11 = [row for row in numeric if row["company_id"] == "P11"]
         remaining = [
             row for row in numeric
-            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23"}
+            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11"}
         ]
 
         self.assertEqual(len(p04), 5)
@@ -200,7 +201,30 @@ class ScoreWorkQueueTests(unittest.TestCase):
         )
         self.assertTrue(all(row["research_gap_fields"] for row in p23))
 
-        self.assertEqual(len(remaining), 395)
+        self.assertEqual(len(p11), 5)
+        self.assertEqual(
+            sum(row["task_status"] == "RESEARCH_NEEDED" for row in p11),
+            4,
+        )
+        self.assertEqual(
+            sum(row["task_status"] == "AWAITING_HUMAN_REVIEW" for row in p11),
+            1,
+        )
+        p11_gap = next(
+            row for row in p11
+            if row["dimension"] == "grid_power_quality_relevance"
+        )
+        self.assertIn("power_quality_score", p11_gap["research_gap_fields"])
+        p11_transition = next(
+            row for row in p11
+            if row["dimension"] == "observed_transition_gap"
+        )
+        self.assertEqual(
+            p11_transition["task_status"],
+            "AWAITING_HUMAN_REVIEW",
+        )
+
+        self.assertEqual(len(remaining), 390)
         self.assertEqual(
             {row["task_status"] for row in remaining},
             {"READY_TO_CODE"},

@@ -234,9 +234,9 @@ For the current 100-company snapshot this produces:
 - 12 eligibility-gate work items;
 - 440 numeric-coding packages;
 - 452 work items in total;
-- 19 packages awaiting human review;
-- 21 packages requiring additional field-level research;
-- 400 packages still ready for first-pass coding.
+- 20 packages awaiting human review;
+- 30 packages requiring additional field-level research;
+- 390 packages still ready for first-pass coding.
 
 The mixed state is intentional. P12, for example, has four dimensions fully
 covered by review-pending proposals while load-flexibility remains
@@ -277,12 +277,18 @@ ahead of unresolved research or eligibility gates.
 
 Current company-level state:
 
-- 80 `CODE_NOW`
-- 5 `RESEARCH_FIRST`
+- 78 `CODE_NOW`
+- 7 `RESEARCH_FIRST`
 - 3 `REVIEW_PROPOSALS`
 - 12 `ELIGIBILITY_FIRST`
 
-The current next-best coding company is P23 — FM-Plast GmbH.
+P11 — B+T Oberflächentechnik GmbH was processed from the prior next-best
+position. Its assessment created four research-first dimension packages and
+one review-pending dimension package, so the priority engine removed it from
+`CODE_NOW`.
+
+The current next-best coding company is P53 — Brauerei Rittmayer Hallerndorf
+GmbH & Co. KG.
 
 ### 9. Research Queue
 
