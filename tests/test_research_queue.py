@@ -353,6 +353,35 @@ class ResearchQueueTests(unittest.TestCase):
         self.assertEqual(eligibility_ids, expected)
 
 
+
+    def test_real_partial_eligibility_results_feed_back_into_queue(self):
+        repo_root = Path(__file__).resolve().parents[1]
+        companies = read_csv(repo_root / "data" / "company_intelligence.csv")
+        opportunities = read_csv(repo_root / "outputs" / "opportunities.csv")
+        results = read_csv(repo_root / "data" / "research_results.csv")
+        queue = generate_research_queue(companies, opportunities, results)
+
+        eligibility = {
+            task["company_id"]: task
+            for task in queue
+            if task["opportunity_type"] == "sme_eligibility"
+        }
+        for company_id in ("P47", "P65", "P67"):
+            self.assertEqual(eligibility[company_id]["task_status"], "RECHECK_DUE")
+            self.assertEqual(
+                eligibility[company_id]["last_research_status"],
+                "PARTIAL_EVIDENCE",
+            )
+            self.assertEqual(
+                eligibility[company_id]["last_resulting_value"],
+                "UNRESOLVED",
+            )
+            self.assertEqual(
+                eligibility[company_id]["research_review_status"],
+                "PROVISIONAL",
+            )
+
+
     def test_latest_research_result_wins_deterministically(self):
         older = {
             "company_id": "P10",
