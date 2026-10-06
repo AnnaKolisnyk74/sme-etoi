@@ -114,9 +114,10 @@ class ScoreWorkQueueTests(unittest.TestCase):
         p24 = [row for row in numeric if row["company_id"] == "P24"]
         p23 = [row for row in numeric if row["company_id"] == "P23"]
         p11 = [row for row in numeric if row["company_id"] == "P11"]
+        p53 = [row for row in numeric if row["company_id"] == "P53"]
         remaining = [
             row for row in numeric
-            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11"}
+            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11", "P53"}
         ]
 
         self.assertEqual(len(p04), 5)
@@ -224,7 +225,25 @@ class ScoreWorkQueueTests(unittest.TestCase):
             "AWAITING_HUMAN_REVIEW",
         )
 
-        self.assertEqual(len(remaining), 390)
+        self.assertEqual(len(p53), 5)
+        self.assertEqual(
+            sum(row["task_status"] == "RESEARCH_NEEDED" for row in p53),
+            4,
+        )
+        self.assertEqual(
+            sum(row["task_status"] == "AWAITING_HUMAN_REVIEW" for row in p53),
+            1,
+        )
+        p53_flex = next(
+            row for row in p53
+            if row["dimension"] == "load_flexibility_potential"
+        )
+        self.assertEqual(
+            p53_flex["task_status"],
+            "AWAITING_HUMAN_REVIEW",
+        )
+
+        self.assertEqual(len(remaining), 385)
         self.assertEqual(
             {row["task_status"] for row in remaining},
             {"READY_TO_CODE"},
