@@ -278,3 +278,22 @@ EnMS or current furnace deployment. All numeric proposals await real human
 review; no canonical values or score totals are published. See
 [`next_best_company.md`](next_best_company.md) and the frozen
 `data/coding_batch_selections.csv` for selection provenance.
+
+## P30/P31 reusable-selector batch
+
+The selector froze batch NBCC-2026-10-06-02 from rebuilt QA-passing v2 priorities
+before new source checks. Both companies have seven numeric proposals awaiting
+human review and eight explicit research gaps; neither has a complete score.
+
+P30's individually controlled cellar cooling and dated investment do not prove
+process electrification or thermal-storage flexibility. Its EMAS statement
+has unresolved validity; the linked report returned 404. P31's agency-documented
+renewable heat baseline supports a zero fossil-displacement anchor for that
+baseline, not a universal no-fossil deployment claim. Its electric trucks qualify
+as recent energy-transition investment evidence, not electric process heat.
+Scheduling interpretations remain weak at confidence C for both companies.
+
+The selector appends selection provenance without changing evidence, scores
+or review states. Both assessments move to `RESEARCH_FIRST`; P43 becomes the
+next company to code. The web batch card reports live field counts and retains
+the original selection rank. All canonical coding and human-review gates remain.

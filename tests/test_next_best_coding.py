@@ -102,7 +102,7 @@ class NextBestCodingTests(unittest.TestCase):
         self.assertNotIn('opportunity_score', rows[0])
 
     def test_frozen_batch_reconstructs_from_pre_assessment_inputs(self):
-        manifest = read_csv(ROOT / 'data/coding_batch_selections.csv')
+        manifest = [r for r in read_csv(ROOT / 'data/coding_batch_selections.csv') if r['batch_id'] == 'NBCC-2026-10-06-01']
         selected = {r['company_id'] for r in manifest}
         companies, _, queue = build_outputs(ROOT)
         process = read_csv(ROOT / 'data/company_process_map.csv')

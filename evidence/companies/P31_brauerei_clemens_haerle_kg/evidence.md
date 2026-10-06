@@ -24,6 +24,25 @@ The checked public evidence supports **brewing; boiling; fermentation; maturatio
 - `S-P31-01` — [Brauerei Clemens Härle: Impressum](https://www.haerle.de/impressum) — Exact legal entity and production location.
 - `S-P31-02` — [Baden-Württemberg Ministry of the Environment: Environmental award 2024: Brauerei Clemens Härle](https://um.baden-wuerttemberg.de/de/umwelt-natur/umwelt-und-wirtschaft/angebote-fuer-unternehmen/umweltpreis-fuer-unternehmen/umweltpreis-2024/brauerei-clemens-haerle) — Beer production, family ownership and renewable-energy measures.
 
-## Remaining limitations
+## AI first-pass coding — 2026-10-06
+
+Frozen selection: `NBCC-2026-10-06-02`, rank 2, v2 policy, B/B confidence,
+QA PASS, HIGH documentary gain. This is automated selection, not Anna's review.
+
+- `S-P31-02` was rechecked: the 2024 state agency case supports the documented wood/biogas heat baseline, a partial KLIMAWIN framework and the 2028 electricity self-sufficiency target.
+- `S-P31-03` — [Green energy](https://www.haerle.de/die-gruene-brauerei/wir-arbeiten-mit-gruener-energie): company heat/PV and electric delivery trucks dated July 2023 and September 2026; vehicle electrification is not electric process heat.
+- `S-P31-04` — [Brewing process](https://www.haerle.de/das-herzstueck/so-brauen-wir): heat efficiency and fermentation/maturation temperatures and durations, not equipment topology or usable load shifting.
+
+Seven proposals cover fossil displacement for the documented renewable baseline,
+weak scheduling, onsite PV, several observed measures, partial management,
+a dated target and recent investments. All remain `AWAITING_HUMAN_REVIEW`;
+reviewer and review date are blank. The zero fossil-displacement proposal rests
+on positive baseline evidence, not an absence of public deployment evidence.
+Eight fields remain `NEEDS_RESEARCH`: temperature fit, process electrification,
+motors, power conversion, control topology, thermal storage, incremental load
+and power quality. Their values remain blank, confidence UNKNOWN. No canonical
+deployments, certification records or scores are changed.
+
+## Remaining limitations after coding
 
 The legal entity and process are supported, but complete financial aggregation, ownership links, certification validity and site-level energy deployments remain subject to Anna's final review after the 100-company sample is assembled.
