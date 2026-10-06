@@ -255,7 +255,36 @@ without resolving the whole score: natural-gas firing supports fossil-heat and
 incremental-load relevance, while firm-specific electric-furnace, converter,
 thermal-buffer and power-quality evidence remains open.
 
-### 8. Research Queue
+### 8. Company Workflow Priority
+
+The task-level score-work queue is collapsed into a company-level decision
+layer by `src/company_work_priority.py`.
+
+Each company receives exactly one workflow action:
+
+- `CODE_NOW`
+- `RESEARCH_FIRST`
+- `REVIEW_PROPOSALS`
+- `ELIGIBILITY_FIRST`
+
+`CODE_NOW` companies receive a dense `coding_rank` using the established
+score-work ordering, which already incorporates evidence confidence, process
+confidence, QA state and source coverage. Exactly one company is marked
+`is_next_to_code=YES`.
+
+This avoids manually choosing the next company and prevents work from jumping
+ahead of unresolved research or eligibility gates.
+
+Current company-level state:
+
+- 80 `CODE_NOW`
+- 5 `RESEARCH_FIRST`
+- 3 `REVIEW_PROPOSALS`
+- 12 `ELIGIBILITY_FIRST`
+
+The current next-best coding company is P23 — FM-Plast GmbH.
+
+### 9. Research Queue
 
 The Research Queue converts unresolved opportunity outputs into ordered,
 auditable research tasks. It joins the canonical company record to the
@@ -307,7 +336,7 @@ Research Queue
 This separation prevents the research automation from silently validating its
 own assumptions.
 
-### 9. Product Interface
+### 10. Product Interface
 
 The first user-facing prototype is a dependency-free static web application in
 `web/`. It is intentionally read-only and consumes a generated public-data
@@ -329,7 +358,7 @@ The browser payload is produced by `src/export_web_data.py` and written to
 `web/data/sme_etoi.json`. The integrated pipeline refreshes this snapshot after
 derived outputs pass QA.
 
-### 10. Integrated Execution Pipeline
+### 11. Integrated Execution Pipeline
 
 `src/run_pipeline.py` is the canonical orchestration entry point for the
 current prototype. It turns the individual analytical components into one
@@ -354,6 +383,9 @@ Score Readiness
 Scoring Work Queue
         |
         v
+Company Workflow Priority
+        |
+        v
 cross-output integrity checks
         |
         +----> STOP on invariant failure
@@ -375,7 +407,7 @@ A `--check-only` mode executes the same preflight and derived-output checks
 without modifying generated files. This is intended for CI and reproducibility
 checks.
 
-### 11. Monitoring & Change Detection
+### 12. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.
 
