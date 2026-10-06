@@ -446,7 +446,7 @@ function bind(){
   $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;$("#tableSearch").value="";$("#globalSearch").value="";$("#focusFilter").value="";renderAll();showToast("Ansicht zurückgesetzt")});
   $("#exportCommand").addEventListener("click",exportCsv);
   $("#chartsCommand").addEventListener("click",()=>{$("#analyticsBand").scrollIntoView({behavior:"smooth"});showCompanies()});
-  $("#methodCommand").addEventListener("click",()=>showToast("Methodik ist im Repository unter docs/product_architecture.md dokumentiert."));
+  $("#methodCommand").addEventListener("click",()=>showNav("methodology"));
   $("#backCommand").addEventListener("click",()=>history.back());
   $("#viewModeSelect").addEventListener("change",e=>{$("#analyticsBand").hidden=e.target.value==="table"});
   $("#focusFilter").addEventListener("change",e=>{state.focus=e.target.value;state.page=1;renderAll()});
