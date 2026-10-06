@@ -115,9 +115,10 @@ class ScoreWorkQueueTests(unittest.TestCase):
         p23 = [row for row in numeric if row["company_id"] == "P23"]
         p11 = [row for row in numeric if row["company_id"] == "P11"]
         p53 = [row for row in numeric if row["company_id"] == "P53"]
+        p20 = [row for row in numeric if row["company_id"] == "P20"]
         remaining = [
             row for row in numeric
-            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11", "P53"}
+            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11", "P53", "P20"}
         ]
 
         self.assertEqual(len(p04), 5)
@@ -243,7 +244,14 @@ class ScoreWorkQueueTests(unittest.TestCase):
             "AWAITING_HUMAN_REVIEW",
         )
 
-        self.assertEqual(len(remaining), 385)
+        self.assertEqual(len(p20), 5)
+        self.assertEqual(
+            {row["task_status"] for row in p20},
+            {"RESEARCH_NEEDED"},
+        )
+        self.assertTrue(all(row["research_gap_fields"] for row in p20))
+
+        self.assertEqual(len(remaining), 380)
         self.assertEqual(
             {row["task_status"] for row in remaining},
             {"READY_TO_CODE"},
