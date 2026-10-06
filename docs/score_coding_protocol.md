@@ -224,7 +224,29 @@ topology, operating schedule, thermal buffering, additional electrification,
 onsite integration and recent investment timing.
 
 Because each of the five dimensions contains at least one unresolved field,
-all five dimension packages are classified as `RESEARCH_NEEDED`. The
-company-level priority engine therefore removes P23 from `CODE_NOW` and
-automatically promotes the next eligible company, P11 — B+T
-Oberflächentechnik GmbH, to coding rank 1.
+all five dimension packages are classified as `RESEARCH_NEEDED`. The company-level priority engine therefore removes P23 from `CODE_NOW` and
+promotes P11 — B+T Oberflächentechnik GmbH — for the next coding pass.
+
+## P11 next-best reprioritisation example
+
+P11 — B+T Oberflächentechnik GmbH is the first company processed after the
+company-level priority engine promoted it to coding rank 1.
+
+The current repository evidence supports five numeric first-pass proposals:
+
+- limited automation/control relevance from documented digital process-data work;
+- an intentions/pilot transition-measures anchor;
+- a verified mature ISO 50001 / ISO 14001 management-system anchor;
+- a vague sustainability-target anchor;
+- a pilot/research investment anchor.
+
+Ten technical fields remain `NEEDS_RESEARCH`, including process
+temperatures, fossil-heat carrier, rectifier/converter evidence, operating
+schedule, thermal buffering, power-quality evidence and onsite integration.
+
+The five numeric proposals sum to 14, but no total score is calculated.
+
+Because four of the five dimension packages now contain research gaps, P11
+moves from `CODE_NOW` to `RESEARCH_FIRST`. The dynamic priority engine
+automatically promotes P53 — Brauerei Rittmayer Hallerndorf GmbH & Co. KG —
+to coding rank 1.
