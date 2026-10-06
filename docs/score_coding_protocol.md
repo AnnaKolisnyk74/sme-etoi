@@ -139,3 +139,24 @@ documented usable thermal inertia.
 
 Fourteen numeric proposals sum arithmetically to 50. This partial sum is not a
 published SME-ETOI score because one required field remains unresolved.
+
+## P16 high-confidence / incomplete-field example
+
+P16 — Sembach GmbH & Co. KG has A-level company/process evidence and direct
+current ISO 50001 / ISO 14001 certificates. That does not make all score fields
+known.
+
+The repository directly supports four numeric proposals:
+
+- difficult/uncertain temperature fit from documented 1,100–1,750 °C processes;
+- scheduling relevance from chamber-furnace / discrete thermal stages;
+- mature management-system evidence;
+- no dated public target after the defined checks.
+
+Eleven remaining fields stay `NEEDS_RESEARCH`, including the furnace energy
+carrier, firm-specific electrification route, motor/converter evidence,
+thermal-buffer evidence, power-quality evidence and recent transition
+investments.
+
+This case prevents overall evidence confidence from being used as a shortcut
+for score-field evidence.
