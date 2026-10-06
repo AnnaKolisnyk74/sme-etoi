@@ -234,9 +234,9 @@ For the current 100-company snapshot this produces:
 - 12 eligibility-gate work items;
 - 440 numeric-coding packages;
 - 452 work items in total;
-- 14 packages awaiting human review;
-- 16 packages requiring additional field-level research;
-- 410 packages still ready for first-pass coding.
+- 19 packages awaiting human review;
+- 21 packages requiring additional field-level research;
+- 400 packages still ready for first-pass coding.
 
 The mixed state is intentional. P12, for example, has four dimensions fully
 covered by review-pending proposals while load-flexibility remains
@@ -487,3 +487,14 @@ without manually researching every company from scratch.
 4. All company-level scores must be reproducible from stored inputs.
 5. The model must preserve uncertainty rather than silently filling unknown values.
 6. Commercial usefulness must not weaken research traceability.
+
+
+P22 demonstrates a fully deployed electrified-heat case: heat pumps, vacuum
+vapour compression, onsite PV, thermal storage and explicit time-shifted
+operation allow all five dimensions to be proposed numerically, while the
+values still remain behind human review.
+
+P24 demonstrates the opposite rule: a verified ISO 50001 certificate does not
+justify generic technical scoring for injection moulding. Thirteen fields stay
+open until firm-specific operating, equipment, flexibility and grid evidence is
+found.
