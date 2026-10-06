@@ -201,6 +201,46 @@ Research Queue
 This separation prevents the research automation from silently validating its
 own assumptions.
 
+### 7. Integrated Execution Pipeline
+
+`src/run_pipeline.py` is the canonical orchestration entry point for the
+current prototype. It turns the individual analytical components into one
+deterministic workflow:
+
+```text
+canonical data + evidence
+        |
+        v
+preflight sample QA
+        |
+        v
+Opportunity Engine
+        |
+        v
+Research Queue
+        |
+        v
+cross-output integrity checks
+        |
+        +----> STOP on invariant failure
+        |
+        v
+write derived outputs
+        |
+        v
+inter-rater reliability outputs
+```
+
+The pipeline builds opportunity and research-queue outputs in memory before
+writing them. Cross-output checks require complete opportunity coverage,
+correct SME-eligibility gates, eligibility-first research ranking, blocked
+actionability for unresolved SME cases and preservation of uncertainty
+(`UNKNOWN` may never become commercial white space).
+
+A `--check-only` mode executes the same preflight and derived-output checks
+without modifying generated files. This is intended for CI and reproducibility
+checks.
+
 ### 7. Monitoring & Change Detection
 
 The platform should become longitudinal rather than static.

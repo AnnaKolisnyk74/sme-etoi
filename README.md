@@ -92,6 +92,8 @@ sme-etoi/
 ├── src/
 │   ├── opportunity_engine.py
 │   ├── research_queue.py
+│   ├── run_pipeline.py
+│   ├── validate_pilot.py
 │   └── score_companies.py
 ├── outputs/
 │   ├── opportunities.csv
@@ -105,15 +107,51 @@ sme-etoi/
 
 ## Quick start
 
+Run the current empirical pipeline with one command:
+
+```bash
+python src/run_pipeline.py
+```
+
+The integrated runner performs deterministic preflight QA, generates
+`outputs/opportunities.csv` and `outputs/research_queue.csv`, checks
+cross-output invariants and then refreshes the inter-rater reliability outputs.
+
+To validate the full pipeline without writing generated files:
+
+```bash
+python src/run_pipeline.py --check-only
+```
+
+The individual components can still be run separately when developing or
+debugging:
+
 ```bash
 python src/score_companies.py data/synthetic_demo.csv outputs/scored_demo.csv --as-of 2026-09-12
 python src/opportunity_engine.py
 python src/research_queue.py
+python src/validate_pilot.py
 python -m unittest discover -s tests -v
 ```
 
 The synthetic demo contains fictional records used only to test the pipeline.
 It must never be reported as empirical evidence.
+
+## Integrated pipeline
+
+`src/run_pipeline.py` is the canonical orchestration entry point for the
+current product prototype. It deliberately builds derived outputs in memory and
+validates them before writing files. The pipeline stops if:
+
+- the 100-company sample fails deterministic cross-file QA;
+- a canonical company has no generated opportunity;
+- unresolved group or ownership checks are missing their SME-eligibility gate;
+- SME-eligibility gates are not ranked ahead of downstream deployment research;
+- an eligibility-pending company appears actionable; or
+- an unknown deployment state is converted into commercial white space.
+
+This keeps product execution reproducible while preserving the project's
+research safeguards.
 
 ## Research Queue
 
