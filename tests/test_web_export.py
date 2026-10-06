@@ -95,5 +95,22 @@ class WebExportTests(unittest.TestCase):
 
 
 
+    def test_collection_dom_queries_use_query_selector_all(self):
+        app = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+        bad_patterns = [
+            '$(".nav-row").forEach',
+            '$("#functionalContent [data-company-id]").forEach',
+            '$("#companyRows tr[data-id]").forEach',
+            '$("#researchRows tr[data-id]").forEach',
+            '$(".note-item[data-company-id]").forEach',
+            '$("[data-nav]").forEach',
+        ]
+        for pattern in bad_patterns:
+            self.assertNotIn(pattern, app)
+        self.assertIn('$("[data-nav]").forEach', app)
+        self.assertIn('$("#researchRows tr[data-id]").forEach', app)
+
+
+
 if __name__ == "__main__":
     unittest.main()
