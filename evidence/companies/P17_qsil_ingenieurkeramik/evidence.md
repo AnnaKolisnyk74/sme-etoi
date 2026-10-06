@@ -21,3 +21,10 @@ ISO 50001, ISO 14001 and EMAS are each marked
 `NOT_REQUIRED_EXCLUDED`. The candidate failed the SME eligibility gate, so
 certificate research is not used for scoring.
 
+
+
+## Public-source retrieval audit — 2026-10-06 (AI first pass)
+
+- Original: https://fcti.de/ — REDIRECT_SCOPE_UNRESOLVED. Replacement/context IDs: `S-P17-02`. 2020 acquisition release retained as historical context; old domain now redirects to group page. Open: Current exact QSIL Ingenieurkeramik entity/production attribution is not proved by a group homepage.
+
+See `evidence/source_link_audit.csv` for GET status and `evidence/source_recovery.csv` for exact scope. Retrieval/recovery is not Anna's Human Review; scores, certificate validity and deployment UNKNOWNs are unchanged.

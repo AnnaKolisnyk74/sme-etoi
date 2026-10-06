@@ -15,3 +15,10 @@
 ## Coding note
 
 The public sources support the legal-entity and process mapping used for provisional sample assembly. They do not establish actual energy consumption, buying intent, grid capacity or deployment of a specific energy solution. Certificate searches are recorded as `NOT_FOUND_AFTER_CHECK`; this means only that no direct public evidence was located in the defined check, not that a certificate or deployment does not exist.
+
+
+## Public-source retrieval audit — 2026-10-06 (AI first pass)
+
+- Original: https://www.brauerei-schimpfle.de/impressum/ — REPLACEMENT_FOUND. Replacement/context IDs: `S-P93-03`. Exact entity, address and register on current company imprint.
+
+See `evidence/source_link_audit.csv` for GET status and `evidence/source_recovery.csv` for exact scope. Retrieval/recovery is not Anna's Human Review; scores, certificate validity and deployment UNKNOWNs are unchanged.

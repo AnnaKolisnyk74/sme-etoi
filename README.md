@@ -228,6 +228,14 @@ proposals, approve reviews or publish scores.
 
 ### Web prototype
 
+The [public-source audit](docs/public_source_audit_2026-10-06.md) covers all
+100 companies, including coded and uncoded cases: **318 URLs checked, 304
+retrievable**. Removed/blocked links, recovered sources and six limited or open
+recovery cases remain visible in the **Quellenprüfung** view. Retrieval is an
+AI check and never a human review or proof of current certificate/deployment
+status. Offline pipeline QA requires complete retrieval coverage and a scoped
+investigation for each failure. No new coding batch was started during this audit.
+
 The first product-facing prototype is a dependency-free static web app with
 three views:
 

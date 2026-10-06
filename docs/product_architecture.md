@@ -288,6 +288,13 @@ not SME-ETOI scoring or human approval.
 
 ### 9. Research Queue
 
+Public-source retrieval coverage is a separate evidence-maintenance layer:
+`audit_source_links.py` performs explicit network work, and
+`source_audit_summary.py` validates completeness and recovery provenance offline.
+The pipeline exports 100 company audit rows and the web exposes retrieval
+outcomes separately from claim/certificate/human-review status. Exact details and
+open attribution gaps are in the [2026-10-06 audit](public_source_audit_2026-10-06.md).
+
 The Research Queue converts unresolved opportunity outputs into ordered,
 auditable research tasks. It joins the canonical company record to the
 opportunity row, identifies the exact missing fact, proposes a focused research

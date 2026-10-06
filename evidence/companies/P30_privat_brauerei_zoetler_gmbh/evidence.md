@@ -44,3 +44,10 @@ No canonical deployments, certification records or scores are changed.
 ## Remaining limitations after coding
 
 The legal entity and process are supported, but complete financial aggregation, ownership links, certification validity and site-level energy deployments remain subject to Anna's final review after the 100-company sample is assembled.
+
+
+## Public-source retrieval audit — 2026-10-06 (AI first pass)
+
+- Original: https://www.zoetler.de/download/zoetler-nachhaltigkeitsbericht_emas2023.pdf — NO_EQUIVALENT_FOUND. Replacement/context IDs: `S-P30-03`. Reachable company sustainability page states that declaration is being revised; only company EMAS claim remains. Open: Direct current environmental statement and registration validity remain unresolved.
+
+See `evidence/source_link_audit.csv` for GET status and `evidence/source_recovery.csv` for exact scope. Retrieval/recovery is not Anna's Human Review; scores, certificate validity and deployment UNKNOWNs are unchanged.
