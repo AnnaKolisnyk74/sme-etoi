@@ -28,20 +28,20 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(
             counts,
             {
-                "CODE_NOW": 78,
-                "RESEARCH_FIRST": 7,
+                "CODE_NOW": 77,
+                "RESEARCH_FIRST": 8,
                 "REVIEW_PROPOSALS": 3,
                 "ELIGIBILITY_FIRST": 12,
             },
         )
 
-    def test_p53_is_next_best_company_to_code(self):
+    def test_p20_is_next_best_company_to_code(self):
         next_rows = [
             row for row in self.rows if row["is_next_to_code"] == "YES"
         ]
         self.assertEqual(len(next_rows), 1)
-        self.assertEqual(next_rows[0]["company_id"], "P53")
-        self.assertEqual(next_rows[0]["legal_entity"], "Brauerei Rittmayer Hallerndorf GmbH & Co. KG")
+        self.assertEqual(next_rows[0]["company_id"], "P20")
+        self.assertEqual(next_rows[0]["legal_entity"], "DERIX Glasstudios GmbH & Co. KG")
         self.assertEqual(next_rows[0]["coding_rank"], "1")
         self.assertEqual(next_rows[0]["workflow_action"], "CODE_NOW")
 
@@ -50,7 +50,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
             row for row in self.rows if row["workflow_action"] == "CODE_NOW"
         ]
         ranks = sorted(int(row["coding_rank"]) for row in rows)
-        self.assertEqual(ranks, list(range(1, 79)))
+        self.assertEqual(ranks, list(range(1, 78)))
 
     def test_research_first_companies_are_exactly_known_gap_cases(self):
         self.assertEqual(
@@ -59,11 +59,19 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "RESEARCH_FIRST"
             },
-            {"P11", "P12", "P16", "P18", "P19", "P23", "P24"},
+            {"P11", "P12", "P16", "P18", "P19", "P23", "P24", "P53"},
         )
 
     def test_p11_moves_from_code_now_to_research_first(self):
         row = self.by_id["P11"]
+        self.assertEqual(row["workflow_action"], "RESEARCH_FIRST")
+        self.assertEqual(row["is_next_to_code"], "NO")
+        self.assertEqual(row["coding_rank"], "")
+        self.assertEqual(row["research_needed_tasks"], "4")
+        self.assertEqual(row["awaiting_human_review_tasks"], "1")
+
+    def test_p53_moves_from_code_now_to_research_first(self):
+        row = self.by_id["P53"]
         self.assertEqual(row["workflow_action"], "RESEARCH_FIRST")
         self.assertEqual(row["is_next_to_code"], "NO")
         self.assertEqual(row["coding_rank"], "")
