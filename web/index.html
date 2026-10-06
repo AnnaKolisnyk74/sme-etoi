@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SME-ETOI public-data energy intelligence prototype for German industrial SMEs.">
+  <title>SME-ETOI — Industrial Energy Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark" aria-hidden="true">SE</div>
+        <div>
+          <div class="brand">SME-ETOI</div>
+          <div class="brand-subtitle">Industrial Energy Intelligence</div>
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <span class="status-dot"></span>
+        <span id="snapshotLabel">Loading public-data snapshot…</span>
+      </div>
+    </header>
+
+    <aside class="sidebar" aria-label="Primary navigation">
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="overview">
+          <span class="nav-icon">◫</span><span>Overview</span>
+        </button>
+        <button class="nav-item" data-view="companies">
+          <span class="nav-icon">▦</span><span>Companies</span>
+        </button>
+        <button class="nav-item" data-view="research">
+          <span class="nav-icon">⌕</span><span>Research Queue</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-note">
+        <div class="eyebrow">Research principle</div>
+        <p>Unknown information remains unknown. Missing public evidence is never treated as proof of non-deployment.</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section id="overviewView" class="view active">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">Public-data intelligence prototype</div>
+            <h1>Energy transition opportunities,<br>without hiding uncertainty.</h1>
+            <p class="lede">A transparent view of technical relevance, commercial white space, evidence quality and the next research step for German industrial SMEs.</p>
+          </div>
+          <div class="scope-pill">100-company pilot</div>
+        </div>
+
+        <div class="metric-grid" id="metricGrid"></div>
+
+        <div class="overview-grid">
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <div class="eyebrow">Opportunity mix</div>
+                <h2>Technical opportunity signals</h2>
+              </div>
+              <span class="panel-note">derived from process + company evidence</span>
+            </div>
+            <div id="opportunityBars" class="bar-list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <div class="eyebrow">Research state</div>
+                <h2>What still needs evidence</h2>
+              </div>
+            </div>
+            <div id="researchSummary" class="status-list"></div>
+          </section>
+        </div>
+
+        <section class="panel principles-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="eyebrow">How to read this product</div>
+              <h2>Three questions stay separate</h2>
+            </div>
+          </div>
+          <div class="principle-grid">
+            <article>
+              <span class="step-number">01</span>
+              <h3>Technical relevance</h3>
+              <p>Could this process logically benefit from energy management, flexibility, storage, heat recovery or electrification?</p>
+            </article>
+            <article>
+              <span class="step-number">02</span>
+              <h3>Commercial white space</h3>
+              <p>What is publicly evidenced as already deployed — and what remains genuinely unknown?</p>
+            </article>
+            <article>
+              <span class="step-number">03</span>
+              <h3>Sample actionability</h3>
+              <p>Is SME eligibility sufficiently resolved to treat the case as actionable, or must ownership and group structure be checked first?</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="companiesView" class="view">
+        <div class="page-heading compact">
+          <div>
+            <div class="eyebrow">Company Explorer</div>
+            <h1>100 industrial SMEs</h1>
+            <p class="lede">Filter the pilot by process family, confidence and eligibility status, then inspect the evidence trail behind each signal.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="companySearch" type="search" placeholder="Search company, city or process…" autocomplete="off">
+          </label>
+          <select id="stratumFilter" aria-label="Filter by process stratum">
+            <option value="">All process strata</option>
+          </select>
+          <select id="eligibilityFilter" aria-label="Filter by eligibility status">
+            <option value="">All eligibility states</option>
+          </select>
+          <select id="confidenceFilter" aria-label="Filter by evidence confidence">
+            <option value="">All confidence grades</option>
+            <option value="A">Confidence A</option>
+            <option value="B">Confidence B</option>
+            <option value="C">Confidence C</option>
+          </select>
+        </div>
+
+        <div class="table-shell">
+          <div class="table-meta">
+            <span id="companyCountLabel">0 companies</span>
+            <span>Click a row for full intelligence</span>
+          </div>
+          <div class="company-table" role="table" aria-label="Company explorer">
+            <div class="company-row header" role="row">
+              <div>Company</div>
+              <div>Process</div>
+              <div>Eligibility</div>
+              <div>Confidence</div>
+              <div>Opportunities</div>
+            </div>
+            <div id="companyRows"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="researchView" class="view">
+        <div class="page-heading compact">
+          <div>
+            <div class="eyebrow">Research Queue</div>
+            <h1>Highest-value missing facts</h1>
+            <p class="lede">Tasks are ranked by decision impact. SME eligibility gates stay ahead of downstream deployment checks.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="researchSearch" type="search" placeholder="Search company or research question…" autocomplete="off">
+          </label>
+          <select id="researchPriorityFilter" aria-label="Filter by research priority">
+            <option value="">All priorities</option>
+            <option value="HIGH">High priority</option>
+            <option value="MEDIUM">Medium priority</option>
+            <option value="LOW">Low priority</option>
+          </select>
+          <select id="researchStatusFilter" aria-label="Filter by research status">
+            <option value="">All task states</option>
+          </select>
+        </div>
+
+        <div id="researchCards" class="research-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
+  <aside id="companyDrawer" class="drawer" aria-hidden="true" aria-label="Company intelligence details">
+    <button id="drawerClose" class="drawer-close" aria-label="Close company details">×</button>
+    <div id="drawerContent"></div>
+  </aside>
+
+  <div id="errorState" class="error-state" hidden>
+    <strong>Unable to load SME-ETOI data.</strong>
+    <span>Serve the <code>web/</code> directory over HTTP so the browser can read <code>data/sme_etoi.json</code>.</span>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
