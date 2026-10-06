@@ -20,6 +20,8 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["company_count"], 100)
         self.assertEqual(meta["opportunity_count"], 203)
         self.assertEqual(meta["research_task_count"], 198)
+        self.assertEqual(meta["score_work_task_count"], 452)
+        self.assertEqual(meta["numeric_coding_task_count"], 440)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -62,6 +64,33 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             [row["company_id"] for row in committed["companies"]],
             [row["company_id"] for row in self.payload["companies"]],
+        )
+
+    def test_score_work_queue_is_exported_without_numeric_inference(self):
+        summary = self.payload["score_work_summary"]
+        self.assertEqual(summary["task_count"], 452)
+        self.assertEqual(summary["workstream_counts"]["ELIGIBILITY"], 12)
+        self.assertEqual(summary["workstream_counts"]["NUMERIC_CODING"], 440)
+
+        all_tasks = [
+            task
+            for company in self.payload["companies"]
+            for task in company["score_work_tasks"]
+        ]
+        self.assertEqual(len(all_tasks), 452)
+        self.assertEqual(
+            [task["work_rank"] for task in all_tasks if task["work_rank"] <= 12],
+            list(range(1, 13)),
+        )
+        self.assertTrue(
+            all(
+                task["task_status"] == "READY_TO_CODE"
+                for task in all_tasks
+                if task["workstream"] == "NUMERIC_CODING"
+            )
+        )
+        self.assertTrue(
+            all("opportunity_score" not in task for task in all_tasks)
         )
 
     def test_every_company_exposes_score_readiness(self):
