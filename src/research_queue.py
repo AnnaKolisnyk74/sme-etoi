@@ -26,6 +26,9 @@ QUEUE_FIELDS = [
     "opportunity_rule_id",
     "task_status",
     "last_research_status",
+    "last_resulting_value",
+    "research_review_status",
+    "decision_effect",
     "last_checked_date",
     "next_review_date",
     "last_finding",
@@ -107,6 +110,9 @@ def lifecycle_for(result, current_value):
         return {
             "task_status": "OPEN",
             "last_research_status": "",
+            "last_resulting_value": "",
+            "research_review_status": "",
+            "decision_effect": "",
             "last_checked_date": "",
             "next_review_date": "",
             "last_finding": "",
@@ -129,6 +135,44 @@ def lifecycle_for(result, current_value):
     return {
         "task_status": task_status,
         "last_research_status": research_status,
+        "last_resulting_value": resulting_value,
+        "research_review_status": normalise(result.get("review_status")).upper(),
+        "decision_effect": normalise(result.get("decision_effect")),
+        "last_checked_date": normalise(result.get("checked_date")),
+        "next_review_date": normalise(result.get("next_review_date")),
+        "last_finding": normalise(result.get("finding_summary")),
+        "research_result_source_ids": normalise(result.get("source_ids")),
+    }
+
+
+
+def eligibility_lifecycle_for(result, current_value):
+    if not result:
+        return lifecycle_for(None, current_value)
+
+    research_status = normalise(result.get("research_status")).upper()
+    resulting_value = normalise(result.get("resulting_value"), "UNRESOLVED").upper()
+    review_status = normalise(result.get("review_status"), "PROVISIONAL").upper()
+
+    if research_status == "IN_PROGRESS":
+        task_status = "IN_PROGRESS"
+    elif research_status == "BLOCKED":
+        task_status = "BLOCKED"
+    elif resulting_value in {"UNKNOWN", "UNRESOLVED", "NOT_FOUND_AFTER_CHECK", "NOT_MODELLED"}:
+        task_status = "RECHECK_DUE"
+    elif resulting_value in {"CONFIRMED_SME", "EXCLUDE"}:
+        task_status = "AWAITING_CANONICAL_UPDATE" if review_status == "APPROVED" else "AWAITING_REVIEW"
+    elif resulting_value == current_value:
+        task_status = "RESOLVED"
+    else:
+        task_status = "BLOCKED"
+
+    return {
+        "task_status": task_status,
+        "last_research_status": research_status,
+        "last_resulting_value": resulting_value,
+        "research_review_status": review_status,
+        "decision_effect": normalise(result.get("decision_effect")),
         "last_checked_date": normalise(result.get("checked_date")),
         "next_review_date": normalise(result.get("next_review_date")),
         "last_finding": normalise(result.get("finding_summary")),
@@ -304,7 +348,7 @@ def eligibility_task_for(company, results_by_task):
             "financial figures remain within SME thresholds?"
         )
 
-    lifecycle = lifecycle_for(
+    lifecycle = eligibility_lifecycle_for(
         results_by_task.get((company_id, "sme_eligibility", "sme_eligibility")),
         current_value,
     )
@@ -339,7 +383,7 @@ def eligibility_task_for(company, results_by_task):
         "process_name": "",
         "opportunity_rule_id": "",
         **lifecycle,
-        "engine_version": "0.4.0",
+        "engine_version": "0.5.0",
     }
 
 
@@ -402,7 +446,7 @@ def generate_research_queue(companies, opportunities, research_results=None):
                 "process_name": normalise(row.get("process_name")),
                 "opportunity_rule_id": normalise(row.get("rule_id")),
                 **lifecycle,
-                "engine_version": "0.4.0",
+                "engine_version": "0.5.0",
             }
         )
 
