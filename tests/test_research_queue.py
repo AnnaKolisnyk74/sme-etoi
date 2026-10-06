@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from research_queue import generate_research_queue
+from research_queue import generate_research_queue, read_csv
 
 
 class ResearchQueueTests(unittest.TestCase):
@@ -236,6 +236,23 @@ class ResearchQueueTests(unittest.TestCase):
         task = next(task for task in queue if task["company_id"] == "P67")
         self.assertEqual(task["task_status"], "RECHECK_DUE")
         self.assertEqual(task["last_research_status"], "PARTIAL_EVIDENCE")
+
+
+
+    def test_real_pilot_risk_flags_create_eligibility_tasks(self):
+        repo_root = Path(__file__).resolve().parents[1]
+        companies = read_csv(repo_root / "data" / "company_intelligence.csv")
+        queue = generate_research_queue(companies, [])
+        eligibility_ids = {
+            task["company_id"]
+            for task in queue
+            if task["opportunity_type"] == "sme_eligibility"
+        }
+        expected = {
+            "P07", "P10", "P32", "P34", "P40", "P42",
+            "P46", "P47", "P65", "P67", "P88",
+        }
+        self.assertTrue(expected.issubset(eligibility_ids))
 
 
     def test_latest_research_result_wins_deterministically(self):
