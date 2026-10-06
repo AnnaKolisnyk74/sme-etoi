@@ -215,11 +215,28 @@ defensible.
 The queue never assigns a numeric anchor. It only identifies explicit coding
 work. Eligibility-blocked companies cannot receive numeric-coding tasks.
 
+Coding proposals feed back into the work queue without mutating canonical
+scores. A dimension can therefore move through:
+
+- `READY_TO_CODE`;
+- `IN_PROGRESS`;
+- `RESEARCH_NEEDED`;
+- `AWAITING_HUMAN_REVIEW`;
+- `REWORK_REQUIRED`;
+- `AWAITING_CANONICAL_UPDATE`.
+
+`RESEARCH_NEEDED` is a first-class uncertainty state. It means the currently
+stored evidence does not justify one or more numeric anchors. It must not be
+collapsed into a zero score.
+
 For the current 100-company snapshot this produces:
 
 - 12 eligibility-gate work items;
 - 440 numeric-coding packages;
-- 452 work items in total.
+- 452 work items in total;
+- 5 P04 packages awaiting human review;
+- 5 P19 packages requiring additional field-level research;
+- 430 packages still ready for first-pass coding.
 
 ### 8. Research Queue
 
