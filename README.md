@@ -192,7 +192,7 @@ The current proposal-aware score-work queue therefore contains:
 - 5 P18 dimension packages `RESEARCH_NEEDED`;
 - 5 P22 dimension packages `AWAITING_HUMAN_REVIEW`;
 - 5 P24 dimension packages `RESEARCH_NEEDED`;
-- 400 dimension packages `READY_TO_CODE`.
+- 395 dimension packages `READY_TO_CODE`.
 
 P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
 score fields have review-pending numeric proposals, while
@@ -396,3 +396,12 @@ sample is assembled and must occur before SME-ETOI v1.0 is frozen.
 
 No licence has been selected yet. Until one is added, standard copyright rules
 apply.
+
+
+P23 FM-Plast GmbH now demonstrates automatic workflow reprioritisation.
+Seven score fields have review-pending numeric proposals and eight remain
+`NEEDS_RESEARCH`. Because every dimension still contains at least one open
+fact, the company moves from `CODE_NOW` to `RESEARCH_FIRST`.
+
+The company-level priority engine therefore promotes P11 —
+B+T Oberflächentechnik GmbH — to coding rank 1 automatically.
