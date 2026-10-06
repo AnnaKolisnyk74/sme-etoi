@@ -3,187 +3,264 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SME-ETOI public-data energy intelligence prototype for German industrial SMEs.">
+  <meta name="description" content="SME-ETOI public-data energy intelligence dashboard for German industrial SMEs.">
   <title>SME-ETOI — Industrial Energy Intelligence</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand-wrap">
-        <div class="brand-mark" aria-hidden="true">SE</div>
+  <div class="bi-shell">
+    <header class="bi-topbar">
+      <div class="bi-brand">
+        <div class="bi-logo">SE</div>
         <div>
-          <div class="brand">SME-ETOI</div>
-          <div class="brand-subtitle">Industrial Energy Intelligence</div>
+          <div class="bi-title">SME-ETOI</div>
+          <div class="bi-subtitle">Industrial Energy Intelligence</div>
         </div>
       </div>
-      <div class="topbar-meta">
-        <span class="status-dot"></span>
-        <span id="snapshotLabel">Loading public-data snapshot…</span>
+      <div class="bi-top-actions">
+        <span class="snapshot-dot"></span>
+        <span id="snapshotLabel">Loading snapshot…</span>
+        <span class="top-separator"></span>
+        <span class="prototype-label">Public-data prototype</span>
       </div>
     </header>
 
-    <aside class="sidebar" aria-label="Primary navigation">
-      <nav class="nav-list">
-        <button class="nav-item active" data-view="overview">
-          <span class="nav-icon">◫</span><span>Overview</span>
-        </button>
-        <button class="nav-item" data-view="companies">
-          <span class="nav-icon">▦</span><span>Companies</span>
-        </button>
-        <button class="nav-item" data-view="research">
-          <span class="nav-icon">⌕</span><span>Research Queue</span>
-        </button>
-      </nav>
-
-      <div class="sidebar-note">
-        <div class="eyebrow">Research principle</div>
-        <p>Unknown information remains unknown. Missing public evidence is never treated as proof of non-deployment.</p>
-      </div>
+    <aside class="bi-sidebar" aria-label="Dashboard pages">
+      <button class="page-tab active" data-view="overview" title="Executive overview">
+        <span class="page-icon">▦</span>
+        <span>Overview</span>
+      </button>
+      <button class="page-tab" data-view="companies" title="Company explorer">
+        <span class="page-icon">▤</span>
+        <span>Companies</span>
+      </button>
+      <button class="page-tab" data-view="research" title="Research queue">
+        <span class="page-icon">⌕</span>
+        <span>Research</span>
+      </button>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-caption">SME-ETOI</div>
     </aside>
 
-    <main class="content">
-      <section id="overviewView" class="view active">
-        <div class="page-heading">
+    <main class="bi-main">
+      <section class="global-filter-bar" aria-label="Global dashboard filters">
+        <div class="filter-title">
+          <span class="filter-title-main">Filters</span>
+          <span id="filterResultLabel" class="filter-result-label">100 companies</span>
+        </div>
+        <label class="slicer">
+          <span>Process stratum</span>
+          <select id="globalStratumFilter"><option value="">All</option></select>
+        </label>
+        <label class="slicer">
+          <span>State</span>
+          <select id="globalStateFilter"><option value="">All</option></select>
+        </label>
+        <label class="slicer">
+          <span>Evidence confidence</span>
+          <select id="globalConfidenceFilter">
+            <option value="">All</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+        </label>
+        <label class="slicer">
+          <span>Eligibility</span>
+          <select id="globalEligibilityFilter"><option value="">All</option></select>
+        </label>
+        <label class="slicer">
+          <span>Opportunity type</span>
+          <select id="globalOpportunityFilter"><option value="">All</option></select>
+        </label>
+        <button id="clearFilters" class="clear-filters">Clear filters</button>
+      </section>
+
+      <section id="overviewView" class="bi-view active">
+        <div class="page-header-row">
           <div>
-            <div class="eyebrow">Public-data intelligence prototype</div>
-            <h1>Energy transition opportunities,<br>without hiding uncertainty.</h1>
-            <p class="lede">A transparent view of technical relevance, commercial white space, evidence quality and the next research step for German industrial SMEs.</p>
+            <div class="page-kicker">Executive overview</div>
+            <h1>Energy transition opportunity landscape</h1>
           </div>
-          <div class="scope-pill">100-company pilot</div>
+          <div class="page-context">
+            <span class="context-chip">German SMEs</span>
+            <span class="context-chip">100-company pilot</span>
+          </div>
         </div>
 
-        <div class="metric-grid" id="metricGrid"></div>
+        <div id="kpiGrid" class="kpi-grid"></div>
 
-        <div class="overview-grid">
-          <section class="panel">
-            <div class="panel-heading">
+        <div class="visual-grid">
+          <section class="visual visual-wide">
+            <div class="visual-header">
               <div>
-                <div class="eyebrow">Opportunity mix</div>
-                <h2>Technical opportunity signals</h2>
+                <div class="visual-title">Opportunity signals by technology</div>
+                <div class="visual-subtitle">Click a bar to cross-filter the dashboard</div>
               </div>
-              <span class="panel-note">derived from process + company evidence</span>
+              <div class="visual-menu">•••</div>
             </div>
-            <div id="opportunityBars" class="bar-list"></div>
+            <div id="opportunityChart" class="hbar-chart"></div>
           </section>
 
-          <section class="panel">
-            <div class="panel-heading">
+          <section class="visual">
+            <div class="visual-header">
               <div>
-                <div class="eyebrow">Research state</div>
-                <h2>What still needs evidence</h2>
+                <div class="visual-title">Sample eligibility</div>
+                <div class="visual-subtitle">Actionability gate</div>
+              </div>
+              <div class="visual-menu">•••</div>
+            </div>
+            <div id="eligibilityVisual" class="donut-layout"></div>
+          </section>
+
+          <section class="visual">
+            <div class="visual-header">
+              <div>
+                <div class="visual-title">Evidence confidence</div>
+                <div class="visual-subtitle">Current company-level grade</div>
+              </div>
+              <div class="visual-menu">•••</div>
+            </div>
+            <div id="confidenceVisual" class="column-chart"></div>
+          </section>
+
+          <section class="visual visual-matrix">
+            <div class="visual-header">
+              <div>
+                <div class="visual-title">Company opportunity matrix</div>
+                <div class="visual-subtitle">Sorted by number of derived opportunity signals</div>
+              </div>
+              <div class="visual-header-actions">
+                <input id="overviewCompanySearch" class="mini-search" type="search" placeholder="Search company…">
+                <div class="visual-menu">•••</div>
               </div>
             </div>
-            <div id="researchSummary" class="status-list"></div>
+            <div class="matrix-wrap">
+              <table class="bi-matrix">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Stratum</th>
+                    <th>State</th>
+                    <th>Confidence</th>
+                    <th>Eligibility</th>
+                    <th class="num">Signals</th>
+                    <th class="num">Tasks</th>
+                  </tr>
+                </thead>
+                <tbody id="overviewMatrixBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="visual">
+            <div class="visual-header">
+              <div>
+                <div class="visual-title">Research workload</div>
+                <div class="visual-subtitle">Current queue state</div>
+              </div>
+              <div class="visual-menu">•••</div>
+            </div>
+            <div id="researchStateVisual" class="research-state-visual"></div>
           </section>
         </div>
+      </section>
 
-        <section class="panel principles-panel">
-          <div class="panel-heading">
+      <section id="companiesView" class="bi-view">
+        <div class="page-header-row">
+          <div>
+            <div class="page-kicker">Company explorer</div>
+            <h1>Company intelligence</h1>
+          </div>
+          <label class="page-search">
+            <span>⌕</span>
+            <input id="companySearch" type="search" placeholder="Search company, city or process…">
+          </label>
+        </div>
+
+        <section class="visual explorer-visual">
+          <div class="visual-header">
             <div>
-              <div class="eyebrow">How to read this product</div>
-              <h2>Three questions stay separate</h2>
+              <div class="visual-title">Companies</div>
+              <div id="companyCountLabel" class="visual-subtitle">0 companies</div>
             </div>
+            <div class="visual-menu">•••</div>
           </div>
-          <div class="principle-grid">
-            <article>
-              <span class="step-number">01</span>
-              <h3>Technical relevance</h3>
-              <p>Could this process logically benefit from energy management, flexibility, storage, heat recovery or electrification?</p>
-            </article>
-            <article>
-              <span class="step-number">02</span>
-              <h3>Commercial white space</h3>
-              <p>What is publicly evidenced as already deployed — and what remains genuinely unknown?</p>
-            </article>
-            <article>
-              <span class="step-number">03</span>
-              <h3>Sample actionability</h3>
-              <p>Is SME eligibility sufficiently resolved to treat the case as actionable, or must ownership and group structure be checked first?</p>
-            </article>
+          <div class="matrix-wrap explorer-matrix-wrap">
+            <table class="bi-matrix explorer-matrix">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>City</th>
+                  <th>Process</th>
+                  <th>Employees</th>
+                  <th>Revenue €m</th>
+                  <th>Eligibility</th>
+                  <th>Confidence</th>
+                  <th class="num">Signals</th>
+                  <th class="num">Tasks</th>
+                </tr>
+              </thead>
+              <tbody id="companyTableBody"></tbody>
+            </table>
           </div>
         </section>
       </section>
 
-      <section id="companiesView" class="view">
-        <div class="page-heading compact">
+      <section id="researchView" class="bi-view">
+        <div class="page-header-row">
           <div>
-            <div class="eyebrow">Company Explorer</div>
-            <h1>100 industrial SMEs</h1>
-            <p class="lede">Filter the pilot by process family, confidence and eligibility status, then inspect the evidence trail behind each signal.</p>
-          </div>
-        </div>
-
-        <div class="toolbar">
-          <label class="search-box">
-            <span>⌕</span>
-            <input id="companySearch" type="search" placeholder="Search company, city or process…" autocomplete="off">
-          </label>
-          <select id="stratumFilter" aria-label="Filter by process stratum">
-            <option value="">All process strata</option>
-          </select>
-          <select id="eligibilityFilter" aria-label="Filter by eligibility status">
-            <option value="">All eligibility states</option>
-          </select>
-          <select id="confidenceFilter" aria-label="Filter by evidence confidence">
-            <option value="">All confidence grades</option>
-            <option value="A">Confidence A</option>
-            <option value="B">Confidence B</option>
-            <option value="C">Confidence C</option>
-          </select>
-        </div>
-
-        <div class="table-shell">
-          <div class="table-meta">
-            <span id="companyCountLabel">0 companies</span>
-            <span>Click a row for full intelligence</span>
-          </div>
-          <div class="company-table" role="table" aria-label="Company explorer">
-            <div class="company-row header" role="row">
-              <div>Company</div>
-              <div>Process</div>
-              <div>Eligibility</div>
-              <div>Confidence</div>
-              <div>Opportunities</div>
-            </div>
-            <div id="companyRows"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="researchView" class="view">
-        <div class="page-heading compact">
-          <div>
-            <div class="eyebrow">Research Queue</div>
+            <div class="page-kicker">Research queue</div>
             <h1>Highest-value missing facts</h1>
-            <p class="lede">Tasks are ranked by decision impact. SME eligibility gates stay ahead of downstream deployment checks.</p>
           </div>
-        </div>
-
-        <div class="toolbar">
-          <label class="search-box">
+          <label class="page-search">
             <span>⌕</span>
-            <input id="researchSearch" type="search" placeholder="Search company or research question…" autocomplete="off">
+            <input id="researchSearch" type="search" placeholder="Search company or research question…">
           </label>
-          <select id="researchPriorityFilter" aria-label="Filter by research priority">
-            <option value="">All priorities</option>
-            <option value="HIGH">High priority</option>
-            <option value="MEDIUM">Medium priority</option>
-            <option value="LOW">Low priority</option>
-          </select>
-          <select id="researchStatusFilter" aria-label="Filter by research status">
-            <option value="">All task states</option>
-          </select>
         </div>
 
-        <div id="researchCards" class="research-list"></div>
+        <div class="research-kpi-row" id="researchKpis"></div>
+
+        <section class="visual explorer-visual">
+          <div class="visual-header">
+            <div>
+              <div class="visual-title">Ranked research tasks</div>
+              <div class="visual-subtitle">Eligibility gates rank before downstream deployment checks</div>
+            </div>
+            <div class="research-local-filters">
+              <select id="researchPriorityFilter">
+                <option value="">All priorities</option>
+                <option value="HIGH">High</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="LOW">Low</option>
+              </select>
+              <select id="researchStatusFilter"><option value="">All task states</option></select>
+            </div>
+          </div>
+          <div class="matrix-wrap explorer-matrix-wrap">
+            <table class="bi-matrix research-matrix">
+              <thead>
+                <tr>
+                  <th class="num">Rank</th>
+                  <th>Company</th>
+                  <th>Type</th>
+                  <th>Research question</th>
+                  <th>Priority</th>
+                  <th>Impact</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="researchTableBody"></tbody>
+            </table>
+          </div>
+        </section>
       </section>
     </main>
   </div>
 
   <div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
-  <aside id="companyDrawer" class="drawer" aria-hidden="true" aria-label="Company intelligence details">
-    <button id="drawerClose" class="drawer-close" aria-label="Close company details">×</button>
+  <aside id="companyDrawer" class="drawer" aria-hidden="true">
+    <button id="drawerClose" class="drawer-close" aria-label="Close">×</button>
     <div id="drawerContent"></div>
   </aside>
 
