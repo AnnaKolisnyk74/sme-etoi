@@ -73,6 +73,44 @@ class ScoreCodingProposalTests(unittest.TestCase):
         self.assertTrue(all(row["proposal_confidence"] == "UNKNOWN" for row in research))
         self.assertTrue(all(row["missing_fact"] for row in research))
 
+    def test_p19_preserves_field_level_uncertainty(self):
+        rows = [
+            row
+            for row in read_csv(ROOT / "data" / "score_coding_proposals.csv")
+            if row["company_id"] == "P19"
+        ]
+        self.assertEqual(len(rows), 15)
+        numeric = [
+            row for row in rows
+            if row["proposal_status"] == "AWAITING_HUMAN_REVIEW"
+        ]
+        gaps = [
+            row for row in rows
+            if row["proposal_status"] == "NEEDS_RESEARCH"
+        ]
+        self.assertEqual(len(numeric), 3)
+        self.assertEqual(len(gaps), 12)
+        for row in gaps:
+            self.assertEqual(row["proposed_value"], "")
+            self.assertEqual(row["proposal_confidence"], "UNKNOWN")
+            self.assertTrue(row["missing_fact"])
+        for row in numeric:
+            self.assertTrue(row["proposed_value"])
+            self.assertNotEqual(row["proposal_confidence"], "UNKNOWN")
+
+    def test_p19_only_numeric_proposals_sum_to_observed_gap_partial_total(self):
+        rows = [
+            row
+            for row in read_csv(ROOT / "data" / "score_coding_proposals.csv")
+            if row["company_id"] == "P19"
+            and row["proposal_status"] == "AWAITING_HUMAN_REVIEW"
+        ]
+        self.assertEqual(sum(int(row["proposed_value"]) for row in rows), 12)
+        self.assertEqual(
+            {row["score_field"] for row in rows},
+            {"measures_gap_score", "management_gap_score", "targets_gap_score"},
+        )
+
     def test_p04_proposals_do_not_mutate_canonical_scoring_inputs_or_outputs(self):
         coded_ids = {
             row["company_id"]
