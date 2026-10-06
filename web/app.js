@@ -60,6 +60,13 @@ function statusInfo(c){
   return ["Vorläufig","status-watch"];
 }
 function confClass(g){return g==="A"?"conf-a":g==="B"?"conf-b":"conf-c"}
+function scoreStatusClass(c){
+  const s=c.score_readiness?.score_status||"";
+  if(s==="FINAL_SCORE_READY")return "status-qualified";
+  if(s==="NEEDS_NUMERIC_CODING"||s==="PROVISIONAL_SCORE_ONLY")return "status-review";
+  if(s.startsWith("NOT_SCOREABLE")||s==="EXCLUDED")return "status-blocked";
+  return "status-watch";
+}
 function isoCell(c){
   const s=(c.certifications?.iso_50001||"").toUpperCase();
   if(s==="VALID"||s==="CURRENT"||s==="YES") return '<span class="iso-yes">● Ja</span>';
@@ -249,10 +256,21 @@ function renderDetail(){
       '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box"><div class="action-icon">▤</div><div><div class="action-title">'+esc(task?titleCase(task.opportunity_type):"Keine offene Aufgabe")+'</div><div class="action-text">'+esc(task?.research_question||"Keine priorisierte Research-Aufgabe vorhanden.")+'</div></div><div class="action-meta">'+esc(task?.task_status||"")+'</div></div></section>'+
     '</div>';
   }else if(state.detailTab==="analysis"){
+    const sr=c.score_readiness||{};
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">ETOI Analyse</div><div class="section-card-body tech-list">'+
       (ops.length?ops.map(o=>'<div class="tech-row"><span>'+esc(titleCase(o.opportunity_type))+'</span><div class="tech-track"><div class="tech-fill" style="width:'+techStrength(o)+'%"></div></div><strong>'+esc(o.opportunity_level||o.priority||"—")+'</strong></div>').join(""):'Keine Opportunity-Signale')+
-      '</div></section><section class="section-card"><div class="section-card-title">Methodischer Status</div><div class="section-card-body action-text">'+
-      (score!=null?'Für diesen Pilotfall liegt ein expliziter Opportunity Score von '+score+' ('+esc(c.opportunity_band||"") +') vor.':'Für dieses Unternehmen liegt noch kein expliziter ETOI-Gesamtscore vor. Die Oberfläche zeigt daher nur abgeleitete Opportunity-Signale und Prioritäten.')+
+      '</div></section>'+
+      '<section class="section-card"><div class="section-card-title">Score Readiness</div><div class="section-card-body">'+
+        '<div class="info-list">'+
+          '<div class="info-item"><span>Score Status</span><strong>'+esc(titleCase(sr.score_status||"UNKNOWN"))+'</strong></div>'+
+          '<div class="info-item"><span>Eligibility Gate</span><strong>'+esc(titleCase(sr.eligibility_gate||"UNKNOWN"))+'</strong></div>'+
+          '<div class="info-item"><span>Zertifikatschecks</span><strong>'+esc(titleCase(sr.certificate_check_status||"UNKNOWN"))+'</strong></div>'+
+          '<div class="info-item"><span>Numerische Codierung</span><strong>'+esc(titleCase(sr.numeric_coding_status||"UNKNOWN"))+'</strong></div>'+
+          '<div class="info-item"><span>Human Review</span><strong>'+esc(titleCase(sr.independent_human_review_status||"UNKNOWN"))+'</strong></div>'+
+          '<div class="info-item"><span>Bestehender Score</span><strong>'+(score!=null?score+" / "+esc(c.opportunity_band||""):"—")+'</strong></div>'+
+        '</div>'+
+        '<div class="action-text" style="margin-top:10px"><strong>Nächster Score-Schritt:</strong> '+esc(sr.next_action||"—")+'</div>'+
+        (sr.blocking_reasons?'<div class="action-text" style="margin-top:7px"><strong>Blocker:</strong> '+esc(sr.blocking_reasons)+'</div>':"")+
       '</div></section></div>';
   }else if(state.detailTab==="research"){
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
@@ -351,9 +369,24 @@ function renderFunctional(view){
 
   if(view==="analysis"){
     title.textContent="ETOI Analyse";
-    sub.textContent="Unternehmenssicht auf Scores, Opportunity-Signale und Evidenz. Explizite Gesamtscores werden nur angezeigt, wenn sie tatsächlich berechnet wurden.";
-    const rows=all.slice().sort((a,b)=>(b.opportunity_score??-1)-(a.opportunity_score??-1)||priority(a).localeCompare(priority(b)));
-    root.innerHTML=genericTable(["Unternehmen","ETOI Score","Band","Priorität","Signale","Confidence","Eligibility"],rows.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunity_score??"—")+'</td><td>'+esc(c.opportunity_band||"—")+'</td><td>'+priority(c)+'</td><td>'+(c.opportunities||[]).length+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(titleCase(eligibility(c)))+'</td></tr>'));
+    sub.textContent="Scoring-Arbeitsliste nach Methodik v0.2. Ein Score wird nur dann als final behandelt, wenn Eligibility, Pflichtchecks, numerische Codierung und unabhängiger Human Review abgeschlossen sind.";
+    const rows=all.slice().sort((a,b)=>{
+      const order={"NOT_SCOREABLE_ELIGIBILITY":0,"NOT_SCOREABLE_CERTIFICATES":1,"NEEDS_NUMERIC_CODING":2,"PROVISIONAL_SCORE_ONLY":3,"FINAL_SCORE_READY":4};
+      return (order[a.score_readiness?.score_status]??9)-(order[b.score_readiness?.score_status]??9)||a.legal_entity.localeCompare(b.legal_entity);
+    });
+    const summary=state.data.score_readiness_summary||{};
+    const humanDone=all.filter(c=>["APPROVED","COMPLETE","COMPLETED","REVIEWED","DONE"].includes(c.score_readiness?.independent_human_review_status)).length;
+    root.innerHTML=
+      '<div class="functional-kpis">'+
+        '<div class="functional-kpi"><span>Eligibility blockiert</span><strong>'+(summary.NOT_SCOREABLE_ELIGIBILITY||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Numerische Codierung offen</span><strong>'+(summary.NEEDS_NUMERIC_CODING||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Final score-ready</span><strong>'+(summary.FINAL_SCORE_READY||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Human Review abgeschlossen</span><strong>'+humanDone+'</strong></div>'+
+      '</div>'+
+      genericTable(["Unternehmen","ETOI Score","Band","Score Status","Nächster Score-Schritt","Signale","Confidence","Eligibility"],rows.map(c=>{
+        const sr=c.score_readiness||{};
+        return '<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunity_score??"—")+'</td><td>'+esc(c.opportunity_band||"—")+'</td><td><span class="status-badge '+scoreStatusClass(c)+'">'+esc(titleCase(sr.score_status||"UNKNOWN"))+'</span></td><td class="wrap-cell">'+esc(sr.next_action||"—")+'</td><td>'+(c.opportunities||[]).length+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(titleCase(eligibility(c)))+'</td></tr>';
+      }));
     bindFunctionalCompanyRows();return;
   }
 
