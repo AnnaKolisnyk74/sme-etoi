@@ -56,6 +56,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     pilot_scores = read_csv(root, "outputs/pilot_scored.csv")
     score_readiness = read_csv(root, "outputs/score_readiness.csv")
     score_work_queue = read_csv(root, "outputs/score_work_queue.csv")
+    company_work_priority = read_csv(root, "outputs/company_work_priority.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
 
@@ -96,6 +97,12 @@ def build_web_payload(root: Path = ROOT) -> dict:
     for row in score_work_queue:
         score_work_by_company.setdefault(row["company_id"], []).append(row)
 
+    company_priority_by_id = {
+        row["company_id"]: row
+        for row in company_work_priority
+        if row.get("company_id")
+    }
+
     sources_by_company: dict[str, list[dict[str, str]]] = {}
     for row in sources:
         sources_by_company.setdefault(row["candidate_id"], []).append(row)
@@ -106,6 +113,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
         candidate = candidate_by_id.get(company_id, {})
         score = score_by_id.get(company_id, {})
         readiness = readiness_by_id.get(company_id, {})
+        company_priority = company_priority_by_id.get(company_id, {})
         mappings = mappings_by_company.get(company_id, [])
 
         processes = []
@@ -257,6 +265,20 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "opportunities": web_opportunities,
                 "research_tasks": web_tasks,
                 "score_work_tasks": web_score_work,
+                "workflow_priority": {
+                    "company_rank": numeric_or_none(company_priority.get("company_rank")),
+                    "coding_rank": numeric_or_none(company_priority.get("coding_rank")),
+                    "workflow_action": normalise(company_priority.get("workflow_action")),
+                    "is_next_to_code": normalise(company_priority.get("is_next_to_code")),
+                    "first_work_rank": numeric_or_none(company_priority.get("first_work_rank")),
+                    "ready_to_code_tasks": numeric_or_none(company_priority.get("ready_to_code_tasks")),
+                    "research_needed_tasks": numeric_or_none(company_priority.get("research_needed_tasks")),
+                    "awaiting_human_review_tasks": numeric_or_none(company_priority.get("awaiting_human_review_tasks")),
+                    "open_gate_tasks": numeric_or_none(company_priority.get("open_gate_tasks")),
+                    "work_priority": normalise(company_priority.get("work_priority")),
+                    "next_action": normalise(company_priority.get("next_action")),
+                    "priority_reason": normalise(company_priority.get("priority_reason")),
+                },
                 "sources": [
                     compact_source(source)
                     for source in sources_by_company.get(company_id, [])
@@ -302,6 +324,19 @@ def build_web_payload(root: Path = ROOT) -> dict:
         for row in score_work_queue
     )
 
+    company_work_action_counts = Counter(
+        normalise(row.get("workflow_action")) or "UNKNOWN"
+        for row in company_work_priority
+    )
+    next_best_company = next(
+        (
+            row
+            for row in company_work_priority
+            if normalise(row.get("is_next_to_code")) == "YES"
+        ),
+        {},
+    )
+
     verified_dates = [
         normalise(row.get("last_verified_date"))
         for row in companies
@@ -330,6 +365,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 normalise(row.get("workstream")) == "NUMERIC_CODING"
                 for row in score_work_queue
             ),
+            "code_now_company_count": sum(
+                normalise(row.get("workflow_action")) == "CODE_NOW"
+                for row in company_work_priority
+            ),
             "eligibility_gate_count": eligibility_gate_count,
             "eligibility_blocked_company_count": len(eligibility_blocked_companies),
             "data_scope": "Public repository evidence only",
@@ -345,6 +384,21 @@ def build_web_payload(root: Path = ROOT) -> dict:
             "priority_counts": dict(sorted(score_work_priority_counts.items())),
             "task_status_counts": dict(sorted(score_work_status_counts.items())),
             "task_count": len(score_work_queue),
+        },
+        "company_work_summary": {
+            "workflow_action_counts": dict(sorted(company_work_action_counts.items())),
+            "company_count": len(company_work_priority),
+            "next_best_company": {
+                "company_id": normalise(next_best_company.get("company_id")),
+                "legal_entity": normalise(next_best_company.get("legal_entity")),
+                "coding_rank": numeric_or_none(next_best_company.get("coding_rank")),
+                "work_priority": normalise(next_best_company.get("work_priority")),
+                "evidence_confidence": normalise(next_best_company.get("evidence_confidence")),
+                "process_confidence": normalise(next_best_company.get("process_confidence")),
+                "source_count": numeric_or_none(next_best_company.get("source_count")),
+                "next_action": normalise(next_best_company.get("next_action")),
+                "priority_reason": normalise(next_best_company.get("priority_reason")),
+            },
         },
         "companies": web_companies,
     }
