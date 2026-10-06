@@ -192,3 +192,23 @@ integration and recent transition investment evidence.
 
 The seven numeric proposals sum to 22, but no aggregate score is calculated
 while eight required fields remain unresolved.
+
+
+## P22 full-coverage electrified-heat example
+
+P22 — RIEDENBURGER BRAUHAUS Michael Krieger GmbH & Co. KG has all 15 score
+fields covered by first-pass numeric proposals. Direct company evidence
+documents heat pumps, vacuum vapour compression, own PV, waste-heat recovery,
+three thermal stores and explicit peak reduction/time-shifted operation.
+
+The proposed anchors sum to 74/100. This remains a review artifact only.
+
+## P24 generic-process guardrail example
+
+P24 — H&K Müller GmbH & Co. KG verifies a current ISO 50001 system and a
+single-site injection-moulding operation. The generic PR001 process-library row
+is still `TO_RESEARCH`, so it is not used as a substitute for company-level
+technical evidence.
+
+Only management-gap and target-gap fields receive numeric proposals. Thirteen
+technical/investment fields remain `NEEDS_RESEARCH`.
