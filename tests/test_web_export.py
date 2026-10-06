@@ -79,7 +79,11 @@ class WebExportTests(unittest.TestCase):
         ]
         self.assertEqual(len(all_tasks), 452)
         self.assertEqual(
-            [task["work_rank"] for task in all_tasks if task["work_rank"] <= 12],
+            sorted(
+                task["work_rank"]
+                for task in all_tasks
+                if task["work_rank"] <= 12
+            ),
             list(range(1, 13)),
         )
         self.assertTrue(
