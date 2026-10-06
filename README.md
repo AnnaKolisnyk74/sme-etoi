@@ -84,6 +84,7 @@ sme-etoi/
 │   ├── company_template.csv
 │   ├── pilot_candidates.csv
 │   ├── research_results.csv
+│   ├── score_coding_proposals.csv
 │   └── synthetic_demo.csv
 ├── evidence/
 │   ├── README.md
@@ -92,6 +93,7 @@ sme-etoi/
 ├── src/
 │   ├── opportunity_engine.py
 │   ├── research_queue.py
+│   ├── validate_score_coding_proposals.py
 │   ├── score_readiness.py
 │   ├── score_work_queue.py
 │   ├── run_pipeline.py
@@ -159,6 +161,17 @@ upstream SME-eligibility gates ahead of scoring effort and groups the 15 numeric
 anchors into five dimension-level work packages per scoreable company. This
 makes the current 100-company workload operational without auto-filling any
 numeric score field.
+
+Numeric anchors proposed during AI-assisted or first-pass coding are stored
+separately in `data/score_coding_proposals.csv`. They remain
+`AWAITING_HUMAN_REVIEW` and do not change canonical scoring inputs or outputs.
+The pipeline validates proposal anchors, source ownership and review-state
+integrity. See `docs/score_coding_protocol.md`.
+
+The first proposal set covers all 15 fields for P04 Neumarkter Lammsbräu. If
+accepted unchanged it would arithmetically sum to 53/100, but it is **not** a
+published SME-ETOI score until human review and a separate canonical update are
+complete.
 
 Current generated workload:
 
