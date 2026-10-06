@@ -10,7 +10,8 @@
     "eligibility_blocked_company_count": 12,
     "data_scope": "Public repository evidence only",
     "score_work_task_count": 452,
-    "numeric_coding_task_count": 440
+    "numeric_coding_task_count": 440,
+    "code_now_company_count": 80
   },
   "opportunity_types": [
     {
@@ -276,7 +277,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 32,
+        "coding_rank": 32,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 208,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P37",
@@ -491,7 +508,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 79,
+        "coding_rank": 79,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 443,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 1,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P11",
@@ -753,7 +786,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 2,
+        "coding_rank": 2,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 58,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 3,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P26",
@@ -1006,7 +1055,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 10,
+        "coding_rank": 10,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 98,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P27",
@@ -1268,7 +1333,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 8,
+        "coding_rank": 8,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 88,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 3,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P28",
@@ -1521,7 +1602,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 11,
+        "coding_rank": 11,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 103,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P50",
@@ -1774,7 +1871,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 24,
+        "coding_rank": 24,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 168,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P31",
@@ -2027,7 +2140,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 14,
+        "coding_rank": 14,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 118,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P74",
@@ -2280,7 +2409,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 44,
+        "coding_rank": 44,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 268,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P53",
@@ -2549,7 +2694,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 3,
+        "coding_rank": 3,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 63,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "A",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P91",
@@ -2802,7 +2963,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 60,
+        "coding_rank": 60,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 348,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P93",
@@ -3055,7 +3232,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 62,
+        "coding_rank": 62,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 358,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P94",
@@ -3308,7 +3501,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 63,
+        "coding_rank": 63,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 363,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P73",
@@ -3561,7 +3770,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 43,
+        "coding_rank": 43,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 263,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P70",
@@ -3814,7 +4039,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 40,
+        "coding_rank": 40,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 248,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P87",
@@ -4067,7 +4308,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 57,
+        "coding_rank": 57,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 333,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P88",
@@ -4245,7 +4502,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 100,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 12,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P20",
@@ -4516,7 +4789,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 4,
+        "coding_rank": 4,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 68,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 4,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P107",
@@ -4769,7 +5058,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 75,
+        "coding_rank": 75,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 423,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P85",
@@ -5022,7 +5327,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 55,
+        "coding_rank": 55,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 323,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P51",
@@ -5275,7 +5596,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 25,
+        "coding_rank": 25,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 173,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P67",
@@ -5453,7 +5790,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 99,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 11,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P58",
@@ -5677,7 +6030,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 31,
+        "coding_rank": 31,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 203,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P105",
@@ -5930,7 +6299,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 73,
+        "coding_rank": 73,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 413,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P05",
@@ -6347,7 +6732,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 87,
+        "coding_rank": null,
+        "workflow_action": "REVIEW_PROPOSALS",
+        "is_next_to_code": "NO",
+        "first_work_rank": 33,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 5,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 4,
+        "next_action": "Review the existing field-level proposals and evidence; approve, reject or request rework before any canonical update.",
+        "priority_reason": "Field-level proposals already cover the remaining numeric work; the next valid step is human review, not additional first-pass coding."
+      }
     },
     {
       "company_id": "P15",
@@ -6600,7 +7001,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 9,
+        "coding_rank": 9,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 93,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P39",
@@ -6853,7 +7270,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 19,
+        "coding_rank": 19,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 143,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P81",
@@ -7106,7 +7539,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 51,
+        "coding_rank": 51,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 303,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P78",
@@ -7359,7 +7808,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 48,
+        "coding_rank": 48,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 288,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P92",
@@ -7612,7 +8077,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 61,
+        "coding_rank": 61,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 353,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P106",
@@ -7865,7 +8346,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 74,
+        "coding_rank": 74,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 418,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P71",
@@ -8118,7 +8615,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 41,
+        "coding_rank": 41,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 253,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P23",
@@ -8362,7 +8875,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 1,
+        "coding_rank": 1,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "YES",
+        "first_work_rank": 53,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 4,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P61",
@@ -8615,7 +9144,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 34,
+        "coding_rank": 34,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 218,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P41",
@@ -8868,7 +9413,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 20,
+        "coding_rank": 20,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 148,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P82",
@@ -9121,7 +9682,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 52,
+        "coding_rank": 52,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 308,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P62",
@@ -9374,7 +9951,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 35,
+        "coding_rank": 35,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 223,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P83",
@@ -9627,7 +10220,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 53,
+        "coding_rank": 53,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 313,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P86",
@@ -9880,7 +10489,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 56,
+        "coding_rank": 56,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 328,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P33",
@@ -10104,7 +10729,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 15,
+        "coding_rank": 15,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 123,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P19",
@@ -10364,7 +11005,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: investment_gap_score: Whether the reported EUR 30 million site investment contains relevant energy-transition investment and direct-company corroboration"
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 81,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 18,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 5,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 6,
+        "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Documented furnace temperature and evidence-backed electric-heat technology fit for the Wunsiedel process; process_electrification_score: Firm-specific process-electrification route or documented electric-heat application; fossil_heat_displacement_score: Current furnace energy carrier and material fossil-heat service that could be displaced",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: temperature_fit_score | process_electrification_score | fossil_heat_displacement_score; motor_drive_score | power_conversion_score | automation_control_score; scheduling_flex_score | thermal_storage_flex_score"
+      }
     },
     {
       "company_id": "P18",
@@ -10664,7 +11321,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: investment_gap_score: Recent energy-transition investments or a defined negative investment search over the lookback period"
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 84,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 38,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 5,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 4,
+        "next_action": "Research the unresolved score evidence before proposing an anchor: process_electrification_score: Firm-specific glass-melting/reheating electrification route or documented electric furnace concept",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: process_electrification_score; motor_drive_score | power_conversion_score | automation_control_score; thermal_storage_flex_score"
+      }
     },
     {
       "company_id": "P45",
@@ -10888,7 +11561,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 23,
+        "coding_rank": 23,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 163,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P52",
@@ -11141,7 +11830,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 26,
+        "coding_rank": 26,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 178,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P24",
@@ -11360,7 +12065,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: measures_gap_score: Concrete recent energy-transition measures or a defined negative measure search after adequate checks; investment_gap_score: Recent energy-transition investments or a defined negative investment search over the methodology lookback period"
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 85,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 48,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 5,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 3,
+        "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Firm-specific moulding/process temperatures and heating technology sufficient to establish electrification temperature fit; process_electrification_score: Firm-specific electric process-heat or electrification use case and machine technology; fossil_heat_displacement_score: Current process-heat energy carrier and material fossil thermal service, if any",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: temperature_fit_score | process_electrification_score | fossil_heat_displacement_score; motor_drive_score | power_conversion_score | automation_control_score; scheduling_flex_score | thermal_storage_flex_score"
+      }
     },
     {
       "company_id": "P60",
@@ -11613,7 +12334,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 33,
+        "coding_rank": 33,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 213,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P72",
@@ -11866,7 +12603,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 42,
+        "coding_rank": 42,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 258,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P47",
@@ -12044,7 +12797,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 97,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 9,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P104",
@@ -12222,7 +12991,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 91,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 3,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P90",
@@ -12475,7 +13260,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 59,
+        "coding_rank": 59,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 343,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P100",
@@ -12728,7 +13529,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 69,
+        "coding_rank": 69,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 393,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P66",
@@ -12981,7 +13798,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 38,
+        "coding_rank": 38,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 238,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P32",
@@ -13150,7 +13983,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 92,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 4,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "C",
+        "source_count": 1,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P38",
@@ -13403,7 +14252,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 18,
+        "coding_rank": 18,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 138,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P34",
@@ -13552,7 +14417,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 93,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 5,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P36",
@@ -13776,7 +14657,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 17,
+        "coding_rank": 17,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 133,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P99",
@@ -14029,7 +14926,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 68,
+        "coding_rank": 68,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 388,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P79",
@@ -14282,7 +15195,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 49,
+        "coding_rank": 49,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 293,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P35",
@@ -14506,7 +15435,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 16,
+        "coding_rank": 16,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 128,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P29",
@@ -14759,7 +15704,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 12,
+        "coding_rank": 12,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 108,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P55",
@@ -14983,7 +15944,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 28,
+        "coding_rank": 28,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 188,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P77",
@@ -15236,7 +16213,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 47,
+        "coding_rank": 47,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 283,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P103",
@@ -15489,7 +16482,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 72,
+        "coding_rank": 72,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 408,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P101",
@@ -15742,7 +16751,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 70,
+        "coding_rank": 70,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 398,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P80",
@@ -15995,7 +17020,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 50,
+        "coding_rank": 50,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 298,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P110",
@@ -16248,7 +17289,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 78,
+        "coding_rank": 78,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 438,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P04",
@@ -16680,7 +17737,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 86,
+        "coding_rank": null,
+        "workflow_action": "REVIEW_PROPOSALS",
+        "is_next_to_code": "NO",
+        "first_work_rank": 13,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 5,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 6,
+        "next_action": "Review the existing field-level proposals and evidence; approve, reject or request rework before any canonical update.",
+        "priority_reason": "Field-level proposals already cover the remaining numeric work; the next valid step is human review, not additional first-pass coding."
+      }
     },
     {
       "company_id": "P40",
@@ -16849,7 +17922,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 94,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 6,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "C",
+        "source_count": 1,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P10",
@@ -17090,7 +18179,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 90,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 2,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 9,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P42",
@@ -17230,7 +18335,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 95,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 7,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "C",
+        "source_count": 1,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P63",
@@ -17483,7 +18604,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 36,
+        "coding_rank": 36,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 228,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P44",
@@ -17736,7 +18873,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 22,
+        "coding_rank": 22,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 158,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P96",
@@ -17989,7 +19142,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 65,
+        "coding_rank": 65,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 373,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P97",
@@ -18242,7 +19411,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 66,
+        "coding_rank": 66,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 378,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P109",
@@ -18495,7 +19680,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 77,
+        "coding_rank": 77,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 433,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P46",
@@ -18673,7 +19874,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 96,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 8,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P65",
@@ -18851,7 +20068,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 98,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 10,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P108",
@@ -19104,7 +20337,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 76,
+        "coding_rank": 76,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 428,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P30",
@@ -19357,7 +20606,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 13,
+        "coding_rank": 13,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 113,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P75",
@@ -19610,7 +20875,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 45,
+        "coding_rank": 45,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 273,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P21",
@@ -19872,7 +21153,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 7,
+        "coding_rank": 7,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 83,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 3,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P54",
@@ -20154,7 +21451,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 27,
+        "coding_rank": 27,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 183,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P12",
@@ -20434,7 +21747,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 82,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 23,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 1,
+        "awaiting_human_review_tasks": 4,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 5,
+        "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Company-specific thermal buffer, thermal store or evidence-backed usable thermal inertia for process-load shifting",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: thermal_storage_flex_score"
+      }
     },
     {
       "company_id": "P22",
@@ -20715,7 +22044,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 88,
+        "coding_rank": null,
+        "workflow_action": "REVIEW_PROPOSALS",
+        "is_next_to_code": "NO",
+        "first_work_rank": 43,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 5,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 3,
+        "next_action": "Review the existing field-level proposals and evidence; approve, reject or request rework before any canonical update.",
+        "priority_reason": "Field-level proposals already cover the remaining numeric work; the next valid step is human review, not additional first-pass coding."
+      }
     },
     {
       "company_id": "P98",
@@ -20968,7 +22313,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 67,
+        "coding_rank": 67,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 383,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P102",
@@ -21221,7 +22582,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 71,
+        "coding_rank": 71,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 403,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P84",
@@ -21445,7 +22822,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 54,
+        "coding_rank": 54,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 318,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P25",
@@ -21687,7 +23080,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 5,
+        "coding_rank": 5,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 73,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 4,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P13",
@@ -21949,7 +23358,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 6,
+        "coding_rank": 6,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 78,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 3,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P16",
@@ -22229,7 +23654,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: measures_gap_score: Concrete recent energy-transition measures or a defined negative search result after adequate measure checks; investment_gap_score: Recent energy-transition investments or a defined negative investment search over the methodology lookback period"
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 83,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 28,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 5,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P1",
+        "process_confidence": "A",
+        "source_count": 5,
+        "next_action": "Research the unresolved score evidence before proposing an anchor: process_electrification_score: Current furnace technology and firm-specific electric-heating/electrification route for debinding and sintering; fossil_heat_displacement_score: Current energy carrier(s) for debinding, sintering and high-temperature/chamber furnaces",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: process_electrification_score | fossil_heat_displacement_score; motor_drive_score | power_conversion_score | automation_control_score; thermal_storage_flex_score"
+      }
     },
     {
       "company_id": "P76",
@@ -22482,7 +23923,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 46,
+        "coding_rank": 46,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 278,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P56",
@@ -22706,7 +24163,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 29,
+        "coding_rank": 29,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 193,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P57",
@@ -22930,7 +24403,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 30,
+        "coding_rank": 30,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 198,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P89",
@@ -23183,7 +24672,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 58,
+        "coding_rank": 58,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 338,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P68",
@@ -23436,7 +24941,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 39,
+        "coding_rank": 39,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 243,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P03",
@@ -23707,7 +25228,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 80,
+        "coding_rank": 80,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 448,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P3",
+        "process_confidence": "C",
+        "source_count": 4,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P07",
@@ -23924,7 +25461,23 @@
           "queue_reason": "SME/group eligibility is an upstream validity gate. Do not spend further scoring effort until it is resolved.",
           "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 89,
+        "coding_rank": null,
+        "workflow_action": "ELIGIBILITY_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 1,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 1,
+        "work_priority": "GATE",
+        "process_confidence": "B",
+        "source_count": 6,
+        "next_action": "Resolve ownership, linked-enterprise aggregation and EU SME eligibility before treating any ETOI score as valid.",
+        "priority_reason": "SME/group eligibility is an upstream validity gate and blocks numeric scoring."
+      }
     },
     {
       "company_id": "P64",
@@ -24177,7 +25730,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 37,
+        "coding_rank": 37,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 233,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P95",
@@ -24430,7 +25999,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 64,
+        "coding_rank": 64,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 368,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     },
     {
       "company_id": "P43",
@@ -24683,7 +26268,23 @@
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
         }
-      ]
+      ],
+      "workflow_priority": {
+        "company_rank": 21,
+        "coding_rank": 21,
+        "workflow_action": "CODE_NOW",
+        "is_next_to_code": "NO",
+        "first_work_rank": 153,
+        "ready_to_code_tasks": 5,
+        "research_needed_tasks": 0,
+        "awaiting_human_review_tasks": 0,
+        "open_gate_tasks": 0,
+        "work_priority": "P2",
+        "process_confidence": "B",
+        "source_count": 2,
+        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+        "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+      }
     }
   ],
   "score_readiness_summary": {
@@ -24708,5 +26309,25 @@
       "RESEARCH_NEEDED": 21
     },
     "task_count": 452
+  },
+  "company_work_summary": {
+    "workflow_action_counts": {
+      "CODE_NOW": 80,
+      "ELIGIBILITY_FIRST": 12,
+      "RESEARCH_FIRST": 5,
+      "REVIEW_PROPOSALS": 3
+    },
+    "company_count": 100,
+    "next_best_company": {
+      "company_id": "P23",
+      "legal_entity": "FM-Plast GmbH",
+      "coding_rank": 1,
+      "work_priority": "P2",
+      "evidence_confidence": "A",
+      "process_confidence": "B",
+      "source_count": 4,
+      "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
+      "priority_reason": "All five numeric-coding packages are untouched and ready; ranking inherits evidence/process confidence, QA state and source coverage from the canonical score-work ordering."
+    }
   }
 }
