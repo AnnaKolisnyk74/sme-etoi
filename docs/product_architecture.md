@@ -267,28 +267,21 @@ Each company receives exactly one workflow action:
 - `REVIEW_PROPOSALS`
 - `ELIGIBILITY_FIRST`
 
-`CODE_NOW` companies receive a dense `coding_rank` using the established
-score-work ordering, which already incorporates evidence confidence, process
-confidence, QA state and source coverage. Exactly one company is marked
-`is_next_to_code=YES`.
+`CODE_NOW` companies receive a dense `coding_rank` from the explicit v2
+company-priority policy. QA must be PASS before coding. Confidence grades,
+documentary coverage, expected information gain (qualitative proxy), unassessed
+fields and deduplicated verified URLs determine order. Exactly one company is
+marked `is_next_to_code=YES`; raw task ranks no longer choose that company.
 
-This avoids manually choosing the next company and prevents work from jumping
-ahead of unresolved research or eligibility gates.
+Current state: 74 `CODE_NOW`, 11 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`,
+12 `ELIGIBILITY_FIRST`. `QA_FIRST` and `IN_PROGRESS` are explicit additional
+states for QA blockers and partially completed coding.
 
-Current company-level state:
-
-- 78 `CODE_NOW`
-- 7 `RESEARCH_FIRST`
-- 3 `REVIEW_PROPOSALS`
-- 12 `ELIGIBILITY_FIRST`
-
-P11 — B+T Oberflächentechnik GmbH was processed from the prior next-best
-position. Its assessment created four research-first dimension packages and
-one review-pending dimension package, so the priority engine removed it from
-`CODE_NOW`.
-
-The current next-best coding company is P53 — Brauerei Rittmayer Hallerndorf
-GmbH & Co. KG.
+The frozen v2 batch selected P21 and P27. Their assessments moved them to
+`RESEARCH_FIRST`, making P30 the next coding company. Selection provenance,
+source categories and proxy limitations are documented in
+[`next_best_company.md`](next_best_company.md). This is a workflow ranking,
+not SME-ETOI scoring or human approval.
 
 ### 9. Research Queue
 

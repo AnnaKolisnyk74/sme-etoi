@@ -265,3 +265,16 @@ incremental load and investment timing.
 The numeric proposals sum to 25, but no aggregate score is calculated while
 required fields remain unresolved. P53 therefore moves from `CODE_NOW` to
 `RESEARCH_FIRST`, and P20 DERIX Glasstudios becomes the next company to code.
+
+## P21/P27 documentary-priority batch
+
+The v2 priority mechanism selected P21 and P27 before their assessments were
+written. P21 has four numeric proposals and eleven research gaps; P27 has five
+numeric proposals and ten research gaps. Both move to `RESEARCH_FIRST`.
+
+The carbon-accounting interpretation for P21 and historical electric-oven route
+for P27 are explicitly provisional at confidence C. They do not establish an
+EnMS or current furnace deployment. All numeric proposals await real human
+review; no canonical values or score totals are published. See
+[`next_best_company.md`](next_best_company.md) and the frozen
+`data/coding_batch_selections.csv` for selection provenance.

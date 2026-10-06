@@ -22,7 +22,7 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["research_task_count"], 198)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
-        self.assertEqual(meta["code_now_company_count"], 76)
+        self.assertEqual(meta["code_now_company_count"], 74)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -61,6 +61,7 @@ class WebExportTests(unittest.TestCase):
         path = ROOT / "web" / "data" / "sme_etoi.json"
         with path.open(encoding="utf-8") as handle:
             committed = json.load(handle)
+        self.assertEqual(committed, self.payload)
         self.assertEqual(committed["meta"], self.payload["meta"])
         self.assertEqual(
             [row["company_id"] for row in committed["companies"]],
@@ -100,8 +101,8 @@ class WebExportTests(unittest.TestCase):
             status_counts,
             {
                 "AWAITING_HUMAN_REVIEW": 21,
-                "READY_TO_CODE": 380,
-                "RESEARCH_NEEDED": 39,
+                "READY_TO_CODE": 370,
+                "RESEARCH_NEEDED": 49,
             },
         )
         self.assertTrue(
@@ -128,16 +129,23 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             summary["workflow_action_counts"],
             {
-                "CODE_NOW": 76,
+                "CODE_NOW": 74,
                 "ELIGIBILITY_FIRST": 12,
-                "RESEARCH_FIRST": 9,
+                "RESEARCH_FIRST": 11,
                 "REVIEW_PROPOSALS": 3,
             },
         )
         next_best = summary["next_best_company"]
-        self.assertEqual(next_best["company_id"], "P25")
-        self.assertEqual(next_best["legal_entity"], "Scheplast GmbH")
+        self.assertEqual(next_best["company_id"], "P30")
+        self.assertEqual(next_best["legal_entity"], "Privat-Brauerei Zötler GmbH")
         self.assertEqual(next_best["coding_rank"], 1)
+        self.assertEqual(next_best["priority_version"], "2.0.0")
+        self.assertEqual(next_best["qa_result"], "PASS")
+        self.assertEqual(next_best["expected_information_gain"], "HIGH")
+        self.assertIn("PROCESS", next_best["source_coverage"])
+        self.assertIn("ENERGY_TRANSITION", next_best["source_coverage"])
+        self.assertTrue(next_best["coverage_source_ids"])
+        self.assertNotIn("opportunity_score", next_best)
 
         companies = {
             company["company_id"]: company
@@ -162,15 +170,15 @@ class WebExportTests(unittest.TestCase):
             )
         )
         self.assertEqual(
-            companies["P25"]["workflow_priority"]["workflow_action"],
+            companies["P30"]["workflow_priority"]["workflow_action"],
             "CODE_NOW",
         )
         self.assertEqual(
-            companies["P25"]["workflow_priority"]["is_next_to_code"],
+            companies["P30"]["workflow_priority"]["is_next_to_code"],
             "YES",
         )
         self.assertEqual(
-            companies["P25"]["workflow_priority"]["coding_rank"],
+            companies["P30"]["workflow_priority"]["coding_rank"],
             1,
         )
         self.assertEqual(

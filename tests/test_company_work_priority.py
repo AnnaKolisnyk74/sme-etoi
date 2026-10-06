@@ -12,7 +12,9 @@ class CompanyWorkPriorityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.rows = generate_company_work_priority(
-            read_csv(ROOT / "outputs" / "score_work_queue.csv")
+            read_csv(ROOT / "outputs" / "score_work_queue.csv"),
+            read_csv(ROOT / "evidence" / "source_register.csv"),
+            read_csv(ROOT / "data" / "company_process_map.csv"),
         )
         cls.by_id = {row["company_id"]: row for row in cls.rows}
 
@@ -28,20 +30,20 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(
             counts,
             {
-                "CODE_NOW": 76,
-                "RESEARCH_FIRST": 9,
+                "CODE_NOW": 74,
+                "RESEARCH_FIRST": 11,
                 "REVIEW_PROPOSALS": 3,
                 "ELIGIBILITY_FIRST": 12,
             },
         )
 
-    def test_p25_is_next_best_company_to_code(self):
+    def test_p30_is_next_best_company_to_code(self):
         next_rows = [
             row for row in self.rows if row["is_next_to_code"] == "YES"
         ]
         self.assertEqual(len(next_rows), 1)
-        self.assertEqual(next_rows[0]["company_id"], "P25")
-        self.assertEqual(next_rows[0]["legal_entity"], "Scheplast GmbH")
+        self.assertEqual(next_rows[0]["company_id"], "P30")
+        self.assertEqual(next_rows[0]["legal_entity"], "Privat-Brauerei Zötler GmbH")
         self.assertEqual(next_rows[0]["coding_rank"], "1")
         self.assertEqual(next_rows[0]["workflow_action"], "CODE_NOW")
 
@@ -50,7 +52,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
             row for row in self.rows if row["workflow_action"] == "CODE_NOW"
         ]
         ranks = sorted(int(row["coding_rank"]) for row in rows)
-        self.assertEqual(ranks, list(range(1, 77)))
+        self.assertEqual(ranks, list(range(1, 75)))
 
     def test_research_first_companies_are_exactly_known_gap_cases(self):
         self.assertEqual(
@@ -59,7 +61,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "RESEARCH_FIRST"
             },
-            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53"},
+            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27"},
         )
 
     def test_p11_moves_from_code_now_to_research_first(self):

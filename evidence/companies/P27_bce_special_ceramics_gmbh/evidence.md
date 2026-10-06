@@ -22,3 +22,11 @@
 - Verify the financial SME threshold.
 - Recheck current furnace stock and distinguish the documented historical
   process route from deployment of the project's efficiency measures.
+
+## AI-assisted coding pass — 2026-10-06
+
+`S-P27-04` adds direct technical-equipment evidence for machining and CNC
+control. The ENITEC electric-oven route remains historical evidence, not proof
+of today's furnace configuration. ISO 9001 does not verify an EnMS.
+Five numeric proposals await Human Review; ten fields remain research gaps.
+No canonical scoring or human-review record is changed.

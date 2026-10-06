@@ -156,8 +156,12 @@ def build_score_work_queue(
 
 def build_company_work_priority(
     score_work: list[dict[str, str]],
+    root: Path = ROOT,
 ) -> list[dict[str, str]]:
-    return company_work_priority.generate_company_work_priority(score_work)
+    return company_work_priority.generate_company_work_priority(
+        score_work, read_csv(root, "evidence/source_register.csv"),
+        read_csv(root, "data/company_process_map.csv"),
+    )
 
 
 def validate_company_work_priority(
@@ -199,6 +203,12 @@ def validate_company_work_priority(
         errors.append("next-to-code flag exists without any CODE_NOW company")
 
     for row in priority_rows:
+        if row.get("workflow_action") != "CODE_NOW" and (
+            row.get("coding_rank") or row.get("is_next_to_code") == "YES"
+        ):
+            errors.append(f"{row['company_id']} non-CODE_NOW company has coding priority")
+        if row.get("workflow_action") == "CODE_NOW" and row.get("qa_result") != "PASS":
+            errors.append(f"{row['company_id']} CODE_NOW company has no QA PASS")
         if row.get("workflow_action") == "ELIGIBILITY_FIRST":
             if row.get("coding_rank"):
                 errors.append(
@@ -434,7 +444,7 @@ def run_pipeline(
     companies, opportunities, queue = build_outputs(root)
     readiness = build_score_readiness(root, companies)
     score_work = build_score_work_queue(root, companies, readiness, queue)
-    company_priority = build_company_work_priority(score_work)
+    company_priority = build_company_work_priority(score_work, root)
     generated_errors = validate_generated_outputs(companies, opportunities, queue)
     generated_errors.extend(validate_score_readiness(companies, readiness))
     generated_errors.extend(validate_score_work_queue(readiness, score_work))

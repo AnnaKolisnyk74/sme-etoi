@@ -21,3 +21,6 @@ jobs:
 
       - name: Check web JavaScript syntax
         run: node --check web/app.js
+
+      - name: Check scoring priority rendering
+        run: node tests/test_web_priority.cjs

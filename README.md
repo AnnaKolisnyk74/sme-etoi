@@ -170,102 +170,48 @@ separately in `data/score_coding_proposals.csv`. They remain
 The pipeline validates proposal anchors, source ownership and review-state
 integrity. See `docs/score_coding_protocol.md`.
 
-The first proposal set covers all 15 fields for P04 Neumarkter Lammsbräu. If
-accepted unchanged it would arithmetically sum to 53/100, but it is **not** a
-published SME-ETOI score until human review and a separate canonical update are
-complete.
+Current coding assessments (all numeric values remain non-canonical):
 
-P19 Glasfabrik Lamberts is the first field-level uncertainty case. The stored
-repository evidence currently supports only three numeric proposals; twelve
-score fields remain `NEEDS_RESEARCH` with explicit missing facts. No partial
-total is promoted to an SME-ETOI score.
+| Company | Numeric proposals | NEEDS_RESEARCH |
+| --- | ---: | ---: |
+| P04 Neumarkter Lammsbräu | 15 | 0 |
+| P19 Glasfabrik Lamberts | 3 | 12 |
+| P12 Richard Henkel | 14 | 1 |
+| P16 Sembach | 4 | 11 |
+| P05 Einbecker Brauhaus | 15 | 0 |
+| P18 Glashütte Lamberts Waldsassen | 7 | 8 |
+| P22 RIEDENBURGER BRAUHAUS | 15 | 0 |
+| P24 H&K Müller | 2 | 13 |
+| P23 FM-Plast | 7 | 8 |
+| P11 B+T Oberflächentechnik | 5 | 10 |
+| P53 Brauerei Rittmayer | 8 | 7 |
+| P20 DERIX Glasstudios | 6 | 9 |
+| P21 Moritz Fiege | 4 | 11 |
+| P27 BCE Special Ceramics | 5 | 10 |
 
-The current proposal-aware score-work queue therefore contains:
+Current generated work queue: **12 OPEN_GATE, 370 READY_TO_CODE,
+49 RESEARCH_NEEDED and 21 AWAITING_HUMAN_REVIEW**. These are task counts,
+not proposal-field counts. All 88 companies with numeric-coding work still
+await canonical coding and independent human review; no final score is ready.
 
-- 12 upstream eligibility gates;
-- 5 P04 dimension packages `AWAITING_HUMAN_REVIEW`;
-- 5 P19 dimension packages `RESEARCH_NEEDED`;
-- 4 P12 dimension packages `AWAITING_HUMAN_REVIEW`;
-- 1 P12 dimension package `RESEARCH_NEEDED`;
-- 5 P16 dimension packages `RESEARCH_NEEDED`;
-- 5 P05 dimension packages `AWAITING_HUMAN_REVIEW`;
-- 5 P18 dimension packages `RESEARCH_NEEDED`;
-- 5 P22 dimension packages `AWAITING_HUMAN_REVIEW`;
-- 5 P24 dimension packages `RESEARCH_NEEDED`;
-- 4 P11 dimension packages `RESEARCH_NEEDED`;
-- 1 P11 dimension package `AWAITING_HUMAN_REVIEW`;
-- 4 P53 dimension packages `RESEARCH_NEEDED`;
-- 1 P53 dimension package `AWAITING_HUMAN_REVIEW`;
-- 385 dimension packages `READY_TO_CODE`.
+`outputs/company_work_priority.csv` collapses work into company decisions:
+74 `CODE_NOW`, 11 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
+`ELIGIBILITY_FIRST`. Failed or missing deterministic QA yields `QA_FIRST`;
+partially covered coding stays `IN_PROGRESS` rather than claiming complete
+review coverage.
 
-P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
-score fields have review-pending numeric proposals, while
-`thermal_storage_flex_score` remains `NEEDS_RESEARCH`. The numeric proposals
-sum to 50, but no total SME-ETOI score is calculated while that field remains
-unresolved.
+The **Next Best Company to Code v2** ranking uses QA as a gate, both confidence
+grades, a qualitative documentary information-gain proxy, verified process /
+energy-transition / management coverage, unassessed fields and deduplicated
+verified URLs. It never estimates numeric scores or assumes deployment.
+See [the priority protocol](docs/next_best_company.md) for exact ordering,
+limitations, source-type rules and the reproducible batch audit.
 
-P16 Sembach GmbH & Co. KG demonstrates a high-confidence company record with
-substantial field-level scoring uncertainty. Four fields have numeric
-review-pending proposals, while eleven fields remain `NEEDS_RESEARCH`,
-primarily because the current furnace energy carrier, electrical topology,
-drive/control evidence and concrete recent transition measures are not yet
-publicly established.
-
-P05 Einbecker Brauhaus AG is the second fully covered proposal case. All 15
-score fields have review-pending numeric anchors based on the environmental
-statement, including electric clean-steam planning, cooling, CHP/PV,
-heat-recovery and process-control evidence. The proposal arithmetic sums to
-59/100, but this remains a review artifact and is not a published score.
-
-P18 Glashütte Lamberts Waldsassen GmbH is a natural-gas-fired glass case
-with seven evidence-supported numeric proposals and eight explicit research
-gaps. Known gas firing supports fossil-heat and ordinal load relevance, while
-the electric-furnace route, motor/converter evidence, thermal buffering,
-power-quality/onsite integration and investment history remain unresolved.
-
-P22 RIEDENBURGER BRAUHAUS is a fully covered high-evidence case. All 15
-fields have numeric review-pending proposals based on directly documented heat
-pumps, vapour compression, PV, thermal storage and flexible operation. The
-proposal arithmetic sums to 74/100 but remains non-canonical.
-
-P24 H&K Müller is the opposite pattern: ISO 50001 and the absence of a dated
-public target support two numeric proposals, while 13 fields remain
-`NEEDS_RESEARCH`. Generic injection-moulding assumptions are not used because
-the PR001 process-library row is still `TO_RESEARCH`.
-
-Company-level prioritisation is now generated in
-`outputs/company_work_priority.csv`. It collapses the 452 task rows into one
-workflow decision per company:
-
-- `CODE_NOW`: all five coding packages are ready;
-- `RESEARCH_FIRST`: at least one dimension contains an explicit research gap;
-- `REVIEW_PROPOSALS`: first-pass numeric proposals already cover the coding work;
-- `ELIGIBILITY_FIRST`: SME/group eligibility still blocks scoring.
-
-Within `CODE_NOW`, the system assigns a dense `coding_rank` and exactly one
-`is_next_to_code=YES` flag. The current next-best coding company is
-**P23 FM-Plast GmbH**.
-
-P11 B+T Oberflächentechnik GmbH is the first case processed by the
-company-level Next Best Company ranking. Five score fields receive numeric
-first-pass proposals, while ten technical fields remain `NEEDS_RESEARCH`.
-After that assessment the company automatically moves from `CODE_NOW` to
-`RESEARCH_FIRST`, and P53 Brauerei Rittmayer becomes the next company to code.
-
-P53 Brauerei Rittmayer is the next dynamic-priority case. Eight score
-fields receive numeric proposals while seven remain `NEEDS_RESEARCH`.
-The existing biomass heat, heat recovery, thermal storage and PV measures are
-documented, but the process-heat electrification route, remaining fossil heat,
-motor/control evidence and investment timing remain open. After coding, P53
-moves to `RESEARCH_FIRST` and P20 DERIX Glasstudios becomes coding rank 1.
-
-Current generated workload:
-
-- 12 upstream eligibility-gate tasks;
-- 440 numeric-coding work packages;
-- 88 companies waiting for numeric coding;
-- five coding packages per company, matching the five SME-ETOI dimensions.
-
+The first v2 batch selected **P21 Moritz Fiege and P27 BCE Special Ceramics**
+before any new source enrichment or coding. The selection is frozen in
+`data/coding_batch_selections.csv`. Both now require field-specific research;
+the live ranking therefore promotes **P30 Privat-Brauerei Zötler GmbH**.
+The web scoring view exposes QA, coverage and the information-gain proxy.
 
 ### Web prototype
 
@@ -413,12 +359,3 @@ sample is assembled and must occur before SME-ETOI v1.0 is frozen.
 
 No licence has been selected yet. Until one is added, standard copyright rules
 apply.
-
-
-P23 FM-Plast GmbH now demonstrates automatic workflow reprioritisation.
-Seven score fields have review-pending numeric proposals and eight remain
-`NEEDS_RESEARCH`. Because every dimension still contains at least one open
-fact, the company moves from `CODE_NOW` to `RESEARCH_FIRST`.
-
-The company-level priority engine therefore promotes P11 —
-B+T Oberflächentechnik GmbH — to coding rank 1 automatically.
