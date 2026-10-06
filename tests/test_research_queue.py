@@ -250,9 +250,9 @@ class ResearchQueueTests(unittest.TestCase):
         }
         expected = {
             "P07", "P10", "P32", "P34", "P40", "P42",
-            "P46", "P47", "P65", "P67", "P88",
+            "P46", "P47", "P65", "P67", "P88", "P104",
         }
-        self.assertTrue(expected.issubset(eligibility_ids))
+        self.assertEqual(eligibility_ids, expected)
 
 
     def test_latest_research_result_wins_deterministically(self):
