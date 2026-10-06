@@ -9,6 +9,7 @@ from opportunity_engine import (
     generate_opportunities,
     prioritise,
     process_signal_present,
+    sample_eligibility,
     worst_confidence,
 )
 
@@ -115,6 +116,70 @@ class OpportunityEngineTests(unittest.TestCase):
         self.assertEqual(status, "RESEARCH_REQUIRED")
         self.assertEqual(field, "flexibility_solution_deployed")
         self.assertEqual(value, "UNKNOWN")
+
+
+    def test_unresolved_group_check_blocks_actionability_without_changing_technical_status(self):
+        company = dict(
+            self.companies[0],
+            sme_status="probable",
+            group_check="partner_or_linked_sme",
+        )
+        status, actionability, action = sample_eligibility(company)
+        self.assertEqual(status, "ELIGIBILITY_PENDING")
+        self.assertEqual(actionability, "ELIGIBILITY_BLOCKED")
+        self.assertIn("Resolve ownership", action)
+
+        rules = [
+            {
+                "rule_id": "R001",
+                "opportunity_type": "energy_management",
+                "required_process_signal": "HIGH_drive_relevance",
+                "required_company_signal": "three_shift_operation",
+                "blocking_signal": "",
+                "output_level": "HIGH",
+                "reason_template": "test reason",
+                "confidence_cap": "B",
+                "rule_status": "DRAFT",
+            }
+        ]
+        rows = generate_opportunities([company], self.process_map, self.processes, rules)
+        self.assertEqual(rows[0]["technical_status"], "TECHNICALLY_RELEVANT")
+        self.assertEqual(rows[0]["commercial_status"], "RESEARCH_REQUIRED")
+        self.assertEqual(rows[0]["sample_eligibility_status"], "ELIGIBILITY_PENDING")
+        self.assertEqual(rows[0]["actionability_status"], "ELIGIBILITY_BLOCKED")
+
+    def test_probable_independent_company_is_provisional_not_confirmed(self):
+        company = dict(
+            self.companies[0],
+            sme_status="probable",
+            group_check="probable_independent",
+        )
+        status, actionability, _ = sample_eligibility(company)
+        self.assertEqual(status, "PROVISIONAL_PASS")
+        self.assertEqual(actionability, "PROVISIONAL")
+
+    def test_confirmed_sme_is_actionable(self):
+        company = dict(
+            self.companies[0],
+            sme_status="confirmed",
+            group_check="independent",
+        )
+        status, actionability, action = sample_eligibility(company)
+        self.assertEqual(status, "CONFIRMED")
+        self.assertEqual(actionability, "ACTIONABLE")
+        self.assertEqual(action, "")
+
+    def test_excluded_sme_is_blocked(self):
+        company = dict(
+            self.companies[0],
+            sme_status="excluded",
+            group_check="independent",
+        )
+        status, actionability, action = sample_eligibility(company)
+        self.assertEqual(status, "EXCLUDED")
+        self.assertEqual(actionability, "ELIGIBILITY_BLOCKED")
+        self.assertIn("Do not treat", action)
+
 
     def test_blocking_signal_prevents_rule(self):
         company = dict(self.companies[0])
