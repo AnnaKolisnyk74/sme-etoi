@@ -212,3 +212,19 @@ technical evidence.
 
 Only management-gap and target-gap fields receive numeric proposals. Thirteen
 technical/investment fields remain `NEEDS_RESEARCH`.
+
+
+## P23 automatic reprioritisation example
+
+P23 — FM-Plast GmbH receives seven numeric first-pass proposals and eight
+`NEEDS_RESEARCH` fields.
+
+The unresolved facts include remaining fossil process heat, converter/control
+topology, operating schedule, thermal buffering, additional electrification,
+onsite integration and recent investment timing.
+
+Because each of the five dimensions contains at least one unresolved field,
+all five dimension packages are classified as `RESEARCH_NEEDED`. The
+company-level priority engine therefore removes P23 from `CODE_NOW` and
+automatically promotes the next eligible company, P11 — B+T
+Oberflächentechnik GmbH, to coding rank 1.
