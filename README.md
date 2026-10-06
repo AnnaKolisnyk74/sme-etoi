@@ -92,6 +92,8 @@ sme-etoi/
 ├── src/
 │   ├── opportunity_engine.py
 │   ├── research_queue.py
+│   ├── score_readiness.py
+│   ├── score_work_queue.py
 │   ├── run_pipeline.py
 │   ├── validate_pilot.py
 │   └── score_companies.py
@@ -99,6 +101,7 @@ sme-etoi/
 │   ├── opportunities.csv
 │   ├── research_queue.csv
 │   ├── score_readiness.csv
+│   ├── score_work_queue.csv
 │   └── scored_demo.csv
 ├── web/
 │   ├── index.html
@@ -150,6 +153,19 @@ The same run also refreshes `outputs/score_readiness.csv`, which records why
 each canonical company is or is not ready for a final SME-ETOI score. It keeps
 existing provisional scores visible without treating them as final when SME
 eligibility, numeric coding or independent human review is still open.
+
+It also refreshes `outputs/score_work_queue.csv`. The work queue keeps
+upstream SME-eligibility gates ahead of scoring effort and groups the 15 numeric
+anchors into five dimension-level work packages per scoreable company. This
+makes the current 100-company workload operational without auto-filling any
+numeric score field.
+
+Current generated workload:
+
+- 12 upstream eligibility-gate tasks;
+- 440 numeric-coding work packages;
+- 88 companies waiting for numeric coding;
+- five coding packages per company, matching the five SME-ETOI dimensions.
 
 
 ### Web prototype
