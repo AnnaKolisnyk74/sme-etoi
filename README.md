@@ -173,6 +173,18 @@ accepted unchanged it would arithmetically sum to 53/100, but it is **not** a
 published SME-ETOI score until human review and a separate canonical update are
 complete.
 
+P19 Glasfabrik Lamberts is the first field-level uncertainty case. The stored
+repository evidence currently supports only three numeric proposals; twelve
+score fields remain `NEEDS_RESEARCH` with explicit missing facts. No partial
+total is promoted to an SME-ETOI score.
+
+The current proposal-aware score-work queue therefore contains:
+
+- 12 upstream eligibility gates;
+- 5 P04 dimension packages `AWAITING_HUMAN_REVIEW`;
+- 5 P19 dimension packages `RESEARCH_NEEDED`;
+- 430 dimension packages `READY_TO_CODE`.
+
 Current generated workload:
 
 - 12 upstream eligibility-gate tasks;
