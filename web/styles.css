@@ -160,6 +160,18 @@ tr.selected .radio{background:#0f6cbd;border-color:#0f6cbd;color:#fff}
 .research-table-wrap{max-height:700px;overflow:auto}
 .toast{position:fixed;right:24px;bottom:24px;background:#323130;color:#fff;padding:10px 14px;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.2);z-index:100;font-size:11px}
 .toast[hidden],.error-state[hidden]{display:none!important}
+
+.app.nav-collapsed{grid-template-columns:52px minmax(0,1fr)}
+.nav-collapsed .leftnav{overflow:hidden}
+.nav-collapsed .nav-row{font-size:0;justify-content:center;padding:0}
+.nav-collapsed .nav-row.active{padding:0;border-left-width:3px}
+.nav-collapsed .nav-row span{font-size:14px;width:22px}
+.nav-collapsed .nav-group{display:none}
+.nav-collapsed .nav-toggle{padding:0;text-align:center}
+.dense-mode .entity-table tbody td{padding-top:4px;padding-bottom:4px}
+.dense-mode .entity-table thead th{padding-top:6px;padding-bottom:6px}
+.dense-mode .table-wrap{max-height:590px}
+
 .error-state{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#fff4ce;border:1px solid #f1c21b;padding:10px 14px;z-index:100;display:grid;gap:2px;font-size:11px}
 
 [hidden]{display:none!important}
