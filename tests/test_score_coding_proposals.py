@@ -351,6 +351,33 @@ class ScoreCodingProposalTests(unittest.TestCase):
             self.assertEqual(row["proposal_confidence"], "UNKNOWN")
             self.assertTrue(row["missing_fact"])
 
+    def test_p20_is_six_numeric_proposals_plus_nine_research_gaps(self):
+        rows = [
+            row
+            for row in read_csv(ROOT / "data" / "score_coding_proposals.csv")
+            if row["company_id"] == "P20"
+        ]
+        self.assertEqual(len(rows), 15)
+        self.assertEqual({row["score_field"] for row in rows}, set(SCORE_FIELDS))
+        numeric = [
+            row for row in rows
+            if row["proposal_status"] == "AWAITING_HUMAN_REVIEW"
+        ]
+        gaps = [
+            row for row in rows
+            if row["proposal_status"] == "NEEDS_RESEARCH"
+        ]
+        self.assertEqual(len(numeric), 6)
+        self.assertEqual(len(gaps), 9)
+        self.assertEqual(
+            sum(int(row["proposed_value"]) for row in numeric),
+            31,
+        )
+        for row in gaps:
+            self.assertEqual(row["proposed_value"], "")
+            self.assertEqual(row["proposal_confidence"], "UNKNOWN")
+            self.assertTrue(row["missing_fact"])
+
     def test_p04_proposals_do_not_mutate_canonical_scoring_inputs_or_outputs(self):
         coded_ids = {
             row["company_id"]
@@ -382,6 +409,8 @@ class ScoreCodingProposalTests(unittest.TestCase):
         self.assertNotIn("P11", scored_ids)
         self.assertNotIn("P53", coded_ids)
         self.assertNotIn("P53", scored_ids)
+        self.assertNotIn("P20", coded_ids)
+        self.assertNotIn("P20", scored_ids)
 
 
 if __name__ == "__main__":
