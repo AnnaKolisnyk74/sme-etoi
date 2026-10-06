@@ -47,6 +47,19 @@ def compact_source(row: dict[str, str]) -> dict[str, str]:
     }
 
 
+def priority_evidence(row: dict[str, str]) -> dict:
+    return {
+        "source_count": numeric_or_none(row.get("source_count")),
+        "verified_source_count": numeric_or_none(row.get("verified_source_count")),
+        "unassessed_field_count": numeric_or_none(row.get("unassessed_field_count")),
+        **{field: normalise(row.get(field)) for field in (
+            "qa_result", "source_coverage", "coverage_source_ids",
+            "evidence_confidence", "process_confidence",
+            "expected_information_gain", "information_gain_basis", "priority_version",
+        )},
+    }
+
+
 def build_web_payload(root: Path = ROOT) -> dict:
     companies = read_csv(root, "data/company_intelligence.csv")
     candidates = read_csv(root, "data/pilot_candidates.csv")
@@ -266,6 +279,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "research_tasks": web_tasks,
                 "score_work_tasks": web_score_work,
                 "workflow_priority": {
+                    **priority_evidence(company_priority),
                     "company_rank": numeric_or_none(company_priority.get("company_rank")),
                     "coding_rank": numeric_or_none(company_priority.get("coding_rank")),
                     "workflow_action": normalise(company_priority.get("workflow_action")),
@@ -389,6 +403,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
             "workflow_action_counts": dict(sorted(company_work_action_counts.items())),
             "company_count": len(company_work_priority),
             "next_best_company": {
+                **priority_evidence(next_best_company),
                 "company_id": normalise(next_best_company.get("company_id")),
                 "legal_entity": normalise(next_best_company.get("legal_entity")),
                 "coding_rank": numeric_or_none(next_best_company.get("coding_rank")),
