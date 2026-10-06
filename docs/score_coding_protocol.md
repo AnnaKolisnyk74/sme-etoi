@@ -297,3 +297,20 @@ The selector appends selection provenance without changing evidence, scores
 or review states. Both assessments move to `RESEARCH_FIRST`; P43 becomes the
 next company to code. The web batch card reports live field counts and retains
 the original selection rank. All canonical coding and human-review gates remain.
+
+
+## P43 / P13: scope inspection after retrieval
+
+The third ranked batch adds six numeric proposals and nine blank-valued research
+gaps per company. Own-site scope is required: customer product savings are not
+site measures; a generic whitepaper is not installed AI/IoT or converter control;
+a product's temperature resistance or a curing lower bound is not a complete
+process temperature range. An offered service does not establish onsite furnace
+ownership. Research equipment and wastewater chemical savings are not automatically
+energy-transition investments.
+
+P13's direct current ISO 14001 certificate is factual research evidence, not a
+human approval. The proposal uses the partial/other-system anchor because EnMS
+maturity is unresolved. A climate-neutrality target dated 2025 supports only the
+published dated ambition; its achieved status remains UNKNOWN. P43's ISO 9001
+quality claim does not substitute for energy/environmental management evidence.
