@@ -185,13 +185,21 @@ The current proposal-aware score-work queue therefore contains:
 - 5 P19 dimension packages `RESEARCH_NEEDED`;
 - 4 P12 dimension packages `AWAITING_HUMAN_REVIEW`;
 - 1 P12 dimension package `RESEARCH_NEEDED`;
-- 425 dimension packages `READY_TO_CODE`.
+- 5 P16 dimension packages `RESEARCH_NEEDED`;
+- 420 dimension packages `READY_TO_CODE`.
 
 P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
 score fields have review-pending numeric proposals, while
 `thermal_storage_flex_score` remains `NEEDS_RESEARCH`. The numeric proposals
 sum to 50, but no total SME-ETOI score is calculated while that field remains
 unresolved.
+
+P16 Sembach GmbH & Co. KG demonstrates a high-confidence company record with
+substantial field-level scoring uncertainty. Four fields have numeric
+review-pending proposals, while eleven fields remain `NEEDS_RESEARCH`,
+primarily because the current furnace energy carrier, electrical topology,
+drive/control evidence and concrete recent transition measures are not yet
+publicly established.
 
 Current generated workload:
 
