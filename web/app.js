@@ -276,7 +276,7 @@ function renderResearch(){
   tasks.sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
   if(q) tasks=tasks.filter(t=>[t.legal_entity,t.opportunity_type,t.research_question].join(" ").toLowerCase().includes(q));
   $("#researchRows").innerHTML=tasks.map(t=>'<tr data-id="'+esc(t.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.legal_entity)+'</strong></td><td>'+esc(titleCase(t.opportunity_type))+'</td><td style="white-space:normal;min-width:420px">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.decision_impact)+'</td><td>'+esc(t.task_status||"OPEN")+'</td></tr>').join("");
-  $$("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>{state.selectedId=r.dataset.id;showCompanies();renderTable();renderDetail()}));
+  $("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>openCompany(r.dataset.id)));
 }
 function renderFunctional(view){
   const root=$("#functionalContent");
@@ -443,6 +443,13 @@ function exportCsv(){
 }
 function bind(){
   $("#refreshCommand").addEventListener("click",()=>location.reload());
+  $("#waffleCommand").addEventListener("click",()=>$(".app").classList.toggle("nav-collapsed"));
+  $("#alertsCommand").addEventListener("click",()=>showNav("tasks"));
+  $("#createCommand").addEventListener("click",()=>showNav("notes"));
+  $("#settingsCommand").addEventListener("click",()=>{document.body.classList.toggle("dense-mode");showToast(document.body.classList.contains("dense-mode")?"Kompakte Darstellung aktiviert.":"Normale Darstellung aktiviert.")});
+  $("#helpCommand").addEventListener("click",()=>showNav("documentation"));
+  $("#moreCommand").addEventListener("click",()=>showNav("documentation"));
+  $("#filterButton").addEventListener("click",()=>{$("#focusFilter").focus();showToast("Fokusfilter geöffnet.")});
   $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;$("#tableSearch").value="";$("#globalSearch").value="";$("#focusFilter").value="";renderAll();showToast("Ansicht zurückgesetzt")});
   $("#exportCommand").addEventListener("click",exportCsv);
   $("#chartsCommand").addEventListener("click",()=>{$("#analyticsBand").scrollIntoView({behavior:"smooth"});showCompanies()});
