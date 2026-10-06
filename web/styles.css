@@ -877,6 +877,10 @@ h1 {
   font-size: 12px;
 }
 
+.error-state[hidden] {
+  display: none !important;
+}
+
 .error-state code {
   color: inherit;
 }
