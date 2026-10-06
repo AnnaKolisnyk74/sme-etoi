@@ -316,6 +316,18 @@ def pipeline_summary(
             row.get("workstream") == "NUMERIC_CODING"
             for row in (score_work or [])
         ),
+        "ready_to_code_tasks": sum(
+            row.get("task_status") == "READY_TO_CODE"
+            for row in (score_work or [])
+        ),
+        "research_needed_tasks": sum(
+            row.get("task_status") == "RESEARCH_NEEDED"
+            for row in (score_work or [])
+        ),
+        "awaiting_human_review_tasks": sum(
+            row.get("task_status") == "AWAITING_HUMAN_REVIEW"
+            for row in (score_work or [])
+        ),
         "double_code_conflicts": conflict_count,
     }
 
@@ -409,7 +421,10 @@ def main() -> int:
         f"{summary['score_readiness_rows']} score-readiness rows, "
         f"{summary['final_score_ready']} final-score-ready companies, "
         f"{summary['score_work_tasks']} score-work tasks, "
-        f"{summary['numeric_coding_tasks']} numeric-coding tasks."
+        f"{summary['numeric_coding_tasks']} numeric-coding tasks, "
+        f"{summary['ready_to_code_tasks']} ready to code, "
+        f"{summary['research_needed_tasks']} research needed, "
+        f"{summary['awaiting_human_review_tasks']} awaiting human review."
     )
     if summary["double_code_conflicts"] is not None:
         print(f"Open double-code conflicts: {summary['double_code_conflicts']}")
