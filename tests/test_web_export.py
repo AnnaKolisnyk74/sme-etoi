@@ -65,5 +65,35 @@ class WebExportTests(unittest.TestCase):
         self.assertNotIn("cdn.", index.lower())
 
 
+    def test_sidebar_navigation_has_real_view_handlers(self):
+        index = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+        app = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+        expected_views = {
+            "home",
+            "recent",
+            "pinned",
+            "dashboard",
+            "tasks",
+            "notes",
+            "companies",
+            "research",
+            "opportunities",
+            "analysis",
+            "market",
+            "regions",
+            "sectors",
+            "technologies",
+            "methodology",
+            "documentation",
+        }
+        for view in expected_views:
+            self.assertIn(f'data-nav="{view}"', index)
+        for functional_view in expected_views - {"dashboard", "companies", "research"}:
+            self.assertIn(f'view==="{functional_view}"', app)
+        self.assertIn("function showNav(view)", app)
+        self.assertIn("localStorage", app)
+
+
+
 if __name__ == "__main__":
     unittest.main()

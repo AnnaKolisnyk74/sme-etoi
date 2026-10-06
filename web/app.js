@@ -8,7 +8,8 @@ const state={
   scope:"all",
   detailTab:"overview",
   researchQuery:"",
-  sortMode:"name"
+  sortMode:"name",
+  activeNav:"companies"
 };
 const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
@@ -67,6 +68,53 @@ function isoCell(c){
   return '<span class="iso-no">?</span>';
 }
 function topTask(c){return (c.research_tasks||[]).slice().sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999))[0]||null}
+function storageGet(key,fallback){
+  try{const value=localStorage.getItem(key);return value?JSON.parse(value):fallback}catch(_){return fallback}
+}
+function storageSet(key,value){
+  try{localStorage.setItem(key,JSON.stringify(value))}catch(_){}
+}
+function recentIds(){return storageGet("sme-etoi-recent",[])}
+function pinnedIds(){return storageGet("sme-etoi-pinned",[])}
+function notesMap(){return storageGet("sme-etoi-notes",{})}
+function markRecent(id){
+  if(!id)return;
+  const next=[id,...recentIds().filter(x=>x!==id)].slice(0,20);
+  storageSet("sme-etoi-recent",next);
+}
+function togglePinned(id){
+  const current=pinnedIds();
+  const next=current.includes(id)?current.filter(x=>x!==id):[id,...current];
+  storageSet("sme-etoi-pinned",next);
+  return next.includes(id);
+}
+function companyById(id){return state.data?.companies?.find(c=>c.company_id===id)||null}
+function openCompany(id){
+  if(!companyById(id))return;
+  state.selectedId=id;markRecent(id);state.detailTab="overview";
+  setActiveNav("companies");showCompanies();renderTable();renderDetail();
+}
+function setActiveNav(view){
+  state.activeNav=view;
+  $(".nav-row").forEach(x=>x.classList.toggle("active",x.dataset.nav===view));
+}
+function setPageChrome(title,showTabs){
+  const h=$(".page-title-line h1");if(h)h.textContent=title;
+  const tabs=$(".tabs");if(tabs)tabs.hidden=!showTabs;
+}
+function genericTable(headers,rows){
+  return '<div class="functional-table-wrap"><table class="entity-table"><thead><tr>'+
+    headers.map(h=>'<th>'+esc(h)+'</th>').join("")+
+    '</tr></thead><tbody>'+rows.join("")+'</tbody></table></div>';
+}
+function aggregateBy(items,keyFn){
+  const map=new Map();
+  items.forEach(item=>{const key=keyFn(item)||"Unbekannt";if(!map.has(key))map.set(key,[]);map.get(key).push(item)});
+  return map;
+}
+function bindFunctionalCompanyRows(){
+  $("#functionalContent [data-company-id]").forEach(row=>row.addEventListener("click",()=>openCompany(row.dataset.companyId)));
+}
 function companies(){
   let rows=state.data.companies.slice();
   const q=state.query.trim().toLowerCase();
@@ -150,7 +198,7 @@ function renderTable(){
   $("#pagerText").textContent=(all.length?start+1:0)+" - "+Math.min(start+state.pageSize,all.length)+" von "+all.length;
   $("#pageLabel").textContent="Seite "+state.page+" / "+pages;
   $("#prevPage").disabled=state.page<=1;$("#nextPage").disabled=state.page>=pages;
-  $$("#companyRows tr[data-id]").forEach(row=>row.addEventListener("click",()=>{state.selectedId=row.dataset.id;renderTable();renderDetail()}));
+  $("#companyRows tr[data-id]").forEach(row=>row.addEventListener("click",()=>{state.selectedId=row.dataset.id;markRecent(row.dataset.id);renderTable();renderDetail()}));
 }
 function techStrength(o){
   const l=(o.opportunity_level||o.priority||"").toUpperCase();
@@ -215,9 +263,11 @@ function renderDetail(){
       ((c.sources||[]).length?(c.sources||[]).map(s=>'<div class="source-item"><a href="'+esc(s.final_url||"#")+'" target="_blank" rel="noopener">'+esc(s.document_title||s.publisher||s.source_id)+' ↗</a><div class="source-meta">'+esc([s.source_id,titleCase(s.source_type),s.publisher].filter(Boolean).join(" · "))+'</div></div>').join(""):'Keine Quellen im Register')+
       '</div></section></div>';
   }
+  const isPinned=pinnedIds().includes(c.company_id);
   $("#detailContent").innerHTML=
-    '<div class="detail-header"><div class="detail-title-row"><div class="company-icon">'+esc(initial)+'</div><div class="detail-title"><h2>'+esc(c.legal_entity)+'</h2><div class="sub">'+esc(c.company_id)+' · '+esc(sectorLabel(c))+'</div></div><button class="detail-close" id="detailClose">×</button></div>'+tabs+'</div>'+body;
+    '<div class="detail-header"><div class="detail-title-row"><div class="company-icon">'+esc(initial)+'</div><div class="detail-title"><h2>'+esc(c.legal_entity)+'</h2><div class="sub">'+esc(c.company_id)+' · '+esc(sectorLabel(c))+'</div></div><button class="detail-pin" id="detailPin" title="Anheften">'+(isPinned?"★":"☆")+'</button><button class="detail-close" id="detailClose">×</button></div>'+tabs+'</div>'+body;
   $$("[data-detail-tab]").forEach(b=>b.addEventListener("click",()=>{state.detailTab=b.dataset.detailTab;renderDetail()}));
+  $("#detailPin")?.addEventListener("click",()=>{const now=togglePinned(c.company_id);showToast(now?"Unternehmen angeheftet.":"Anheftung entfernt.");renderDetail()});
   $("#detailClose")?.addEventListener("click",()=>{state.selectedId=null;renderTable();renderDetail()});
 }
 function renderResearch(){
@@ -226,14 +276,161 @@ function renderResearch(){
   tasks.sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
   if(q) tasks=tasks.filter(t=>[t.legal_entity,t.opportunity_type,t.research_question].join(" ").toLowerCase().includes(q));
   $("#researchRows").innerHTML=tasks.map(t=>'<tr data-id="'+esc(t.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.legal_entity)+'</strong></td><td>'+esc(titleCase(t.opportunity_type))+'</td><td style="white-space:normal;min-width:420px">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.decision_impact)+'</td><td>'+esc(t.task_status||"OPEN")+'</td></tr>').join("");
-  $$("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>{state.selectedId=r.dataset.id;showCompanies();renderTable();renderDetail()}));
+  $("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>openCompany(r.dataset.id)));
+}
+function renderFunctional(view){
+  const root=$("#functionalContent");
+  const title=$("#functionalTitle");
+  const sub=$("#functionalSubtitle");
+  const kicker=$("#functionalKicker");
+  const actions=$("#functionalActions");
+  const all=state.data.companies;
+  kicker.textContent="SME-ETOI";
+  actions.innerHTML="";
+
+  if(view==="home"){
+    title.textContent="Startseite";
+    sub.textContent="Arbeitsübersicht über Zielunternehmen, offene Research-Fragen und aktuelle persönliche Arbeitslisten.";
+    const tasks=all.flatMap(c=>c.research_tasks||[]);
+    const recent=recentIds().map(companyById).filter(Boolean).slice(0,5);
+    const top=all.slice().sort((a,b)=>priority(a).localeCompare(priority(b))||((b.opportunities||[]).length-(a.opportunities||[]).length)).slice(0,5);
+    root.innerHTML=
+      '<div class="functional-kpis">'+
+        '<div class="functional-kpi"><span>Zielunternehmen</span><strong>'+all.length+'</strong></div>'+
+        '<div class="functional-kpi"><span>Opportunity Signale</span><strong>'+all.reduce((s,c)=>s+(c.opportunities||[]).length,0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Research Tasks</span><strong>'+tasks.length+'</strong></div>'+
+        '<div class="functional-kpi"><span>Eligibility offen</span><strong>'+all.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING").length+'</strong></div>'+
+      '</div>'+
+      '<div class="functional-two-col">'+
+        '<section class="functional-card"><h3>Zuletzt geöffnet</h3>'+(recent.length?genericTable(["Unternehmen","Branche","Priorität"],recent.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(sectorLabel(c))+'</td><td>'+priority(c)+'</td></tr>')):'<p class="functional-empty">Noch keine Firmen geöffnet.</p>')+'</section>'+
+        '<section class="functional-card"><h3>Top Potenzial</h3>'+genericTable(["Unternehmen","Signale","Priorität"],top.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunities||[]).length+'</td><td>'+priority(c)+'</td></tr>'))+'</section>'+
+      '</div>';
+    bindFunctionalCompanyRows();return;
+  }
+
+  if(view==="recent"||view==="pinned"){
+    const ids=view==="recent"?recentIds():pinnedIds();
+    const rows=ids.map(companyById).filter(Boolean);
+    title.textContent=view==="recent"?"Letzte":"Angeheftet";
+    sub.textContent=view==="recent"?"Zuletzt geöffnete Unternehmen auf diesem Gerät.":"Deine lokal angehefteten Unternehmen.";
+    root.innerHTML=rows.length?genericTable(["Unternehmen","Branche","Region","Priorität","Tasks"],rows.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(sectorLabel(c))+'</td><td>'+esc(c.state||"—")+'</td><td>'+priority(c)+'</td><td>'+(c.research_tasks||[]).length+'</td></tr>')):'<div class="functional-empty">'+(view==="recent"?"Noch keine Firmen geöffnet.":"Noch keine Firmen angeheftet. Öffne eine Firma und nutze ☆ im Detailpanel.")+'</div>';
+    bindFunctionalCompanyRows();return;
+  }
+
+  if(view==="tasks"){
+    title.textContent="Aufgaben";
+    sub.textContent="Arbeitsliste aus der Research Queue, sortiert nach Research Rank.";
+    const tasks=all.flatMap(c=>(c.research_tasks||[]).map(t=>({...t,company:c}))).sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
+    root.innerHTML=genericTable(["Rang","Unternehmen","Aufgabe","Priorität","Status"],tasks.map(t=>'<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td class="wrap-cell">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.task_status||"OPEN")+'</td></tr>'));
+    bindFunctionalCompanyRows();return;
+  }
+
+  if(view==="notes"){
+    title.textContent="Notizen";
+    sub.textContent="Lokale Arbeitsnotizen je Unternehmen. Sie werden nur in diesem Browser gespeichert und nicht ins Repository geschrieben.";
+    const notes=notesMap();
+    const options=all.slice().sort((a,b)=>a.legal_entity.localeCompare(b.legal_entity)).map(c=>'<option value="'+esc(c.company_id)+'">'+esc(c.legal_entity)+'</option>').join("");
+    const noted=Object.entries(notes).map(([id,text])=>({company:companyById(id),text})).filter(x=>x.company&&x.text);
+    root.innerHTML=
+      '<section class="functional-card note-editor"><label>Unternehmen<select id="noteCompany"><option value="">Bitte wählen…</option>'+options+'</select></label><label>Notiz<textarea id="noteText" rows="7" placeholder="Eigene Arbeitsnotiz…"></textarea></label><div class="note-actions"><button id="saveNote" class="primary-action">Notiz speichern</button><button id="deleteNote">Notiz löschen</button></div></section>'+
+      '<section class="functional-card"><h3>Gespeicherte Notizen</h3><div id="savedNotes">'+(noted.length?noted.map(x=>'<article class="note-item" data-company-id="'+esc(x.company.company_id)+'"><strong>'+esc(x.company.legal_entity)+'</strong><p>'+esc(x.text)+'</p></article>').join(""):'<p class="functional-empty">Noch keine Notizen gespeichert.</p>')+'</div></section>';
+    const select=$("#noteCompany"),textarea=$("#noteText");
+    select.addEventListener("change",()=>{textarea.value=notesMap()[select.value]||""});
+    $("#saveNote").addEventListener("click",()=>{if(!select.value){showToast("Bitte zuerst ein Unternehmen wählen.");return}const m=notesMap();m[select.value]=textarea.value.trim();storageSet("sme-etoi-notes",m);showToast("Notiz gespeichert.");renderFunctional("notes")});
+    $("#deleteNote").addEventListener("click",()=>{if(!select.value)return;const m=notesMap();delete m[select.value];storageSet("sme-etoi-notes",m);showToast("Notiz gelöscht.");renderFunctional("notes")});
+    $(".note-item[data-company-id]").forEach(x=>x.addEventListener("click",()=>openCompany(x.dataset.companyId)));return;
+  }
+
+  if(view==="opportunities"){
+    title.textContent="Opportunities";
+    sub.textContent="Alle vom Opportunity Engine abgeleiteten technischen und kommerziellen Signale.";
+    const rows=all.flatMap(c=>(c.opportunities||[]).map(o=>({company:c,...o}))).sort((a,b)=>a.company.legal_entity.localeCompare(b.company.legal_entity)||a.opportunity_type.localeCompare(b.opportunity_type));
+    root.innerHTML=genericTable(["Unternehmen","Technologie","Level","Commercial Status","Actionability","Confidence","Why Now"],rows.map(o=>'<tr data-company-id="'+esc(o.company.company_id)+'"><td><strong>'+esc(o.company.legal_entity)+'</strong></td><td>'+esc(titleCase(o.opportunity_type))+'</td><td>'+esc(o.opportunity_level||"—")+'</td><td>'+esc(titleCase(o.commercial_status))+'</td><td>'+esc(titleCase(o.actionability_status))+'</td><td>'+esc(o.confidence||"—")+'</td><td class="wrap-cell">'+esc(o.why_now||"—")+'</td></tr>'));
+    bindFunctionalCompanyRows();return;
+  }
+
+  if(view==="analysis"){
+    title.textContent="ETOI Analyse";
+    sub.textContent="Unternehmenssicht auf Scores, Opportunity-Signale und Evidenz. Explizite Gesamtscores werden nur angezeigt, wenn sie tatsächlich berechnet wurden.";
+    const rows=all.slice().sort((a,b)=>(b.opportunity_score??-1)-(a.opportunity_score??-1)||priority(a).localeCompare(priority(b)));
+    root.innerHTML=genericTable(["Unternehmen","ETOI Score","Band","Priorität","Signale","Confidence","Eligibility"],rows.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunity_score??"—")+'</td><td>'+esc(c.opportunity_band||"—")+'</td><td>'+priority(c)+'</td><td>'+(c.opportunities||[]).length+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(titleCase(eligibility(c)))+'</td></tr>'));
+    bindFunctionalCompanyRows();return;
+  }
+
+  if(view==="market"||view==="sectors"){
+    const groups=aggregateBy(all,c=>view==="market"?sectorLabel(c):(c.nace_label||sectorLabel(c)));
+    const rows=Array.from(groups.entries()).map(([name,list])=>({name,list,opps:list.reduce((s,c)=>s+(c.opportunities||[]).length,0),tasks:list.reduce((s,c)=>s+(c.research_tasks||[]).length,0),high:list.filter(c=>priority(c)==="A").length,pending:list.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING").length})).sort((a,b)=>b.list.length-a.list.length);
+    title.textContent=view==="market"?"Marktanalyse":"Branchen";
+    sub.textContent=view==="market"?"Aggregierte Sicht nach SME-ETOI-Prozess-/Branchencluster.":"Branchenverteilung auf Basis der vorhandenen NACE-/Unternehmensdaten.";
+    root.innerHTML=genericTable([view==="market"?"Cluster":"Branche","Unternehmen","High Priority","Eligibility offen","Opportunity Signale","Research Tasks"],rows.map(r=>'<tr><td><strong>'+esc(r.name)+'</strong></td><td>'+r.list.length+'</td><td>'+r.high+'</td><td>'+r.pending+'</td><td>'+r.opps+'</td><td>'+r.tasks+'</td></tr>'));return;
+  }
+
+  if(view==="regions"){
+    title.textContent="Regionen";
+    sub.textContent="Verteilung und Opportunity-Dichte nach Bundesland.";
+    const groups=aggregateBy(all,c=>c.state||"Unbekannt");
+    const rows=Array.from(groups.entries()).map(([name,list])=>({name,list,opps:list.reduce((s,c)=>s+(c.opportunities||[]).length,0),tasks:list.reduce((s,c)=>s+(c.research_tasks||[]).length,0),high:list.filter(c=>priority(c)==="A").length})).sort((a,b)=>b.list.length-a.list.length);
+    root.innerHTML=genericTable(["Region","Unternehmen","High Priority","Opportunity Signale","Research Tasks"],rows.map(r=>'<tr><td><strong>'+esc(r.name)+'</strong></td><td>'+r.list.length+'</td><td>'+r.high+'</td><td>'+r.opps+'</td><td>'+r.tasks+'</td></tr>'));return;
+  }
+
+  if(view==="technologies"){
+    title.textContent="Technologien";
+    sub.textContent="Technologieportfolio aus den Opportunity-Engine-Ausgaben.";
+    const allOpps=all.flatMap(c=>c.opportunities||[]);
+    const groups=aggregateBy(allOpps,o=>o.opportunity_type);
+    const rows=Array.from(groups.entries()).map(([name,list])=>({name,total:list.length,high:list.filter(o=>(o.opportunity_level||o.priority)==="HIGH").length,medium:list.filter(o=>(o.opportunity_level||o.priority)==="MEDIUM").length,research:list.filter(o=>o.commercial_status==="RESEARCH_REQUIRED").length})).sort((a,b)=>b.total-a.total);
+    root.innerHTML=genericTable(["Technologie","Signale","High","Medium","Research Required"],rows.map(r=>'<tr><td><strong>'+esc(titleCase(r.name))+'</strong></td><td>'+r.total+'</td><td>'+r.high+'</td><td>'+r.medium+'</td><td>'+r.research+'</td></tr>'));return;
+  }
+
+  if(view==="methodology"){
+    title.textContent="Methodik";
+    sub.textContent="Die zentralen Forschungsregeln, die das SME-ETOI-System erzwingt.";
+    root.innerHTML='<div class="functional-two-col">'+
+      '<section class="functional-card"><h3>Technical Relevance Engine</h3><p>Bewertet, welche Energielösungen aufgrund öffentlich belegter Prozesssignale technisch relevant sind.</p></section>'+
+      '<section class="functional-card"><h3>Commercial White Space</h3><p>Trennt technische Relevanz davon, was öffentlich bereits als implementiert belegt ist.</p></section>'+
+      '<section class="functional-card"><h3>Research Queue</h3><p>Priorisiert fehlende Fakten nach erwartetem Entscheidungswert. SME-Eligibility-Gates stehen vor Deployment-Recherche.</p></section>'+
+      '<section class="functional-card"><h3>Research Safeguard</h3><p><strong>UNKNOWN bleibt UNKNOWN.</strong> Fehlende öffentliche Evidenz ist kein Beweis für Nicht-Deployment oder White Space.</p></section>'+
+      '<section class="functional-card"><h3>Human Review Gate</h3><p>Research-Ergebnisse dürfen kanonische Firmendaten nicht still überschreiben. Bestätigte Änderungen brauchen Review und Canonical Update.</p></section>'+
+      '<section class="functional-card"><h3>Eligibility</h3><p>Technische Relevanz bleibt sichtbar, aber ungeklärte SME-/Gruppenstruktur blockiert die Actionability.</p></section>'+
+    '</div>';return;
+  }
+
+  if(view==="documentation"){
+    title.textContent="Dokumentation";
+    sub.textContent="Aktueller Projektaufbau und reproduzierbare Ausführung.";
+    root.innerHTML='<div class="functional-two-col">'+
+      '<section class="functional-card"><h3>Pipeline</h3><pre>python src/run_pipeline.py\npython src/run_pipeline.py --check-only</pre><p>QA → Opportunity Engine → Research Queue → Output Checks → Web Snapshot</p></section>'+
+      '<section class="functional-card"><h3>Web-App</h3><pre>python -m http.server 8000 --directory web</pre><p>Browser: http://localhost:8000</p></section>'+
+      '<section class="functional-card"><h3>Wichtige Dateien</h3><p><code>docs/product_architecture.md</code><br><code>data/company_intelligence.csv</code><br><code>outputs/opportunities.csv</code><br><code>outputs/research_queue.csv</code></p></section>'+
+      '<section class="functional-card"><h3>Current Pilot</h3><p>'+state.data.meta.company_count+' Unternehmen · '+state.data.meta.opportunity_count+' Opportunity-Zeilen · '+state.data.meta.research_task_count+' Research Tasks · '+state.data.meta.eligibility_gate_count+' Eligibility Gates</p></section>'+
+    '</div>';return;
+  }
+}
+function showFunctional(view){
+  $("#analyticsBand").hidden=true;
+  $(".master-detail").hidden=true;
+  $("#researchPage").hidden=true;
+  $("#functionalPage").hidden=false;
+  setPageChrome(view==="home"?"Startseite":titleCase(view),false);
+  renderFunctional(view);
+}
+function showNav(view){
+  setActiveNav(view);
+  if(view==="companies"||view==="dashboard"){
+    setPageChrome(view==="dashboard"?"Dashboard":"Zielunternehmen",true);
+    showCompanies();renderAll();if(view==="dashboard")$("#analyticsBand").scrollIntoView({behavior:"smooth"});return;
+  }
+  if(view==="research"){
+    setPageChrome("Research Queue",false);showResearch();return;
+  }
+  showFunctional(view);
 }
 function renderAll(){renderMetrics();renderRegionChart();renderPriority();renderTable();renderDetail();renderResearch()}
 function showCompanies(){
-  $("#analyticsBand").hidden=false;$(".master-detail").hidden=false;$("#researchPage").hidden=true;
+  $("#functionalPage").hidden=true;$("#analyticsBand").hidden=false;$(".master-detail").hidden=false;$("#researchPage").hidden=true;
 }
 function showResearch(){
-  $("#analyticsBand").hidden=true;$(".master-detail").hidden=true;$("#researchPage").hidden=false;renderResearch();
+  $("#functionalPage").hidden=true;$("#analyticsBand").hidden=true;$(".master-detail").hidden=true;$("#researchPage").hidden=false;renderResearch();
 }
 function exportCsv(){
   const rows=companies(), header=["company_id","legal_entity","sector","region","score","priority","confidence","status"];
@@ -246,11 +443,17 @@ function exportCsv(){
 }
 function bind(){
   $("#refreshCommand").addEventListener("click",()=>location.reload());
+  $("#waffleCommand").addEventListener("click",()=>$(".app").classList.toggle("nav-collapsed"));
+  $("#alertsCommand").addEventListener("click",()=>showNav("tasks"));
+  $("#createCommand").addEventListener("click",()=>showNav("notes"));
+  $("#settingsCommand").addEventListener("click",()=>{document.body.classList.toggle("dense-mode");showToast(document.body.classList.contains("dense-mode")?"Kompakte Darstellung aktiviert.":"Normale Darstellung aktiviert.")});
+  $("#helpCommand").addEventListener("click",()=>showNav("documentation"));
+  $("#moreCommand").addEventListener("click",()=>showNav("documentation"));
+  $("#filterButton").addEventListener("click",()=>{$("#focusFilter").focus();showToast("Fokusfilter geöffnet.")});
   $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;$("#tableSearch").value="";$("#globalSearch").value="";$("#focusFilter").value="";renderAll();showToast("Ansicht zurückgesetzt")});
   $("#exportCommand").addEventListener("click",exportCsv);
   $("#chartsCommand").addEventListener("click",()=>{$("#analyticsBand").scrollIntoView({behavior:"smooth"});showCompanies()});
-  $("#methodCommand").addEventListener("click",()=>showToast("Methodik ist im Repository unter docs/product_architecture.md dokumentiert."));
-  $("#methodNav").addEventListener("click",()=>showToast("Methodik ist im Repository unter docs/product_architecture.md dokumentiert."));
+  $("#methodCommand").addEventListener("click",()=>showNav("methodology"));
   $("#backCommand").addEventListener("click",()=>history.back());
   $("#viewModeSelect").addEventListener("change",e=>{$("#analyticsBand").hidden=e.target.value==="table"});
   $("#focusFilter").addEventListener("change",e=>{state.focus=e.target.value;state.page=1;renderAll()});
@@ -264,18 +467,14 @@ function bind(){
     state.scope=b.dataset.scope;state.page=1;
     if(state.scope==="research") showResearch(); else {showCompanies();renderAll()}
   }));
-  $$("[data-nav]").forEach(b=>b.addEventListener("click",()=>{
-    $$(".nav-row").forEach(x=>x.classList.remove("active"));b.classList.add("active");
-    const v=b.dataset.nav;if(v==="research"){showResearch();return}
-    showCompanies();if(v==="analysis"||v==="dashboard") $("#analyticsBand").scrollIntoView({behavior:"smooth"});
-  }));
+  $("[data-nav]").forEach(b=>b.addEventListener("click",()=>showNav(b.dataset.nav)));
 }
 async function init(){
   bind();
   try{
     const r=await fetch("data/sme_etoi.json",{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);
     state.data=await r.json();
-    renderAll();
+    setPageChrome("Zielunternehmen",true);renderAll();
   }catch(e){console.error(e);$("#errorState").hidden=false}
 }
 init();

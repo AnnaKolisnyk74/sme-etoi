@@ -10,7 +10,7 @@
 <body>
   <div class="app">
     <header class="appbar">
-      <button class="waffle" aria-label="App-Menü"><span>⠿</span></button>
+      <button class="waffle" id="waffleCommand" aria-label="Navigation ein-/ausklappen"><span>⠿</span></button>
       <div class="suite">SME ETOI</div>
       <div class="appbar-divider"></div>
       <div class="appname">Industrial Energy Intelligence</div>
@@ -19,10 +19,10 @@
         <input id="globalSearch" type="search" placeholder="Suchen">
       </label>
       <div class="appbar-actions">
-        <button title="Hinweise">♧</button>
-        <button title="Neu">＋</button>
-        <button title="Einstellungen">⚙</button>
-        <button title="Hilfe">?</button>
+        <button id="alertsCommand" title="Hinweise">♧</button>
+        <button id="createCommand" title="Neue Notiz">＋</button>
+        <button id="settingsCommand" title="Darstellung">⚙</button>
+        <button id="helpCommand" title="Dokumentation">?</button>
         <div class="avatar">AK</div>
       </div>
     </header>
@@ -35,7 +35,7 @@
         <button id="exportCommand">▣ CSV exportieren</button>
         <button id="chartsCommand">▥ Diagramme anzeigen</button>
         <button id="methodCommand">▤ Methodik</button>
-        <button class="more-command">•••</button>
+        <button class="more-command" id="moreCommand">•••</button>
       </div>
       <div class="commandbar-right">
         <span>Ansicht</span>
@@ -49,30 +49,30 @@
     <aside class="leftnav">
       <button class="nav-toggle">☰</button>
       <nav>
-        <button class="nav-row"><span>⌂</span>Startseite</button>
-        <button class="nav-row"><span>◷</span>Letzte</button>
-        <button class="nav-row"><span>☆</span>Angeheftet</button>
+        <button class="nav-row" data-nav="home"><span>⌂</span>Startseite</button>
+        <button class="nav-row" data-nav="recent"><span>◷</span>Letzte</button>
+        <button class="nav-row" data-nav="pinned"><span>☆</span>Angeheftet</button>
 
         <div class="nav-group">Mein Bereich</div>
         <button class="nav-row" data-nav="dashboard"><span>▦</span>Dashboard</button>
-        <button class="nav-row"><span>☑</span>Aufgaben</button>
-        <button class="nav-row"><span>▤</span>Notizen</button>
+        <button class="nav-row" data-nav="tasks"><span>☑</span>Aufgaben</button>
+        <button class="nav-row" data-nav="notes"><span>▤</span>Notizen</button>
 
         <div class="nav-group">Zielunternehmen</div>
         <button class="nav-row active" data-nav="companies"><span>♟</span>Zielunternehmen</button>
         <button class="nav-row" data-nav="research"><span>⌕</span>Research Queue</button>
-        <button class="nav-row"><span>◇</span>Opportunities</button>
+        <button class="nav-row" data-nav="opportunities"><span>◇</span>Opportunities</button>
 
         <div class="nav-group">Analyse</div>
         <button class="nav-row" data-nav="analysis"><span>▥</span>ETOI Analyse</button>
-        <button class="nav-row"><span>▧</span>Marktanalyse</button>
-        <button class="nav-row"><span>◎</span>Regionen</button>
-        <button class="nav-row"><span>⌘</span>Branchen</button>
-        <button class="nav-row"><span>◉</span>Technologien</button>
+        <button class="nav-row" data-nav="market"><span>▧</span>Marktanalyse</button>
+        <button class="nav-row" data-nav="regions"><span>◎</span>Regionen</button>
+        <button class="nav-row" data-nav="sectors"><span>⌘</span>Branchen</button>
+        <button class="nav-row" data-nav="technologies"><span>◉</span>Technologien</button>
 
         <div class="nav-group">Projekt</div>
-        <button class="nav-row" id="methodNav"><span>▣</span>Methodik</button>
-        <button class="nav-row"><span>▤</span>Dokumentation</button>
+        <button class="nav-row" id="methodNav" data-nav="methodology"><span>▣</span>Methodik</button>
+        <button class="nav-row" data-nav="documentation"><span>▤</span>Dokumentation</button>
       </nav>
     </aside>
 
@@ -165,6 +165,18 @@
         <aside class="detail-panel">
           <div id="detailContent" class="detail-content"></div>
         </aside>
+      </section>
+
+      <section id="functionalPage" class="functional-page" hidden>
+        <div class="functional-header">
+          <div>
+            <div id="functionalKicker" class="secondary-kicker">SME-ETOI</div>
+            <h2 id="functionalTitle">Ansicht</h2>
+            <p id="functionalSubtitle" class="functional-subtitle"></p>
+          </div>
+          <div id="functionalActions" class="functional-actions"></div>
+        </div>
+        <div id="functionalContent" class="functional-content"></div>
       </section>
 
       <section id="researchPage" class="secondary-page" hidden>
