@@ -176,6 +176,68 @@ class ResearchQueueTests(unittest.TestCase):
         self.assertEqual(task["last_research_status"], "PARTIAL_EVIDENCE")
         self.assertIn("Historical energy-management", task["last_finding"])
 
+
+    def test_unresolved_group_check_creates_sme_eligibility_gate(self):
+        companies = self.companies + [
+            {
+                "company_id": "P40",
+                "legal_entity": "OFTECH Oberflächentechnik GmbH & Co. KG",
+                "sme_status": "probable",
+                "group_check": "unknown",
+                "evidence_confidence": "C",
+                "source_urls": "https://example.com/oftech",
+            }
+        ]
+        queue = generate_research_queue(companies, self.rows)
+        task = next(task for task in queue if task["opportunity_type"] == "sme_eligibility")
+        self.assertEqual(task["company_id"], "P40")
+        self.assertEqual(task["queue_rule_id"], "RQ00_SME_ELIGIBILITY_GATE")
+        self.assertEqual(task["research_priority"], "HIGH")
+        self.assertEqual(task["decision_impact"], "HIGH")
+        self.assertEqual(task["current_value"], "UNRESOLVED")
+        self.assertEqual(task["research_rank"], "1")
+
+    def test_resolved_group_check_does_not_create_sme_eligibility_gate(self):
+        companies = self.companies + [
+            {
+                "company_id": "P24",
+                "legal_entity": "H&K Müller GmbH & Co. KG",
+                "sme_status": "probable",
+                "group_check": "independent",
+                "evidence_confidence": "A",
+            }
+        ]
+        queue = generate_research_queue(companies, self.rows)
+        self.assertNotIn("sme_eligibility", {task["opportunity_type"] for task in queue})
+
+    def test_unresolved_sme_result_creates_recheck(self):
+        companies = self.companies + [
+            {
+                "company_id": "P67",
+                "legal_entity": "DOCERAM GmbH",
+                "sme_status": "probable",
+                "group_check": "linked_enterprise_check",
+                "evidence_confidence": "B",
+            }
+        ]
+        results = [
+            {
+                "company_id": "P67",
+                "opportunity_type": "sme_eligibility",
+                "missing_fact": "sme_eligibility",
+                "research_status": "PARTIAL_EVIDENCE",
+                "resulting_value": "UNRESOLVED",
+                "finding_summary": "Group headcount is known; financial aggregation remains open.",
+                "checked_date": "2026-10-06",
+                "next_review_date": "2027-01-06",
+            }
+        ]
+        queue = generate_research_queue(companies, self.rows, results)
+        task = next(task for task in queue if task["company_id"] == "P67")
+        self.assertEqual(task["task_status"], "RECHECK_DUE")
+        self.assertEqual(task["last_research_status"], "PARTIAL_EVIDENCE")
+
+
     def test_latest_research_result_wins_deterministically(self):
         older = {
             "company_id": "P10",
