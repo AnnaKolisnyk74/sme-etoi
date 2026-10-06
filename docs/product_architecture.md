@@ -234,9 +234,13 @@ For the current 100-company snapshot this produces:
 - 12 eligibility-gate work items;
 - 440 numeric-coding packages;
 - 452 work items in total;
-- 5 P04 packages awaiting human review;
-- 5 P19 packages requiring additional field-level research;
-- 430 packages still ready for first-pass coding.
+- 9 packages awaiting human review;
+- 6 packages requiring additional field-level research;
+- 425 packages still ready for first-pass coding.
+
+The mixed state is intentional. P12, for example, has four dimensions fully
+covered by review-pending proposals while load-flexibility remains
+`RESEARCH_NEEDED` because thermal-storage evidence is insufficient.
 
 ### 8. Research Queue
 
