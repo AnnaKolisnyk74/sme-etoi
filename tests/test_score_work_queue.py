@@ -106,9 +106,10 @@ class ScoreWorkQueueTests(unittest.TestCase):
         ]
         p04 = [row for row in numeric if row["company_id"] == "P04"]
         p19 = [row for row in numeric if row["company_id"] == "P19"]
+        p12 = [row for row in numeric if row["company_id"] == "P12"]
         remaining = [
             row for row in numeric
-            if row["company_id"] not in {"P04", "P19"}
+            if row["company_id"] not in {"P04", "P19", "P12"}
         ]
 
         self.assertEqual(len(p04), 5)
@@ -132,7 +133,23 @@ class ScoreWorkQueueTests(unittest.TestCase):
             all(row["research_gap_fields"] for row in p19)
         )
 
-        self.assertEqual(len(remaining), 430)
+        self.assertEqual(len(p12), 5)
+        self.assertEqual(
+            sum(row["task_status"] == "AWAITING_HUMAN_REVIEW" for row in p12),
+            4,
+        )
+        self.assertEqual(
+            sum(row["task_status"] == "RESEARCH_NEEDED" for row in p12),
+            1,
+        )
+        p12_flex = next(
+            row for row in p12
+            if row["dimension"] == "load_flexibility_potential"
+        )
+        self.assertEqual(p12_flex["task_status"], "RESEARCH_NEEDED")
+        self.assertIn("thermal_storage_flex_score", p12_flex["research_gap_fields"])
+
+        self.assertEqual(len(remaining), 425)
         self.assertEqual(
             {row["task_status"] for row in remaining},
             {"READY_TO_CODE"},
