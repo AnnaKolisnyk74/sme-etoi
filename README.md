@@ -183,7 +183,15 @@ The current proposal-aware score-work queue therefore contains:
 - 12 upstream eligibility gates;
 - 5 P04 dimension packages `AWAITING_HUMAN_REVIEW`;
 - 5 P19 dimension packages `RESEARCH_NEEDED`;
-- 430 dimension packages `READY_TO_CODE`.
+- 4 P12 dimension packages `AWAITING_HUMAN_REVIEW`;
+- 1 P12 dimension package `RESEARCH_NEEDED`;
+- 425 dimension packages `READY_TO_CODE`.
+
+P12 Richard Henkel GmbH is the first mixed-state coding case: fourteen
+score fields have review-pending numeric proposals, while
+`thermal_storage_flex_score` remains `NEEDS_RESEARCH`. The numeric proposals
+sum to 50, but no total SME-ETOI score is calculated while that field remains
+unresolved.
 
 Current generated workload:
 
