@@ -10,6 +10,7 @@ import export_web_data
 import inter_rater_reliability
 import opportunity_engine
 import research_queue
+import score_readiness
 import validate_pilot
 
 
@@ -115,10 +116,76 @@ def validate_generated_outputs(
     return errors
 
 
+
+def build_score_readiness(
+    root: Path,
+    companies: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    return score_readiness.generate_score_readiness(
+        companies,
+        read_csv(root, "data/company_process_map.csv"),
+        read_csv(root, "evidence/certificate_register.csv"),
+        read_csv(root, "evidence/qa_review.csv"),
+        read_csv(root, "data/pilot_coded.csv"),
+        read_csv(root, "outputs/pilot_scored.csv"),
+    )
+
+
+def validate_score_readiness(
+    companies: list[dict[str, str]],
+    readiness: list[dict[str, str]],
+) -> list[str]:
+    errors: list[str] = []
+    company_ids = {row["company_id"] for row in companies}
+    readiness_ids = {row["company_id"] for row in readiness}
+
+    if readiness_ids != company_ids:
+        missing = sorted(company_ids - readiness_ids)
+        unexpected = sorted(readiness_ids - company_ids)
+        errors.append(
+            "score readiness differs from canonical sample: "
+            f"missing={missing}, unexpected={unexpected}"
+        )
+
+    unresolved_ids = {
+        row["company_id"]
+        for row in companies
+        if str(row.get("group_check", "")).strip().lower()
+        in score_readiness.UNRESOLVED_GROUP_CHECKS
+    }
+    blocked_ids = {
+        row["company_id"]
+        for row in readiness
+        if row.get("score_status") == "NOT_SCOREABLE_ELIGIBILITY"
+    }
+    if unresolved_ids != blocked_ids:
+        errors.append(
+            "unresolved SME/group cases do not match score-readiness eligibility blocks"
+        )
+
+    for row in readiness:
+        if row.get("score_status") == "FINAL_SCORE_READY":
+            if row.get("certificate_check_status") != "COMPLETE":
+                errors.append(
+                    f"{row['company_id']} is FINAL_SCORE_READY with incomplete certificate checks"
+                )
+            if row.get("numeric_coding_status") != "COMPLETE":
+                errors.append(
+                    f"{row['company_id']} is FINAL_SCORE_READY without complete numeric coding"
+                )
+            if row.get("independent_human_review_status") not in score_readiness.HUMAN_REVIEW_COMPLETE:
+                errors.append(
+                    f"{row['company_id']} is FINAL_SCORE_READY without completed independent human review"
+                )
+
+    return errors
+
+
 def pipeline_summary(
     companies: list[dict[str, str]],
     opportunities: list[dict[str, str]],
     queue: list[dict[str, str]],
+    readiness: list[dict[str, str]] | None = None,
     conflict_count: int | None = None,
 ) -> dict[str, int | None]:
     return {
@@ -132,6 +199,11 @@ def pipeline_summary(
         "eligibility_blocked_opportunities": sum(
             row.get("actionability_status") == "ELIGIBILITY_BLOCKED"
             for row in opportunities
+        ),
+        "score_readiness_rows": len(readiness or []),
+        "final_score_ready": sum(
+            row.get("score_status") == "FINAL_SCORE_READY"
+            for row in (readiness or [])
         ),
         "double_code_conflicts": conflict_count,
     }
@@ -148,7 +220,9 @@ def run_pipeline(
         raise ValueError("Preflight QA failed: " + "; ".join(preflight_errors))
 
     companies, opportunities, queue = build_outputs(root)
+    readiness = build_score_readiness(root, companies)
     generated_errors = validate_generated_outputs(companies, opportunities, queue)
+    generated_errors.extend(validate_score_readiness(companies, readiness))
     if generated_errors:
         raise ValueError("Generated-output QA failed: " + "; ".join(generated_errors))
 
@@ -156,6 +230,7 @@ def run_pipeline(
     if write_outputs:
         opportunity_engine.write_csv(root / "outputs/opportunities.csv", opportunities)
         research_queue.write_csv(root / "outputs/research_queue.csv", queue)
+        score_readiness.write_csv(root / "outputs/score_readiness.csv", readiness)
         if include_reliability:
             _, conflicts = inter_rater_reliability.run(root)
             conflict_count = len(conflicts)
@@ -169,6 +244,7 @@ def run_pipeline(
         companies,
         opportunities,
         queue,
+        readiness=readiness,
         conflict_count=conflict_count,
     )
 
@@ -210,7 +286,9 @@ def main() -> int:
         f"{summary['opportunities']} opportunities, "
         f"{summary['research_tasks']} research tasks, "
         f"{summary['eligibility_gates']} eligibility gates, "
-        f"{summary['eligibility_blocked_opportunities']} eligibility-blocked opportunity rows."
+        f"{summary['eligibility_blocked_opportunities']} eligibility-blocked opportunity rows, "
+        f"{summary['score_readiness_rows']} score-readiness rows, "
+        f"{summary['final_score_ready']} final-score-ready companies."
     )
     if summary["double_code_conflicts"] is not None:
         print(f"Open double-code conflicts: {summary['double_code_conflicts']}")
