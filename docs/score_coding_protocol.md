@@ -160,3 +160,18 @@ investments.
 
 This case prevents overall evidence confidence from being used as a shortcut
 for score-field evidence.
+
+## P05 fully covered proposal example
+
+P05 — Einbecker Brauhaus AG has all 15 score fields covered by numeric
+first-pass proposals.
+
+The strongest direct evidence includes brewing and thermal-process operations,
+refrigeration, PV, biogas CHP with absorption chilling, heat recovery, process
+control renewal, dated climate targets and planned electric clean-steam
+generation.
+
+The proposed anchors sum arithmetically to 59/100. This value remains a
+review artifact only. All five dimension packages stay
+`AWAITING_HUMAN_REVIEW` until a real reviewer approves or rejects the field
+proposals and a separate canonical update is performed.
