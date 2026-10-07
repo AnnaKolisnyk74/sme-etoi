@@ -290,3 +290,94 @@ There are 20 assessed companies, 148 review-pending numeric proposals and
 deployment column, confidence grade or human review record is changed; only
 the sourced ISO 14001 fact and public-evidence summaries are corrected.
 No proposal total or published SME-ETOI score is produced.
+
+
+## Frozen batch NBCC-2026-10-07-02
+
+Connected GitHub comparison confirmed main at
+`32efc59290f4bac3e2a818926de56d0ff777c41e` (merged PR #40).
+The existing v2 selector froze four companies before source enrichment,
+certificate correction, process-attribution correction or coding. Fixtures
+`source_register_before_nbcc040702.csv` and
+`company_process_map_before_nbcc040702.csv` preserve the selection state.
+
+| Rank | Company | Evidence / Process | QA | Gain | Verified distinct URLs | Coverage |
+| --- | --- | --- | --- | --- | ---: | --- |
+| 1 | P26 Barth Galvanik | B / B | PASS | MEDIUM | 2 | PROCESS |
+| 2 | P28 Berg Brauerei | B / B | PASS | MEDIUM | 2 | PROCESS |
+| 3 | P29 Meckatzer | B / B | PASS | MEDIUM | 2 | PROCESS |
+| 4 | P33 Gindele | B / B | PASS | MEDIUM | 2 | PROCESS |
+
+Each had 15 unassessed fields. All ranking factors tied; ID was only the
+final deterministic tie-breaker. P26's retained broken fair link is excluded
+from verified URL count. Four cases share the same QA/confidence documentary
+readiness, allowing a larger batch without changing the priority rules.
+The documentary gain proxy does not predict numeric yield or an opportunity
+score; the generic Gindele municipality source was corrected after freezing,
+not silently substituted into the historical ranking.
+
+| Company | Numeric proposals pending real human review | Blank-valued research fields |
+| --- | ---: | ---: |
+| P26 Barth Galvanik | 8 | 7 |
+| P28 Berg Brauerei | 10 | 5 |
+| P29 Meckatzer | 11 | 4 |
+| P33 Gindele | 6 | 9 |
+
+Barth's owned induction hardening and individual quality controls establish
+one thermal use case and clear control relevance. Actual furnace fuels,
+temperatures, load-shifting windows, new load and investment dates remain
+open; 600 HV is hardness, not temperature. Direct ISO 50001 and ISO 14001
+certificates establish current exact-holder validity. A misleading old 2024
+URL does not supersede the ISO 14001 PDF's actual 2027 validity.
+
+Berg's roughly 90 m3 ice-water buffer is explicitly produced at night for
+daytime cooling with peak relief. This supports one cold-buffer use case.
+The same article's suspect 90-deg-C ice-water statement is retained as an
+unresolved inconsistency: no silent correction to 9 deg C, invented capacity,
+process-heat fit or hot-store use. The dated April 2025 warehouse/PV opening
+supports one recent site investment. Local heat for associated buildings does
+not prove fossil-free brewery steam; the DEHOGA award is for hospitality,
+not a manufacturing-site EnMS. Five fields remain research gaps.
+
+Meckatzer's full 48-page report has a 2026 cover/validation, older 2024 prose
+and 2025 tables. The visually inspected status colours on printed p22 distinguish
+completed 2024 PV/NH3 replacement and 2025 KEG automation from partial/future
+fleet steps. Printed p41 is signed by the registered validator on 2026-06-19
+for DE-147-00005. Planned nonvalidated July 2027 and consolidated July 2028
+updates are due dates, not an asserted expiry. The signed registration number
+is used; a shortened later header is not substituted. Natural-gas steam/CHP,
+multiple motor applications, central control/166 meters and peak regulation
+are directly documented. Legacy vapour-compressor defect/repair is unresolved;
+no current operational heat-electrification route or thermal store is invented.
+The dated 2030 roadmap supports target coding, not target achievement.
+
+Gindele's own process and automation pages establish computer-controlled
+moulding, handling, camera inspection and ultrasonic welding. Closing force,
+animated zero counters and a sequence of assembly steps are not power,
+temperature, operating hours or load flexibility. ISO 14001 is direct and
+current through 2027-07-09; the SKZ issuer table's neighbouring ISO 50001 rows
+belong to other companies. The generic municipality URL is retained with
+CONTENT_REVIEW_REQUIRED; a named municipal profile corroborates the entity
+and process, and the process map now points to the own injection-moulding page.
+Environmental policy and historical 2017 automation do not establish concrete
+recent energy investments or an absent energy-technology portfolio.
+
+The actual investment window is 2021-10-07 through 2026-10-07. Official company,
+process, energy, report, download and certification sections plus exact-name
+public energy/target/certification searches were inspected. Full certificate
+PDFs and relevant report/table pages were rendered and visually checked.
+29 selected-company URLs were rechecked by GET, including 19 new URLs:
+28 retrievable and one retained fair-link 404 with its verified replacement.
+Complete inventory: 352 URLs across all 100 companies and excluded candidates.
+Availability remains separate from attribution, currency and human review.
+
+After this batch, the live queue is **320 READY_TO_CODE, 90 RESEARCH_NEEDED,
+30 AWAITING_HUMAN_REVIEW and 12 OPEN_GATE**. All four selected companies move
+to RESEARCH_FIRST. Company queue: 64 CODE_NOW, 21 RESEARCH_FIRST,
+three REVIEW_PROPOSALS and 12 ELIGIBILITY_FIRST. P35 MACK KUNSTSTOFFTECHNIK
+is next. **24/100** companies now have complete 15-field first-pass assessments:
+183 numeric fields await review, 177 fields need research. Coverage is distinct
+from completion of human review or canonical scoring. No prior proposal,
+canonical numeric input, deployment field, confidence grade or human review
+record changes; four directly sourced certificate statuses and evidence
+summaries are corrected. No aggregate proposal or published score is produced.

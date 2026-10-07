@@ -146,3 +146,15 @@ of staffing/recycling/annual generation failed current content reproduction,
 so its source is blocked with CONTENT_REVIEW_REQUIRED and a partial-recovery
 record. This content limitation is retained despite successful HTTP retrieval.
 The historical counts above remain the original full-audit snapshot.
+
+
+On 2026-10-07, NBCC-2026-10-07-02 rechecked 29 URLs for P26/P28/P29/P33,
+including 19 new URLs: 28 retrievable, one historical fair-link 404 with an
+existing verified replacement. The complete live inventory now has 352 URLs;
+all 100 sample companies remain covered. Current exact-holder certificates
+and signed EMAS validation were inspected separately from HTTP retrieval.
+Gindele's generic municipality URL remains retrievable but cannot reproduce
+its attributed company profile: CONTENT_REVIEW_REQUIRED retains that history,
+and a named municipal profile provides a scoped replacement. Neither this
+AI source correction nor successful GET constitutes Anna's human review.
+The original full-audit counts above remain historical snapshots.

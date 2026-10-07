@@ -338,3 +338,34 @@ A public self-reported energy role uses the unverified-claim management anchor,
 not verified certification. No login-only profile data is used. This batch's
 five-year investment lookback is 2021-10-07 through 2026-10-07; publication/crawl
 dates, certificate renewals and role duties are not commissioning dates.
+
+
+## P26 / P28 / P29 / P33: attribution and temporal precision
+
+The 2026-10-07 second batch assesses every field for four ranked companies:
+35 numeric proposals await human review, 25 fields remain NEEDS_RESEARCH.
+This raises full fieldwise first-pass coverage to 24/100, not human-reviewed
+coverage or published scores. Review metadata and deployment UNKNOWNs stay
+unchanged. Four directly sourced current certificate facts are corrected.
+
+Certificate body, holder and dates govern validity, not a legacy download URL.
+A current signed EMAS statement can establish validation without inventing an
+expiry from planned future updates. Mixed-period reports must distinguish old
+prose, current tables, validated dates and completed/partial/planned status;
+status-colour tables need visual inspection. A defective legacy installation
+is not assumed repaired. Dated emissions roadmaps are not achieved reductions.
+
+Actual night/day cold buffering can support scheduling and thermal-storage
+anchors; a suspect temperature in the same source remains unresolved and
+cannot be silently corrected, used as heat fit or converted to energy capacity.
+Local heat for auxiliary buildings does not establish the factory process fuel
+mix. A hospitality award is not a manufacturing-site management system.
+
+A generic municipal homepage cannot substantiate a company profile merely
+because it returns HTTP 200. Retain and block the old attribution, register
+an exact named replacement and correct the process-map URL. Issuer tables
+require exact row attribution; adjacent firms' ISO 50001 cannot become the
+selected company's certification. Animated zero counters, closing force and
+hardness are not energy facts. Resource policy and old automation are not a
+recent energy-investment inventory. These evidence boundaries apply per field,
+without imputing sector averages, missing numeric values or human approval.
