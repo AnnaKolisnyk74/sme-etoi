@@ -15,3 +15,35 @@
 ## Coding note
 
 The public sources support the legal-entity and process mapping used for provisional sample assembly. They do not establish actual energy consumption, buying intent, grid capacity or deployment of a specific energy solution. Certificate searches are recorded as `NOT_FOUND_AFTER_CHECK`; this means only that no direct public evidence was located in the defined check, not that a certificate or deployment does not exist.
+
+
+## Continuous ranked fieldwise batch — 2026-10-07
+
+NBCC-2026-10-07-05 frozen on main after PR#43 before enrichment: B/B confidence, QA PASS, PROCESS-only coverage, MEDIUM documentary gain,15 unassessed fields and two verified distinct URLs each. ID is final deterministic tie-breaker, not score/yield. Historical fixtures preserve selection before source/mapping corrections.
+
+Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality.
+
+- S-P94-03: https://kuchlbauer.de/bier-und-kunst/logistikzentrum/ — Own logistics centre integrates PV/electrical storage/charging with heat/cold heat pump for ROOMS. Building heat is not brewery process heat; battery not thermal store. Climate-positive claim pertains logistics centre, not whole brewery or independent lifecycle proof.
+- S-P94-04: https://stanglmeier-bau.de/aktuelles/beitrag/eroeffnung-kuchlbauer-weissbier-quartier.html — Actual project builder says centre opened21/09/2024, construction sinceearly2023. Bounds one completed integrated energy/site project, not each technology separate commissioning date or whole-brewery energy demand.
+
+All 15 fields assessed: 7 numeric proposals pending independent human review; 8 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| motor_drive_score | 2 | C | AWAITING_HUMAN_REVIEW | S-P94-03 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P94-03 |
+| automation_control_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| power_quality_score | 1 | C | AWAITING_HUMAN_REVIEW | S-P94-03 |
+| onsite_integration_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P94-03 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P94-03 |
+| management_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P94-03 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P94-03 |
+| investment_gap_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P94-03, S-P94-04 |
+
+Exact field rationales/gaps in data/score_coding_proposals.csv. Primary own/issuer/project/public agency pages, exact-name energy/certificate/target checks, rendered report/certificate bodies checked 07/10/2026. Availability, attribution, data/report period and current operating continuity separate. Lookback 2021-10-07 to 2026-10-07. Prior proposals, canonical numeric/deployment/staff/confidence and human review unchanged. AI first pass never Anna human review.

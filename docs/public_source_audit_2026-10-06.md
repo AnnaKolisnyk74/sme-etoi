@@ -200,3 +200,51 @@ and customer energy assets stay outside own-plant inference. Electrical
 storage not thermal storage; biogas not Bio-LPG; test/recovery temperatures not
 production temperatures; old/planned/capacity projects not recent energy CAPEX.
 See [full batch boundaries](next_best_company.md#frozen-batch-nbcc-2026-10-07-04).
+
+
+## Continuous batch follow-up — 2026-10-07 (05)
+
+Batch `NBCC-2026-10-07-05` completes 15-field first passes for P77, P79,
+P80, P81, P83, P84, P87, P90, P91, P92, P93 and P94: 70 numeric proposals
+await independent human review; 110 fields remain blank `NEEDS_RESEARCH`
+with `UNKNOWN` confidence and an exact missing fact. Current coverage is
+**60/100 companies and 900/1,500 fields**: 375 numeric proposals pending
+review and 525 research gaps. This is assessment coverage, not resolved or
+human-reviewed coverage. No new canonical score or automatic approval.
+
+Six certificate facts are corrected using actual document holders, validity
+and issuer: Metak ISO 50001/14001, Langer ISO 50001/14001, MKT ISO 14001 and
+Riegele EMAS. Riegele's signed 2025 statement and current official register
+are distinct from reporting years, registration-since dates and expiry.
+
+German Ceramany manufacturing attribution is unresolved; foreign ISO 9001
+holders and cross-site staff cannot establish German owned assets. All its
+15 fields remain researched gaps. InnoKeramik operates plate finishing;
+KITO's firing and machinery sold to partners are not owned kiln equipment.
+Both mappings use explicit provisional archetypes without supported
+opportunity-rule matches; source, readiness and coding coverage remain.
+
+Planned Langer PV/storage cannot be considered commissioned because September
+2026 has passed. Actual 2024 efficient-machine, extraction-converter and
+cooling work is dated separately. MKT's purchased hydro is not owned generation
+or renewable process heat. ELB's coating resistance is not bath temperature.
+A GRW capacity grant is not completed energy CAPEX. Riegele's inconsistent
+boiler unit is retained, not silently changed from MWh to MW. Future controls,
+CIP and logistics PV remain planned until completion is established.
+Ketterer's explicit owner statement of exclusively woodchip operating heat
+supports a bounded thermal-fuel anchor, not whole-company fossil-free status;
+2021/2023 nitrogen dates conflict and are not averaged. Schimpfle's completed
+PV and transformer projects retain separate dates. Kuchlbauer's room heat
+pump and electrical battery are not brewery process heat or thermal storage;
+its 2024 integrated logistics project counts once for investment coding.
+
+Current work queue: 140 `READY_TO_CODE`, 248 `RESEARCH_NEEDED`,
+52 `AWAITING_HUMAN_REVIEW`, 12 `OPEN_GATE`. Company actions: 28 `CODE_NOW`,
+57 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`, 12 `ELIGIBILITY_FIRST`.
+Next ranked company: **P95 Winkler-Bräu**. Outputs contain 200 opportunities
+and 195 research tasks. The source inventory has 430 registered sources,
+460 audited URLs and 445 retrievable URLs, covering all 100 sample firms.
+The 65-URL batch follow-up confirms 63 retrievable URLs and two retained
+404s; replacement/scope notes remain separate from successful retrieval.
+Prior proposals, canonical numeric/deployment/staff/confidence fields and
+independent human-review records remain unchanged.

@@ -123,7 +123,7 @@ class ContinuousBatchTests(unittest.TestCase):
             self.assertEqual((r['awaiting_human_review_fields'],r['needs_research_fields']),(n,15-n))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)
-        self.assertEqual(p['company_work_summary']['next_best_company']['company_id'],'P77')
+        self.assertEqual(p['company_work_summary']['next_best_company']['unassessed_field_count'],15)
         self.assertEqual(len(p['companies']),100)
         m=next(c for c in p['companies'] if c['company_id']=='P35')
         self.assertEqual(m['opportunities'],[])

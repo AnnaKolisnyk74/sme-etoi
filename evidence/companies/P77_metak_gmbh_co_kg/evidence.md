@@ -26,3 +26,38 @@ The process evidence establishes technical industrial-energy relevance only. It 
 - `NOT_FOUND_AFTER_CHECK` records only the defined public search.
 - A company statement is not treated as a valid certificate.
 - SME eligibility remains provisional until the final 100-company review.
+
+
+## Continuous ranked fieldwise batch — 2026-10-07
+
+NBCC-2026-10-07-05 frozen on main after PR#43 before enrichment: B/B confidence, QA PASS, PROCESS-only coverage, MEDIUM documentary gain,15 unassessed fields and two verified distinct URLs each. ID is final deterministic tie-breaker, not score/yield. Historical fixtures preserve selection before source/mapping corrections.
+
+Own CNC/EDM/robots/free-cooling/heat-recovery, current ISO50001/14001; historical energy recovery outsidewindow, IIOT network not confirmed completed.
+
+- S-P77-03: https://www.metak.de/umwelt/leitlinien-massnahmen — Own heat recovery reduces heating/process heating oil; free cooling reduces refrigeration-compressor runtime, servo/full-electric machines, mills/vacuum feed. Historic1988/2004/2008 energy recovery outside lookback. IIOT network is future intention, not confirmed installed plant coordination.
+- S-P77-04: https://www.metak.de/leistungen/werkzeugbau — Own CNC milling/EDM and CAD/CAM tool manufacture; no heater/temperature or ratings inferred.
+- S-P77-05: https://www.metak.de/leistungen/maschinenpark — Own50+ moulding machines, full-electric BOY and own insert/removal robots.25-1300t closing force and part weights not kW or thermal carrier.
+- S-P77-06: https://www.metak.de/fileadmin/Kundenbereich/Zertifikate/Metak_Zertifikat_50001_deutsch_2026.pdf — Visually inspected SKZ exact Metak Kreuzstrasse1 Burgwald ISO50001:2018,001117.E, all company consumed energy; valid2026-09-23 to2029-09-22, issued2026-08-24.
+- S-P77-07: https://www.metak.de/fileadmin/Kundenbereich/Zertifikate/Metak_Zertifikat_14001_deutsch_2026.pdf — Visually inspected SKZ exact Metak Kreuzstrasse1 Burgwald ISO14001:2015,001117.U; valid2026-09-23 to2029-09-22, issued2026-08-24.
+
+All 15 fields assessed: 8 numeric proposals pending independent human review; 7 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+| fossil_heat_displacement_score | 2 | C | AWAITING_HUMAN_REVIEW | S-P77-03 |
+| motor_drive_score | 8 | B | AWAITING_HUMAN_REVIEW | S-P77-03, S-P77-04, S-P77-05 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P77-04, S-P77-05 |
+| automation_control_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P77-03, S-P77-05 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+| power_quality_score | 1 | C | AWAITING_HUMAN_REVIEW | S-P77-04, S-P77-05 |
+| onsite_integration_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P77-03, S-P77-05 |
+| management_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P77-06, S-P77-07 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P77-03 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
+
+Exact field rationales/gaps in data/score_coding_proposals.csv. Primary own/issuer/project/public agency pages, exact-name energy/certificate/target checks, rendered report/certificate bodies checked 07/10/2026. Availability, attribution, data/report period and current operating continuity separate. Lookback 2021-10-07 to 2026-10-07. Prior proposals, canonical numeric/deployment/staff/confidence and human review unchanged. AI first pass never Anna human review.

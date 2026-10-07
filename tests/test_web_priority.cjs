@@ -17,7 +17,7 @@ vm.runInContext(code, context);
 context.payload = JSON.parse(fs.readFileSync(path.join(root, 'web/data/sme_etoi.json'), 'utf8'));
 vm.runInContext('state.data = payload; renderFunctional("analysis");', context);
 let html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /P77/);
+assert.match(html, /P95/);
 assert.match(html, /QA/);
 assert.match(html, /Informationsgewinn \(Proxy\)/);
 const ranking = html.split('<h3>Next Best Coding Companies</h3>')[1].split('</section>')[0];
@@ -25,11 +25,11 @@ assert.equal((ranking.match(/<th(?:\s|>)/g) || []).length, 9);
 const rows = [...ranking.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
 assert.equal(rows.length, 10);
 for (const [, row] of rows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 9);
-assert.match(rows[0][1], /metak GmbH &amp; Co. KG/);
+assert.match(rows[0][1], /Winkler-Bräu GmbH &amp; Co. KG/);
 assert.match(rows[0][1], /PASS/);
 assert.match(rows[0][1], /MEDIUM/);
 assert.match(rows[0][1], /<td>B<\/td><td>B<\/td>/);
-const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-04</h3>')[1].split('</section>')[0];
+const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-05</h3>')[1].split('</section>')[0];
 assert.match(batch, /Feldzahlen sind keine SME-ETOI Scores/);
 assert.equal((batch.match(/<th(?:\s|>)/g) || []).length, 5);
 const batchRows = [...batch.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
@@ -38,7 +38,7 @@ for (const [, row] of batchRows) {
   assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 5);
   assert.match(row, /RESEARCH FIRST/);
 }
-for (const [i, name, numeric, gaps] of [[0,/Spritzguß Müller/,5,10],[1,/Stocker/,1,14],[2,/Dorn/,9,6],[3,/AK Kunststoff/,4,11],[4,/Horstmann/,4,11],[5,/Kaltenkirchen/,4,11],[6,/Wieland/,5,10],[7,/KPM/,3,12],[8,/TechnoKer/,6,9],[9,/ceram/,4,11],[10,/Falter/,2,13],[11,/Si-Tech/,8,7]]) {
+for (const [i, name, numeric, gaps] of [[0,/metak/,8,7],[1,/Langer/,9,6],[2,/MKT/,7,8],[3,/Eloxalwerk Ludwigsburg/,5,10],[4,/Gerbracht/,5,10],[5,/Sauer/,1,14],[6,/Ceramany/,0,15],[7,/InnoKeramik/,2,13],[8,/Riegele/,10,5],[9,/Ketterer/,8,7],[10,/Schimpfle/,8,7],[11,/Kuchlbauer/,7,8]]) {
   assert.match(batchRows[i][1], name);
   assert.ok(batchRows[i][1].includes(`<td>${numeric}</td><td>${gaps}</td>`));
 }

@@ -26,3 +26,37 @@ The process evidence establishes technical industrial-energy relevance only. It 
 - `NOT_FOUND_AFTER_CHECK` records only the defined public search.
 - A company statement is not treated as a valid certificate.
 - SME eligibility remains provisional until the final 100-company review.
+
+
+## Continuous ranked fieldwise batch — 2026-10-07
+
+NBCC-2026-10-07-05 frozen on main after PR#43 before enrichment: B/B confidence, QA PASS, PROCESS-only coverage, MEDIUM documentary gain,15 unassessed fields and two verified distinct URLs each. ID is final deterministic tie-breaker, not score/yield. Historical fixtures preserve selection before source/mapping corrections.
+
+Actual base PV301.76kWp/2024converter/mill/control; September2026 PV675kWp/battery400kWh still EXPECTED;2030targets distinct from achieved inventory.
+
+- S-P79-03: https://www.langer-group.de/Nachhaltigkeit-Leitbild — Actual own base PV301.76kWp; expansion to675kWp and400kWh storage stated EXPECTED fromSeptember2026. Current date does not prove completion. PV/battery numbers are nameplate/storage, not consumption/converter kW.
+- S-P79-04: https://www.langer-group.de/data/media/45/4511_0x0x0x0x0_14001.pdf — Visually inspected exact Langer Gewerbestrasse8 Illmensee DEKRA ISO14001:2015,171115241/3; valid2024-11-19 to2027-11-18, issued2024-09-26. Previous certificate end18/11/2024 not current start.
+- S-P79-05: https://www.langer-group.de/data/media/45/4509_0x0x0x0x0_50001.pdf — Visually inspected exact Langer DEKRA ISO50001:2018,181115129/2; valid2024-11-19 to2027-11-18, issued2024-09-26.
+- S-P79-06: https://www.langer-group.de/data/media/60/6034_0x0x0x0x0_DNK_Erklaerung_2024_Langer_GmbH___Co__KG.pdf — DNK2024 company report prepared2025: concrete2024 efficient mill/extraction frequency converter/automatic window cooling; permanent bus-connected sensing, BDE and air shutoff. Dated2030 targets40% own PV/storage electricity and60% Scope1/2 cut vs2019 with roadmap. Planned2026/2027PV/storage not completed.2024 building/fleet gas/oil not actual process-heating fuel mix. Relevant pages10/23/24/30 rendered or body inspected.
+
+All 15 fields assessed: 9 numeric proposals pending independent human review; 6 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P79-03 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P79-03 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P79-03 |
+| motor_drive_score | 8 | B | AWAITING_HUMAN_REVIEW | S-P79-06 |
+| power_conversion_score | 5 | B | AWAITING_HUMAN_REVIEW | S-P79-03, S-P79-06 |
+| automation_control_score | 4 | B | AWAITING_HUMAN_REVIEW | S-P79-06 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P79-03 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P79-03 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P79-03 |
+| power_quality_score | 1 | C | AWAITING_HUMAN_REVIEW | S-P79-03, S-P79-06 |
+| onsite_integration_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P79-03, S-P79-06 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P79-03, S-P79-06 |
+| management_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P79-04, S-P79-05 |
+| targets_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P79-06 |
+| investment_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P79-06 |
+
+Exact field rationales/gaps in data/score_coding_proposals.csv. Primary own/issuer/project/public agency pages, exact-name energy/certificate/target checks, rendered report/certificate bodies checked 07/10/2026. Availability, attribution, data/report period and current operating continuity separate. Lookback 2021-10-07 to 2026-10-07. Prior proposals, canonical numeric/deployment/staff/confidence and human review unchanged. AI first pass never Anna human review.
