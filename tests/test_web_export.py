@@ -22,7 +22,7 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["research_task_count"], 197)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
-        self.assertEqual(meta["code_now_company_count"], 52)
+        self.assertEqual(meta["code_now_company_count"], 40)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -102,9 +102,9 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "AWAITING_HUMAN_REVIEW": 38,
-                "READY_TO_CODE": 260,
-                "RESEARCH_NEEDED": 142,
+                "AWAITING_HUMAN_REVIEW": 43,
+                "READY_TO_CODE": 200,
+                "RESEARCH_NEEDED": 197,
             },
         )
         self.assertTrue(
@@ -131,15 +131,15 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             summary["workflow_action_counts"],
             {
-                "CODE_NOW": 52,
+                "CODE_NOW": 40,
                 "ELIGIBILITY_FIRST": 12,
-                "RESEARCH_FIRST": 33,
+                "RESEARCH_FIRST": 45,
                 "REVIEW_PROPOSALS": 3,
             },
         )
         next_best = summary["next_best_company"]
-        self.assertEqual(next_best["company_id"], "P56")
-        self.assertEqual(next_best["legal_entity"], "Spritzguß Müller GmbH")
+        self.assertEqual(next_best["company_id"], "P77")
+        self.assertEqual(next_best["legal_entity"], "metak GmbH & Co. KG")
         self.assertEqual(next_best["coding_rank"], 1)
         self.assertEqual(next_best["priority_version"], "2.0.0")
         self.assertEqual(next_best["qa_result"], "PASS")
@@ -172,15 +172,15 @@ class WebExportTests(unittest.TestCase):
             )
         )
         self.assertEqual(
-            companies["P56"]["workflow_priority"]["workflow_action"],
+            companies["P77"]["workflow_priority"]["workflow_action"],
             "CODE_NOW",
         )
         self.assertEqual(
-            companies["P56"]["workflow_priority"]["is_next_to_code"],
+            companies["P77"]["workflow_priority"]["is_next_to_code"],
             "YES",
         )
         self.assertEqual(
-            companies["P56"]["workflow_priority"]["coding_rank"],
+            companies["P77"]["workflow_priority"]["coding_rank"],
             1,
         )
         self.assertEqual(

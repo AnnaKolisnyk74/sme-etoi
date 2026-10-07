@@ -25,3 +25,36 @@ The process evidence establishes technical industrial-energy relevance only. It 
 - A company statement is not treated as a valid ISO certificate.
 - SME and linked-enterprise eligibility remains provisional until the final 100-company review.
 
+
+
+## Continuous ranked fieldwise batch — 2026-10-07
+
+NBCC-2026-10-07-04 frozen on main after PR#42 before enrichment: B/B confidence, QA PASS, PROCESS-only coverage, MEDIUM documentary gain,15 unassessed fields and two verified distinct URLs each. ID is final deterministic tie-breaker, not predicted score/yield. Historical source/process fixtures preserve ranking before current scope corrections.
+
+Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project.
+
+- S-P56-03: https://www.spritzguss-mueller.de/spritzguss/ — Own20 Boy/Demag injection machines, automatic assembly and laser marking. Closing force280t and shot700g are not electrical power, drive/heater carrier or process temperature.
+- S-P56-04: https://www.spritzguss-mueller.de/werkzeugbau/ — Own four mills, Spinner VC750, AGIE EDM, two lathes, grinder and TIG micro-welding; CAD/CAM and Siemens Step7 SPS for machines. Heated mould photograph/title gives no actual plant heater/temperature.
+- S-P56-05: https://www.spritzguss-mueller.de/firmengeschichte/ — Undated staff/history and ISO9001 since2002 are not current SME/energy certification or recent energy investment; no energy target established.
+
+All15 fields assessed: 5 numeric proposals pending independent human review;10 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| motor_drive_score | 8 | B | AWAITING_HUMAN_REVIEW | S-P56-04 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P56-03, S-P56-04 |
+| automation_control_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P56-03, S-P56-04 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| power_quality_score | 1 | C | AWAITING_HUMAN_REVIEW | S-P56-04 |
+| onsite_integration_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| measures_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| management_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+| targets_gap_score | 5 | B | AWAITING_HUMAN_REVIEW | S-P56-03, S-P56-04, S-P56-05 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
+
+Exact field rationale/missing facts in data/score_coding_proposals.csv. Live primary pages, exact-name public energy/target/certification searches and relevant rendered certificate/report bodies checked07/10/2026. HTTP success separate from exact holder/current period/claim. Investmentwindow2021-10-07 to2026-10-07. No prior proposals, canonical score inputs, deployment/staff/confidence or human-review records changed. AI first pass never Anna human review.

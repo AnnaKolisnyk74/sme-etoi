@@ -562,3 +562,22 @@ facts and one historical claim are corrected by actual holder/date/body/register
 with no automatic score approval. Certificate expiry, reporting dates, expired
 goals and planned measures remain separate.
 See [full batch boundaries](next_best_company.md#frozen-batch-nbcc-2026-10-07-03).
+
+
+## Continuous batch follow-up — 2026-10-07 (04)
+
+NBCC-2026-10-07-04 adds twelve full15-field first passes:55 numeric proposals
+pending independent human review,125 blank UNKNOWN research fields. Current
+coverage48/100,720 rows:305 numeric pending,415 research. No new canonical
+score or human approval; no prior proposal/score/deployment/staff/confidence/
+review mutation. Live queue200 ready/197 research/43 review/12 gate; company
+queue40 code-now/45 research-first/3 review/12 eligibility-first. Next P77.
+
+All100 firms source-audited;394 sources/424 URLs,409 retrievable. Follow-up67
+URLs:66 retrievable plus ceram404 with claim-only partial recovery. Actual
+Dorn/Si-Tech cert bodies/annex support current ISO14001; ceram's current claim
+is not verified current validity. Partner machines/theoretical SPC/stock photos
+and customer energy assets stay outside own-plant inference. Electrical
+storage not thermal storage; biogas not Bio-LPG; test/recovery temperatures not
+production temperatures; old/planned/capacity projects not recent energy CAPEX.
+See [full batch boundaries](next_best_company.md#frozen-batch-nbcc-2026-10-07-04).

@@ -199,13 +199,13 @@ Current coding assessments (all numeric values remain non-canonical):
 | P29 Meckatzer | 11 | 4 |
 | P33 Gindele | 6 | 9 |
 
-Current generated work queue: **12 OPEN_GATE, 260 READY_TO_CODE,
-142 RESEARCH_NEEDED and 38 AWAITING_HUMAN_REVIEW**. These are task counts,
+Current generated work queue: **12 OPEN_GATE, 200 READY_TO_CODE,
+197 RESEARCH_NEEDED and 43 AWAITING_HUMAN_REVIEW**. These are task counts,
 not proposal-field counts. All 88 companies with numeric-coding work still
 await canonical coding and independent human review; no final score is ready.
 
 `outputs/company_work_priority.csv` collapses work into company decisions:
-52 `CODE_NOW`, 33 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
+40 `CODE_NOW`, 45 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
 `ELIGIBILITY_FIRST`. Failed or missing deterministic QA yields `QA_FIRST`;
 partially covered coding stays `IN_PROGRESS` rather than claiming complete
 review coverage.
@@ -220,8 +220,8 @@ limitations, source-type rules and the reproducible batch audit.
 The v2 batches selected **P21/P27**, then **P30 Zötler/P31 Härle**, before
 their source enrichment or coding. Both selections are frozen in
 `data/coding_batch_selections.csv`; all four now require field-specific research.
-The live ranking after batch NBCC-2026-10-07-03 promotes
-**P56 Spritzguß Müller GmbH**. The web scoring
+The live ranking after batch NBCC-2026-10-07-04 promotes
+**P77 metak GmbH & Co. KG**. The web scoring
 view exposes QA, coverage, the information-gain proxy and the latest frozen
 batch with live review/research field counts.
 
@@ -463,3 +463,43 @@ All 100 sample firms remain source-audited. The latest follow-up GET-checked
 previous partial recovery). Generic portals and Ehingen TEST-SYSTEM content
 remain explicitly blocked despite HTTP success. See
 [batch methods and boundaries](docs/next_best_company.md#frozen-batch-nbcc-2026-10-07-03).
+
+
+Batch `NBCC-2026-10-07-04` adds twelve complete fieldwise first passes,
+180 fields: 55 numeric proposals awaiting independent human review and
+125 precise research gaps. **48/100 companies** now have all 15 fields assessed
+(720 rows: 305 pending numeric proposals and 415 blank research fields).
+No final score is ready. Actual human-review coverage remains unchanged;
+AI first pass never becomes APPROVED automatically.
+
+| Company | Numeric proposals pending independent human review | Blank-valued research fields |
+| --- | ---: | ---: |
+| P56 Spritzguß Müller | 5 | 10 |
+| P57 Stocker | 1 | 14 |
+| P58 Dorn | 9 | 6 |
+| P59 AK Kunststoffspritzguss | 4 | 11 |
+| P61 Galvanik-Horstmann | 4 | 11 |
+| P63 OTK Kaltenkirchen | 4 | 11 |
+| P64 Wieland Metalloberflächentechnik | 5 | 10 |
+| P66 KPM Berlin | 3 | 12 |
+| P68 TechnoKer | 6 | 9 |
+| P70 ceram | 4 | 11 |
+| P75 Falter | 2 | 13 |
+| P76 Si-Tech Singer | 8 | 7 |
+
+Dorn/Si-Tech ISO 14001 certificates and annex were visually inspected; ceram's
+claim is corrected to CLAIM_ONLY, with a historical PDF404 retained explicitly.
+Partner toolshops, stock imagery, theoretical SPC and customer energy products
+do not count as owned equipment. Dorn's actual950kWh electrical battery feeds
+site integration, never thermal storage or a fabricated commissioning date.
+TechnoKer's biogas claim and Bio-LPG delivery remain distinct. Historical
+heat export, test temperatures and 2024 cellar capacity retain their boundaries.
+
+Live inventory: 394 registered sources, 424 audited URLs, 409 retrievable;
+all 100 sample firms covered. The 67-URL follow-up found 66 retrievable URLs
+and the new ceram404, with scope-limited claim recovery. Two reachable generic
+sources remain content-blocked. Queue: 200 ready, 197 research, 43 review and
+12 gates. Company queue: 40 code-now, 45 research-first, three review and
+twelve eligibility-first. Canonical scores/deployment/staff/confidence and
+prior proposals/human review records unchanged.
+See [full batch boundaries](docs/next_best_company.md#frozen-batch-nbcc-2026-10-07-04).
