@@ -30,20 +30,20 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(
             counts,
             {
-                "CODE_NOW": 28,
-                "RESEARCH_FIRST": 57,
+                "CODE_NOW": 16,
+                "RESEARCH_FIRST": 69,
                 "REVIEW_PROPOSALS": 3,
                 "ELIGIBILITY_FIRST": 12,
             },
         )
 
-    def test_p95_is_next_best_company_to_code(self):
+    def test_p71_is_next_best_company_to_code(self):
         next_rows = [
             row for row in self.rows if row["is_next_to_code"] == "YES"
         ]
         self.assertEqual(len(next_rows), 1)
-        self.assertEqual(next_rows[0]["company_id"], "P95")
-        self.assertEqual(next_rows[0]["legal_entity"], "Winkler-Bräu GmbH & Co. KG")
+        self.assertEqual(next_rows[0]["company_id"], "P71")
+        self.assertEqual(next_rows[0]["legal_entity"], "Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG")
         self.assertEqual(next_rows[0]["coding_rank"], "1")
         self.assertEqual(next_rows[0]["workflow_action"], "CODE_NOW")
 
@@ -52,7 +52,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
             row for row in self.rows if row["workflow_action"] == "CODE_NOW"
         ]
         ranks = sorted(int(row["coding_rank"]) for row in rows)
-        self.assertEqual(ranks, list(range(1, 29)))
+        self.assertEqual(ranks, list(range(1, 17)))
 
     def test_research_first_companies_are_exactly_known_gap_cases(self):
         self.assertEqual(
@@ -61,7 +61,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "RESEARCH_FIRST"
             },
-            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55", "P56", "P57", "P58", "P59", "P61", "P63", "P64", "P66", "P68", "P70", "P75", "P76", "P77", "P79", "P80", "P81", "P83", "P84", "P87", "P90", "P91", "P92", "P93", "P94"},
+            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55", "P56", "P57", "P58", "P59", "P61", "P63", "P64", "P66", "P68", "P70", "P75", "P76", "P77", "P79", "P80", "P81", "P83", "P84", "P87", "P90", "P91", "P92", "P93", "P94", "P95", "P97", "P98", "P100", "P101", "P105", "P106", "P108", "P109", "P110", "P37", "P60"},
         )
 
     def test_p11_moves_from_code_now_to_research_first(self):

@@ -128,5 +128,5 @@ class ContinuousBatch05Tests(unittest.TestCase):
             self.assertEqual(company['opportunities'], [])
             self.assertTrue(company['sources'])
             self.assertEqual(len(company['score_work_tasks']), 5)
-        self.assertEqual(p['company_work_summary']['next_best_company']['company_id'], 'P95')
+        self.assertEqual(p['company_work_summary']['next_best_company']['unassessed_field_count'], 15)
         self.assertEqual(p['source_audit_summary']['checked_company_count'], 100)

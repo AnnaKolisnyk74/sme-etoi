@@ -124,7 +124,9 @@ class PilotExpansionDataTests(unittest.TestCase):
     def test_opportunities_follow_supported_rule_matches(self):
         companies = {row["company_id"] for row in read_csv("data/company_intelligence.csv")}
         opportunity_companies = {row["company_id"] for row in read_csv("outputs/opportunities.csv")}
-        self.assertEqual(opportunity_companies, companies - {"P35", "P87", "P90"})
+        # Cold ceramic processing and unresolved legal/site continuity do not
+        # inherit kiln rules; those firms retain source and coding research.
+        self.assertEqual(opportunity_companies, companies - {"P35", "P87", "P90", "P106", "P110"})
         # Thermoforming has no supported match in the current rule set.
         # Source/readiness/scoring coverage remains complete.
 
