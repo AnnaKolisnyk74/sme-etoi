@@ -314,3 +314,27 @@ human approval. The proposal uses the partial/other-system anchor because EnMS
 maturity is unresolved. A climate-neutrality target dated 2025 supports only the
 published dated ambition; its achieved status remains UNKNOWN. P43's ISO 9001
 quality claim does not substitute for energy/environmental management evidence.
+
+
+## P25 / P15: validity, historical continuity and public role claims
+
+The frozen 2026-10-07 batch adds eight numeric proposals and seven research
+fields for Scheplast, and four numeric proposals plus eleven research fields
+for ELOXAL BARZ. All numeric proposals await human review; no score total is
+published. Unknown deployment facts stay UNKNOWN.
+
+A direct current ISO 14001 successor can correct a factual certificate status
+without becoming a mature EnMS or approving a numeric score. An undated company
+statement of PV and waste-heat utilisation supports some concrete measures but
+does not date recent investments. An own-site robotics claim supports only
+limited drive/control relevance until ratings and architecture are established.
+Old numeric source extracts that are no longer reproducible remain visible
+with CONTENT_REVIEW_REQUIRED rather than being silently treated as current.
+
+A named supplier case from 2016 establishes historical context only. Coolant
+temperature, generic pipe temperature limits, insulation and old flow sensing
+cannot substitute for actual current process heat, storage or control evidence.
+A public self-reported energy role uses the unverified-claim management anchor,
+not verified certification. No login-only profile data is used. This batch's
+five-year investment lookback is 2021-10-07 through 2026-10-07; publication/crawl
+dates, certificate renewals and role duties are not commissioning dates.

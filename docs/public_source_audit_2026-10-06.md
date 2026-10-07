@@ -136,3 +136,13 @@ visible with CONTENT_REVIEW_REQUIRED beside its located company-specific profile
 This illustrates the stated distinction between retrieval and claim validation.
 The live audit CSV/web view includes later checks; frozen audit counts do not
 claim that every historical factual assertion has passed human review.
+
+
+On 2026-10-07, NBCC-2026-10-07-01 rechecked ten URLs for P25/P15, including
+three new URLs, all with HTTP 200. The live inventory now contains 333 URLs.
+The current Scheplast certificate replaces the expired document for current
+validity only; the expired PDF remains retained. The old homepage extraction
+of staffing/recycling/annual generation failed current content reproduction,
+so its source is blocked with CONTENT_REVIEW_REQUIRED and a partial-recovery
+record. This content limitation is retained despite successful HTTP retrieval.
+The historical counts above remain the original full-audit snapshot.
