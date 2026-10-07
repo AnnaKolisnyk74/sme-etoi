@@ -17,7 +17,7 @@ vm.runInContext(code, context);
 context.payload = JSON.parse(fs.readFileSync(path.join(root, 'web/data/sme_etoi.json'), 'utf8'));
 vm.runInContext('state.data = payload; renderFunctional("analysis");', context);
 let html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /P26/);
+assert.match(html, /P35/);
 assert.match(html, /QA/);
 assert.match(html, /Informationsgewinn \(Proxy\)/);
 const ranking = html.split('<h3>Next Best Coding Companies</h3>')[1].split('</section>')[0];
@@ -25,23 +25,23 @@ assert.equal((ranking.match(/<th(?:\s|>)/g) || []).length, 9);
 const rows = [...ranking.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
 assert.equal(rows.length, 10);
 for (const [, row] of rows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 9);
-assert.match(rows[0][1], /Barth Galvanik GmbH/);
+assert.match(rows[0][1], /MACK KUNSTSTOFFTECHNIK GMBH &amp; CO. KG/);
 assert.match(rows[0][1], /PASS/);
 assert.match(rows[0][1], /MEDIUM/);
 assert.match(rows[0][1], /<td>B<\/td><td>B<\/td>/);
-const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-01</h3>')[1].split('</section>')[0];
+const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-02</h3>')[1].split('</section>')[0];
 assert.match(batch, /Feldzahlen sind keine SME-ETOI Scores/);
 assert.equal((batch.match(/<th(?:\s|>)/g) || []).length, 5);
 const batchRows = [...batch.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
-assert.equal(batchRows.length, 2);
+assert.equal(batchRows.length, 4);
 for (const [, row] of batchRows) {
   assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 5);
   assert.match(row, /RESEARCH FIRST/);
 }
-assert.match(batchRows[0][1], /Scheplast/);
-assert.match(batchRows[0][1], /<td>8<\/td><td>7<\/td>/);
-assert.match(batchRows[1][1], /ELOXAL BARZ/);
-assert.match(batchRows[1][1], /<td>4<\/td><td>11<\/td>/);
+for (const [i, name, numeric, gaps] of [[0, /Barth/, 8, 7], [1, /Berg/, 10, 5], [2, /Meckatzer/, 11, 4], [3, /Gindele/, 6, 9]]) {
+  assert.match(batchRows[i][1], name);
+  assert.ok(batchRows[i][1].includes(`<td>${numeric}</td><td>${gaps}</td>`));
+}
 // Evidence explanations must remain escaped when inserted into the card.
 context.payload.company_work_summary.next_best_company.priority_reason = '<script>unsafe</script>';
 context.payload.coding_batches.at(-1).companies[0].legal_entity = '<img onerror=unsafe>';

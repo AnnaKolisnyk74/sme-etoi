@@ -111,4 +111,4 @@ class CodingBatch0407Tests(unittest.TestCase):
             self.assertEqual(r['expected_information_gain_at_selection'], 'MEDIUM')
             self.assertNotIn('score', r)
             self.assertNotIn('proposal_total', r)
-        self.assertEqual(payload['company_work_summary']['next_best_company']['company_id'], 'P26')
+        self.assertEqual(payload['company_work_summary']['next_best_company']['company_id'], 'P35')
