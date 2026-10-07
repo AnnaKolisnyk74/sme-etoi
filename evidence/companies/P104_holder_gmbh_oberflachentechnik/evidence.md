@@ -15,3 +15,36 @@
 ## Coding note
 
 The public sources support the legal-entity and process mapping used for provisional sample assembly. They do not establish actual energy consumption, buying intent, grid capacity or deployment of a specific energy solution. Certificate searches are recorded as `NOT_FOUND_AFTER_CHECK`; this means only that no direct public evidence was located in the defined check, not that a certificate or deployment does not exist.
+
+
+## Completion to 100-company field assessment — 2026-10-07
+
+GATE-ASSESS-2026-10-07: selection frozen before enrichment. Documentary scope only; upstream group gate retained and canonical score remains blocked.
+
+- S-P104-03: https://holder-oft.de/kompetenzzentrum/zertifikate/ — Owner lists exact Holder ISO 50001 and ISO 14001 bodies/annexes. Holder sites in annex are distinct from upstream group eligibility; filename year is not validity start.
+- S-P104-04: https://holder-oft.de/unternehmen/qualitaet-und-umwelt/ — Owner energy/environment policy concerns continuous efficiency and resource improvement. A vague energy ambition is not a quantified dated roadmap, energy investment commissioning or downstream crash-energy savings.
+- S-P104-05: https://holder-oft.de/oberflaechenverfahren/waermebehandlung-von-aluminium/ — Owner aluminium process page describes owned heat treatment and controlled adaptation to material/part needs. Crash energy absorption is a product property, not process energy consumption; no actual operating temperature or heat carrier.
+- S-P104-06: https://holder-oft.de/wp-content/uploads/Zertifikat-ISO-500012018-2025.pdf — TÜV Rheinland Cert GmbH: Holder GmbH Oberflächentechnik, 01 407 061926; current period 2024-06-14 to 2027-06-13. Exact Holder body and annex: Kirchheim, Lenningen and Laichingen; filename 2025 not validity start.
+- S-P104-07: https://holder-oft.de/wp-content/uploads/Zertifikat-ISO-140012015-2025.pdf — TÜV Rheinland Cert GmbH: Holder GmbH Oberflächentechnik, 01 104 061926; current period 2023-11-15 to 2026-11-14. Exact Holder body; valid on check date but near expiry. Group gate remains open.
+
+All15 fields assessed: 5 numeric proposals awaiting actual human review; 10 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| process_electrification_score | 7 | C | AWAITING_HUMAN_REVIEW | S-P104-05 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| motor_drive_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P104-05, S-P104-02 |
+| automation_control_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| power_quality_score | 3 | C | AWAITING_HUMAN_REVIEW | S-P104-05, S-P104-02 |
+| onsite_integration_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| measures_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+| management_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P104-06 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P104-04 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P104-03, S-P104-04 |
+
+Exact field rationales/missing facts: data/score_coding_proposals.csv. Certificate bodies and relevant pages visually checked; holder, period, site and product-versus-process scope separated. Frömgen initial HTTP466 subsequently recovered through live HTTP200 primary-body retrieval; owned machining scope reviewed separately. Investment window2021-10-07 to2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records preserved. AI first pass is not Anna human review.

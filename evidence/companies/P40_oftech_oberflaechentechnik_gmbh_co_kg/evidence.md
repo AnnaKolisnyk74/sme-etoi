@@ -26,3 +26,33 @@ The checked public evidence supports **rack and barrel surface treatment; galvan
 ## Remaining limitations
 
 The legal entity and process are supported, but complete financial aggregation, ownership links, certification validity and site-level energy deployments remain subject to Anna's final review after the 100-company sample is assembled.
+
+
+## Completion to 100-company field assessment — 2026-10-07
+
+GATE-ASSESS-2026-10-07: selection frozen before enrichment. Documentary scope only; upstream group gate retained and canonical score remains blocked.
+
+- S-P40-02: https://oftech.de/umweltpolitik/ — Owner operates PV since 2010 covering about 20 percent of electricity demand and purchases certified green electricity/green gas for processes. Green-gas label alone does not specify physical biomethane/fossil fractions or establish zero fossil thermal duty.
+- S-P40-03: https://oftech.de/downloads/ — Owner download index checked for current holder and certificate scope. Quality documentation alone cannot prove energy or environmental certification, energy hardware or a no-management conclusion.
+
+All15 fields assessed: 5 numeric proposals awaiting actual human review; 10 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| motor_drive_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P40-01 |
+| automation_control_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| power_quality_score | 3 | C | AWAITING_HUMAN_REVIEW | S-P40-01 |
+| onsite_integration_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P40-02 |
+| measures_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P40-02 |
+| management_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P40-02 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P40-02, S-P40-03 |
+
+Exact field rationales/missing facts: data/score_coding_proposals.csv. Certificate bodies and relevant pages visually checked; holder, period, site and product-versus-process scope separated. Frömgen initial HTTP466 subsequently recovered through live HTTP200 primary-body retrieval; owned machining scope reviewed separately. Investment window2021-10-07 to2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records preserved. AI first pass is not Anna human review.

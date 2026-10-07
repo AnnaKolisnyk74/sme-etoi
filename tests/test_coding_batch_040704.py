@@ -102,5 +102,5 @@ class ContinuousBatch04Tests(unittest.TestCase):
             self.assertEqual((r['awaiting_human_review_fields'],r['needs_research_fields']),(n,15-n))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)
-        self.assertEqual(p['company_work_summary']['next_best_company']['unassessed_field_count'],15)
+        self.assertIsNone(p['company_work_summary']['next_best_company']['unassessed_field_count'])
         self.assertEqual(p['source_audit_summary']['checked_company_count'],100)

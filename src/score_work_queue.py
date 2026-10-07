@@ -357,7 +357,8 @@ def generate_score_work_queue(
                     "research_rank": eligibility_research_rank.get(company_id, ""),
                     "queue_reason": (
                         "SME/group eligibility is an upstream validity gate. "
-                        "Do not spend further scoring effort until it is resolved."
+                        "Documentary field assessment does not resolve this gate; "
+                        "canonical scoring remains blocked until eligibility is resolved."
                     ),
                     "next_action": normalise(readiness.get("next_action")),
                 }

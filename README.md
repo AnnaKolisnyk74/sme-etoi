@@ -220,13 +220,14 @@ limitations, source-type rules and the reproducible batch audit.
 The v2 batches selected **P21/P27**, then **P30 Zötler/P31 Härle**, before
 their source enrichment or coding. Both selections are frozen in
 `data/coding_batch_selections.csv`; all four now require field-specific research.
-The live ranking after batch NBCC-2026-10-07-06 promotes
-**P71 Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG**. The web scoring
-view exposes QA, coverage, the information-gain proxy and the latest frozen
-batch with live review/research field counts.
+The first pass is complete for **100/100 companies and 1,500/1,500 fields**.
+The live queue has no remaining CODE_NOW company. The web scoring view shows
+field coverage, review/research counts, the last frozen ranked batch and the
+separate documentary cohort whose group-eligibility gates remain open.
 
-Freeze the next batch from validated, freshly rebuilt inputs before researching
-or coding its companies (choose a new batch ID and the actual selection date):
+For future sample extensions, freeze a batch from validated, freshly rebuilt
+inputs before research. The selector currently fails closed because every
+company is already assessed (choose a new batch ID and actual selection date):
 
 ```bash
 python src/select_coding_batch.py --batch-id <new-batch-id> --selected-date YYYY-MM-DD --size 2
@@ -559,7 +560,7 @@ Batch `NBCC-2026-10-07-06` completes the 15-field first pass for P95,
 P97, P98, P100, P101, P105, P106, P108, P109, P110, P37 and P60. Selection
 was frozen after PR #44 before source enrichment or process corrections.
 It adds 68 numeric proposals awaiting independent human review and 112 blank
-`NEEDS_RESEARCH` fields with UNKNOWN confidence. Total assessment coverage is
+`NEEDS_RESEARCH` fields with UNKNOWN confidence. Assessment coverage at completion of that historical batch was
 **72/100 companies and 1,080/1,500 fields**: 443 numeric proposals pending
 review and 637 research gaps. No company has a final approved score.
 
@@ -597,13 +598,77 @@ nameplate kWp, not generated kWh; waste heat warms offices/halls. Hartchrom
 Beck's 60,000 A plating line cannot become kW without voltage. Generic
 resource sustainability and quality-system claims do not fill energy gaps.
 
-Current dimension-level work queue: 80 `READY_TO_CODE`, 299 `RESEARCH_NEEDED`,
+At completion of historical batch06, dimension-level work queue: 80 `READY_TO_CODE`, 299 `RESEARCH_NEEDED`,
 61 `AWAITING_HUMAN_REVIEW`, 12 `OPEN_GATE`. Company actions: 16 `CODE_NOW`,
 69 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`, 12 `ELIGIBILITY_FIRST`.
-Next ranked company: **P71 Flötzinger Brauerei**. Outputs contain 198
+The next ranked company at that historical point was **P71 Flötzinger Brauerei**. Outputs then contained 198
 opportunities and 192 research tasks. Source inventory: 463 registered
 sources, 498 audited URLs and 483 retrievable URLs across all 100 sample firms.
 The follow-up checked 62 batch URLs plus three new redirect destinations;
 four retained retrieval failures are separate from content/holder blockers.
 Prior proposals, canonical numeric/deployment/staff/confidence fields and
 independent human-review records remain unchanged.
+
+
+## Complete 100-company documentary first pass — 7 October 2026
+
+**100/100 companies now have all 15 fields assessed: 1,500/1,500 unique
+company-field entries.** There are 554 numeric proposals awaiting independent
+human review and 946 blank `NEEDS_RESEARCH` fields with UNKNOWN confidence.
+Coverage counts field assessment, not evidence sufficiency or approved scores.
+No human approval, final score or deployment status is inferred.
+
+The final eligible ranked cohort `NBCC-2026-10-07-07` freezes P71, P72, P73,
+P74, P78, P82, P85, P86, P89, P96, P99, P102, P103, P107, P62 and P03 before
+enrichment. The remaining 12 companies were separately frozen in
+`data/eligibility_coding_selections.csv` as `GATE-ASSESS-2026-10-07`:
+P07, P10, P104, P32, P34, P40, P42, P46, P47, P65, P67 and P88.
+Their documentary assessment fulfils full sample coverage while their upstream
+group checks remain OPEN_GATE and canonical scoring stays blocked. They never
+enter the eligible CODE_NOW selection. The first twelve assessments predate the
+ranked-batch manifest; their proposals remain unchanged.
+
+Current company workflow: 85 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`,
+12 `ELIGIBILITY_FIRST`, zero `CODE_NOW`. The dimension queue has 377
+`RESEARCH_NEEDED`, 63 `AWAITING_HUMAN_REVIEW` and 12 `OPEN_GATE` tasks;
+all 440 numeric dimension tasks remain separate from the 1,500 field entries.
+There are 198 opportunities, 192 opportunity research tasks and no final-score-ready
+companies. The web view reports complete documentary coverage and the open
+review/research/eligibility work, with no empty next-company card.
+
+Exact-holder certificate bodies confirm current ISO 50001 for Hermsdorf,
+Hofmann, Kessel and Holder. Hofmann's ISO 50001 expires 4 June 2028 while its
+ISO 14001 expires 14 March 2028. OT's linked ISO 14001 expired 27 July 2026;
+accessible HTTP200 does not restore validity. Current ISO 14001 is also checked
+for Varioplast, DOCERAM, PEKA and Wigl. Certificate filename years, first
+registration dates and another group entity's certificates are not current
+holder/period evidence.
+
+Flötzinger's architect documents one completed October2024 Schechen building
+project with PV/heat pump while the Rosenheim brewhouse remains separate.
+Kundmüller's 2020 brewhouse and 2025 awards do not establish commissioning in the
+five-year investment window. Hochdorfer explicitly documents all brewery heat
+from woodchips, supporting zero fossil displacement from an affirmative baseline.
+Green-gas procurement, purchased renewable electricity and a solar-beer label do
+not independently establish a physical process heat-carrier balance.
+
+Frömgen's recovered own machine-park page explicitly confirms several sintering
+furnaces, CNC machines and automated finishing. Its furnace maximum1700C is
+capability rather than an actual operating-temperature range; inert atmosphere
+is not heating fuel. German Meissen sintering is confirmed separately, while
+group1600–1800C temperatures and Swiss ISO14001 are not inherited. Ceramic
+heat-exchanger products likewise do not prove owner heat recovery.
+
+The completion adds 420 field entries: 111 pending numeric proposals and 309
+explicit research gaps. Before-enrichment source/mapping fixtures reproduce the
+last16 ranked selection. Existing proposal and selection prefixes, canonical
+numeric/deployment/staff/confidence fields and actual human-review records are
+preserved. Only bounded source links, process evidence and body-verified
+certificate statuses are updated.
+
+The final live source inventory has 516 source records, 551 audited URLs and
+536 retrievable URLs across all100 firms. The completion checks121 URLs,
+including new redirect endpoints and the recovered Frömgen machine park.
+The three completion retrieval failures remain explicit: two Dibbern403 pages
+and Erlemann/Huckenbeck502; alternative primary/company-authored evidence is
+bounded rather than used to invent operating details.

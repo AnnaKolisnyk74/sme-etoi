@@ -8,6 +8,7 @@ import json
 from collections import Counter
 from pathlib import Path
 import source_audit_summary
+from score_companies import SCORE_FIELDS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -97,8 +98,47 @@ def coding_batch_history(selections, proposals, priority_rows):
     return sorted(batches, key=lambda b: (b['selected_date'], b['batch_id']))
 
 
+def field_assessment_summary(companies, proposals, priority_rows):
+    """Count unique assessed fields; documentary coverage is not score approval."""
+    expected = set(SCORE_FIELDS)
+    priority = {r['company_id']: r for r in priority_rows}
+    groups = {}
+    for row in proposals:
+        groups.setdefault(row['company_id'], {}).setdefault(row['score_field'], []).append(row)
+    result = []
+    for company in companies:
+        cid = company['company_id']
+        fields = groups.get(cid, {})
+        assessed = [rows[0] for field, rows in fields.items()
+                    if field in expected and len(rows) == 1
+                    and rows[0]['proposal_status'] in
+                    {'NEEDS_RESEARCH', 'AWAITING_HUMAN_REVIEW', 'APPROVED'}]
+        states = Counter(r['proposal_status'] for r in assessed)
+        result.append({
+            'company_id': cid, 'legal_entity': company['legal_entity'],
+            'assessed_field_count': len(assessed), 'expected_field_count': len(expected),
+            'complete_first_pass': len(assessed) == len(expected),
+            'awaiting_human_review_fields': states['AWAITING_HUMAN_REVIEW'],
+            'needs_research_fields': states['NEEDS_RESEARCH'],
+            'approved_fields': states['APPROVED'],
+            'eligibility_gate_open': priority.get(cid, {}).get('workflow_action') == 'ELIGIBILITY_FIRST',
+        })
+    return {
+        'company_count': len(result),
+        'complete_company_count': sum(r['complete_first_pass'] for r in result),
+        'expected_field_count': len(result) * len(expected),
+        'assessed_field_count': sum(r['assessed_field_count'] for r in result),
+        'awaiting_human_review_fields': sum(r['awaiting_human_review_fields'] for r in result),
+        'needs_research_fields': sum(r['needs_research_fields'] for r in result),
+        'approved_fields': sum(r['approved_fields'] for r in result),
+        'eligibility_gate_company_count': sum(r['eligibility_gate_open'] for r in result),
+        'companies': result,
+    }
+
+
 def build_web_payload(root: Path = ROOT) -> dict:
     companies = read_csv(root, "data/company_intelligence.csv")
+    proposals = read_csv(root, "data/score_coding_proposals.csv")
     candidates = read_csv(root, "data/pilot_candidates.csv")
     process_map = read_csv(root, "data/company_process_map.csv")
     process_library = read_csv(root, "data/process_library.csv")
@@ -408,6 +448,8 @@ def build_web_payload(root: Path = ROOT) -> dict:
     }
 
     return {
+        "field_assessment_summary": field_assessment_summary(companies, proposals, company_work_priority),
+        "eligibility_coding_selections": read_csv(root, "data/eligibility_coding_selections.csv"),
         "source_audit_summary": audit_summary,
         "meta": {
             "project": "SME-ETOI",
@@ -459,7 +501,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
         },
         "coding_batches": coding_batch_history(
             read_csv(root, "data/coding_batch_selections.csv"),
-            read_csv(root, "data/score_coding_proposals.csv"), company_work_priority,
+            proposals, company_work_priority,
         ),
         "companies": web_companies,
     }

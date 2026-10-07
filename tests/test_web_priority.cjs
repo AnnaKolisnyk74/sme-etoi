@@ -17,31 +17,40 @@ vm.runInContext(code, context);
 context.payload = JSON.parse(fs.readFileSync(path.join(root, 'web/data/sme_etoi.json'), 'utf8'));
 vm.runInContext('state.data = payload; renderFunctional("analysis");', context);
 let html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /P71/);
-assert.match(html, /QA/);
-assert.match(html, /Informationsgewinn \(Proxy\)/);
-const ranking = html.split('<h3>Next Best Coding Companies</h3>')[1].split('</section>')[0];
-assert.equal((ranking.match(/<th(?:\s|>)/g) || []).length, 9);
-const rows = [...ranking.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
-assert.equal(rows.length, 10);
-for (const [, row] of rows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 9);
-assert.match(rows[0][1], /Flötzinger Brauerei Franz Steegmüller GmbH &amp; Co. KG/);
-assert.match(rows[0][1], /PASS/);
-assert.match(rows[0][1], /MEDIUM/);
-assert.match(rows[0][1], /<td>B<\/td><td>B<\/td>/);
-const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-06</h3>')[1].split('</section>')[0];
-assert.match(batch, /Feldzahlen sind keine SME-ETOI Scores/);
-assert.equal((batch.match(/<th(?:\s|>)/g) || []).length, 5);
+assert.match(html, /Erstbewertung abgeschlossen/);
+assert.ok(!html.includes('<h3>Next Best Coding Companies</h3>'));
+assert.match(html, /100 \/ 100 Unternehmen/);
+assert.match(html, /1500 \/ 1500 Felder geprüft/);
+assert.match(html, /554 Zahlenvorschläge/);
+assert.match(html, /946 dokumentierte Recherchelücken/);
+assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
+const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-07</h3>')[1].split('</section>')[0];
 const batchRows = [...batch.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
-assert.equal(batchRows.length, 12);
-for (const [, row] of batchRows) {
+assert.equal(batchRows.length, 16);
+for (const [, row] of batchRows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 5);
+assert.match(batchRows[0][1], /Flötzinger/);
+assert.ok(batchRows[0][1].includes('<td>6</td><td>9</td>'));
+const gates = html.split('<h3>Dokumentarische Bewertung bei offener Eligibility · 12 Unternehmen</h3>')[1].split('</section>')[0];
+const gateRows = [...gates.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
+assert.equal(gateRows.length,12);
+for (const [, row] of gateRows) {
   assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 5);
-  assert.match(row, /RESEARCH FIRST/);
+  assert.match(row, /15/);
+  assert.match(row, /group_check/);
 }
-for (const [i, name, numeric, gaps] of [[0,/Winkler-Bräu/,1,14],[1,/Peltzer/,7,8],[2,/Robert Frank/,5,10],[3,/Kläger/,11,4],[4,/Metoba/,9,6],[5,/Dresdner Silber/,5,10],[6,/Vuckovic/,4,11],[7,/Reichenbach/,6,9],[8,/Nymphenburg/,8,7],[9,/Triptis/,0,15],[10,/atka/,8,7],[11,/HARTCHROM Beck/,4,11]]) {
-  assert.match(batchRows[i][1], name);
-  assert.ok(batchRows[i][1].includes(`<td>${numeric}</td><td>${gaps}</td>`));
-}
+// Keep the ranked rendering branch tested independently of the completed sample.
+const example = context.payload.companies.find(c=>c.company_id==='P71');
+example.workflow_priority.workflow_action='CODE_NOW';
+example.workflow_priority.coding_rank=1;
+context.payload.company_work_summary.next_best_company={company_id:'P71',legal_entity:example.legal_entity,coding_rank:1,priority_reason:'<script>unsafe</script>'};
+vm.runInContext('renderFunctional("analysis");', context);
+html=sinks.get('#functionalContent').innerHTML;
+const ranking=html.split('<h3>Next Best Coding Companies</h3>')[1].split('</section>')[0];
+assert.equal((ranking.match(/<th(?:\s|>)/g)||[]).length,9);
+const rankRows=[...ranking.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m=>m[1].includes('<td'));
+assert.equal(rankRows.length,1);
+assert.equal((rankRows[0][1].match(/<td(?:\s|>)/g)||[]).length,9);
+assert.ok(html.includes('&lt;script&gt;unsafe&lt;/script&gt;'));
 // A company with zero matching opportunity rules retains readiness gates.
 context.noMatchGate = {opportunities: [], score_readiness: {score_status: 'NOT_SCOREABLE_ELIGIBILITY'}};
 assert.equal(vm.runInContext('eligibility(noMatchGate)', context), 'ELIGIBILITY_PENDING');
@@ -52,12 +61,15 @@ assert.equal(vm.runInContext('eligibility(noMatchCompany)', context), 'PROVISION
 // Evidence explanations must remain escaped when inserted into the card.
 context.payload.company_work_summary.next_best_company.priority_reason = '<script>unsafe</script>';
 context.payload.coding_batches.at(-1).companies[0].legal_entity = '<img onerror=unsafe>';
+context.payload.eligibility_coding_selections[0].legal_entity = '<script>gate unsafe</script>';
 vm.runInContext('renderFunctional("analysis");', context);
 html = sinks.get('#functionalContent').innerHTML;
 assert.ok(!html.includes('<script>unsafe</script>'));
 assert.ok(html.includes('&lt;script&gt;unsafe&lt;/script&gt;'));
 assert.ok(!html.includes('<img onerror=unsafe>'));
 assert.ok(html.includes('&lt;img onerror=unsafe&gt;'));
+assert.ok(!html.includes('<script>gate unsafe</script>'));
+assert.ok(html.includes('&lt;script&gt;gate unsafe&lt;/script&gt;'));
 vm.runInContext('renderFunctional("sources");', context);
 html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /100 \/ 100 Sample-Firmen geprüft/);

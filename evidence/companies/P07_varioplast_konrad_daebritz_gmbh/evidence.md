@@ -112,3 +112,34 @@ white space. Recheck by 2027-03-13.
 - Research status: `RESEARCHED`
 - User review: `NOT_REVIEWED`
 - Research date: 2026-09-12
+
+
+## Completion to 100-company field assessment — 2026-10-07
+
+GATE-ASSESS-2026-10-07: selection frozen before enrichment. Documentary scope only; upstream group gate retained and canonical score remains blocked.
+
+- S-P07-07: https://varioplast.de/de/unternehmen/nachhaltigkeit — Own inline PVD/coating and resource-efficient production, PV generation above 600000 kWh/year, geothermal and production-heat recovery for building needs. Annual PV energy is not nameplate kWp; room-heating independence is not process heat-carrier proof.
+- S-P07-08: https://varioplast.de/de/downloads — Own download index links current 2026 SKZ environmental certificate; former 2023 certificate expires July 2026. Environmental certification does not establish ISO 50001.
+- S-P07-09: https://varioplast.de/images/downloads/pdf/zertifikate/2026/Varioplast_Zertifikat_14001_SKZ_2026_de_Joomla-kompatibel-1.pdf — SKZ-Cert GmbH: VARIOPLAST Konrad Däbritz GmbH, 001127.U; current period 2026-07-26 to 2029-07-25. Current exact Varioplast holder at Ötisheim; former certificate expired 2026-07-25.
+
+All15 fields assessed: 8 numeric proposals awaiting actual human review; 7 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+| motor_drive_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P07-02 |
+| power_conversion_score | 8 | C | AWAITING_HUMAN_REVIEW | S-P07-02, S-P07-07 |
+| automation_control_score | 4 | B | AWAITING_HUMAN_REVIEW | S-P07-02 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+| power_quality_score | 3 | C | AWAITING_HUMAN_REVIEW | S-P07-02, S-P07-07 |
+| onsite_integration_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P07-07 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P07-02, S-P07-07 |
+| management_gap_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P07-09 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P07-07 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P07-07, S-P07-08 |
+
+Exact field rationales/missing facts: data/score_coding_proposals.csv. Certificate bodies and relevant pages visually checked; holder, period, site and product-versus-process scope separated. Frömgen initial HTTP466 subsequently recovered through live HTTP200 primary-body retrieval; owned machining scope reviewed separately. Investment window2021-10-07 to2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records preserved. AI first pass is not Anna human review.
