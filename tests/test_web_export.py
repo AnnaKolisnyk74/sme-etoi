@@ -22,7 +22,7 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(meta["research_task_count"], 192)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
-        self.assertEqual(meta["code_now_company_count"], 16)
+        self.assertEqual(meta["code_now_company_count"], 0)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -102,9 +102,8 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "AWAITING_HUMAN_REVIEW": 61,
-                "READY_TO_CODE": 80,
-                "RESEARCH_NEEDED": 299,
+                "AWAITING_HUMAN_REVIEW": 63,
+                                "RESEARCH_NEEDED": 377,
             },
         )
         self.assertTrue(
@@ -131,22 +130,15 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             summary["workflow_action_counts"],
             {
-                "CODE_NOW": 16,
-                "ELIGIBILITY_FIRST": 12,
-                "RESEARCH_FIRST": 69,
+                                "ELIGIBILITY_FIRST": 12,
+                "RESEARCH_FIRST": 85,
                 "REVIEW_PROPOSALS": 3,
             },
         )
         next_best = summary["next_best_company"]
-        self.assertEqual(next_best["company_id"], "P71")
-        self.assertEqual(next_best["legal_entity"], "Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG")
-        self.assertEqual(next_best["coding_rank"], 1)
-        self.assertEqual(next_best["priority_version"], "2.0.0")
-        self.assertEqual(next_best["qa_result"], "PASS")
-        self.assertEqual(next_best["expected_information_gain"], "MEDIUM")
-        self.assertIn("PROCESS", next_best["source_coverage"])
-        self.assertNotIn("ENERGY_TRANSITION", next_best["source_coverage"])
-        self.assertTrue(next_best["coverage_source_ids"])
+        self.assertEqual(next_best['company_id'], '')
+        self.assertIsNone(next_best['coding_rank'])
+        self.assertIsNone(next_best['unassessed_field_count'])
         self.assertNotIn("opportunity_score", next_best)
 
         companies = {
@@ -173,15 +165,15 @@ class WebExportTests(unittest.TestCase):
         )
         self.assertEqual(
             companies["P71"]["workflow_priority"]["workflow_action"],
-            "CODE_NOW",
+            "RESEARCH_FIRST",
         )
         self.assertEqual(
             companies["P71"]["workflow_priority"]["is_next_to_code"],
-            "YES",
+            "NO",
         )
         self.assertEqual(
             companies["P71"]["workflow_priority"]["coding_rank"],
-            1,
+            None,
         )
         self.assertEqual(
             companies["P20"]["workflow_priority"]["workflow_action"],

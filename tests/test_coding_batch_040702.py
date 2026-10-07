@@ -102,7 +102,7 @@ class CodingBatch040702Tests(unittest.TestCase):
             self.assertEqual((r['awaiting_human_review_fields'],r['needs_research_fields']),(n,g))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)
-        self.assertEqual(payload['company_work_summary']['next_best_company']['unassessed_field_count'],15)
+        self.assertIsNone(payload['company_work_summary']['next_best_company']['unassessed_field_count'])
         for company in read_csv(ROOT/'data/company_intelligence.csv'):
             if company['company_id'] in CIDS:
                 for field in [k for k in company if k.endswith('_deployed')]:

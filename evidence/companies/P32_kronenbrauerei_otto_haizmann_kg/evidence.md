@@ -26,3 +26,32 @@ The checked public evidence supports **brewing; boiling; fermentation; maturatio
 ## Remaining limitations
 
 The legal entity and process are supported, but complete financial aggregation, ownership links, certification validity and site-level energy deployments remain subject to Anna's final review after the 100-company sample is assembled.
+
+
+## Completion to 100-company field assessment — 2026-10-07
+
+GATE-ASSESS-2026-10-07: selection frozen before enrichment. Documentary scope only; upstream group gate retained and canonical score remains blocked.
+
+- S-P32-02: https://hochdorfer.de/vom-rohstoff-zum-bier/ — Owner explicitly supplies all brewery heat from regional woodchips since 2006 and exports heat to neighbours/inn. Purchased renewable electricity and electric pallet trucks/forklifts are separately stated. Thermal generation is not onsite electric generation. Current stated nonfossil brewery heat baseline supports zero fossil displacement; no actual mash temperatures or recent commissioning.
+
+All15 fields assessed: 4 numeric proposals awaiting actual human review; 11 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| fossil_heat_displacement_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P32-02 |
+| motor_drive_score | 2 | C | AWAITING_HUMAN_REVIEW | S-P32-02 |
+| power_conversion_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| automation_control_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| scheduling_flex_score | 2 | C | AWAITING_HUMAN_REVIEW | S-P32-02 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| power_quality_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| onsite_integration_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P32-02 |
+| management_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| targets_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P32-02 |
+
+Exact field rationales/missing facts: data/score_coding_proposals.csv. Certificate bodies and relevant pages visually checked; holder, period, site and product-versus-process scope separated. Frömgen initial HTTP466 subsequently recovered through live HTTP200 primary-body retrieval; owned machining scope reviewed separately. Investment window2021-10-07 to2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records preserved. AI first pass is not Anna human review.

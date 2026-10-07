@@ -701,3 +701,35 @@ zero numeric proposals remains an honest assessment. This preserves the
 separation between missing evidence, technical relevance and commercial
 white space. All retained unreachable sources and content blockers remain
 visible; successful retrieval never proves the claim or human approval.
+
+
+## Complete first pass: 100/100 — 2026-10-07
+
+The final eligible selection `NBCC-2026-10-07-07` contains the remaining16
+CODE_NOW companies in deterministic v2 rank order. Pre-enrichment sources and
+process mapping are frozen in the completion100 fixtures. The selector's QA and
+eligibility requirements remain intact.
+
+To satisfy the entire100-company documentary sample, `GATE-ASSESS-2026-10-07`
+separately freezes the12 upstream group-gated firms. Documentary coverage does
+not resolve their validity gates or approve canonical scoring. They have15
+field assessments each and retain ELIGIBILITY_FIRST / OPEN_GATE.
+
+All100 companies now have all15 fields assessed. The exporter counts unique
+expected company-field keys and excludes duplicate or unknown fields from
+coverage; it reports554 pending numeric proposals and946 UNKNOWN research gaps.
+None has actual human approval. The live queue has no CODE_NOW candidate;
+selection fails closed rather than recycling a previously assessed company.
+The web view shows complete coverage, current research/review states and the
+separate gated cohort without aggregate proposal scores.
+
+Owner equipment evidence distinguishes actual manufacture, equipment maximum,
+product capability, other group sites and building heat. Frömgen's recovered
+machine park confirms own sintering; maximum1700C and inert-gas atmosphere are
+not actual operating temperature or heating fuel. Hermsdorf/Hofmann/Kessel/Holder
+current ISO50001 bodies are holder/date checked. OT's linked environmental
+certificate is expired, and Swiss Ceramaret environmental certification is not
+inherited by German Meissen. No absent public evidence becomes non-deployment.
+
+See the latest README section for current queue totals and all company dossiers
+for source IDs, exact field decisions and missing-fact questions.

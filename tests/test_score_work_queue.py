@@ -252,9 +252,10 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertTrue(all(row["research_gap_fields"] for row in p20))
 
         self.assertEqual(len(remaining), 80)
+        self.assertTrue(all(row['proposal_covered_fields'] for row in remaining))
         self.assertEqual(
             {row["task_status"] for row in remaining},
-            {"READY_TO_CODE"},
+            {"RESEARCH_NEEDED", "AWAITING_HUMAN_REVIEW"},
         )
 
     def test_queue_never_assigns_numeric_values(self):

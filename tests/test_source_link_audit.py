@@ -103,7 +103,7 @@ class SourceLinkAuditTests(unittest.TestCase):
             self.assertEqual(case['reviewer'], '')
             self.assertEqual(case['review_date'], '')
         self.assertTrue(any(r['has_coding_assessment'] == 'YES' for r in payload['companies']))
-        self.assertTrue(any(r['has_coding_assessment'] == 'NO' for r in payload['companies']))
+        self.assertTrue(all(r['has_coding_assessment'] == 'YES' for r in payload['companies']))
 
     def test_incomplete_audit_and_foreign_recovery_fail_closed(self):
         with tempfile.TemporaryDirectory() as directory:
