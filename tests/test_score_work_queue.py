@@ -118,7 +118,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
         p20 = [row for row in numeric if row["company_id"] == "P20"]
         remaining = [
             row for row in numeric
-            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11", "P53", "P20", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55", "P56", "P57", "P58", "P59", "P61", "P63", "P64", "P66", "P68", "P70", "P75", "P76", "P77", "P79", "P80", "P81", "P83", "P84", "P87", "P90", "P91", "P92", "P93", "P94"}
+            if row["company_id"] not in {"P04", "P19", "P12", "P16", "P05", "P18", "P22", "P24", "P23", "P11", "P53", "P20", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55", "P56", "P57", "P58", "P59", "P61", "P63", "P64", "P66", "P68", "P70", "P75", "P76", "P77", "P79", "P80", "P81", "P83", "P84", "P87", "P90", "P91", "P92", "P93", "P94", "P95", "P97", "P98", "P100", "P101", "P105", "P106", "P108", "P109", "P110", "P37", "P60"}
         ]
 
         self.assertEqual(len(p04), 5)
@@ -251,7 +251,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
         )
         self.assertTrue(all(row["research_gap_fields"] for row in p20))
 
-        self.assertEqual(len(remaining), 140)
+        self.assertEqual(len(remaining), 80)
         self.assertEqual(
             {row["task_status"] for row in remaining},
             {"READY_TO_CODE"},

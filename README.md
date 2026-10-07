@@ -220,8 +220,8 @@ limitations, source-type rules and the reproducible batch audit.
 The v2 batches selected **P21/P27**, then **P30 Zötler/P31 Härle**, before
 their source enrichment or coding. Both selections are frozen in
 `data/coding_batch_selections.csv`; all four now require field-specific research.
-The live ranking after batch NBCC-2026-10-07-05 promotes
-**P95 Winkler-Bräu GmbH & Co. KG**. The web scoring
+The live ranking after batch NBCC-2026-10-07-06 promotes
+**P71 Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG**. The web scoring
 view exposes QA, coverage, the information-gain proxy and the latest frozen
 batch with live review/research field counts.
 
@@ -549,5 +549,61 @@ and 195 research tasks. The source inventory has 430 registered sources,
 460 audited URLs and 445 retrievable URLs, covering all 100 sample firms.
 The 65-URL batch follow-up confirms 63 retrievable URLs and two retained
 404s; replacement/scope notes remain separate from successful retrieval.
+Prior proposals, canonical numeric/deployment/staff/confidence fields and
+independent human-review records remain unchanged.
+
+
+## Continuous ranked batch 06 — 7 October 2026
+
+Batch `NBCC-2026-10-07-06` completes the 15-field first pass for P95,
+P97, P98, P100, P101, P105, P106, P108, P109, P110, P37 and P60. Selection
+was frozen after PR #44 before source enrichment or process corrections.
+It adds 68 numeric proposals awaiting independent human review and 112 blank
+`NEEDS_RESEARCH` fields with UNKNOWN confidence. Total assessment coverage is
+**72/100 companies and 1,080/1,500 fields**: 443 numeric proposals pending
+review and 637 research gaps. No company has a final approved score.
+
+Owner equipment/process PDFs establish Dornstetten's electric injection
+machines and more than 20 sintering systems at about 1,400/1,650 C. The new
+Kläger SPC machine is a different entity's investment and is excluded from
+Dornstetten. Existing room heat pumps and 2010 PV are not recent process-heat
+CAPEX. PECO's separately dated 2022/2024 efficient-machine investments are
+within the five-year window; 24-hour operation is not load-shifting permission.
+
+Metoba's image-only EMAS certificate was read visually: issued 15 January
+2026, valid until 30 September 2029, despite the 2025 filename. An explicit
+validity start is not stated. The active official register corroborates the
+entity. Its historical brochure explicitly says the ISO-50001-based EnMS is
+not certified. Environmental management and BHKW operation do not establish
+current EnMS maturity or a BHKW commissioning date. Owner-linked DEKRA bodies
+verify current ISO 14001 for atka (31 July 2025–28 July 2028) and Dresdner
+Silber (23 December 2025–22 December 2028).
+
+Vuckovic's owned route is CNC/ultrasound ceramic-component machining; no owned
+kiln is established. Provisional `PR013` retains UNKNOWN heat/flex/storage
+topology and has no supported opportunity rule. Triptis's current imprint
+names Eschenbach Porzellan GmbH, not the sampled Neue Porzellanfabrik Triptis
+GmbH. A historic FAQ and 2024 brand return cannot establish legal/operational
+continuity. `PR012` prevents unsupported kiln opportunities; all its 15 fields
+remain UNKNOWN and accessible imprint/FAQ sources remain content-blocked.
+No unverified closure assertion or canonical eligibility change is made.
+Both firms retain source, readiness and coding research coverage.
+
+Nymphenburg's water power drives mechanical belts; it is not owned electric
+generation or electric motor evidence. Its firing runs up to 36 hours, which
+is not a shifting window. Reichenbach's firing temperatures are 950/1,380 C,
+but the carrier remains unknown. atka's stated PV `630 kwP` is interpreted as
+nameplate kWp, not generated kWh; waste heat warms offices/halls. Hartchrom
+Beck's 60,000 A plating line cannot become kW without voltage. Generic
+resource sustainability and quality-system claims do not fill energy gaps.
+
+Current dimension-level work queue: 80 `READY_TO_CODE`, 299 `RESEARCH_NEEDED`,
+61 `AWAITING_HUMAN_REVIEW`, 12 `OPEN_GATE`. Company actions: 16 `CODE_NOW`,
+69 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`, 12 `ELIGIBILITY_FIRST`.
+Next ranked company: **P71 Flötzinger Brauerei**. Outputs contain 198
+opportunities and 192 research tasks. Source inventory: 463 registered
+sources, 498 audited URLs and 483 retrievable URLs across all 100 sample firms.
+The follow-up checked 62 batch URLs plus three new redirect destinations;
+four retained retrieval failures are separate from content/holder blockers.
 Prior proposals, canonical numeric/deployment/staff/confidence fields and
 independent human-review records remain unchanged.

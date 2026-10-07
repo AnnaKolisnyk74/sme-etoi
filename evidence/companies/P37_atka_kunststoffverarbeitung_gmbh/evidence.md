@@ -26,3 +26,37 @@ The checked public evidence supports **injection moulding; toolmaking and assemb
 ## Remaining limitations
 
 The legal entity and process are supported, but complete financial aggregation, ownership links, certification validity and site-level energy deployments remain subject to Anna's final review after the 100-company sample is assembled.
+
+
+## Continuous ranked fieldwise batch — 2026-10-07
+
+NBCC-2026-10-07-06 frozen on main after PR #44 before enrichment. Historical fixtures preserve pre-enrichment sources/mapping and deterministic ranked selection; priority is documentary information gain, not score.
+
+PV stated630kwP interpreted nameplatekWp, notkWh; machine waste heat for offices/halls not process heat or thermal store. Current ISO14001 body and annex verified; EnMS maturity and recent commissioning remain open.
+
+- S-P37-02: https://www.atka.de/nachhaltigkeit.php — Own page describes PV stated as 630 kwP (interpreted nameplate kWp, not generated kWh), machine waste heat for OFFICES/HALLS, efficient-machine replacement and an efficient EnMS claim. No ISO 50001 proof, process-heat temperature, thermal storage or completion dates.
+- S-P37-03: https://www.atka.de/pdf/ISO-14001-2015-Deutsch.pdf — DEKRA body names ATKA Kunststoffverarbeitung GmbH, Suedring 25 Lohne, 170813086/4, valid 2025-07-31 to 2028-07-28; annex includes Zum Lerchental 2 for development/toolmaking/special machines. ISO 14001 not ISO 50001.
+- S-P37-04: https://www.atka.de/unternehmen.php — Owned injection moulding/toolmaking/automation; company history describes two fully electric machines and efficient Werk II. Historical dates and current sustainability inventory are not commissioning dates within the 2021-10-07 to 2026-10-07 window.
+- S-P37-05: https://atka.de/spritzguss.php — Own injection-machine fleet with automation, multiple thermoplastics and toolmaking. No actual heating/cooling duty, carrier balance, grid headroom or permitted shift windows.
+
+All 15 fields assessed: 8 numeric proposals pending independent human review; 7 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+| motor_drive_score | 5 | B | AWAITING_HUMAN_REVIEW | S-P37-04, S-P37-05 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P37-02, S-P37-04 |
+| automation_control_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P37-05, S-P37-04 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+| power_quality_score | 1 | C | AWAITING_HUMAN_REVIEW | S-P37-02, S-P37-04 |
+| onsite_integration_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P37-02 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P37-02, S-P37-04 |
+| management_gap_score | 2 | B | AWAITING_HUMAN_REVIEW | S-P37-03, S-P37-02 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P37-02 |
+| investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P37-02, S-P37-03 |
+
+Exact rationales and missing facts in data/score_coding_proposals.csv. Owner, issuer and public-agency facts distinguish retrieval, legal holder/site, reporting period and actual operation. Readable PDF text and relevant certificate/equipment image bodies checked. Investment window 2021-10-07 to 2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records unchanged. AI first pass is never Anna human review.
