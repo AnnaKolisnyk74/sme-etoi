@@ -2,24 +2,24 @@
   "source_audit_summary": {
     "checked_company_count": 100,
     "sample_company_count": 100,
-    "registered_source_count": 294,
-    "audited_url_count": 330,
-    "retrievable_url_count": 316,
+    "registered_source_count": 300,
+    "audited_url_count": 333,
+    "retrievable_url_count": 319,
     "retrieval_status_counts": {
       "ACCESS_BLOCKED": 2,
       "HTTP_ERROR": 4,
-      "HTTP_OK": 302,
+      "HTTP_OK": 305,
       "NOT_FOUND": 8,
       "REDIRECT_OK": 14
     },
     "recovery_status_counts": {
       "HISTORICAL_REPLACEMENT": 1,
       "NO_EQUIVALENT_FOUND": 1,
-      "PARTIAL_REPLACEMENT": 3,
+      "PARTIAL_REPLACEMENT": 4,
       "REDIRECT_SCOPE_UNRESOLVED": 1,
       "REPLACEMENT_FOUND": 9
     },
-    "last_checked_at": "2026-10-06T18:02:04+00:00",
+    "last_checked_at": "2026-10-07T10:15:18+00:00",
     "human_review_status": "PENDING",
     "companies": [
       {
@@ -168,15 +168,15 @@
       {
         "company_id": "P15",
         "legal_entity": "ELOXAL BARZ GmbH & Co KG",
-        "has_coding_assessment": "NO",
-        "audited_url_count": 2,
-        "retrievable_url_count": 2,
+        "has_coding_assessment": "YES",
+        "audited_url_count": 4,
+        "retrievable_url_count": 4,
         "retrieval_issue_count": 0,
-        "registered_source_count": 2,
+        "registered_source_count": 5,
         "scope_gap_count": 0,
         "recovery_case_count": 0,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-10-06T17:29:26+00:00"
+        "last_checked_at": "2026-10-07T10:15:18+00:00"
       },
       {
         "company_id": "P20",
@@ -246,15 +246,15 @@
       {
         "company_id": "P25",
         "legal_entity": "Scheplast GmbH",
-        "has_coding_assessment": "NO",
-        "audited_url_count": 5,
-        "retrievable_url_count": 5,
+        "has_coding_assessment": "YES",
+        "audited_url_count": 6,
+        "retrievable_url_count": 6,
         "retrieval_issue_count": 0,
-        "registered_source_count": 4,
-        "scope_gap_count": 0,
-        "recovery_case_count": 0,
+        "registered_source_count": 7,
+        "scope_gap_count": 1,
+        "recovery_case_count": 1,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-10-06T17:29:48+00:00"
+        "last_checked_at": "2026-10-07T10:15:18+00:00"
       },
       {
         "company_id": "P26",
@@ -1533,6 +1533,20 @@
         "review_status": "AI_FIRST_PASS_SOURCE_RECOVERY",
         "reviewer": "",
         "review_date": ""
+      },
+      {
+        "company_id": "P25",
+        "original_url": "https://scheplast.de/",
+        "original_source_ids": "S-P25-02",
+        "checked_date": "2026-10-07",
+        "resolution_status": "PARTIAL_REPLACEMENT",
+        "replacement_source_ids": "S-P25-03 | S-P25-05 | S-P25-07",
+        "supported_scope": "Current official pages support injection moulding, robots and own PV/self-consumption with waste-heat utilisation; direct current environmental certificate stored separately.",
+        "remaining_gap": "Old 50 employees, recycled tonnes and 250700 kWh annual generation were not reproduced. Undated process page says around 40 employees and 18 machines; homepage has over 20 machines/robots. Current numeric inventory/staff facts remain unverified.",
+        "search_scope": "Live homepage/process/sustainability GET and content inspection; direct certificate successor inspected. Original extraction retained with CONTENT_REVIEW_REQUIRED.",
+        "review_status": "AI_FIRST_PASS_SOURCE_RECOVERY",
+        "reviewer": "",
+        "review_date": ""
       }
     ]
   },
@@ -1545,7 +1559,7 @@
     "research_task_count": 198,
     "score_work_task_count": 452,
     "numeric_coding_task_count": 440,
-    "code_now_company_count": 70,
+    "code_now_company_count": 68,
     "eligibility_gate_count": 12,
     "eligibility_blocked_company_count": 12,
     "data_scope": "Public repository evidence only"
@@ -1586,8 +1600,8 @@
       "RECHECK_DUE": 6
     },
     "priority_counts": {
-      "HIGH": 29,
-      "LOW": 6,
+      "HIGH": 30,
+      "LOW": 5,
       "MEDIUM": 163
     }
   },
@@ -1607,35 +1621,35 @@
       "P3": 5
     },
     "task_status_counts": {
-      "AWAITING_HUMAN_REVIEW": 23,
+      "AWAITING_HUMAN_REVIEW": 24,
       "OPEN_GATE": 12,
-      "READY_TO_CODE": 350,
-      "RESEARCH_NEEDED": 67
+      "READY_TO_CODE": 340,
+      "RESEARCH_NEEDED": 76
     },
     "task_count": 452
   },
   "company_work_summary": {
     "workflow_action_counts": {
-      "CODE_NOW": 70,
+      "CODE_NOW": 68,
       "ELIGIBILITY_FIRST": 12,
-      "RESEARCH_FIRST": 15,
+      "RESEARCH_FIRST": 17,
       "REVIEW_PROPOSALS": 3
     },
     "company_count": 100,
     "next_best_company": {
-      "source_count": 4,
-      "verified_source_count": 3,
+      "source_count": 3,
+      "verified_source_count": 2,
       "unassessed_field_count": 15,
       "qa_result": "PASS",
       "source_coverage": "PROCESS",
-      "coverage_source_ids": "S-P25-03",
+      "coverage_source_ids": "S-P26-01",
       "evidence_confidence": "B",
       "process_confidence": "B",
       "expected_information_gain": "MEDIUM",
       "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
       "priority_version": "2.0.0",
-      "company_id": "P25",
-      "legal_entity": "Scheplast GmbH",
+      "company_id": "P26",
+      "legal_entity": "Barth Galvanik GmbH",
       "coding_rank": 1,
       "work_priority": "P2",
       "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
@@ -1738,6 +1752,38 @@
           "needs_research_fields": 9
         }
       ]
+    },
+    {
+      "batch_id": "NBCC-2026-10-07-01",
+      "selected_date": "2026-10-07",
+      "companies": [
+        {
+          "company_id": "P25",
+          "legal_entity": "Scheplast GmbH",
+          "selection_rank": 1,
+          "priority_version": "2.0.0",
+          "expected_information_gain_at_selection": "MEDIUM",
+          "source_coverage_at_selection": "PROCESS",
+          "coverage_source_ids_at_selection": "S-P25-03",
+          "priority_reason_at_selection": "QA PASS; rank by worst confidence, evidence/process confidence, documentary gain, coverage breadth, unassessed fields, verified URLs (cap 4), then company ID. Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
+          "current_workflow_action": "RESEARCH_FIRST",
+          "awaiting_human_review_fields": 8,
+          "needs_research_fields": 7
+        },
+        {
+          "company_id": "P15",
+          "legal_entity": "ELOXAL BARZ GmbH & Co KG",
+          "selection_rank": 2,
+          "priority_version": "2.0.0",
+          "expected_information_gain_at_selection": "MEDIUM",
+          "source_coverage_at_selection": "PROCESS",
+          "coverage_source_ids_at_selection": "S-P15-01",
+          "priority_reason_at_selection": "QA PASS; rank by worst confidence, evidence/process confidence, documentary gain, coverage breadth, unassessed fields, verified URLs (cap 4), then company ID. Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
+          "current_workflow_action": "RESEARCH_FIRST",
+          "awaiting_human_review_fields": 4,
+          "needs_research_fields": 11
+        }
+      ]
     }
   ],
   "companies": [
@@ -1819,7 +1865,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 124,
+          "research_rank": 125,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -1956,8 +2002,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 22,
-        "coding_rank": 22,
+        "company_rank": 20,
+        "coding_rank": 20,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 243,
@@ -2091,7 +2137,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 92,
+          "research_rank": 93,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -2228,8 +2274,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 53,
-        "coding_rank": 53,
+        "company_rank": 51,
+        "coding_rank": 51,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 443,
@@ -2365,7 +2411,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 56,
+          "research_rank": 57,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -2378,7 +2424,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 57,
+          "research_rank": 58,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -2515,7 +2561,7 @@
         "expected_information_gain": "LOW",
         "information_gain_basis": "Documentary gain proxy LOW: 0 unassessed fields; verified coverage=MANAGEMENT; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 77,
+        "company_rank": 75,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -2680,7 +2726,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 74,
+          "research_rank": 75,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -2693,7 +2739,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 75,
+          "research_rank": 76,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -2708,8 +2754,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 113,
-          "company_work_rank": 33,
+          "work_rank": 118,
+          "company_work_rank": 34,
           "task_key": "P26|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -2730,8 +2776,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 114,
-          "company_work_rank": 33,
+          "work_rank": 119,
+          "company_work_rank": 34,
           "task_key": "P26|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -2752,8 +2798,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 115,
-          "company_work_rank": 33,
+          "work_rank": 120,
+          "company_work_rank": 34,
           "task_key": "P26|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -2774,8 +2820,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 116,
-          "company_work_rank": 33,
+          "work_rank": 121,
+          "company_work_rank": 34,
           "task_key": "P26|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -2796,8 +2842,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 117,
-          "company_work_rank": 33,
+          "work_rank": 122,
+          "company_work_rank": 34,
           "task_key": "P26|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -2830,11 +2876,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 3,
-        "coding_rank": 3,
+        "company_rank": 1,
+        "coding_rank": 1,
         "workflow_action": "CODE_NOW",
-        "is_next_to_code": "NO",
-        "first_work_rank": 113,
+        "is_next_to_code": "YES",
+        "first_work_rank": 118,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -2995,7 +3041,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 76,
+          "research_rank": 77,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -3008,7 +3054,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 77,
+          "research_rank": 78,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -3023,8 +3069,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 98,
-          "company_work_rank": 30,
+          "work_rank": 103,
+          "company_work_rank": 31,
           "task_key": "P27|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3045,8 +3091,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Source-linked operating temperatures and a firm-specific technology/temperature fit.; fossil_heat_displacement_score: Current fossil energy carrier and significance of fossil process heat at this site."
         },
         {
-          "work_rank": 99,
-          "company_work_rank": 30,
+          "work_rank": 104,
+          "company_work_rank": 31,
           "task_key": "P27|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3067,8 +3113,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Firm-specific rectifier/converter/controlled-electric-heat topology and its materiality."
         },
         {
-          "work_rank": 100,
-          "company_work_rank": 30,
+          "work_rank": 105,
+          "company_work_rank": 31,
           "task_key": "P27|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3089,8 +3135,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Current operating schedule, buffer constraints and usable load-shifting capability.; thermal_storage_flex_score: Deployed thermal buffer/storage or documented usable thermal inertia, not an intention."
         },
         {
-          "work_rank": 101,
-          "company_work_rank": 30,
+          "work_rank": 106,
+          "company_work_rank": 31,
           "task_key": "P27|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3111,8 +3157,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: A current additional electrification route and ordinal incremental-load relevance.; power_quality_score: Site-specific harmonics, reactive-power or electrical peak-load evidence.; onsite_integration_score: Site-specific PV, storage or load-management integration evidence."
         },
         {
-          "work_rank": 102,
-          "company_work_rank": 30,
+          "work_rank": 107,
+          "company_work_rank": 31,
           "task_key": "P27|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3149,7 +3195,7 @@
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 98,
+        "first_work_rank": 103,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -3324,7 +3370,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 78,
+          "research_rank": 79,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -3337,7 +3383,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 79,
+          "research_rank": 80,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -3474,8 +3520,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 4,
-        "coding_rank": 4,
+        "company_rank": 2,
+        "coding_rank": 2,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 158,
@@ -3625,7 +3671,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 111,
+          "research_rank": 112,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -3638,7 +3684,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 112,
+          "research_rank": 113,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -3775,8 +3821,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 14,
-        "coding_rank": 14,
+        "company_rank": 12,
+        "coding_rank": 12,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 208,
@@ -3926,7 +3972,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 84,
+          "research_rank": 85,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -3939,7 +3985,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 85,
+          "research_rank": 86,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -3954,8 +4000,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 103,
-          "company_work_rank": 31,
+          "work_rank": 108,
+          "company_work_rank": 32,
           "task_key": "P31|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3976,8 +4022,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: A company-specific electric-heat technology/temperature fit; cold maturation temperatures alone do not establish process-heat electrification fit.; process_electrification_score: A firm-specific industrial electric-heat route; efficient cooling, biomass heat and electric logistics do not prove such a route."
         },
         {
-          "work_rank": 104,
-          "company_work_rank": 31,
+          "work_rank": 109,
+          "company_work_rank": 32,
           "task_key": "P31|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -3998,8 +4044,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Firm-specific motor/compressor equipment and application intensity, beyond cooled tanks and unspecified refrigeration supply.; power_conversion_score: Rectifier/converter/controlled-heat equipment topology and materiality; PV existence alone does not document production conversion equipment.; automation_control_score: Firm-specific process automation or control equipment; manual quality checks and climate-framework participation are insufficient."
         },
         {
-          "work_rank": 105,
-          "company_work_rank": 31,
+          "work_rank": 110,
+          "company_work_rank": 32,
           "task_key": "P31|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -4020,8 +4066,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: A controllable heat/cold buffer or documented usable thermal inertia respecting product-quality constraints; maturation duration is not a storage-service proof."
         },
         {
-          "work_rank": 106,
-          "company_work_rank": 31,
+          "work_rank": 111,
+          "company_work_rank": 32,
           "task_key": "P31|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -4042,8 +4088,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: An identified additional industrial electrification route and ordinal incremental-load relevance; EVs do not establish a process-heat route.; power_quality_score: Documented harmonic/reactive-power/peak-load signals or relevant electrical topology; renewable supply alone is insufficient."
         },
         {
-          "work_rank": 107,
-          "company_work_rank": 31,
+          "work_rank": 112,
+          "company_work_rank": 32,
           "task_key": "P31|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -4080,7 +4126,7 @@
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 103,
+        "first_work_rank": 108,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 1,
@@ -4255,7 +4301,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 151,
+          "research_rank": 152,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -4268,7 +4314,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 152,
+          "research_rank": 153,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -4405,8 +4451,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 58,
-        "coding_rank": 58,
+        "company_rank": 56,
+        "coding_rank": 56,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 298,
@@ -4572,7 +4618,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 117,
+          "research_rank": 118,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -4722,7 +4768,7 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 78,
+        "company_rank": 76,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -4873,7 +4919,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 179,
+          "research_rank": 180,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -4886,7 +4932,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 180,
+          "research_rank": 181,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -5023,8 +5069,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 39,
-        "coding_rank": 39,
+        "company_rank": 37,
+        "coding_rank": 37,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 368,
@@ -5174,7 +5220,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 183,
+          "research_rank": 184,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -5187,7 +5233,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 184,
+          "research_rank": 185,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -5202,8 +5248,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 138,
-          "company_work_rank": 38,
+          "work_rank": 143,
+          "company_work_rank": 39,
           "task_key": "P93|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -5224,8 +5270,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 139,
-          "company_work_rank": 38,
+          "work_rank": 144,
+          "company_work_rank": 39,
           "task_key": "P93|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -5246,8 +5292,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 140,
-          "company_work_rank": 38,
+          "work_rank": 145,
+          "company_work_rank": 39,
           "task_key": "P93|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -5268,8 +5314,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 141,
-          "company_work_rank": 38,
+          "work_rank": 146,
+          "company_work_rank": 39,
           "task_key": "P93|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -5290,8 +5336,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 142,
-          "company_work_rank": 38,
+          "work_rank": 147,
+          "company_work_rank": 39,
           "task_key": "P93|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -5324,11 +5370,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 41,
-        "coding_rank": 41,
+        "company_rank": 39,
+        "coding_rank": 39,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 138,
+        "first_work_rank": 143,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -5489,7 +5535,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 185,
+          "research_rank": 186,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -5502,7 +5548,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 186,
+          "research_rank": 187,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -5639,8 +5685,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 42,
-        "coding_rank": 42,
+        "company_rank": 40,
+        "coding_rank": 40,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 378,
@@ -5790,7 +5836,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 149,
+          "research_rank": 150,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -5803,7 +5849,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 150,
+          "research_rank": 151,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -5940,8 +5986,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 57,
-        "coding_rank": 57,
+        "company_rank": 55,
+        "coding_rank": 55,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 293,
@@ -6091,7 +6137,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 143,
+          "research_rank": 144,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -6104,7 +6150,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 144,
+          "research_rank": 145,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -6241,8 +6287,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 28,
-        "coding_rank": 28,
+        "company_rank": 26,
+        "coding_rank": 26,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 278,
@@ -6392,7 +6438,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 171,
+          "research_rank": 172,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -6405,7 +6451,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 172,
+          "research_rank": 173,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -6542,8 +6588,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 37,
-        "coding_rank": 37,
+        "company_rank": 35,
+        "coding_rank": 35,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 353,
@@ -6706,7 +6752,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 173,
+          "research_rank": 174,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -6719,7 +6765,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 174,
+          "research_rank": 175,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -6919,7 +6965,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 70,
+          "research_rank": 71,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -6932,7 +6978,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 71,
+          "research_rank": 72,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -6947,8 +6993,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 83,
-          "company_work_rank": 27,
+          "work_rank": 93,
+          "company_work_rank": 29,
           "task_key": "P20|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -6969,8 +7015,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: fossil_heat_displacement_score: Current energy carrier for the approximately 800 °C hot-forming/firing process"
         },
         {
-          "work_rank": 84,
-          "company_work_rank": 27,
+          "work_rank": 94,
+          "company_work_rank": 29,
           "task_key": "P20|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -6991,8 +7037,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Firm-specific motor/drive applications and their materiality; power_conversion_score: Kiln electrical topology and any converter/rectifier/controlled-electric-heat applications; automation_control_score: Firm-specific automation, sensing and coordinated-control evidence"
         },
         {
-          "work_rank": 85,
-          "company_work_rank": 27,
+          "work_rank": 95,
+          "company_work_rank": 29,
           "task_key": "P20|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7013,8 +7059,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Company-specific thermal storage, buffer or evidence-backed usable thermal inertia"
         },
         {
-          "work_rank": 86,
-          "company_work_rank": 27,
+          "work_rank": 96,
+          "company_work_rank": 29,
           "task_key": "P20|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7035,8 +7081,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Current kiln energy carrier and defined electrification pathway sufficient for ordinal incremental-load relevance; power_quality_score: Firm-specific power-quality, converter-load or electrical peak evidence; onsite_integration_score: Onsite generation, storage, microgrid or coordinated load-management evidence"
         },
         {
-          "work_rank": 87,
-          "company_work_rank": 27,
+          "work_rank": 97,
+          "company_work_rank": 29,
           "task_key": "P20|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7073,7 +7119,7 @@
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 83,
+        "first_work_rank": 93,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -7248,7 +7294,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 50,
+          "research_rank": 51,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -7261,7 +7307,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 51,
+          "research_rank": 52,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -7276,8 +7322,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 108,
-          "company_work_rank": 32,
+          "work_rank": 113,
+          "company_work_rank": 33,
           "task_key": "P107|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7298,8 +7344,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 109,
-          "company_work_rank": 32,
+          "work_rank": 114,
+          "company_work_rank": 33,
           "task_key": "P107|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7320,8 +7366,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 110,
-          "company_work_rank": 32,
+          "work_rank": 115,
+          "company_work_rank": 33,
           "task_key": "P107|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7342,8 +7388,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 111,
-          "company_work_rank": 32,
+          "work_rank": 116,
+          "company_work_rank": 33,
           "task_key": "P107|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7364,8 +7410,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 112,
-          "company_work_rank": 32,
+          "work_rank": 117,
+          "company_work_rank": 33,
           "task_key": "P107|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -7398,11 +7444,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 68,
-        "coding_rank": 68,
+        "company_rank": 66,
+        "coding_rank": 66,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 108,
+        "first_work_rank": 113,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -7577,7 +7623,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 167,
+          "research_rank": 168,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -7590,7 +7636,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 168,
+          "research_rank": 169,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -7727,8 +7773,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 61,
-        "coding_rank": 61,
+        "company_rank": 59,
+        "coding_rank": 59,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 343,
@@ -7878,7 +7924,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 113,
+          "research_rank": 114,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -7891,7 +7937,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 114,
+          "research_rank": 115,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -8028,8 +8074,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 15,
-        "coding_rank": 15,
+        "company_rank": 13,
+        "coding_rank": 13,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 213,
@@ -8192,7 +8238,7 @@
           "last_finding": "Official MOESCHTER Group evidence reports 178 employees at group level. The group headcount is therefore below the 250-employee SME ceiling, but aggregated turnover or balance-sheet figures remain open."
         },
         {
-          "research_rank": 139,
+          "research_rank": 140,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -8205,7 +8251,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 140,
+          "research_rank": 141,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -8389,7 +8435,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 123,
+          "research_rank": 124,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -8526,8 +8572,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 21,
-        "coding_rank": 21,
+        "company_rank": 19,
+        "coding_rank": 19,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 238,
@@ -8677,7 +8723,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 46,
+          "research_rank": 47,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -8690,7 +8736,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 47,
+          "research_rank": 48,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -8827,8 +8873,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 48,
-        "coding_rank": 48,
+        "company_rank": 46,
+        "coding_rank": 46,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 423,
@@ -9111,7 +9157,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 34,
+          "research_rank": 35,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -9124,7 +9170,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 35,
+          "research_rank": 36,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -9137,7 +9183,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 194,
+          "research_rank": 195,
           "opportunity_type": "battery_storage",
           "missing_fact": "battery_storage_deployed",
           "research_priority": "LOW",
@@ -9405,7 +9451,7 @@
         "refrigeration_or_compressor_signal": "UNKNOWN",
         "rectifier_converter_furnace_signal": "YES",
         "public_targets_summary": "No dated site-energy or decarbonisation target was found in the checked public sources.",
-        "public_investments_summary": "Official evidence documents Farbeloxal and Harteloxal serial production; no energy-technology deployment was inferred."
+        "public_investments_summary": "2026-10-07 follow-up: own technical/colour/hard anodising verified. A supplier-authored 2016 case describes insulated acid/cooling lines; current continuity and energy savings remain unresolved, outside the five-year investment lookback. A public self-reported energy-management role is an unverified claim, not a certified EnMS or deployed technology inventory."
       },
       "processes": [
         {
@@ -9453,7 +9499,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 63,
+          "research_rank": 64,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -9466,7 +9512,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 64,
+          "research_rank": 65,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -9481,8 +9527,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 153,
-          "company_work_rank": 41,
+          "work_rank": 83,
+          "company_work_rank": 27,
           "task_key": "P15|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -9490,21 +9536,21 @@
           "required_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
+          "research_gap_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
+          "proposal_status_summary": "NEEDS_RESEARCH=3",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 2,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual current bath/sealing/heating temperatures and electric-heat fit. Historical minus-5-deg-C coolant and generic PVC/ABS limits are not actual process-heat temperatures.; process_electrification_score: Owned current thermal services, energy carriers and a firm-specific heat-conversion route; electrochemical anodising is not thermal electrification.; fossil_heat_displacement_score: Actual fossil thermal demand, current fuel mix and material displacement potential."
         },
         {
-          "work_rank": 154,
-          "company_work_rank": 41,
+          "work_rank": 84,
+          "company_work_rank": 27,
           "task_key": "P15|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -9512,21 +9558,21 @@
           "required_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "motor_drive_score | power_conversion_score | automation_control_score",
+          "research_gap_fields": "motor_drive_score | automation_control_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=1 | NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 2,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Current named material motor/pump/compressor/handling applications and drive relevance; pipes and valves alone do not establish these loads.; automation_control_score: Current plant sensing/control architecture and relevance. A 2016 flow transmitter and public role mentioning automatic plants do not establish current coordinated or energy-related control."
         },
         {
-          "work_rank": 155,
-          "company_work_rank": 41,
+          "work_rank": 85,
+          "company_work_rank": 27,
           "task_key": "P15|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -9534,21 +9580,21 @@
           "required_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_field_count": 2,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "research_gap_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "proposal_status_summary": "NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 2,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Actual schedule, batch-start/interruption tolerance and buffers. An offer of small series does not establish shiftable load or multi-shift operation.; thermal_storage_flex_score: Current thermal storage, validated bath/coolant buffering or usable thermal inertia; insulated lines and cooling service alone do not establish storage."
         },
         {
-          "work_rank": 156,
-          "company_work_rank": 41,
+          "work_rank": 86,
+          "company_work_rank": 27,
           "task_key": "P15|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -9556,21 +9602,21 @@
           "required_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
+          "research_gap_fields": "incremental_load_score | onsite_integration_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=1 | NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 2,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: A defined additional heat-electrification route and ordinal incremental-load relevance; existing electrical anodising is not new load growth.; onsite_integration_score: Own-site PV, battery, microgrid or load-management integration evidence; an energy-management job role is not deployed technology."
         },
         {
-          "work_rank": 157,
-          "company_work_rank": 41,
+          "work_rank": 87,
+          "company_work_rank": 27,
           "task_key": "P15|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -9578,43 +9624,43 @@
           "required_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_field_count": 4,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
+          "research_gap_fields": "measures_gap_score | investment_gap_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=2 | NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 2,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: measures_gap_score: Current concrete energy technologies or verified continuity/energy effect of the historical 2016 insulated-line case. Public role duties do not identify deployed measures; no no-measure anchor is assigned.; investment_gap_score: Dated energy-transition investment within 2021-10-07 to 2026-10-07. The supplier case is explicitly from 2016, outside the lookback; ongoing role duties and web crawl dates are not investment dates."
         }
       ],
       "workflow_priority": {
-        "source_count": 2,
-        "verified_source_count": 2,
-        "unassessed_field_count": 15,
+        "source_count": 5,
+        "verified_source_count": 4,
+        "unassessed_field_count": 0,
         "qa_result": "PASS",
-        "source_coverage": "PROCESS",
-        "coverage_source_ids": "S-P15-01",
+        "source_coverage": "ENERGY_TRANSITION | PROCESS",
+        "coverage_source_ids": "S-P15-01 | S-P15-03 | S-P15-04",
         "evidence_confidence": "B",
         "process_confidence": "B",
-        "expected_information_gain": "MEDIUM",
-        "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
+        "expected_information_gain": "HIGH",
+        "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 2,
-        "coding_rank": 2,
-        "workflow_action": "CODE_NOW",
+        "company_rank": 80,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 153,
-        "ready_to_code_tasks": 5,
-        "research_needed_tasks": 0,
+        "first_work_rank": 83,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
         "open_gate_tasks": 0,
         "work_priority": "P2",
-        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
-        "priority_reason": "QA PASS; rank by worst confidence, evidence/process confidence, documentary gain, coverage breadth, unassessed fields, verified URLs (cap 4), then company ID. Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score."
+        "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual current bath/sealing/heating temperatures and electric-heat fit. Historical minus-5-deg-C coolant and generic PVC/ABS limits are not actual process-heat temperatures.; process_electrification_score: Owned current thermal services, energy carriers and a firm-specific heat-conversion route; electrochemical anodising is not thermal electrification.; fossil_heat_displacement_score: Actual fossil thermal demand, current fuel mix and material displacement potential.",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: temperature_fit_score | process_electrification_score | fossil_heat_displacement_score; motor_drive_score | automation_control_score; scheduling_flex_score | thermal_storage_flex_score"
       },
       "sources": [
         {
@@ -9627,9 +9673,9 @@
           "review_status": "RESEARCHED",
           "source_link": "https://eloxal-barz.de/",
           "link_check_status": "VERIFIED",
-          "link_check_date": "2026-10-06",
+          "link_check_date": "2026-10-07",
           "retrieval_status": "HTTP_OK",
-          "retrieval_checked_at": "2026-10-06T17:29:24+00:00"
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
         },
         {
           "source_id": "S-P15-02",
@@ -9641,23 +9687,65 @@
           "review_status": "RESEARCHED",
           "source_link": "https://fusionbase.com/de/data/organization/4c73ef37b41ee4186a5fcce34e18f119/eloxal-barz-gmbh-%26-co.-kg",
           "link_check_status": "VERIFIED",
-          "link_check_date": "2026-10-06",
+          "link_check_date": "2026-10-07",
           "retrieval_status": "HTTP_OK",
-          "retrieval_checked_at": "2026-10-06T17:29:26+00:00"
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
+        },
+        {
+          "source_id": "S-P15-03",
+          "source_type": "company_process_page",
+          "publisher": "ELOXAL BARZ GmbH & Co KG",
+          "document_title": "Current technical, colour and hard anodising services",
+          "final_url": "https://eloxal-barz.de/",
+          "evidence_fact": "Exact-entity homepage documents electrochemical anodising, technical/colour/hard anodising and small series. ISO 9001 since 1998 is a quality-system claim only; no current rectifier model, thermal route or rated load is established.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://eloxal-barz.de/",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-10-07",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
+        },
+        {
+          "source_id": "S-P15-04",
+          "source_type": "supplier_case_study",
+          "publisher": "Helmut Hötzl, Georg Fischer GmbH; Initiative CO2",
+          "document_title": "Vorisolierte Rohrleitungssysteme aus PVC-U und ABS",
+          "final_url": "https://www.initiative-co2.de/wp-content/uploads/2016/01/InitiativeCO2_Projekthandbuch_2016_Georg_Fischer.pdf",
+          "evidence_fact": "Supplier-authored historical 2016 Eloxal Barz case describes insulated sulfuric-acid and glycol cooling lines, coolant around minus 5 deg C, manual/pneumatic valves and a flow transmitter. Generic material operating ranges are not actual bath temperatures. Current continuity and measured energy savings are unverified; the case is outside the 2021-10-07 to 2026-10-07 investment lookback.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://www.initiative-co2.de/wp-content/uploads/2016/01/InitiativeCO2_Projekthandbuch_2016_Georg_Fischer.pdf",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-10-07",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
+        },
+        {
+          "source_id": "S-P15-05",
+          "source_type": "public_professional_profile",
+          "publisher": "Sina Barz (self-reported public professional profile)",
+          "document_title": "Public Eloxal Barz energy-management role",
+          "final_url": "https://www.xing.com/profile/Sina_Barz",
+          "evidence_fact": "Publicly visible self-report describes an energy-management officer role since December 2016, energy audits, electricity procurement and energy-saving duties at Eloxal Barz. The company imprint names the same representative. The limited public profile is an unverified management claim, not certification, proof of current EnMS maturity or a technology inventory; no login/private data used.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://www.xing.com/profile/Sina_Barz",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-10-07",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
         }
       ],
       "source_audit": {
         "company_id": "P15",
         "legal_entity": "ELOXAL BARZ GmbH & Co KG",
-        "has_coding_assessment": "NO",
-        "audited_url_count": 2,
-        "retrievable_url_count": 2,
+        "has_coding_assessment": "YES",
+        "audited_url_count": 4,
+        "retrievable_url_count": 4,
         "retrieval_issue_count": 0,
-        "registered_source_count": 2,
+        "registered_source_count": 5,
         "scope_gap_count": 0,
         "recovery_case_count": 0,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-10-06T17:29:26+00:00"
+        "last_checked_at": "2026-10-07T10:15:18+00:00"
       }
     },
     {
@@ -9754,7 +9842,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 95,
+          "research_rank": 96,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -9767,7 +9855,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 96,
+          "research_rank": 97,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -9904,8 +9992,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 10,
-        "coding_rank": 10,
+        "company_rank": 8,
+        "coding_rank": 8,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 188,
@@ -10055,7 +10143,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 160,
+          "research_rank": 161,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -10068,7 +10156,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 161,
+          "research_rank": 162,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -10205,8 +10293,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 34,
-        "coding_rank": 34,
+        "company_rank": 32,
+        "coding_rank": 32,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 323,
@@ -10356,7 +10444,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 23,
+          "research_rank": 24,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -10369,7 +10457,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 157,
+          "research_rank": 158,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -10384,8 +10472,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 133,
-          "company_work_rank": 37,
+          "work_rank": 138,
+          "company_work_rank": 38,
           "task_key": "P78|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -10406,8 +10494,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 134,
-          "company_work_rank": 37,
+          "work_rank": 139,
+          "company_work_rank": 38,
           "task_key": "P78|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -10428,8 +10516,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 135,
-          "company_work_rank": 37,
+          "work_rank": 140,
+          "company_work_rank": 38,
           "task_key": "P78|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -10450,8 +10538,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 136,
-          "company_work_rank": 37,
+          "work_rank": 141,
+          "company_work_rank": 38,
           "task_key": "P78|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -10472,8 +10560,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 137,
-          "company_work_rank": 37,
+          "work_rank": 142,
+          "company_work_rank": 38,
           "task_key": "P78|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -10506,11 +10594,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 59,
-        "coding_rank": 59,
+        "company_rank": 57,
+        "coding_rank": 57,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 133,
+        "first_work_rank": 138,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -10671,7 +10759,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 181,
+          "research_rank": 182,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -10684,7 +10772,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 182,
+          "research_rank": 183,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -10821,8 +10909,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 40,
-        "coding_rank": 40,
+        "company_rank": 38,
+        "coding_rank": 38,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 373,
@@ -10972,7 +11060,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 48,
+          "research_rank": 49,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -10985,7 +11073,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 49,
+          "research_rank": 50,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -11122,8 +11210,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 49,
-        "coding_rank": 49,
+        "company_rank": 47,
+        "coding_rank": 47,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 428,
@@ -11273,7 +11361,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 145,
+          "research_rank": 146,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -11286,7 +11374,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 146,
+          "research_rank": 147,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -11423,8 +11511,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 55,
-        "coding_rank": 55,
+        "company_rank": 53,
+        "coding_rank": 53,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 283,
@@ -11697,7 +11785,7 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 76,
+        "company_rank": 74,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -11876,7 +11964,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 127,
+          "research_rank": 128,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -11889,7 +11977,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 128,
+          "research_rank": 129,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12026,8 +12114,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 23,
-        "coding_rank": 23,
+        "company_rank": 21,
+        "coding_rank": 21,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 248,
@@ -12177,7 +12265,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 99,
+          "research_rank": 100,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12190,7 +12278,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 100,
+          "research_rank": 101,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12327,8 +12415,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 11,
-        "coding_rank": 11,
+        "company_rank": 9,
+        "coding_rank": 9,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 193,
@@ -12478,7 +12566,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 162,
+          "research_rank": 163,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12491,7 +12579,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 163,
+          "research_rank": 164,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12628,8 +12716,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 60,
-        "coding_rank": 60,
+        "company_rank": 58,
+        "coding_rank": 58,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 328,
@@ -12779,7 +12867,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 129,
+          "research_rank": 130,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12792,7 +12880,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 130,
+          "research_rank": 131,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -12929,8 +13017,8 @@
         "expected_information_gain": "LOW",
         "information_gain_basis": "Documentary gain proxy LOW: 15 unassessed fields; verified coverage=NONE; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 69,
-        "coding_rank": 69,
+        "company_rank": 67,
+        "coding_rank": 67,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 253,
@@ -13080,7 +13168,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 164,
+          "research_rank": 165,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -13093,7 +13181,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 165,
+          "research_rank": 166,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -13230,8 +13318,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 35,
-        "coding_rank": 35,
+        "company_rank": 33,
+        "coding_rank": 33,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 333,
@@ -13381,7 +13469,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 169,
+          "research_rank": 170,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -13394,7 +13482,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 170,
+          "research_rank": 171,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -13531,8 +13619,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 62,
-        "coding_rank": 62,
+        "company_rank": 60,
+        "coding_rank": 60,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 348,
@@ -13666,7 +13754,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 88,
+          "research_rank": 89,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -13803,8 +13891,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 6,
-        "coding_rank": 6,
+        "company_rank": 4,
+        "coding_rank": 4,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 168,
@@ -13938,7 +14026,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 69,
+          "research_rank": 70,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -14075,7 +14163,7 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 71,
+        "company_rank": 69,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -14311,7 +14399,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 67,
+          "research_rank": 68,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -14324,7 +14412,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 68,
+          "research_rank": 69,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -14461,7 +14549,7 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 74,
+        "company_rank": 72,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -14624,7 +14712,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 106,
+          "research_rank": 107,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -14761,8 +14849,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 13,
-        "coding_rank": 13,
+        "company_rank": 11,
+        "coding_rank": 11,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 203,
@@ -14912,7 +15000,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 115,
+          "research_rank": 116,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -14925,7 +15013,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 116,
+          "research_rank": 117,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -14940,8 +15028,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 118,
-          "company_work_rank": 34,
+          "work_rank": 123,
+          "company_work_rank": 35,
           "task_key": "P52|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14962,8 +15050,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 119,
-          "company_work_rank": 34,
+          "work_rank": 124,
+          "company_work_rank": 35,
           "task_key": "P52|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14984,8 +15072,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 120,
-          "company_work_rank": 34,
+          "work_rank": 125,
+          "company_work_rank": 35,
           "task_key": "P52|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15006,8 +15094,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 121,
-          "company_work_rank": 34,
+          "work_rank": 126,
+          "company_work_rank": 35,
           "task_key": "P52|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15028,8 +15116,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 122,
-          "company_work_rank": 34,
+          "work_rank": 127,
+          "company_work_rank": 35,
           "task_key": "P52|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15062,11 +15150,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 16,
-        "coding_rank": 16,
+        "company_rank": 14,
+        "coding_rank": 14,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 118,
+        "first_work_rank": 123,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -15334,7 +15422,7 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 75,
+        "company_rank": 73,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -15499,7 +15587,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 125,
+          "research_rank": 126,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -15512,7 +15600,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 126,
+          "research_rank": 127,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -15527,8 +15615,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 123,
-          "company_work_rank": 35,
+          "work_rank": 128,
+          "company_work_rank": 36,
           "task_key": "P60|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15549,8 +15637,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 124,
-          "company_work_rank": 35,
+          "work_rank": 129,
+          "company_work_rank": 36,
           "task_key": "P60|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15571,8 +15659,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 125,
-          "company_work_rank": 35,
+          "work_rank": 130,
+          "company_work_rank": 36,
           "task_key": "P60|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15593,8 +15681,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 126,
-          "company_work_rank": 35,
+          "work_rank": 131,
+          "company_work_rank": 36,
           "task_key": "P60|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15615,8 +15703,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 127,
-          "company_work_rank": 35,
+          "work_rank": 132,
+          "company_work_rank": 36,
           "task_key": "P60|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -15649,11 +15737,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 54,
-        "coding_rank": 54,
+        "company_rank": 52,
+        "coding_rank": 52,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 123,
+        "first_work_rank": 128,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -15814,7 +15902,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 147,
+          "research_rank": 148,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -15827,7 +15915,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 148,
+          "research_rank": 149,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -15964,8 +16052,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 56,
-        "coding_rank": 56,
+        "company_rank": 54,
+        "coding_rank": 54,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 288,
@@ -16128,7 +16216,7 @@
           "last_finding": "Official company evidence reports approximately 150 employees at group level. Ownership mapping and aggregated turnover or balance-sheet figures remain incomplete, so final EU SME eligibility cannot yet be confirmed."
         },
         {
-          "research_rank": 109,
+          "research_rank": 110,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -16141,7 +16229,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 110,
+          "research_rank": 111,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -16354,7 +16442,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 44,
+          "research_rank": 45,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -16367,7 +16455,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 45,
+          "research_rank": 46,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -16567,7 +16655,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 177,
+          "research_rank": 178,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -16580,7 +16668,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 178,
+          "research_rank": 179,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -16717,8 +16805,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 38,
-        "coding_rank": 38,
+        "company_rank": 36,
+        "coding_rank": 36,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 363,
@@ -16881,7 +16969,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 37,
+          "research_rank": 38,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -17018,8 +17106,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 46,
-        "coding_rank": 46,
+        "company_rank": 44,
+        "coding_rank": 44,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 403,
@@ -17169,7 +17257,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 137,
+          "research_rank": 138,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -17182,7 +17270,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 138,
+          "research_rank": 139,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -17319,8 +17407,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 26,
-        "coding_rank": 26,
+        "company_rank": 24,
+        "coding_rank": 24,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 268,
@@ -17483,7 +17571,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 86,
+          "research_rank": 87,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -17496,7 +17584,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 87,
+          "research_rank": 88,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -17682,7 +17770,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 93,
+          "research_rank": 94,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -17695,7 +17783,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 94,
+          "research_rank": 95,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -17832,8 +17920,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 9,
-        "coding_rank": 9,
+        "company_rank": 7,
+        "coding_rank": 7,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 183,
@@ -17980,7 +18068,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 89,
+          "research_rank": 90,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -18164,7 +18252,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 91,
+          "research_rank": 92,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -18301,8 +18389,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 8,
-        "coding_rank": 8,
+        "company_rank": 6,
+        "coding_rank": 6,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 178,
@@ -18452,7 +18540,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 29,
+          "research_rank": 30,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -18465,7 +18553,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 192,
+          "research_rank": 193,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -18602,8 +18690,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 65,
-        "coding_rank": 65,
+        "company_rank": 63,
+        "coding_rank": 63,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 398,
@@ -18753,7 +18841,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 24,
+          "research_rank": 25,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -18766,7 +18854,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 158,
+          "research_rank": 159,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -18903,8 +18991,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 32,
-        "coding_rank": 32,
+        "company_rank": 30,
+        "coding_rank": 30,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 313,
@@ -19038,7 +19126,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 90,
+          "research_rank": 91,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -19175,8 +19263,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 7,
-        "coding_rank": 7,
+        "company_rank": 5,
+        "coding_rank": 5,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 173,
@@ -19326,7 +19414,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 80,
+          "research_rank": 81,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -19339,7 +19427,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 81,
+          "research_rank": 82,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -19476,8 +19564,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 5,
-        "coding_rank": 5,
+        "company_rank": 3,
+        "coding_rank": 3,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 163,
@@ -19611,7 +19699,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 120,
+          "research_rank": 121,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -19748,8 +19836,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 18,
-        "coding_rank": 18,
+        "company_rank": 16,
+        "coding_rank": 16,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 223,
@@ -19899,7 +19987,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 22,
+          "research_rank": 23,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -19912,7 +20000,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 156,
+          "research_rank": 157,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -20049,8 +20137,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 31,
-        "coding_rank": 31,
+        "company_rank": 29,
+        "coding_rank": 29,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 308,
@@ -20200,7 +20288,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 42,
+          "research_rank": 43,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -20213,7 +20301,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 43,
+          "research_rank": 44,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -20350,8 +20438,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 67,
-        "coding_rank": 67,
+        "company_rank": 65,
+        "coding_rank": 65,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 418,
@@ -20501,7 +20589,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 38,
+          "research_rank": 39,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -20514,7 +20602,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 39,
+          "research_rank": 40,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -20651,8 +20739,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 47,
-        "coding_rank": 47,
+        "company_rank": 45,
+        "coding_rank": 45,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 408,
@@ -20802,7 +20890,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 25,
+          "research_rank": 26,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -20815,7 +20903,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 159,
+          "research_rank": 160,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -20952,8 +21040,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 33,
-        "coding_rank": 33,
+        "company_rank": 31,
+        "coding_rank": 31,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 318,
@@ -21103,7 +21191,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 58,
+          "research_rank": 59,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -21116,7 +21204,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 59,
+          "research_rank": 60,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -21131,8 +21219,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 148,
-          "company_work_rank": 40,
+          "work_rank": 153,
+          "company_work_rank": 41,
           "task_key": "P110|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -21153,8 +21241,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 149,
-          "company_work_rank": 40,
+          "work_rank": 154,
+          "company_work_rank": 41,
           "task_key": "P110|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -21175,8 +21263,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 150,
-          "company_work_rank": 40,
+          "work_rank": 155,
+          "company_work_rank": 41,
           "task_key": "P110|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -21197,8 +21285,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 151,
-          "company_work_rank": 40,
+          "work_rank": 156,
+          "company_work_rank": 41,
           "task_key": "P110|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -21219,8 +21307,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 152,
-          "company_work_rank": 40,
+          "work_rank": 157,
+          "company_work_rank": 41,
           "task_key": "P110|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -21253,11 +21341,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 52,
-        "coding_rank": 52,
+        "company_rank": 50,
+        "coding_rank": 50,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 148,
+        "first_work_rank": 153,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -21548,7 +21636,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 32,
+          "research_rank": 33,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -21561,7 +21649,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 33,
+          "research_rank": 34,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -21574,7 +21662,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 193,
+          "research_rank": 194,
           "opportunity_type": "battery_storage",
           "missing_fact": "battery_storage_deployed",
           "research_priority": "LOW",
@@ -21931,7 +22019,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 97,
+          "research_rank": 98,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -21944,7 +22032,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 98,
+          "research_rank": 99,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -22156,7 +22244,7 @@
           "last_finding": "A 2019 technical report hosted on the company website documents an internal energy-management officer and energy-saving evaluations; it also documents a BDE system for production and process data. The current official certificate index and exact-name certificate searches did not establish a valid ISO 50001 certificate or a clearly defined operational EnMS."
         },
         {
-          "research_rank": 36,
+          "research_rank": 37,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -22451,7 +22539,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 101,
+          "research_rank": 102,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -22637,7 +22725,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 131,
+          "research_rank": 132,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -22650,7 +22738,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 132,
+          "research_rank": 133,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -22787,8 +22875,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 24,
-        "coding_rank": 24,
+        "company_rank": 22,
+        "coding_rank": 22,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 258,
@@ -22938,7 +23026,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 104,
+          "research_rank": 105,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -22951,7 +23039,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 105,
+          "research_rank": 106,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -23088,8 +23176,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 12,
-        "coding_rank": 12,
+        "company_rank": 10,
+        "coding_rank": 10,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 198,
@@ -23239,7 +23327,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 26,
+          "research_rank": 27,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -23252,7 +23340,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 189,
+          "research_rank": 190,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -23389,8 +23477,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 64,
-        "coding_rank": 64,
+        "company_rank": 62,
+        "coding_rank": 62,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 383,
@@ -23540,7 +23628,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 27,
+          "research_rank": 28,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -23553,7 +23641,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 190,
+          "research_rank": 191,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -23690,8 +23778,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 44,
-        "coding_rank": 44,
+        "company_rank": 42,
+        "coding_rank": 42,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 388,
@@ -23841,7 +23929,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 54,
+          "research_rank": 55,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -23854,7 +23942,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 55,
+          "research_rank": 56,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -23991,8 +24079,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 51,
-        "coding_rank": 51,
+        "company_rank": 49,
+        "coding_rank": 49,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 438,
@@ -24155,7 +24243,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 107,
+          "research_rank": 108,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -24168,7 +24256,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 108,
+          "research_rank": 109,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -24381,7 +24469,7 @@
           "last_finding": "Public evidence supports SME-scale operations but the state-ownership structure and the applicable EU SME independence treatment remain insufficiently documented for a final eligibility decision."
         },
         {
-          "research_rank": 135,
+          "research_rank": 136,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -24394,7 +24482,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 136,
+          "research_rank": 137,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -24594,7 +24682,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 52,
+          "research_rank": 53,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -24607,7 +24695,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 53,
+          "research_rank": 54,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -24744,8 +24832,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 50,
-        "coding_rank": 50,
+        "company_rank": 48,
+        "coding_rank": 48,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 433,
@@ -24895,7 +24983,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 82,
+          "research_rank": 83,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -24908,7 +24996,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 83,
+          "research_rank": 84,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -24923,8 +25011,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 78,
-          "company_work_rank": 26,
+          "work_rank": 88,
+          "company_work_rank": 28,
           "task_key": "P30|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24945,8 +25033,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: A company-specific electric-heat technology/temperature fit; cold maturation temperatures alone do not establish process-heat electrification fit.; process_electrification_score: A firm-specific industrial electric-heat route; efficient cooling, biomass heat and electric logistics do not prove such a route.; fossil_heat_displacement_score: Fuel and materiality of remaining fossil process heat; an unspecified CHP fuel cannot be assumed fossil."
         },
         {
-          "work_rank": 79,
-          "company_work_rank": 26,
+          "work_rank": 89,
+          "company_work_rank": 28,
           "task_key": "P30|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24967,8 +25055,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Firm-specific motor/compressor equipment and application intensity, beyond cooled tanks and unspecified refrigeration supply.; power_conversion_score: Rectifier/converter/controlled-heat equipment topology and materiality; PV existence alone does not document production conversion equipment."
         },
         {
-          "work_rank": 80,
-          "company_work_rank": 26,
+          "work_rank": 90,
+          "company_work_rank": 28,
           "task_key": "P30|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24989,8 +25077,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: A controllable heat/cold buffer or documented usable thermal inertia respecting product-quality constraints; maturation duration is not a storage-service proof."
         },
         {
-          "work_rank": 81,
-          "company_work_rank": 26,
+          "work_rank": 91,
+          "company_work_rank": 28,
           "task_key": "P30|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25011,8 +25099,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: An identified additional industrial electrification route and ordinal incremental-load relevance; EVs do not establish a process-heat route.; power_quality_score: Documented harmonic/reactive-power/peak-load signals or relevant electrical topology; renewable supply alone is insufficient."
         },
         {
-          "work_rank": 82,
-          "company_work_rank": 26,
+          "work_rank": 92,
+          "company_work_rank": 28,
           "task_key": "P30|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25049,7 +25137,7 @@
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 78,
+        "first_work_rank": 88,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 1,
@@ -25238,7 +25326,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 153,
+          "research_rank": 154,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -25251,7 +25339,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 154,
+          "research_rank": 155,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -25388,8 +25476,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 29,
-        "coding_rank": 29,
+        "company_rank": 27,
+        "coding_rank": 27,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 303,
@@ -25539,7 +25627,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 72,
+          "research_rank": 73,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -25552,7 +25640,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 73,
+          "research_rank": 74,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -25567,8 +25655,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 88,
-          "company_work_rank": 28,
+          "work_rank": 98,
+          "company_work_rank": 30,
           "task_key": "P21|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25589,8 +25677,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Source-linked operating temperatures and a firm-specific technology/temperature fit.; process_electrification_score: Firm-specific electric-heat route beyond general process-steam transition intent.; fossil_heat_displacement_score: Current fossil energy carrier and significance of fossil process heat at this site."
         },
         {
-          "work_rank": 89,
-          "company_work_rank": 28,
+          "work_rank": 99,
+          "company_work_rank": 30,
           "task_key": "P21|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25611,8 +25699,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Firm-specific rectifier/converter/controlled-electric-heat topology and its materiality.; automation_control_score: Documented process controls beyond compact equipment design or carbon accounting."
         },
         {
-          "work_rank": 90,
-          "company_work_rank": 28,
+          "work_rank": 100,
+          "company_work_rank": 30,
           "task_key": "P21|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25633,8 +25721,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Current operating schedule, buffer constraints and usable load-shifting capability.; thermal_storage_flex_score: Deployed thermal buffer/storage or documented usable thermal inertia, not an intention."
         },
         {
-          "work_rank": 91,
-          "company_work_rank": 28,
+          "work_rank": 101,
+          "company_work_rank": 30,
           "task_key": "P21|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25655,8 +25743,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: A current additional electrification route and ordinal incremental-load relevance.; power_quality_score: Site-specific harmonics, reactive-power or electrical peak-load evidence.; onsite_integration_score: Site-specific PV, storage or load-management integration evidence."
         },
         {
-          "work_rank": 92,
-          "company_work_rank": 28,
+          "work_rank": 102,
+          "company_work_rank": 30,
           "task_key": "P21|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25693,7 +25781,7 @@
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 88,
+        "first_work_rank": 98,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -25884,7 +25972,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 118,
+          "research_rank": 119,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -25897,7 +25985,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 119,
+          "research_rank": 120,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -26047,8 +26135,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 17,
-        "coding_rank": 17,
+        "company_rank": 15,
+        "coding_rank": 15,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 218,
@@ -26211,7 +26299,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 60,
+          "research_rank": 61,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -26348,7 +26436,7 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 72,
+        "company_rank": 70,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -26573,7 +26661,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 195,
+          "research_rank": 196,
           "opportunity_type": "battery_storage",
           "missing_fact": "battery_storage_deployed",
           "research_priority": "LOW",
@@ -26875,7 +26963,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 28,
+          "research_rank": 29,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -26888,7 +26976,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 191,
+          "research_rank": 192,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -27025,8 +27113,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 45,
-        "coding_rank": 45,
+        "company_rank": 43,
+        "coding_rank": 43,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 393,
@@ -27176,7 +27264,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 40,
+          "research_rank": 41,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -27189,7 +27277,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 41,
+          "research_rank": 42,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -27326,8 +27414,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 66,
-        "coding_rank": 66,
+        "company_rank": 64,
+        "coding_rank": 64,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 413,
@@ -27461,7 +27549,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 166,
+          "research_rank": 167,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -27598,8 +27686,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 36,
-        "coding_rank": 36,
+        "company_rank": 34,
+        "coding_rank": 34,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 338,
@@ -27691,7 +27779,7 @@
       "next_review_date": "2027-03-13",
       "certifications": {
         "iso_50001": "NOT_FOUND_AFTER_CHECK",
-        "iso_14001": "EXPIRED",
+        "iso_14001": "VALID",
         "emas": "NOT_FOUND_AFTER_CHECK"
       },
       "public_signals": {
@@ -27701,7 +27789,7 @@
         "refrigeration_or_compressor_signal": "UNKNOWN",
         "rectifier_converter_furnace_signal": "UNKNOWN",
         "public_targets_summary": "No dated site-energy or decarbonisation target was found in the checked public sources.",
-        "public_investments_summary": "Direct ISO 14001 certificate expired on 26 February 2024; official sources report 50 employees, injection moulding, direct recycling and 250,700 kWh annual solar generation; no storage deployment was found."
+        "public_investments_summary": "2026-10-07 follow-up: current ISO 14001 successor valid through 2027-02-26; own company claims rooftop PV with over 80 percent self-consumption and waste-heat utilisation, without commissioning dates. Old 50 employees / annual generation extraction was not reproduced and remains historical pending content review; current undated process page says around 40 employees. No current employee count is newly confirmed. Bioenergy concepts do not prove deployed CHP; storage remains UNKNOWN."
       },
       "processes": [
         {
@@ -27733,14 +27821,14 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 196,
+          "research_rank": 21,
           "opportunity_type": "battery_storage",
           "missing_fact": "battery_storage_deployed",
-          "research_priority": "LOW",
-          "decision_impact": "MEDIUM",
+          "research_priority": "HIGH",
+          "decision_impact": "HIGH",
           "task_status": "OPEN",
-          "research_question": "Is an operational battery-storage system publicly documented for Scheplast GmbH?",
-          "queue_reason": "The opportunity itself is provisional or research-required, so deployment research follows better-supported technical cases.",
+          "research_question": "Was the publicly announced battery-storage project at Scheplast GmbH commissioned, and what direct evidence documents its operational status and scope?",
+          "queue_reason": "A dated public deployment signal exists, but operational status is unresolved; checking commissioning is the next time-sensitive fact check.",
           "last_research_status": "",
           "last_resulting_value": "",
           "last_finding": ""
@@ -27748,8 +27836,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 93,
-          "company_work_rank": 29,
+          "work_rank": 78,
+          "company_work_rank": 26,
           "task_key": "P25|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -27757,21 +27845,21 @@
           "required_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
+          "research_gap_fields": "temperature_fit_score | process_electrification_score | fossil_heat_displacement_score",
+          "proposal_status_summary": "NEEDS_RESEARCH=3",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 7,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual barrel/mould/utility process temperatures and validated electric-heat fit. Machine closing force in tonnes is not temperature or electrical power.; process_electrification_score: Firm-specific current thermal energy carrier and defined conversion route; injection moulding, PV and a bioenergy vision do not establish electric process heat.; fossil_heat_displacement_score: Actual remaining fossil process heat and material displacement opportunity; renewable electricity and biobased feedstock do not establish the site fuel mix."
         },
         {
-          "work_rank": 94,
-          "company_work_rank": 29,
+          "work_rank": 79,
+          "company_work_rank": 26,
           "task_key": "P25|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -27779,21 +27867,21 @@
           "required_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
+          "proposal_covered_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3",
+          "task_status": "AWAITING_HUMAN_REVIEW",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 7,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
+          "next_action": "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete."
         },
         {
-          "work_rank": 95,
-          "company_work_rank": 29,
+          "work_rank": 80,
+          "company_work_rank": 26,
           "task_key": "P25|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -27801,21 +27889,21 @@
           "required_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_fields": "scheduling_flex_score | thermal_storage_flex_score",
           "missing_field_count": 2,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "research_gap_fields": "scheduling_flex_score | thermal_storage_flex_score",
+          "proposal_status_summary": "NEEDS_RESEARCH=2",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 7,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Actual operating pattern, admissible interruption/start windows and production buffer; small/large series alone do not establish shiftable energy demand.; thermal_storage_flex_score: Thermal store, cold/heat buffer or usable validated thermal inertia; waste-heat utilisation alone is not storage."
         },
         {
-          "work_rank": 96,
-          "company_work_rank": 29,
+          "work_rank": 81,
+          "company_work_rank": 26,
           "task_key": "P25|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -27823,21 +27911,21 @@
           "required_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
           "missing_field_count": 3,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "incremental_load_score | power_quality_score | onsite_integration_score",
+          "research_gap_fields": "incremental_load_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=2 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 7,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and new-load materiality; existing PV and machines do not establish incremental load."
         },
         {
-          "work_rank": 97,
-          "company_work_rank": 29,
+          "work_rank": 82,
+          "company_work_rank": 26,
           "task_key": "P25|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -27845,43 +27933,43 @@
           "required_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_field_count": 4,
-          "proposal_covered_fields": "",
-          "research_gap_fields": "",
-          "proposal_status_summary": "",
-          "task_status": "READY_TO_CODE",
+          "proposal_covered_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
+          "research_gap_fields": "investment_gap_score",
+          "proposal_status_summary": "AWAITING_HUMAN_REVIEW=3 | NEEDS_RESEARCH=1",
+          "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 7,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Code the publicly observed measures, management-system, target and investment gaps only after the defined evidence checks. Missing public evidence is not proof of internal absence."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: investment_gap_score: Commissioning/investment dates for energy measures within 2021-10-07 to 2026-10-07. Undated PV/waste-heat claims and a certificate renewal are not a dated recent transition investment."
         }
       ],
       "workflow_priority": {
-        "source_count": 4,
-        "verified_source_count": 3,
-        "unassessed_field_count": 15,
+        "source_count": 7,
+        "verified_source_count": 5,
+        "unassessed_field_count": 0,
         "qa_result": "PASS",
-        "source_coverage": "PROCESS",
-        "coverage_source_ids": "S-P25-03",
+        "source_coverage": "ENERGY_TRANSITION | MANAGEMENT | PROCESS",
+        "coverage_source_ids": "S-P25-03 | S-P25-05 | S-P25-06",
         "evidence_confidence": "B",
         "process_confidence": "B",
-        "expected_information_gain": "MEDIUM",
-        "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
+        "expected_information_gain": "HIGH",
+        "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 1,
-        "coding_rank": 1,
-        "workflow_action": "CODE_NOW",
-        "is_next_to_code": "YES",
-        "first_work_rank": 93,
-        "ready_to_code_tasks": 5,
-        "research_needed_tasks": 0,
-        "awaiting_human_review_tasks": 0,
+        "company_rank": 79,
+        "coding_rank": null,
+        "workflow_action": "RESEARCH_FIRST",
+        "is_next_to_code": "NO",
+        "first_work_rank": 78,
+        "ready_to_code_tasks": 0,
+        "research_needed_tasks": 4,
+        "awaiting_human_review_tasks": 1,
         "open_gate_tasks": 0,
         "work_priority": "P2",
-        "next_action": "Open the company dossier and code the five SME-ETOI dimensions from source-linked evidence.",
-        "priority_reason": "QA PASS; rank by worst confidence, evidence/process confidence, documentary gain, coverage breadth, unassessed fields, verified URLs (cap 4), then company ID. Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score."
+        "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual barrel/mould/utility process temperatures and validated electric-heat fit. Machine closing force in tonnes is not temperature or electrical power.; process_electrification_score: Firm-specific current thermal energy carrier and defined conversion route; injection moulding, PV and a bioenergy vision do not establish electric process heat.; fossil_heat_displacement_score: Actual remaining fossil process heat and material displacement opportunity; renewable electricity and biobased feedstock do not establish the site fuel mix.",
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: temperature_fit_score | process_electrification_score | fossil_heat_displacement_score; scheduling_flex_score | thermal_storage_flex_score; incremental_load_score"
       },
       "sources": [
         {
@@ -27894,9 +27982,9 @@
           "review_status": "RESEARCHED",
           "source_link": "https://scheplast.de/impressum/",
           "link_check_status": "VERIFIED",
-          "link_check_date": "2026-10-06",
+          "link_check_date": "2026-10-07",
           "retrieval_status": "HTTP_OK",
-          "retrieval_checked_at": "2026-10-06T17:29:45+00:00"
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
         },
         {
           "source_id": "S-P25-02",
@@ -27904,13 +27992,13 @@
           "publisher": "Scheplast GmbH",
           "document_title": "Company and sustainability facts",
           "final_url": "https://scheplast.de/",
-          "evidence_fact": "50 employees; 650 tonnes of recycled and technical plastics; at least 180 tonnes directly recycled; 250,700 kWh annual solar generation",
+          "evidence_fact": "50 employees; 650 tonnes of recycled and technical plastics; at least 180 tonnes directly recycled; 250,700 kWh annual solar generation; Historical 2026-09-13 extraction retained. These employee/recycling/annual-generation figures were not reproduced on the current homepage on 2026-10-07; do not use as current quantitative evidence. Current robotics description is separately scoped in S-P25-07.",
           "review_status": "RESEARCHED",
           "source_link": "https://scheplast.de/",
-          "link_check_status": "VERIFIED",
-          "link_check_date": "2026-10-06",
+          "link_check_status": "CONTENT_REVIEW_REQUIRED",
+          "link_check_date": "2026-10-07",
           "retrieval_status": "HTTP_OK",
-          "retrieval_checked_at": "2026-10-06T17:29:43+00:00"
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
         },
         {
           "source_id": "S-P25-03",
@@ -27922,9 +28010,9 @@
           "review_status": "RESEARCHED",
           "source_link": "https://scheplast.de/kunststoffspritzerei/",
           "link_check_status": "VERIFIED",
-          "link_check_date": "2026-10-06",
+          "link_check_date": "2026-10-07",
           "retrieval_status": "HTTP_OK",
-          "retrieval_checked_at": "2026-10-06T17:29:47+00:00"
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
         },
         {
           "source_id": "S-P25-04",
@@ -27932,27 +28020,69 @@
           "publisher": "TÜV SÜD Management Service GmbH",
           "document_title": "ISO 14001 certificate 12 104 23864 TMS",
           "final_url": "https://scheplast.de/wp-content/uploads/2021/02/Scheplast-Zertifikat-ISO-14001_2015-g%C3%BCltig-bis-2024.pdf",
-          "evidence_fact": "Direct certificate for Scheplast GmbH was valid from 27 February 2021 through 26 February 2024; no current successor was located",
+          "evidence_fact": "Historical certificate for Scheplast GmbH valid 2021-02-27 through 2024-02-26; no successor located at the original 2026-09-13 check. A direct current successor was inspected on 2026-10-07 and is separately retained as S-P25-06; this PDF remains VERIFIED_EXPIRED.",
           "review_status": "RESEARCHED",
           "source_link": "https://scheplast.de/wp-content/uploads/2021/02/Scheplast-Zertifikat-ISO-14001_2015-g%C3%BCltig-bis-2024.pdf",
           "link_check_status": "VERIFIED_EXPIRED",
-          "link_check_date": "2026-10-06",
+          "link_check_date": "2026-10-07",
           "retrieval_status": "HTTP_OK",
-          "retrieval_checked_at": "2026-10-06T17:29:48+00:00"
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
+        },
+        {
+          "source_id": "S-P25-05",
+          "source_type": "company_energy_page",
+          "publisher": "Scheplast GmbH",
+          "document_title": "Nachhaltigkeit: Standort und Energie",
+          "final_url": "https://scheplast.de/nachhaltigkeit/",
+          "evidence_fact": "Company describes own rooftop PV on production/administration/warehouse buildings, over 80 percent self-consumption and waste-heat utilisation; undated company claims, not metered energy data or a commissioned biogas plant.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://scheplast.de/nachhaltigkeit/",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-10-07",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
+        },
+        {
+          "source_id": "S-P25-06",
+          "source_type": "direct_iso_certificate",
+          "publisher": "TÜV SÜD Management Service GmbH",
+          "document_title": "ISO 14001:2015 environmental management certificate",
+          "final_url": "https://scheplast.de/wp-content/uploads/2024/03/Scheplast-certificate-ISO-14001_2015-valid-2027-en.pdf",
+          "evidence_fact": "Exact holder Scheplast GmbH, Kunststoff-Formteile, Stegwiesen 4, 88477 Schwendi; certificate 12 104 23864 TMS, valid 2024-03-06 through 2027-02-26; injection moulding parts, moulds, assemblies and plastic system solutions. ISO 14001 does not establish ISO 50001.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://scheplast.de/wp-content/uploads/2024/03/Scheplast-certificate-ISO-14001_2015-valid-2027-en.pdf",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-10-07",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
+        },
+        {
+          "source_id": "S-P25-07",
+          "source_type": "company_process_page",
+          "publisher": "Scheplast GmbH",
+          "document_title": "Current homepage: Kunststoffverarbeitung and energy vision",
+          "final_url": "https://scheplast.de/",
+          "evidence_fact": "Company describes a machine park with over 20 machines and robots. Bioenergiehof and biorefinery describe intentions/customer concepts, not commissioned own-site CHP. The separate process page describes 18 machines and around 40 employees; dates and counts are unresolved, so no current inventory or staff update is inferred.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://scheplast.de/",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-10-07",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-10-07T10:15:18+00:00"
         }
       ],
       "source_audit": {
         "company_id": "P25",
         "legal_entity": "Scheplast GmbH",
-        "has_coding_assessment": "NO",
-        "audited_url_count": 5,
-        "retrievable_url_count": 5,
+        "has_coding_assessment": "YES",
+        "audited_url_count": 6,
+        "retrievable_url_count": 6,
         "retrieval_issue_count": 0,
-        "registered_source_count": 4,
-        "scope_gap_count": 0,
-        "recovery_case_count": 0,
+        "registered_source_count": 7,
+        "scope_gap_count": 1,
+        "recovery_case_count": 1,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-10-06T17:29:48+00:00"
+        "last_checked_at": "2026-10-07T10:15:18+00:00"
       }
     },
     {
@@ -28049,7 +28179,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 61,
+          "research_rank": 62,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -28062,7 +28192,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 62,
+          "research_rank": 63,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -28199,7 +28329,7 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 79,
+        "company_rank": 77,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -28448,7 +28578,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 65,
+          "research_rank": 66,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -28461,7 +28591,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 66,
+          "research_rank": 67,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -28598,7 +28728,7 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=MANAGEMENT,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 73,
+        "company_rank": 71,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
@@ -28791,7 +28921,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 21,
+          "research_rank": 22,
           "opportunity_type": "heat_recovery",
           "missing_fact": "heat_recovery_deployed",
           "research_priority": "HIGH",
@@ -28804,7 +28934,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 155,
+          "research_rank": 156,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -28819,8 +28949,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 128,
-          "company_work_rank": 36,
+          "work_rank": 133,
+          "company_work_rank": 37,
           "task_key": "P76|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -28841,8 +28971,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 129,
-          "company_work_rank": 36,
+          "work_rank": 134,
+          "company_work_rank": 37,
           "task_key": "P76|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -28863,8 +28993,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 130,
-          "company_work_rank": 36,
+          "work_rank": 135,
+          "company_work_rank": 37,
           "task_key": "P76|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -28885,8 +29015,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 131,
-          "company_work_rank": 36,
+          "work_rank": 136,
+          "company_work_rank": 37,
           "task_key": "P76|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -28907,8 +29037,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 132,
-          "company_work_rank": 36,
+          "work_rank": 137,
+          "company_work_rank": 37,
           "task_key": "P76|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -28941,11 +29071,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 30,
-        "coding_rank": 30,
+        "company_rank": 28,
+        "coding_rank": 28,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 128,
+        "first_work_rank": 133,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -29090,7 +29220,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 121,
+          "research_rank": 122,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -29227,8 +29357,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 19,
-        "coding_rank": 19,
+        "company_rank": 17,
+        "coding_rank": 17,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 228,
@@ -29362,7 +29492,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 122,
+          "research_rank": 123,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -29499,8 +29629,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 20,
-        "coding_rank": 20,
+        "company_rank": 18,
+        "coding_rank": 18,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 233,
@@ -29650,7 +29780,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 175,
+          "research_rank": 176,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -29663,7 +29793,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 176,
+          "research_rank": 177,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -29800,8 +29930,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 63,
-        "coding_rank": 63,
+        "company_rank": 61,
+        "coding_rank": 61,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 358,
@@ -29951,7 +30081,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 141,
+          "research_rank": 142,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -29964,7 +30094,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 142,
+          "research_rank": 143,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -30101,8 +30231,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 27,
-        "coding_rank": 27,
+        "company_rank": 25,
+        "coding_rank": 25,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 273,
@@ -30252,7 +30382,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 30,
+          "research_rank": 31,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -30265,7 +30395,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 31,
+          "research_rank": 32,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -30402,8 +30532,8 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 15 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 70,
-        "coding_rank": 70,
+        "company_rank": 68,
+        "coding_rank": 68,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 448,
@@ -30866,7 +30996,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 133,
+          "research_rank": 134,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -30879,7 +31009,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 134,
+          "research_rank": 135,
           "opportunity_type": "power_quality",
           "missing_fact": "power_quality_solution_deployed",
           "research_priority": "MEDIUM",
@@ -31016,8 +31146,8 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 25,
-        "coding_rank": 25,
+        "company_rank": 23,
+        "coding_rank": 23,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
         "first_work_rank": 263,
@@ -31167,7 +31297,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 187,
+          "research_rank": 188,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -31180,7 +31310,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 188,
+          "research_rank": 189,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -31195,8 +31325,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 143,
-          "company_work_rank": 39,
+          "work_rank": 148,
+          "company_work_rank": 40,
           "task_key": "P95|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -31217,8 +31347,8 @@
           "next_action": "Code temperature/technology fit, process-electrification maturity and fossil-heat displacement from explicit process evidence. Use UNKNOWN, not zero, when the evidence does not support a numeric anchor."
         },
         {
-          "work_rank": 144,
-          "company_work_rank": 39,
+          "work_rank": 149,
+          "company_work_rank": 40,
           "task_key": "P95|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -31239,8 +31369,8 @@
           "next_action": "Code motor/drive intensity, power-conversion intensity and automation/control relevance from firm-specific process and equipment evidence."
         },
         {
-          "work_rank": 145,
-          "company_work_rank": 39,
+          "work_rank": 150,
+          "company_work_rank": 40,
           "task_key": "P95|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -31261,8 +31391,8 @@
           "next_action": "Code scheduling flexibility and thermal-storage flexibility from documented batch, buffer, refrigeration or operating-pattern evidence."
         },
         {
-          "work_rank": 146,
-          "company_work_rank": 39,
+          "work_rank": 151,
+          "company_work_rank": 40,
           "task_key": "P95|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -31283,8 +31413,8 @@
           "next_action": "Code ordinal incremental-load, power-quality and onsite-integration relevance only. Do not infer kW, MW, MWh, voltage level or grid cost."
         },
         {
-          "work_rank": 147,
-          "company_work_rank": 39,
+          "work_rank": 152,
+          "company_work_rank": 40,
           "task_key": "P95|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -31317,11 +31447,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 43,
-        "coding_rank": 43,
+        "company_rank": 41,
+        "coding_rank": 41,
         "workflow_action": "CODE_NOW",
         "is_next_to_code": "NO",
-        "first_work_rank": 143,
+        "first_work_rank": 148,
         "ready_to_code_tasks": 5,
         "research_needed_tasks": 0,
         "awaiting_human_review_tasks": 0,
@@ -31482,7 +31612,7 @@
       ],
       "research_tasks": [
         {
-          "research_rank": 102,
+          "research_rank": 103,
           "opportunity_type": "flexibility",
           "missing_fact": "flexibility_solution_deployed",
           "research_priority": "MEDIUM",
@@ -31495,7 +31625,7 @@
           "last_finding": ""
         },
         {
-          "research_rank": 103,
+          "research_rank": 104,
           "opportunity_type": "thermal_storage",
           "missing_fact": "thermal_storage_deployed",
           "research_priority": "MEDIUM",
@@ -31632,7 +31762,7 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 80,
+        "company_rank": 78,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",

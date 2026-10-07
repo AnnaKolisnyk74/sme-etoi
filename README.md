@@ -190,14 +190,18 @@ Current coding assessments (all numeric values remain non-canonical):
 | P27 BCE Special Ceramics | 5 | 10 |
 | P30 Privat-Brauerei Zötler | 7 | 8 |
 | P31 Brauerei Clemens Härle | 7 | 8 |
+| P43 WZR ceramic solutions | 6 | 9 |
+| P13 Schmalriede-Zink | 6 | 9 |
+| P25 Scheplast | 8 | 7 |
+| P15 ELOXAL BARZ | 4 | 11 |
 
-Current generated work queue: **12 OPEN_GATE, 360 READY_TO_CODE,
-57 RESEARCH_NEEDED and 23 AWAITING_HUMAN_REVIEW**. These are task counts,
+Current generated work queue: **12 OPEN_GATE, 340 READY_TO_CODE,
+76 RESEARCH_NEEDED and 24 AWAITING_HUMAN_REVIEW**. These are task counts,
 not proposal-field counts. All 88 companies with numeric-coding work still
 await canonical coding and independent human review; no final score is ready.
 
 `outputs/company_work_priority.csv` collapses work into company decisions:
-72 `CODE_NOW`, 13 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
+68 `CODE_NOW`, 17 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
 `ELIGIBILITY_FIRST`. Failed or missing deterministic QA yields `QA_FIRST`;
 partially covered coding stays `IN_PROGRESS` rather than claiming complete
 review coverage.
@@ -388,3 +392,18 @@ gaps each. Source content inspection corrects WZR's generic VDI citation and
 records Schmalriede's direct current ISO 14001 certificate and dated 2025 ambition,
 without inferring an EnMS, target achievement or energy deployment. See
 [the batch audit](docs/next_best_company.md#frozen-batch-nbcc-2026-10-06-03).
+
+
+The ranked batch `NBCC-2026-10-07-01` assesses P25 Scheplast (eight numeric
+proposals, seven research gaps) and P15 ELOXAL BARZ (four numeric proposals,
+eleven gaps). All twelve new numeric fields await human review. Scheplast's
+current direct ISO 14001 successor is recorded without inferring an EnMS;
+Barz's historical 2016 supplier case and unverified public energy role do not
+prove current technology deployment or a recent investment. Twenty of the
+100 sample companies now have complete 15-field first-pass assessments:
+148 numeric proposals remain review-pending and 152 fields need research.
+All sample source URLs remain covered by the audit; this follow-up rechecks
+ten selected-company URLs, including three newly added URLs (333 in total).
+Barth Galvanik (P26) is the next live coding company; that is a v2 documentary
+priority result, not an opportunity score. See
+[the frozen batch and evidence limits](docs/next_best_company.md#frozen-batch-nbcc-2026-10-07-01).

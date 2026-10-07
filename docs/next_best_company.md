@@ -227,3 +227,66 @@ After batch 03 the work queue has **350 READY_TO_CODE, 67 RESEARCH_NEEDED,
 23 AWAITING_HUMAN_REVIEW and 12 OPEN_GATE**. There are 70 CODE_NOW,
 15 RESEARCH_FIRST, three REVIEW_PROPOSALS and 12 ELIGIBILITY_FIRST companies.
 P25 Scheplast GmbH is next automatically; no additional batch is frozen here.
+
+
+## Frozen batch NBCC-2026-10-07-01
+
+Connected GitHub comparison confirmed main at
+`b254e94080ec8b7df668b51075aa4375e6872d7b` (merged PR #39).
+The selector froze this batch before new sources, certificate correction or
+coding proposals. Source-register/process-map fixtures preserve that state.
+
+| Rank | Company | Evidence / Process | QA | Gain | Verified URLs | Coverage |
+| --- | --- | --- | --- | --- | ---: | --- |
+| 1 | P25 Scheplast GmbH | B / B | PASS | MEDIUM | 3 | PROCESS (S-P25-03) |
+| 2 | P15 ELOXAL BARZ GmbH & Co KG | B / B | PASS | MEDIUM | 2 | PROCESS (S-P15-01) |
+
+Both had 15 unassessed fields. Confidence, QA, documentary gain, coverage and
+unassessed-field count tied; verified distinct URLs put P25 first. ID was only
+the final tie-breaker among otherwise equal remaining companies. No prediction
+of numeric yield and no company score influenced this decision.
+
+| Company | Numeric fields awaiting human review | Blank-valued research gaps |
+| --- | ---: | ---: |
+| P25 Scheplast | 8 | 7 |
+| P15 ELOXAL BARZ | 4 | 11 |
+
+Scheplast's own PV/self-consumption and waste-heat statements support some
+concrete energy measures and one onsite integration use case. Robotics supports
+limited drive/control interpretations only. The exact-holder ISO 14001 successor
+is valid through 2027-02-26; the old certificate remains VERIFIED_EXPIRED.
+This is environmental management, not ISO 50001 or verified EnMS maturity.
+Old staff/recycling/annual-solar figures cannot be reproduced on the current
+homepage and now have CONTENT_REVIEW_REQUIRED plus a scoped recovery entry;
+legacy staff data is not freshly confirmed. Conflicting undated counts are not
+averaged. Bioenergy concepts do not prove deployed CHP. Closing force in tonnes
+does not establish temperature, power or an electric thermal route.
+
+ELOXAL BARZ's own anodising and supplier-authored electrical-oxidation evidence
+support conservative conversion/power-quality inferences. The supplier case
+is explicitly historical (2016); coolant temperature and pipe material ranges
+are not process-heat temperatures, and insulation is not thermal storage.
+Current continuity and measured energy effects remain open. A public self-reported
+energy-management role supports the unverified-claim anchor only. Its role duties
+are neither a verified EnMS nor a deployed technology inventory. The public
+profile excerpt was retrieved without accessing login-only content.
+
+Company/process/energy sections, direct certification and exact-name public
+energy, certification, CO2 and target searches were inspected on 2026-10-07.
+Public gap interpretations do not assert absence of internal targets. The
+investment window is 2021-10-07 to 2026-10-07; a 2016 project, undated measures,
+certificate dates and crawl dates do not establish investments in that window.
+Ten selected-company URLs were rechecked by GET; all returned HTTP 200, including
+three new URLs. The complete inventory now has 333 URLs across all 100 sample
+companies and retained excluded candidates. Availability is separate from claim
+attribution, currency and human source review.
+
+The live queue is **340 READY_TO_CODE, 76 RESEARCH_NEEDED,
+24 AWAITING_HUMAN_REVIEW and 12 OPEN_GATE**. Both selected firms move to
+RESEARCH_FIRST; the company queue has 68 CODE_NOW, 17 RESEARCH_FIRST,
+three REVIEW_PROPOSALS and 12 ELIGIBILITY_FIRST. P26 Barth Galvanik is next.
+There are 20 assessed companies, 148 review-pending numeric proposals and
+152 explicit research fields. No prior proposal, canonical numeric input,
+deployment column, confidence grade or human review record is changed; only
+the sourced ISO 14001 fact and public-evidence summaries are corrected.
+No proposal total or published SME-ETOI score is produced.

@@ -85,7 +85,9 @@ class PilotExpansionDataTests(unittest.TestCase):
         self.assertEqual(companies["P11"]["iso_50001_status"], "VALID")
         self.assertEqual(companies["P11"]["iso_14001_status"], "VALID")
         self.assertEqual(companies["P23"]["iso_50001_status"], "VALID")
-        self.assertEqual(companies["P25"]["iso_14001_status"], "EXPIRED")
+        self.assertEqual(companies["P25"]["iso_14001_status"], "VALID")
+        self.assertEqual(by_key[("P25", "ISO 14001")]["valid_until"], "2027-02-26")
+        self.assertEqual(companies["P25"]["energy_management_deployed"], "UNKNOWN")
 
     def test_second_pass_qa_finds_no_cross_file_errors(self):
         self.assertEqual(validate(ROOT), [])
