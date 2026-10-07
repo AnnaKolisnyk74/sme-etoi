@@ -158,3 +158,26 @@ its attributed company profile: CONTENT_REVIEW_REQUIRED retains that history,
 and a named municipal profile provides a scoped replacement. Neither this
 AI source correction nor successful GET constitutes Anna's human review.
 The original full-audit counts above remain historical snapshots.
+
+
+## Continuous batch follow-up — 2026-10-07 (03)
+
+Batch NBCC-2026-10-07-03 adds twelve complete 15-field first passes: 67 numeric
+proposals awaiting independent human review and 113 blank UNKNOWN research
+fields. Current assessment coverage36/100, 540 fields: 250 pending numeric and
+290 research gaps. Human approval/canonical score coverage remains unchanged.
+Live queue260 ready/142 research/38 review/12 gate; company queue52 code-now/
+33 research-first/3 review/12 eligibility-first. Next P56. Canonical deployment,
+staff, confidence and numeric inputs plus human-review records are unchanged.
+
+357 sources/387 audited URLs, 373 retrievable; all100 companies covered. The
+65-URL follow-up has64 retrieval successes and one old retained404 with partial
+recovery. HTTP success does not clear five generic/staging content blockers.
+MACK's actual thermoforming replaces unsupported injection mapping. The new
+provisional archetype does not invent storage/scheduling; zero matched
+opportunity rules is valid while source/readiness/coding coverage remains
+complete. Current outputs202 opportunities/197 research tasks. Six certification
+facts and one historical claim are corrected by actual holder/date/body/register,
+with no automatic score approval. Certificate expiry, reporting dates, expired
+goals and planned measures remain separate.
+See [full batch boundaries](next_best_company.md#frozen-batch-nbcc-2026-10-07-03).

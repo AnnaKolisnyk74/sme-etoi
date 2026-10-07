@@ -37,6 +37,7 @@ def validate(root: Path = ROOT) -> list[str]:
     companies = read_csv(root, "data/company_intelligence.csv")
     candidates = read_csv(root, "data/pilot_candidates.csv")
     process_map = read_csv(root, "data/company_process_map.csv")
+    processes = read_csv(root, "data/process_library.csv")
     sources = read_csv(root, "evidence/source_register.csv")
     certificates = read_csv(root, "evidence/certificate_register.csv")
     qa_rows = read_csv(root, "evidence/qa_review.csv")
@@ -119,6 +120,12 @@ def validate(root: Path = ROOT) -> list[str]:
     mapped_ids = {row["company_id"] for row in process_map}
     if not company_ids.issubset(mapped_ids):
         errors.append("one or more canonical companies have no process mapping")
+    if duplicate_keys(processes, ("process_id",)):
+        errors.append("duplicate process-library ids")
+    process_ids = {row["process_id"] for row in processes}
+    for mapping in process_map:
+        if mapping["process_id"] not in process_ids:
+            errors.append(f"unknown process mapping for {mapping['company_id']}")
 
     if duplicate_keys(qa_rows, ("company_id",)):
         errors.append("duplicate QA-review rows")

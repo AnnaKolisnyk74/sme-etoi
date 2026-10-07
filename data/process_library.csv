@@ -8,3 +8,4 @@ PR006,anodising,metal_surface_heat,,,electrochemical_and_heat,MEDIUM,MEDIUM,MEDI
 PR007,ceramic_firing,glass_ceramics,,,high_temperature_heat,LOW,HIGH,LOW,batch,MEDIUM,HIGH,HIGH,MEDIUM,,,TO_RESEARCH
 PR008,glass_melting,glass_ceramics,,,high_temperature_heat,MEDIUM,HIGH,LOW,continuous,LOW,HIGH,HIGH,HIGH,,,TO_RESEARCH
 PR009,powder_coating,metal_surface_heat,,,process_heat_and_mechanical,MEDIUM,HIGH,LOW,batch,MEDIUM,MEDIUM,HIGH,MEDIUM,,,TO_RESEARCH
+PR010,vacuum_thermoforming,plastics_processing,,,mechanical_and_thermal,HIGH,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,MEDIUM,UNKNOWN,https://mack-kunststoff.com/unternehmen/,"Provisional archetype anchored to owned vacuum-forming and CNC capability; no generic temperature, carrier, cooling topology, schedulability or thermal storage inherited from injection moulding.",TO_RESEARCH
