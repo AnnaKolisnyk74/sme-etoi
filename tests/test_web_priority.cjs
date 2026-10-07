@@ -17,7 +17,7 @@ vm.runInContext(code, context);
 context.payload = JSON.parse(fs.readFileSync(path.join(root, 'web/data/sme_etoi.json'), 'utf8'));
 vm.runInContext('state.data = payload; renderFunctional("analysis");', context);
 let html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /P56/);
+assert.match(html, /P77/);
 assert.match(html, /QA/);
 assert.match(html, /Informationsgewinn \(Proxy\)/);
 const ranking = html.split('<h3>Next Best Coding Companies</h3>')[1].split('</section>')[0];
@@ -25,11 +25,11 @@ assert.equal((ranking.match(/<th(?:\s|>)/g) || []).length, 9);
 const rows = [...ranking.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
 assert.equal(rows.length, 10);
 for (const [, row] of rows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 9);
-assert.match(rows[0][1], /Spritzguß Müller GmbH/);
+assert.match(rows[0][1], /metak GmbH &amp; Co. KG/);
 assert.match(rows[0][1], /PASS/);
 assert.match(rows[0][1], /MEDIUM/);
 assert.match(rows[0][1], /<td>B<\/td><td>B<\/td>/);
-const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-03</h3>')[1].split('</section>')[0];
+const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-04</h3>')[1].split('</section>')[0];
 assert.match(batch, /Feldzahlen sind keine SME-ETOI Scores/);
 assert.equal((batch.match(/<th(?:\s|>)/g) || []).length, 5);
 const batchRows = [...batch.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
@@ -38,7 +38,7 @@ for (const [, row] of batchRows) {
   assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 5);
   assert.match(row, /RESEARCH FIRST/);
 }
-for (const [i, name, numeric, gaps] of [[0,/MACK/,9,6],[1,/Borgmann/,8,7],[2,/Eckert/,2,13],[3,/Höfler/,6,9],[4,/Weis/,4,11],[5,/Cardenas/,2,13],[6,/HARZKRISTALL/,8,7],[7,/Aying/,9,6],[8,/Distelhäuser/,4,11],[9,/Glauner/,1,14],[10,/Waldhaus/,5,10],[11,/Merschbrock/,9,6]]) {
+for (const [i, name, numeric, gaps] of [[0,/Spritzguß Müller/,5,10],[1,/Stocker/,1,14],[2,/Dorn/,9,6],[3,/AK Kunststoff/,4,11],[4,/Horstmann/,4,11],[5,/Kaltenkirchen/,4,11],[6,/Wieland/,5,10],[7,/KPM/,3,12],[8,/TechnoKer/,6,9],[9,/ceram/,4,11],[10,/Falter/,2,13],[11,/Si-Tech/,8,7]]) {
   assert.match(batchRows[i][1], name);
   assert.ok(batchRows[i][1].includes(`<td>${numeric}</td><td>${gaps}</td>`));
 }

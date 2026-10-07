@@ -498,3 +498,130 @@ queue: 260 READY_TO_CODE, 142 RESEARCH_NEEDED, 38 AWAITING_HUMAN_REVIEW and
 12 OPEN_GATE. Company queue: 52 CODE_NOW, 33 RESEARCH_FIRST, three
 REVIEW_PROPOSALS and twelve ELIGIBILITY_FIRST. All twelve selected companies
 move to RESEARCH_FIRST. Next live candidate: P56 Spritzguß Müller GmbH.
+
+
+## Frozen batch NBCC-2026-10-07-04
+
+Connected GitHub tools verified main at `00bf4390b2018bb8f3026c14f5adf1d530d47d43`
+(merged PR #42). Continuous company work is authorised by the user. Before
+enrichment, the v2 selector froze P56, P57, P58, P59, P61, P63, P64, P66,
+P68, P70, P75 and P76. Each tied on evidence/process B/B, QA PASS, PROCESS-only
+coverage, MEDIUM documentary gain, 15 unassessed fields and two verified
+distinct URLs. Final ID tie-breaker is deterministic, never predicted numeric
+yield or SME-ETOI. Fixtures `source_register_before_nbcc040704.csv` and
+`company_process_map_before_nbcc040704.csv` reproduce selection before later
+source/mapping corrections. P76's existing exact legal imprint recovery
+remains intact, while the old imprint URL's scope blocker remains explicit.
+
+| Company | Numeric proposals pending independent human review | Blank-valued research fields |
+| --- | ---: | ---: |
+| P56 Spritzguß Müller | 5 | 10 |
+| P57 Stocker | 1 | 14 |
+| P58 Dorn | 9 | 6 |
+| P59 AK Kunststoffspritzguss | 4 | 11 |
+| P61 Galvanik-Horstmann | 4 | 11 |
+| P63 OTK Kaltenkirchen | 4 | 11 |
+| P64 Wieland Metalloberflächentechnik | 5 | 10 |
+| P66 KPM Berlin | 3 | 12 |
+| P68 TechnoKer | 6 | 9 |
+| P70 ceram | 4 | 11 |
+| P75 Falter | 2 | 13 |
+| P76 Si-Tech Singer | 8 | 7 |
+
+P56 Spritzguß Müller owns CNC/mills/lathes/grinder, EDM/TIG, SPS and automatic
+assembly. Machine closing force/shot weight and photographed heated mould
+titles do not establish load, process heat carrier or temperatures.
+P57 Stocker's actual nine moulding machines differ from external AB-FormTECH
+toolmaking, generic CNC explanations and stock photos. Its quality page's
+theoretical SPC/regression discussion is not evidence of named installed
+control. Accordingly motor/control remain UNKNOWN instead of inherited
+maximum values. The process mapping now states external tool manufacture.
+
+P58 Dorn's actual2022 PV supplies self-reported500000-600000kWh/yr and50-60%
+of electricity demand, not all energy. Own950kWh electrical battery stores PV
+surplus: clear linked integration, not a thermal store or converter rating.
+Battery acquisition is undated; only2022 PV safely counts as a recent energy
+investment. New1500m2 hall is not a second proven energy technology. Own
+CNC/HSC milling, turning/grinding, EDM and laser welding are documented actual
+capabilities. Series QA has predefined control/measurement cycles without
+energy dispatch. DEKRA certificate171116123/3, ISO14001:2015, exact company/site,
+valid2025-11-28 to2028-11-27, issued2025-11-25: PDF body governs, including
+uppercase file extension.
+
+P59 AK owns picker/robot-equipped machines and QS/ERP; new tools made by external
+shops. Actual cooling/exhaust recovery heats the complete building through
+underfloor heating. This supports some measures, not a defined process-fuel
+displacement, slab thermal storage/dispatch or a dated recent investment.
+
+P61 Galvanik-Horstmann's own services/measurements replace generic old sector
+text. 250C is solderability-test temperature, not core bath heating. A rendered
+undated brochure uploaded2020 states KWKK and PV together cover50-55%
+electricity: not PV alone or total energy, with2026 continuity/fuel/date
+unconfirmed. Current policy supports vague improvement ambition. Historical
+portfolio does not automatically close current onsite/deployment fields.
+
+P63 OTK Kaltenkirchen's terse actual production-automaton/bath-line caption
+supports limited control. Adviser contact hours7-16 are not factory shifts or
+flexible windows. Generic association directory lacks exact company entry in
+retrieved content; its source stays CONTENT_REVIEW_REQUIRED with own
+entity/process recovery only. Other OTK entities' certificates/energy assets
+are excluded. P64 Wieland Schwetzingen owns rack/drum/manual galvanic plants
+and checks bath parameters; customer PV/wind applications are not owned
+renewables and unrelated Wieland Group targets are not inherited.
+
+P66 KPM's actual980C biscuit/1420C high firing support difficult high-temperature
+fit. Project provider2023 describes own kiln waste-heat export, public VDI case
+anchors2017;110C recovery outlet and1000kW THERMAL do not become kiln heat
+carrier or electric input.2017 outside recent lookback. Adjacent Siemens
+heat-pump pilot/provider decarbonisation goals are another actor/site, not KPM.
+Current remaining fuel, heat-electrification route, storage, dispatch and recent
+completed energy investments remain researched gaps.
+
+P68 TechnoKer owns2022 PV205kWp and describes regional biogas in thermal
+afterburning. Visually inspected supplier proof537 records4436litres BIO-LPG/
+biogenic propane delivered2023-12-04, confirmed2024-01-25 to exact site. This
+is a different fuel product/scope from biogas, not ISO evidence or whole-plant
+fossil-free proof. Customer electric-heater ceramics are not own electric kilns.
+2018 recovery outside window;2021 kiln year lacks month and might precede
+2021-10-07. Only2022 PV safely counts as dated recent physical energy CAPEX;
+gas-supply switch/delivery not automatically additional capital project.
+Planned digitalisation by end2023 is not verified complete just because now2026.
+
+P70 ceram owns grinding/milling/air classification and XRF/laser measurement,
+melting/sintering without stated thermal carrier/temperature. Customer material
+ratings are excluded. Current ISO14001 claim has no current direct body. Old
+PDF returned404: filename/cached snippet cannot authenticate holder/dates or
+prove expiry. Corrected CLAIM_ONLY with blank direct URL/current validity,
+never VALID/VERIFIED_EXPIRED or inferred discontinued certification. Scope-
+limited recovery preserves own claim and the missing current certificate.
+
+P75 Falter actually pumps beer into lager tanks, heats mash at unspecified
+temperatures and makes vague resource-saving bottling claims. Product
+maturation4-6weeks/3-4months is not thermal-buffer/dispatch permission.2018
+cellar and2024 capacity extension do not establish recent energy CAPEX. Alcohol
+responsibility is not an energy target. P76 Si-Tech owns PV and robots/automatic
+handling/packaging plus production planning; specialised tool manufacture is
+outsourced, no owned CNC/EDM inherited. Three shifts not flexible window. SKZ
+certificate001048.U current2025-11-29 to2028-11-28 issued2025-11-29; rendered
+annex explicitly includes Siemens15 assembly alongside Siemens26-28. EcoVadis
+and integrated-system claims are not mature certified EnMS. PV commissioning
+undated;2018/2020 projects outside window.
+
+Lookback2021-10-07 to2026-10-07. Own primary production/energy/documents and
+exact-name public certificate/energy/target checks completed; relevant PDF
+bodies and annex rendered/visually inspected. Certificate and report periods,
+claim attribution and current continuity remain separate from HTTP200.
+67 URLs GET-rechecked:66 retrievable, one ceram404 with explicit partial claim
+recovery. Live inventory424 URLs,409 retrievable,394 registered sources, all
+100 sample companies audited. Two generic reachable sources are explicitly
+blocked; all prior content blockers remain in place.
+
+48/100 complete15-field first passes:720 rows,305 numeric proposals pending
+independent human review and415 blank UNKNOWN research fields. Assessment
+coverage not reviewed/canonical score coverage; no final score published.
+All prior proposals, canonical numeric/deployment/staff/confidence fields and
+human-review records unchanged. Two verified ISO14001 facts and one
+unverified claim corrected independently from scoring. Live queue200 ready/
+197 research/43 review/12 gate; company queue40 CODE_NOW/45 RESEARCH_FIRST/
+3 REVIEW_PROPOSALS/12 ELIGIBILITY_FIRST. All12 selected firms RESEARCH_FIRST.
+Next live candidate P77 metak GmbH & Co. KG.
