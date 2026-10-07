@@ -22,3 +22,36 @@ The public sources support the legal-entity and process mapping used for provisi
 - Original: https://www.brauerei-schimpfle.de/impressum/ — REPLACEMENT_FOUND. Replacement/context IDs: `S-P93-03`. Exact entity, address and register on current company imprint.
 
 See `evidence/source_link_audit.csv` for GET status and `evidence/source_recovery.csv` for exact scope. Retrieval/recovery is not Anna's Human Review; scores, certificate validity and deployment UNKNOWNs are unchanged.
+
+
+## Continuous ranked fieldwise batch — 2026-10-07
+
+NBCC-2026-10-07-05 frozen on main after PR#43 before enrichment: B/B confidence, QA PASS, PROCESS-only coverage, MEDIUM documentary gain,15 unassessed fields and two verified distinct URLs each. ID is final deterministic tie-breaker, not score/yield. Historical fixtures preserve selection before source/mapping corrections.
+
+Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue.
+
+- S-P93-04: https://www.brauerei-schimpfle.de/brauerei — Own power-regulated refrigeration compressors, desuperheater heat recovery and monitored water/wastewater plus RO.0C maturation not heating-temperature fit or dispatchable thermal store.
+- S-P93-05: https://de.linkedin.com/posts/brauerei-schimpfle_brauerei-schimpfle-photovoltaik-activity-7207281589314031616-LBi4 — Public own company post14/06/2024 confirms PV commissioned/running on production/logistics roof:908modules/1500m2, not kWp/kWh. Date from primary post structured metadata, current2026 operation not independently measured.
+- S-P93-06: https://www.brauerei-schimpfle.de/blog-collection/jahresruckblick — Own2023 year review published03/01/2024: transformer station INSTALLED for then-coming PV. Packing/tanks capacity not extra proven energy investment. Transformer not measured harmonic issue.
+
+All 15 fields assessed: 8 numeric proposals pending independent human review; 7 blank NEEDS_RESEARCH fields with UNKNOWN confidence. No aggregate score.
+
+| Field | Proposal | Confidence | Status | Sources |
+| --- | ---: | --- | --- | --- |
+| temperature_fit_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| process_electrification_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| fossil_heat_displacement_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| motor_drive_score | 5 | B | AWAITING_HUMAN_REVIEW | S-P93-04 |
+| power_conversion_score | 5 | C | AWAITING_HUMAN_REVIEW | S-P93-05 |
+| automation_control_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P93-04 |
+| scheduling_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| thermal_storage_flex_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| incremental_load_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| power_quality_score | 1 | C | AWAITING_HUMAN_REVIEW | S-P93-04, S-P93-05, S-P93-06 |
+| onsite_integration_score | 2 | C | AWAITING_HUMAN_REVIEW | S-P93-05 |
+| measures_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P93-04, S-P93-05 |
+| management_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P93-04 |
+| targets_gap_score | 3 | B | AWAITING_HUMAN_REVIEW | S-P93-04, S-P93-05 |
+| investment_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P93-05, S-P93-06 |
+
+Exact field rationales/gaps in data/score_coding_proposals.csv. Primary own/issuer/project/public agency pages, exact-name energy/certificate/target checks, rendered report/certificate bodies checked 07/10/2026. Availability, attribution, data/report period and current operating continuity separate. Lookback 2021-10-07 to 2026-10-07. Prior proposals, canonical numeric/deployment/staff/confidence and human review unchanged. AI first pass never Anna human review.

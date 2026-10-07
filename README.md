@@ -199,13 +199,13 @@ Current coding assessments (all numeric values remain non-canonical):
 | P29 Meckatzer | 11 | 4 |
 | P33 Gindele | 6 | 9 |
 
-Current generated work queue: **12 OPEN_GATE, 200 READY_TO_CODE,
-197 RESEARCH_NEEDED and 43 AWAITING_HUMAN_REVIEW**. These are task counts,
+Current generated work queue: **12 OPEN_GATE, 140 READY_TO_CODE,
+248 RESEARCH_NEEDED and 52 AWAITING_HUMAN_REVIEW**. These are task counts,
 not proposal-field counts. All 88 companies with numeric-coding work still
 await canonical coding and independent human review; no final score is ready.
 
 `outputs/company_work_priority.csv` collapses work into company decisions:
-40 `CODE_NOW`, 45 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
+28 `CODE_NOW`, 57 `RESEARCH_FIRST`, 3 `REVIEW_PROPOSALS`, and 12
 `ELIGIBILITY_FIRST`. Failed or missing deterministic QA yields `QA_FIRST`;
 partially covered coding stays `IN_PROGRESS` rather than claiming complete
 review coverage.
@@ -220,8 +220,8 @@ limitations, source-type rules and the reproducible batch audit.
 The v2 batches selected **P21/P27**, then **P30 Zötler/P31 Härle**, before
 their source enrichment or coding. Both selections are frozen in
 `data/coding_batch_selections.csv`; all four now require field-specific research.
-The live ranking after batch NBCC-2026-10-07-04 promotes
-**P77 metak GmbH & Co. KG**. The web scoring
+The live ranking after batch NBCC-2026-10-07-05 promotes
+**P95 Winkler-Bräu GmbH & Co. KG**. The web scoring
 view exposes QA, coverage, the information-gain proxy and the latest frozen
 batch with live review/research field counts.
 
@@ -467,7 +467,7 @@ remain explicitly blocked despite HTTP success. See
 
 Batch `NBCC-2026-10-07-04` adds twelve complete fieldwise first passes,
 180 fields: 55 numeric proposals awaiting independent human review and
-125 precise research gaps. **48/100 companies** now have all 15 fields assessed
+125 precise research gaps. At the end of this batch, **48/100 companies** had all 15 fields assessed
 (720 rows: 305 pending numeric proposals and 415 blank research fields).
 No final score is ready. Actual human-review coverage remains unchanged;
 AI first pass never becomes APPROVED automatically.
@@ -503,3 +503,51 @@ sources remain content-blocked. Queue: 200 ready, 197 research, 43 review and
 twelve eligibility-first. Canonical scores/deployment/staff/confidence and
 prior proposals/human review records unchanged.
 See [full batch boundaries](docs/next_best_company.md#frozen-batch-nbcc-2026-10-07-04).
+
+
+## Continuous batch follow-up — 2026-10-07 (05)
+
+Batch `NBCC-2026-10-07-05` completes 15-field first passes for P77, P79,
+P80, P81, P83, P84, P87, P90, P91, P92, P93 and P94: 70 numeric proposals
+await independent human review; 110 fields remain blank `NEEDS_RESEARCH`
+with `UNKNOWN` confidence and an exact missing fact. Current coverage is
+**60/100 companies and 900/1,500 fields**: 375 numeric proposals pending
+review and 525 research gaps. This is assessment coverage, not resolved or
+human-reviewed coverage. No new canonical score or automatic approval.
+
+Six certificate facts are corrected using actual document holders, validity
+and issuer: Metak ISO 50001/14001, Langer ISO 50001/14001, MKT ISO 14001 and
+Riegele EMAS. Riegele's signed 2025 statement and current official register
+are distinct from reporting years, registration-since dates and expiry.
+
+German Ceramany manufacturing attribution is unresolved; foreign ISO 9001
+holders and cross-site staff cannot establish German owned assets. All its
+15 fields remain researched gaps. InnoKeramik operates plate finishing;
+KITO's firing and machinery sold to partners are not owned kiln equipment.
+Both mappings use explicit provisional archetypes without supported
+opportunity-rule matches; source, readiness and coding coverage remain.
+
+Planned Langer PV/storage cannot be considered commissioned because September
+2026 has passed. Actual 2024 efficient-machine, extraction-converter and
+cooling work is dated separately. MKT's purchased hydro is not owned generation
+or renewable process heat. ELB's coating resistance is not bath temperature.
+A GRW capacity grant is not completed energy CAPEX. Riegele's inconsistent
+boiler unit is retained, not silently changed from MWh to MW. Future controls,
+CIP and logistics PV remain planned until completion is established.
+Ketterer's explicit owner statement of exclusively woodchip operating heat
+supports a bounded thermal-fuel anchor, not whole-company fossil-free status;
+2021/2023 nitrogen dates conflict and are not averaged. Schimpfle's completed
+PV and transformer projects retain separate dates. Kuchlbauer's room heat
+pump and electrical battery are not brewery process heat or thermal storage;
+its 2024 integrated logistics project counts once for investment coding.
+
+Current work queue: 140 `READY_TO_CODE`, 248 `RESEARCH_NEEDED`,
+52 `AWAITING_HUMAN_REVIEW`, 12 `OPEN_GATE`. Company actions: 28 `CODE_NOW`,
+57 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`, 12 `ELIGIBILITY_FIRST`.
+Next ranked company: **P95 Winkler-Bräu**. Outputs contain 200 opportunities
+and 195 research tasks. The source inventory has 430 registered sources,
+460 audited URLs and 445 retrievable URLs, covering all 100 sample firms.
+The 65-URL batch follow-up confirms 63 retrievable URLs and two retained
+404s; replacement/scope notes remain separate from successful retrieval.
+Prior proposals, canonical numeric/deployment/staff/confidence fields and
+independent human-review records remain unchanged.
