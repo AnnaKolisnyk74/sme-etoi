@@ -30,20 +30,20 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(
             counts,
             {
-                "CODE_NOW": 64,
-                "RESEARCH_FIRST": 21,
+                "CODE_NOW": 52,
+                "RESEARCH_FIRST": 33,
                 "REVIEW_PROPOSALS": 3,
                 "ELIGIBILITY_FIRST": 12,
             },
         )
 
-    def test_p35_is_next_best_company_to_code(self):
+    def test_p56_is_next_best_company_to_code(self):
         next_rows = [
             row for row in self.rows if row["is_next_to_code"] == "YES"
         ]
         self.assertEqual(len(next_rows), 1)
-        self.assertEqual(next_rows[0]["company_id"], "P35")
-        self.assertEqual(next_rows[0]["legal_entity"], "MACK KUNSTSTOFFTECHNIK GMBH & CO. KG")
+        self.assertEqual(next_rows[0]["company_id"], "P56")
+        self.assertEqual(next_rows[0]["legal_entity"], "Spritzguß Müller GmbH")
         self.assertEqual(next_rows[0]["coding_rank"], "1")
         self.assertEqual(next_rows[0]["workflow_action"], "CODE_NOW")
 
@@ -52,7 +52,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
             row for row in self.rows if row["workflow_action"] == "CODE_NOW"
         ]
         ranks = sorted(int(row["coding_rank"]) for row in rows)
-        self.assertEqual(ranks, list(range(1, 65)))
+        self.assertEqual(ranks, list(range(1, 53)))
 
     def test_research_first_companies_are_exactly_known_gap_cases(self):
         self.assertEqual(
@@ -61,7 +61,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "RESEARCH_FIRST"
             },
-            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33"},
+            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55"},
         )
 
     def test_p11_moves_from_code_now_to_research_first(self):

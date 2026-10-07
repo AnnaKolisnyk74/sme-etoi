@@ -381,3 +381,120 @@ from completion of human review or canonical scoring. No prior proposal,
 canonical numeric input, deployment field, confidence grade or human review
 record changes; four directly sourced certificate statuses and evidence
 summaries are corrected. No aggregate proposal or published score is produced.
+
+
+## Frozen batch NBCC-2026-10-07-03
+
+Connected GitHub tools confirmed main at `79b84144d50f13e5b7f5b6516c19d92adf093d9a`
+(merged PR #41). The user authorises continuous work across company boundaries.
+The existing v2 selector froze twelve candidates before enrichment: P35, P36,
+P38, P39, P41, P44, P45, P50, P51, P52, P54 and P55. Each tied on B/B
+evidence/process confidence, QA PASS, PROCESS-only coverage, MEDIUM documentary
+gain, 15 unassessed fields and two verified distinct URLs. ID was only the final
+deterministic tie-breaker. Fixtures `source_register_before_nbcc040703.csv` and
+`company_process_map_before_nbcc040703.csv` preserve the original selection.
+The proxy predicts documentary research gain, never numeric yield or SME-ETOI.
+Generic source and process errors found afterwards are not retroactively erased
+from the frozen ranking.
+
+| Company | Numeric proposals pending real human review | Blank-valued research fields |
+| --- | ---: | ---: |
+| P35 MACK Kunststofftechnik | 9 | 6 |
+| P36 Kunststofftechnik Borgmann | 8 | 7 |
+| P38 Krämer + Eckert | 2 | 13 |
+| P39 Eloxal Höfler | 6 | 9 |
+| P41 Galvano Weis | 4 | 11 |
+| P44 OXIDKERAMIK J. Cardenas | 2 | 13 |
+| P45 HARZKRISTALL | 8 | 7 |
+| P50 Brauerei Aying | 9 | 6 |
+| P51 Distelhäuser | 4 | 11 |
+| P52 Glauner / Alpirsbacher | 1 | 14 |
+| P54 Waldhaus | 5 | 10 |
+| P55 Merschbrock | 9 | 6 |
+
+MACK owns vacuum thermoforming and CNC, not established own injection moulding.
+The source-linked PR010 archetype keeps temperature, cooling, schedule, storage
+and power-quality assumptions UNKNOWN. The existing opportunity rules match
+none of its currently supported signals. Output QA checks that opportunities
+belong to the sample and that process mappings resolve; it does not force every
+company to acquire a technical opportunity. Source, readiness and scoring work
+outputs still cover all 100 firms. Its 2023 PV expansion is dated, whereas
+2019 servo conversion is outside the lookback and 2025 general CNC capacity/
+efficiency is not a separate confirmed energy project. Square metres are not kWp.
+
+Borgmann's current solar-energy use is not proof of owned PV. Limited conversion
+is supported by actual ultrasonic welding; onsite fit is only possible EMS
+consumption steering. Regional biogas use is not own CHP. Current ISO 14001:2015
+PDF dates govern over the website's erroneous 2025 norm label. Its generic job
+portal does not substantiate legacy staff counts; current 110 and historical
+130-plus figures remain separated without a canonical staff/eligibility update.
+
+Ehingen's own reachable websites expose a TEST-SYSTEM banner. They remain
+CONTENT_REVIEW_REQUIRED. The actual association profile establishes the exact
+entity and anodising/powder coating only. Combined group 280 staff, 30000 m2
+and heat-treatment capabilities are not assigned to the entity. Höfler's two
+automated lines and bath quality control are owned process evidence; wastewater
+2022 and capacity 2023 do not by themselves prove energy-transition investment.
+
+Galvano Weis's exact-site current certificate uses an abbreviated holder name
+linked on its own legal imprint to the unchanged canonical entity. The generic
+directory source is blocked. 2013 pulse-plating research's future-tense heat pump
+is not a confirmed current plant; 2023 carbon offsets are not plant heat savings.
+OXIDKERAMIK's product operating temperatures and customer PV/wind/hydro
+applications do not establish its own kiln temperature, carrier or generation.
+
+Harzkristall directly identifies two owned electric thermal applications: melt
+furnace and reheating drum. Programmable cooling and named cold machining are
+actual control/drive evidence. 130 kg is glass capacity, not temperature, kW
+or validated thermal storage. Furnace recipe control is not dispatch permission.
+
+Ayinger's primary public case establishes an 83 C washer heat-pump application
+with 150 kW thermal output. That is not electrical input; the historical 135 C
+gas boiler does not establish the current whole-site fossil mix. The Bavarian
+11/2018 washer date and report's 05/2019 heat-pump date are distinct stages;
+dena's 06/2019 heat-pump date remains differing precise evidence. All are outside
+the investment window. The scanned 28-page statement has 2022 data and signed
+2023-06-28 validation for DE-155-00168. The exact official active EMAS register
+on 2026-09-01 establishes current registration. Its registered-since date 2000
+and future May 2025/2027 submissions are not invented validity/expiry dates.
+Visual inspection of report pp12, 23, 24 and 27 separates completed, in-planning
+and in-implementation measures. Expired 2020-2024 goals, planned 2023-2030
+energy storage and planned 2023-2026 logistics do not become completed current
+targets/storage/investments merely because it is now 2026. Savings 81%/87%
+have different accounts/scopes and are not averaged. Current targets, current
+remaining fossil mix, storage and completed recent investments remain research.
+
+Distelhäuser's 2022 ISO 14001 renewal is CLAIM_ONLY without current direct
+validity. Actual wort-cooling heat recovery is not itself a store or heat pump;
+0 C maturation is not heating fit or a free load-shifting window. Glauner/
+Alpirsbacher's recovered raw-material scope does not restore the broken values
+page's environmental claims; 1893/1895/1925 assets are not current steam/ice
+installations. Waldhaus's 75% denominator is own PV generation self-consumed,
+not total site demand. Its 2017 PV falls outside the investment window.
+
+Merschbrock's two PV commissions 2022/2025, charging transformer 2025 and
+charging 2026 are several actual recent energy projects. Current 1200 kWp is
+PV nameplate, not annual generation. Over 90% own electricity includes PV/CHP,
+not all renewable PV or total energy. CHP waste heat used for building heating
+and absorption cooling is not a heat pump or thermal store. Actual EDM/PV/
+charging are distinct conversion applications; the transformer alone is not
+a power-quality issue. ISO 14001 expires 2026-10-15: current on the research
+date but close to expiry, with no unstated validity start invented.
+
+Lookback: 2021-10-07 to 2026-10-07. Official company/process/energy/documents,
+certifier/EMAS and exact-name public certification/energy/target searches checked.
+Relevant PDFs rendered and visually inspected; scanned report OCR never alone
+sets validity or status. 65 company URLs rechecked by GET: 64 retrievable, one
+retained 404 with prior partial recovery. Complete live inventory 387 URLs
+(35 new), 373 retrievable, 357 registered sources; all 100 firms audited.
+Five generic/staging sources remain CONTENT_REVIEW_REQUIRED despite success.
+
+36/100 complete fieldwise first passes (540 fields: 250 numeric pending human
+review, 290 blank research gaps). This is assessment coverage, not human-reviewed
+or canonical scoring. No prior proposals, canonical numeric/deployment/staff/
+confidence fields or human review records changed. No aggregate score published.
+Six current certification facts and one historical claim corrected. Live work
+queue: 260 READY_TO_CODE, 142 RESEARCH_NEEDED, 38 AWAITING_HUMAN_REVIEW and
+12 OPEN_GATE. Company queue: 52 CODE_NOW, 33 RESEARCH_FIRST, three
+REVIEW_PROPOSALS and twelve ELIGIBILITY_FIRST. All twelve selected companies
+move to RESEARCH_FIRST. Next live candidate: P56 Spritzguß Müller GmbH.

@@ -18,11 +18,11 @@ class WebExportTests(unittest.TestCase):
     def test_web_payload_covers_exactly_current_pilot(self):
         meta = self.payload["meta"]
         self.assertEqual(meta["company_count"], 100)
-        self.assertEqual(meta["opportunity_count"], 203)
-        self.assertEqual(meta["research_task_count"], 198)
+        self.assertEqual(meta["opportunity_count"], 202)
+        self.assertEqual(meta["research_task_count"], 197)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
-        self.assertEqual(meta["code_now_company_count"], 64)
+        self.assertEqual(meta["code_now_company_count"], 52)
         self.assertEqual(meta["eligibility_gate_count"], 12)
         self.assertEqual(meta["eligibility_blocked_company_count"], 12)
         self.assertEqual(len(self.payload["companies"]), 100)
@@ -40,7 +40,9 @@ class WebExportTests(unittest.TestCase):
             self.assertTrue(company["company_id"])
             self.assertTrue(company["legal_entity"])
             self.assertTrue(company["sources"])
-            self.assertTrue(company["opportunities"])
+            self.assertIsInstance(company["opportunities"], list)
+            if company["company_id"] == "P35":
+                self.assertEqual(company["opportunities"], [])
             for source in company["sources"]:
                 self.assertTrue(source["source_id"])
                 self.assertTrue(source["final_url"].startswith("https://"))
@@ -100,9 +102,9 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "AWAITING_HUMAN_REVIEW": 30,
-                "READY_TO_CODE": 320,
-                "RESEARCH_NEEDED": 90,
+                "AWAITING_HUMAN_REVIEW": 38,
+                "READY_TO_CODE": 260,
+                "RESEARCH_NEEDED": 142,
             },
         )
         self.assertTrue(
@@ -129,15 +131,15 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             summary["workflow_action_counts"],
             {
-                "CODE_NOW": 64,
+                "CODE_NOW": 52,
                 "ELIGIBILITY_FIRST": 12,
-                "RESEARCH_FIRST": 21,
+                "RESEARCH_FIRST": 33,
                 "REVIEW_PROPOSALS": 3,
             },
         )
         next_best = summary["next_best_company"]
-        self.assertEqual(next_best["company_id"], "P35")
-        self.assertEqual(next_best["legal_entity"], "MACK KUNSTSTOFFTECHNIK GMBH & CO. KG")
+        self.assertEqual(next_best["company_id"], "P56")
+        self.assertEqual(next_best["legal_entity"], "Spritzguß Müller GmbH")
         self.assertEqual(next_best["coding_rank"], 1)
         self.assertEqual(next_best["priority_version"], "2.0.0")
         self.assertEqual(next_best["qa_result"], "PASS")
@@ -170,15 +172,15 @@ class WebExportTests(unittest.TestCase):
             )
         )
         self.assertEqual(
-            companies["P35"]["workflow_priority"]["workflow_action"],
+            companies["P56"]["workflow_priority"]["workflow_action"],
             "CODE_NOW",
         )
         self.assertEqual(
-            companies["P35"]["workflow_priority"]["is_next_to_code"],
+            companies["P56"]["workflow_priority"]["is_next_to_code"],
             "YES",
         )
         self.assertEqual(
-            companies["P35"]["workflow_priority"]["coding_rank"],
+            companies["P56"]["workflow_priority"]["coding_rank"],
             1,
         )
         self.assertEqual(
@@ -221,8 +223,8 @@ class WebExportTests(unittest.TestCase):
             {
                 company["company_id"]
                 for company in self.payload["companies"]
-                if company["opportunities"][0]["sample_eligibility_status"]
-                == "ELIGIBILITY_PENDING"
+                if any(o["sample_eligibility_status"] == "ELIGIBILITY_PENDING"
+                       for o in company["opportunities"])
             },
         )
 

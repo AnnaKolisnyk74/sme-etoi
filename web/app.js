@@ -19,8 +19,8 @@ function titleCase(v){return String(v||"").replaceAll("_"," ").replace(/\b\w/g,c
 function n(v){return new Intl.NumberFormat("de-DE").format(v||0)}
 function money(v){return v===null||v===undefined||v===""?"—":new Intl.NumberFormat("de-DE",{maximumFractionDigits:2}).format(v)}
 function uniq(a){return Array.from(new Set(a.filter(Boolean)))}
-function eligibility(c){return c.opportunities?.[0]?.sample_eligibility_status||"PROVISIONAL_PASS"}
-function actionability(c){return c.opportunities?.[0]?.actionability_status||"PROVISIONAL"}
+function eligibility(c){return c.opportunities?.[0]?.sample_eligibility_status||(c.score_readiness?.score_status==="NOT_SCOREABLE_ELIGIBILITY"?"ELIGIBILITY_PENDING":"PROVISIONAL_PASS")}
+function actionability(c){return c.opportunities?.[0]?.actionability_status||(c.score_readiness?.score_status==="NOT_SCOREABLE_ELIGIBILITY"?"ELIGIBILITY_BLOCKED":"PROVISIONAL")}
 
 const stateAbbr={
   "Bavaria":"BY","Bayern":"BY","Baden-Württemberg":"BW","North Rhine-Westphalia":"NRW",

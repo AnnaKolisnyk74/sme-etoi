@@ -63,12 +63,14 @@ def validate_generated_outputs(
     company_ids = {row["company_id"] for row in companies}
     opportunity_company_ids = {row["company_id"] for row in opportunities}
 
-    if opportunity_company_ids != company_ids:
-        missing = sorted(company_ids - opportunity_company_ids)
+    # Companies are covered by source/readiness/work outputs independently.
+    # A supported process can match none of the current opportunity rules;
+    # requiring a match would force unsupported technical assumptions.
+    if not opportunity_company_ids.issubset(company_ids):
         unexpected = sorted(opportunity_company_ids - company_ids)
         errors.append(
-            "opportunity coverage differs from canonical sample: "
-            f"missing={missing}, unexpected={unexpected}"
+            "opportunities contain companies outside canonical sample: "
+            f"unexpected={unexpected}"
         )
 
     expected_eligibility_ids = {
