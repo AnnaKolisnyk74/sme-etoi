@@ -117,8 +117,8 @@ class ContinuousBatch06Tests(unittest.TestCase):
         p=build_web_payload(ROOT)
         batch=next(b for b in p['coding_batches'] if b['batch_id']=='NBCC-2026-10-07-06')
         self.assertEqual([r['company_id'] for r in batch['companies']],CIDS)
-        self.assertEqual(sum(r['checked_fields'] for r in batch['companies']),68)
-        self.assertEqual(sum(r['needs_research_fields'] for r in batch['companies']),112)
+        self.assertEqual(sum(r['checked_fields'] for r in batch['companies']),70)
+        self.assertEqual(sum(r['needs_research_fields'] for r in batch['companies']),110)
         for r in batch['companies']:
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r)

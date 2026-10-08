@@ -31,8 +31,11 @@ def validate(proposals: list[dict[str, str]], root: Path) -> list[str]:
     if len(bodies) != len(source_checks):
         errors.append('Duplicate source-content check')
     baseline = rows(root / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
-    original = {(r['company_id'], r['score_field']): r for r in baseline if r['proposed_value']}
-    if records and set(checked) != set(original):
+    original = {(r['company_id'], r['score_field']): r for r in baseline}
+    original_numeric = {key for key, row in original.items() if row['proposed_value']}
+    additions = {key for key in checked if key not in original_numeric}
+    if records and (not original_numeric.issubset(checked)
+                    or not set(checked).issubset(original)):
         errors.append('Proposal-check coverage differs from frozen numeric baseline')
     expected_sources = set().union(*(ids(r['original_source_ids']) | ids(r['checked_source_ids'])
                                      for r in records)) if records else set()
@@ -67,8 +70,15 @@ def validate(proposals: list[dict[str, str]], root: Path) -> list[str]:
         except ValueError:
             errors.append(f'{key}: invalid check date')
         outcome = check.get('outcome')
-        if outcome not in {'CONFIRMED', 'CORRECTED', 'NEEDS_RESEARCH'}:
+        if outcome not in {'CONFIRMED', 'CORRECTED', 'NEEDS_RESEARCH', 'NEW_EVIDENCE'}:
             errors.append(f'{key}: invalid check outcome')
+        if key in additions and (outcome != 'NEW_EVIDENCE'
+                                or original.get(key, {}).get('proposal_status') != 'NEEDS_RESEARCH'
+                                or original.get(key, {}).get('proposal_confidence') != 'UNKNOWN'
+                                or check.get('original_confidence') != 'UNKNOWN'):
+            errors.append(f'{key}: new evidence must originate from a frozen UNKNOWN field')
+        if key in original_numeric and outcome == 'NEW_EVIDENCE':
+            errors.append(f'{key}: original numeric recheck cannot become new evidence')
         if bool(check.get('checked_value')) != (outcome != 'NEEDS_RESEARCH'):
             errors.append(f'{key}: outcome/value disagreement')
         if not check.get('decision_note') or not check.get('checked_evidence_basis'):

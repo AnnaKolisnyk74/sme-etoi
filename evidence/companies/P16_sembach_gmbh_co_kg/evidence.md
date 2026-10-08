@@ -50,3 +50,26 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **scheduling_flex_score**: Discrete production stages or batch processing support only a weak sequencing hypothesis. The cited source does not establish spare capacity, safe interruption, dispatch permission or a usable shifting window.
 
 - **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| process_electrification_score | Weiter offen / UNKNOWN | S-P16-06 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P16-06 |
+| motor_drive_score | Geprüft: 2 | S-P16-06 |
+| power_conversion_score | Weiter offen / UNKNOWN | S-P16-06 |
+| automation_control_score | Geprüft: 3 | S-P16-06 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P16-06 |
+| incremental_load_score | Weiter offen / UNKNOWN | S-P16-06 |
+| power_quality_score | Weiter offen / UNKNOWN | S-P16-06 |
+| onsite_integration_score | Weiter offen / UNKNOWN | S-P16-06 |
+| measures_gap_score | Geprüft: 3 | S-P16-06 |
+| investment_gap_score | Weiter offen / UNKNOWN | S-P16-06 |
+
+Current own brochure distinguishes production assets from customer energy products. No furnace fuel, process-electric route, converter inventory, useful thermal store, onsite generation or commissioning dates stated.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.

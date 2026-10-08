@@ -65,3 +65,29 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | scheduling_flex_score | 2 | 2 | Geprüft | S-P95-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | S-P95-06 |
+| process_electrification_score | Weiter offen / UNKNOWN | S-P95-06 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P95-06 |
+| motor_drive_score | Geprüft: 5 | S-P95-06 |
+| power_conversion_score | Weiter offen / UNKNOWN | S-P95-06 |
+| automation_control_score | Geprüft: 4 | S-P95-06 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P95-06 |
+| incremental_load_score | Weiter offen / UNKNOWN | S-P95-06 |
+| power_quality_score | Weiter offen / UNKNOWN | S-P95-06 |
+| onsite_integration_score | Weiter offen / UNKNOWN | S-P95-06 |
+| measures_gap_score | Weiter offen / UNKNOWN | S-P95-06 |
+| management_gap_score | Weiter offen / UNKNOWN | S-P95-06 |
+| targets_gap_score | Weiter offen / UNKNOWN | S-P95-06 |
+| investment_gap_score | Weiter offen / UNKNOWN | S-P95-06 |
+
+Supplier corroborates own brewery process equipment. The2017 cooling automation is historical; a2023 publication date is not its commissioning date. No energy savings, useful thermal store, current heat carrier or admissible shift window found; hotel assets remain separate.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.

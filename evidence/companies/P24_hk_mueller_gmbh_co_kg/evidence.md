@@ -33,3 +33,28 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
 
 - **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | S-P24-04, S-P24-05, S-P24-06 |
+| process_electrification_score | Weiter offen / UNKNOWN | S-P24-04, S-P24-05, S-P24-06 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P24-04, S-P24-05, S-P24-06 |
+| motor_drive_score | Geprüft: 5 | S-P24-04 |
+| power_conversion_score | Geprüft: 5 | S-P24-04 |
+| automation_control_score | Geprüft: 3 | S-P24-04, S-P24-06 |
+| scheduling_flex_score | Weiter offen / UNKNOWN | S-P24-04, S-P24-05, S-P24-06 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P24-04, S-P24-05, S-P24-06 |
+| incremental_load_score | Weiter offen / UNKNOWN | S-P24-04, S-P24-05, S-P24-06 |
+| power_quality_score | Geprüft: 1 | S-P24-04 |
+| onsite_integration_score | Geprüft: 2 | S-P24-04 |
+| measures_gap_score | Geprüft: 0 | S-P24-04 |
+| investment_gap_score | Geprüft: 3 | S-P24-05 |
+
+Electric drives and room heat recovery do not establish process temperatures, thermal electrification, useful storage or admissible shift windows. New PV remains announced. Conflicting52/55/56 fleet totals are not reconciled into a current count.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.

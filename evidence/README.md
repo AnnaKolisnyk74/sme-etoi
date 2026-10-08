@@ -86,10 +86,10 @@ independent human double-code. `qa_review.csv` therefore keeps
 checked the record.
 
 
-## Current proposal recheck
+## Proposal recheck — 2026-10-07
 
 `score_proposal_checks.csv` contains one before/after decision for each of the
-554 original numeric proposals. `proposal_source_checks.csv` records all 269
+554 original numeric proposals. `proposal_source_checks.csv` recorded all 269
 original/current cited source checks with actual checker, timestamp, body hash,
 section and scope. `recheck_20261007.md` explains the findings. The original
 proposals, sources, certificates and retrieval audit are preserved in
@@ -98,3 +98,21 @@ proposals, sources, certificates and retrieval audit are preserved in
 The content ledger explicitly retains failed URLs. A claim-only management gap
 can cite the unavailable historical certificate alongside an accessible owner
 claim; it cannot call that certificate valid. Personal approval is separate.
+
+
+## Open-field research — 2026-10-08
+
+Seven companies with 87 open fields were researched further. Twenty-two fields
+now have supported `CHECKED` proposals; 65 investigated fields remain blank
+`NEEDS_RESEARCH` / `UNKNOWN`. Across all 100 companies, 571 of 1,500 fields are
+checked and 929 remain open; no independent human approval is granted.
+
+The 554 original numeric recheck decisions and frozen 1,500-row snapshot remain
+intact. Twenty-two additional ledger decisions use `NEW_EVIDENCE` for formerly
+blank fields. The expanded ledger contains 576 decisions and 282 source-body
+checks (279 retrievable, three retained failures). Twelve new sources bring the
+source register to 529; all 563 source URLs retain their retrieval audit.
+
+See [research findings and boundaries](research_open_fields_20261008.md) and
+`field_research_20261008.csv` for all 87 field attempts. Source checking by Codex
+is separate from personal approval and canonical scoring.

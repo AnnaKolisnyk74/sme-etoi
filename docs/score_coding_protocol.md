@@ -48,6 +48,22 @@ An approved proposal still does not mutate canonical scoring data by itself.
 The accepted values must be copied into the canonical scoring input in a
 separate, reviewable change.
 
+## Source-checked continuation
+
+A substantive source and coding-anchor check can mark a supported proposal
+`CHECKED` (UI: **Geprüft**). This does not grant independent human approval.
+Checker provenance belongs in `evidence/score_proposal_checks.csv`; personal
+`reviewer`, `review_date` and `review_note` remain blank.
+
+For a field that was blank `NEEDS_RESEARCH` / `UNKNOWN` in the frozen
+2026-10-07 snapshot, a new supported anchor is recorded as `NEW_EVIDENCE`.
+The frozen original value and source trail are retained, all original numeric
+recheck decisions remain covered, and every current cited source requires a
+reviewed, attributable body. A prior numeric recheck cannot be relabelled
+`NEW_EVIDENCE`. Unsupported findings remain blank with the exact missing fact.
+
+See [the 2026-10-08 research record](../evidence/research_open_fields_20261008.md).
+
 ## Human-review rule
 
 `AWAITING_HUMAN_REVIEW` proposals must have blank `reviewer` and

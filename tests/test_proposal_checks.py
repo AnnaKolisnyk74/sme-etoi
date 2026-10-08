@@ -33,13 +33,13 @@ class ProposalCheckTests(unittest.TestCase):
     def test_all554_original_numeric_decisions_are_accounted_for(self):
         self.assertEqual(validate(ROOT), [])
         summary = proposal_checks.summary(ROOT)
-        self.assertEqual(summary['reviewed_proposal_count'], 554)
-        self.assertEqual(summary['outcome_counts'], {'CONFIRMED': 507, 'CORRECTED': 42, 'NEEDS_RESEARCH': 5})
-        self.assertEqual(summary['source_check_count'], 269)
-        self.assertEqual(summary['retrievable_source_count'], 266)
+        self.assertEqual(summary['reviewed_proposal_count'], 576)
+        self.assertEqual(summary['outcome_counts'], {'CONFIRMED': 507, 'CORRECTED': 42, 'NEEDS_RESEARCH': 5, 'NEW_EVIDENCE': 22})
+        self.assertEqual(summary['source_check_count'], 282)
+        self.assertEqual(summary['retrievable_source_count'], 279)
         self.assertEqual(summary['checked_by'], 'Codex')
         self.assertEqual(summary['final_score_approval'], 'NOT_GRANTED')
-        self.assertEqual(sum(r['proposal_status'] == 'CHECKED' for r in self.current), 549)
+        self.assertEqual(sum(r['proposal_status'] == 'CHECKED' for r in self.current), 571)
         self.assertFalse(any(r['proposal_status'] == 'AWAITING_HUMAN_REVIEW' for r in self.current))
         self.assertTrue(all(not r['reviewer'] and not r['review_date'] and not r['review_note'] for r in self.current))
 
@@ -77,7 +77,7 @@ class ProposalCheckTests(unittest.TestCase):
 
     def test_checked_values_are_exported_separately_and_never_final_scores(self):
         payload = build_web_payload(ROOT)
-        self.assertEqual(payload['field_assessment_summary']['checked_fields'], 549)
+        self.assertEqual(payload['field_assessment_summary']['checked_fields'], 571)
         self.assertEqual(payload['field_assessment_summary']['approved_fields'], 0)
         for company in payload['companies']:
             self.assertEqual(len(company['score_proposals']), 15)
@@ -88,7 +88,7 @@ class ProposalCheckTests(unittest.TestCase):
         self.assertIsNone(row['proposed_value'])
         self.assertEqual(row['proposal_status'], 'NEEDS_RESEARCH')
         self.assertIn('S-P45-05', self.by_key['P45', 'onsite_integration_score']['evidence_source_ids'])
-        self.assertEqual(payload['proposal_check_summary']['reviewed_proposal_count'], 554)
+        self.assertEqual(payload['proposal_check_summary']['reviewed_proposal_count'], 576)
 
     def test_checked_work_does_not_reopen_first_pass_or_bypass_upstream_gate(self):
         proposals = {('X', 'motor_drive_score'): {'proposal_status': 'CHECKED'}}
@@ -148,6 +148,7 @@ class ProposalCheckTests(unittest.TestCase):
             next(r for r in bodies if r['source_id'] == 'S-P03-03')['content_review_status'] = 'NOT_CHECKED'
             write(root / 'evidence/proposal_source_checks.csv', bodies)
             self.assertTrue(any('reviewed attributable' in e for e in validate(root)))
+
             write(root / 'evidence/proposal_source_checks.csv', proposal_checks.rows(ROOT / 'evidence/proposal_source_checks.csv'))
             changed = copy.deepcopy(self.current)
             row = next(r for r in changed if r['company_id'] == 'P70' and r['score_field'] == 'management_gap_score')
@@ -157,6 +158,39 @@ class ProposalCheckTests(unittest.TestCase):
             write(root / 'data/score_coding_proposals.csv', changed)
             write(root / 'evidence/score_proposal_checks.csv', checks)
             self.assertTrue(any('reviewed attributable' in e for e in validate(root)))
+
+    def test_new_evidence_preserves_frozen_unknown_and_original554_checks(self):
+        frozen = {(r['company_id'], r['score_field']): r for r in
+                  proposal_checks.rows(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
+        added = [r for r in self.checks if r['outcome'] == 'NEW_EVIDENCE']
+        self.assertEqual(len(added), 22)
+        self.assertEqual(len(self.checks) - len(added), 554)
+        for check in added:
+            key = check['company_id'], check['score_field']
+            self.assertEqual((frozen[key]['proposal_status'], frozen[key]['proposed_value']),
+                             ('NEEDS_RESEARCH', ''))
+            self.assertEqual(check['original_source_ids'], frozen[key]['evidence_source_ids'])
+            self.assertEqual(self.by_key[key]['proposal_status'], 'CHECKED')
+
+    def test_new_evidence_cannot_relabel_numeric_history_or_lose_body_support(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._copy_validation_data(root)
+            checks = copy.deepcopy(self.checks)
+            added = next(r for r in checks if r['outcome'] == 'NEW_EVIDENCE')
+            added['outcome'] = 'CONFIRMED'
+            write(root / 'evidence/score_proposal_checks.csv', checks)
+            self.assertTrue(any('frozen UNKNOWN' in e for e in validate(root)))
+            checks = copy.deepcopy(self.checks)
+            next(r for r in checks if r['outcome'] == 'CONFIRMED')['outcome'] = 'NEW_EVIDENCE'
+            write(root / 'evidence/score_proposal_checks.csv', checks)
+            self.assertTrue(any('numeric recheck' in e for e in validate(root)))
+            write(root / 'evidence/score_proposal_checks.csv', self.checks)
+            bodies = proposal_checks.rows(root / 'evidence/proposal_source_checks.csv')
+            next(r for r in bodies if r['source_id'] == 'S-P72-04')['content_review_status'] = 'NOT_CHECKED'
+            write(root / 'evidence/proposal_source_checks.csv', bodies)
+            self.assertTrue(any('reviewed attributable' in e for e in validate(root)))
+
 
 
 if __name__ == '__main__':
