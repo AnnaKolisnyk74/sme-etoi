@@ -37,3 +37,24 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 3 | 3 | Geprüft | S-P11-02 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 10 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 10 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Group hardening/galvanising references do not establish exact entity/site heat duties, fuel or current equipment. Group assets and production claims are not inherited automatically.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Firm-specific bath/drying temperatures and evidence-backed electric-heat technology fit |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific process-electrification or electric-heating use case |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current process-heat energy carrier and material fossil thermal service, if any |
+| motor_drive_score | Weiter offen / UNKNOWN | Firm-specific motor/drive applications and their materiality |
+| power_conversion_score | Weiter offen / UNKNOWN | Firm-specific rectifier/converter or controlled-electric-heat equipment evidence |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Operating schedule, batch pattern and evidence of schedulable or shiftable production |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal buffer/storage or evidence-backed usable thermal inertia |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined firm-specific electrification pathway sufficient for ordinal incremental-load relevance |
+| power_quality_score | Weiter offen / UNKNOWN | Firm-specific power-quality, harmonic, reactive-power or rectifier-load evidence |
+| onsite_integration_score | Weiter offen / UNKNOWN | Onsite generation, storage, microgrid or coordinated load-management evidence |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

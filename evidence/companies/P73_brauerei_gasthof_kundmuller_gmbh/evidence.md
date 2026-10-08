@@ -76,3 +76,20 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | management_gap_score | 2 | 2 | Geprüft | S-P73-06 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 6 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 6 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Vapour condensation/hot-water recovery is not independently useful thermal storage. Solar-brewery branding does not establish100percent renewable thermal fuel; some newer source access failed.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. |
+| power_conversion_score | Weiter offen / UNKNOWN | Owned rectifier/inverter/controlled-electric-heat applications, scope and duty; mechanical water power not electricity generation. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. |
+| power_quality_score | Weiter offen / UNKNOWN | Owned relevant converter/peak topology or measured harmonic/reactive/voltage findings; product resistance/current amps not measured power-quality evidence. |
+| targets_gap_score | Weiter offen / UNKNOWN | Owned energy/climate target, date, scope and roadmap, or documented sufficient defined search. General quality/resource sustainability not energy target. |
+| investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

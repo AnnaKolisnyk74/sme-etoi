@@ -68,3 +68,19 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 0 | 0 | Geprüft | S-P91-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 5 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 5 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+EMAS refrigeration/maturation temperatures are not hot-process temperatures. Boiler heat recovery and product tanks do not establish separately usable thermal storage or admissible load shifts.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Statement2025/data2024 signed2025-12-17 plus current EMASlist; actual2023forklift/2025PV, plans2026/2027not done;4.3MWh boiler Leistung unit inconsistent, not MW repaired. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Statement2025/data2024 signed2025-12-17 plus current EMASlist; actual2023forklift/2025PV, plans2026/2027not done;4.3MWh boiler Leistung unit inconsistent, not MW repaired. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Statement2025/data2024 signed2025-12-17 plus current EMASlist; actual2023forklift/2025PV, plans2026/2027not done;4.3MWh boiler Leistung unit inconsistent, not MW repaired. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Statement2025/data2024 signed2025-12-17 plus current EMASlist; actual2023forklift/2025PV, plans2026/2027not done;4.3MWh boiler Leistung unit inconsistent, not MW repaired. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Statement2025/data2024 signed2025-12-17 plus current EMASlist; actual2023forklift/2025PV, plans2026/2027not done;4.3MWh boiler Leistung unit inconsistent, not MW repaired. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

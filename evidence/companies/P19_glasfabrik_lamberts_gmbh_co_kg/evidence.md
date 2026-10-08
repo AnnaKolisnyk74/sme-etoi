@@ -49,3 +49,26 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
 
 - **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 12 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 12 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Exact-holder2022EPD uses2021production data and generic LCA energy datasets. Background natural-gas factors are not a current furnace-fuel inventory. Solar-glass/customer-building applications are not owned PV or heat pumps.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Documented furnace temperature and evidence-backed electric-heat technology fit for the Wunsiedel process |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific process-electrification route or documented electric-heat application |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current furnace energy carrier and material fossil-heat service that could be displaced |
+| motor_drive_score | Weiter offen / UNKNOWN | Firm-specific motor/drive applications and their materiality |
+| power_conversion_score | Weiter offen / UNKNOWN | Electrical furnace/converter/rectifier topology or another firm-specific power-conversion use case |
+| automation_control_score | Weiter offen / UNKNOWN | Firm-specific automation, sensing or coordinated-control evidence |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Operating pattern and evidence of schedulable or shiftable production stages |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal buffer/storage or evidence-backed usable thermal inertia |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined electrification pathway sufficient for ordinal incremental-load relevance |
+| power_quality_score | Weiter offen / UNKNOWN | Firm-specific power-quality or electrical-conversion evidence |
+| onsite_integration_score | Weiter offen / UNKNOWN | Onsite generation, storage, microgrid or load-management evidence |
+| investment_gap_score | Weiter offen / UNKNOWN | Whether the reported EUR 30 million site investment contains relevant energy-transition investment and direct-company corroboration |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

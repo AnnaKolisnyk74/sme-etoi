@@ -63,3 +63,23 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | power_quality_score | 1 | 1 | Geprüft | S-P108-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 9 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 9 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. |
+| motor_drive_score | Weiter offen / UNKNOWN | Owned electrical motor/compressor inventory, process roles and duty; mechanical drive not automatically electric. |
+| automation_control_score | Weiter offen / UNKNOWN | Owned process control/monitoring inventory and operational coordination; quality claims not EnMS maturity. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. |
+| measures_gap_score | Weiter offen / UNKNOWN | Named current implemented energy measures with exact entity/site/technology scope. Generic efficient/green production and resource recycling not adequate negative-search proof. |
+| management_gap_score | Weiter offen / UNKNOWN | Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. |
+| targets_gap_score | Weiter offen / UNKNOWN | Owned energy/climate target, date, scope and roadmap, or documented sufficient defined search. General quality/resource sustainability not energy target. |
+| investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

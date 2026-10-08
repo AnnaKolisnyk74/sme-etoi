@@ -41,3 +41,25 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P21-02 | S-P21-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 11 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 11 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Multi-brewery research describes generic energy options, not this brewery current fuel balance or deployed thermal storage. Own process improvements lack attributable heat duties and dates.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Source-linked operating temperatures and a firm-specific technology/temperature fit. |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific electric-heat route beyond general process-steam transition intent. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current fossil energy carrier and significance of fossil process heat at this site. |
+| power_conversion_score | Weiter offen / UNKNOWN | Firm-specific rectifier/converter/controlled-electric-heat topology and its materiality. |
+| automation_control_score | Weiter offen / UNKNOWN | Documented process controls beyond compact equipment design or carbon accounting. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Current operating schedule, buffer constraints and usable load-shifting capability. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Deployed thermal buffer/storage or documented usable thermal inertia, not an intention. |
+| incremental_load_score | Weiter offen / UNKNOWN | A current additional electrification route and ordinal incremental-load relevance. |
+| power_quality_score | Weiter offen / UNKNOWN | Site-specific harmonics, reactive-power or electrical peak-load evidence. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Site-specific PV, storage or load-management integration evidence. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dates and scope of qualifying investments within 2021-10-06 to 2026-10-06; historical projects do not close the lookback check. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

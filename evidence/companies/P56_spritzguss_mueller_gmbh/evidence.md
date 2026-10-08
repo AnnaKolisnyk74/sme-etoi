@@ -73,3 +73,24 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 5 | 5 | Geprüft | S-P56-03 | S-P56-04 | S-P56-05 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 10 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 10 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Electrical assemblies and mechanical systems supplied to customers are excluded from owned energy assets; tool-shop activity supplies no heat duty/fuel data.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own PV/battery/microgrid/load-management use case and actual integration; supplier green power and customer applications are not own deployment. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| measures_gap_score | Weiter offen / UNKNOWN | Current concrete plant energy-transition measures or adequate confirmed inventory; general sustainability, certification, customer products and historical pilots do not establish current deployment or absence. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

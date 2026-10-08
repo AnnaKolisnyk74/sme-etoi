@@ -58,3 +58,20 @@ Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persön
 Electric drives and room heat recovery do not establish process temperatures, thermal electrification, useful storage or admissible shift windows. New PV remains announced. Conflicting52/55/56 fleet totals are not reconciled into a current count.
 
 Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 6 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 6 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Electric drives and room-heat recovery do not establish thermal temperatures, heat carrier or dispatchable buffers. Announced PV expansion lacks completion proof; conflicting machine totals are not reconciled.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Firm-specific moulding/process temperatures and heating technology sufficient to establish electrification temperature fit |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific electric process-heat or electrification use case and machine technology |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current process-heat energy carrier and material fossil thermal service, if any |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Operating schedule, shift pattern and evidence of schedulable or bufferable production |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal/cold storage, process buffer or evidence-backed usable thermal inertia |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined firm-specific electrification pathway sufficient for ordinal incremental-load relevance |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

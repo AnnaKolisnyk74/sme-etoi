@@ -64,3 +64,26 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P107-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 12 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 12 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own kiln heat recovery retained. Main Dibbern pages/catalogues return403; parent-brand assets are not inherited into the manufacturing entity and fuel/control facts remain unknown.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. |
+| motor_drive_score | Weiter offen / UNKNOWN | Owned electrical motor/compressor inventory, process roles and duty; mechanical drive not automatically electric. |
+| power_conversion_score | Weiter offen / UNKNOWN | Owned rectifier/inverter/controlled-electric-heat applications, scope and duty; mechanical water power not electricity generation. |
+| automation_control_score | Weiter offen / UNKNOWN | Owned process control/monitoring inventory and operational coordination; quality claims not EnMS maturity. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Permitted timing shifts, quality/cooling/order constraints and spare capacity. Batch/24h operation alone not flexibility permission. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. |
+| incremental_load_score | Weiter offen / UNKNOWN | Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. |
+| power_quality_score | Weiter offen / UNKNOWN | Owned relevant converter/peak topology or measured harmonic/reactive/voltage findings; product resistance/current amps not measured power-quality evidence. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. |
+| management_gap_score | Weiter offen / UNKNOWN | Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. |
+| investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

@@ -80,3 +80,20 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 2 | 2 | Geprüft | S-P35-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 6 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 6 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own thermoforming/CNC/PV context retained. PV area is not installed kWp; no own process heat temperature, carrier or energy storage established.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Owned thermoforming/CNC and2023 PV; no injection-moulding assumptions. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Owned thermoforming/CNC and2023 PV; no injection-moulding assumptions. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Owned thermoforming/CNC and2023 PV; no injection-moulding assumptions. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Owned thermoforming/CNC and2023 PV; no injection-moulding assumptions. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Owned thermoforming/CNC and2023 PV; no injection-moulding assumptions. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Owned thermoforming/CNC and2023 PV; no injection-moulding assumptions. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

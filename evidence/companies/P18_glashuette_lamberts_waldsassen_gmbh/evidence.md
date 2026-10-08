@@ -49,3 +49,22 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
 
 - **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 8 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 8 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific glass-melting/reheating electrification route or documented electric furnace concept |
+| motor_drive_score | Weiter offen / UNKNOWN | Firm-specific motor/drive applications and their materiality |
+| power_conversion_score | Weiter offen / UNKNOWN | Any firm-specific converter/rectifier/electric-furnace or controlled-electric-heat application |
+| automation_control_score | Weiter offen / UNKNOWN | Firm-specific automation, sensing or coordinated process/energy-control evidence |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal buffer/storage or evidence-backed usable thermal inertia |
+| power_quality_score | Weiter offen / UNKNOWN | Firm-specific power-quality, converter-load or electrical peak evidence |
+| onsite_integration_score | Weiter offen / UNKNOWN | Onsite generation, battery, microgrid or coordinated load-management evidence |
+| investment_gap_score | Weiter offen / UNKNOWN | Recent energy-transition investments or a defined negative investment search over the lookback period |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

@@ -80,3 +80,20 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 2 | 2 | Geprüft | S-P58-03 | S-P58-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 6 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 6 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Machine clamping forces are not energy powers. Mills/dryers provide no attributable operating heat temperature, current fuel or energy-store parameters.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

@@ -68,3 +68,25 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 5 | 5 | Geprüft | S-P15-03 | S-P15-04 | S-P15-05 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 11 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 11 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+2016supplier case describes glycol cooling and pipe material ratings, not bath operating temperatures. Historical valves/flow meter and pipe insulation do not establish a current plant inventory, thermal store or dated recent energy investment.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual current bath/sealing/heating temperatures and electric-heat fit. Historical minus-5-deg-C coolant and generic PVC/ABS limits are not actual process-heat temperatures. |
+| process_electrification_score | Weiter offen / UNKNOWN | Owned current thermal services, energy carriers and a firm-specific heat-conversion route; electrochemical anodising is not thermal electrification. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual fossil thermal demand, current fuel mix and material displacement potential. |
+| motor_drive_score | Weiter offen / UNKNOWN | Current named material motor/pump/compressor/handling applications and drive relevance; pipes and valves alone do not establish these loads. |
+| automation_control_score | Weiter offen / UNKNOWN | Current plant sensing/control architecture and relevance. A 2016 flow transmitter and public role mentioning automatic plants do not establish current coordinated or energy-related control. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Actual schedule, batch-start/interruption tolerance and buffers. An offer of small series does not establish shiftable load or multi-shift operation. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Current thermal storage, validated bath/coolant buffering or usable thermal inertia; insulated lines and cooling service alone do not establish storage. |
+| incremental_load_score | Weiter offen / UNKNOWN | A defined additional heat-electrification route and ordinal incremental-load relevance; existing electrical anodising is not new load growth. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own-site PV, battery, microgrid or load-management integration evidence; an energy-management job role is not deployed technology. |
+| measures_gap_score | Weiter offen / UNKNOWN | Current concrete energy technologies or verified continuity/energy effect of the historical 2016 insulated-line case. Public role duties do not identify deployed measures; no no-measure anchor is assigned. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated energy-transition investment within 2021-10-07 to 2026-10-07. The supplier case is explicitly from 2016, outside the lookback; ongoing role duties and web crawl dates are not investment dates. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

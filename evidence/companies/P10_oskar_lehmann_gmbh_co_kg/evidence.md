@@ -220,3 +220,25 @@ Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persön
 Owner news archive was inspected. No new owned thermal carrier, onsite generation, current system maturity or energy-project commissioning proof found. Historical LEEN participation/2019 drives are not updated into current energy deployment; upstream SME gate remains open.
 
 Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 11 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 11 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own news archive supplies no new heat carrier, store or dated energy project. Historical LEEN/drives are not a current management certificate or complete plant inventory; SME gate remains separate.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. |
+| process_electrification_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Named owned thermal route, current heat carrier and feasible remaining substitution case; separate electric drives and room heat. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Permitted timing shifts, quality/cooling/order constraints and spare capacity. Batch/24h operation alone not flexibility permission. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. |
+| incremental_load_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. |
+| power_quality_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Owned relevant converter/peak topology or measured harmonic/reactive/voltage findings; product resistance/current amps not measured power-quality evidence. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. |
+| measures_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Named current implemented energy measures with exact entity/site/technology scope. Generic efficient/green production and resource recycling not adequate negative-search proof. |
+| management_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. |
+| investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

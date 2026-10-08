@@ -76,3 +76,19 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 2 | 2 | Geprüft | S-P28-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 5 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 5 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Cold-store investment is not a hot-process temperature or documented useful dispatch buffer. Process heat carrier, current management maturity and additional electrical heat duties remain unknown.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heat temperature and electric thermal-route fit; cooling/maturation temperatures do not establish this. Suspect 90-deg-C ice-water claim is unresolved, not corrected or used. |
+| process_electrification_score | Weiter offen / UNKNOWN | Defined owned heat-electrification route and current process-heat carrier; electric refrigeration/PV do not establish brewery heat conversion. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual brewery process-steam fuel mix and material remaining fossil heat. Local heat for new buildings does not establish fossil-free brewery processing. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional heat-electrification route and ordinal new-load materiality; existing cooling/PV do not establish incremental load. |
+| management_gap_score | Weiter offen / UNKNOWN | Current manufacturing-site energy/environmental management system and maturity. DEHOGA award concerns hospitality BrauereiWirtschaft and cannot substitute for factory EnMS; missing public certificate is not system absence. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

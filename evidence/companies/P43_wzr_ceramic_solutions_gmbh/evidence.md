@@ -65,3 +65,23 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P43-06 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 9 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 9 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Project heated printing platform/control work is separated from own current plant operation. No attributable heat-carrier/temperature or completed energy investment found.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Full operating ranges, material/atmosphere requirements and evidence-backed electric-heat fit for actual site processes; coating lower bounds are insufficient. |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific electric heating or conversion route; an oven/sintering process does not reveal its energy carrier. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current process-heat fuel and material fossil thermal service eligible for displacement. |
+| power_conversion_score | Weiter offen / UNKNOWN | Actual motor converter, furnace power-supply or other material electrical conversion architecture. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Usable thermal buffer/store or validated thermal inertia; drying duration and dilatometer measurement time are insufficient. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined new electrification scenario sufficient for ordinal load growth; no load value is invented. |
+| power_quality_score | Weiter offen / UNKNOWN | Firm-specific nonlinear supply, harmonics, reactive-power or peak-load signals, beyond the existence of a printer. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Company/site PV, battery, microgrid or load-management integration evidence. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated own-site energy-transition investment within 2021-10-06 to 2026-10-06; printer and dilatometer investments do not establish this scope. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

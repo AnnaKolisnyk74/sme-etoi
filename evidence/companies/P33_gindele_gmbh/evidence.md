@@ -72,3 +72,23 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P33-06 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 9 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 9 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual barrel/mould/process-heat temperatures and fit; 25-250 tonnes is closing force, not power or temperature. |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific thermal energy carriers and defined conversion route; computer-controlled injection machines and ultrasonic assembly do not establish current/new injection-heat electrification. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual remaining fossil process heat and site fuel mix; manufacturing capability and ISO 14001 do not establish this. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Actual production hours, restart/interruption tolerance and buffers; capability labels, sequence steps and animated zero counters do not establish load-shifting windows. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named thermal store or validated usable thermal inertia and dispatch window; moulding process itself is not storage. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing automation does not establish incremental energy demand. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own PV/battery/microgrid/load-management integration evidence; resource policy and environmental certification are not deployed technology. |
+| measures_gap_score | Weiter offen / UNKNOWN | Named concrete energy-transition technologies or verified savings of actual energy measures. Waste reduction, certification and generic automation are not such an inventory; no no-measures anchor is assigned. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated energy-transition investment within 2021-10-07 to 2026-10-07; homepage 2017 automation is outside the window and undated capability/certificate renewal is not a recent energy investment. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

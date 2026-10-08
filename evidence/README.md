@@ -116,3 +116,7 @@ source register to 529; all 563 source URLs retain their retrieval audit.
 See [research findings and boundaries](research_open_fields_20261008.md) and
 `field_research_20261008.csv` for all 87 field attempts. Source checking by Codex
 is separate from personal approval and canonical scoring.
+
+## Alle929 offenen Felder: Fortsetzung 2026-10-08
+
+Siehe [Gesamtrecherche und Grenzen](research_all_open_20261008.md). Genau929 Feldversuche bei 100 Firmen:26 zusätzliche belegte Felder,903 weiter UNKNOWN. Der Gesamtstand beträgt 597 Geprüft / 903 offen / 0 persönlich freigegeben. `field_research_all_open_20261008.csv`, `research_queries_20261008.csv` und `research_source_attempts_20261008.csv` trennen Feldbefund, Suchentdeckung, Abruf und tatsächliche Ankerprüfung. Alle100 Dossiers dokumentieren den jeweiligen Umfang.

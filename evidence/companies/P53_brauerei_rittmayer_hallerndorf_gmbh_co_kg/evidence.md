@@ -45,3 +45,21 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
 
 - **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 7 zuvor offene Felder bearbeitet; 1 zusätzliche Felder quellen- und ankergeprüft; 6 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Owner explicitly states wood-chip brewery heat supply.2023PV planning/building is not dated commissioned PV; Gastwirtschaft and brewery heat scopes remain separate.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Firm-specific process temperatures and evidence-backed electric-heat technology fit |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific process-heat electrification route or deployed electric heat application |
+| fossil_heat_displacement_score | Geprüft: 0 (B) | S-P53-02 |
+| motor_drive_score | Weiter offen / UNKNOWN | Firm-specific motor/drive applications and their materiality |
+| automation_control_score | Weiter offen / UNKNOWN | Firm-specific automation, sensing and coordinated process/energy-control evidence |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined firm-specific electrification pathway sufficient for ordinal incremental-load relevance |
+| investment_gap_score | Weiter offen / UNKNOWN | Implementation dates for biomass heat, PV, heat recovery and heat storage sufficient to code recent investment activity |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

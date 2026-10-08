@@ -63,3 +63,22 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 0 | 0 | Geprüft | S-P31-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 8 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 8 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | A company-specific electric-heat technology/temperature fit; cold maturation temperatures alone do not establish process-heat electrification fit. |
+| process_electrification_score | Weiter offen / UNKNOWN | A firm-specific industrial electric-heat route; efficient cooling, biomass heat and electric logistics do not prove such a route. |
+| motor_drive_score | Weiter offen / UNKNOWN | Firm-specific motor/compressor equipment and application intensity, beyond cooled tanks and unspecified refrigeration supply. |
+| power_conversion_score | Weiter offen / UNKNOWN | Rectifier/converter/controlled-heat equipment topology and materiality; PV existence alone does not document production conversion equipment. |
+| automation_control_score | Weiter offen / UNKNOWN | Firm-specific process automation or control equipment; manual quality checks and climate-framework participation are insufficient. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | A controllable heat/cold buffer or documented usable thermal inertia respecting product-quality constraints; maturation duration is not a storage-service proof. |
+| incremental_load_score | Weiter offen / UNKNOWN | An identified additional industrial electrification route and ordinal incremental-load relevance; EVs do not establish a process-heat route. |
+| power_quality_score | Weiter offen / UNKNOWN | Documented harmonic/reactive-power/peak-load signals or relevant electrical topology; renewable supply alone is insufficient. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
