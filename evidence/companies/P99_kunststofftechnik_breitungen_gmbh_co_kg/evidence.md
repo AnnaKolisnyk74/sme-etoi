@@ -56,3 +56,29 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | motor_drive_score | 5 | 5 | Geprüft | S-P99-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | S-P99-03 |
+| process_electrification_score | Weiter offen / UNKNOWN | S-P99-03 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P99-03 |
+| power_conversion_score | Weiter offen / UNKNOWN | S-P99-03 |
+| automation_control_score | Weiter offen / UNKNOWN | S-P99-03 |
+| scheduling_flex_score | Weiter offen / UNKNOWN | S-P99-03 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P99-03 |
+| incremental_load_score | Weiter offen / UNKNOWN | S-P99-03 |
+| power_quality_score | Weiter offen / UNKNOWN | S-P99-03 |
+| onsite_integration_score | Weiter offen / UNKNOWN | S-P99-03 |
+| measures_gap_score | Weiter offen / UNKNOWN | S-P99-03 |
+| management_gap_score | Weiter offen / UNKNOWN | S-P99-03 |
+| targets_gap_score | Weiter offen / UNKNOWN | S-P99-03 |
+| investment_gap_score | Weiter offen / UNKNOWN | S-P99-03 |
+
+Own machine inventory was re-read. Arburg model designations and closing forces do not alone establish installed converter topology. Current manufacturer brochure describes newer series without proving the owned legacy machines configuration. No new field closed.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.

@@ -76,3 +76,24 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | incremental_load_score | 5 | 5 | Geprüft | S-P03-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+| power_conversion_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+| power_quality_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+| onsite_integration_score | Geprüft: 2 | S-P03-05 |
+| measures_gap_score | Geprüft: 0 | S-P03-05 |
+| management_gap_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+| targets_gap_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+| investment_gap_score | Weiter offen / UNKNOWN | S-P03-05, S-P03-06 |
+
+Owner now confirms CHP/PV but gives no fuel, thermal dispatch window, current energy-management system or dated energy-asset commissioning. Raw-milk tank and2019 university design are not dispatchable thermal storage or current deployed concept.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.

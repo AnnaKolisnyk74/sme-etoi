@@ -197,3 +197,26 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 2 | 2 | Geprüft | S-P10-06 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | S-P10-10 |
+| process_electrification_score | Weiter offen / UNKNOWN | S-P10-10 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P10-10 |
+| scheduling_flex_score | Weiter offen / UNKNOWN | S-P10-10 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P10-10 |
+| incremental_load_score | Weiter offen / UNKNOWN | S-P10-10 |
+| power_quality_score | Weiter offen / UNKNOWN | S-P10-10 |
+| onsite_integration_score | Weiter offen / UNKNOWN | S-P10-10 |
+| measures_gap_score | Weiter offen / UNKNOWN | S-P10-10 |
+| management_gap_score | Weiter offen / UNKNOWN | S-P10-10 |
+| investment_gap_score | Weiter offen / UNKNOWN | S-P10-10 |
+
+Owner news archive was inspected. No new owned thermal carrier, onsite generation, current system maturity or energy-project commissioning proof found. Historical LEEN participation/2019 drives are not updated into current energy deployment; upstream SME gate remains open.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.

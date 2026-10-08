@@ -192,9 +192,12 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertEqual(len(p24), 5)
         self.assertEqual(
             {row["task_status"] for row in p24},
-            {"RESEARCH_NEEDED"},
+            {"CHECKED", "RESEARCH_NEEDED"},
         )
-        self.assertTrue(all(row["research_gap_fields"] for row in p24))
+        self.assertTrue(all(row["research_gap_fields"] for row in p24
+                            if row["task_status"] == "RESEARCH_NEEDED"))
+        self.assertTrue(all(not row["research_gap_fields"] for row in p24
+                            if row["task_status"] == "CHECKED"))
 
         self.assertEqual(len(p23), 5)
         self.assertEqual(

@@ -54,3 +54,30 @@ All15 fields assessed: 0 numeric proposals awaiting actual human review; 15 blan
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P72-03 |
 
 Exact field rationales/missing facts: data/score_coding_proposals.csv. Certificate bodies and relevant pages visually checked; holder, period, site and product-versus-process scope separated. Frömgen initial HTTP466 subsequently recovered through live HTTP200 primary-body retrieval; owned machining scope reviewed separately. Investment window2021-10-07 to2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records preserved. AI first pass is not Anna human review.
+
+
+## Offene Felder: Recherche 2026-10-08
+
+Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persönliche Freigabe bleibt separat.
+
+| Feld | Ergebnis | Belege |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| process_electrification_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| motor_drive_score | Geprüft: 5 | S-P72-04, S-P72-05 |
+| power_conversion_score | Geprüft: 2 | S-P72-04 |
+| automation_control_score | Geprüft: 4 | S-P72-05 |
+| scheduling_flex_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| incremental_load_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| power_quality_score | Geprüft: 1 | S-P72-04 |
+| onsite_integration_score | Geprüft: 3 | S-P72-04 |
+| measures_gap_score | Geprüft: 3 | S-P72-04, S-P72-06 |
+| management_gap_score | Weiter offen / UNKNOWN | S-P72-04, S-P72-05, S-P72-06, S-P72-07 |
+| targets_gap_score | Geprüft: 3 | S-P72-04 |
+| investment_gap_score | Geprüft: 2 | S-P72-04, S-P72-06 |
+
+Beer refrigeration and long maturation are not dispatchable cold storage. No temperatures, current thermal fuel, safe interruption window or management maturity found. PV area is not capacity; lauter construction is not final commissioning.
+
+Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.
