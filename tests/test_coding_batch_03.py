@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Evidence-scope regression checks for the first batch after the full URL audit."""
 import sys
 import unittest
@@ -20,7 +21,7 @@ class CodingBatch03Tests(unittest.TestCase):
         companies, _, research = build_outputs(ROOT)
         sources = read_csv(ROOT / 'tests/fixtures/source_register_before_nbcc03.csv')
         process = read_csv(ROOT / 'tests/fixtures/company_process_map_before_nbcc03.csv')
-        proposals = [r for r in read_csv(ROOT / 'data/score_coding_proposals.csv')
+        proposals = [r for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
                      if r['company_id'] not in {'P43', 'P13'}]
         work = generate_score_work_queue(companies, build_score_readiness(ROOT, companies),
             process, sources, read_csv(ROOT / 'evidence/qa_review.csv'),
@@ -30,7 +31,7 @@ class CodingBatch03Tests(unittest.TestCase):
         self.assertEqual([r['company_id'] for r in manifest], ['P43', 'P13'])
 
     def test_each_field_has_pending_review_or_a_precise_blank_valued_gap(self):
-        rows = read_csv(ROOT / 'data/score_coding_proposals.csv')
+        rows = read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
         for cid in ['P43', 'P13']:
             assessment = [r for r in rows if r['company_id'] == cid]
             self.assertEqual({r['score_field'] for r in assessment}, set(SCORE_FIELDS))
@@ -69,13 +70,13 @@ class CodingBatch03Tests(unittest.TestCase):
                        if r['company_id'] == 'P13')
         self.assertEqual(company['energy_management_deployed'], 'UNKNOWN')
         proposals = {(r['company_id'], r['score_field']): r
-                     for r in read_csv(ROOT / 'data/score_coding_proposals.csv')}
+                     for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         self.assertEqual(proposals['P13', 'management_gap_score']['proposed_value'], '2')
         self.assertIn('achievement is UNKNOWN', proposals['P13', 'targets_gap_score']['evidence_basis'])
 
     def test_customer_savings_generic_ai_and_research_assets_do_not_close_site_gaps(self):
         proposals = {(r['company_id'], r['score_field']): r
-                     for r in read_csv(ROOT / 'data/score_coding_proposals.csv')}
+                     for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         for cid in ['P13', 'P43']:
             for field in ['temperature_fit_score', 'process_electrification_score',
                           'fossil_heat_displacement_score', 'thermal_storage_flex_score',
@@ -91,7 +92,7 @@ class CodingBatch03Tests(unittest.TestCase):
         self.assertEqual([r['company_id'] for r in batch['companies']], ['P43', 'P13'])
         for r in batch['companies']:
             self.assertEqual(r['current_workflow_action'], 'RESEARCH_FIRST')
-            self.assertEqual(r['awaiting_human_review_fields'], 6)
+            self.assertEqual(r['checked_fields'], 6)
             self.assertEqual(r['needs_research_fields'], 9)
             self.assertNotIn('score', r)
             self.assertNotIn('proposal_total', r)

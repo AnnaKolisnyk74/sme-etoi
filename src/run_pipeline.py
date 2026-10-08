@@ -273,6 +273,7 @@ def validate_score_work_queue(
         errors.append("eligibility-blocked companies received numeric coding tasks")
 
     allowed_numeric_statuses = {
+        "CHECKED",
         "READY_TO_CODE",
         "IN_PROGRESS",
         "RESEARCH_NEEDED",
@@ -401,6 +402,12 @@ def pipeline_summary(
         "awaiting_human_review_tasks": sum(
             row.get("task_status") == "AWAITING_HUMAN_REVIEW"
             for row in (score_work or [])
+        ),
+        "checked_tasks": sum(
+            row.get("task_status") == "CHECKED" for row in (score_work or [])
+        ),
+        "checked_proposal_companies": sum(
+            row.get("workflow_action") == "CHECKED_PROPOSALS" for row in (company_priority or [])
         ),
         "code_now_companies": sum(
             row.get("workflow_action") == "CODE_NOW"

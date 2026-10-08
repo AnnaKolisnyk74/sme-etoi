@@ -23,3 +23,21 @@
   Derix workshops.
 - Research the load profile and energy systems; firing-process relevance is
   now directly supported.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| temperature_fit_score | 3 | 3 | Geprüft | S-P20-04 |
+| process_electrification_score | 3 | 3 | Geprüft | S-P20-04 |
+| scheduling_flex_score | 5 | 2 | Geprüft | S-P20-04 |
+| measures_gap_score | 10 | 10 | Geprüft | S-P20-01 | S-P20-02 | S-P20-03 | S-P20-04 |
+| management_gap_score | 5 | 5 | Geprüft | S-P20-01 | S-P20-02 | S-P20-03 | S-P20-04 |
+| targets_gap_score | 5 | 5 | Geprüft | S-P20-01 | S-P20-02 | S-P20-03 | S-P20-04 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **scheduling_flex_score**: Discrete production stages or batch processing support only a weak sequencing hypothesis. The cited source does not establish spare capacity, safe interruption, dispatch permission or a usable shifting window.

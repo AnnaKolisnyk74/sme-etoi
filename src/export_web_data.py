@@ -8,6 +8,7 @@ import json
 from collections import Counter
 from pathlib import Path
 import source_audit_summary
+import proposal_checks
 from score_companies import SCORE_FIELDS
 
 
@@ -92,6 +93,7 @@ def coding_batch_history(selections, proposals, priority_rows):
                 'priority_reason_at_selection': r['priority_reason'],
                 'current_workflow_action': by_company.get(r['company_id'], {}).get('workflow_action', 'UNKNOWN'),
                 'awaiting_human_review_fields': field_states.get(r['company_id'], {}).get('AWAITING_HUMAN_REVIEW', 0),
+                'checked_fields': field_states.get(r['company_id'], {}).get('CHECKED', 0),
                 'needs_research_fields': field_states.get(r['company_id'], {}).get('NEEDS_RESEARCH', 0),
             } for r in sorted(rows, key=lambda r: int(r['selection_rank']))],
         })
@@ -112,13 +114,14 @@ def field_assessment_summary(companies, proposals, priority_rows):
         assessed = [rows[0] for field, rows in fields.items()
                     if field in expected and len(rows) == 1
                     and rows[0]['proposal_status'] in
-                    {'NEEDS_RESEARCH', 'AWAITING_HUMAN_REVIEW', 'APPROVED'}]
+                    {'NEEDS_RESEARCH', 'AWAITING_HUMAN_REVIEW', 'CHECKED', 'APPROVED'}]
         states = Counter(r['proposal_status'] for r in assessed)
         result.append({
             'company_id': cid, 'legal_entity': company['legal_entity'],
             'assessed_field_count': len(assessed), 'expected_field_count': len(expected),
             'complete_first_pass': len(assessed) == len(expected),
             'awaiting_human_review_fields': states['AWAITING_HUMAN_REVIEW'],
+            'checked_fields': states['CHECKED'],
             'needs_research_fields': states['NEEDS_RESEARCH'],
             'approved_fields': states['APPROVED'],
             'eligibility_gate_open': priority.get(cid, {}).get('workflow_action') == 'ELIGIBILITY_FIRST',
@@ -129,6 +132,7 @@ def field_assessment_summary(companies, proposals, priority_rows):
         'expected_field_count': len(result) * len(expected),
         'assessed_field_count': sum(r['assessed_field_count'] for r in result),
         'awaiting_human_review_fields': sum(r['awaiting_human_review_fields'] for r in result),
+        'checked_fields': sum(r['checked_fields'] for r in result),
         'needs_research_fields': sum(r['needs_research_fields'] for r in result),
         'approved_fields': sum(r['approved_fields'] for r in result),
         'eligibility_gate_company_count': sum(r['eligibility_gate_open'] for r in result),
@@ -139,6 +143,9 @@ def field_assessment_summary(companies, proposals, priority_rows):
 def build_web_payload(root: Path = ROOT) -> dict:
     companies = read_csv(root, "data/company_intelligence.csv")
     proposals = read_csv(root, "data/score_coding_proposals.csv")
+    proposals_by_company = {}
+    for proposal in proposals:
+        proposals_by_company.setdefault(proposal['company_id'], []).append(proposal)
     candidates = read_csv(root, "data/pilot_candidates.csv")
     process_map = read_csv(root, "data/company_process_map.csv")
     process_library = read_csv(root, "data/process_library.csv")
@@ -358,6 +365,15 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "opportunities": web_opportunities,
                 "research_tasks": web_tasks,
                 "score_work_tasks": web_score_work,
+                "score_proposals": [{
+                    "score_field": p['score_field'],
+                    "proposed_value": numeric_or_none(p['proposed_value']),
+                    "proposal_status": p['proposal_status'],
+                    "proposal_confidence": p['proposal_confidence'],
+                    "evidence_source_ids": p['evidence_source_ids'],
+                    "evidence_basis": p['evidence_basis'],
+                    "missing_fact": p['missing_fact'],
+                } for p in proposals_by_company.get(company_id, [])],
                 "workflow_priority": {
                     **priority_evidence(company_priority),
                     "company_rank": numeric_or_none(company_priority.get("company_rank")),
@@ -368,6 +384,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "ready_to_code_tasks": numeric_or_none(company_priority.get("ready_to_code_tasks")),
                     "research_needed_tasks": numeric_or_none(company_priority.get("research_needed_tasks")),
                     "awaiting_human_review_tasks": numeric_or_none(company_priority.get("awaiting_human_review_tasks")),
+                    "checked_tasks": numeric_or_none(company_priority.get("checked_tasks")),
                     "open_gate_tasks": numeric_or_none(company_priority.get("open_gate_tasks")),
                     "work_priority": normalise(company_priority.get("work_priority")),
                     "next_action": normalise(company_priority.get("next_action")),
@@ -449,6 +466,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
 
     return {
         "field_assessment_summary": field_assessment_summary(companies, proposals, company_work_priority),
+        "proposal_check_summary": proposal_checks.summary(root),
         "eligibility_coding_selections": read_csv(root, "data/eligibility_coding_selections.csv"),
         "source_audit_summary": audit_summary,
         "meta": {

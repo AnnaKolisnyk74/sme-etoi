@@ -102,8 +102,8 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "AWAITING_HUMAN_REVIEW": 63,
-                                "RESEARCH_NEEDED": 377,
+                "CHECKED": 60,
+                                "RESEARCH_NEEDED": 380,
             },
         )
         self.assertTrue(
@@ -131,8 +131,7 @@ class WebExportTests(unittest.TestCase):
             summary["workflow_action_counts"],
             {
                                 "ELIGIBILITY_FIRST": 12,
-                "RESEARCH_FIRST": 85,
-                "REVIEW_PROPOSALS": 3,
+                "RESEARCH_FIRST": 88,
             },
         )
         next_best = summary["next_best_company"]

@@ -41,3 +41,34 @@ The supporting sources are recorded as `S-P04-03` to `S-P04-05`.
 - Verify linked entities in the official register before final approval.
 - Verify current EMAS and ISO 14001 validity metadata.
 - Verify whether planned heat-electrification measures have been commissioned.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| temperature_fit_score | 10 | 10 | Geprüft | S-P04-06 |
+| process_electrification_score | 7 | 7 | Geprüft | S-P04-06 |
+| fossil_heat_displacement_score | 5 | 5 | Geprüft | S-P04-06 |
+| motor_drive_score | 5 | 5 | Geprüft | S-P04-06 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P04-06 |
+| automation_control_score | 4 | 4 | Geprüft | S-P04-06 |
+| scheduling_flex_score | 5 | 2 | Geprüft | S-P04-06 |
+| thermal_storage_flex_score | 2 | UNKNOWN | Recherche nötig | S-P04-06 |
+| incremental_load_score | 5 | 5 | Geprüft | S-P04-06 |
+| power_quality_score | 1 | 1 | Geprüft | S-P04-06 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P04-06 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P04-06 |
+| management_gap_score | 2 | 2 | Geprüft | S-P04-03 | S-P04-04 | S-P04-05 | S-P04-06 |
+| targets_gap_score | 0 | 0 | Geprüft | S-P04-06 |
+| investment_gap_score | 0 | 2 | Geprüft | S-P04-06 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **scheduling_flex_score**: Discrete production stages or batch processing support only a weak sequencing hypothesis. The cited source does not establish spare capacity, safe interruption, dispatch permission or a usable shifting window.
+
+- **thermal_storage_flex_score**: Central refrigeration and cooled beer storage do not establish an available thermal buffer for shifting electrical demand. Need a named usable heat/cold store, operating window and quality constraints.
+
+- **investment_gap_score**: The 2023 report documents completed rooftop PV in 2023. Solar-thermal installation is beginning/planned; the malt-house energy upgrade is dated only 2021, without a commissioning month inside the strict 2021-10-07 to 2026-10-07 window. Count one safely dated completed project, not planned assets or an unbounded 2021 date.

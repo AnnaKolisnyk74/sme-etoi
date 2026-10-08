@@ -34,3 +34,18 @@
   documentation before coding any technology deployment.
 - Research furnace energy carrier, load profile, heat recovery, flexibility and
   power-quality deployments.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| measures_gap_score | 7 | 7 | Geprüft | S-P19-03 |
+| management_gap_score | 0 | 0 | Geprüft | S-P19-04 | S-P19-05 |
+| targets_gap_score | 5 | 3 | Geprüft | S-P19-02 | S-P19-03 | S-P19-04 | S-P19-05 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.

@@ -19,3 +19,17 @@
 - Verify the financial SME threshold.
 - Research operating schedule and deployed flexibility, storage and
   power-quality solutions.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| management_gap_score | 0 | 0 | Geprüft | S-P24-03 |
+| targets_gap_score | 5 | 3 | Geprüft | S-P24-01 | S-P24-02 | S-P24-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.

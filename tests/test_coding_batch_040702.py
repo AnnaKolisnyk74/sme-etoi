@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Attribution, certificate validity and temporal/temperature boundaries of batch 02."""
 import sys
 import unittest
@@ -14,7 +15,7 @@ CIDS={'P26','P28','P29','P33'}
 
 class CodingBatch040702Tests(unittest.TestCase):
     def setUp(self):
-        self.proposals={(r['company_id'],r['score_field']):r for r in read_csv(ROOT/'data/score_coding_proposals.csv')}
+        self.proposals={(r['company_id'],r['score_field']):r for r in read_csv(ROOT/'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         self.sources={r['source_id']:r for r in read_csv(ROOT/'evidence/source_register.csv')}
         self.certs={(r['candidate_id'],r['standard']):r for r in read_csv(ROOT/'evidence/certificate_register.csv')}
 
@@ -99,7 +100,7 @@ class CodingBatch040702Tests(unittest.TestCase):
         batch=next(b for b in payload['coding_batches'] if b['batch_id']=='NBCC-2026-10-07-02')
         self.assertEqual([r['company_id'] for r in batch['companies']],['P26','P28','P29','P33'])
         for r,n,g in zip(batch['companies'],[8,10,11,6],[7,5,4,9]):
-            self.assertEqual((r['awaiting_human_review_fields'],r['needs_research_fields']),(n,g))
+            self.assertEqual((r['checked_fields'],r['needs_research_fields']),(n,g))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)
         self.assertIsNone(payload['company_work_summary']['next_best_company']['unassessed_field_count'])

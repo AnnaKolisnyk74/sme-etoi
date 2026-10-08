@@ -51,3 +51,20 @@ The legal entity and process are supported, but complete financial aggregation, 
 - Original: https://www.zoetler.de/download/zoetler-nachhaltigkeitsbericht_emas2023.pdf — NO_EQUIVALENT_FOUND. Replacement/context IDs: `S-P30-03`. Reachable company sustainability page states that declaration is being revised; only company EMAS claim remains. Open: Direct current environmental statement and registration validity remain unresolved.
 
 See `evidence/source_link_audit.csv` for GET status and `evidence/source_recovery.csv` for exact scope. Retrieval/recovery is not Anna's Human Review; scores, certificate validity and deployment UNKNOWNs are unchanged.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| automation_control_score | 3 | 3 | Geprüft | S-P30-04 |
+| scheduling_flex_score | 2 | 2 | Geprüft | S-P30-05 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P30-03 |
+| measures_gap_score | 3 | 3 | Geprüft | S-P30-03 | S-P30-04 |
+| management_gap_score | 3 | 3 | Geprüft | S-P30-03 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P30-03 |
+| investment_gap_score | 2 | 2 | Geprüft | S-P30-04 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

@@ -124,13 +124,13 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertEqual(len(p04), 5)
         self.assertEqual(
             {row["task_status"] for row in p04},
-            {"AWAITING_HUMAN_REVIEW"},
+            {"CHECKED", "RESEARCH_NEEDED"},
         )
         self.assertTrue(
             all(row["proposal_covered_fields"] for row in p04)
         )
         self.assertTrue(
-            all(not row["research_gap_fields"] for row in p04)
+            sum(bool(row["research_gap_fields"]) for row in p04) == 1
         )
 
         self.assertEqual(len(p19), 5)
@@ -144,7 +144,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
 
         self.assertEqual(len(p12), 5)
         self.assertEqual(
-            sum(row["task_status"] == "AWAITING_HUMAN_REVIEW" for row in p12),
+            sum(row["task_status"] == "CHECKED" for row in p12),
             4,
         )
         self.assertEqual(
@@ -170,7 +170,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertEqual(len(p05), 5)
         self.assertEqual(
             {row["task_status"] for row in p05},
-            {"AWAITING_HUMAN_REVIEW"},
+            {"CHECKED", "RESEARCH_NEEDED"},
         )
         self.assertTrue(all(row["proposal_covered_fields"] for row in p05))
 
@@ -184,10 +184,10 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertEqual(len(p22), 5)
         self.assertEqual(
             {row["task_status"] for row in p22},
-            {"AWAITING_HUMAN_REVIEW"},
+            {"CHECKED", "RESEARCH_NEEDED"},
         )
         self.assertTrue(all(row["proposal_covered_fields"] for row in p22))
-        self.assertTrue(all(not row["research_gap_fields"] for row in p22))
+        self.assertTrue(sum(bool(row["research_gap_fields"]) for row in p22) == 1)
 
         self.assertEqual(len(p24), 5)
         self.assertEqual(
@@ -209,7 +209,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
             4,
         )
         self.assertEqual(
-            sum(row["task_status"] == "AWAITING_HUMAN_REVIEW" for row in p11),
+            sum(row["task_status"] == "CHECKED" for row in p11),
             1,
         )
         p11_gap = next(
@@ -223,7 +223,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
         )
         self.assertEqual(
             p11_transition["task_status"],
-            "AWAITING_HUMAN_REVIEW",
+            "CHECKED",
         )
 
         self.assertEqual(len(p53), 5)
@@ -232,7 +232,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
             4,
         )
         self.assertEqual(
-            sum(row["task_status"] == "AWAITING_HUMAN_REVIEW" for row in p53),
+            sum(row["task_status"] == "CHECKED" for row in p53),
             1,
         )
         p53_flex = next(
@@ -241,7 +241,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
         )
         self.assertEqual(
             p53_flex["task_status"],
-            "AWAITING_HUMAN_REVIEW",
+            "CHECKED",
         )
 
         self.assertEqual(len(p20), 5)
@@ -255,7 +255,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertTrue(all(row['proposal_covered_fields'] for row in remaining))
         self.assertEqual(
             {row["task_status"] for row in remaining},
-            {"RESEARCH_NEEDED", "AWAITING_HUMAN_REVIEW"},
+            {"RESEARCH_NEEDED", "CHECKED"},
         )
 
     def test_queue_never_assigns_numeric_values(self):

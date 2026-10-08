@@ -62,3 +62,22 @@ All15 fields assessed: 9 numeric proposals pending independent human review;6 bl
 Exact per-field rationale and missing facts are in data/score_coding_proposals.csv. Public primary pages and exact-name process/energy/target/certification searches checked07/10/2026. Certificate holder/date/scope and relevant scanned report/registry pages visually inspected. HTTP success is separate from attribution/currency. Lookback2021-10-07 to2026-10-07. No prior proposals, canonical score inputs, deployment/confidence/staff fields or human review records changed. This is AI first pass, never Anna human review.
 
 Scanned report follow-up: Scanned28-page2023 statement with2022 data, signed validation2023-06-28 by Dr.Reiner Beer DE-V-0007 for DE-155-00168. PDFpp12-14 documents2012 CHP200kW ELECTRIC,2019 PV96.1kWp and heat pump, not recent investments. Washer11/2018 and heat pump05/2019 are separate assets/stages; dena06/2019 remains differing precise heat-pump date. PDFpp21-24: expired2020-24 targets, future2023-30 energy-storage project and2023 In Planung/In Umsetzung measures not verified complete2026. PDFp27 May2025/May2027 submission deadlines are not expiry dates. OCR and renderedpp12,23,24,27 inspected. Current EMAS status from separate official01/09/2026 register. No current gas mix, operating storage, new load or completed recent energy investment inferred.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| temperature_fit_score | 10 | 10 | Geprüft | S-P50-04 |
+| process_electrification_score | 7 | 7 | Geprüft | S-P50-04 | S-P50-05 |
+| motor_drive_score | 5 | 5 | Geprüft | S-P50-04 | S-P50-05 |
+| power_conversion_score | 2 | 2 | Geprüft | S-P50-04 |
+| automation_control_score | 3 | 3 | Geprüft | S-P50-04 | S-P50-05 |
+| power_quality_score | 1 | 1 | Geprüft | S-P50-04 |
+| onsite_integration_score | 3 | 3 | Geprüft | S-P50-04 | S-P50-05 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P50-04 | S-P50-05 |
+| management_gap_score | 0 | 0 | Geprüft | S-P50-06 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

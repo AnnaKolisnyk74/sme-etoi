@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const sinks = new Map();
 const context = vm.createContext({Intl, document: {
   querySelector(selector) {
-    if (!sinks.has(selector)) sinks.set(selector, {innerHTML: '', textContent: ''});
+    if (!sinks.has(selector)) sinks.set(selector, {innerHTML: '', textContent: '', addEventListener() {}});
     return sinks.get(selector);
   },
   querySelectorAll() {return [];},
@@ -20,10 +20,13 @@ let html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /Erstbewertung abgeschlossen/);
 assert.ok(!html.includes('<h3>Next Best Coding Companies</h3>'));
 assert.match(html, /100 \/ 100 Unternehmen/);
-assert.match(html, /1500 \/ 1500 Felder geprüft/);
-assert.match(html, /554 Zahlenvorschläge/);
-assert.match(html, /946 dokumentierte Recherchelücken/);
+assert.match(html, /1500 \/ 1500 Felder bewertet/);
+assert.match(html, /549 Zahlenvorschläge · Geprüft/);
+assert.match(html, /951 dokumentierte Recherchelücken/);
 assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
+assert.ok(!/KI[- ·]*geprüft/i.test(html));
+assert.ok(!html.includes('Zahlenvorschläge warten auf Human Review'));
+assert.match(html, /Finale Score-Freigabe abgeschlossen:<\/strong> 0 \/ 100/);
 const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-07</h3>')[1].split('</section>')[0];
 const batchRows = [...batch.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
 assert.equal(batchRows.length, 16);
@@ -85,3 +88,20 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.ok(!html.includes('<script>bad recovery</script>'));
 assert.ok(html.includes('&lt;script&gt;bad recovery&lt;/script&gt;'));
 console.log('Scoring/source renderers: priority, live batch, all 100 audited companies, aligned columns and escaped evidence passed.');
+
+// Render all field statuses, including withdrawn evidence, in the real detail view.
+vm.runInContext('state.selectedId="P23"; state.detailTab="analysis"; renderDetail();', context);
+html = sinks.get('#detailContent').innerHTML;
+assert.equal((html.match(/<tr data-score-field=/g) || []).length, 15);
+const withdrawn = html.match(/<tr data-score-field="temperature_fit_score">(.*?)<\/tr>/s)[1];
+assert.match(withdrawn, /UNKNOWN/);
+assert.match(withdrawn, /Recherche nötig/);
+assert.match(html, /<td>Geprüft<\/td>/);
+assert.ok(!/KI[- ·]*geprüft/i.test(html));
+const proposal = context.payload.companies.find(c => c.company_id === 'P23').score_proposals[0];
+proposal.evidence_basis = '<script>unsafe field</script>';
+vm.runInContext('renderDetail();', context);
+html = sinks.get('#detailContent').innerHTML;
+assert.ok(!html.includes('<script>unsafe field</script>'));
+assert.ok(html.includes('&lt;script&gt;unsafe field&lt;/script&gt;'));
+console.log('Detail renderer: 15 field statuses, withdrawn values and escaped source rationale passed.');

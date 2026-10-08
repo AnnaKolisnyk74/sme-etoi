@@ -54,3 +54,22 @@ All15 fields assessed: 7 numeric proposals awaiting actual human review; 8 blank
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P85-03 |
 
 Exact field rationales/missing facts: data/score_coding_proposals.csv. Certificate bodies and relevant pages visually checked; holder, period, site and product-versus-process scope separated. Frömgen initial HTTP466 subsequently recovered through live HTTP200 primary-body retrieval; owned machining scope reviewed separately. Investment window2021-10-07 to2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records preserved. AI first pass is not Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 2 | 2 | Geprüft | S-P85-03 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P85-03 |
+| automation_control_score | 4 | 4 | Geprüft | S-P85-03 |
+| power_quality_score | 3 | 1 | Geprüft | S-P85-03 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P85-03 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P85-03 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P85-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **power_quality_score**: Own electrochemical production supports possible rectifier-related harmonic/peak relevance as an engineering hypothesis. The source does not establish a specific rectifier inventory/topology, explicit peak constraint or measured disturbance. Use the possible-signal anchor consistently; chemical nickel and product properties are not additional converter evidence.

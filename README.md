@@ -7,6 +7,35 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
+## Current checked state — 7 October 2026
+
+All 100 provisional companies have all 15 fields assessed. Every used proposal
+source is registered with URL, document/section and a bounded evidence note.
+All 554 original numeric proposals were rechecked: **507 confirmed, 42 corrected,
+5 returned to research**. The live file now contains **549 `CHECKED` proposals
+(displayed as “Geprüft”) and 951 blank `NEEDS_RESEARCH` fields**. No numeric
+proposal remains `AWAITING_HUMAN_REVIEW`.
+
+The check ledger records Codex as the actual checker; personal approval fields
+remain blank and final-score approval stays separate. Confidence C still means
+conditional engineering interpretation. A checked anchor does not establish
+commissioned deployment or remove the 12 open group/SME eligibility gates.
+
+There are 517 registered sources, 551 audited URLs and 534 currently retrievable
+URLs. This proposal recheck additionally records 269 source bodies/check attempts:
+266 retrievable and three explicitly unavailable. Registered sources are mainly
+`LINK_ONLY`; hashes and notes preserve provenance without distributing full
+third-party reports. The current queue has 60 checked dimension tasks,
+380 research tasks and 12 eligibility gates; 88 companies remain `RESEARCH_FIRST`
+and 12 `ELIGIBILITY_FIRST` because unresolved fields and eligibility are separate.
+
+The [recheck report](evidence/recheck_20261007.md) explains the corrections.
+The [proposal ledger](evidence/score_proposal_checks.csv),
+[source-content checks](evidence/proposal_source_checks.csv) and frozen
+[original proposals](data/history/score_coding_proposals_before_recheck_20261007.csv)
+make every decision reviewable. The web company analysis shows all 15 individual
+field statuses and their evidence rather than an unapproved aggregate score.
+
 ## Research question
 
 > Can publicly available company and process data identify German industrial
@@ -610,7 +639,7 @@ Prior proposals, canonical numeric/deployment/staff/confidence fields and
 independent human-review records remain unchanged.
 
 
-## Complete 100-company documentary first pass — 7 October 2026
+## Historical 100-company first pass before source recheck — 7 October 2026
 
 **100/100 companies now have all 15 fields assessed: 1,500/1,500 unique
 company-field entries.** There are 554 numeric proposals awaiting independent
@@ -626,9 +655,9 @@ P07, P10, P104, P32, P34, P40, P42, P46, P47, P65, P67 and P88.
 Their documentary assessment fulfils full sample coverage while their upstream
 group checks remain OPEN_GATE and canonical scoring stays blocked. They never
 enter the eligible CODE_NOW selection. The first twelve assessments predate the
-ranked-batch manifest; their proposals remain unchanged.
+ranked-batch manifest; their first-pass records are retained in the pre-recheck snapshot.
 
-Current company workflow: 85 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`,
+At that first-pass snapshot, company workflow was 85 `RESEARCH_FIRST`, three `REVIEW_PROPOSALS`,
 12 `ELIGIBILITY_FIRST`, zero `CODE_NOW`. The dimension queue has 377
 `RESEARCH_NEEDED`, 63 `AWAITING_HUMAN_REVIEW` and 12 `OPEN_GATE` tasks;
 all 440 numeric dimension tasks remain separate from the 1,500 field entries.
@@ -666,7 +695,7 @@ numeric/deployment/staff/confidence fields and actual human-review records are
 preserved. Only bounded source links, process evidence and body-verified
 certificate statuses are updated.
 
-The final live source inventory has 516 source records, 551 audited URLs and
+Before recheck, the source inventory had 516 source records, 551 audited URLs and
 536 retrievable URLs across all100 firms. The completion checks121 URLs,
 including new redirect endpoints and the recovered Frömgen machine park.
 The three completion retrieval failures remain explicit: two Dibbern403 pages

@@ -27,3 +27,17 @@ heat recovery. `S-P21-04` records carbon accounting; this is not an EnMS claim.
 Sector-wide and other breweries' statements are excluded from P21 coding.
 Four field-level numeric proposals await Human Review; eleven fields require
 research. No deployment facts or canonical scores are auto-updated.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 5 | 5 | Geprüft | S-P21-02 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P21-02 | S-P21-04 |
+| management_gap_score | 2 | 2 | Geprüft | S-P21-04 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P21-02 | S-P21-04 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

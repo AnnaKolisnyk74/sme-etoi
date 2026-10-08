@@ -50,3 +50,24 @@ All 15 fields assessed: 11 numeric proposals pending independent human review; 4
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P100-03, S-P100-04 |
 
 Exact rationales and missing facts in data/score_coding_proposals.csv. Owner, issuer and public-agency facts distinguish retrieval, legal holder/site, reporting period and actual operation. Readable PDF text and relevant certificate/equipment image bodies checked. Investment window 2021-10-07 to 2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records unchanged. AI first pass is never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| temperature_fit_score | 3 | 3 | Geprüft | S-P100-05 |
+| process_electrification_score | 7 | 7 | Geprüft | S-P100-05 |
+| motor_drive_score | 5 | 5 | Geprüft | S-P100-04 |
+| power_conversion_score | 8 | 8 | Geprüft | S-P100-04|S-P100-03 |
+| automation_control_score | 4 | 4 | Geprüft | S-P100-04 |
+| scheduling_flex_score | 2 | 2 | Geprüft | S-P100-05 |
+| incremental_load_score | 5 | 5 | Geprüft | S-P100-05 |
+| power_quality_score | 3 | 3 | Geprüft | S-P100-04|S-P100-03 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P100-03 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P100-03|S-P100-04 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P100-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

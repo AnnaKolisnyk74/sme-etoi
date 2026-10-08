@@ -84,3 +84,17 @@ The automated/Codex second pass is a consistency and evidence QA, not an
 independent human double-code. `qa_review.csv` therefore keeps
 `independent_human_review_status=PENDING` until a different human reviewer has
 checked the record.
+
+
+## Current proposal recheck
+
+`score_proposal_checks.csv` contains one before/after decision for each of the
+554 original numeric proposals. `proposal_source_checks.csv` records all 269
+original/current cited source checks with actual checker, timestamp, body hash,
+section and scope. `recheck_20261007.md` explains the findings. The original
+proposals, sources, certificates and retrieval audit are preserved in
+`data/history/*_before_recheck_20261007.csv`. Current supported proposal status is
+`CHECKED`, displayed as **Geprüft**; an unsupported value is blank `NEEDS_RESEARCH`.
+The content ledger explicitly retains failed URLs. A claim-only management gap
+can cite the unavailable historical certificate alongside an accessible owner
+claim; it cannot call that certificate valid. Personal approval is separate.

@@ -55,3 +55,23 @@ All 15 fields assessed: 8 numeric proposals pending independent human review; 7 
 | investment_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P93-05, S-P93-06 |
 
 Exact field rationales/gaps in data/score_coding_proposals.csv. Primary own/issuer/project/public agency pages, exact-name energy/certificate/target checks, rendered report/certificate bodies checked 07/10/2026. Availability, attribution, data/report period and current operating continuity separate. Lookback 2021-10-07 to 2026-10-07. Prior proposals, canonical numeric/deployment/staff/confidence and human review unchanged. AI first pass never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 5 | 5 | Geprüft | S-P93-04 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P93-05 |
+| automation_control_score | 3 | 3 | Geprüft | S-P93-04 |
+| power_quality_score | 1 | 1 | Geprüft | S-P93-04 | S-P93-05 | S-P93-06 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P93-05 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P93-04 | S-P93-05 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P93-04 | S-P93-05 |
+| investment_gap_score | 0 | 2 | Geprüft | S-P93-05 | S-P93-06 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **investment_gap_score**: The own 2023 review describes a transformer installed partly FOR the forthcoming PV; the own June 2024 post confirms that PV was commissioned. The evidence supports one integrated completed PV/infrastructure project, not two proven independent energy investments.

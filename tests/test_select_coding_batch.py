@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Batch ordering, immutable history and field-level uncertainty contracts."""
 import copy
 import sys
@@ -76,12 +77,12 @@ class BatchSelectionTests(unittest.TestCase):
         sources = [r for r in read_csv(ROOT / 'tests/fixtures/source_register_before_20261006_audit.csv') if r['source_id'] not in new_sources]
         work = generate_score_work_queue(companies, build_score_readiness(ROOT, companies), process, sources,
             read_csv(ROOT / 'evidence/qa_review.csv'), read_csv(ROOT / 'data/pilot_coded.csv'), queue,
-            [r for r in read_csv(ROOT / 'data/score_coding_proposals.csv') if r['company_id'] not in {'P30', 'P31'}])
+            [r for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv') if r['company_id'] not in {'P30', 'P31'}])
         priority = generate_company_work_priority(work, sources, process)
         self.assertEqual(select_batch(priority, 'NBCC-2026-10-06-02', '2026-10-06'), manifest)
 
     def test_new_assessments_preserve_review_and_research_gates(self):
-        all_rows = read_csv(ROOT / 'data/score_coding_proposals.csv')
+        all_rows = read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
         for cid in ['P30', 'P31']:
             rows = [r for r in all_rows if r['company_id'] == cid]
             self.assertEqual(len(rows), 15)
@@ -98,7 +99,7 @@ class BatchSelectionTests(unittest.TestCase):
                 self.assertNotIn(cid, {r['company_id'] for r in read_csv(ROOT / path)})
 
     def test_emas_claim_and_temperature_constrained_maturation_do_not_close_gaps(self):
-        rows = {(r['company_id'], r['score_field']): r for r in read_csv(ROOT / 'data/score_coding_proposals.csv')}
+        rows = {(r['company_id'], r['score_field']): r for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         self.assertEqual(rows['P30', 'management_gap_score']['proposed_value'], '3')
         self.assertIn('validity remains unresolved', rows['P30', 'management_gap_score']['evidence_basis'])
         for cid in ['P30', 'P31']:
@@ -115,7 +116,7 @@ class BatchSelectionTests(unittest.TestCase):
         for company in batch['companies']:
             self.assertEqual(company['selection_rank'], 1 if company['company_id'] == 'P30' else 2)
             self.assertEqual(company['current_workflow_action'], 'RESEARCH_FIRST')
-            self.assertEqual(company['awaiting_human_review_fields'], 7)
+            self.assertEqual(company['checked_fields'], 7)
             self.assertEqual(company['needs_research_fields'], 8)
             self.assertEqual(company['expected_information_gain_at_selection'], 'HIGH')
             self.assertNotIn('score', company)

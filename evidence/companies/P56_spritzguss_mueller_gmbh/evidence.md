@@ -58,3 +58,18 @@ All15 fields assessed: 5 numeric proposals pending independent human review;10 b
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P56-03 |
 
 Exact field rationale/missing facts in data/score_coding_proposals.csv. Live primary pages, exact-name public energy/target/certification searches and relevant rendered certificate/report bodies checked07/10/2026. HTTP success separate from exact holder/current period/claim. Investmentwindow2021-10-07 to2026-10-07. No prior proposals, canonical score inputs, deployment/staff/confidence or human-review records changed. AI first pass never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 8 | 8 | Geprüft | S-P56-04 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P56-03 | S-P56-04 |
+| automation_control_score | 3 | 3 | Geprüft | S-P56-03 | S-P56-04 |
+| power_quality_score | 1 | 1 | Geprüft | S-P56-04 |
+| targets_gap_score | 5 | 5 | Geprüft | S-P56-03 | S-P56-04 | S-P56-05 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
