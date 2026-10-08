@@ -47,6 +47,35 @@ class WebExportTests(unittest.TestCase):
                 self.assertTrue(source["source_id"])
                 self.assertTrue(source["final_url"].startswith("https://"))
 
+    def test_certificate_details_preserve_missing_and_expired_evidence(self):
+        companies = {c['company_id']: c for c in self.payload['companies']}
+        self.assertEqual(sum(c['certifications']['iso_50001'] == 'VALID'
+                             for c in companies.values()), 13)
+        self.assertEqual(sum(c['certifications']['iso_50001'] == 'NOT_FOUND_AFTER_CHECK'
+                             for c in companies.values()), 87)
+        for company in companies.values():
+            checks = company['certificate_checks']
+            self.assertTrue(checks)
+            self.assertTrue(all(r['checked_date'] and r['notes'] for r in checks))
+            for standard, key in [('ISO 50001', 'iso_50001'), ('ISO 14001', 'iso_14001'), ('EMAS', 'emas')]:
+                check = next(r for r in checks if r['standard'] == standard)
+                self.assertEqual(check['certificate_status'], company['certifications'][key])
+        expired = next(r for r in companies['P12']['certificate_checks'] if r['standard'] == 'EMAS')
+        self.assertEqual(expired['certificate_status'], 'EXPIRED')
+        self.assertEqual(expired['valid_until'], '2026-09-11')
+        self.assertTrue(expired['direct_certificate_url'].startswith('https://'))
+
+    def test_source_content_review_is_separate_from_url_retrieval(self):
+        sources = {s['source_id']: s for c in self.payload['companies'] for s in c['sources']}
+        reviewed = [s for s in sources.values() if s['content_review_status'] == 'RECHECKED']
+        self.assertEqual(len(reviewed), 266)
+        for source in reviewed:
+            self.assertTrue(source['content_checked_at'])
+            self.assertTrue(source['evidence_fact'])
+        for sid in ('S-P26-01', 'S-P26-08', 'S-P70-04'):
+            self.assertEqual(sources[sid]['content_review_status'], 'UNAVAILABLE')
+        self.assertTrue(any(not s['content_review_status'] for s in sources.values()))
+
     def test_eligibility_pending_companies_are_not_actionable(self):
         pending = []
         for company in self.payload["companies"]:

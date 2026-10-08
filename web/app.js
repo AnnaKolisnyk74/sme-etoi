@@ -15,7 +15,9 @@ const $=s=>document.querySelector(s);
 const $$=s=>Array.from(document.querySelectorAll(s));
 
 function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
-function titleCase(v){if(["CHECKED","CHECKED_PROPOSALS"].includes(v))return "Geprüft";return String(v||"").replaceAll("_"," ").replace(/\b\w/g,c=>c.toUpperCase())}
+const statusLabels={CHECKED:"Geprüft",CHECKED_PROPOSALS:"Geprüft",APPROVED:"Freigegeben",UNKNOWN:"Unbekannt",NEEDS_RESEARCH:"Recherche nötig",RESEARCH_NEEDED:"Recherche nötig",RESEARCH_FIRST:"Recherche nötig",ELIGIBILITY_FIRST:"KMU-Prüfung zuerst",OPEN_GATE:"KMU-Prüfung offen",PROVISIONAL_PASS:"KMU wahrscheinlich",ELIGIBILITY_PENDING:"KMU-Prüfung offen",CONFIRMED:"KMU bestätigt",PROVISIONAL:"KMU-Bestätigung offen",ELIGIBILITY_BLOCKED:"KMU-Prüfung offen",READY_TO_CODE:"Bewertung möglich",CODE_NOW:"Bewertung möglich",AWAITING_HUMAN_REVIEW:"Freigabe offen",REVIEW_PROPOSALS:"Freigabe offen",NEEDS_NUMERIC_CODING:"Feldbelege fehlen",NOT_SCOREABLE_ELIGIBILITY:"KMU-Prüfung offen",NOT_SCOREABLE_CERTIFICATES:"Zertifikatsprüfung offen",PROVISIONAL_SCORE_ONLY:"Score-Freigabe offen",FINAL_SCORE_READY:"Score bereit",PENDING:"Offen",OPEN:"Offen",UNRESOLVED:"Offen",COMPLETE:"Abgeschlossen",MISSING:"Fehlt",NOT_STARTED:"Offen",RESEARCH_ONLY:"Recherchestand",HTTP_OK:"Abrufbar",REDIRECT_SCOPE_OK:"Abrufbar nach Weiterleitung",RECHECKED:"Inhalt nachgeprüft",UNAVAILABLE:"Inhalt nicht abrufbar",NOT_CHECKED:"Noch nicht geprüft"};
+function titleCase(v){return statusLabels[v]||String(v||"").replaceAll("_"," ").replace(/\b\w/g,c=>c.toUpperCase())}
+function proposalSummaryLabel(v){return String(v||"").replace(/\b(CHECKED|APPROVED|NEEDS_RESEARCH|AWAITING_HUMAN_REVIEW)\b/g,s=>titleCase(s))}
 function n(v){return new Intl.NumberFormat("de-DE").format(v||0)}
 function money(v){return v===null||v===undefined||v===""?"—":new Intl.NumberFormat("de-DE",{maximumFractionDigits:2}).format(v)}
 function uniq(a){return Array.from(new Set(a.filter(Boolean)))}
@@ -54,10 +56,10 @@ function priority(c){
 function priorityClass(p){return p==="A"?"priority-a":p==="B"?"priority-b":"priority-c"}
 function statusInfo(c){
   const e=eligibility(c);
-  if(e==="CONFIRMED") return ["Qualifiziert","status-qualified"];
-  if(e==="ELIGIBILITY_PENDING") return ["In Prüfung","status-review"];
+  if(e==="CONFIRMED") return ["KMU bestätigt","status-qualified"];
+  if(e==="ELIGIBILITY_PENDING") return ["KMU-Prüfung offen","status-review"];
   if(e==="EXCLUDED") return ["Blockiert","status-blocked"];
-  return ["Vorläufig","status-watch"];
+  return ["KMU wahrscheinlich","status-watch"];
 }
 function confClass(g){return g==="A"?"conf-a":g==="B"?"conf-b":"conf-c"}
 function scoreStatusClass(c){
@@ -67,12 +69,41 @@ function scoreStatusClass(c){
   if(s.startsWith("NOT_SCOREABLE")||s==="EXCLUDED")return "status-blocked";
   return "status-watch";
 }
-function isoCell(c){
-  const s=(c.certifications?.iso_50001||"").toUpperCase();
-  if(s==="VALID"||s==="CURRENT"||s==="YES") return '<span class="iso-yes">● Ja</span>';
-  if(s==="EXPIRED") return '<span class="iso-no">◌ Abgelaufen</span>';
-  if(s==="NOT_FOUND_AFTER_CHECK") return '<span class="iso-no">—</span>';
-  return '<span class="iso-no">?</span>';
+function certificateInfo(status){
+  const s=String(status||"").toUpperCase();
+  if(["VALID","CURRENT","YES"].includes(s))return ["Gültig belegt","iso-yes"];
+  if(s==="EXPIRED")return ["Abgelaufen","iso-no"];
+  if(s==="NOT_FOUND_AFTER_CHECK")return ["Kein öffentlicher Nachweis","iso-no"];
+  if(s==="CLAIM_ONLY")return ["Unternehmensangabe","iso-no"];
+  if(s==="DOCUMENT_FOUND_VALIDITY_UNCLEAR")return ["Gültigkeit offen","iso-no"];
+  return ["Nachweis offen","iso-no"];
+}
+function certificateCell(status){
+  const [label,cls]=certificateInfo(status);
+  return '<span class="'+cls+'">'+esc(label)+'</span>';
+}
+function isoCell(c){return certificateCell(c.certifications?.iso_50001)}
+function fieldProgress(c){
+  const rows=c.score_proposals||[];
+  const checked=rows.filter(p=>p.proposal_status==="CHECKED").length;
+  const approved=rows.filter(p=>p.proposal_status==="APPROVED").length;
+  return {checked,approved,open:Math.max(0,15-checked-approved),assessed:rows.length};
+}
+function fieldProgressCell(c){
+  const p=fieldProgress(c);
+  return '<span class="field-check-count">Geprüft: '+p.checked+' / 15</span><span class="field-open-count">'+p.open+' offen'+(p.approved?' · '+p.approved+' freigegeben':'')+'</span>';
+}
+function safeLink(url,label){
+  return /^https?:\/\//i.test(url||"")?'<a href="'+esc(url)+'" target="_blank" rel="noopener">'+esc(label)+' ↗</a>':esc(label);
+}
+function certificateDetails(c){
+  return '<section class="section-card"><div class="section-card-title">Zertifikatsnachweise</div><div class="section-card-body source-list"><p>Kein öffentlicher Nachweis bedeutet keine bestätigte Aussage über das Vorhandensein eines Zertifikats.</p>'+(c.certificate_checks||[]).map(r=>'<div class="source-item"><strong>'+esc(r.standard)+'</strong> · '+certificateCell(r.certificate_status)+'<div class="source-meta">Geprüft am '+esc(r.checked_date||"—")+(r.valid_until?' · Gültig bis '+esc(r.valid_until):'')+'</div>'+(r.certificate_holder?'<div class="action-text">Inhaber: '+esc(r.certificate_holder)+'</div>':'')+(r.certificate_number?'<div class="source-meta">'+esc(r.certificate_number)+(r.issuer?' · '+esc(r.issuer):'')+'</div>':'')+'<div class="action-text">'+esc(r.notes||"")+'</div><div>'+safeLink(r.direct_certificate_url||r.certificate_index_url,r.direct_certificate_url?'Zertifikatsbeleg':'Geprüfte Quelle')+'</div></div>').join("")+'</div></section>';
+}
+function renderEvidenceOverview(){
+  const rows=companies(), progress=rows.map(fieldProgress);
+  const checked=progress.reduce((sum,p)=>sum+p.checked,0),open=progress.reduce((sum,p)=>sum+p.open,0);
+  const count=key=>rows.filter(c=>["VALID","CURRENT","YES"].includes(c.certifications?.[key])).length;
+  $("#evidenceOverview").innerHTML='<div><strong>'+n(checked)+' Felder · Geprüft</strong><span>'+n(open)+' Feldfragen offen · '+rows.length+' Unternehmen</span></div><div><strong>Gültig belegt: ISO 50001 '+count("iso_50001")+' · ISO 14001 '+count("iso_14001")+' · EMAS '+count("emas")+'</strong><span>Feldprüfung: '+esc(state.data.proposal_check_summary?.checked_date||"—")+' · KMU-Einstufung und finale Score-Freigabe separat</span></div>';
 }
 function topTask(c){return (c.research_tasks||[]).slice().sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999))[0]||null}
 function storageGet(key,fallback){
@@ -149,8 +180,8 @@ function renderMetrics(){
   const pending=rows.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING").length;
   const cards=[
     ["kpiTotal","Gesamtanzahl Zielunternehmen",rows.length,"aktueller Filter"],
-    ["kpiQuality","Qualifiziert (A/B)",ab,"Evidence Confidence"],
-    ["kpiReview","In Prüfung",pending,"SME / Gruppenstatus"],
+    ["kpiQuality","Belegqualität A/B",ab,"Qualität der öffentlichen Evidenz"],
+    ["kpiReview","KMU-Prüfung offen",pending,"Gruppenverhältnisse ungeklärt"],
     ["kpiSignals","Opportunity Signale",opps.length,"technische Signale"]
   ];
   cards.forEach(([id,label,value,sub])=>{
@@ -196,12 +227,13 @@ function renderTable(){
       '<td>'+(score!=null?'<div class="score-cell"><div class="score-track"><div class="score-fill" style="width:'+Math.min(100,score)+'%"></div></div><span>'+score+'</span></div>':'—')+'</td>'+
       '<td><span class="priority-badge '+priorityClass(p)+'">'+p+'</span></td>'+
       '<td>'+isoCell(c)+'</td>'+
+      '<td>'+fieldProgressCell(c)+'</td>'+
       '<td><span class="status-badge '+statusClass+'">'+esc(status)+'</span></td>'+
       '<td><span class="confidence-badge '+confClass(c.evidence_confidence)+'">'+esc(c.evidence_confidence||"?")+'</span></td>'+
       '<td class="next-step" title="'+esc(task?.research_question||"Keine offene priorisierte Aufgabe")+'">'+esc(task?task.research_question:"—")+'</td>'+
       '<td>⋮</td>'+
     '</tr>';
-  }).join("")||'<tr><td colspan="11">Keine Zielunternehmen für diesen Filter.</td></tr>';
+  }).join("")||'<tr><td colspan="12">Keine Zielunternehmen für diesen Filter.</td></tr>';
   $("#pagerText").textContent=(all.length?start+1:0)+" - "+Math.min(start+state.pageSize,all.length)+" von "+all.length;
   $("#pageLabel").textContent="Seite "+state.page+" / "+pages;
   $("#prevPage").disabled=state.page<=1;$("#nextPage").disabled=state.page>=pages;
@@ -231,12 +263,13 @@ function renderDetail(){
         '<div class="info-item"><span>Region</span><strong>'+esc(c.state||"—")+'</strong></div>'+
         '<div class="info-item"><span>Mitarbeiter</span><strong>'+esc(c.employees??"—")+'</strong></div>'+
         '<div class="info-item"><span>Umsatz</span><strong>'+(c.revenue_eur_m!=null?"€ "+money(c.revenue_eur_m)+" Mio.":"—")+'</strong></div>'+
-        '<div class="info-item"><span>ISO 50001</span><strong>'+esc(titleCase(c.certifications?.iso_50001||"UNKNOWN"))+'</strong></div>'+
-        '<div class="info-item"><span>ISO 14001</span><strong>'+esc(titleCase(c.certifications?.iso_14001||"UNKNOWN"))+'</strong></div>'+
+        '<div class="info-item"><span>ISO 50001</span><strong>'+certificateCell(c.certifications?.iso_50001)+'</strong></div>'+
+        '<div class="info-item"><span>ISO 14001</span><strong>'+certificateCell(c.certifications?.iso_14001)+'</strong></div>'+
       '</div><div class="score-box">'+
         '<div class="score-box-row"><span>ETOI Score</span><span class="score-big">'+(score!=null?score:"—")+'</span></div>'+
         '<div class="score-box-row"><span>Priorität</span><span class="priority-badge '+priorityClass(p)+'">'+p+'</span></div>'+
-        '<div class="score-box-row"><span>Status</span><span class="status-badge '+statusClass+'">'+esc(status)+'</span></div>'+
+        '<div class="score-box-row"><span>KMU-Einstufung</span><span class="status-badge '+statusClass+'">'+esc(status)+'</span></div>'+
+        '<div class="score-box-row"><span>Feldprüfung</span><span>'+fieldProgressCell(c)+'</span></div>'+
         '<div class="score-box-row"><span>Confidence</span><span class="confidence-badge '+confClass(c.evidence_confidence)+'">'+esc(c.evidence_confidence||"?")+'</span></div>'+
       '</div></div>'+
       '<section class="section-card"><div class="section-card-title">Technische Relevanz</div><div class="section-card-body tech-list">'+
@@ -246,14 +279,15 @@ function renderDetail(){
         '<section class="section-card"><div class="section-card-title">Wichtige Informationen</div><div class="section-card-body info-list">'+
           '<div class="info-item"><span>SME Status</span><strong>'+esc(titleCase(c.sme_status))+'</strong></div>'+
           '<div class="info-item"><span>Group Check</span><strong>'+esc(titleCase(c.group_check))+'</strong></div>'+
-          '<div class="info-item"><span>EMAS</span><strong>'+esc(titleCase(c.certifications?.emas||"UNKNOWN"))+'</strong></div>'+
+          '<div class="info-item"><span>EMAS</span><strong>'+certificateCell(c.certifications?.emas)+'</strong></div>'+
           '<div class="info-item"><span>Quellen</span><strong>'+((c.sources||[]).length)+'</strong></div>'+
         '</div></section>'+
         '<section class="section-card"><div class="section-card-title">Why Now</div><div class="section-card-body">'+
           (why.length?'<ul class="bullet-list">'+why.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>':'<span class="action-text">Kein zusätzlicher Why-Now-Faktor dokumentiert.</span>')+
         '</div></section>'+
       '</div>'+
-      '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box"><div class="action-icon">▤</div><div><div class="action-title">'+esc(task?titleCase(task.opportunity_type):"Keine offene Aufgabe")+'</div><div class="action-text">'+esc(task?.research_question||"Keine priorisierte Research-Aufgabe vorhanden.")+'</div></div><div class="action-meta">'+esc(task?.task_status||"")+'</div></div></section>'+
+      certificateDetails(c)+
+      '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box"><div class="action-icon">▤</div><div><div class="action-title">'+esc(task?titleCase(task.opportunity_type):"Keine offene Aufgabe")+'</div><div class="action-text">'+esc(task?.research_question||"Keine priorisierte Research-Aufgabe vorhanden.")+'</div></div><div class="action-meta">'+esc(titleCase(task?.task_status||""))+'</div></div></section>'+
     '</div>';
   }else if(state.detailTab==="analysis"){
     const sr=c.score_readiness||{};
@@ -275,17 +309,17 @@ function renderDetail(){
       '<section class="section-card"><div class="section-card-title">Feldprüfung</div><div class="section-card-body"><p>Geprüfte Vorschläge und offene Belegfragen. Werte sind keine freigegebenen Scores.</p>'+genericTable(["Feld","Vorschlag","Status","Beleg"],(c.score_proposals||[]).map(p=>'<tr data-score-field="'+esc(p.score_field)+'"><td>'+esc(titleCase(p.score_field))+'</td><td>'+esc(p.proposed_value??"UNKNOWN")+'</td><td>'+esc(p.proposal_status==="NEEDS_RESEARCH"?"Recherche nötig":titleCase(p.proposal_status))+'</td><td class="wrap-cell">'+esc(p.evidence_basis)+'<div class="source-meta">'+esc(p.evidence_source_ids)+' · '+esc(p.proposal_confidence)+'</div></td></tr>'))+'</div></section>'+
       '<section class="section-card"><div class="section-card-title">Scoring Work Queue · '+(c.score_work_tasks||[]).length+'</div><div class="section-card-body source-list">'+
         ((c.score_work_tasks||[]).length?(c.score_work_tasks||[]).map(t=>
-          '<div class="source-item"><strong>#'+esc(t.work_rank??"—")+' · '+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</strong><div class="action-text"><strong>Canonical missing:</strong> '+esc(t.missing_fields||"Keine offenen Felder")+'</div>'+(t.proposal_status_summary?'<div class="action-text"><strong>Proposal:</strong> '+esc(t.proposal_status_summary.replaceAll("CHECKED", "Geprüft"))+'</div>':"")+(t.research_gap_fields?'<div class="action-text"><strong>Research gaps:</strong> '+esc(t.research_gap_fields)+'</div>':"")+'<div class="source-meta">'+esc(t.workstream)+' · '+esc(t.work_priority)+' · '+esc(titleCase(t.task_status))+'</div><div class="action-text">'+esc(t.next_action||"")+'</div></div>'
+          '<div class="source-item"><strong>#'+esc(t.work_rank??"—")+' · '+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</strong><div class="action-text"><strong>Canonical missing:</strong> '+esc(t.missing_fields||"Keine offenen Felder")+'</div>'+(t.proposal_status_summary?'<div class="action-text"><strong>Proposal:</strong> '+esc(proposalSummaryLabel(t.proposal_status_summary))+'</div>':"")+(t.research_gap_fields?'<div class="action-text"><strong>Research gaps:</strong> '+esc(t.research_gap_fields)+'</div>':"")+'<div class="source-meta">'+esc(t.workstream)+' · '+esc(t.work_priority)+' · '+esc(titleCase(t.task_status))+'</div><div class="action-text">'+esc(t.next_action||"")+'</div></div>'
         ).join(""):'Keine offene Scoring-Arbeit.')+
       '</div></section></div>';
   }else if(state.detailTab==="research"){
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
-      ((c.research_tasks||[]).length?(c.research_tasks||[]).map(t=>'<div class="source-item"><strong>#'+esc(t.research_rank??"—")+' · '+esc(titleCase(t.opportunity_type))+'</strong><div class="action-text">'+esc(t.research_question)+'</div><div class="source-meta">'+esc(t.research_priority)+' priority · '+esc(t.task_status||"OPEN")+'</div></div>').join(""):'Keine offenen Tasks')+
+      ((c.research_tasks||[]).length?(c.research_tasks||[]).map(t=>'<div class="source-item"><strong>#'+esc(t.research_rank??"—")+' · '+esc(titleCase(t.opportunity_type))+'</strong><div class="action-text">'+esc(t.research_question)+'</div><div class="source-meta">'+esc(t.research_priority)+' priority · '+esc(titleCase(t.task_status||"OPEN"))+'</div></div>').join(""):'Keine offenen Tasks')+
       '</div></section></div>';
   }else{
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Evidence Trail · '+(c.sources||[]).length+' Quellen</div><div class="section-card-body source-list">'+
-      '<p>Abrufprüfung: Erreichbarkeit bestätigt keine Aussage, Zertifikatsgültigkeit oder Human Review.</p>'+
-      ((c.sources||[]).length?(c.sources||[]).map(s=>'<div class="source-item"><a href="'+esc(s.final_url||"#")+'" target="_blank" rel="noopener">'+esc(s.document_title||s.publisher||s.source_id)+' ↗</a><div class="source-meta">'+esc([s.source_id,titleCase(s.source_type),s.publisher].filter(Boolean).join(" · "))+'</div><div class="source-meta">Abruf: '+esc(titleCase(s.retrieval_status||"NOT_CHECKED"))+' · Belegstatus: '+esc(s.link_check_status||"UNKNOWN")+' · '+esc(s.link_check_date||"—")+'</div></div>').join(""):'Keine Quellen im Register')+
+      '<p>Abrufprüfung und inhaltliche Nachprüfung sind getrennt dokumentiert. Erreichbarkeit allein bestätigt keine Aussage oder Zertifikatsgültigkeit.</p>'+
+      ((c.sources||[]).length?(c.sources||[]).map(s=>'<div class="source-item">'+safeLink(s.final_url,s.document_title||s.publisher||s.source_id)+'<div class="source-meta">'+esc([s.source_id,titleCase(s.source_type),s.publisher].filter(Boolean).join(" · "))+'</div><div class="source-meta">Abruf: '+esc(titleCase(s.retrieval_status||"NOT_CHECKED"))+' · '+esc(s.link_check_date||"—")+'</div><div class="source-meta">Inhaltsprüfung: '+esc(titleCase(s.content_review_status||"NOT_CHECKED"))+(s.content_checked_at?' · '+esc(s.content_checked_at.slice(0,10)):'')+'</div><div class="action-text">'+esc(s.evidence_fact||"")+'</div>'+(s.content_scope_note?'<div class="source-meta">Aussageumfang: '+esc(s.content_scope_note)+'</div>':'')+'</div>').join(""):'Keine Quellen im Register')+
       '</div></section></div>';
   }
   const isPinned=pinnedIds().includes(c.company_id);
@@ -300,7 +334,7 @@ function renderResearch(){
   let tasks=state.data.companies.flatMap(c=>(c.research_tasks||[]).map(t=>({...t,company_id:c.company_id,legal_entity:c.legal_entity})));
   tasks.sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
   if(q) tasks=tasks.filter(t=>[t.legal_entity,t.opportunity_type,t.research_question].join(" ").toLowerCase().includes(q));
-  $("#researchRows").innerHTML=tasks.map(t=>'<tr data-id="'+esc(t.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.legal_entity)+'</strong></td><td>'+esc(titleCase(t.opportunity_type))+'</td><td style="white-space:normal;min-width:420px">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.decision_impact)+'</td><td>'+esc(t.task_status||"OPEN")+'</td></tr>').join("");
+  $("#researchRows").innerHTML=tasks.map(t=>'<tr data-id="'+esc(t.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.legal_entity)+'</strong></td><td>'+esc(titleCase(t.opportunity_type))+'</td><td style="white-space:normal;min-width:420px">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.decision_impact)+'</td><td>'+esc(titleCase(t.task_status||"OPEN"))+'</td></tr>').join("");
   $$("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>openCompany(r.dataset.id)));
 }
 function renderFunctional(view){
@@ -315,7 +349,7 @@ function renderFunctional(view){
 
   if(view==="sources"){
     title.textContent="Quellenprüfung";
-    sub.textContent="Abrufprüfung für bearbeitete und noch nicht codierte Firmen. Ersatzbelege gelten nur im dokumentierten Aussageumfang.";
+    sub.textContent="Abrufprüfung aller 100 Firmen und dokumentierte Inhaltsprüfungen. Ersatzbelege gelten nur im belegten Aussageumfang.";
     const audit=state.data.source_audit_summary||{};
     const cases=audit.recovery_cases||[];
     root.innerHTML='<section class="functional-card"><h3>Öffentliche Quellen · Abrufprüfung</h3><p>'+esc(audit.checked_company_count??0)+' / '+esc(audit.sample_company_count??0)+' Sample-Firmen geprüft · '+esc(audit.retrievable_url_count??0)+' / '+esc(audit.audited_url_count??0)+' URLs abrufbar · Stand '+esc(audit.last_checked_at||"—")+'</p><p>Die URL-Zahlen enthalten auch ausgeschlossene Kandidaten, Weiterleitungsziele und Ersatzbelege. HTTP 200 bestätigt keine Unternehmenszuordnung, aktuelle Zertifikatsgültigkeit oder Human Review. UNKNOWN bleibt UNKNOWN.</p></section>'+
@@ -357,7 +391,7 @@ function renderFunctional(view){
     title.textContent="Aufgaben";
     sub.textContent="Arbeitsliste aus der Research Queue, sortiert nach Research Rank.";
     const tasks=all.flatMap(c=>(c.research_tasks||[]).map(t=>({...t,company:c}))).sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
-    root.innerHTML=genericTable(["Rang","Unternehmen","Aufgabe","Priorität","Status"],tasks.map(t=>'<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td class="wrap-cell">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.task_status||"OPEN")+'</td></tr>'));
+    root.innerHTML=genericTable(["Rang","Unternehmen","Aufgabe","Priorität","Status"],tasks.map(t=>'<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td class="wrap-cell">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(titleCase(t.task_status||"OPEN"))+'</td></tr>'));
     bindFunctionalCompanyRows();return;
   }
 
@@ -406,23 +440,23 @@ function renderFunctional(view){
     const gateSelections=state.data.eligibility_coding_selections||[];
     const assessmentById=new Map((assessment.companies||[]).map(c=>[c.company_id,c]));
     const coverageCard='<section class="functional-card field-assessment-card"><h3>Dokumentierte Erstbewertung · '+esc(assessment.complete_company_count??0)+' / '+esc(assessment.company_count??all.length)+' Unternehmen</h3><p><strong>'+esc(assessment.assessed_field_count??0)+' / '+esc(assessment.expected_field_count??0)+' Felder bewertet</strong> · '+esc(assessment.checked_fields??0)+' Zahlenvorschläge · Geprüft · '+esc(assessment.needs_research_fields??0)+' dokumentierte Recherchelücken. Erstbewertung ist keine Score-Freigabe; UNKNOWN bleibt erhalten.</p><p>'+esc(assessment.eligibility_gate_company_count??0)+' Unternehmen haben weiterhin eine offene Eligibility-Prüfung.</p></section>';
-    const gateCard=gateSelections.length?'<section class="functional-card eligibility-assessment-card"><h3>Dokumentarische Bewertung bei offener Eligibility · '+gateSelections.length+' Unternehmen</h3><p>Separat vor der Recherche ausgewählt. Die Konzernprüfung bleibt offen; kanonische Scores bleiben gesperrt.</p>'+genericTable(["Unternehmen","Geprüfte Felder","Geprüft","Recherchelücken","Eligibility"],gateSelections.map(c=>{const a=assessmentById.get(c.company_id)||{};return '<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(a.assessed_field_count??0)+' / 15</td><td>'+esc(a.checked_fields??0)+'</td><td>'+esc(a.needs_research_fields??0)+'</td><td>'+esc(c.eligibility_gate_fields)+'</td></tr>';}))+'</section>':"";
+    const gateCard=gateSelections.length?'<section class="functional-card eligibility-assessment-card"><h3>Dokumentarische Bewertung bei offener Eligibility · '+gateSelections.length+' Unternehmen</h3><p>Separat vor der Recherche ausgewählt. Die Konzernprüfung bleibt offen; kanonische Scores bleiben gesperrt.</p>'+genericTable(["Unternehmen","Bewertete Felder","Geprüft","Recherchelücken","KMU-Einstufung"],gateSelections.map(c=>{const a=assessmentById.get(c.company_id)||{};return '<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(a.assessed_field_count??0)+' / 15</td><td>'+esc(a.checked_fields??0)+'</td><td>'+esc(a.needs_research_fields??0)+'</td><td>'+esc(c.eligibility_gate_fields)+'</td></tr>';}))+'</section>':"";
     const humanDone=all.filter(c=>["APPROVED","COMPLETE","COMPLETED","REVIEWED","DONE"].includes(c.score_readiness?.independent_human_review_status)).length;
     root.innerHTML=
       '<div class="functional-kpis">'+
         '<div class="functional-kpi"><span>Code now</span><strong>'+(workflowCounts.CODE_NOW||0)+'</strong></div>'+
         '<div class="functional-kpi"><span>Research first</span><strong>'+(workflowCounts.RESEARCH_FIRST||0)+'</strong></div>'+
-        '<div class="functional-kpi"><span>Geprüft</span><strong>'+(workflowCounts.CHECKED_PROPOSALS||0)+'</strong></div>'+
+        '<div class="functional-kpi"><span>Geprüft</span><strong>'+(assessment.checked_fields||0)+'</strong></div>'+
         '<div class="functional-kpi"><span>Eligibility first</span><strong>'+(workflowCounts.ELIGIBILITY_FIRST||0)+'</strong></div>'+
       '</div>'+
       (nextBest.company_id?'<section class="functional-card next-best-card" data-company-id="'+esc(nextBest.company_id)+'"><div class="secondary-kicker">Next Best Company to Code</div><h3>#'+esc(nextBest.coding_rank||1)+' · '+esc(nextBest.legal_entity)+'</h3><div class="next-best-grid"><span><strong>'+esc(nextBest.company_id)+'</strong><small>Company ID</small></span><span><strong>'+esc(nextBest.work_priority||"—")+'</strong><small>Work Priority</small></span><span><strong>'+esc(nextBest.evidence_confidence||"—")+'</strong><small>Evidence</small></span><span><strong>'+esc(nextBest.process_confidence||"—")+'</strong><small>Process</small></span><span><strong>'+esc(nextBest.verified_source_count??"—")+'</strong><small>Verifizierte URLs</small></span><span><strong>'+esc(nextBest.qa_result||"—")+'</strong><small>QA</small></span><span><strong>'+esc(titleCase(nextBest.expected_information_gain||"UNKNOWN"))+'</strong><small>Informationsgewinn (Proxy)</small></span></div><p>'+esc(nextBest.priority_reason||"")+'</p><div class="action-text">'+esc(nextBest.next_action||"")+'</div></section>':"")+
       (codingCompanies.length?'<section class="functional-card"><h3>Next Best Coding Companies</h3>'+
         genericTable(["Coding Rank","Unternehmen","Priority","Evidence","Process","QA","Informationsgewinn (Proxy)","Quellenabdeckung","Verifizierte URLs"],codingCompanies.slice(0,10).map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td>'+esc(c.workflow_priority?.coding_rank??"—")+'</td><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(c.workflow_priority?.work_priority||"—")+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.process_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.qa_result||"—")+'</td><td>'+esc(titleCase(c.workflow_priority?.expected_information_gain||"UNKNOWN"))+'</td><td class="wrap-cell">'+esc(c.workflow_priority?.source_coverage||"—")+'</td><td>'+esc(c.workflow_priority?.verified_source_count??"—")+'</td></tr>'))+
-      '</section>':'<section class="functional-card"><h3>Erstbewertung abgeschlossen</h3><p>Keine weiteren Unternehmen für den ersten Coding-Durchlauf. Als Nächstes folgen die dokumentierten Recherchelücken, Eligibility-Prüfungen und Human Reviews.</p></section>')+
+      '</section>':'<section class="functional-card"><h3>Erstbewertung abgeschlossen</h3><p>Keine weiteren Unternehmen für den ersten Coding-Durchlauf. Als Nächstes folgen die dokumentierten Recherchelücken, KMU-Prüfungen und die finale Score-Freigabe.</p></section>')+
       coverageCard+batchCard+gateCard+
       '<section class="functional-card"><h3>Scoring Work Queue · '+work.length+' Arbeitspakete</h3>'+
         genericTable(["Rang","Unternehmen","Workstream","Dimension","Status","Priorität","Proposal / Research","Offene Felder","Nächste Aktion"],work.map(t=>
-          '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td><span class="status-badge '+(t.task_status==="RESEARCH_NEEDED"?"status-blocked":t.task_status==="AWAITING_HUMAN_REVIEW"?"status-review":["CHECKED","READY_TO_CODE"].includes(t.task_status)?"status-qualified":"status-watch")+'">'+esc(titleCase(t.task_status||"UNKNOWN"))+'</span></td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.research_gap_fields||t.proposal_status_summary||t.proposal_covered_fields||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'
+          '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td><span class="status-badge '+(t.task_status==="RESEARCH_NEEDED"?"status-blocked":t.task_status==="AWAITING_HUMAN_REVIEW"?"status-review":["CHECKED","READY_TO_CODE"].includes(t.task_status)?"status-qualified":"status-watch")+'">'+esc(titleCase(t.task_status||"UNKNOWN"))+'</span></td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.research_gap_fields||proposalSummaryLabel(t.proposal_status_summary)||t.proposal_covered_fields||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'
         ))+
       '</section>'+
       '<section class="functional-card"><h3>Score Readiness nach Unternehmen</h3>'+
@@ -468,7 +502,7 @@ function renderFunctional(view){
       '<section class="functional-card"><h3>Commercial White Space</h3><p>Trennt technische Relevanz davon, was öffentlich bereits als implementiert belegt ist.</p></section>'+
       '<section class="functional-card"><h3>Research Queue</h3><p>Priorisiert fehlende Fakten nach erwartetem Entscheidungswert. SME-Eligibility-Gates stehen vor Deployment-Recherche.</p></section>'+
       '<section class="functional-card"><h3>Research Safeguard</h3><p><strong>UNKNOWN bleibt UNKNOWN.</strong> Fehlende öffentliche Evidenz ist kein Beweis für Nicht-Deployment oder White Space.</p></section>'+
-      '<section class="functional-card"><h3>Human Review Gate</h3><p>Research-Ergebnisse dürfen kanonische Firmendaten nicht still überschreiben. Bestätigte Änderungen brauchen Review und Canonical Update.</p></section>'+
+      '<section class="functional-card"><h3>Finale Score-Freigabe</h3><p>Geprüfte Feldvorschläge haben einen eigenen Status. Ihre Übernahme in die endgültigen Scores braucht eine separate Freigabe.</p></section>'+
       '<section class="functional-card"><h3>Eligibility</h3><p>Technische Relevanz bleibt sichtbar, aber ungeklärte SME-/Gruppenstruktur blockiert die Actionability.</p></section>'+
     '</div>';return;
   }
@@ -488,7 +522,7 @@ function showFunctional(view){
   $("#analyticsBand").hidden=true;
   $(".master-detail").hidden=true;
   $("#researchPage").hidden=true;
-  $("#functionalPage").hidden=false;
+  $("#functionalPage").hidden=false;$("#evidenceOverview").hidden=true;
   setPageChrome(view==="home"?"Startseite":titleCase(view),false);
   renderFunctional(view);
 }
@@ -503,18 +537,19 @@ function showNav(view){
   }
   showFunctional(view);
 }
-function renderAll(){renderMetrics();renderRegionChart();renderPriority();renderTable();renderDetail();renderResearch()}
+function renderAll(){renderEvidenceOverview();renderMetrics();renderRegionChart();renderPriority();renderTable();renderDetail();renderResearch()}
 function showCompanies(){
-  $("#functionalPage").hidden=true;$("#analyticsBand").hidden=false;$(".master-detail").hidden=false;$("#researchPage").hidden=true;
+  $("#functionalPage").hidden=true;$("#evidenceOverview").hidden=false;$("#analyticsBand").hidden=false;$(".master-detail").hidden=false;$("#researchPage").hidden=true;
 }
 function showResearch(){
-  $("#functionalPage").hidden=true;$("#analyticsBand").hidden=true;$(".master-detail").hidden=true;$("#researchPage").hidden=false;renderResearch();
+  $("#functionalPage").hidden=true;$("#evidenceOverview").hidden=true;$("#analyticsBand").hidden=true;$(".master-detail").hidden=true;$("#researchPage").hidden=false;renderResearch();
 }
 function exportCsv(){
-  const rows=companies(), header=["company_id","legal_entity","sector","region","score","priority","confidence","status"];
+  const rows=companies(), header=["company_id","legal_entity","sector","region","score","priority","confidence","kmu_einstufung","gepruefte_felder","offene_feldfragen","iso_50001_nachweis","iso_14001_nachweis","emas_nachweis"];
   const lines=[header.join(",")].concat(rows.map(c=>{
     const [status]=statusInfo(c);
-    return [c.company_id,c.legal_entity,sectorLabel(c),c.state,c.opportunity_score??"",priority(c),c.evidence_confidence,status].map(v=>'"'+String(v??"").replaceAll('"','""')+'"').join(",");
+    const fields=fieldProgress(c);
+    return [c.company_id,c.legal_entity,sectorLabel(c),c.state,c.opportunity_score??"",priority(c),c.evidence_confidence,status,fields.checked,fields.open,certificateInfo(c.certifications?.iso_50001)[0],certificateInfo(c.certifications?.iso_14001)[0],certificateInfo(c.certifications?.emas)[0]].map(v=>'"'+String(v??"").replaceAll('"','""')+'"').join(",");
   }));
   const blob=new Blob([lines.join("\n")],{type:"text/csv;charset=utf-8"});
   const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="sme-etoi-zielunternehmen.csv";a.click();URL.revokeObjectURL(url);

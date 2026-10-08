@@ -290,6 +290,13 @@ python -m http.server 8000 --directory web
 
 Then open `http://localhost:8000`.
 
+For an existing local checkout, run `git pull --ff-only` in the repository and
+reload the browser with Ctrl+F5. The company table separates checked field
+proposals from SME eligibility. Missing public ISO evidence is displayed as
+"Kein öffentlicher Nachweis", never as a confirmed absence. Certificate details
+include check dates, expiry dates, scope notes and links. Source details separate
+URL retrieval from content rechecks; the overview counts follow the current filter.
+
 The frontend reads only the generated public repository snapshot in
 `web/data/sme_etoi.json`. It does not call employer systems, CRM data or
 private APIs.
