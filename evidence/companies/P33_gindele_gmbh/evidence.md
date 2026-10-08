@@ -56,3 +56,19 @@ All 15 fields assessed: 6 numeric proposals await independent human review; 9 fi
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P33-04, S-P33-06 |
 
 Per-field rationale and exact missing facts are in data/score_coding_proposals.csv. Official company/process/energy/report/download pages and exact-name public certificate/energy/target searches checked on 2026-10-07. Full relevant PDFs and rendered certificate/report table pages inspected. Investment lookback 2021-10-07 to 2026-10-07: crawl/renewal dates and prospective projects do not establish commissioning. Source retrieval remains distinct from attribution, currency and human review. Prior proposals, canonical numeric inputs, confidence grades, deployment columns and human review records are unchanged. Only directly sourced certificate facts and public-evidence summaries are corrected.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 2 | 2 | Geprüft | S-P33-04 |
+| power_conversion_score | 2 | 2 | Geprüft | S-P33-04 |
+| automation_control_score | 3 | 3 | Geprüft | S-P33-03 | S-P33-04 |
+| power_quality_score | 1 | 1 | Geprüft | S-P33-04 |
+| management_gap_score | 2 | 2 | Geprüft | S-P33-05 | S-P33-08 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P33-06 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

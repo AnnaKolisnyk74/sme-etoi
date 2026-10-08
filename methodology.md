@@ -169,3 +169,21 @@ proves that the claim was published, not that the stated effect was achieved.
 - Grid relevance cannot be converted into actual load without site and network data.
 - The purposive sample is not nationally representative.
 - SME-ETOI is a transparent exploratory index, not a predictive model.
+
+
+## Proposal source checks — 7 October 2026
+
+The 554 numeric first-pass anchors were checked against primary document bodies,
+exact legal/site attribution, certificate periods, proposed/operational scope and
+the coding manual. The check records 507 confirmations, 42 corrections and five
+unsupported values returned to UNKNOWN. Each of the 549 supported proposals has
+status `CHECKED` (web label: Geprüft). Corrections include conservative anchor
+changes and clarified source/scope explanations, not only different integers.
+
+The named checker is Codex. Source rechecking is not a second independent human
+coder, inter-rater reliability observation or final-score approval. Human review,
+SME/group eligibility and transfer to canonical scores remain independent gates.
+The 269-source content ledger records SHA-256 for retrievable bodies and explicit
+failure states; all-source URL audit and content-support review are distinct.
+The 100/100 figure measures documentary field coverage, not completion of all
+research facts, confirmed eligibility or final approved scores.

@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Continuous fieldwise batch: attribution, process mismatch and temporal guards."""
 import unittest, sys
 from pathlib import Path
@@ -14,7 +15,7 @@ COUNTS=[9,8,2,6,4,2,8,9,4,1,5,9]
 
 class ContinuousBatchTests(unittest.TestCase):
     def setUp(self):
-        self.rows=read_csv(ROOT/'data/score_coding_proposals.csv')
+        self.rows=read_csv(ROOT/'data/history/score_coding_proposals_before_recheck_20261007.csv')
         self.p={(r['company_id'],r['score_field']):r for r in self.rows}
         self.s={r['source_id']:r for r in read_csv(ROOT/'evidence/source_register.csv')}
         self.c={(r['candidate_id'],r['standard']):r for r in read_csv(ROOT/'evidence/certificate_register.csv')}
@@ -120,7 +121,7 @@ class ContinuousBatchTests(unittest.TestCase):
         p=build_web_payload(ROOT);batch=next(b for b in p['coding_batches'] if b['batch_id']=='NBCC-2026-10-07-03')
         self.assertEqual([r['company_id'] for r in batch['companies']],CIDS)
         for r,n in zip(batch['companies'],COUNTS):
-            self.assertEqual((r['awaiting_human_review_fields'],r['needs_research_fields']),(n,15-n))
+            self.assertEqual((r['checked_fields'],r['needs_research_fields']),(n,15-n))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)
         self.assertIsNone(p['company_work_summary']['next_best_company']['unassessed_field_count'])

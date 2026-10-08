@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Behavioral tests for documentary priority, safeguards and frozen batch selection."""
 import copy
 import csv
@@ -110,7 +111,7 @@ class NextBestCodingTests(unittest.TestCase):
         sources = [r for r in read_csv(ROOT / 'tests/fixtures/source_register_before_20261006_audit.csv') if r['source_id'] not in {'S-P21-04', 'S-P27-04'}]
         work = generate_score_work_queue(companies, build_score_readiness(ROOT, companies), process, sources,
             read_csv(ROOT / 'evidence/qa_review.csv'), read_csv(ROOT / 'data/pilot_coded.csv'), queue,
-            [r for r in read_csv(ROOT / 'data/score_coding_proposals.csv') if r['company_id'] not in selected])
+            [r for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv') if r['company_id'] not in selected])
         ranking = generate_company_work_priority(work, sources, process)
         for selection, row in zip(manifest, ranking):
             self.assertEqual(selection['company_id'], row['company_id'])
@@ -120,7 +121,7 @@ class NextBestCodingTests(unittest.TestCase):
         self.assertEqual(selected, {'P21', 'P27'})
 
     def test_batch_assessments_keep_unknowns_and_human_review_separate(self):
-        rows = read_csv(ROOT / 'data/score_coding_proposals.csv')
+        rows = read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
         for cid, count in [('P21', 4), ('P27', 5)]:
             proposals = [r for r in rows if r['company_id'] == cid]
             self.assertEqual(len(proposals), 15)

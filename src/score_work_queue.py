@@ -183,6 +183,12 @@ def proposal_state_for_dimension(
         )
 
     if len(covered) == len(missing_fields) and missing_fields:
+        if all(status in {"CHECKED", "APPROVED"} for status in statuses) and "CHECKED" in statuses:
+            return (
+                "CHECKED", covered, [], summary,
+                "Source and anchor checks are complete. Preserve the checked proposals; "
+                "final-score approval and canonical scoring remain separate gates.",
+            )
         if all(status == "APPROVED" for status in statuses):
             return (
                 "AWAITING_CANONICAL_UPDATE",
@@ -192,7 +198,7 @@ def proposal_state_for_dimension(
                 "Transfer the approved anchors in a separate canonical update, then rerun the pipeline.",
             )
         if all(
-            status in {"APPROVED", "AWAITING_HUMAN_REVIEW"}
+            status in {"APPROVED", "AWAITING_HUMAN_REVIEW", "CHECKED"}
             for status in statuses
         ):
             return (

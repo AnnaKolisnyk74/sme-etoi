@@ -30,3 +30,18 @@ control. The ENITEC electric-oven route remains historical evidence, not proof
 of today's furnace configuration. ISO 9001 does not verify an EnMS.
 Five numeric proposals await Human Review; ten fields remain research gaps.
 No canonical scoring or human-review record is changed.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| process_electrification_score | 7 | 7 | Geprüft | S-P27-03 |
+| motor_drive_score | 8 | 8 | Geprüft | S-P27-04 |
+| automation_control_score | 3 | 3 | Geprüft | S-P27-04 |
+| management_gap_score | 5 | 5 | Geprüft | S-P27-01 | S-P27-04 |
+| targets_gap_score | 5 | 5 | Geprüft | S-P27-01 | S-P27-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

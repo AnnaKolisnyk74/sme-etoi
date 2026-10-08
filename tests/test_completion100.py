@@ -40,13 +40,14 @@ class Completion100Tests(unittest.TestCase):
         for r in self.rows:
             self.assertFalse(r['reviewer'] or r['review_date'] or r['review_note'])
             if r['proposed_value']:
-                self.assertEqual(r['proposal_status'],'AWAITING_HUMAN_REVIEW')
+                self.assertEqual(r['proposal_status'],'CHECKED')
             else:
                 self.assertEqual((r['proposal_status'],r['proposal_confidence']),('NEEDS_RESEARCH','UNKNOWN'))
                 self.assertTrue(r['missing_fact'])
         s=self.payload['field_assessment_summary']
         self.assertEqual((s['complete_company_count'],s['assessed_field_count']),(100,1500))
-        self.assertEqual((s['awaiting_human_review_fields'],s['needs_research_fields'],s['approved_fields']),(554,946,0))
+        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(549,951,0))
+        self.assertEqual(s['awaiting_human_review_fields'],0)
 
     def test_duplicate_or_unknown_fields_cannot_inflate_completion(self):
         companies=[{'company_id':'X','legal_entity':'Example'}]
@@ -64,7 +65,7 @@ class Completion100Tests(unittest.TestCase):
         process=read_csv(ROOT/'tests/fixtures/company_process_map_before_completion100.csv')
         work=generate_score_work_queue(companies,build_score_readiness(ROOT,companies),process,source,
             read_csv(ROOT/'evidence/qa_review.csv'),read_csv(ROOT/'data/pilot_coded.csv'),research,
-            [r for r in self.rows if r['company_id'] not in set(REGULAR)|GATED])
+            [r for r in read_csv(ROOT/'data/history/score_coding_proposals_before_recheck_20261007.csv') if r['company_id'] not in set(REGULAR)|GATED])
         selected=select_batch(generate_company_work_priority(work,source,process),'NBCC-2026-10-07-07','2026-10-07',size=16)
         frozen=[r for r in read_csv(ROOT/'data/coding_batch_selections.csv') if r['batch_id']=='NBCC-2026-10-07-07']
         self.assertEqual(selected,frozen)
@@ -90,7 +91,7 @@ class Completion100Tests(unittest.TestCase):
     def test_all_first_passes_exhaust_code_now_but_not_research(self):
         summary=self.payload['company_work_summary']
         self.assertEqual(summary['next_best_company']['company_id'],'')
-        self.assertEqual(summary['workflow_action_counts'],{'ELIGIBILITY_FIRST':12,'RESEARCH_FIRST':85,'REVIEW_PROPOSALS':3})
+        self.assertEqual(summary['workflow_action_counts'],{'ELIGIBILITY_FIRST':12,'RESEARCH_FIRST':88})
         self.assertNotIn('READY_TO_CODE',self.payload['score_work_summary']['task_status_counts'])
         with self.assertRaises(ValueError):
             select_batch(read_csv(ROOT/'outputs/company_work_priority.csv'),'empty','2026-10-07')

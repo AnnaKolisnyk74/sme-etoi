@@ -41,6 +41,7 @@ FIELD_TO_DIMENSION = {
 }
 
 ALLOWED_STATUSES = {
+    "CHECKED",
     "AWAITING_HUMAN_REVIEW",
     "NEEDS_RESEARCH",
     "APPROVED",
@@ -172,7 +173,7 @@ def validate(
 
         if status not in ALLOWED_STATUSES:
             errors.append(f"line {line_number}: invalid proposal_status={status!r}")
-        elif status in {"AWAITING_HUMAN_REVIEW", "NEEDS_RESEARCH"}:
+        elif status in {"AWAITING_HUMAN_REVIEW", "NEEDS_RESEARCH", "CHECKED"}:
             if reviewer or review_date:
                 errors.append(
                     f"line {line_number}: unresolved proposal cannot claim reviewer/date"
@@ -183,6 +184,8 @@ def validate(
                     f"line {line_number}: {status} requires reviewer and review_date"
                 )
 
+    import proposal_checks
+    errors.extend(proposal_checks.validate(rows, root))
     return errors
 
 

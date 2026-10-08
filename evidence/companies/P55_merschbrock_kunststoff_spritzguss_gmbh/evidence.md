@@ -59,3 +59,22 @@ All15 fields assessed: 9 numeric proposals pending independent human review;6 bl
 | investment_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P55-03, S-P55-05 |
 
 Exact per-field rationale and missing facts are in data/score_coding_proposals.csv. Public primary pages and exact-name process/energy/target/certification searches checked07/10/2026. Certificate holder/date/scope and relevant scanned report/registry pages visually inspected. HTTP success is separate from attribution/currency. Lookback2021-10-07 to2026-10-07. No prior proposals, canonical score inputs, deployment/confidence/staff fields or human review records changed. This is AI first pass, never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 8 | 8 | Geprüft | S-P55-05 | S-P55-06 |
+| power_conversion_score | 8 | 8 | Geprüft | S-P55-03 | S-P55-05 | S-P55-06 |
+| automation_control_score | 3 | 3 | Geprüft | S-P55-06 |
+| power_quality_score | 1 | 1 | Geprüft | S-P55-05 | S-P55-06 |
+| onsite_integration_score | 3 | 3 | Geprüft | S-P55-03 | S-P55-05 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P55-03 | S-P55-05 |
+| management_gap_score | 2 | 2 | Geprüft | S-P55-04 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P55-03 |
+| investment_gap_score | 0 | 0 | Geprüft | S-P55-03 | S-P55-05 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

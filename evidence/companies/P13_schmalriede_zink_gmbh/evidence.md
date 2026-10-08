@@ -51,3 +51,19 @@ The published climate-neutrality target has a 2025 date, correcting the old no-d
 ### Defined search boundary
 
 On 2026-10-06, checked company identity, process, environmental/sustainability, equipment/news and available certificate pages, plus exact-name ISO 50001/EMAS and energy-technology searches. Every registered added URL receives GET metadata in the public audit. No internal company/CRM data is used. Investment scope is 2021-10-06 through 2026-10-06; research equipment, capacity growth and chemical savings are not automatically energy-transition investments. Field-level missing facts are recorded in `data/score_coding_proposals.csv`.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 2 | 2 | Geprüft | S-P13-05 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P13-03 | S-P13-06 |
+| scheduling_flex_score | 2 | 2 | Geprüft | S-P13-02 | S-P13-07 |
+| power_quality_score | 1 | 1 | Geprüft | S-P13-03 | S-P13-06 |
+| management_gap_score | 2 | 2 | Geprüft | S-P13-09 |
+| targets_gap_score | 2 | 2 | Geprüft | S-P13-04 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

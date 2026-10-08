@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Validity, historical continuity and evidence boundaries for the October 7 batch."""
 import sys
 import unittest
@@ -20,7 +21,7 @@ class CodingBatch0407Tests(unittest.TestCase):
         companies, _, research = build_outputs(ROOT)
         sources = read_csv(ROOT / 'tests/fixtures/source_register_before_nbcc0407.csv')
         process = read_csv(ROOT / 'tests/fixtures/company_process_map_before_nbcc0407.csv')
-        proposals = [r for r in read_csv(ROOT / 'data/score_coding_proposals.csv')
+        proposals = [r for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
                      if r['company_id'] not in {'P25', 'P15'}]
         work = generate_score_work_queue(companies, build_score_readiness(ROOT, companies),
             process, sources, read_csv(ROOT / 'evidence/qa_review.csv'),
@@ -31,7 +32,7 @@ class CodingBatch0407Tests(unittest.TestCase):
         self.assertEqual([r['verified_source_count'] for r in manifest], ['3', '2'])
 
     def test_fifteen_fields_preserve_pending_review_and_blank_research_contracts(self):
-        all_rows = read_csv(ROOT / 'data/score_coding_proposals.csv')
+        all_rows = read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
         for cid, count in [('P25', 8), ('P15', 4)]:
             rows = [r for r in all_rows if r['company_id'] == cid]
             self.assertEqual(len(rows), 15)
@@ -74,7 +75,7 @@ class CodingBatch0407Tests(unittest.TestCase):
         self.assertIn('not reproduced', recovery['remaining_gap'])
         self.assertEqual(recovery['reviewer'], '')
         proposals = {(r['company_id'], r['score_field']): r
-                     for r in read_csv(ROOT / 'data/score_coding_proposals.csv')}
+                     for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         for field in ['temperature_fit_score', 'process_electrification_score',
                       'fossil_heat_displacement_score', 'thermal_storage_flex_score',
                       'incremental_load_score', 'investment_gap_score']:
@@ -83,7 +84,7 @@ class CodingBatch0407Tests(unittest.TestCase):
 
     def test_historical_cooling_and_self_report_do_not_close_deployment_or_investment_gaps(self):
         proposals = {(r['company_id'], r['score_field']): r
-                     for r in read_csv(ROOT / 'data/score_coding_proposals.csv')}
+                     for r in read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         for field in ['temperature_fit_score', 'process_electrification_score',
                       'thermal_storage_flex_score', 'measures_gap_score',
                       'automation_control_score', 'investment_gap_score']:
@@ -106,7 +107,7 @@ class CodingBatch0407Tests(unittest.TestCase):
         self.assertEqual([r['company_id'] for r in batch['companies']], ['P25', 'P15'])
         for r, numeric, gaps in zip(batch['companies'], [8, 4], [7, 11]):
             self.assertEqual(r['current_workflow_action'], 'RESEARCH_FIRST')
-            self.assertEqual(r['awaiting_human_review_fields'], numeric)
+            self.assertEqual(r['checked_fields'], numeric)
             self.assertEqual(r['needs_research_fields'], gaps)
             self.assertEqual(r['expected_information_gain_at_selection'], 'MEDIUM')
             self.assertNotIn('score', r)

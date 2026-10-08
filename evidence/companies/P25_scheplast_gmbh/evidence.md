@@ -53,3 +53,21 @@ PV, waste heat and current environmental certificate: S-P25-05 documents own PV/
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P25-05, S-P25-06, S-P25-07 |
 
 Gap details and rationale are recorded field by field in data/score_coding_proposals.csv. The investment window is 2021-10-07 through 2026-10-07. Company pages, process/energy statements, direct certificate and exact-name public energy/target/certification searches were checked on 2026-10-07. No current extra certificate or deployment was inferred from a missing search result. Canonical deployment columns, confidence grades, numeric scoring inputs and human review records are unchanged; the Scheplast ISO 14001 successor is a factual certificate correction only.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 2 | 2 | Geprüft | S-P25-07 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P25-05 |
+| automation_control_score | 1 | 1 | Geprüft | S-P25-07 |
+| power_quality_score | 1 | 1 | Geprüft | S-P25-05 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P25-05 |
+| measures_gap_score | 3 | 3 | Geprüft | S-P25-05 |
+| management_gap_score | 2 | 2 | Geprüft | S-P25-06 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P25-05 | S-P25-07 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

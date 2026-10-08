@@ -61,3 +61,21 @@ All 15 fields assessed: 8 numeric proposals pending independent human review; 7 
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P77-03 |
 
 Exact field rationales/gaps in data/score_coding_proposals.csv. Primary own/issuer/project/public agency pages, exact-name energy/certificate/target checks, rendered report/certificate bodies checked 07/10/2026. Availability, attribution, data/report period and current operating continuity separate. Lookback 2021-10-07 to 2026-10-07. Prior proposals, canonical numeric/deployment/staff/confidence and human review unchanged. AI first pass never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| fossil_heat_displacement_score | 2 | 2 | Geprüft | S-P77-03 |
+| motor_drive_score | 8 | 8 | Geprüft | S-P77-03 | S-P77-04 | S-P77-05 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P77-04 | S-P77-05 |
+| automation_control_score | 3 | 3 | Geprüft | S-P77-03 | S-P77-05 |
+| power_quality_score | 1 | 1 | Geprüft | S-P77-04 | S-P77-05 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P77-03 | S-P77-05 |
+| management_gap_score | 0 | 0 | Geprüft | S-P77-06 | S-P77-07 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P77-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

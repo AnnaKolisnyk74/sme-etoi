@@ -48,3 +48,21 @@ All 15 fields assessed: 8 numeric proposals pending independent human review; 7 
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P109-03, S-P109-04 |
 
 Exact rationales and missing facts in data/score_coding_proposals.csv. Owner, issuer and public-agency facts distinguish retrieval, legal holder/site, reporting period and actual operation. Readable PDF text and relevant certificate/equipment image bodies checked. Investment window 2021-10-07 to 2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records unchanged. AI first pass is never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| temperature_fit_score | 3 | 3 | Geprüft | S-P109-03 |
+| process_electrification_score | 7 | 7 | Geprüft | S-P109-03 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P109-03 |
+| scheduling_flex_score | 2 | 2 | Geprüft | S-P109-03 |
+| incremental_load_score | 5 | 5 | Geprüft | S-P109-03 |
+| power_quality_score | 1 | 1 | Geprüft | S-P109-03 |
+| measures_gap_score | 3 | 3 | Geprüft | S-P109-04|S-P109-05 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P109-05 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

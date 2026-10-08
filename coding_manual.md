@@ -149,3 +149,31 @@ ISO 50001, ISO 14001 and EMAS. Record each check in
 
 Record both conflicting sources. Prefer the more authoritative, direct and
 recent source and explain the choice. Do not average conflicting facts.
+
+
+## Source recheck versus personal score approval
+
+`CHECKED` is displayed as **Geprüft**. It means a proposal's attributed primary
+content, period, operating/planned scope and numeric anchor were rechecked.
+`evidence/score_proposal_checks.csv` records the actual checker (Codex), method,
+date, original/current sources and before/after decision. This is a source and
+anchor check, not an independent human review or permission to populate final
+canonical scores. Personal `reviewer`, `review_date` and `review_note` fields stay
+blank until an actual personal decision exists.
+
+- Preserve confidence C for conditional engineering relevance; it is not observed deployment.
+- Electric machine drives do not establish thermal process temperature or electrification.
+- Discrete/batch stages alone support weak sequencing, not dispatchable shifting.
+- Cooled product tanks/refrigeration alone do not establish usable thermal storage.
+- Planned/delivered equipment is distinct from commissioned operation.
+- Count an integrated project's components once; establish separate project scope before counting several investments.
+- Investment dates must lie within 2021-10-07 to 2026-10-07. A bare 2021 year cannot prove this.
+- Certificate expiry in the body prevails over filenames or the next planned statement validation.
+- A vague ambition uses anchor 3; absence of a dated target alone does not establish the no-target anchor 5.
+- Generic electrochemical processing supports possible power-quality effects (1); clear peaks/topology/rated process signals require separate evidence for a higher anchor.
+
+Remove unsupported numeric values and use `NEEDS_RESEARCH`/UNKNOWN with the
+missing fact recorded. Preserve original records in `data/history/` and record
+all recheck outcomes, including failed checks. An unavailable certificate can
+support an explicit claim-only gap when an accessible own claim exists; it cannot
+authenticate current certification. HTTP 200 alone never supports a checked anchor.

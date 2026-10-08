@@ -1,3 +1,4 @@
+# Historical first-pass assertions use the immutable pre-recheck snapshot.
 """Regression guards for entity, thermal, certificate and project attribution."""
 import sys
 import unittest
@@ -18,7 +19,7 @@ CIDS = ['P77', 'P79', 'P80', 'P81', 'P83', 'P84', 'P87', 'P90', 'P91', 'P92', 'P
 
 class ContinuousBatch05Tests(unittest.TestCase):
     def setUp(self):
-        self.rows = read_csv(ROOT / 'data/score_coding_proposals.csv')
+        self.rows = read_csv(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')
         self.p = {(r['company_id'], r['score_field']): r for r in self.rows}
         self.s = {r['source_id']: r for r in read_csv(ROOT / 'evidence/source_register.csv')}
         self.c = {(r['candidate_id'], r['standard']): r for r in read_csv(ROOT / 'evidence/certificate_register.csv')}
@@ -117,7 +118,7 @@ class ContinuousBatch05Tests(unittest.TestCase):
         p = build_web_payload(ROOT)
         batch = next(b for b in p['coding_batches'] if b['batch_id'] == 'NBCC-2026-10-07-05')
         self.assertEqual([r['company_id'] for r in batch['companies']], CIDS)
-        self.assertEqual(sum(r['awaiting_human_review_fields'] for r in batch['companies']), 70)
+        self.assertEqual(sum(r['checked_fields'] for r in batch['companies']), 70)
         self.assertEqual(sum(r['needs_research_fields'] for r in batch['companies']), 110)
         for r in batch['companies']:
             self.assertEqual(r['current_workflow_action'], 'RESEARCH_FIRST')

@@ -79,7 +79,8 @@ class PilotExpansionDataTests(unittest.TestCase):
             self.assertEqual(certificate["certificate_status"], "VALID")
             self.assertTrue(certificate["direct_certificate_url"].startswith("https://"))
 
-        self.assertEqual(companies["P12"]["emas_status"], "VALID")
+        self.assertEqual(companies["P12"]["emas_status"], "EXPIRED")
+        self.assertEqual(by_key[("P12", "EMAS")]["valid_until"], "2026-09-11")
         self.assertEqual(companies["P12"]["pv_present"], "UNKNOWN")
         self.assertEqual(companies["P12"]["heat_recovery_deployed"], "UNKNOWN")
         self.assertEqual(companies["P11"]["iso_50001_status"], "VALID")

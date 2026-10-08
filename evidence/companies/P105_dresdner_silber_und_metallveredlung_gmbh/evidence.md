@@ -48,3 +48,20 @@ All 15 fields assessed: 5 numeric proposals pending independent human review; 10
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P105-03, S-P105-04 |
 
 Exact rationales and missing facts in data/score_coding_proposals.csv. Owner, issuer and public-agency facts distinguish retrieval, legal holder/site, reporting period and actual operation. Readable PDF text and relevant certificate/equipment image bodies checked. Investment window 2021-10-07 to 2026-10-07. Previous proposals, canonical numeric/deployment/staff/confidence and actual human-review records unchanged. AI first pass is never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| motor_drive_score | 2 | 2 | Geprüft | S-P105-02 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P105-02|S-P105-05 |
+| automation_control_score | 3 | 3 | Geprüft | S-P105-02 |
+| power_quality_score | 3 | 1 | Geprüft | S-P105-02 |
+| management_gap_score | 2 | 2 | Geprüft | S-P105-04|S-P105-05 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **power_quality_score**: Own electrochemical production supports possible rectifier-related harmonic/peak relevance as an engineering hypothesis. The source does not establish a specific rectifier inventory/topology, explicit peak constraint or measured disturbance. Use the possible-signal anchor consistently; chemical nickel and product properties are not additional converter evidence.

@@ -59,3 +59,25 @@ All15 fields assessed: 8 numeric proposals pending independent human review;7 bl
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P45-03 |
 
 Exact per-field rationale and missing facts are in data/score_coding_proposals.csv. Public primary pages and exact-name process/energy/target/certification searches checked07/10/2026. Certificate holder/date/scope and relevant scanned report/registry pages visually inspected. HTTP success is separate from attribution/currency. Lookback2021-10-07 to2026-10-07. No prior proposals, canonical score inputs, deployment/confidence/staff fields or human review records changed. This is AI first pass, never Anna human review.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| process_electrification_score | 10 | 10 | Geprüft | S-P45-03 |
+| motor_drive_score | 5 | 5 | Geprüft | S-P45-03 | S-P45-04 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P45-03 |
+| automation_control_score | 3 | 3 | Geprüft | S-P45-03 |
+| power_quality_score | 1 | 1 | Geprüft | S-P45-03 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P45-01 | S-P45-05 |
+| measures_gap_score | 3 | 3 | Geprüft | S-P45-03 | S-P45-05 |
+| targets_gap_score | 5 | 5 | Geprüft | S-P45-03 | S-P45-04 | S-P45-01 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **onsite_integration_score**: The freshly inspected own HOMEPAGE explicitly lists four car and six bicycle charging stations. The imprint establishes identity only. This is one actual own-site charging case; PV, storage or converter ratings are not inferred.
+
+- **measures_gap_score**: Own rental-workstation equipment documents electric process furnaces, and the own homepage documents four car and six bicycle charging stations. These are some actual energy-relevant installations; commissioning dates and measured substitution savings remain unknown.

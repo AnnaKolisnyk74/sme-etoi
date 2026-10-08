@@ -22,3 +22,18 @@
 - Verify consolidated turnover or balance-sheet total.
 - Research deployed rectifier, power-quality and flexibility solutions beyond
   the certified management systems.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| automation_control_score | 1 | 1 | Geprüft | S-P11-02 |
+| measures_gap_score | 7 | 7 | Geprüft | S-P11-02 | S-P11-03 |
+| management_gap_score | 0 | 0 | Geprüft | S-P11-03 |
+| targets_gap_score | 3 | 3 | Geprüft | S-P11-01 | S-P11-02 |
+| investment_gap_score | 3 | 3 | Geprüft | S-P11-02 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

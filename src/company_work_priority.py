@@ -22,6 +22,7 @@ OUTPUT_FIELDS = [
     "ready_to_code_tasks",
     "research_needed_tasks",
     "awaiting_human_review_tasks",
+    "checked_tasks",
     "open_gate_tasks",
     "other_tasks",
     "evidence_confidence",
@@ -44,6 +45,7 @@ WORKFLOW_ORDER = {
     "CODE_NOW": 0,
     "RESEARCH_FIRST": 1,
     "REVIEW_PROPOSALS": 2,
+    "CHECKED_PROPOSALS": 2,
     "ELIGIBILITY_FIRST": 3,
     "IN_PROGRESS": 4,
     "FINALIZE_SCORE": 5,
@@ -179,6 +181,8 @@ def company_action(rows: list[dict[str, str]]) -> str:
         return "IN_PROGRESS"
     if statuses & {"AWAITING_HUMAN_REVIEW", "AWAITING_CANONICAL_UPDATE"}:
         return "REVIEW_PROPOSALS"
+    if statuses == {"CHECKED"}:
+        return "CHECKED_PROPOSALS"
     if statuses == {"READY_TO_CODE"}:
         return "CODE_NOW"
     if statuses & {"READY_FOR_FINAL_SCORE"}:
@@ -187,6 +191,8 @@ def company_action(rows: list[dict[str, str]]) -> str:
 
 
 def action_next_step(action: str, rows: list[dict[str, str]]) -> str:
+    if action == "CHECKED_PROPOSALS":
+        return "Source and anchor checks are complete. Final-score approval remains a separate gate."
     if action == "CODE_NOW":
         return (
             "Open the company dossier and code the five SME-ETOI dimensions "
@@ -222,6 +228,8 @@ def action_next_step(action: str, rows: list[dict[str, str]]) -> str:
 
 
 def priority_reason(action: str, rows: list[dict[str, str]]) -> str:
+    if action == "CHECKED_PROPOSALS":
+        return "All field proposals in the current work package have documented source checks."
     first = rows[0]
     if action == "RESEARCH_FIRST":
         gaps = []
@@ -289,6 +297,7 @@ def generate_company_work_priority(
                 "company_work_rank": normalise(first.get("company_work_rank")),
                 "first_work_rank": str(min(integer(row.get("work_rank")) for row in rows)),
                 "ready_to_code_tasks": str(statuses.count("READY_TO_CODE")),
+                "checked_tasks": str(statuses.count("CHECKED")),
                 "research_needed_tasks": str(
                     sum(
                         status
@@ -308,6 +317,7 @@ def generate_company_work_priority(
                     sum(
                         status
                         not in {
+                            "CHECKED",
                             "READY_TO_CODE",
                             "RESEARCH_NEEDED",
                             "REWORK_REQUIRED",

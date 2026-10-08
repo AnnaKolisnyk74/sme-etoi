@@ -56,3 +56,24 @@ All 15 fields assessed: 11 numeric proposals await independent human review; 4 f
 | investment_gap_score | 0 | B | AWAITING_HUMAN_REVIEW | S-P29-03 |
 
 Per-field rationale and exact missing facts are in data/score_coding_proposals.csv. Official company/process/energy/report/download pages and exact-name public certificate/energy/target searches checked on 2026-10-07. Full relevant PDFs and rendered certificate/report table pages inspected. Investment lookback 2021-10-07 to 2026-10-07: crawl/renewal dates and prospective projects do not establish commissioning. Source retrieval remains distinct from attribution, currency and human review. Prior proposals, canonical numeric inputs, confidence grades, deployment columns and human review records are unchanged. Only directly sourced certificate facts and public-evidence summaries are corrected.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| fossil_heat_displacement_score | 5 | 5 | Geprüft | S-P29-03 |
+| motor_drive_score | 8 | 8 | Geprüft | S-P29-03 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P29-03 |
+| automation_control_score | 4 | 4 | Geprüft | S-P29-03 |
+| scheduling_flex_score | 2 | 2 | Geprüft | S-P29-03 |
+| power_quality_score | 3 | 3 | Geprüft | S-P29-03 |
+| onsite_integration_score | 3 | 3 | Geprüft | S-P29-03 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P29-03 |
+| management_gap_score | 0 | 0 | Geprüft | S-P29-03 |
+| targets_gap_score | 0 | 0 | Geprüft | S-P29-03 |
+| investment_gap_score | 0 | 0 | Geprüft | S-P29-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

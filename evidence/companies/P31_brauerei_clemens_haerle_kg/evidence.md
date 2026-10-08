@@ -46,3 +46,20 @@ deployments, certification records or scores are changed.
 ## Remaining limitations after coding
 
 The legal entity and process are supported, but complete financial aggregation, ownership links, certification validity and site-level energy deployments remain subject to Anna's final review after the 100-company sample is assembled.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| fossil_heat_displacement_score | 0 | 0 | Geprüft | S-P31-02 |
+| scheduling_flex_score | 2 | 2 | Geprüft | S-P31-04 |
+| onsite_integration_score | 2 | 2 | Geprüft | S-P31-03 |
+| measures_gap_score | 0 | 0 | Geprüft | S-P31-02 | S-P31-03 | S-P31-04 |
+| management_gap_score | 2 | 2 | Geprüft | S-P31-02 |
+| targets_gap_score | 2 | 2 | Geprüft | S-P31-02 |
+| investment_gap_score | 0 | 0 | Geprüft | S-P31-03 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.

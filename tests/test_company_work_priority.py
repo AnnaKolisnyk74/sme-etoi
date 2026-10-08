@@ -30,8 +30,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(
             counts,
             {
-                                "RESEARCH_FIRST": 85,
-                "REVIEW_PROPOSALS": 3,
+                                "RESEARCH_FIRST": 88,
                 "ELIGIBILITY_FIRST": 12,
             },
         )
@@ -54,7 +53,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "RESEARCH_FIRST"
             },
-            {"P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55", "P56", "P57", "P58", "P59", "P61", "P63", "P64", "P66", "P68", "P70", "P75", "P76", "P77", "P79", "P80", "P81", "P83", "P84", "P87", "P90", "P91", "P92", "P93", "P94", "P95", "P97", "P98", "P100", "P101", "P105", "P106", "P108", "P109", "P110", "P37", "P60", "P71", "P72", "P73", "P74", "P78", "P82", "P85", "P86", "P89", "P96", "P99", "P102", "P103", "P107", "P62", "P03"},
+            {"P04", "P05", "P22", "P11", "P12", "P16", "P18", "P19", "P20", "P23", "P24", "P53", "P21", "P27", "P30", "P31", "P43", "P13", "P25", "P15", "P26", "P28", "P29", "P33", "P35", "P36", "P38", "P39", "P41", "P44", "P45", "P50", "P51", "P52", "P54", "P55", "P56", "P57", "P58", "P59", "P61", "P63", "P64", "P66", "P68", "P70", "P75", "P76", "P77", "P79", "P80", "P81", "P83", "P84", "P87", "P90", "P91", "P92", "P93", "P94", "P95", "P97", "P98", "P100", "P101", "P105", "P106", "P108", "P109", "P110", "P37", "P60", "P71", "P72", "P73", "P74", "P78", "P82", "P85", "P86", "P89", "P96", "P99", "P102", "P103", "P107", "P62", "P03"},
         )
 
     def test_p11_moves_from_code_now_to_research_first(self):
@@ -63,7 +62,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(row["is_next_to_code"], "NO")
         self.assertEqual(row["coding_rank"], "")
         self.assertEqual(row["research_needed_tasks"], "4")
-        self.assertEqual(row["awaiting_human_review_tasks"], "1")
+        self.assertEqual(row["checked_tasks"], "1")
 
     def test_p53_moves_from_code_now_to_research_first(self):
         row = self.by_id["P53"]
@@ -71,7 +70,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(row["is_next_to_code"], "NO")
         self.assertEqual(row["coding_rank"], "")
         self.assertEqual(row["research_needed_tasks"], "4")
-        self.assertEqual(row["awaiting_human_review_tasks"], "1")
+        self.assertEqual(row["checked_tasks"], "1")
 
     def test_p20_moves_from_code_now_to_research_first(self):
         row = self.by_id["P20"]
@@ -87,7 +86,7 @@ class CompanyWorkPriorityTests(unittest.TestCase):
                 for row in self.rows
                 if row["workflow_action"] == "REVIEW_PROPOSALS"
             },
-            {"P04", "P05", "P22"},
+            set(),
         )
 
     def test_eligibility_gate_never_becomes_code_now(self):

@@ -55,3 +55,25 @@ All 15 fields assessed: 8 numeric proposals await independent human review; 7 fi
 | investment_gap_score | — | UNKNOWN | NEEDS_RESEARCH | S-P26-04, S-P26-06, S-P26-07 |
 
 Per-field rationale and exact missing facts are in data/score_coding_proposals.csv. Official company/process/energy/report/download pages and exact-name public certificate/energy/target searches checked on 2026-10-07. Full relevant PDFs and rendered certificate/report table pages inspected. Investment lookback 2021-10-07 to 2026-10-07: crawl/renewal dates and prospective projects do not establish commissioning. Source retrieval remains distinct from attribution, currency and human review. Prior proposals, canonical numeric inputs, confidence grades, deployment columns and human review records are unchanged. Only directly sourced certificate facts and public-evidence summaries are corrected.
+
+
+## Quellen- und Anker-Nachprüfung 2026-10-07
+
+Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleiben `NEEDS_RESEARCH`. Nachprüfer: Codex. Die ursprüngliche Erstbewertung bleibt historisch erhalten; eine persönliche Freigabe oder finale Score-Berechnung ist damit nicht erteilt.
+
+| Feld | Vorher | Nachprüfung | Ergebnis | Quellen |
+|---|---:|---:|---|---|
+| process_electrification_score | 7 | 7 | Geprüft | S-P26-06 | S-P26-07 |
+| motor_drive_score | 2 | 2 | Geprüft | S-P26-06 | S-P26-07 |
+| power_conversion_score | 5 | 5 | Geprüft | S-P26-07 |
+| automation_control_score | 3 | 3 | Geprüft | S-P26-07 |
+| power_quality_score | 1 | 1 | Geprüft | S-P26-07 |
+| measures_gap_score | 3 | 3 | Geprüft | S-P26-04 | S-P26-07 |
+| management_gap_score | 0 | 0 | Geprüft | S-P26-04 |
+| targets_gap_score | 5 | 5 | Geprüft | S-P26-06 | S-P26-09 |
+
+Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+- **power_conversion_score**: Own induction hardening is directly documented in the accessible induction page: one material engineering conversion case. The galvanic-coating URL returns 500 and is not used as supporting content; rated topology remains unverified.
+
+- **targets_gap_score**: The current own thermal-process and download pages plus the recorded exact-name target search do not establish a public company target in that defined scope. The homepage still returns 500 and was not re-read; this is a bounded public-search gap, not proof of internal absence.
