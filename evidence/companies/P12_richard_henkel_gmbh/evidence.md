@@ -70,3 +70,15 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **management_gap_score**: The rendered exact-holder EMAS certificate DE-136-00012 expires on 2026-09-11, before the check date. The 2025-11-21 validated statement and operational energy monitoring support a partial/other system; they do not extend the printed certificate expiry. No successor was verified in the current own download scope and exact-name successor checks. Certification discontinuation is not inferred.
 
 - **investment_gap_score**: The environmental statement dates the efficient compressor replacement AND building-insulation project to 2023; the Klimawin report documents an implemented process-heat reduction project from August 2024. These are separate completed recent measures. Pellet heating dated only 2021 is not needed to establish the lookback anchor.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 1 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 1 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Published storage planning concerns electricity; no useful thermal buffer established. Existing certificate expiry and LPG assessment remain unchanged.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal buffer, thermal store or evidence-backed usable thermal inertia for process-load shifting |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

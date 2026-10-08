@@ -74,3 +74,15 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **measures_gap_score**: The article describes a new demonstration under construction and store delivery/installation that week. It does not verify commissioned operation of the full PV/heat-pump/vapour-compression system. Count a concrete pilot/project only, not several completed operational measures.
 
 - **investment_gap_score**: The 2026-04-23 article describes ONE integrated new-brewery demonstration under construction. Its PV, heat pumps, vapour compression and stores are components of that project, not independent completed investments. No commissioning/completion date is verified.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 1 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 1 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+2026energy concept remains under construction. Future renewable operation does not establish current fossil-free brewery heat; no thermal-fuel remainder is quantified.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | The article describes a future fossil-free new-production concept. Its 500-litre-oil comparison is an energy-equivalent illustration, not the existing plant fossil-fuel baseline. Need actual remaining fossil thermal supply and substitution scope; neither zero nor maximum displacement is established. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

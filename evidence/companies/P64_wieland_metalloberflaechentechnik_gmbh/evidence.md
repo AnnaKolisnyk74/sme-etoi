@@ -71,3 +71,24 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 5 | 5 | Geprüft | S-P64-01 | S-P64-02 | S-P64-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 10 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 10 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Three-shift operation is not permission to shift production loads. Some source access failed; no additional heat/storage or converter evidence established.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own PV/battery/microgrid/load-management use case and actual integration; supplier green power and customer applications are not own deployment. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| measures_gap_score | Weiter offen / UNKNOWN | Current concrete plant energy-transition measures or adequate confirmed inventory; general sustainability, certification, customer products and historical pilots do not establish current deployment or absence. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

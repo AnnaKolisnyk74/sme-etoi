@@ -45,3 +45,24 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **process_electrification_score**: The company documents fully electric injection-machine drives, not an actual process-heating route, operating temperature or remaining thermal substitution duty. Electric drive technology cannot establish process-heat temperature fit or thermal electrification. Need firm-specific thermal equipment/temperature/carrier evidence.
 
 - **targets_gap_score**: The inspected own production/environment/energy pages describe an undated efficiency, environmental or lower-emission ambition. No quantified dated roadmap is established. Under the manual, vague ambition is anchor 3; absence of a DATED target is not sufficient for the no-target anchor 5. Internal targets remain unknown.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 10 zuvor offene Felder bearbeitet; 1 zusätzliche Felder quellen- und ankergeprüft; 9 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own electric injection drives are evidenced. Drives, cooled mould water and hall heat recovery do not establish operating heat temperatures or a usable thermal store; withdrawn heat proposals stay UNKNOWN.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | The company documents fully electric injection-machine drives, not an actual process-heating route, operating temperature or remaining thermal substitution duty. Electric drive technology cannot establish process-heat temperature fit or thermal electrification. Need firm-specific thermal equipment/temperature/carrier evidence. |
+| process_electrification_score | Weiter offen / UNKNOWN | The company documents fully electric injection-machine drives, not an actual process-heating route, operating temperature or remaining thermal substitution duty. Electric drive technology cannot establish process-heat temperature fit or thermal electrification. Need firm-specific thermal equipment/temperature/carrier evidence. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current process-heat energy carrier and whether any material fossil thermal service remains at the Lennestadt site |
+| power_conversion_score | Geprüft: 5 (C) | S-P23-02 |
+| automation_control_score | Weiter offen / UNKNOWN | Firm-specific automation, sensing and coordinated machine/energy-control evidence |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Operating schedule, shift pattern and evidence of schedulable injection-moulding production |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Dedicated thermal/cold storage, buffer capacity or evidence-backed usable thermal inertia |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined new electrification pathway or expansion sufficient for ordinal incremental-load relevance |
+| onsite_integration_score | Weiter offen / UNKNOWN | Onsite generation, battery storage, microgrid or coordinated load-management evidence |
+| investment_gap_score | Weiter offen / UNKNOWN | Dates and scope of recent energy-transition investments or a defined negative investment search over the lookback period |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

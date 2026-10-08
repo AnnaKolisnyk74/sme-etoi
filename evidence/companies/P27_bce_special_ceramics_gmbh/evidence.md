@@ -45,3 +45,24 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 5 | 5 | Geprüft | S-P27-01 | S-P27-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 10 zuvor offene Felder bearbeitet; 3 zusätzliche Felder quellen- und ankergeprüft; 7 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own PV article separates2017commissioning/2022operation from2026migration metadata.2009-2012electrical-kiln research does not prove current whole-fleet fossil independence or recent investment.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Source-linked operating temperatures and a firm-specific technology/temperature fit. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current fossil energy carrier and significance of fossil process heat at this site. |
+| power_conversion_score | Weiter offen / UNKNOWN | Firm-specific rectifier/converter/controlled-electric-heat topology and its materiality. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Current operating schedule, buffer constraints and usable load-shifting capability. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Deployed thermal buffer/storage or documented usable thermal inertia, not an intention. |
+| incremental_load_score | Weiter offen / UNKNOWN | A current additional electrification route and ordinal incremental-load relevance. |
+| power_quality_score | Geprüft: 1 (C) | S-P27-05 |
+| onsite_integration_score | Geprüft: 2 (B) | S-P27-05 |
+| measures_gap_score | Geprüft: 3 (B) | S-P27-05 |
+| investment_gap_score | Weiter offen / UNKNOWN | Dates and scope of qualifying investments within 2021-10-06 to 2026-10-06; historical projects do not close the lookback check. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

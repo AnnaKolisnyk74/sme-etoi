@@ -64,3 +64,22 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 2 | 2 | Geprüft | S-P94-03 | S-P94-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 8 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 8 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| automation_control_score | Weiter offen / UNKNOWN | Actual current owned sensing/control applications and coordination; generic modernity or staging-site claims need corroboration. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+| management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

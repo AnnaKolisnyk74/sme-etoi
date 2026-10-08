@@ -75,3 +75,25 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P41-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 11 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 11 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Higher bath temperatures and heat pumps are described as research. Planned technology and project-partner fuel mixes are not current own operating data.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| motor_drive_score | Weiter offen / UNKNOWN | Named current owned motor/pump/compressor/drive applications and their materiality; production sector and historical steam/ice machines alone are insufficient. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| automation_control_score | Weiter offen / UNKNOWN | Actual current owned sensing/control applications and coordination; generic modernity or staging-site claims need corroboration. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own PV/battery/microgrid/load-management use case and actual integration; supplier green power and customer applications are not own deployment. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| measures_gap_score | Weiter offen / UNKNOWN | Current concrete plant energy-transition measures or adequate confirmed inventory; general sustainability, certification, customer products and historical pilots do not establish current deployment or absence. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

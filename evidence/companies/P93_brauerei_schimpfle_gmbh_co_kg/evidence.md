@@ -75,3 +75,21 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
 
 - **investment_gap_score**: The own 2023 review describes a transformer installed partly FOR the forthcoming PV; the own June 2024 post confirms that PV was commissioned. The evidence supports one integrated completed PV/infrastructure project, not two proven independent energy investments.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 7 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 7 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Cold maturation and installed pressure tanks are not useful thermal buffers. Heat recovery from controlled compressors does not establish hot-process temperatures or remaining heat fuel.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+| management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Actual compressors/heat recovery/metering, primary2024PV908modules/1500m2 and2023transformer;0C maturation not heating fit/storage, transformer not measured harmonic issue. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

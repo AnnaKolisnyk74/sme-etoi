@@ -72,3 +72,15 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **thermal_storage_flex_score**: Central refrigeration and cooled beer storage do not establish an available thermal buffer for shifting electrical demand. Need a named usable heat/cold store, operating window and quality constraints.
 
 - **investment_gap_score**: The 2023 report documents completed rooftop PV in 2023. Solar-thermal installation is beginning/planned; the malt-house energy upgrade is dated only 2021, without a commissioning month inside the strict 2021-10-07 to 2026-10-07 window. Count one safely dated completed project, not planned assets or an unbounded 2021 date.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 1 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 1 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+New network/heat-pump storage statements describe planning; a planned105degreesCnetwork buffer is not confirmed operating thermal storage.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Central refrigeration and cooled beer storage do not establish an available thermal buffer for shifting electrical demand. Need a named usable heat/cold store, operating window and quality constraints. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

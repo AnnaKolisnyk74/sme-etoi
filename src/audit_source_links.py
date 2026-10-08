@@ -50,6 +50,10 @@ def inventory(root: Path = ROOT):
             for row in csv_rows(path):
                 company = row.get('candidate_id') or row.get('company_id', '')
                 for field, value in row.items():
+                    # Search discoveries are a candidate pool, not inspected evidence.
+                    # Actual retrievals enter inventory through their source_url ledger.
+                    if path.name.startswith('research_queries_') and field == 'discovered_urls':
+                        continue
                     # Explicit URL fields retain valid parentheses; prose URLs stop at Markdown delimiters.
                     if field in {'source_link', 'final_url', 'website', 'source_url', 'process_evidence_url',
                                  'direct_certificate_url', 'certificate_index_url'}:

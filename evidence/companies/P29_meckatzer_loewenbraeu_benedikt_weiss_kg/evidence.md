@@ -77,3 +77,18 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | investment_gap_score | 0 | 0 | Geprüft | S-P29-03 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 4 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 4 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Fresh2026report retrieval timed out in this continuation. Previously inspected report provenance is retained; no new heat-temperature, permissible shift or thermal-store evidence is inferred.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heat temperatures and validated electric-heat fit; 0-deg-C maturation and cold-system ratings do not establish brewing/steam temperature. |
+| process_electrification_score | Weiter offen / UNKNOWN | Currently operating defined thermal electrification route. Legacy vapour compressor is reported defective and replaced by gas steam; current repair/continuity is unverified. Completed ammonia replacement is refrigeration, not proof of process-heat electrification. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Actual dispatchable heat/cold buffer and permissible operating window. Glycol cooling, heat recovery and beer maturation tanks alone do not establish thermal storage. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and incremental-load materiality. Future roadmap and existing loads/heat totals do not establish a commissioned new electrical route. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

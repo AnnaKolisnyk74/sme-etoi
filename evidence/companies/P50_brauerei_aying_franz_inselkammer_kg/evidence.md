@@ -81,3 +81,20 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | management_gap_score | 0 | 0 | Geprüft | S-P50-06 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 6 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 6 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Heat-pump and brewery-process evidence retained. Reduction in gas use is not zero remaining fossil duty; cold/cooling assets are not automatically usable thermal stores.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current remaining fossil heat/service mix and substitution materiality.2023 report documents2022 gas/CHP; washer heat electrification does not establish current whole-plant fuel mix. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Historical bottle-washer heat-pump case83 C/150 kWthermal;2018/2019 date discrepancy outside lookback;2023 report is older than2026 active EMAS list. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Actual completed usable heat/cold store and operating window;2023 report energy-store project2023-2030 is planned, not current deployment. Washer heat recovery is not itself storage. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Historical bottle-washer heat-pump case83 C/150 kWthermal;2018/2019 date discrepancy outside lookback;2023 report is older than2026 active EMAS list. |
+| targets_gap_score | Weiter offen / UNKNOWN | Current dated target/roadmap or current bounded ambition.2023 statement contains2020-2024 targets and next-target intentions; current2026 programme not established. Expired roadmap not treated as current or absent. |
+| investment_gap_score | Weiter offen / UNKNOWN | Completed energy investment within2021-10-07 to2026-10-07.2012CHP/2019PV/2018-19 washer/heat pump excluded.2023 in-planning/in-implementation roof/compressor/control and planned2023-26 logistics not silently completed as of2026; truckEuro6 substitution is not proven energy-transition saving. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

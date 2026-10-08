@@ -73,3 +73,25 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P61-05 | S-P61-06 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 11 zuvor offene Felder bearbeitet; 2 zusätzliche Felder quellen- und ankergeprüft; 9 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own brochure distinguishes CHP/PV from adjacent supplier advertisements. No commissioned battery, useful thermal buffer, complete heat fuel mix or recent project dates established.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| process_electrification_score | Weiter offen / UNKNOWN | Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| motor_drive_score | Weiter offen / UNKNOWN | Named current owned motor/pump/compressor/drive applications and their materiality; production sector and historical steam/ice machines alone are insufficient. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| onsite_integration_score | Geprüft: 3 (C) | S-P61-06 |
+| measures_gap_score | Geprüft: 0 (B) | S-P61-06 |
+| management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

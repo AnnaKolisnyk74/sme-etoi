@@ -81,3 +81,21 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **onsite_integration_score**: The freshly inspected own HOMEPAGE explicitly lists four car and six bicycle charging stations. The imprint establishes identity only. This is one actual own-site charging case; PV, storage or converter ratings are not inferred.
 
 - **measures_gap_score**: Own rental-workstation equipment documents electric process furnaces, and the own homepage documents four car and six bicycle charging stations. These are some actual energy-relevant installations; commissioning dates and measured substitution savings remain unknown.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 7 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 7 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Glassmaking/show workshop burner evidence does not establish a complete current plant fuel balance or independently useful thermal storage.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+| management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

@@ -72,3 +72,15 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **thermal_storage_flex_score**: Cooled lager tanks and absorption refrigeration do not by themselves establish dispatchable thermal storage. Need a named useful heat/cold buffer and admissible charging/discharging window.
 
 - **investment_gap_score**: The primary 2025 environmental statement documents separate completed investment waves: process-control renewal in 2022–2024, wastewater-biogas/CHP/absorption cooling in 2023, and rooftop PV in 2025. These support several recent projects; the printed PV peak unit is internally suspect and is not used as a rating.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 1 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 1 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+EMAS programme contains future2027heat-water projects; no current usable thermal store established. Future heat recovery is not present dispatchability.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Cooled lager tanks and absorption refrigeration do not by themselves establish dispatchable thermal storage. Need a named useful heat/cold buffer and admissible charging/discharging window. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

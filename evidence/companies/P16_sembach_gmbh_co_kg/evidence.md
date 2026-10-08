@@ -73,3 +73,22 @@ Prüfer: Codex. Status **Geprüft** bedeutet Quellen- und Ankerprüfung; persön
 Current own brochure distinguishes production assets from customer energy products. No furnace fuel, process-electric route, converter inventory, useful thermal store, onsite generation or commissioning dates stated.
 
 Feldweise Spur: `evidence/field_research_20261008.csv`; aktuelle Werte: `data/score_coding_proposals.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 8 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 8 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own CNC, monitoring and furnace room-heat recovery are documented. Customer energy-technology products are not own generation; fuel, converter topology and thermal storage remain unspecified.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| process_electrification_score | Weiter offen / UNKNOWN | Current furnace technology and firm-specific electric-heating/electrification route for debinding and sintering |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Current energy carrier(s) for debinding, sintering and high-temperature/chamber furnaces |
+| power_conversion_score | Weiter offen / UNKNOWN | Furnace electrical topology and any converter/rectifier/controlled-electric-heat applications |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal buffer/storage or evidence-backed usable thermal inertia |
+| incremental_load_score | Weiter offen / UNKNOWN | Current furnace energy carrier and defined electrification pathway sufficient for ordinal incremental-load coding |
+| power_quality_score | Weiter offen / UNKNOWN | Firm-specific power-quality, converter-topology or electrical peak-load evidence |
+| onsite_integration_score | Weiter offen / UNKNOWN | Onsite generation, battery, microgrid or coordinated load-management evidence |
+| investment_gap_score | Weiter offen / UNKNOWN | Recent energy-transition investments or a defined negative investment search over the methodology lookback period |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

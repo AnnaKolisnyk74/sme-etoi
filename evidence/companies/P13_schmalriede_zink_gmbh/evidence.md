@@ -67,3 +67,23 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 2 | 2 | Geprüft | S-P13-04 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 9 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 9 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Registered substantive website retrievals timed out. This is an access limitation; no missing deployment, fuel or temperature is inferred from failures.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual owned onsite thermal processes, temperatures and validated electric-heat fit; product temperature resistance is not process temperature. |
+| process_electrification_score | Weiter offen / UNKNOWN | Defined firm-specific process-heat conversion route; electrical deposition is not fossil-heat electrification and hardening may be a partner service. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Site thermal-service ownership, fuel mix and material fossil heat that could be displaced. |
+| automation_control_score | Weiter offen / UNKNOWN | Actual plant control architecture or coordinated production/energy control; generic whitepaper AI/IoT statements and logistics software are insufficient. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Thermal storage, usable bath/heat buffer or validated thermal inertia; racks and warehouses do not establish this. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined incremental thermal electrification route and qualitative new-load relevance; existing DC plating does not prove load growth. |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own-site PV, battery, microgrid or coordinated load-management evidence. |
+| measures_gap_score | Weiter offen / UNKNOWN | Concrete site energy measures or a sufficient energy-measure search; generic industry recommendations and wastewater chemical savings are not deployed energy technologies. |
+| investment_gap_score | Weiter offen / UNKNOWN | Dated energy-transition investment within 2021-10-06 to 2026-10-06; 2024 capacity and chemical-saving wastewater changes do not establish an energy investment. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

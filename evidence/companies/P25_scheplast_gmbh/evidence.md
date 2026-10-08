@@ -71,3 +71,21 @@ Prüfstatus: **Geprüft** für belegte Zahlenvorschläge. Fehlende Belege bleibe
 | targets_gap_score | 3 | 3 | Geprüft | S-P25-05 | S-P25-07 |
 
 Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle Abruf-/Inhaltsgrenzen: `evidence/proposal_source_checks.csv`.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 7 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und ankergeprüft; 7 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Weiter offen / UNKNOWN | Actual barrel/mould/utility process temperatures and validated electric-heat fit. Machine closing force in tonnes is not temperature or electrical power. |
+| process_electrification_score | Weiter offen / UNKNOWN | Firm-specific current thermal energy carrier and defined conversion route; injection moulding, PV and a bioenergy vision do not establish electric process heat. |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual remaining fossil process heat and material displacement opportunity; renewable electricity and biobased feedstock do not establish the site fuel mix. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Actual operating pattern, admissible interruption/start windows and production buffer; small/large series alone do not establish shiftable energy demand. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Thermal store, cold/heat buffer or usable validated thermal inertia; waste-heat utilisation alone is not storage. |
+| incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and new-load materiality; existing PV and machines do not establish incremental load. |
+| investment_gap_score | Weiter offen / UNKNOWN | Commissioning/investment dates for energy measures within 2021-10-07 to 2026-10-07. Undated PV/waste-heat claims and a certificate renewal are not a dated recent transition investment. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.

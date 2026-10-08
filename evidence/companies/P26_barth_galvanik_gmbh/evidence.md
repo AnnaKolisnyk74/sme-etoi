@@ -77,3 +77,21 @@ Vollständige Entscheidungsspur: `evidence/score_proposal_checks.csv`; aktuelle 
 - **power_conversion_score**: Own induction hardening is directly documented in the accessible induction page: one material engineering conversion case. The galvanic-coating URL returns 500 and is not used as supporting content; rated topology remains unverified.
 
 - **targets_gap_score**: The current own thermal-process and download pages plus the recorded exact-name target search do not establish a public company target in that defined scope. The homepage still returns 500 and was not re-read; this is a bounded public-search gap, not proof of internal absence.
+
+## Gesamtrecherche offener Felder – 2026-10-08
+
+Codex: 7 zuvor offene Felder bearbeitet; 2 zusätzliche Felder quellen- und ankergeprüft; 5 weiterhin UNKNOWN. Rechercheumfang: bestehende Sachquellen, gezielte Firmenwebsuche und ausgewählte gefundene Seiten. Keine vollständige Anlageninventur und kein Nachweis fehlender Anlagen.
+
+Owner gives actual annealing temperature windows on three conveyor furnaces. Coating-service resistance is excluded; conveyor operation does not prove safe scheduling flexibility, furnace fuel or thermal storage.
+
+| Feld | Ergebnis | Beleg / fehlender Nachweis |
+|---|---|---|
+| temperature_fit_score | Geprüft: 7 (B) | S-P26-10 |
+| fossil_heat_displacement_score | Weiter offen / UNKNOWN | Actual remaining fossil process heat, belt-furnace/bath fuels and displacement materiality; electric induction does not establish the other fuel mix. |
+| scheduling_flex_score | Weiter offen / UNKNOWN | Actual admissible production-start/interruption windows and buffers; continuous belts and a subsecond individual hardening cycle are not a load-shifting window. |
+| thermal_storage_flex_score | Weiter offen / UNKNOWN | Named thermal buffer, store or validated usable inertia and its operating window; furnaces alone do not establish storage. |
+| incremental_load_score | Geprüft: 2 (C) | S-P26-10 |
+| onsite_integration_score | Weiter offen / UNKNOWN | Own PV, battery, microgrid or load-management integration; a certified EnMS does not establish these technologies. |
+| investment_gap_score | Weiter offen / UNKNOWN | Energy-investment commissioning dates within 2021-10-07 to 2026-10-07; undated installations and certificate renewals are not dated transition investments. |
+
+Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
