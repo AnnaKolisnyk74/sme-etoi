@@ -231,3 +231,13 @@ tr.selected .radio{background:#0f6cbd;border-color:#0f6cbd;color:#fff}
   .master-detail{display:block}.detail-panel{margin-top:10px}.table-search{width:190px}
   .detail-two-col,.info-grid{grid-template-columns:1fr}
 }
+
+.evidence-overview{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding:12px 16px;margin:0 0 14px;border:1px solid var(--line);border-left:4px solid var(--green);background:var(--white)}
+.evidence-overview[hidden]{display:none}
+.evidence-overview strong,.evidence-overview span{display:block}
+.evidence-overview span{margin-top:4px;font-size:12px;color:var(--muted)}
+.field-check-count,.field-open-count{display:block;white-space:nowrap}
+.field-check-count{color:var(--green);font-weight:600}
+.field-open-count{font-size:12px;color:var(--muted);margin-top:3px}
+.entity-table .iso-no,.entity-table .iso-yes{white-space:normal;display:inline-block;min-width:110px;max-width:155px;line-height:1.4}
+.source-item .action-text{margin-top:6px;overflow-wrap:anywhere}

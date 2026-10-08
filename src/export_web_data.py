@@ -38,8 +38,9 @@ def numeric_or_none(value: object):
     return int(number) if number.is_integer() else number
 
 
-def compact_source(row: dict[str, str], audit: dict | None = None) -> dict[str, str]:
+def compact_source(row: dict[str, str], audit: dict | None = None, recheck: dict | None = None) -> dict[str, str]:
     audit = audit or {}
+    recheck = recheck or {}
     return {
         "source_id": normalise(row.get("source_id")),
         "source_type": normalise(row.get("source_type")),
@@ -53,6 +54,9 @@ def compact_source(row: dict[str, str], audit: dict | None = None) -> dict[str, 
         "link_check_date": normalise(row.get("link_check_date")),
         "retrieval_status": normalise(audit.get("retrieval_status") or 'NOT_CHECKED'),
         "retrieval_checked_at": normalise(audit.get("checked_at")),
+        "content_review_status": normalise(recheck.get("content_review_status")),
+        "content_checked_at": normalise(recheck.get("checked_at")),
+        "content_scope_note": normalise(recheck.get("scope_note")),
     }
 
 
@@ -156,6 +160,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
     company_work_priority = read_csv(root, "outputs/company_work_priority.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
+    source_rechecks = {r['source_id']: r for r in read_csv(root, "evidence/proposal_source_checks.csv")}
+    certificates_by_company = {}
+    for row in read_csv(root, "evidence/certificate_register.csv"):
+        certificates_by_company.setdefault(row['candidate_id'], []).append(row)
     audits = {r['url']: r for r in read_csv(root, 'evidence/source_link_audit.csv')}
     audit_summary = source_audit_summary.build(root)
     audit_by_company = {r['company_id']: r for r in audit_summary['companies']}
@@ -348,6 +356,11 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "iso_14001": normalise(company.get("iso_14001_status")),
                     "emas": normalise(company.get("emas_status")),
                 },
+                "certificate_checks": [{key: normalise(row.get(key)) for key in (
+                    "standard", "certificate_status", "certificate_holder",
+                    "certificate_number", "valid_from", "valid_until", "issuer",
+                    "direct_certificate_url", "certificate_index_url", "checked_date", "notes",
+                )} for row in certificates_by_company.get(company_id, [])],
                 "public_signals": {
                     "three_shift_operation": normalise(company.get("three_shift_operation")),
                     "pv_present": normalise(company.get("pv_present")),
@@ -391,7 +404,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "priority_reason": normalise(company_priority.get("priority_reason")),
                 },
                 "sources": [
-                    compact_source(source, audits.get(source['source_link']))
+                    compact_source(source, audits.get(source['source_link']), source_rechecks.get(source['source_id']))
                     for source in sources_by_company.get(company_id, [])
                 ],
                 "source_audit": audit_by_company.get(company_id, {}),
