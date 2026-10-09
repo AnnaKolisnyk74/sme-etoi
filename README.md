@@ -7,33 +7,36 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 8 October 2026
+## Current checked state — 9 October 2026
 
-All 100 provisional companies have all 15 fields assessed: **599 `CHECKED`
-proposals (Geprüft), 901 blank `NEEDS_RESEARCH` fields and zero approved fields**.
-The 554 original numeric proposals remain fully accounted for (507 confirmed,
-42 corrected, five withdrawn); 50 previously unknown fields now have new evidence.
-Personal approval stays separate from source and anchor checks.
+All 100 provisional companies have all 15 fields assessed: **605 `CHECKED`
+proposals (Geprüft), 895 blank `NEEDS_RESEARCH` fields and zero approved fields**.
+The 554 original numeric proposals remain accounted for (507 confirmed,
+42 corrected, five withdrawn); 56 formerly unknown fields now have new evidence.
+Source/anchor checking remains separate from personal or final score approval.
 
-The latest decision research covers **12 SME/group gates, two identity conflicts
-and ten technical company profiles**. The ten firms were selected by the first
-unique, non-gated company in the frozen Research Queue. Of 50 open score fields
-examined, two Lamberts drive/control fields have new direct primary evidence;
-48 remain unknown. Five deployment facts have public YES evidence in the research
-ledger, including heat recovery and metak's current EnMS. These findings do not
-silently overwrite canonical deployment flags or confer final score approval.
+Two decision-research blocks cover **20 technical companies, 12 SME/group cases
+and two identity conflicts**. The latest ten firms follow the frozen decision
+queue after previously profiled and gated firms are excluded. Their 96 open score
+fields yield six new checked proposals; 90 remain unknown. Across both blocks,
+146 selected gaps were investigated and eight closed. Previously checked proposals
+are unchanged by this continuation.
 
-The [decision research report](evidence/decision_research_20261008.md),
-[company profiles](evidence/decision_research_profiles_20261008.json),
-[selected source checks](evidence/decision_source_checks_20261008.csv) and
-[field attempts](evidence/field_research_deep_20261008.csv) document scope,
-period and remaining questions. IFGL and Ceramaret have group-scale exclusion
-signals; Fürstenberg's public ownership has a specific exception/control question.
-Nymphenburg's legal name and the Triptis/Eschenbach operator conflict are shown
-explicitly. All 12 SME gates remain open pending a defensible final decision.
+[The latest report](evidence/decision_research_20261009.md),
+[profiles](evidence/decision_research_profiles_20261009.json),
+[26 source-body checks](evidence/decision_source_checks_20261009.csv) and
+[96 field attempts](evidence/field_research_deep_20261009.csv) document dates,
+attribution and limitations. A commissioned 2025 machine replacement, an own
+management claim, laser marking and a manufacturer-linked machine family support
+bounded anchors. Plans, other companies' measures, old network-use permissions,
+redacted powers and adjacent timeline years do not become current deployment.
 
-The web analysis shows the 24 decision profiles and links to company details.
-Previous evidence and frozen selections remain in the repository history.
+Langer's current ISO 50001 now supplies a sixth public YES fact in the research
+ledger; four YES findings correspond to generated queue tasks. Canonical deployment
+flags are not silently overwritten. All 12 SME gates stay open pending defensible
+group/period decisions. The prior [decision report](evidence/decision_research_20261008.md)
+and frozen ledgers remain available; the dashboard shows all 34 profiles and the
+latest block separately.
 
 ## Research question
 

@@ -122,7 +122,9 @@ function decisionProfile(c){
 function decisionResearchOverview(){
   const r=state.data.decision_research_summary;
   if(!r?.profile_count)return "";
-  return '<section class="functional-card"><h3>Vertiefte Firmenprüfung · '+esc(r.checked_date)+'</h3><p>'+esc(r.technical_company_count)+' technische Firmenprofile · '+esc(r.eligibility_company_count)+' KMU-Prüfungen · '+esc(r.identity_company_count)+' Firmenzuordnungen. '+esc(r.field_attempt_count)+' offene Felder untersucht, '+esc(r.new_checked_field_count)+' zusätzlich geprüft.</p>'+genericTable(['Unternehmen','Prüfung','Ergebnis / nächster Schritt'],r.profiles.map(p=>'<tr data-company-id="'+esc(p.company_id)+'"><td><strong>'+esc(p.legal_entity)+'</strong></td><td>'+esc({TECHNICAL:'Technik',ELIGIBILITY:'KMU',IDENTITY:'Firmenzuordnung'}[p.workstream])+'</td><td class="wrap-cell">'+esc(p.finding)+'<div class="source-meta">'+esc(p.next_action)+'</div></td></tr>'))+'</section>';
+  const b=r.latest_batch;
+  const latest=b?'<p>Letzter Rechercheblock: '+esc(b.profile_count)+' Firmen · '+esc(b.field_attempt_count)+' offene Felder untersucht · '+esc(b.new_checked_field_count)+' zusätzlich geprüft · '+esc(b.still_unknown_field_count)+' weiterhin offen.</p>':"";
+  return '<section class="functional-card"><h3>Vertiefte Firmenprüfung · '+esc(r.checked_date)+'</h3><p>'+esc(r.technical_company_count)+' technische Firmenprofile · '+esc(r.eligibility_company_count)+' KMU-Prüfungen · '+esc(r.identity_company_count)+' Firmenzuordnungen. '+esc(r.field_attempt_count)+' offene Felder untersucht, '+esc(r.new_checked_field_count)+' zusätzlich geprüft.</p>'+latest+genericTable(['Unternehmen','Prüfung','Ergebnis / nächster Schritt'],r.profiles.map(p=>'<tr data-company-id="'+esc(p.company_id)+'"><td><strong>'+esc(p.legal_entity)+'</strong></td><td>'+esc({TECHNICAL:'Technik',ELIGIBILITY:'KMU',IDENTITY:'Firmenzuordnung'}[p.workstream])+'</td><td class="wrap-cell">'+esc(p.finding)+'<div class="source-meta">'+esc(p.next_action)+'</div></td></tr>'))+'</section>';
 }
 function storageGet(key,fallback){
   try{const value=localStorage.getItem(key);return value?JSON.parse(value):fallback}catch(_){return fallback}

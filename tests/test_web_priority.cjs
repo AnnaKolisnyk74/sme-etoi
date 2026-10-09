@@ -21,8 +21,8 @@ assert.match(html, /Erstbewertung abgeschlossen/);
 assert.ok(!html.includes('<h3>Next Best Coding Companies</h3>'));
 assert.match(html, /100 \/ 100 Unternehmen/);
 assert.match(html, /1500 \/ 1500 Felder bewertet/);
-assert.match(html, /599 Zahlenvorschläge · Geprüft/);
-assert.match(html, /901 dokumentierte Recherchelücken/);
+assert.match(html, /605 Zahlenvorschläge · Geprüft/);
+assert.match(html, /895 dokumentierte Recherchelücken/);
 assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
 assert.ok(!/KI[- ·]*geprüft/i.test(html));
 assert.ok(!html.includes('Zahlenvorschläge warten auf Human Review'));
@@ -120,8 +120,8 @@ assert.match(html, /Gültig belegt/);
 assert.match(html, /Geprüft: [0-9]+ \/ 15/);
 assert.ok(!sinks.get('#kpiQuality').innerHTML.includes('Qualifiziert'));
 html = sinks.get('#evidenceOverview').innerHTML;
-assert.match(html, /599 Felder · Geprüft/);
-assert.match(html, /901 Feldfragen offen/);
+assert.match(html, /605 Felder · Geprüft/);
+assert.match(html, /895 Feldfragen offen/);
 assert.match(html, /ISO 50001 13 · ISO 14001 27 · EMAS 4/);
 vm.runInContext('state.query="FM-Plast"; renderEvidenceOverview();', context);
 html = sinks.get('#evidenceOverview').innerHTML;
@@ -149,9 +149,10 @@ console.log('Company view: ISO evidence, separate SME status, filtered field cou
 // Decision findings stay visible and escaped, including conflicting legal names.
 vm.runInContext('renderFunctional("analysis");', context);
 html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /10 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
-assert.match(html, /50 offene Felder untersucht, 2 zusätzlich geprüft/);
-for (const cid of ['P47','P65','P88','P109','P110','P18','P77']) {
+assert.match(html, /20 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
+assert.match(html, /146 offene Felder untersucht, 8 zusätzlich geprüft/);
+assert.match(html, /Letzter Rechercheblock: 10 Firmen · 96 offene Felder untersucht · 6 zusätzlich geprüft · 90 weiterhin offen/);
+for (const cid of ['P47','P65','P88','P109','P110','P18','P77','P96','P98','P99']) {
   context.profileCompany=context.payload.companies.find(c=>c.company_id===cid);
   const card=vm.runInContext('decisionProfile(profileCompany)',context);
   assert.match(card, /Vertiefte Firmenprüfung/);

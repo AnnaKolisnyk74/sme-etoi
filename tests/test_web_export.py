@@ -68,7 +68,7 @@ class WebExportTests(unittest.TestCase):
     def test_source_content_review_is_separate_from_url_retrieval(self):
         sources = {s['source_id']: s for c in self.payload['companies'] for s in c['sources']}
         reviewed = [s for s in sources.values() if s['content_review_status'] == 'RECHECKED']
-        self.assertEqual(len(reviewed), 301)
+        self.assertEqual(len(reviewed), 314)
         for source in reviewed:
             self.assertTrue(source['content_checked_at'])
             self.assertTrue(source['evidence_fact'])
@@ -131,8 +131,8 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "CHECKED": 64,
-                                "RESEARCH_NEEDED": 376,
+                "CHECKED": 67,
+                                "RESEARCH_NEEDED": 373,
             },
         )
         self.assertTrue(

@@ -15,9 +15,29 @@ def rows(root, relative):
         return list(csv.DictReader(handle))
 
 
+def batches(root: Path):
+    """Read dated research blocks in order; retain their frozen evidence trails."""
+    return [(p.stem.rsplit('_', 1)[1], json.loads(p.read_text()))
+            for p in sorted((root / 'evidence').glob('decision_research_profiles_*.json'))]
+
+
 def profiles(root: Path):
-    path = root / 'evidence/decision_research_profiles_20261008.json'
-    return json.loads(path.read_text()) if path.exists() else []
+    latest = {}
+    for _, block in batches(root):
+        latest.update({p['company_id']: p for p in block})
+    return list(latest.values())
+
+
+def source_checks(root: Path):
+    latest = {}
+    for path in sorted((root / 'evidence').glob('decision_source_checks_*.csv')):
+        latest.update({r['source_id']: r for r in rows(root, str(path.relative_to(root)))})
+    return latest
+
+
+def field_attempts(root: Path):
+    return [r for path in sorted((root / 'evidence').glob('field_research_deep_*.csv'))
+            for r in rows(root, str(path.relative_to(root)))]
 
 
 def select_companies(queue, size=10, identity_blocks=()):
@@ -42,11 +62,8 @@ def validate(root: Path):
     if not data:
         return []
     errors = []
-    by_id = {p['company_id']: p for p in data}
-    if len(by_id) != len(data):
-        errors.append('Duplicate decision profile')
     sources = {s['source_id']: s for s in rows(root, 'evidence/source_register.csv')}
-    bodies = {s['source_id']: s for s in rows(root, 'evidence/decision_source_checks_20261008.csv')}
+    bodies = source_checks(root)
     for p in data:
         cid = p['company_id']
         if p['checked_by'] != 'Codex' or p['final_score_approval'] != 'NOT_GRANTED':
@@ -64,31 +81,42 @@ def validate(root: Path):
                     or not re.fullmatch('[0-9a-f]{64}', b.get('content_sha256', ''))
                     or not b.get('relevant_location') or not b.get('scope_note')):
                 errors.append(f'{cid}: source {sid} lacks a reviewed attributable body')
-    selections = rows(root, 'data/decision_research_selections_20261008.csv')
-    frozen = rows(root, 'data/history/research_queue_before_deep_20261008.csv')
-    expected = select_companies(frozen, identity_blocks={'P109', 'P110'})
-    if [s['company_id'] for s in selections] != [s['company_id'] for s in expected]:
-        errors.append('Decision research selection differs from frozen queue')
-    technical = sorted((p for p in data if p['workstream'] == 'TECHNICAL'),
-                       key=lambda p: p['selection_rank'])
-    if [p['company_id'] for p in technical] != [s['company_id'] for s in selections]:
-        errors.append('Technical profiles differ from selection')
-    for s, q in zip(selections, expected):
-        if s['research_rank'] != q['research_rank']:
-            errors.append(f"{s['company_id']}: frozen selection rank changed")
-    baseline = rows(root, 'data/history/score_coding_proposals_before_deep_20261008.csv')
+    prior_ids = {'P109', 'P110'}
+    for stamp, block in batches(root):
+        if len({p['company_id'] for p in block}) != len(block):
+            errors.append(f'{stamp}: duplicate decision profile')
+        selections = rows(root, f'data/decision_research_selections_{stamp}.csv')
+        frozen = rows(root, f'data/history/research_queue_before_deep_{stamp}.csv')
+        if not selections or not frozen:
+            errors.append(f'{stamp}: missing frozen selection or queue')
+        expected = select_companies(frozen, identity_blocks=prior_ids)
+        if [s['company_id'] for s in selections] != [s['company_id'] for s in expected]:
+            errors.append(f'{stamp}: selection differs from frozen queue')
+        technical = sorted((p for p in block if p['workstream'] == 'TECHNICAL'),
+                           key=lambda p: p['selection_rank'])
+        if [p['company_id'] for p in technical] != [s['company_id'] for s in selections]:
+            errors.append(f'{stamp}: technical profiles differ from selection')
+        for s, q in zip(selections, expected):
+            if s['research_rank'] != q['research_rank']:
+                errors.append(f"{s['company_id']}: frozen selection rank changed")
+        baseline = rows(root, f'data/history/score_coding_proposals_before_deep_{stamp}.csv')
+        fields = rows(root, f'evidence/field_research_deep_{stamp}.csv')
+        expected_fields = {(p['company_id'], p['score_field']) for p in baseline
+                           if p['company_id'] in {s['company_id'] for s in selections}
+                           and p['proposal_status'] == 'NEEDS_RESEARCH'}
+        actual_fields = {(p['company_id'], p['score_field']) for p in fields}
+        if not baseline or actual_fields != expected_fields or len(fields) != len(actual_fields):
+            errors.append(f'{stamp}: field attempts do not cover frozen gaps exactly once')
+        prior_ids.update(p['company_id'] for p in block)
     current = {(p['company_id'], p['score_field']): p
                for p in rows(root, 'data/score_coding_proposals.csv')}
-    fields = rows(root, 'evidence/field_research_deep_20261008.csv')
-    expected_fields = {(p['company_id'], p['score_field']) for p in baseline
-                       if p['company_id'] in {s['company_id'] for s in selections}
-                       and p['proposal_status'] == 'NEEDS_RESEARCH'}
-    actual_fields = {(p['company_id'], p['score_field']) for p in fields}
-    if actual_fields != expected_fields or len(fields) != len(actual_fields):
-        errors.append('Deep field attempts do not cover the selected frozen gaps exactly once')
-    for field in fields:
+    latest_fields = {(f['company_id'], f['score_field']): f for f in field_attempts(root)}
+    for field in latest_fields.values():
         key = field['company_id'], field['score_field']
         p = current.get(key, {})
+        for sid in (s.strip() for s in field['reviewed_source_ids'].split('|') if s.strip()):
+            if sources.get(sid, {}).get('candidate_id') != field['company_id'] or sid not in bodies:
+                errors.append(f'{key}: field attempt has foreign or unreviewed evidence {sid}')
         if field['outcome'] == 'NEW_EVIDENCE':
             if p.get('proposal_status') != 'CHECKED' or not p.get('proposed_value'):
                 errors.append(f'{key}: new field evidence is not a checked proposal')
@@ -100,7 +128,14 @@ def validate(root: Path):
 
 def summary(root: Path):
     data = profiles(root)
-    fields = rows(root, 'evidence/field_research_deep_20261008.csv')
+    fields = field_attempts(root)
+    blocks = []
+    for stamp, block in batches(root):
+        attempts = rows(root, f'evidence/field_research_deep_{stamp}.csv')
+        blocks.append({'checked_date': max((p['checked_date'] for p in block), default=''),
+                       'profile_count': len(block), 'field_attempt_count': len(attempts),
+                       'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in attempts),
+                       'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in attempts)})
     return {
         'checked_date': max((p['checked_date'] for p in data), default=''),
         'profile_count': len(data),
@@ -111,4 +146,6 @@ def summary(root: Path):
         'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in fields),
         'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in fields),
         'profiles': data,
+        'batches': blocks,
+        'latest_batch': blocks[-1] if blocks else {},
     }
