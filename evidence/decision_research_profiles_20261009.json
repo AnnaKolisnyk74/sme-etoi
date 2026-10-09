@@ -1,0 +1,216 @@
+[
+  {
+    "company_id": "P79",
+    "legal_entity": "Langer GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "queue_rank": 27,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Aktuelles ISO50001-Dokument bestätigt Langer bis18.11.2027. Bestehende PV301,76kWp und Ladepunkte sind getrennt von der lediglich erwarteten675kWp-/400kWh-Erweiterung; deren Inbetriebnahme ist weiter offen.",
+    "implemented_summary": "Aktuelles ISO50001-Dokument bestätigt Langer bis18.11.2027. Bestehende PV301,76kWp und Ladepunkte sind getrennt von der lediglich erwarteten675kWp-/400kWh-Erweiterung; deren Inbetriebnahme ist weiter offen.",
+    "finding": "Aktuelles ISO50001-Dokument bestätigt Langer bis18.11.2027. Bestehende PV301,76kWp und Ladepunkte sind getrennt von der lediglich erwarteten675kWp-/400kWh-Erweiterung; deren Inbetriebnahme ist weiter offen.",
+    "next_action": "Inbetriebnahmeprotokoll der PV-/Batterie-Erweiterung, aktuelle Wärmeversorgung und belastbare Produktions-/Speicherfenster verifizieren.",
+    "source_ids": [
+      "S-P79-03",
+      "S-P79-05",
+      "S-P79-06"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P80",
+    "legal_entity": "MKT Metall- und Kunststofftechnik GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 29,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "MKT datiert drei elektrische Spritzgießmaschinen auf November2017; das ist keine neue Energieinvestition. Aktuelles ISO14001 belegt Umweltmanagement. Wärmerückgewinnung, Prozesswärme und thermische Speicher bleiben offen.",
+    "implemented_summary": "MKT datiert drei elektrische Spritzgießmaschinen auf November2017; das ist keine neue Energieinvestition. Aktuelles ISO14001 belegt Umweltmanagement. Wärmerückgewinnung, Prozesswärme und thermische Speicher bleiben offen.",
+    "finding": "MKT datiert drei elektrische Spritzgießmaschinen auf November2017; das ist keine neue Energieinvestition. Aktuelles ISO14001 belegt Umweltmanagement. Wärmerückgewinnung, Prozesswärme und thermische Speicher bleiben offen.",
+    "next_action": "Aktuelle Heiz-/Temperiermedien, Rückgewinnungsanlage und heutige Betriebsfenster der Maschinen beschaffen.",
+    "source_ids": [
+      "S-P80-08",
+      "S-P80-04",
+      "S-P80-06"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P96",
+    "legal_entity": "PEKA Spritzguss GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 3,
+    "queue_rank": 30,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene Laserbeschriftung liefert einen begrenzten technischen Umwandlungs-Anwendungsfall. 1K/2K/GID-Produktion und ISO14001 sind belegt; Gasinnendruck ist kein Beleg für Erdgas als Wärmequelle.",
+    "implemented_summary": "Eigene Laserbeschriftung liefert einen begrenzten technischen Umwandlungs-Anwendungsfall. 1K/2K/GID-Produktion und ISO14001 sind belegt; Gasinnendruck ist kein Beleg für Erdgas als Wärmequelle.",
+    "finding": "Eigene Laserbeschriftung liefert einen begrenzten technischen Umwandlungs-Anwendungsfall. 1K/2K/GID-Produktion und ISO14001 sind belegt; Gasinnendruck ist kein Beleg für Erdgas als Wärmequelle.",
+    "next_action": "Laser-/Antriebsdaten, tatsächliche Prozesswärmetemperaturen und eigene Wärmerückgewinnung/Speicher prüfen.",
+    "source_ids": [
+      "S-P96-05",
+      "S-P96-06",
+      "S-P96-04"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P97",
+    "legal_entity": "Peltzer & Co. GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 4,
+    "queue_rank": 31,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "PECO beschreibt eigenes Energiemanagement und100% zugekauften erneuerbaren Strom; das bleibt ein unbestätigter Managementanspruch. Maschinenkäufe ab2022/2024 und24h-Produktion beweisen weder ISO50001 noch zulässige Lastverschiebung.",
+    "implemented_summary": "PECO beschreibt eigenes Energiemanagement und100% zugekauften erneuerbaren Strom; das bleibt ein unbestätigter Managementanspruch. Maschinenkäufe ab2022/2024 und24h-Produktion beweisen weder ISO50001 noch zulässige Lastverschiebung.",
+    "finding": "PECO beschreibt eigenes Energiemanagement und100% zugekauften erneuerbaren Strom; das bleibt ein unbestätigter Managementanspruch. Maschinenkäufe ab2022/2024 und24h-Produktion beweisen weder ISO50001 noch zulässige Lastverschiebung.",
+    "next_action": "Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen.",
+    "source_ids": [
+      "S-P97-04",
+      "S-P97-03"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P98",
+    "legal_entity": "Robert Frank GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 5,
+    "queue_rank": 32,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigener Bericht vom24.10.2025 bestätigt Austausch einer hydraulischen gegen eine vollelektrische Spritzgießmaschine samt Inbetriebnahme. Das ist eine abgeschlossene Energieeffizienz-Investition; elektrische Antriebe beweisen keine elektrische Prozesswärme.",
+    "implemented_summary": "Eigener Bericht vom24.10.2025 bestätigt Austausch einer hydraulischen gegen eine vollelektrische Spritzgießmaschine samt Inbetriebnahme. Das ist eine abgeschlossene Energieeffizienz-Investition; elektrische Antriebe beweisen keine elektrische Prozesswärme.",
+    "finding": "Eigener Bericht vom24.10.2025 bestätigt Austausch einer hydraulischen gegen eine vollelektrische Spritzgießmaschine samt Inbetriebnahme. Das ist eine abgeschlossene Energieeffizienz-Investition; elektrische Antriebe beweisen keine elektrische Prozesswärme.",
+    "next_action": "Thermische Medien, eigene Rückgewinnung/Speicher und weitere getrennt datierte Energieinvestitionen prüfen.",
+    "source_ids": [
+      "S-P98-05",
+      "S-P98-03"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P99",
+    "legal_entity": "Kunststofftechnik Breitungen GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 6,
+    "queue_rank": 33,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene520E-Maschinenliste lässt sich mit ARBURGs technischer E-Baureihenbeschreibung zu Servo-/Umwandlungs- und Steuerungsrelevanz verbinden. Leistung und Ausstattung bleiben offen. BNetzA-Netzentgeltgenehmigung2012-2014 ist historisch und kein aktueller Flexibilitätsnachweis.",
+    "implemented_summary": "Eigene520E-Maschinenliste lässt sich mit ARBURGs technischer E-Baureihenbeschreibung zu Servo-/Umwandlungs- und Steuerungsrelevanz verbinden. Leistung und Ausstattung bleiben offen. BNetzA-Netzentgeltgenehmigung2012-2014 ist historisch und kein aktueller Flexibilitätsnachweis.",
+    "finding": "Eigene520E-Maschinenliste lässt sich mit ARBURGs technischer E-Baureihenbeschreibung zu Servo-/Umwandlungs- und Steuerungsrelevanz verbinden. Leistung und Ausstattung bleiben offen. BNetzA-Netzentgeltgenehmigung2012-2014 ist historisch und kein aktueller Flexibilitätsnachweis.",
+    "next_action": "Aktuelle520E-Ausstattung, Regelungs-/Netzmessdaten, zulässige Fahrplanfenster und eigene Energieanlagen beschaffen.",
+    "source_ids": [
+      "S-P99-03",
+      "S-P99-05",
+      "S-P99-06"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P03",
+    "legal_entity": "Upländer Bauernmolkerei GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 7,
+    "queue_rank": 34,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigener Zeitstrahl ordnet die Einweihung2021 zu;2022 gehört zur Mehrwegglas-Abfüllung. Der2023-Bericht nennt bereits bestehendes BHKW/PV. Ohne genauen2021-Termin kein belegter neuer Energie-CAPEX im definierten Zeitraum.",
+    "implemented_summary": "Eigener Zeitstrahl ordnet die Einweihung2021 zu;2022 gehört zur Mehrwegglas-Abfüllung. Der2023-Bericht nennt bereits bestehendes BHKW/PV. Ohne genauen2021-Termin kein belegter neuer Energie-CAPEX im definierten Zeitraum.",
+    "finding": "Eigener Zeitstrahl ordnet die Einweihung2021 zu;2022 gehört zur Mehrwegglas-Abfüllung. Der2023-Bericht nennt bereits bestehendes BHKW/PV. Ohne genauen2021-Termin kein belegter neuer Energie-CAPEX im definierten Zeitraum.",
+    "next_action": "Genaues Inbetriebnahmedatum, BHKW-Brennstoff und nutzbare Wärme-/Kältespeicher sowie eigene Klimaziele prüfen.",
+    "source_ids": [
+      "S-P03-05",
+      "S-P03-07"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P101",
+    "legal_entity": "Metoba Metalloberflächenbearbeitung GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 8,
+    "queue_rank": 43,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Metobas Nachrichten enthalten Vorträge über Wärmepumpen, B&T-Studie und Hillebrand-Klimapläne; dies sind keine eigenen Metoba-Anlagen. Altes eigenes Management-/Prozessmaterial ersetzt keine aktuelle Wärme-/Investitionsinventur.",
+    "implemented_summary": "Metobas Nachrichten enthalten Vorträge über Wärmepumpen, B&T-Studie und Hillebrand-Klimapläne; dies sind keine eigenen Metoba-Anlagen. Altes eigenes Management-/Prozessmaterial ersetzt keine aktuelle Wärme-/Investitionsinventur.",
+    "finding": "Metobas Nachrichten enthalten Vorträge über Wärmepumpen, B&T-Studie und Hillebrand-Klimapläne; dies sind keine eigenen Metoba-Anlagen. Altes eigenes Management-/Prozessmaterial ersetzt keine aktuelle Wärme-/Investitionsinventur.",
+    "next_action": "Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen.",
+    "source_ids": [
+      "S-P101-07",
+      "S-P101-03"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P102",
+    "legal_entity": "Rudolf Clauss GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 45,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Rudolf Clauss beschreibt Umweltpolitik, Recycling und Beschichtungsservice. Kundennutzen und kurze Lieferzeiten belegen keine eigenen Energieanlagen oder freigegebene Lastverschiebung.",
+    "implemented_summary": "Rudolf Clauss beschreibt Umweltpolitik, Recycling und Beschichtungsservice. Kundennutzen und kurze Lieferzeiten belegen keine eigenen Energieanlagen oder freigegebene Lastverschiebung.",
+    "finding": "Rudolf Clauss beschreibt Umweltpolitik, Recycling und Beschichtungsservice. Kundennutzen und kurze Lieferzeiten belegen keine eigenen Energieanlagen oder freigegebene Lastverschiebung.",
+    "next_action": "Eigene Pumpen-/Gleichrichter-/Steuerungsinventur, Heizmedien, aktuelle Management- und Investitionsnachweise verifizieren.",
+    "source_ids": [
+      "S-P102-04",
+      "S-P102-05"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P103",
+    "legal_entity": "Metallveredelung Gebrüder Wigl GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 10,
+    "queue_rank": 47,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Wigl beschreibt eigene elektrolytische Verfahren und aktuelles Umweltzertifikat für WerkI. Produktbeständigkeit und Leitfähigkeit sind keine Badtemperaturen, Energieträger oder gemessenen Netzqualitätswerte.",
+    "implemented_summary": "Wigl beschreibt eigene elektrolytische Verfahren und aktuelles Umweltzertifikat für WerkI. Produktbeständigkeit und Leitfähigkeit sind keine Badtemperaturen, Energieträger oder gemessenen Netzqualitätswerte.",
+    "finding": "Wigl beschreibt eigene elektrolytische Verfahren und aktuelles Umweltzertifikat für WerkI. Produktbeständigkeit und Leitfähigkeit sind keine Badtemperaturen, Energieträger oder gemessenen Netzqualitätswerte.",
+    "next_action": "Aktuelle werkbezogene Bad-/Heiztechnik, Motor-/Steuerungsdaten und abgeschlossene Energieprojekte belegen.",
+    "source_ids": [
+      "S-P103-03",
+      "S-P103-05"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

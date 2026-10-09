@@ -87,3 +87,24 @@ Codex: 6 zuvor offene Felder bearbeitet; 0 zusätzliche Felder quellen- und anke
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Continued open-field research —2026-10-09
+
+Metobas Nachrichten enthalten Vorträge über Wärmepumpen, B&T-Studie und Hillebrand-Klimapläne; dies sind keine eigenen Metoba-Anlagen. Altes eigenes Management-/Prozessmaterial ersetzt keine aktuelle Wärme-/Investitionsinventur.
+
+Nächster Schritt: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen.
+
+- S-P101-07 — https://www.metoba.de/newsarchiv/ — Heat-pump presentations, B&T feasibility study and Hillebrand climate plans belong to speakers/other firms, not Metoba installations. No owned current heat-electrification or investment inferred.
+- S-P101-03 — https://www.metoba.de/wp-content/uploads/2019/10/Metoba-Imagebrosch%C3%BCre.pdf — Historical Metoba environmental management and non-accredited ISO50001-based energy management; no current process temperatures/fuel, thermal storage or recent investment date.
+
+| Feld | Ergebnis | Beleg / verbleibende Frage |
+| --- | --- | --- |
+| temperature_fit_score | STILL_UNKNOWN | Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Ökoprofit workshop explains standards generally; hosting it is not current ISO50001certification or completed energy investment. Existing brochure heat temperatures/fuels remain unspecified. Vertiefung2026-10-09: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen. |
+| process_electrification_score | STILL_UNKNOWN | Named owned thermal route, current heat carrier and feasible remaining substitution case; separate electric drives and room heat. Continuation2026-10-08: Ökoprofit workshop explains standards generally; hosting it is not current ISO50001certification or completed energy investment. Existing brochure heat temperatures/fuels remain unspecified. Vertiefung2026-10-09: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen. |
+| fossil_heat_displacement_score | STILL_UNKNOWN | Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Ökoprofit workshop explains standards generally; hosting it is not current ISO50001certification or completed energy investment. Existing brochure heat temperatures/fuels remain unspecified. Vertiefung2026-10-09: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen. |
+| thermal_storage_flex_score | STILL_UNKNOWN | Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Ökoprofit workshop explains standards generally; hosting it is not current ISO50001certification or completed energy investment. Existing brochure heat temperatures/fuels remain unspecified. Vertiefung2026-10-09: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen. |
+| incremental_load_score | STILL_UNKNOWN | Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. Continuation2026-10-08: Ökoprofit workshop explains standards generally; hosting it is not current ISO50001certification or completed energy investment. Existing brochure heat temperatures/fuels remain unspecified. Vertiefung2026-10-09: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen. |
+| investment_gap_score | STILL_UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. Continuation2026-10-08: Ökoprofit workshop explains standards generally; hosting it is not current ISO50001certification or completed energy investment. Existing brochure heat temperatures/fuels remain unspecified. Vertiefung2026-10-09: Eigene aktuelle Umwelterklärung, Badtemperaturen/Heizmedien und datierte Anlagenmaßnahmen beschaffen. |
+
+Geprüft bezeichnet Quellen-/Ankerprüfung durch Codex; keine persönliche oder finale Score-Freigabe.

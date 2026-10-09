@@ -163,7 +163,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
     source_rechecks = {r['source_id']: r for r in read_csv(root, "evidence/proposal_source_checks.csv")}
-    source_rechecks.update({r['source_id']: r for r in read_csv(root, "evidence/decision_source_checks_20261008.csv")})
+    source_rechecks.update(decision_research.source_checks(root))
     certificates_by_company = {}
     for row in read_csv(root, "evidence/certificate_register.csv"):
         certificates_by_company.setdefault(row['candidate_id'], []).append(row)
