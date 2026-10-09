@@ -84,3 +84,14 @@ Current imprint names Königliche Porzellan Manufaktur Nymphenburg GmbH&Co.KG, d
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Aktuelles Impressum: Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG, München HRA 48197; gespeicherter Name ist verkürzt.
+
+**Ergebnis:** NAME_CORRECTION_PROPOSED. **Nächster Schritt:** Registeridentität gegen historischen Datensatz bestätigen und dann exakten Rechtsnamen konsistent übernehmen; bis dahin aktuelle Bezeichnung separat zeigen.
+
+- S-P109-01: https://www.nymphenburg.com/policies/legal-notice — Aktuelles Impressum nennt Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG, München HRA 48197. Der gespeicherte Name lässt Königliche aus; keine belegte Rechtsnachfolge allein aus der Website ableiten.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

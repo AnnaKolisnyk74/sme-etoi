@@ -79,3 +79,15 @@ Current Eschenbach imprint identifies Eschenbach Porzellan GmbH rather than Neue
 | investment_gap_score | Weiter offen / UNKNOWN | Current legal continuity and owned production of Neue Porzellanfabrik Triptis GmbH must be established; current imprint is Eschenbach Porzellan GmbH. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Markenimpressum nennt Eschenbach Porzellan GmbH HRB 521093; gespeicherte Firma lautet Neue Porzellanfabrik Triptis GmbH. Shop-AGB sind intern widersprüchlich und mit Stand September 2014 historisch.
+
+**Ergebnis:** ENTITY_CONFLICT. **Nächster Schritt:** Register/Rechtsnachfolge und heutigen Produktionsbetreiber in Triptis klären. Marken-FAQ und neue Prozesse nicht automatisch auf die gespeicherte Gesellschaft übertragen.
+
+- S-P110-01: https://eschenbachporzellan.de/impressum — Markenwebsite nennt Eschenbach Porzellan GmbH, Jena HRB 521093; dies entspricht nicht dem gespeicherten Namen Neue Porzellanfabrik Triptis GmbH.
+- S-P110-05: https://eschenbachshop.de/pages/agb — Shop-AGB nennen Eschenbach im Eingang und Neue Porzellanfabrik Triptis im Vertrag/Widerruf. Stand September 2014 und widersprüchliche Betreiberangaben sind keine aktuelle Rechtsnachfolge- oder Produktionsbestätigung.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

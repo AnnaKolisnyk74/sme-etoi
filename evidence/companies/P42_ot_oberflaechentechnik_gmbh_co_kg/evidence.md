@@ -92,3 +92,14 @@ Certificate scope includes own and customer services; this does not independentl
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+OT Beteiligungsgesellschaft mbH ist als Komplementärin belegt. Personalangabe aus Profilsuche ist kein geprüfter Gruppenabschluss.
+
+**Ergebnis:** AGGREGATION_OPEN. **Nächster Schritt:** Unternehmensprofil erneut abrufen; Gesellschafterquoten und Gruppenfinanzen einschließlich Komplementärin prüfen.
+
+- S-P42-04: https://www.ot-schwerin.de/impressum.html — OT Beteiligungsgesellschaft mbH ist persönlich haftende Gesellschafterin der OT Oberflächentechnik GmbH & Co. KG; vollständige Kette und Gruppenfinanzen bleiben offen.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

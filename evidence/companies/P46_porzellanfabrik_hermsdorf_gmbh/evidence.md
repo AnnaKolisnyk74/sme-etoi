@@ -94,3 +94,13 @@ Customer RTO ceramic heat-storage products are not own energy stores. No attribu
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+CERAM-Gruppenzuordnung aus älteren Quellen bleibt ohne aktuellen lesbaren primären Gruppenabschluss unvollständig.
+
+**Ergebnis:** SOURCE_ACCESS_AND_FINANCIAL_OPEN. **Nächster Schritt:** Aktuelle CERAM-Eigentümerkette, Beteiligungsquote und Gruppenabschluss beschaffen; Einzelstandort nicht als unabhängig behandeln.
+
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

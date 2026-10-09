@@ -84,3 +84,20 @@ EMAS programme contains future2027heat-water projects; no current usable thermal
 | thermal_storage_flex_score | Weiter offen / UNKNOWN | Cooled lager tanks and absorption refrigeration do not by themselves establish dispatchable thermal storage. Need a named useful heat/cold buffer and admissible charging/discharging window. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Brauen, Dampferzeugung und Kälte; Erdgas/Heizöl im Kessel, Biogas aus Abwasser seit 2023. Druckluft-Wärmerückgewinnung, PV und Biogas-BHKW/Absorptionskälte belegt.
+
+**Ergebnis:** PARTIAL_EVIDENCE. **Nächster Schritt:** Betriebsnachweis der geplanten elektrischen Dampf-/Wärmeroute und konkreten thermischen Puffer prüfen.
+
+Auswahl: Rang 2 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 15.
+
+- S-P05-04: https://www.einbecker-brauhaus.de/files/einbecker_gruppe/content/leitbild-und-werte/nachhaltigkeit/umwelterklaerung-ebag-2025.pdf — Dampfkessel mit Erdgas/Heizöl, Druckluft-Wärmerückgewinnung und seit 2023 aktive Biogaserzeugung sind dokumentiert. Künftige Wärmemaßnahmen im Programm sind keine Inbetriebnahmebelege.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| thermal_storage_flex_score | Offen | Cooled lager tanks and absorption refrigeration do not by themselves establish dispatchable thermal storage. Need a named useful heat/cold buffer and admissible charging/discharging window. Continuation2026-10-08: EMAS programme contains future2027heat-water projects; no current usable thermal store established. Future heat recovery is not present dispatchability. Vertiefung 2026-10-08: Betriebsnachweis der geplanten elektrischen Dampf-/Wärmeroute und konkreten thermischen Puffer prüfen. |

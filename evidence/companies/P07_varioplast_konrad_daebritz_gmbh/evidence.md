@@ -179,3 +179,14 @@ Founder fossil-independence claim is explicit. Own-machine drives and commercial
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Eigene Hongkong-Tochter ist belegt; bisherige Einzelgesellschafts-Zahlen reichen nicht für eine Gruppenentscheidung.
+
+**Ergebnis:** AGGREGATION_OPEN. **Nächster Schritt:** Aktuelle Eigentümerquoten und Jahresarbeitseinheiten/Umsatz oder Bilanzsumme einschließlich VARIOPLAST CO. (HK) Ltd beschaffen.
+
+- S-P07-10: https://www.varioplast.de/de/unternehmen/highlights — Eigene Tochter VARIOPLAST CO. (HK) Ltd betreut chinesische Formenbaupartner; ihre Beschäftigten und Finanzen sind nicht aggregiert.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

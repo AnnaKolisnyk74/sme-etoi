@@ -7,34 +7,33 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 7 October 2026
+## Current checked state — 8 October 2026
 
-All 100 provisional companies have all 15 fields assessed. Every used proposal
-source is registered with URL, document/section and a bounded evidence note.
-All 554 original numeric proposals were rechecked: **507 confirmed, 42 corrected,
-5 returned to research**. The live file now contains **549 `CHECKED` proposals
-(displayed as “Geprüft”) and 951 blank `NEEDS_RESEARCH` fields**. No numeric
-proposal remains `AWAITING_HUMAN_REVIEW`.
+All 100 provisional companies have all 15 fields assessed: **599 `CHECKED`
+proposals (Geprüft), 901 blank `NEEDS_RESEARCH` fields and zero approved fields**.
+The 554 original numeric proposals remain fully accounted for (507 confirmed,
+42 corrected, five withdrawn); 50 previously unknown fields now have new evidence.
+Personal approval stays separate from source and anchor checks.
 
-The check ledger records Codex as the actual checker; personal approval fields
-remain blank and final-score approval stays separate. Confidence C still means
-conditional engineering interpretation. A checked anchor does not establish
-commissioned deployment or remove the 12 open group/SME eligibility gates.
+The latest decision research covers **12 SME/group gates, two identity conflicts
+and ten technical company profiles**. The ten firms were selected by the first
+unique, non-gated company in the frozen Research Queue. Of 50 open score fields
+examined, two Lamberts drive/control fields have new direct primary evidence;
+48 remain unknown. Five deployment facts have public YES evidence in the research
+ledger, including heat recovery and metak's current EnMS. These findings do not
+silently overwrite canonical deployment flags or confer final score approval.
 
-There are 517 registered sources, 551 audited URLs and 534 currently retrievable
-URLs. This proposal recheck additionally records 269 source bodies/check attempts:
-266 retrievable and three explicitly unavailable. Registered sources are mainly
-`LINK_ONLY`; hashes and notes preserve provenance without distributing full
-third-party reports. The current queue has 60 checked dimension tasks,
-380 research tasks and 12 eligibility gates; 88 companies remain `RESEARCH_FIRST`
-and 12 `ELIGIBILITY_FIRST` because unresolved fields and eligibility are separate.
+The [decision research report](evidence/decision_research_20261008.md),
+[company profiles](evidence/decision_research_profiles_20261008.json),
+[selected source checks](evidence/decision_source_checks_20261008.csv) and
+[field attempts](evidence/field_research_deep_20261008.csv) document scope,
+period and remaining questions. IFGL and Ceramaret have group-scale exclusion
+signals; Fürstenberg's public ownership has a specific exception/control question.
+Nymphenburg's legal name and the Triptis/Eschenbach operator conflict are shown
+explicitly. All 12 SME gates remain open pending a defensible final decision.
 
-The [recheck report](evidence/recheck_20261007.md) explains the corrections.
-The [proposal ledger](evidence/score_proposal_checks.csv),
-[source-content checks](evidence/proposal_source_checks.csv) and frozen
-[original proposals](data/history/score_coding_proposals_before_recheck_20261007.csv)
-make every decision reviewable. The web company analysis shows all 15 individual
-field statuses and their evidence rather than an unapproved aggregate score.
+The web analysis shows the 24 decision profiles and links to company details.
+Previous evidence and frozen selections remain in the repository history.
 
 ## Research question
 

@@ -91,3 +91,14 @@ Group product heat resistance and overseas offset PV projects are excluded from 
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Aktuelle MOESCHTER-Seite nennt DOCERAM, DOTHERM und ISOCOS. Die frühere Angabe 178 hat hier keinen neuen datierten Nachweis.
+
+**Ergebnis:** AGGREGATION_OPEN. **Nächster Schritt:** Vollständige Eigentümerkette und gleichperiodige Personal-/Finanzaggregation aller drei Einheiten beschaffen.
+
+- S-P67-02: https://www.moeschter-group.com/ — MOESCHTER nennt DOCERAM, DOTHERM und ISOCOS als drei Geschäftseinheiten. Die bisher verzeichneten 178 Beschäftigten sind hier nicht als aktuelle datierte Gruppenkennzahl bestätigt.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

@@ -106,6 +106,24 @@ function renderEvidenceOverview(){
   $("#evidenceOverview").innerHTML='<div><strong>'+n(checked)+' Felder · Geprüft</strong><span>'+n(open)+' Feldfragen offen · '+rows.length+' Unternehmen</span></div><div><strong>Gültig belegt: ISO 50001 '+count("iso_50001")+' · ISO 14001 '+count("iso_14001")+' · EMAS '+count("emas")+'</strong><span>Feldprüfung: '+esc(state.data.proposal_check_summary?.checked_date||"—")+' · KMU-Einstufung und finale Score-Freigabe separat</span></div>';
 }
 function topTask(c){return (c.research_tasks||[]).slice().sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999))[0]||null}
+function decisionProfile(c){
+  const p=c.decision_research_profile;
+  if(!p)return "";
+  const label={EXCLUSION_SIGNAL:"KMU-Ausschluss prüfen",PUBLIC_CONTROL_EXCEPTION_OPEN:"Öffentliche Kontrolle: Ausnahme prüfen",ENTITY_CONFLICT:"Firmenzuordnung widersprüchlich",NAME_CORRECTION_PROPOSED:"Rechtsname präzisieren",NEW_FIELD_EVIDENCE:"Neue Feldbelege gefunden",PARTIAL_EVIDENCE:"Teilweise belegt",AGGREGATION_OPEN:"Gruppenaggregation offen",FINANCIAL_AND_OWNERSHIP_OPEN:"Eigentümer und Finanzdaten offen",SOURCE_ACCESS_AND_FINANCIAL_OPEN:"Quellenzugang und Finanzdaten offen"}[p.outcome]||titleCase(p.outcome);
+  const proof=(c.sources||[]).filter(s=>(p.source_ids||[]).includes(s.source_id));
+  return '<section class="section-card"><div class="section-card-title">Vertiefte Firmenprüfung · '+esc(p.checked_date)+'</div><div class="section-card-body">'+
+    '<strong>'+esc(label)+'</strong>'+
+    (p.selection_rank?'<div class="source-meta">Auswahl '+esc(p.selection_rank)+' von 10 · Entscheidungsrang '+esc(p.queue_rank)+'</div>':"")+
+    (p.verified_legal_entity?'<p><strong>Aktuelles Impressum:</strong> '+esc(p.verified_legal_entity)+'</p>':"")+
+    '<p>'+esc(p.finding)+'</p><div class="action-text"><strong>Nächster Schritt:</strong> '+esc(p.next_action)+'</div>'+
+    '<div class="source-meta">'+(proof.length?proof.map(s=>safeLink(s.source_link,s.source_id)).join(' · '):'Kein belastbarer neuer Inhaltsbeleg; Abrufgrenze dokumentiert.')+'</div>'+
+    '<div class="source-meta">Belegte Feldvorschläge: Geprüft. KMU-Entscheidung und finale Score-Freigabe separat.</div></div></section>';
+}
+function decisionResearchOverview(){
+  const r=state.data.decision_research_summary;
+  if(!r?.profile_count)return "";
+  return '<section class="functional-card"><h3>Vertiefte Firmenprüfung · '+esc(r.checked_date)+'</h3><p>'+esc(r.technical_company_count)+' technische Firmenprofile · '+esc(r.eligibility_company_count)+' KMU-Prüfungen · '+esc(r.identity_company_count)+' Firmenzuordnungen. '+esc(r.field_attempt_count)+' offene Felder untersucht, '+esc(r.new_checked_field_count)+' zusätzlich geprüft.</p>'+genericTable(['Unternehmen','Prüfung','Ergebnis / nächster Schritt'],r.profiles.map(p=>'<tr data-company-id="'+esc(p.company_id)+'"><td><strong>'+esc(p.legal_entity)+'</strong></td><td>'+esc({TECHNICAL:'Technik',ELIGIBILITY:'KMU',IDENTITY:'Firmenzuordnung'}[p.workstream])+'</td><td class="wrap-cell">'+esc(p.finding)+'<div class="source-meta">'+esc(p.next_action)+'</div></td></tr>'))+'</section>';
+}
 function storageGet(key,fallback){
   try{const value=localStorage.getItem(key);return value?JSON.parse(value):fallback}catch(_){return fallback}
 }
@@ -286,7 +304,7 @@ function renderDetail(){
           (why.length?'<ul class="bullet-list">'+why.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>':'<span class="action-text">Kein zusätzlicher Why-Now-Faktor dokumentiert.</span>')+
         '</div></section>'+
       '</div>'+
-      certificateDetails(c)+
+      decisionProfile(c)+certificateDetails(c)+
       '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box"><div class="action-icon">▤</div><div><div class="action-title">'+esc(task?titleCase(task.opportunity_type):"Keine offene Aufgabe")+'</div><div class="action-text">'+esc(task?.research_question||"Keine priorisierte Research-Aufgabe vorhanden.")+'</div></div><div class="action-meta">'+esc(titleCase(task?.task_status||""))+'</div></div></section>'+
     '</div>';
   }else if(state.detailTab==="analysis"){
@@ -313,8 +331,8 @@ function renderDetail(){
         ).join(""):'Keine offene Scoring-Arbeit.')+
       '</div></section></div>';
   }else if(state.detailTab==="research"){
-    body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
-      ((c.research_tasks||[]).length?(c.research_tasks||[]).map(t=>'<div class="source-item"><strong>#'+esc(t.research_rank??"—")+' · '+esc(titleCase(t.opportunity_type))+'</strong><div class="action-text">'+esc(t.research_question)+'</div><div class="source-meta">'+esc(t.research_priority)+' priority · '+esc(titleCase(t.task_status||"OPEN"))+'</div></div>').join(""):'Keine offenen Tasks')+
+    body='<div class="detail-body">'+decisionProfile(c)+'<section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
+      ((c.research_tasks||[]).length?(c.research_tasks||[]).map(t=>'<div class="source-item"><strong>#'+esc(t.research_rank??"—")+' · '+esc(titleCase(t.opportunity_type))+'</strong><div class="action-text">'+esc(t.research_question)+'</div>'+(t.last_finding?'<p>'+esc(t.last_finding)+'</p>':"")+'<div class="source-meta">'+esc(t.research_priority)+' priority · '+esc(t.task_status==='EVIDENCE_FOUND'?'Beleg gefunden':titleCase(t.task_status||"OPEN"))+'</div></div>').join(""):'Keine offenen Tasks')+
       '</div></section></div>';
   }else{
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Evidence Trail · '+(c.sources||[]).length+' Quellen</div><div class="section-card-body source-list">'+
@@ -453,7 +471,7 @@ function renderFunctional(view){
       (codingCompanies.length?'<section class="functional-card"><h3>Next Best Coding Companies</h3>'+
         genericTable(["Coding Rank","Unternehmen","Priority","Evidence","Process","QA","Informationsgewinn (Proxy)","Quellenabdeckung","Verifizierte URLs"],codingCompanies.slice(0,10).map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td>'+esc(c.workflow_priority?.coding_rank??"—")+'</td><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(c.workflow_priority?.work_priority||"—")+'</td><td>'+esc(c.evidence_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.process_confidence||"—")+'</td><td>'+esc(c.workflow_priority?.qa_result||"—")+'</td><td>'+esc(titleCase(c.workflow_priority?.expected_information_gain||"UNKNOWN"))+'</td><td class="wrap-cell">'+esc(c.workflow_priority?.source_coverage||"—")+'</td><td>'+esc(c.workflow_priority?.verified_source_count??"—")+'</td></tr>'))+
       '</section>':'<section class="functional-card"><h3>Erstbewertung abgeschlossen</h3><p>Keine weiteren Unternehmen für den ersten Coding-Durchlauf. Als Nächstes folgen die dokumentierten Recherchelücken, KMU-Prüfungen und die finale Score-Freigabe.</p></section>')+
-      coverageCard+batchCard+gateCard+
+      coverageCard+decisionResearchOverview()+batchCard+gateCard+
       '<section class="functional-card"><h3>Scoring Work Queue · '+work.length+' Arbeitspakete</h3>'+
         genericTable(["Rang","Unternehmen","Workstream","Dimension","Status","Priorität","Proposal / Research","Offene Felder","Nächste Aktion"],work.map(t=>
           '<tr data-company-id="'+esc(t.company.company_id)+'"><td>'+esc(t.work_rank??"—")+'</td><td><strong>'+esc(t.company.legal_entity)+'</strong></td><td>'+esc(titleCase(t.workstream))+'</td><td>'+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</td><td><span class="status-badge '+(t.task_status==="RESEARCH_NEEDED"?"status-blocked":t.task_status==="AWAITING_HUMAN_REVIEW"?"status-review":["CHECKED","READY_TO_CODE"].includes(t.task_status)?"status-qualified":"status-watch")+'">'+esc(titleCase(t.task_status||"UNKNOWN"))+'</span></td><td>'+esc(t.work_priority||"—")+'</td><td class="wrap-cell">'+esc(t.research_gap_fields||proposalSummaryLabel(t.proposal_status_summary)||t.proposal_covered_fields||"—")+'</td><td class="wrap-cell">'+esc(t.missing_fields||"—")+'</td><td class="wrap-cell">'+esc(t.next_action||"—")+'</td></tr>'

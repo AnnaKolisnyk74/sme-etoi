@@ -68,3 +68,28 @@ Own glassmaking context is separated from Glasfabrik Lamberts. No new converter,
 | investment_gap_score | Weiter offen / UNKNOWN | Recent energy-transition investments or a defined negative investment search over the lookback period |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Glasherstellung: 1.450 °C und 14 Stunden Schmelzen; Gaswärme nicht durch elektrische Antriebe als elektrifiziert einstufen. Laufende Ofenantriebe und Steuerungen sind jetzt direkt belegt; zwei Feldvorschläge neu prüfbar.
+
+**Ergebnis:** NEW_FIELD_EVIDENCE. **Nächster Schritt:** Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen.
+
+Auswahl: Rang 5 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 20.
+
+- S-P18-05: https://lamberts.de/unsere-glasherstellung — Eigener Prozess nennt 1.450 Grad Celsius und 14 Stunden Schmelzen; Temperatur und Prozessdauer belegen keine frei verschiebbare Betriebszeit.
+- S-P18-06: https://lamberts.de/stellenangebote — Eigene Stellenanzeige beschreibt Steuerungen und Antriebe der Schmelzöfen und Produktionsanlagen im laufenden Betrieb. Sie belegt Antriebs- und Steuerungsrelevanz; elektrische Anlagen beweisen keine elektrische Schmelzwärme. Feste Arbeitszeit betrifft diese Stelle, nicht alle Ofenlaufzeiten.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| process_electrification_score | Offen | Firm-specific glass-melting/reheating electrification route or documented electric furnace concept Continuation2026-10-08: Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located. Vertiefung 2026-10-08: Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen. |
+| motor_drive_score | Geprüft | Antriebe/Steuerungen im eigenen Betrieb direkt belegt. |
+| power_conversion_score | Offen | Any firm-specific converter/rectifier/electric-furnace or controlled-electric-heat application Continuation2026-10-08: Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located. Vertiefung 2026-10-08: Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen. |
+| automation_control_score | Geprüft | Antriebe/Steuerungen im eigenen Betrieb direkt belegt. |
+| thermal_storage_flex_score | Offen | Company-specific thermal buffer/storage or evidence-backed usable thermal inertia Continuation2026-10-08: Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located. Vertiefung 2026-10-08: Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen. |
+| power_quality_score | Offen | Firm-specific power-quality, converter-load or electrical peak evidence Continuation2026-10-08: Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located. Vertiefung 2026-10-08: Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen. |
+| onsite_integration_score | Offen | Onsite generation, battery, microgrid or coordinated load-management evidence Continuation2026-10-08: Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located. Vertiefung 2026-10-08: Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen. |
+| investment_gap_score | Offen | Recent energy-transition investments or a defined negative investment search over the lookback period Continuation2026-10-08: Own glassmaking context is separated from Glasfabrik Lamberts. No new converter, useful thermal store, owned PV or safe dispatch evidence located. Vertiefung 2026-10-08: Elektrische Zusatzheizung/Schmelzroute, Netzanschluss sowie Schmelz-/Kühlfahrplan und aktuelle Investitionsabschlüsse prüfen. |

@@ -86,3 +86,24 @@ Group Kläger SPC new electric machine must not be transferred to Kläger Spritz
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Kunststoff- und Keramikspritzguss, Entbindern und Sintern; aktuelle Sinterenergieträger fehlen. Eigene PV und Rückgewinnung für Gebäudeheizung belegt; neue Maschine der anderen Gruppengesellschaft nicht zurechnen.
+
+**Ergebnis:** PARTIAL_EVIDENCE. **Nächster Schritt:** Verbraucher der Rückgewinnung, genaue Brennstoffe und datierte abgeschlossene Investitionen beim eigenen Werk prüfen.
+
+Auswahl: Rang 3 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 18.
+
+- S-P100-03: https://klaeger.de/unternehmen/nachhaltikgeit/ — Kläger nennt eigene Photovoltaik und Wärmerückgewinnung für Heizungszwecke. Bau-/Raumwärme ist keine belegte elektrische Sinterwärme.
+- S-P100-05: https://klaeger.de/wp-content/uploads/Prozessbeschreibung-Keramikspritzguss.pdf — Eigenes Keramikspritzguss-Dokument beschreibt Entbinderung und Sinterung; genaue aktuelle Brennstoffe und Restwärmelasten bleiben offen.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| fossil_heat_displacement_score | Offen | Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Group Kläger SPC new electric machine must not be transferred to Kläger Spritzguss without entity/site attribution.2010PV is outside lookback; room heat recovery does not establish production fuel remainder. Vertiefung 2026-10-08: Verbraucher der Rückgewinnung, genaue Brennstoffe und datierte abgeschlossene Investitionen beim eigenen Werk prüfen. |
+| thermal_storage_flex_score | Offen | Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Group Kläger SPC new electric machine must not be transferred to Kläger Spritzguss without entity/site attribution.2010PV is outside lookback; room heat recovery does not establish production fuel remainder. Vertiefung 2026-10-08: Verbraucher der Rückgewinnung, genaue Brennstoffe und datierte abgeschlossene Investitionen beim eigenen Werk prüfen. |
+| management_gap_score | Offen | Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. Continuation2026-10-08: Group Kläger SPC new electric machine must not be transferred to Kläger Spritzguss without entity/site attribution.2010PV is outside lookback; room heat recovery does not establish production fuel remainder. Vertiefung 2026-10-08: Verbraucher der Rückgewinnung, genaue Brennstoffe und datierte abgeschlossene Investitionen beim eigenen Werk prüfen. |
+| investment_gap_score | Offen | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. Continuation2026-10-08: Group Kläger SPC new electric machine must not be transferred to Kläger Spritzguss without entity/site attribution.2010PV is outside lookback; room heat recovery does not establish production fuel remainder. Vertiefung 2026-10-08: Verbraucher der Rückgewinnung, genaue Brennstoffe und datierte abgeschlossene Investitionen beim eigenen Werk prüfen. |

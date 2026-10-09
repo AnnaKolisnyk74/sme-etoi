@@ -89,3 +89,26 @@ Own PV/heat recovery remain documented. Generic biogas stories and customer outb
 | investment_gap_score | Weiter offen / UNKNOWN | Commissioning/investment dates for energy measures within 2021-10-07 to 2026-10-07. Undated PV/waste-heat claims and a certificate renewal are not a dated recent transition investment. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Kunststoffspritzguss; tatsächliche Werkzeugtemperaturen und verbleibende fossile Wärme fehlen. Eigene PV und Abwärmenutzung belegt; Batterie-Inbetriebnahme und datierte Energieinvestitionen offen.
+
+**Ergebnis:** PARTIAL_EVIDENCE. **Nächster Schritt:** Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen.
+
+Auswahl: Rang 6 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 21.
+
+- S-P25-05: https://scheplast.de/nachhaltigkeit/ — Eigene PV-Anlage und Abwärmenutzung sind dokumentiert; keine Batterie-Inbetriebnahme, thermische Speichergröße oder datierter Abschluss dieser Energieprojekte in diesem Text.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| temperature_fit_score | Offen | Actual barrel/mould/utility process temperatures and validated electric-heat fit. Machine closing force in tonnes is not temperature or electrical power. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |
+| process_electrification_score | Offen | Firm-specific current thermal energy carrier and defined conversion route; injection moulding, PV and a bioenergy vision do not establish electric process heat. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |
+| fossil_heat_displacement_score | Offen | Actual remaining fossil process heat and material displacement opportunity; renewable electricity and biobased feedstock do not establish the site fuel mix. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |
+| scheduling_flex_score | Offen | Actual operating pattern, admissible interruption/start windows and production buffer; small/large series alone do not establish shiftable energy demand. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |
+| thermal_storage_flex_score | Offen | Thermal store, cold/heat buffer or usable validated thermal inertia; waste-heat utilisation alone is not storage. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |
+| incremental_load_score | Offen | Defined additional thermal electrification route and new-load materiality; existing PV and machines do not establish incremental load. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |
+| investment_gap_score | Offen | Commissioning/investment dates for energy measures within 2021-10-07 to 2026-10-07. Undated PV/waste-heat claims and a certificate renewal are not a dated recent transition investment. Continuation2026-10-08: Own PV/heat recovery remain documented. Generic biogas stories and customer outboard-motor applications are excluded from owned thermal fuel and equipment. Vertiefung 2026-10-08: Batteriebetrieb, Kapazität, Inbetriebnahmedatum und Einbindung in eigene Produktionslast prüfen. |

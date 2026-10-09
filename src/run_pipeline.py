@@ -16,6 +16,7 @@ import score_work_queue
 import validate_pilot
 import validate_score_coding_proposals
 import source_audit_summary
+import decision_research
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -445,6 +446,7 @@ def run_pipeline(
 ) -> dict[str, int | None]:
     preflight_errors = validate_pilot.validate(root)
     preflight_errors.extend(source_audit_summary.validate(root))
+    preflight_errors.extend(decision_research.validate(root))
     proposal_errors = validate_score_coding_proposals.validate(root)
     preflight_errors.extend(
         f"score coding proposal: {error}" for error in proposal_errors

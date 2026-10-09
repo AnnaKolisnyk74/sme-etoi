@@ -1,0 +1,11 @@
+selection_rank,company_id,legal_entity,research_rank,opportunity_type,missing_fact,decision_impact,selection_basis,checked_date
+1,P04,Neumarkter Lammsbräu Gebr. Ehrnsperger KG,13,heat_recovery,heat_recovery_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+2,P05,Einbecker Brauhaus AG,15,industrial_heat,industrial_heat_electrification_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+3,P100,Kläger Spritzguss GmbH & Co. KG,18,heat_recovery,heat_recovery_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+4,P12,Richard Henkel GmbH,19,industrial_heat,industrial_heat_electrification_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+5,P18,Glashütte Lamberts Waldsassen GmbH,20,industrial_heat,industrial_heat_electrification_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+6,P25,Scheplast GmbH,21,battery_storage,battery_storage_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+7,P29,Meckatzer Löwenbräu Benedikt Weiß KG,22,thermal_storage,thermal_storage_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+8,P76,Si-Tech Singer GmbH,23,heat_recovery,heat_recovery_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+9,P77,metak GmbH & Co. KG,24,energy_management,energy_management_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
+10,P78,Erlemann & Huckenbeck GmbH & Co. KG,26,heat_recovery,heat_recovery_deployed,HIGH,FIRST_DISTINCT_NON_GATED_COMPANY_BY_RESEARCH_RANK,2026-10-08
