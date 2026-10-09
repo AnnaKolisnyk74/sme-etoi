@@ -82,3 +82,20 @@ Published storage planning concerns electricity; no useful thermal buffer establ
 | thermal_storage_flex_score | Weiter offen / UNKNOWN | Company-specific thermal buffer, thermal store or evidence-backed usable thermal inertia for process-load shifting |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Oberflächenbehandlung mit Flüssiggas; elektrische Reserve/Batterieplanung ist kein thermischer Speicher. Druckluftoptimierung dokumentiert. Vorliegende EMAS-Urkunde abgelaufen; neuer Nachweis weiterhin zu prüfen.
+
+**Ergebnis:** PARTIAL_EVIDENCE. **Nächster Schritt:** Aktuelle Wärmeversorgung und nutzbare Heiß-/Kaltwasserpuffer mit Betriebsfenstern klären; EMAS-Nachfolge prüfen.
+
+Auswahl: Rang 4 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 19.
+
+- S-P12-03: https://www.richard-henkel.de/downloads.html?file=files/downloads/2024_Umwelterklaerung_Richard_Henkel.pdf — Flüssiggas in der Beschichtung und umgesetzte Druckluftoptimierung sind dokumentiert. PV mit elektrischem Speicher ist geplant; dies belegt keinen nutzbaren thermischen Speicher.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| thermal_storage_flex_score | Offen | Company-specific thermal buffer, thermal store or evidence-backed usable thermal inertia for process-load shifting Continuation2026-10-08: Published storage planning concerns electricity; no useful thermal buffer established. Existing certificate expiry and LPG assessment remain unchanged. Vertiefung 2026-10-08: Aktuelle Wärmeversorgung und nutzbare Heiß-/Kaltwasserpuffer mit Betriebsfenstern klären; EMAS-Nachfolge prüfen. |

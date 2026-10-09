@@ -93,3 +93,15 @@ Swiss group and Meissen plant equipment scopes remain separate. Generic process 
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Eigene Seite nennt mehr als 300 Beschäftigte bei Ceramaret. Übernahmen 2018/2023 und Meissener Umbenennung belegen Gruppenbezug.
+
+**Ergebnis:** EXCLUSION_SIGNAL. **Nächster Schritt:** Aktuelle Rechtsnamen und Kontrollquoten sowie Jahresarbeitseinheiten für den ganzen Ceramaret/Kowema-Kreis prüfen; keine Standortzahl als Gruppe verwenden.
+
+- S-P88-06: https://ceramaret.com/de/unser-unternehmen/mitarbeiter — Ceramaret nennt mehr als 300 Beschäftigte; Aussage betrifft Ceramaret, nicht nur die Meissener Gesellschaft und ist undatiert.
+- S-P88-07: https://ceramaret.com/en/news/press-releases/press-release — Eigene Mitteilungen dokumentieren die Übernahme von MicroCeram durch Ceramaret SA 2018, Umbenennung 2020 sowie die TKC-Übernahme 2023. Der genaue aktuelle Konsolidierungskreis muss anhand von Anteilen und Jahresarbeitseinheiten geprüft werden.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

@@ -94,3 +94,15 @@ Own history supports2022/2023PV energy project and older furnace heat recovery. 
 | investment_gap_score | Geprüft: 2 (B) | S-P47-06 |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+IFGL-Bericht 2025/26 bestätigt 100 Prozent Kontrolle und HRB 7319; allein die Mutter nennt 1.180 dauerhafte Beschäftigte am 31.03.2026. Alte Teilgruppen-Angabe von rund 150 darf nicht für den Gesamtverbund stehen.
+
+**Ergebnis:** EXCLUSION_SIGNAL. **Nächster Schritt:** KMU-Ausschluss anhand vollständiger IFGL-Kette, Jahresarbeitseinheiten und Zweijahresregel abschließend dokumentieren; Gate bleibt bis zur kanonischen Entscheidung offen.
+
+- S-P47-08: https://ifglgroup.com/wp-content/uploads/2026/07/Annual-Report-25-26.pdf — IFGL nennt Hofmann mit identischer HRB 7319 und 100 Prozent Beteiligung. Die Mutter nennt 1.180 dauerhafte Beschäftigte am 31.03.2026; Stichtagskopfzahl ist keine EU-Jahresarbeitseinheiten-Berechnung.
+- S-P47-09: https://ifglgroup.com/wp-content/uploads/2026/07/Hofmann-Gmbh.pdf — Eigener Abschluss für hofmann CERAMIC GmbH in Breitscheid zum 31.03.2026; Einzelgesellschaftsabschluss ersetzt nicht die Gruppenaggregation.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

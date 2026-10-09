@@ -92,3 +92,23 @@ Fresh2026report retrieval timed out in this continuation. Previously inspected r
 | incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and incremental-load materiality. Future roadmap and existing loads/heat totals do not establish a commissioned new electrical route. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Erdgas-Dampf/BHKW und Ammoniakkälte. Bericht mischt aktuelle und ältere Betriebsbeschreibungen. Wärmerückgewinnung, Reifekeller Juli 2022 und weitere Maßnahmen sind dokumentiert; Reparatur des Brüdenverdichters offen.
+
+**Ergebnis:** PARTIAL_EVIDENCE. **Nächster Schritt:** Aktuellen Brüdenverdichterbetrieb und konkrete thermische Speicher mit Lade-/Entladefenstern prüfen.
+
+Auswahl: Rang 7 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 22.
+
+- S-P29-03: https://www.meckatzer.de/fileadmin/user_data/dokumente/260929_Nachhaltigkeitsbericht_WEB.pdf — Erdgas-Dampf und BHKW, Abwärmenutzung sowie Reifekeller-Inbetriebnahme Juli 2022 sind dokumentiert. Bericht enthält ältere Passagen über defekten Brüdenverdichter; Reparatur und heutiger Betriebszustand bleiben offen. Kein expliziter nutzbarer thermischer Lastverschiebespeicher im geprüften Text.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| temperature_fit_score | Offen | Actual process-heat temperatures and validated electric-heat fit; 0-deg-C maturation and cold-system ratings do not establish brewing/steam temperature. Continuation2026-10-08: Fresh2026report retrieval timed out in this continuation. Previously inspected report provenance is retained; no new heat-temperature, permissible shift or thermal-store evidence is inferred. Vertiefung 2026-10-08: Aktuellen Brüdenverdichterbetrieb und konkrete thermische Speicher mit Lade-/Entladefenstern prüfen. |
+| process_electrification_score | Offen | Currently operating defined thermal electrification route. Legacy vapour compressor is reported defective and replaced by gas steam; current repair/continuity is unverified. Completed ammonia replacement is refrigeration, not proof of process-heat electrification. Continuation2026-10-08: Fresh2026report retrieval timed out in this continuation. Previously inspected report provenance is retained; no new heat-temperature, permissible shift or thermal-store evidence is inferred. Vertiefung 2026-10-08: Aktuellen Brüdenverdichterbetrieb und konkrete thermische Speicher mit Lade-/Entladefenstern prüfen. |
+| thermal_storage_flex_score | Offen | Actual dispatchable heat/cold buffer and permissible operating window. Glycol cooling, heat recovery and beer maturation tanks alone do not establish thermal storage. Continuation2026-10-08: Fresh2026report retrieval timed out in this continuation. Previously inspected report provenance is retained; no new heat-temperature, permissible shift or thermal-store evidence is inferred. Vertiefung 2026-10-08: Aktuellen Brüdenverdichterbetrieb und konkrete thermische Speicher mit Lade-/Entladefenstern prüfen. |
+| incremental_load_score | Offen | Defined additional thermal electrification route and incremental-load materiality. Future roadmap and existing loads/heat totals do not establish a commissioned new electrical route. Continuation2026-10-08: Fresh2026report retrieval timed out in this continuation. Previously inspected report provenance is retained; no new heat-temperature, permissible shift or thermal-store evidence is inferred. Vertiefung 2026-10-08: Aktuellen Brüdenverdichterbetrieb und konkrete thermische Speicher mit Lade-/Entladefenstern prüfen. |

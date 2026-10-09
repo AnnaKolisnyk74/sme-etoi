@@ -84,3 +84,20 @@ New network/heat-pump storage statements describe planning; a planned105degreesC
 | thermal_storage_flex_score | Weiter offen / UNKNOWN | Central refrigeration and cooled beer storage do not establish an available thermal buffer for shifting electrical demand. Need a named usable heat/cold store, operating window and quality constraints. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Brauerei und Mälzerei mit dokumentierter gasbasierter Wärmeerzeugung. PV 2023 und Energiecontrolling dokumentiert; neues Wärmenetz/Wärmepumpen/Speicher als Planung behandeln.
+
+**Ergebnis:** PARTIAL_EVIDENCE. **Nächster Schritt:** Aktuellen Inbetriebnahmenachweis für Wärmeprojekt und Speicher mit nutzbarem Temperatur-/Ladefenster beschaffen.
+
+Auswahl: Rang 1 der zehn verschiedenen Firmen ohne offenes KMU-Gate; ursprünglicher Research-Rang 13.
+
+- S-P04-06: https://www.lammsbraeu.de/hubfs/Dachmarke/resources/documents/Nachhaltigkeitsberichte/GRI-Bericht2023_Neumarkter%20Lammsbr%C3%A4u_final%2020240913.pdf — Gasbasierte Brau-/Mälzereiwärme, Energiecontrolling und PV-Projekt 2023 sind dokumentiert; künftiges Wärmenetz, Wärmepumpen und Speicher benötigen einen Betriebsnachweis.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.
+
+| Feld | Ergebnis | Weiterhin benötigter Beleg |
+|---|---|---|
+| thermal_storage_flex_score | Offen | Central refrigeration and cooled beer storage do not establish an available thermal buffer for shifting electrical demand. Need a named usable heat/cold store, operating window and quality constraints. Continuation2026-10-08: New network/heat-pump storage statements describe planning; a planned105degreesCnetwork buffer is not confirmed operating thermal storage. Vertiefung 2026-10-08: Aktuellen Inbetriebnahmenachweis für Wärmeprojekt und Speicher mit nutzbarem Temperatur-/Ladefenster beschaffen. |

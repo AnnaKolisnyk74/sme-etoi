@@ -129,6 +129,8 @@ def lifecycle_for(result, current_value):
         task_status = "RECHECK_DUE"
     elif resulting_value == current_value:
         task_status = "RESOLVED"
+    elif research_status == "EVIDENCE_FOUND" and resulting_value in {"YES", "NO"}:
+        task_status = "EVIDENCE_FOUND"
     else:
         task_status = "BLOCKED"
 

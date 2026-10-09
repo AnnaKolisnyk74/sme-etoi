@@ -93,3 +93,15 @@ Own electric/hydraulic injection equipment and robots are separated from supplie
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Losse Holding nennt KTS als Beteiligung. Rund 85 Beschäftigte im Stadtbericht 2025 betreffen KTS allein.
+
+**Ergebnis:** AGGREGATION_OPEN. **Nächster Schritt:** Beteiligungsquote, Holding-Portfolio und konsolidierte/anteilige Finanz- und Personalzahlen beschaffen.
+
+- S-P34-05: https://www.losse-holding.de/ — Losse Holding nennt KTS im eigenen Beteiligungsportfolio; Beteiligungsquote und Gruppenabschluss fehlen.
+- S-P34-06: https://www.schmoelln.de/stadt-und-rathaus/weitere-seiten/presseberichte/2025/03/3-jungunternehmer-stammtisch-in-schmoelln-einblick-in-die-produktion-und-austausch-auf-augenhoehe — Stadtbericht nennt rund 85 Beschäftigte bei KTS; dies ist keine konsolidierte Gruppenkennzahl.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

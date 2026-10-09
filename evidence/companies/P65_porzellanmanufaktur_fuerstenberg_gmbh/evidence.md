@@ -90,3 +90,14 @@ Own high-temperature firing is retained. Green branding and multi-hour firing do
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+98 Prozent Fürstenberg-Holding-Anteil und staatliche Kette sind amtlich belegt. Manufaktur 2024: 79 Beschäftigte, Umsatz 6,198 Mio. EUR, Bilanz 6,916 Mio. EUR; diese Werte allein entscheiden die Unabhängigkeitsregel nicht.
+
+**Ergebnis:** PUBLIC_CONTROL_EXCEPTION_OPEN. **Nächster Schritt:** Art. 3 Abs. 2/4 der EU-KMU-Definition einschließlich möglicher öffentlicher-Investment-Ausnahme und Kontrollvertrag prüfen; Holdingzahlen getrennt behandeln.
+
+- S-P65-04: https://www.mf.niedersachsen.de/download/226797/Beteiligungsbericht_2025_nicht_barrierefrei_dieser_wird_zu_einem_spaeteren_Zeitpunkt_bereitgestellt_.pdf — Fürstenberg Holding hält 98 Prozent an der Manufaktur. Für 2024 nennt der Bericht 79 Beschäftigte, 6,198 Mio. EUR Umsatz und 6,916 Mio. EUR Bilanzsumme der Manufaktur. Holding-Bilanzsumme 106,82 Mio. EUR; diese ist keine Manufakturkennzahl. Seit Verschmelzung im Mai 2025 liegt die Holding unter HanBG; staatliche Kontrolle und mögliche EU-Ausnahme bleiben entscheidend.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

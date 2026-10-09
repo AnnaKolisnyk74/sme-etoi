@@ -9,6 +9,7 @@ from collections import Counter
 from pathlib import Path
 import source_audit_summary
 import proposal_checks
+import decision_research
 from score_companies import SCORE_FIELDS
 
 
@@ -146,6 +147,7 @@ def field_assessment_summary(companies, proposals, priority_rows):
 
 def build_web_payload(root: Path = ROOT) -> dict:
     companies = read_csv(root, "data/company_intelligence.csv")
+    decision_profiles = {p['company_id']: p for p in decision_research.profiles(root)}
     proposals = read_csv(root, "data/score_coding_proposals.csv")
     proposals_by_company = {}
     for proposal in proposals:
@@ -161,6 +163,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
     source_rechecks = {r['source_id']: r for r in read_csv(root, "evidence/proposal_source_checks.csv")}
+    source_rechecks.update({r['source_id']: r for r in read_csv(root, "evidence/decision_source_checks_20261008.csv")})
     certificates_by_company = {}
     for row in read_csv(root, "evidence/certificate_register.csv"):
         certificates_by_company.setdefault(row['candidate_id'], []).append(row)
@@ -408,6 +411,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     for source in sources_by_company.get(company_id, [])
                 ],
                 "source_audit": audit_by_company.get(company_id, {}),
+                "decision_research_profile": decision_profiles.get(company_id),
             }
         )
 
@@ -480,6 +484,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     return {
         "field_assessment_summary": field_assessment_summary(companies, proposals, company_work_priority),
         "proposal_check_summary": proposal_checks.summary(root),
+        "decision_research_summary": decision_research.summary(root),
         "eligibility_coding_selections": read_csv(root, "data/eligibility_coding_selections.csv"),
         "source_audit_summary": audit_summary,
         "meta": {

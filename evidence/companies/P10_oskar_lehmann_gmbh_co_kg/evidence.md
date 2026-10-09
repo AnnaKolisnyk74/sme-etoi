@@ -242,3 +242,14 @@ Own news archive supplies no new heat carrier, store or dated energy project. Hi
 | investment_gap_score | Weiter offen / UNKNOWN | Documentary first pass only: upstream group eligibility remains OPEN_GATE; no canonical scoring or human approval. Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Entscheidungsrecherche — 2026-10-08
+
+Komplementär-GmbH ist belegt. Einzelgesellschafts-Umsatz und Mitarbeiterzahl ersetzen keine vollständige Partner-/Verbundaggregation.
+
+**Ergebnis:** AGGREGATION_OPEN. **Nächster Schritt:** Anteile der KG und Beteiligungs-GmbH, weitere verbundene Firmen und gleichperiodige aggregierte Zahlen beschaffen.
+
+- S-P10-01: https://www.oskar-lehmann.de/en/imprint.html — KG HRA 3897 und persönlich haftende Oskar Lehmann Beteiligungs GmbH HRB 5257; Managementnamen belegen keine vollständigen Eigentumsquoten.
+
+Quellenprüfung durch Codex. Geprüfte Feldvorschläge sind keine finale Score-Freigabe. Nicht belegte Felder bleiben UNKNOWN.

@@ -46,7 +46,7 @@ class Completion100Tests(unittest.TestCase):
                 self.assertTrue(r['missing_fact'])
         s=self.payload['field_assessment_summary']
         self.assertEqual((s['complete_company_count'],s['assessed_field_count']),(100,1500))
-        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(597,903,0))
+        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(599,901,0))
         self.assertEqual(s['awaiting_human_review_fields'],0)
 
     def test_duplicate_or_unknown_fields_cannot_inflate_completion(self):
