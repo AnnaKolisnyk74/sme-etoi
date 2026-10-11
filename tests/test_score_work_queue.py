@@ -219,7 +219,7 @@ class ScoreWorkQueueTests(unittest.TestCase):
             row for row in p11
             if row["dimension"] == "grid_power_quality_relevance"
         )
-        self.assertIn("power_quality_score", p11_gap["research_gap_fields"])
+        self.assertEqual(p11_gap["research_gap_fields"], "incremental_load_score")
         p11_transition = next(
             row for row in p11
             if row["dimension"] == "observed_transition_gap"

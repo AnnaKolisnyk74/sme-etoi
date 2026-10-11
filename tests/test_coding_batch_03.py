@@ -92,8 +92,8 @@ class CodingBatch03Tests(unittest.TestCase):
         self.assertEqual([r['company_id'] for r in batch['companies']], ['P43', 'P13'])
         for r in batch['companies']:
             self.assertEqual(r['current_workflow_action'], 'RESEARCH_FIRST')
-            self.assertEqual(r['checked_fields'], 6)
-            self.assertEqual(r['needs_research_fields'], 9)
+            self.assertEqual(r['checked_fields'], 7 if r['company_id'] == 'P13' else 6)
+            self.assertEqual(r['needs_research_fields'], 8 if r['company_id'] == 'P13' else 9)
             self.assertNotIn('score', r)
             self.assertNotIn('proposal_total', r)
 

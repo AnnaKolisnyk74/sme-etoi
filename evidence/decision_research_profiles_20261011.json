@@ -1,0 +1,222 @@
+[
+  {
+    "company_id": "P105",
+    "legal_entity": "Dresdner Silber und Metallveredlung GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "queue_rank": 51,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene Klimaziel-Aussage belegt eine vage Ambition; Umweltzertifikat und Allianzmitgliedschaft sind keine Energieanlagen. Badtemperatur, Heizmedien, thermische Speicher und datierte Energieinvestitionen bleiben offen.",
+    "implemented_summary": "Eigene Klimaziel-Aussage belegt eine vage Ambition; Umweltzertifikat und Allianzmitgliedschaft sind keine Energieanlagen. Badtemperatur, Heizmedien, thermische Speicher und datierte Energieinvestitionen bleiben offen.",
+    "finding": "Eigene Klimaziel-Aussage belegt eine vage Ambition; Umweltzertifikat und Allianzmitgliedschaft sind keine Energieanlagen. Badtemperatur, Heizmedien, thermische Speicher und datierte Energieinvestitionen bleiben offen.",
+    "next_action": "Werkbezogene Bad-/Heizdaten, konkrete Energieprojekte und direktes aktuelles EMAS-Dokument beschaffen.",
+    "source_ids": [
+      "S-P105-03",
+      "S-P105-04",
+      "S-P105-06",
+      "S-P105-07",
+      "S-P105-05"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P107",
+    "legal_entity": "Dibbern Porzellanmanufaktur GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 53,
+    "outcome": "SOURCE_ACCESS_PARTIAL",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Hohenberger Fertigung und Ofenabwärme zur Gebäudeheizung sind belegt. Vier Hauptseiten-/Katalogabrufe liefern403. Neuer Ofen aus Suchtreffern ohne zugängliche Original-Inbetriebnahmeunterlage nicht übernommen.",
+    "implemented_summary": "Hohenberger Fertigung und Ofenabwärme zur Gebäudeheizung sind belegt. Vier Hauptseiten-/Katalogabrufe liefern403. Neuer Ofen aus Suchtreffern ohne zugängliche Original-Inbetriebnahmeunterlage nicht übernommen.",
+    "finding": "Hohenberger Fertigung und Ofenabwärme zur Gebäudeheizung sind belegt. Vier Hauptseiten-/Katalogabrufe liefern403. Neuer Ofen aus Suchtreffern ohne zugängliche Original-Inbetriebnahmeunterlage nicht übernommen.",
+    "next_action": "Zugängliche eigene Ofen-/Inbetriebnahmeunterlage mit Temperatur, Brennstoff, Steuerung und Herstellergesellschaft verifizieren.",
+    "source_ids": [
+      "S-P107-03",
+      "S-P107-04"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P108",
+    "legal_entity": "Porzellanmanufaktur Reichenbach GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 3,
+    "queue_rank": 55,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
+    "implemented_summary": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
+    "finding": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
+    "next_action": "Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.",
+    "source_ids": [
+      "S-P108-03",
+      "S-P108-04"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P11",
+    "legal_entity": "B+T Oberflächentechnik GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 4,
+    "queue_rank": 59,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigener ESG-Bericht trennt B+T Oberflächentechnik von der Gruppenverwaltung. Betriebsmonitoring, Gleichrichter, Auftragsplanung gegen Stromspitzen und Gas-/Wärmebehandlungsbezug stützen sechs neue Felder. Vier ältere Vorschläge werden begründet korrigiert;2035 bleibt Ziel, kein erreichter Zustand.",
+    "implemented_summary": "Eigener ESG-Bericht trennt B+T Oberflächentechnik von der Gruppenverwaltung. Betriebsmonitoring, Gleichrichter, Auftragsplanung gegen Stromspitzen und Gas-/Wärmebehandlungsbezug stützen sechs neue Felder. Vier ältere Vorschläge werden begründet korrigiert;2035 bleibt Ziel, kein erreichter Zustand.",
+    "finding": "Eigener ESG-Bericht trennt B+T Oberflächentechnik von der Gruppenverwaltung. Betriebsmonitoring, Gleichrichter, Auftragsplanung gegen Stromspitzen und Gas-/Wärmebehandlungsbezug stützen sechs neue Felder. Vier ältere Vorschläge werden begründet korrigiert;2035 bleibt Ziel, kein erreichter Zustand.",
+    "next_action": "Aktuelle Bad-/Ofentemperaturen, Brennstoffanteile, zulässige Schaltfenster und nutzbare thermische Speicher belegen.",
+    "source_ids": [
+      "S-P11-02",
+      "S-P11-03",
+      "S-P11-04",
+      "S-P11-05",
+      "S-P11-06"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P13",
+    "legal_entity": "Schmalriede-Zink GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 5,
+    "queue_rank": 62,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene Barcode-/Softwarelogistik stützt begrenzte Steuerungsrelevanz.2024-Erweiterung und Abwasser-Chemikalienoptimierung belegen weder Energie-CAPEX noch Inbetriebnahme. Ziel2025 ist kein Nachweis erreichter Klimaneutralität.",
+    "implemented_summary": "Eigene Barcode-/Softwarelogistik stützt begrenzte Steuerungsrelevanz.2024-Erweiterung und Abwasser-Chemikalienoptimierung belegen weder Energie-CAPEX noch Inbetriebnahme. Ziel2025 ist kein Nachweis erreichter Klimaneutralität.",
+    "finding": "Eigene Barcode-/Softwarelogistik stützt begrenzte Steuerungsrelevanz.2024-Erweiterung und Abwasser-Chemikalienoptimierung belegen weder Energie-CAPEX noch Inbetriebnahme. Ziel2025 ist kein Nachweis erreichter Klimaneutralität.",
+    "next_action": "Eigene Badsteuerung, Wärmeversorgung und Energieumfang/Inbetriebnahme der2024-Maßnahmen verifizieren.",
+    "source_ids": [
+      "S-P13-07",
+      "S-P13-06",
+      "S-P13-04",
+      "S-P13-09"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P15",
+    "legal_entity": "ELOXAL BARZ GmbH & Co KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 6,
+    "queue_rank": 64,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene Eloxalverfahren bestätigt. GF-Fallstudie2016 nennt isolierte Rohre, minus5°C-Kühlmedium und Armaturen; Werkstoffgrenzen sind keine aktuellen Badtemperaturen. Heutiger Anlagenbestand und thermische Flexibilität bleiben offen.",
+    "implemented_summary": "Eigene Eloxalverfahren bestätigt. GF-Fallstudie2016 nennt isolierte Rohre, minus5°C-Kühlmedium und Armaturen; Werkstoffgrenzen sind keine aktuellen Badtemperaturen. Heutiger Anlagenbestand und thermische Flexibilität bleiben offen.",
+    "finding": "Eigene Eloxalverfahren bestätigt. GF-Fallstudie2016 nennt isolierte Rohre, minus5°C-Kühlmedium und Armaturen; Werkstoffgrenzen sind keine aktuellen Badtemperaturen. Heutiger Anlagenbestand und thermische Flexibilität bleiben offen.",
+    "next_action": "Aktuelle Bad-/Kältemedien, Pumpen-/Gleichrichter-/Steuerungsinventur und Energieprojekte mit Datum beschaffen.",
+    "source_ids": [
+      "S-P15-01",
+      "S-P15-04"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P16",
+    "legal_entity": "Sembach GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 7,
+    "queue_rank": 66,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene1100°C-Entbinderung und1200–1750°C-Sinterung sowie Ofenabwärme zur Fertigungsheizung bestätigt. Ofenaustausch1999–2003 ist historisch; Kunden-Energieprodukte sind keine eigenen PV-/Stromerzeugungsanlagen.",
+    "implemented_summary": "Eigene1100°C-Entbinderung und1200–1750°C-Sinterung sowie Ofenabwärme zur Fertigungsheizung bestätigt. Ofenaustausch1999–2003 ist historisch; Kunden-Energieprodukte sind keine eigenen PV-/Stromerzeugungsanlagen.",
+    "finding": "Eigene1100°C-Entbinderung und1200–1750°C-Sinterung sowie Ofenabwärme zur Fertigungsheizung bestätigt. Ofenaustausch1999–2003 ist historisch; Kunden-Energieprodukte sind keine eigenen PV-/Stromerzeugungsanlagen.",
+    "next_action": "Aktuelle Ofenenergieträger, Elektro-/Umrichtertopologie, nutzbare Speicher und neuere Energieinvestitionen verifizieren.",
+    "source_ids": [
+      "S-P16-03",
+      "S-P16-06"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P19",
+    "legal_entity": "Glasfabrik Lamberts GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 8,
+    "queue_rank": 70,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Wunsiedeler Glasfabrik von Waldsassener Glashütte getrennt. Historische EcoGlass-Broschüre nennt Sauerstofffeuerung und Grünstrom ab2011; Sauerstoff ist kein Brennstoff und Grünstrom kein Nachweis elektrischer Hauptbeheizung.",
+    "implemented_summary": "Wunsiedeler Glasfabrik von Waldsassener Glashütte getrennt. Historische EcoGlass-Broschüre nennt Sauerstofffeuerung und Grünstrom ab2011; Sauerstoff ist kein Brennstoff und Grünstrom kein Nachweis elektrischer Hauptbeheizung.",
+    "finding": "Wunsiedeler Glasfabrik von Waldsassener Glashütte getrennt. Historische EcoGlass-Broschüre nennt Sauerstofffeuerung und Grünstrom ab2011; Sauerstoff ist kein Brennstoff und Grünstrom kein Nachweis elektrischer Hauptbeheizung.",
+    "next_action": "Aktuelle Schmelzofen-/Brennstoff-/Steuerungsdaten sowie Originalunterlage zu Energieumfang und Inbetriebnahme neuer Investitionen beschaffen.",
+    "source_ids": [
+      "S-P19-07",
+      "S-P19-03"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P20",
+    "legal_entity": "DERIX Glasstudios GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 71,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene600°C-Farbbrände und800°C-Heißverformung bestätigt. Ofenseite nennt sieben, Werkstatt acht Öfen; genaue Zahl offen. Keine Energiedaten der gleichnamigen Holzbaugruppe übertragen.",
+    "implemented_summary": "Eigene600°C-Farbbrände und800°C-Heißverformung bestätigt. Ofenseite nennt sieben, Werkstatt acht Öfen; genaue Zahl offen. Keine Energiedaten der gleichnamigen Holzbaugruppe übertragen.",
+    "finding": "Eigene600°C-Farbbrände und800°C-Heißverformung bestätigt. Ofenseite nennt sieben, Werkstatt acht Öfen; genaue Zahl offen. Keine Energiedaten der gleichnamigen Holzbaugruppe übertragen.",
+    "next_action": "Aktuelle Ofenanzahl, Heiz-/Steuerungstechnik, Motor-/Netzmessdaten und eigene Energieinvestitionen verifizieren.",
+    "source_ids": [
+      "S-P20-04",
+      "S-P20-05",
+      "S-P20-06"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P21",
+    "legal_entity": "Privatbrauerei MORITZ FIEGE GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 10,
+    "queue_rank": 73,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigener UIP-Abschlussbericht und2026-Projektbericht verbinden fortbestehende Flaschenwaschmaschine mit historischen Temperatur-, Frequenzpumpen- und Steuerungsdaten. Fünf Felder neu geprüft. Präzises Inbetriebnahmedatum30.11.2018 widerspricht2023-Aussage2020; beide liegen außerhalb des Investitionsfensters.",
+    "implemented_summary": "Eigener UIP-Abschlussbericht und2026-Projektbericht verbinden fortbestehende Flaschenwaschmaschine mit historischen Temperatur-, Frequenzpumpen- und Steuerungsdaten. Fünf Felder neu geprüft. Präzises Inbetriebnahmedatum30.11.2018 widerspricht2023-Aussage2020; beide liegen außerhalb des Investitionsfensters.",
+    "finding": "Eigener UIP-Abschlussbericht und2026-Projektbericht verbinden fortbestehende Flaschenwaschmaschine mit historischen Temperatur-, Frequenzpumpen- und Steuerungsdaten. Fünf Felder neu geprüft. Präzises Inbetriebnahmedatum30.11.2018 widerspricht2023-Aussage2020; beide liegen außerhalb des Investitionsfensters.",
+    "next_action": "Heutige Temperaturen, Heizenergieträger und Pumpenkonfiguration, Speicher-/Schaltfenster sowie genaue Daten weiterer Energieinvestitionen verifizieren.",
+    "source_ids": [
+      "S-P21-02",
+      "S-P21-04",
+      "S-P21-05"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

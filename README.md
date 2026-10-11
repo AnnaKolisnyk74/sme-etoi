@@ -7,35 +7,38 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 9 October 2026
+## Current checked state — 11 October 2026
 
-All 100 provisional companies have all 15 fields assessed: **605 `CHECKED`
-proposals (Geprüft), 895 blank `NEEDS_RESEARCH` fields and zero approved fields**.
-The 554 original numeric proposals remain accounted for (507 confirmed,
-42 corrected, five withdrawn); 56 formerly unknown fields now have new evidence.
+All 100 provisional companies have all 15 fields assessed: **618 `CHECKED`
+proposals (Geprüft), 882 blank `NEEDS_RESEARCH` fields and zero approved fields**.
+The 554 original numeric proposals remain accounted for (503 confirmed,
+46 corrected, five withdrawn); 69 formerly unknown fields now have new evidence.
 Source/anchor checking remains separate from personal or final score approval.
 
-Two decision-research blocks cover **20 technical companies, 12 SME/group cases
+Three decision-research blocks cover **30 technical companies, 12 SME/group cases
 and two identity conflicts**. The latest ten firms follow the frozen decision
-queue after previously profiled and gated firms are excluded. Their 96 open score
-fields yield six new checked proposals; 90 remain unknown. Across both blocks,
-146 selected gaps were investigated and eight closed. Previously checked proposals
-are unchanged by this continuation.
+queue after previously profiled and gated firms are excluded. Their 101 open score
+fields yield 13 new checked proposals; 88 remain unknown. Across three blocks,
+247 selected gaps were investigated and 21 closed. Four older B+T proposals were
+corrected using new exact-entity evidence, with explicit before/after history;
+other previously checked proposals remain unchanged.
 
-[The latest report](evidence/decision_research_20261009.md),
-[profiles](evidence/decision_research_profiles_20261009.json),
-[26 source-body checks](evidence/decision_source_checks_20261009.csv) and
-[96 field attempts](evidence/field_research_deep_20261009.csv) document dates,
-attribution and limitations. A commissioned 2025 machine replacement, an own
-management claim, laser marking and a manufacturer-linked machine family support
-bounded anchors. Plans, other companies' measures, old network-use permissions,
-redacted powers and adjacent timeline years do not become current deployment.
+[The latest report](evidence/decision_research_20261011.md),
+[profiles](evidence/decision_research_profiles_20261011.json),
+[30 source-body checks](evidence/decision_source_checks_20261011.csv),
+[101 field attempts](evidence/field_research_deep_20261011.csv) and
+[four reassessments](evidence/checked_field_reassessments_20261011.csv) document
+dates, attribution and limitations. Own B+T operating data, Fiege's detailed
+washer report, Schmalriede logistics and Dresdner Silber climate ambition support
+bounded anchors. Historical temperatures are not present setpoints; plans,
+other companies' measures and later article dates do not become deployment or
+recent investment.
 
 Langer's current ISO 50001 now supplies a sixth public YES fact in the research
 ledger; four YES findings correspond to generated queue tasks. Canonical deployment
 flags are not silently overwritten. All 12 SME gates stay open pending defensible
 group/period decisions. The prior [decision report](evidence/decision_research_20261008.md)
-and frozen ledgers remain available; the dashboard shows all 34 profiles and the
+and frozen ledgers remain available; the dashboard shows all 44 profiles and the
 latest block separately.
 
 ## Research question
