@@ -56,9 +56,11 @@ class AllOpenResearchTests(unittest.TestCase):
     def test_prior_checked_values_and_personal_review_are_preserved(self):
         baseline = rows('data/history/score_coding_proposals_before_all_open_20261008.csv')
         current = {(r['company_id'], r['score_field']): r for r in rows('data/score_coding_proposals.csv')}
+        reassessed = {(r['company_id'], r['score_field']) for r in
+                      rows('evidence/checked_field_reassessments_20261011.csv')}
         for old in baseline:
             new = current[old['company_id'], old['score_field']]
-            if old['proposal_status'] == 'CHECKED':
+            if old['proposal_status'] == 'CHECKED' and (old['company_id'], old['score_field']) not in reassessed:
                 self.assertEqual(new, old)
             if new['proposal_status'] == 'NEEDS_RESEARCH':
                 self.assertEqual((new['proposed_value'], new['proposal_confidence']), ('', 'UNKNOWN'))

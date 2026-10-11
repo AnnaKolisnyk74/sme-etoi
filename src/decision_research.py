@@ -40,6 +40,12 @@ def field_attempts(root: Path):
             for r in rows(root, str(path.relative_to(root)))]
 
 
+def checked_reassessments(root: Path):
+    """Retain explicit before/after decisions when new sources change old anchors."""
+    return [r for path in sorted((root / 'evidence').glob('checked_field_reassessments_*.csv'))
+            for r in rows(root, str(path.relative_to(root)))]
+
+
 def select_companies(queue, size=10, identity_blocks=()):
     """Use the first unique company by decision rank after upstream blocks."""
     blocked = set(identity_blocks) | {r['company_id'] for r in queue
@@ -81,6 +87,30 @@ def validate(root: Path):
                     or not re.fullmatch('[0-9a-f]{64}', b.get('content_sha256', ''))
                     or not b.get('relevant_location') or not b.get('scope_note')):
                 errors.append(f'{cid}: source {sid} lacks a reviewed attributable body')
+    current = {(p['company_id'], p['score_field']): p
+               for p in rows(root, 'data/score_coding_proposals.csv')}
+    reassessed = {}
+    for r in checked_reassessments(root):
+        key = r['company_id'], r['score_field']
+        stamp = r['checked_date'].replace('-', '')
+        baseline = {(p['company_id'], p['score_field']): p for p in rows(
+            root, f'data/history/score_coding_proposals_before_deep_{stamp}.csv')}
+        old, new = baseline.get(key, {}), current.get(key, {})
+        if (r['checked_by'] != 'Codex' or r['final_score_approval'] != 'NOT_GRANTED'
+                or old.get('proposal_status') != 'CHECKED'
+                or new.get('proposal_status') != 'CHECKED'):
+            errors.append(f'{key}: invalid checked-field reassessment provenance')
+        for field, before, after in (
+                ('proposed_value', 'previous_value', 'checked_value'),
+                ('proposal_confidence', 'previous_confidence', 'checked_confidence'),
+                ('evidence_source_ids', 'previous_source_ids', 'checked_source_ids'),
+                ('evidence_basis', 'previous_evidence_basis', 'checked_evidence_basis')):
+            if old.get(field) != r.get(before) or new.get(field) != r.get(after):
+                errors.append(f'{key}: reassessment differs from frozen/current {field}')
+        for sid in r['checked_source_ids'].split(' | '):
+            if sources.get(sid, {}).get('candidate_id') != key[0] or sid not in bodies:
+                errors.append(f'{key}: reassessment has foreign or unreviewed evidence {sid}')
+        reassessed[key] = r
     prior_ids = {'P109', 'P110'}
     for stamp, block in batches(root):
         if len({p['company_id'] for p in block}) != len(block):
@@ -107,6 +137,12 @@ def validate(root: Path):
         actual_fields = {(p['company_id'], p['score_field']) for p in fields}
         if not baseline or actual_fields != expected_fields or len(fields) != len(actual_fields):
             errors.append(f'{stamp}: field attempts do not cover frozen gaps exactly once')
+        for old in baseline:
+            key = old['company_id'], old['score_field']
+            if old['proposal_status'] == 'CHECKED' and current.get(key) != old:
+                decision = reassessed.get(key, {})
+                if decision.get('checked_date', '').replace('-', '') < stamp:
+                    errors.append(f'{key}: checked baseline changed without a later reassessment')
         prior_ids.update(p['company_id'] for p in block)
     current = {(p['company_id'], p['score_field']): p
                for p in rows(root, 'data/score_coding_proposals.csv')}
@@ -132,10 +168,12 @@ def summary(root: Path):
     blocks = []
     for stamp, block in batches(root):
         attempts = rows(root, f'evidence/field_research_deep_{stamp}.csv')
+        corrections = rows(root, f'evidence/checked_field_reassessments_{stamp}.csv')
         blocks.append({'checked_date': max((p['checked_date'] for p in block), default=''),
                        'profile_count': len(block), 'field_attempt_count': len(attempts),
                        'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in attempts),
-                       'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in attempts)})
+                       'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in attempts),
+                       'reassessed_checked_field_count': len(corrections)})
     return {
         'checked_date': max((p['checked_date'] for p in data), default=''),
         'profile_count': len(data),
@@ -145,6 +183,7 @@ def summary(root: Path):
         'field_attempt_count': len(fields),
         'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in fields),
         'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in fields),
+        'reassessed_checked_field_count': len(checked_reassessments(root)),
         'profiles': data,
         'batches': blocks,
         'latest_batch': blocks[-1] if blocks else {},
