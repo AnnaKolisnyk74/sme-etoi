@@ -92,3 +92,14 @@ Supplied automation/customer equipment and technical glossary entries are not ev
 | investment_gap_score | Weiter offen / UNKNOWN | Dated energy-transition investment within 2021-10-07 to 2026-10-07; homepage 2017 automation is outside the window and undated capability/certificate renewal is not a recent energy investment. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Netzwerkorganisator nennt Gindele in Neuhausen als Teilnehmer2025. Die erklärte Effizienzabsicht stützt nur den Absichtsanker; umgesetzte Energieanlagen, Investitionsdaten und Einsparungen bleiben unbestätigt. Animierte Nullzähler werden nicht als Maschinenzahlen oder Betriebsstunden übernommen.
+
+Quellen: S-P33-01, S-P33-03, S-P33-04, S-P33-09.
+
+Nächster Schritt: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

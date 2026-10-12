@@ -95,3 +95,14 @@ Owner gives actual annealing temperature windows on three conveyor furnaces. Coa
 | investment_gap_score | Weiter offen / UNKNOWN | Energy-investment commissioning dates within 2021-10-07 to 2026-10-07; undated installations and certificate renewals are not dated transition investments. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Eigene Bandöfen und Induktivhärtung bestätigt. Glühtemperaturen sind belegt; Brennstoff der übrigen Öfen, zulässige Verschiebefenster, Speicher und datierte Energieinvestitionen bleiben offen.
+
+Quellen: S-P26-06, S-P26-07, S-P26-10.
+
+Nächster Schritt: Ofenbezogene Brennstoffe, Betriebs-/Puffergrenzen und Originalunterlagen zu Energieprojekten beschaffen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

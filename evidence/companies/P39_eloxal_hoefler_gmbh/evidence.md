@@ -97,3 +97,14 @@ Owner automatic lines/crane support existing motor/control assessments. Equipmen
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Two automated anodising plants;2022 wastewater and2023 capacity not proven energy projects. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Beraterbericht2020 beschreibt Energieoptimierung und Bauphase; Eigentümerchronik nennt2022 Abwasser und2023 zusätzliche Eloxalanlage. Die Verbindung dieser Projekte und der abgeschlossene Energieumfang sind unbewiesen. Historische Abwärmebeschreibung wird nicht zu aktuellem Deployment oder jüngstem CAPEX.
+
+Quellen: S-P39-03, S-P39-04, S-P39-07.
+
+Nächster Schritt: Verbindung zwischen2020-Beratung und2023-Anlage sowie realisierte Wärme-/Kältetopologie und Inbetriebnahmebelege klären.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

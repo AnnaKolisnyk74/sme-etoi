@@ -82,3 +82,14 @@ Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not 
 | power_quality_score | Weiter offen / UNKNOWN | Documented harmonic/reactive-power/peak-load signals or relevant electrical topology; renewable supply alone is insufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Behördenbericht und eigene Angaben bestätigen erneuerbare Wärme aus Hackschnitzeln/Biogas sowie PV. Kalte Gär-/Reifezeiten und das spezielle Kochverfahren belegen keine neue elektrische Wärmeroute, Antriebsbestandsliste oder nutzbaren thermischen Speicher.
+
+Quellen: S-P31-02, S-P31-03, S-P31-04.
+
+Nächster Schritt: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

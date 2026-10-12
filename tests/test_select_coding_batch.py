@@ -116,8 +116,8 @@ class BatchSelectionTests(unittest.TestCase):
         for company in batch['companies']:
             self.assertEqual(company['selection_rank'], 1 if company['company_id'] == 'P30' else 2)
             self.assertEqual(company['current_workflow_action'], 'RESEARCH_FIRST')
-            self.assertEqual(company['checked_fields'], 7)
-            self.assertEqual(company['needs_research_fields'], 8)
+            self.assertEqual(company['checked_fields'], 10 if company['company_id'] == 'P30' else 7)
+            self.assertEqual(company['needs_research_fields'], 5 if company['company_id'] == 'P30' else 8)
             self.assertEqual(company['expected_information_gain_at_selection'], 'HIGH')
             self.assertNotIn('score', company)
             self.assertNotIn('proposal_total', company)

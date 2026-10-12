@@ -99,3 +99,14 @@ Some source access failed. Supplied automation systems and quality certificates 
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Owned moulding/robots/solar and EMS claim; old2011-2017 energy investments excluded. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Zeitachse ordnet Energie-/Automatisierungsinvestitionen ausdrücklich2014–2017 zu. Der Block2021–2022 nennt Zertifizierung und Kapazitätsausbau, ohne konkreten Energieumfang. Allgemeine moderne Maschinen und Biogas-Selbstaussage liefern keine aktuelle thermische Bilanz oder genaue Investitionsdaten.
+
+Quellen: S-P36-03, S-P36-04, S-P36-05.
+
+Nächster Schritt: Aktuelle Heiz-/Temperiermedien, Speicher-/Lastmanagement und Energieumfang mit Abschlussdaten jüngerer Projekte beschaffen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.
