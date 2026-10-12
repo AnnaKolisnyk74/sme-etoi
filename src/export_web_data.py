@@ -10,6 +10,7 @@ from pathlib import Path
 import source_audit_summary
 import proposal_checks
 import decision_research
+import source_content_review
 from score_companies import SCORE_FIELDS
 
 
@@ -48,7 +49,8 @@ def compact_source(row: dict[str, str], audit: dict | None = None, recheck: dict
         "publisher": normalise(row.get("publisher")),
         "document_title": normalise(row.get("document_title")),
         "final_url": normalise(row.get("final_url") or row.get("source_link")),
-        "evidence_fact": normalise(row.get("evidence_fact")),
+        "evidence_fact": normalise(recheck.get("checked_fact") or row.get("evidence_fact")),
+        "registered_evidence_fact": normalise(row.get("evidence_fact")),
         "review_status": normalise(row.get("review_status")),
         "source_link": normalise(row.get("source_link")),
         "link_check_status": normalise(row.get("link_check_status")),
@@ -162,8 +164,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     company_work_priority = read_csv(root, "outputs/company_work_priority.csv")
     research_queue = read_csv(root, "outputs/research_queue.csv")
     sources = read_csv(root, "evidence/source_register.csv")
-    source_rechecks = {r['source_id']: r for r in read_csv(root, "evidence/proposal_source_checks.csv")}
-    source_rechecks.update(decision_research.source_checks(root))
+    source_rechecks = source_content_review.checks(root)
     certificates_by_company = {}
     for row in read_csv(root, "evidence/certificate_register.csv"):
         certificates_by_company.setdefault(row['candidate_id'], []).append(row)
@@ -487,6 +488,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
         "decision_research_summary": decision_research.summary(root),
         "eligibility_coding_selections": read_csv(root, "data/eligibility_coding_selections.csv"),
         "source_audit_summary": audit_summary,
+        "source_content_review_summary": source_content_review.build(root),
         "meta": {
             "project": "SME-ETOI",
             "subtitle": "Energy Transition Opportunity Index for German SMEs",

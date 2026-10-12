@@ -78,6 +78,16 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /100 \/ 100 Sample-Firmen geprüft/);
 assert.match(html, /HTTP 200 bestätigt keine Unternehmenszuordnung/);
 assert.match(html, /Prüfabdeckung aller Sample-Firmen/);
+assert.match(html, /578 \/ 578 registrierte Quellen eingestuft/);
+assert.match(html, /513 im dokumentierten Umfang nachgeprüft/);
+assert.match(html, /53 nur Kontext/);
+assert.match(html, /12 nicht abrufbar/);
+assert.match(html, /0 ohne Inhaltsprüfung/);
+const boundaries = html.split('<h3>Inhaltliche Grenzen im Quellenbestand</h3>')[1].split('</section>')[0];
+const boundaryRows = [...boundaries.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
+assert.equal(boundaryRows.length, 65);
+for (const [, row] of boundaryRows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 4);
+context.payload.source_content_review_summary.boundary_sources[0].scope_note = '<script>bad content</script>';
 const coverage = html.split('<h3>Prüfabdeckung aller Sample-Firmen</h3>')[1].split('</section>')[0];
 const coveredRows = [...coverage.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
 assert.equal(coveredRows.length, 100);
@@ -87,6 +97,8 @@ vm.runInContext('renderFunctional("sources");', context);
 html = sinks.get('#functionalContent').innerHTML;
 assert.ok(!html.includes('<script>bad recovery</script>'));
 assert.ok(html.includes('&lt;script&gt;bad recovery&lt;/script&gt;'));
+assert.ok(!html.includes('<script>bad content</script>'));
+assert.ok(html.includes('&lt;script&gt;bad content&lt;/script&gt;'));
 console.log('Scoring/source renderers: priority, live batch, all 100 audited companies, aligned columns and escaped evidence passed.');
 
 // Render all field statuses, including withdrawn evidence, in the real detail view.
