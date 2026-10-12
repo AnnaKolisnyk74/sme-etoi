@@ -33,9 +33,9 @@ class DecisionResearchTests(unittest.TestCase):
         s = summary(ROOT)
         self.assertEqual((s['profile_count'], s['technical_company_count'],
                           s['eligibility_company_count'], s['identity_company_count']),
-                         (44, 30, 12, 2))
+                         (54, 40, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (247, 21, 226))
+                          s['still_unknown_field_count']), (325, 26, 299))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -109,7 +109,7 @@ class DecisionResearchTests(unittest.TestCase):
         self.assertEqual(s['batches'][1]['still_unknown_field_count'], 90)
         self.assertEqual((s['latest_batch']['field_attempt_count'],
                           s['latest_batch']['new_checked_field_count'],
-                          s['latest_batch']['still_unknown_field_count']), (101, 13, 88))
+                          s['latest_batch']['still_unknown_field_count']), (78, 5, 73))
         self.assertEqual(validate(ROOT), [])
 
     def test_period_and_claim_boundaries_survive_pipeline_export(self):
@@ -162,7 +162,7 @@ class DecisionResearchTests(unittest.TestCase):
         for key, r in decisions.items():
             self.assertEqual(r['previous_evidence_basis'], old[key]['evidence_basis'])
             self.assertEqual(r['checked_evidence_basis'], current[key]['evidence_basis'])
-        self.assertEqual(summary(ROOT)['latest_batch']['reassessed_checked_field_count'], 4)
+        self.assertEqual(summary(ROOT)['batches'][2]['reassessed_checked_field_count'], 4)
 
     def test_historical_machine_data_are_not_current_fuel_or_recent_capex(self):
         proposals = {(p['company_id'], p['score_field']): p for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -173,6 +173,43 @@ class DecisionResearchTests(unittest.TestCase):
         finding = next(p for p in profiles(ROOT) if p['company_id'] == 'P21')['finding']
         self.assertIn('30.11.2018', finding)
         self.assertIn('außerhalb', finding)
+
+    def test_historical_cooling_does_not_become_present_fuel_storage_or_capex(self):
+        proposals = {(p['company_id'], p['score_field']): p
+                     for p in rows(ROOT, 'data/score_coding_proposals.csv')}
+        for field in ['motor_drive_score', 'power_conversion_score', 'power_quality_score']:
+            row = proposals['P30', field]
+            self.assertEqual(row['proposal_status'], 'CHECKED')
+            self.assertEqual(row['proposal_confidence'], 'C')
+            self.assertIn('S-P30-08', row['evidence_source_ids'])
+        for field in ['fossil_heat_displacement_score', 'thermal_storage_flex_score',
+                      'temperature_fit_score', 'process_electrification_score']:
+            row = proposals['P30', field]
+            self.assertEqual((row['proposal_status'], row['proposed_value']), ('NEEDS_RESEARCH', ''))
+        # The older, separately supported cellar investment is not rewritten by the BHKW case.
+        baseline = {(p['company_id'], p['score_field']): p for p in rows(
+            ROOT, 'data/history/score_coding_proposals_before_deep_20261012.csv')}
+        self.assertEqual(proposals['P30', 'investment_gap_score'],
+                         baseline['P30', 'investment_gap_score'])
+
+    def test_network_intent_and_second_staging_portal_do_not_assert_operating_assets(self):
+        proposals = {(p['company_id'], p['score_field']): p
+                     for p in rows(ROOT, 'data/score_coding_proposals.csv')}
+        intent = proposals['P33', 'measures_gap_score']
+        self.assertEqual((intent['proposed_value'], intent['proposal_confidence']), ('7', 'C'))
+        self.assertIn('intention tier', intent['evidence_basis'])
+        self.assertEqual(proposals['P33', 'investment_gap_score']['proposal_status'], 'NEEDS_RESEARCH')
+        staging = [p for (cid, _), p in proposals.items() if cid == 'P38'
+                   and p['proposal_status'] == 'NEEDS_RESEARCH']
+        self.assertEqual(len(staging), 13)
+        self.assertTrue(all(not p['proposed_value'] and p['proposal_confidence'] == 'UNKNOWN'
+                            for p in staging))
+        canonical = next(r for r in rows(ROOT, 'data/company_intelligence.csv')
+                         if r['company_id'] == 'P38')
+        self.assertEqual(canonical['pv_present'], 'UNKNOWN')
+        profile = next(p for p in profiles(ROOT) if p['company_id'] == 'P38')
+        self.assertIn('TEST-SYSTEM', profile['finding'])
+        self.assertIn('S-P38-05', profile['source_ids'])
 
     def test_changed_checked_baseline_requires_an_explicit_before_after_trail(self):
         with tempfile.TemporaryDirectory() as d:

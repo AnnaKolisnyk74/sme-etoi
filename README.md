@@ -7,39 +7,36 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 11 October 2026
+## Current checked state — 12 October 2026
 
-All 100 provisional companies have all 15 fields assessed: **618 `CHECKED`
-proposals (Geprüft), 882 blank `NEEDS_RESEARCH` fields and zero approved fields**.
-The 554 original numeric proposals remain accounted for (503 confirmed,
-46 corrected, five withdrawn); 69 formerly unknown fields now have new evidence.
-Source/anchor checking remains separate from personal or final score approval.
+All 100 provisional companies have all 15 fields assessed: **623 `CHECKED`
+proposals (Geprüft), 877 blank `NEEDS_RESEARCH` fields and zero approved fields**.
+The 554 original numeric decisions remain 503 confirmed, 46 corrected and five
+withdrawn; 74 formerly unknown fields now have new evidence. Source/anchor
+checking remains separate from personal or final score approval.
 
-Three decision-research blocks cover **30 technical companies, 12 SME/group cases
+Four decision-research blocks cover **40 technical companies, 12 SME/group cases
 and two identity conflicts**. The latest ten firms follow the frozen decision
-queue after previously profiled and gated firms are excluded. Their 101 open score
-fields yield 13 new checked proposals; 88 remain unknown. Across three blocks,
-247 selected gaps were investigated and 21 closed. Four older B+T proposals were
-corrected using new exact-entity evidence, with explicit before/after history;
-other previously checked proposals remain unchanged.
+queue after previously profiled and gated firms are excluded. Their 78 open score
+fields yield five new checked proposals; 73 remain unknown. Across four blocks,
+325 selected gaps were investigated and 26 closed. Prior checked proposals and
+the four B+T reassessments remain unchanged.
 
-[The latest report](evidence/decision_research_20261011.md),
-[profiles](evidence/decision_research_profiles_20261011.json),
-[30 source-body checks](evidence/decision_source_checks_20261011.csv),
-[101 field attempts](evidence/field_research_deep_20261011.csv) and
-[four reassessments](evidence/checked_field_reassessments_20261011.csv) document
-dates, attribution and limitations. Own B+T operating data, Fiege's detailed
-washer report, Schmalriede logistics and Dresdner Silber climate ambition support
-bounded anchors. Historical temperatures are not present setpoints; plans,
-other companies' measures and later article dates do not become deployment or
-recent investment.
+[The latest report](evidence/decision_research_20261012.md),
+[profiles](evidence/decision_research_profiles_20261012.json),
+[38 source-body checks](evidence/decision_source_checks_20261012.csv) and
+[78 field attempts](evidence/field_research_deep_20261012.csv) document evidence
+and limits. BCE's owned direct-drive equipment and Zötler's historical
+frequency-controlled cooling support conditional technical anchors; Gindele's
+network participation supports only a public-intention tier. Staging BHKW/PV,
+customer products, recent article dates and undated relative delivery dates do
+not become operating assets or recent energy investments.
 
-Langer's current ISO 50001 now supplies a sixth public YES fact in the research
-ledger; four YES findings correspond to generated queue tasks. Canonical deployment
-flags are not silently overwritten. All 12 SME gates stay open pending defensible
-group/period decisions. The prior [decision report](evidence/decision_research_20261008.md)
-and frozen ledgers remain available; the dashboard shows all 44 profiles and the
-latest block separately.
+Langer's current ISO 50001 supplies a sixth public YES fact in the research
+ledger; four YES findings correspond to generated queue tasks. Canonical
+deployment flags are not silently overwritten. All 12 SME gates stay open
+pending defensible group/period decisions. Prior dated reports and ledgers remain
+available; the dashboard shows all 54 profiles and the latest block separately.
 
 ## Research question
 

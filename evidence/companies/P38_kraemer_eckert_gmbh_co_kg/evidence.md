@@ -94,3 +94,14 @@ Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-liv
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Auch der alternative Gruppenportal-Link und die Umweltseite tragen TEST-SYSTEM. BHKW-/PV-Behauptungen werden dadurch nicht unabhängig bestätigt. Thermische Leistungen anderer Gruppenfirmen werden Ehingen nicht zugerechnet. Alle13 offenen Felder bleiben UNKNOWN.
+
+Quellen: S-P38-01, S-P38-02, S-P38-04, S-P38-05.
+
+Nächster Schritt: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

@@ -66,3 +66,14 @@ Own PV article separates2017commissioning/2022operation from2026migration metada
 | investment_gap_score | Weiter offen / UNKNOWN | Dates and scope of qualifying investments within 2021-10-06 to 2026-10-06; historical projects do not close the lookback check. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Lieferantenfall nennt eine bei BCE betriebene Röders-Maschine mit Direktantrieben und Steuerung. Das stützt eine begrenzte Umrichter-Relevanz. Sintertemperaturen sind narrative Bereiche; aktuelle Sollwerte und Ofenflotte bleiben offen. ENITEC ist historisch, PV von2017 und relative Lieferdaten sind keine neu datierten Energieinvestitionen.
+
+Quellen: S-P27-01, S-P27-03, S-P27-05, S-P27-06, S-P27-07, S-P27-08.
+
+Nächster Schritt: Aktuelle Ofen-/Brennstoffdaten, elektrische Antriebstopologie und datierte Energieinvestitionen nachweisen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

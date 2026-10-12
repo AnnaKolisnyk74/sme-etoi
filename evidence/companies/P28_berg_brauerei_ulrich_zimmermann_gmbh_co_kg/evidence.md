@@ -92,3 +92,14 @@ Cold-store investment is not a hot-process temperature or documented useful disp
 | management_gap_score | Weiter offen / UNKNOWN | Current manufacturing-site energy/environmental management system and maturity. DEHOGA award concerns hospitality BrauereiWirtschaft and cannot substitute for factory EnMS; missing public certificate is not system absence. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Nacht-/Tag-Kältepuffer und PV-Kühlung bleiben belegt. Die auffällige90°C-Eiswasserangabe wird weder korrigiert noch als Prozesswärme verwendet. Nahwärme der Neubauten und DEHOGA-Auszeichnung der Gastronomie beantworten den Brauereibrennstoff und das Produktions-EnMS nicht.
+
+Quellen: S-P28-03, S-P28-04, S-P28-08.
+
+Nächster Schritt: Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

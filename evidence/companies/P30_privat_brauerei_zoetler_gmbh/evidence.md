@@ -87,3 +87,14 @@ Fermentation/cold maturation descriptions do not establish heat-process temperat
 | power_quality_score | Weiter offen / UNKNOWN | Documented harmonic/reactive-power/peak-load signals or relevant electrical topology; renewable supply alone is insufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober 2026
+
+Eigene Winter2020-Unterlage nennt Pumpen, Kompressoren und Frequenzsteuerung der Kälteanlage; heutige Besitzerseite bestätigt die Kältesysteme auf Systemebene. Drei technische Vorschläge sind mit begrenzter Konfidenz belegbar. Herstellerfall datiert das BHKW auf Oktober2017;95°C-Vorlauf zur Absorptionskälte ist kein Würze-Sollwert. Alte Erdgasdaten und Kälteerzeugung sind kein heutiger Brennstoffmix oder Speicher.
+
+Quellen: S-P30-03, S-P30-04, S-P30-06, S-P30-07, S-P30-08.
+
+Nächster Schritt: Aktuelle Umrichter-/Anlagenkonfiguration, Heißprozess-Heizmedien und nutzbare Speicherfenster beschaffen; defekte EMAS-Berichtlinks ersetzen.
+
+Geprüft bezeichnet die Quellen-/Ankerprüfung. Persönliche und finale Score-Freigaben bleiben getrennt.

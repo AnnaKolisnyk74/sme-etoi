@@ -21,8 +21,8 @@ assert.match(html, /Erstbewertung abgeschlossen/);
 assert.ok(!html.includes('<h3>Next Best Coding Companies</h3>'));
 assert.match(html, /100 \/ 100 Unternehmen/);
 assert.match(html, /1500 \/ 1500 Felder bewertet/);
-assert.match(html, /618 Zahlenvorschläge · Geprüft/);
-assert.match(html, /882 dokumentierte Recherchelücken/);
+assert.match(html, /623 Zahlenvorschläge · Geprüft/);
+assert.match(html, /877 dokumentierte Recherchelücken/);
 assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
 assert.ok(!/KI[- ·]*geprüft/i.test(html));
 assert.ok(!html.includes('Zahlenvorschläge warten auf Human Review'));
@@ -120,8 +120,8 @@ assert.match(html, /Gültig belegt/);
 assert.match(html, /Geprüft: [0-9]+ \/ 15/);
 assert.ok(!sinks.get('#kpiQuality').innerHTML.includes('Qualifiziert'));
 html = sinks.get('#evidenceOverview').innerHTML;
-assert.match(html, /618 Felder · Geprüft/);
-assert.match(html, /882 Feldfragen offen/);
+assert.match(html, /623 Felder · Geprüft/);
+assert.match(html, /877 Feldfragen offen/);
 assert.match(html, /ISO 50001 13 · ISO 14001 27 · EMAS 4/);
 vm.runInContext('state.query="FM-Plast"; renderEvidenceOverview();', context);
 html = sinks.get('#evidenceOverview').innerHTML;
@@ -149,10 +149,11 @@ console.log('Company view: ISO evidence, separate SME status, filtered field cou
 // Decision findings stay visible and escaped, including conflicting legal names.
 vm.runInContext('renderFunctional("analysis");', context);
 html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /30 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
-assert.match(html, /247 offene Felder untersucht, 21 zusätzlich geprüft/);
-assert.match(html, /Letzter Rechercheblock: 10 Firmen · 101 offene Felder untersucht · 13 zusätzlich geprüft · 88 weiterhin offen/);
-assert.match(html, /4 ältere geprüfte Vorschläge anhand neuer Quellen korrigiert/);
+assert.match(html, /40 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
+assert.match(html, /325 offene Felder untersucht, 26 zusätzlich geprüft/);
+assert.match(html, /Letzter Rechercheblock: 10 Firmen · 78 offene Felder untersucht · 5 zusätzlich geprüft · 73 weiterhin offen/);
+assert.equal(context.payload.decision_research_summary.batches[2].reassessed_checked_field_count, 4);
+assert.ok(!html.includes('4 ältere geprüfte Vorschläge anhand neuer Quellen korrigiert')); // Latest block made no reassessments.
 for (const cid of ['P47','P65','P88','P109','P110','P18','P77','P96','P98','P99','P11','P21','P107']) {
   context.profileCompany=context.payload.companies.find(c=>c.company_id===cid);
   const card=vm.runInContext('decisionProfile(profileCompany)',context);
