@@ -97,3 +97,14 @@ Customer pumps, isolators and energy applications are not owned manufacturing dr
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Material ratings and customer PV/wind/hydro applications not owned kilns/generation. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Eigene Keramikfertigung ist belegt, aber moderne Maschinen und temperaturbeständige Kundenbauteile nennen keine aktuellen Ofenwerte, Heizmedien oder Antriebe. ISO9001 ist Qualität und kein Energie-/Umweltmanagement. Alle13 offenen Felder bleiben UNKNOWN.
+
+Quellen: S-P44-03, S-P44-04, S-P44-05, S-P44-06.
+
+Nächster Schritt: Betreiberbezogene Ofen-/Motor-/Energieunterlagen und gültige Energie-/Umwelt-Systemnachweise beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

@@ -98,3 +98,14 @@ Heat-pump and brewery-process evidence retained. Reduction in gas use is not zer
 | investment_gap_score | Weiter offen / UNKNOWN | Completed energy investment within2021-10-07 to2026-10-07.2012CHP/2019PV/2018-19 washer/heat pump excluded.2023 in-planning/in-implementation roof/compressor/control and planned2023-26 logistics not silently completed as of2026; truckEuro6 substitution is not proven energy-transition saving. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Die gescannte Umwelterklärung2023 wurde im Ziel-/Maßnahmenteil visuell gelesen. Sie nennt für2023 Energieprojekte in Planung oder Umsetzung; das stützt nur den Ankündigungsanker. Wärmeziele2020–2024 und bereits erreichte Ziele sind kein neuer aktueller Fahrplan. Zukunftspläne für Speicher/Logistik werden nicht zu Betrieb; Waschmaschine/Wärmepumpe2018/2019 bleiben historisch.
+
+Quellen: S-P50-03, S-P50-04, S-P50-05, S-P50-07.
+
+Nächster Schritt: Aktualisierte Zielperiode nach2024 und Abschluss-/Betriebsnachweise der2023 angekündigten Energieprojekte beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

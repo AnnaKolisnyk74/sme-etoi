@@ -1,0 +1,11 @@
+selection_rank,company_id,legal_entity,research_rank,missing_fact,selection_rule,checked_date
+1,P41,"Galvano Weis, Weis GmbH & Co., Galvanische-Werkstätte KG",98,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+2,P43,WZR ceramic solutions GmbH,101,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+3,P44,OXIDKERAMIK J. Cardenas GmbH,103,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+4,P45,Glasmanufaktur HARZKRISTALL GmbH,105,power_quality_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+5,P50,Brauerei Aying Franz Inselkammer KG,110,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+6,P51,Distelhäuser Brauerei Ernst Bauer GmbH & Co. KG,112,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+7,P52,Glauner GmbH,114,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+8,P53,Brauerei Rittmayer Hallerndorf GmbH & Co. KG,116,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+9,P54,Privatbrauerei Waldhaus Joh. Schmid GmbH,117,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12
+10,P55,Merschbrock Kunststoff Spritzguss GmbH,119,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-12

@@ -76,10 +76,10 @@ class WebExportTests(unittest.TestCase):
             self.assertEqual(sources[sid]['content_review_status'], 'UNAVAILABLE')
         self.assertTrue(all(s['content_review_status'] for s in sources.values()))
         summary = self.payload['source_content_review_summary']
-        self.assertEqual(summary['registered_source_count'], 578)
-        self.assertEqual(summary['assessed_source_count'], 578)
+        self.assertEqual(summary['registered_source_count'], 595)
+        self.assertEqual(summary['assessed_source_count'], 595)
         self.assertEqual(summary['missing_source_count'], 0)
-        self.assertEqual(summary['status_counts'], {'RECHECKED': 513, 'CONTEXT_ONLY': 53, 'UNAVAILABLE': 12})
+        self.assertEqual(summary['status_counts'], {'RECHECKED': 530, 'CONTEXT_ONLY': 53, 'UNAVAILABLE': 12})
         self.assertEqual(summary['human_review_status'], 'PENDING')
         # A generic directory cannot inherit the originally registered company claim.
         context = sources['S-P41-02']
@@ -142,8 +142,8 @@ class WebExportTests(unittest.TestCase):
         self.assertEqual(
             status_counts,
             {
-                "CHECKED": 71,
-                                "RESEARCH_NEEDED": 369,
+                "CHECKED": 76,
+                                "RESEARCH_NEEDED": 364,
             },
         )
         self.assertTrue(

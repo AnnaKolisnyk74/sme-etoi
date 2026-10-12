@@ -97,3 +97,14 @@ Higher bath temperatures and heat pumps are described as research. Planned techn
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. 2013 pulse-plating research and future-tense heat pump not current deployment;2023 carbon offsets not plant savings. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+ÖKOXAL2013 beschreibt die Hochtemperaturwärmepumpe ausdrücklich als zukünftig. Der Beraterfall nennt Förderbegleitung und eine alte SpaEfV-Testierung ohne aktuelles Datum. Kompensation2023 ist kein Anlagenumbau; Wärme-/Antriebsbestand, Speicher und neue Investitionen bleiben offen.
+
+Quellen: S-P41-04, S-P41-05, S-P41-07, S-P41-08.
+
+Nächster Schritt: Aktuelle betreiberbezogene Wärme-/Motoranlagen und datierte Umsetzung der Beratungsmaßnahmen nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

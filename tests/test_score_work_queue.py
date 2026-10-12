@@ -232,11 +232,11 @@ class ScoreWorkQueueTests(unittest.TestCase):
         self.assertEqual(len(p53), 5)
         self.assertEqual(
             sum(row["task_status"] == "RESEARCH_NEEDED" for row in p53),
-            4,
+            2,
         )
         self.assertEqual(
             sum(row["task_status"] == "CHECKED" for row in p53),
-            1,
+            3,
         )
         p53_flex = next(
             row for row in p53

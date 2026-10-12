@@ -99,3 +99,14 @@ Glassmaking/show workshop burner evidence does not establish a complete current 
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Owned electric melting/reheat and programmable cooling;130 kg is glass mass, not electrical load/storage. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Eigener elektrischer Schmelzofen und Vorwärmtrommel sind bestätigt.130kg Schmelzmenge und programmierbarer Kühlofen belegen weder Wärmespeicher noch Verschiebefenster. Neue Betreiberseite beschreibt Einschmelzen zugekaufter Glasnuggets; Ofenumbauten2017/2019 sind historisch. Die indexierte1200°C-Shopangabe ist nicht reproduziert.
+
+Quellen: S-P45-03, S-P45-04, S-P45-06.
+
+Nächster Schritt: Aktuelle Temperatur-/Heizmedien, sichere Produktionsunterbrechung, Energieprojekte und Managementnachweise beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

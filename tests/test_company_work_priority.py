@@ -69,8 +69,8 @@ class CompanyWorkPriorityTests(unittest.TestCase):
         self.assertEqual(row["workflow_action"], "RESEARCH_FIRST")
         self.assertEqual(row["is_next_to_code"], "NO")
         self.assertEqual(row["coding_rank"], "")
-        self.assertEqual(row["research_needed_tasks"], "4")
-        self.assertEqual(row["checked_tasks"], "1")
+        self.assertEqual(row["research_needed_tasks"], "2")
+        self.assertEqual(row["checked_tasks"], "3")
 
     def test_p20_moves_from_code_now_to_research_first(self):
         row = self.by_id["P20"]

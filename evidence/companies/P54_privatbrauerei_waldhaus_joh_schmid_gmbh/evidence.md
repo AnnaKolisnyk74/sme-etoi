@@ -93,3 +93,14 @@ Owner2017PV predates lookback. Purchased hydroelectricity is not owned generatio
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. 2017 PV458.4 kWp,75% of PV generation self-used, not75% site demand; outside investment lookback. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Betreiberberichte2024/2025 bestätigen dieselbe integrierte Abfüllanlage mit erneuerten Bändern und Bandsteuerungen sowie Energieeffizienzzweck. Drei Felder sind belegbar: Antriebe, klare Regelungsrelevanz und ein jüngeres Energieprojekt. Kapazität in Flaschen/h ist keine elektrische Leistung; das Gesamtprojekt zählt einmal.
+
+Quellen: S-P54-03, S-P54-04, S-P54-05, S-P54-06.
+
+Nächster Schritt: Eigene Temperatur-/Heizmedien, reale elektrische Leistungen und nachgemessene Einsparungen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

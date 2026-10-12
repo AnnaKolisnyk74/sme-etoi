@@ -9,45 +9,48 @@ grid-integration requirements.
 
 ## Current checked state — 12 October 2026
 
-The registered-source inventory has a complete documented content pass:
-**578/578 sources assessed, 513 rechecked within their stated scope,
+The registered-source inventory retains a complete documented content pass:
+**595/595 sources assessed, 530 rechecked within their stated scope,
 53 context-only, 12 unavailable and zero without a content record**.
 This includes excluded candidates. The separate retrieval inventory covers
-831 URLs (778 retrievable), including redirect targets and research attempts.
-[The coverage report](evidence/source_content_review_20261012.md) and
-[231 additional source checks](evidence/source_content_checks_20261012.csv)
-record attribution, historical periods, access failures and claim boundaries.
-Complete coverage does not mean every original claim was confirmed or that
-the remaining field questions or personal approval are complete.
+851 URLs (796 retrievable), including redirect targets and research attempts.
+The [first full coverage report](evidence/source_content_review_20261012.md)
+remains a dated 578-source baseline; the latest research adds 17 inspected
+sources. Complete coverage does not mean every original claim was confirmed,
+all field questions answered or personal approval granted.
 
-All 100 provisional companies have all 15 fields assessed: **623 `CHECKED`
-proposals (Geprüft), 877 blank `NEEDS_RESEARCH` fields and zero approved fields**.
+All 100 provisional companies have all 15 fields assessed: **639 CHECKED
+proposals (Geprüft), 861 blank NEEDS_RESEARCH fields and zero approved fields**.
 The 554 original numeric decisions remain 503 confirmed, 46 corrected and five
-withdrawn; 74 formerly unknown fields now have new evidence. Source/anchor
+withdrawn; 90 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Four decision-research blocks cover **40 technical companies, 12 SME/group cases
-and two identity conflicts**. The latest ten firms follow the frozen decision
-queue after previously profiled and gated firms are excluded. Their 78 open score
-fields yield five new checked proposals; 73 remain unknown. Across four blocks,
-325 selected gaps were investigated and 26 closed. Prior checked proposals and
-the four B+T reassessments remain unchanged.
+Five decision-research blocks cover **50 technical companies, 12 SME/group cases
+and two identity conflicts**. The second 12 October block selects the next ten
+firms from the frozen decision queue, excluding prior profiles and upstream
+gates. Its 93 open fields yield 16 new checked proposals; 77 remain unknown.
+Cumulatively 418 selected gaps were investigated and 42 closed. All prior
+checked proposals and the four B+T reassessments remain unchanged.
 
-[The latest report](evidence/decision_research_20261012.md),
-[profiles](evidence/decision_research_profiles_20261012.json),
-[38 source-body checks](evidence/decision_source_checks_20261012.csv) and
-[78 field attempts](evidence/field_research_deep_20261012.csv) document evidence
-and limits. BCE's owned direct-drive equipment and Zötler's historical
-frequency-controlled cooling support conditional technical anchors; Gindele's
-network participation supports only a public-intention tier. Staging BHKW/PV,
-customer products, recent article dates and undated relative delivery dates do
-not become operating assets or recent energy investments.
+[The latest report](evidence/decision_research_20261012b.md),
+[ten profiles](evidence/decision_research_profiles_20261012b.json),
+[40 source-body checks](evidence/decision_source_checks_20261012b.csv) and
+[93 field attempts](evidence/field_research_deep_20261012b.csv) document evidence
+and limits. Alpirsbacher's supplier case supports bounded process/energy control
+and selected-load peak management; current owner and own public project sources
+support implemented measures and a summer2023 integrated biogas investment.
+Rittmayer's treatment factsheet supports pumps/control, and its own timelines
+support distinct PV/electric-forklift investments while preserving the PV-year
+conflict. Distelhäuser and Waldhaus each have one supported integrated recent
+energy-efficiency project. Aying's2023 programme supports announcements only,
+not completed projects, a usable store or current post2024 targets.
 
-Langer's current ISO 50001 supplies a sixth public YES fact in the research
-ledger; four YES findings correspond to generated queue tasks. Canonical
-deployment flags are not silently overwritten. All 12 SME gates stay open
-pending defensible group/period decisions. Prior dated reports and ledgers remain
-available; the dashboard shows all 54 profiles and the latest block separately.
+Eight public YES findings are now retained in the research ledger; five correspond
+to generated queue tasks. Canonical deployment flags are not silently overwritten.
+Hypothetical ISO50001 readiness, an uncertain standard label, customer research
+applications, biological buffers and cold generation do not become certificates,
+owner thermal stores or deployed industrial electric heat. All 12 SME gates
+remain open. The dashboard shows all 64 profiles and the latest block separately.
 
 ## Research question
 

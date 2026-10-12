@@ -95,3 +95,14 @@ Known CHP/PV chronology retained. Absorption cooling is not independently useful
 | incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. PV2022/2025,CHP2014/2020,absorption cooling and2025/2026 EV supply; fuel/load/store/dispatch unverified. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Kunststoffbetreiber bestätigt eigene PV2022/2025 und BHKW2014/2020 mit Absorptionskälte. Alle bisherigen geprüften Vorschläge bleiben erhalten. Kältebereitstellung ist kein Speicher, Schließkraft keine elektrische Leistung. Merschbrock-Wiese-Gewürztechnik gehört einer anderen Firma.
+
+Quellen: S-P55-02, S-P55-03.
+
+Nächster Schritt: Aktuelle Prozessheizmedien und Werkzeugtemperaturen sowie sichere Speicher-/Lastfenster beschaffen; Fremdfirmenbelege ausscheiden.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

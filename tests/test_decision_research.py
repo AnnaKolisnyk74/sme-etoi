@@ -16,6 +16,42 @@ REASSESSMENT_KEYS = {(r['company_id'], r['score_field']) for r in checked_reasse
 
 
 class DecisionResearchTests(unittest.TestCase):
+    def test_latest_block_preserves_prior_checked_fields_and_leaves_77_gaps_blank(self):
+        before = {(r['company_id'], r['score_field']): r for r in rows(
+            ROOT, 'data/history/score_coding_proposals_before_deep_20261012b.csv')}
+        now = {(r['company_id'], r['score_field']): r for r in rows(ROOT, 'data/score_coding_proposals.csv')}
+        attempts = rows(ROOT, 'evidence/field_research_deep_20261012b.csv')
+        self.assertEqual(len(attempts), 93)
+        self.assertEqual(sum(r['outcome'] == 'NEW_EVIDENCE' for r in attempts), 16)
+        for key, row in before.items():
+            if row['proposal_status'] == 'CHECKED':
+                self.assertEqual(now[key], row)
+        for a in attempts:
+            p = now[a['company_id'], a['score_field']]
+            if a['outcome'] == 'STILL_UNKNOWN':
+                self.assertEqual((p['proposed_value'], p['proposal_confidence']), ('', 'UNKNOWN'))
+                self.assertTrue(a['remaining_fact'])
+
+    def test_actual_selected_load_control_is_separate_from_heat_storage_and_certification(self):
+        p = {(r['company_id'], r['score_field']): r for r in rows(ROOT, 'data/score_coding_proposals.csv')}
+        self.assertEqual(p['P52', 'scheduling_flex_score']['proposed_value'], '5')
+        self.assertEqual(p['P52', 'management_gap_score']['proposed_value'], '2')
+        self.assertIn('not mature certified ISO50001', p['P52', 'management_gap_score']['evidence_basis'])
+        for cid in ('P50', 'P52', 'P55'):
+            for field in ('thermal_storage_flex_score', 'fossil_heat_displacement_score'):
+                self.assertEqual(p[cid, field]['proposal_status'], 'NEEDS_RESEARCH')
+        self.assertEqual(p['P50', 'investment_gap_score']['proposed_value'], '3')
+        self.assertIn('Completion and2026 status are unverified', p['P50', 'investment_gap_score']['evidence_basis'])
+        for cid in ('P51', 'P54'):
+            self.assertEqual(p[cid, 'investment_gap_score']['proposed_value'], '2')
+        self.assertIn('exact year conflict remains', p['P53', 'investment_gap_score']['evidence_basis'])
+        canonical = next(r for r in rows(ROOT, 'data/company_intelligence.csv') if r['company_id'] == 'P52')
+        self.assertEqual(canonical['flexibility_solution_deployed'], 'UNKNOWN')
+        self.assertEqual(canonical['energy_management_deployed'], 'UNKNOWN')
+        results = [r for r in rows(ROOT, 'data/research_results.csv') if r['task_id'].startswith('DR-20261012b-P52')]
+        self.assertEqual(len(results), 2)
+        self.assertTrue(all(r['resulting_value'] == 'YES' and r['review_status'] == 'PROVISIONAL' for r in results))
+
     def test_frozen_decision_queue_selects_ten_unique_unblocked_firms(self):
         queue = rows(ROOT, 'data/history/research_queue_before_deep_20261008.csv')
         chosen = select_companies(queue, identity_blocks={'P109', 'P110'})
@@ -33,9 +69,9 @@ class DecisionResearchTests(unittest.TestCase):
         s = summary(ROOT)
         self.assertEqual((s['profile_count'], s['technical_company_count'],
                           s['eligibility_company_count'], s['identity_company_count']),
-                         (54, 40, 12, 2))
+                         (64, 50, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (325, 26, 299))
+                          s['still_unknown_field_count']), (418, 42, 376))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -62,7 +98,7 @@ class DecisionResearchTests(unittest.TestCase):
         found = {(q['company_id'], q['missing_fact']): q for q in queue
                  if q['task_status'] == 'EVIDENCE_FOUND'}
         self.assertEqual(set(found), {('P79','energy_management_deployed'), ('P100','heat_recovery_deployed'),
-            ('P77','heat_recovery_deployed'), ('P77','energy_management_deployed')})
+            ('P77','heat_recovery_deployed'), ('P77','energy_management_deployed'), ('P52','flexibility_solution_deployed')})
         self.assertTrue(all(q['last_resulting_value'] == 'YES' for q in found.values()))
         results = [r for r in rows(ROOT, 'data/research_results.csv')
                    if r['checked_date'] == '2026-10-08' and r['research_status'] == 'EVIDENCE_FOUND']
@@ -109,7 +145,7 @@ class DecisionResearchTests(unittest.TestCase):
         self.assertEqual(s['batches'][1]['still_unknown_field_count'], 90)
         self.assertEqual((s['latest_batch']['field_attempt_count'],
                           s['latest_batch']['new_checked_field_count'],
-                          s['latest_batch']['still_unknown_field_count']), (78, 5, 73))
+                          s['latest_batch']['still_unknown_field_count']), (93, 16, 77))
         self.assertEqual(validate(ROOT), [])
 
     def test_period_and_claim_boundaries_survive_pipeline_export(self):

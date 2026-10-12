@@ -63,3 +63,14 @@ Owner explicitly states wood-chip brewery heat supply.2023PV planning/building i
 | investment_gap_score | Weiter offen / UNKNOWN | Implementation dates for biomass heat, PV, heat recovery and heat storage sufficient to code recent investment activity |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Eigene2021-Unterlagen nennen zwei Pumpen, geregelte Belüftung und Messkreislauf. Das stützt Antriebs-/Regelungsrelevanz. PV ist in der Historie2022, im Nachhaltigkeitsteil2023 datiert; ein Projekt zählt einmal. PV und E-Stapler2023 sind verschiedene abgeschlossene Energieprojekte. Biologischer Abwasserpuffer ist kein Wärmespeicher; geplante Biogasleistung wird nicht zu Ist-Output.
+
+Quellen: S-P53-02, S-P53-03, S-P53-04, S-P53-05, S-P53-06.
+
+Nächster Schritt: PV-Datierung2022/2023 klären, aktuelle Inbetriebnahme-/Verbrauchsdaten und Heiztemperaturen nachweisen; Speicher-/Lastfenster getrennt ermitteln.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.
