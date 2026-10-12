@@ -68,13 +68,24 @@ class WebExportTests(unittest.TestCase):
     def test_source_content_review_is_separate_from_url_retrieval(self):
         sources = {s['source_id']: s for c in self.payload['companies'] for s in c['sources']}
         reviewed = [s for s in sources.values() if s['content_review_status'] == 'RECHECKED']
-        self.assertEqual(len(reviewed), 340)
+        self.assertGreater(len(reviewed), 340)
         for source in reviewed:
             self.assertTrue(source['content_checked_at'])
             self.assertTrue(source['evidence_fact'])
         for sid in ('S-P26-01', 'S-P26-08', 'S-P70-04'):
             self.assertEqual(sources[sid]['content_review_status'], 'UNAVAILABLE')
-        self.assertTrue(any(not s['content_review_status'] for s in sources.values()))
+        self.assertTrue(all(s['content_review_status'] for s in sources.values()))
+        summary = self.payload['source_content_review_summary']
+        self.assertEqual(summary['registered_source_count'], 578)
+        self.assertEqual(summary['assessed_source_count'], 578)
+        self.assertEqual(summary['missing_source_count'], 0)
+        self.assertEqual(summary['status_counts'], {'RECHECKED': 513, 'CONTEXT_ONLY': 53, 'UNAVAILABLE': 12})
+        self.assertEqual(summary['human_review_status'], 'PENDING')
+        # A generic directory cannot inherit the originally registered company claim.
+        context = sources['S-P41-02']
+        self.assertEqual(context['content_review_status'], 'CONTEXT_ONLY')
+        self.assertIn('Generic Bavarian', context['evidence_fact'])
+        self.assertNotEqual(context['evidence_fact'], context['registered_evidence_fact'])
 
     def test_eligibility_pending_companies_are_not_actionable(self):
         pending = []

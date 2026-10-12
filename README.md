@@ -9,6 +9,17 @@ grid-integration requirements.
 
 ## Current checked state — 12 October 2026
 
+The registered-source inventory has a complete documented content pass:
+**578/578 sources assessed, 513 rechecked within their stated scope,
+53 context-only, 12 unavailable and zero without a content record**.
+This includes excluded candidates. The separate retrieval inventory covers
+831 URLs (778 retrievable), including redirect targets and research attempts.
+[The coverage report](evidence/source_content_review_20261012.md) and
+[231 additional source checks](evidence/source_content_checks_20261012.csv)
+record attribution, historical periods, access failures and claim boundaries.
+Complete coverage does not mean every original claim was confirmed or that
+the remaining field questions or personal approval are complete.
+
 All 100 provisional companies have all 15 fields assessed: **623 `CHECKED`
 proposals (Geprüft), 877 blank `NEEDS_RESEARCH` fields and zero approved fields**.
 The 554 original numeric decisions remain 503 confirmed, 46 corrected and five
