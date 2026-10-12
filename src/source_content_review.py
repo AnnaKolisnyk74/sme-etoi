@@ -25,9 +25,14 @@ def new_checks(root=ROOT):
 
 
 def checks(root=ROOT):
-    result = {r['source_id']: r for r in rows(root, 'evidence/proposal_source_checks.csv')}
-    result.update(decision_research.source_checks(root))
-    result.update(new_checks(root))
+    result = {}
+    candidates = rows(root, 'evidence/proposal_source_checks.csv')
+    candidates += list(decision_research.source_checks(root).values())
+    candidates += list(new_checks(root).values())
+    for row in candidates:
+        previous = result.get(row['source_id'])
+        if previous is None or datetime.fromisoformat(row['checked_at']) > datetime.fromisoformat(previous['checked_at']):
+            result[row['source_id']] = row
     return result
 
 

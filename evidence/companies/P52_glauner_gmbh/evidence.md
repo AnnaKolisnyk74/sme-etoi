@@ -99,3 +99,14 @@ Registered substantive site retrievals timed out. Failure is recorded as an acce
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Recovered raw-material page and historical1893/1895/1925 machines do not replace broken environmental page or current assets. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Aktuelle Betreiberseite bestätigt Biogas-BHKW, Kälte und Effizienzmaßnahmen. Lieferantenfall beschreibt Braumat/econ4, Druckluft und Kälte, automatische Spitzenbegrenzung an ausgewählten Produktionslasten und Ladepunkten. Acht bisher offene Felder erhalten begrenzte Vorschläge. Eigener öffentlicher Beitrag datiert ein integriertes Biogasprojekt auf Sommer2023. Hypothetische ISO50001-Reife und die auffällige16427-Angabe sind kein Zertifikat; Warmprozess/Fossilanteil und thermischer Speicher bleiben offen.
+
+Quellen: S-P52-05, S-P52-06, S-P52-07.
+
+Nächster Schritt: Aktuelle Funktions-/Schaltliste und Grenzen der regelbaren Lasten, echte Heizmedien und numerische Prozesswärmetemperaturen nachweisen; formalen Standard separat prüfen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

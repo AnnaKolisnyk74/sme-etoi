@@ -85,3 +85,14 @@ Project heated printing platform/control work is separated from own current plan
 | investment_gap_score | Weiter offen / UNKNOWN | Dated own-site energy-transition investment within 2021-10-06 to 2026-10-06; printer and dilatometer investments do not establish this scope. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Eigener Metallsinterofen wurde im Juni2021 in Betrieb genommen und liegt außerhalb des festen Investitionsfensters. Formiergas bezeichnet die Atmosphäre, nicht den Heizbrennstoff. AMAZING2025 und Porotherm2024 betreffen frühe Forschungs-/Kundenanwendungen; daraus werden keine eigenen Wärmespeicher oder betrieblichen Energieinvestitionen.
+
+Quellen: S-P43-04, S-P43-05, S-P43-06, S-P43-07, S-P43-09, S-P43-10, S-P43-11, S-P43-12.
+
+Nächster Schritt: Eigene Ofenheizung, tatsächliche Sollwerte, elektrische Leistung, Speicherbetrieb und Energieumfang neuer Projekte getrennt von Kunden-/Forschungsanwendungen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

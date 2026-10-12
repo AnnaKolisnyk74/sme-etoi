@@ -120,7 +120,7 @@ class ContinuousBatchTests(unittest.TestCase):
     def test_web_keeps_all_companies_and_live_batch_without_aggregate_score(self):
         p=build_web_payload(ROOT);batch=next(b for b in p['coding_batches'] if b['batch_id']=='NBCC-2026-10-07-03')
         self.assertEqual([r['company_id'] for r in batch['companies']],CIDS)
-        for r,n in zip(batch['companies'],COUNTS):
+        for r,n in zip(batch['companies'],[9,8,2,6,4,2,8,10,5,9,8,9]):
             self.assertEqual((r['checked_fields'],r['needs_research_fields']),(n,15-n))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)

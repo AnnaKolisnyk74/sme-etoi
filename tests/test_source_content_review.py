@@ -16,8 +16,8 @@ class SourceContentReviewTests(unittest.TestCase):
         self.assertEqual(review.validate(ROOT), [])
         result = review.build(ROOT)
         self.assertEqual(result['coverage_status'], 'COMPLETE')
-        self.assertEqual(result['registered_source_count'], 578)
-        self.assertEqual(result['assessed_source_count'], 578)
+        self.assertEqual(result['registered_source_count'], 595)
+        self.assertEqual(result['assessed_source_count'], 595)
         self.assertEqual(result['missing_source_ids'], [])
         self.assertEqual(result['human_review_status'], 'PENDING')
         self.assertEqual(len(review.new_checks(ROOT)), 231)
@@ -48,6 +48,15 @@ class SourceContentReviewTests(unittest.TestCase):
         self.assertEqual(review.build(root)['coverage_status'], 'INCOMPLETE')
         self.assertEqual(review.build(root)['missing_source_count'], 1)
         self.assertTrue(any('missing' in e for e in review.validate(root)))
+
+    def test_newer_technical_body_review_supersedes_inventory_pass_by_timestamp(self):
+        older = review.new_checks(ROOT)['S-P50-07']
+        newest = review.checks(ROOT)['S-P50-07']
+        self.assertGreater(newest['checked_at'], older['checked_at'])
+        self.assertIn('printed pages18–21', newest['relevant_location'])
+        self.assertIn('planned/in implementation', newest['scope_note'])
+        # File category order cannot hide a newer technical review.
+        self.assertNotEqual(newest['scope_note'], older['scope_note'])
 
     def test_wrong_entity_url_and_missing_body_fingerprint_fail_closed(self):
         def change(rs):

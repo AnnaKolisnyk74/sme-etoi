@@ -93,3 +93,14 @@ Cold fermentation/storage describes products, not hot-process temperatures or di
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Owned0 C maturation/heat recovery;2022 certification claim has no verified current validity. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, zweiter Block
+
+Eigener Bericht21.05.2026 bestätigt die eingeweihte Fassabfüllanlage mit integrierter Wärmerückgewinnung. Ein abgeschlossenes Energieeffizienzprojekt ist belegbar; drei Kapazitätsprojekte sind nicht drei Energieinvestitionen. Betriebsheizmedien, elektrische Wärmeroute und Speicher bleiben offen.
+
+Quellen: S-P51-02, S-P51-04, S-P51-05.
+
+Nächster Schritt: Tatsächliche Wärme-/Temperaturdaten sowie Antriebs-/Umrichter- und Speicherunterlagen beschaffen; Einsparungen getrennt metern.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.
