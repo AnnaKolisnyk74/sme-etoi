@@ -11,7 +11,7 @@ import source_audit_summary
 import proposal_checks
 import decision_research
 import source_content_review
-from score_companies import SCORE_FIELDS
+from score_companies import SCORE_FIELDS, DIMENSIONS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,6 +55,10 @@ def compact_source(row: dict[str, str], audit: dict | None = None, recheck: dict
         "source_link": normalise(row.get("source_link")),
         "link_check_status": normalise(row.get("link_check_status")),
         "link_check_date": normalise(row.get("link_check_date")),
+        "reporting_period": normalise(row.get("reporting_period")),
+        "publication_date": normalise(row.get("publication_date")),
+        "access_date": normalise(row.get("access_date")),
+        "relevant_location": normalise(recheck.get("relevant_location") or row.get("relevant_location")),
         "retrieval_status": normalise(audit.get("retrieval_status") or 'NOT_CHECKED'),
         "retrieval_checked_at": normalise(audit.get("checked_at")),
         "content_review_status": normalise(recheck.get("content_review_status")),
@@ -149,6 +153,24 @@ def field_assessment_summary(companies, proposals, priority_rows):
 
 def build_web_payload(root: Path = ROOT) -> dict:
     companies = read_csv(root, "data/company_intelligence.csv")
+    sample_ids = {c['company_id'] for c in companies}
+    findings = read_csv(root, 'data/research_results.csv')
+    qa_rows = read_csv(root, 'evidence/qa_review.csv')
+    qa_by_company = {r['company_id']: r for r in qa_rows}
+    certificate_rows = read_csv(root, 'evidence/certificate_register.csv')
+    checks_by_field = {}
+    for row in read_csv(root, 'evidence/score_proposal_checks.csv'):
+        checks_by_field.setdefault((row['company_id'], row['score_field']), []).append(dict(row))
+    reassessments = decision_research.checked_reassessments(root)
+    for row in reassessments:
+        check = {key: row[key] for key in ('checked_date', 'checked_by', 'checked_value',
+                 'checked_confidence', 'checked_source_ids', 'checked_evidence_basis', 'final_score_approval')}
+        check.update(original_value=row['previous_value'], original_confidence=row['previous_confidence'],
+                     original_source_ids=row['previous_source_ids'], outcome='REASSESSED',
+                     decision_note='Later reassessment; earlier source/anchor decision retained.')
+        checks_by_field.setdefault((row['company_id'], row['score_field']), []).append(check)
+    for history in checks_by_field.values():
+        history.sort(key=lambda r: r['checked_date'])
     decision_profiles = {p['company_id']: p for p in decision_research.profiles(root)}
     proposals = read_csv(root, "data/score_coding_proposals.csv")
     proposals_by_company = {}
@@ -166,7 +188,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
     sources = read_csv(root, "evidence/source_register.csv")
     source_rechecks = source_content_review.checks(root)
     certificates_by_company = {}
-    for row in read_csv(root, "evidence/certificate_register.csv"):
+    for row in certificate_rows:
         certificates_by_company.setdefault(row['candidate_id'], []).append(row)
     audits = {r['url']: r for r in read_csv(root, 'evidence/source_link_audit.csv')}
     audit_summary = source_audit_summary.build(root)
@@ -239,6 +261,8 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "process_name_raw": normalise(mapping.get("process_name_raw")),
                     "confidence": normalise(mapping.get("confidence")),
                     "evidence_url": normalise(mapping.get("process_evidence_url")),
+                    "evidence_note": normalise(mapping.get("process_evidence_note")),
+                    "review_status": normalise(mapping.get("review_status")),
                 }
             )
 
@@ -351,6 +375,11 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "next_action": normalise(readiness.get("next_action")),
                 },
                 "process_stratum": normalise(candidate.get("process_stratum")),
+                "qa_review": qa_by_company.get(company_id, {}),
+                "canonical_deployments": {key: normalise(company.get(key)) for key in (
+                    'heat_recovery_deployed', 'energy_management_deployed', 'flexibility_solution_deployed',
+                    'thermal_storage_deployed', 'battery_storage_deployed', 'power_quality_solution_deployed',
+                    'industrial_heat_electrification_deployed')},
                 "evidence_confidence": normalise(company.get("evidence_confidence")),
                 "review_status": normalise(company.get("review_status")),
                 "last_verified_date": normalise(company.get("last_verified_date")),
@@ -368,6 +397,9 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 "public_signals": {
                     "three_shift_operation": normalise(company.get("three_shift_operation")),
                     "pv_present": normalise(company.get("pv_present")),
+                    "public_load_profile_available": normalise(company.get("public_load_profile_available")),
+                    "batch_or_refrigeration_signal": normalise(company.get("batch_or_refrigeration_signal")),
+                    "multi_shift_or_batch_signal": normalise(company.get("multi_shift_or_batch_signal")),
                     "public_fossil_heat_signal": normalise(company.get("public_fossil_heat_signal")),
                     "refrigeration_or_compressor_signal": normalise(
                         company.get("refrigeration_or_compressor_signal")
@@ -390,6 +422,7 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "evidence_source_ids": p['evidence_source_ids'],
                     "evidence_basis": p['evidence_basis'],
                     "missing_fact": p['missing_fact'],
+                    "check_history": checks_by_field.get((company_id, p['score_field']), []),
                 } for p in proposals_by_company.get(company_id, [])],
                 "workflow_priority": {
                     **priority_evidence(company_priority),
@@ -483,6 +516,29 @@ def build_web_payload(root: Path = ROOT) -> dict:
     }
 
     return {
+        "additional_sources": [{**compact_source(s, audits.get(s['source_link']), source_rechecks.get(s['source_id'])),
+            'company_id': s['candidate_id'], 'legal_entity': s['legal_entity'], 'sample_member': False}
+            for s in sources if s['candidate_id'] not in sample_ids],
+        "additional_certificate_checks": [{**r, 'company_id': r['candidate_id'], 'sample_member': False}
+            for r in certificate_rows if r['candidate_id'] not in sample_ids],
+        "research_findings": findings,
+        "reference_libraries": {
+            'technologies': read_csv(root, 'data/technology_library.csv'),
+            'processes': process_library,
+            'opportunity_rules': read_csv(root, 'data/opportunity_rules.csv'),
+        },
+        "scoring_methodology": {'dimensions': {k: dict(v) for k, v in DIMENSIONS.items()},
+                                'maximum_total': sum(SCORE_FIELDS.values())},
+        "quality_assurance": {
+            'company_checks': qa_rows,
+            'independent_review_status_counts': dict(Counter(r['review_status'] for r in read_csv(root, 'data/pilot_double_code.csv'))),
+            'reliability': read_csv(root, 'outputs/inter_rater_reliability.csv'),
+            'double_code_conflicts': read_csv(root, 'outputs/double_code_conflicts.csv'),
+        },
+        "documentation_links": [{'path': p, 'url': 'https://github.com/AnnaKolisnyk74/sme-etoi/blob/main/'+p}
+            for p in ['README.md', 'methodology.md', 'coding_manual.md', 'docs/product_architecture.md',
+                'docs/score_coding_protocol.md', 'docs/double_coding_protocol.md', 'docs/technical_priority.md',
+                'docs/web_access.md', 'docs/web_coverage_audit_20261013.md'] if (root / p).exists()],
         "field_assessment_summary": field_assessment_summary(companies, proposals, company_work_priority),
         "proposal_check_summary": proposal_checks.summary(root),
         "decision_research_summary": decision_research.summary(root),
