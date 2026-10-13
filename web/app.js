@@ -232,7 +232,7 @@ function aggregateBy(items,keyFn){
   return map;
 }
 function bindFunctionalCompanyRows(){
-  $$("#functionalContent [data-company-id]").forEach(row=>row.addEventListener("click",()=>openCompany(row.dataset.companyId)));
+  $$("#functionalContent [data-company-id]").forEach(row=>row.addEventListener("click",event=>{if(event.target.closest("a,button,input,select,textarea,details"))return;openCompany(row.dataset.companyId)}));
 }
 function companies(){
   let rows=state.data.companies.slice();

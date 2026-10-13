@@ -276,3 +276,15 @@ assert.ok(!sinks.get('#functionalContent').innerHTML.includes('href="javascript:
 context.taskFixture={research_tasks:[{research_rank:1,task_status:'EVIDENCE_FOUND'},{research_rank:2,task_status:'OPEN'}]};
 assert.equal(vm.runInContext('topTask(taskFixture).research_rank',context),2);
 console.log('Coverage: all 617 sources, 321 certificates, 96 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
+// Expanding source boundaries or opening evidence links must keep the register visible.
+let rowClick;
+context.document.querySelectorAll=()=>[{dataset:{companyId:'P11'},addEventListener(type,callback){rowClick=callback;}}];
+vm.runInContext('var savedOpenCompany=openCompany; var clickedCompany=null; openCompany=id=>{clickedCompany=id}; bindFunctionalCompanyRows();',context);
+for(const element of ['a','details','button']){
+  rowClick({target:{closest(selector){return selector.split(',').includes(element)?{}:null;}}});
+  assert.equal(vm.runInContext('clickedCompany',context),null);
+}
+rowClick({target:{closest(){return null;}}});
+assert.equal(vm.runInContext('clickedCompany',context),'P11');
+vm.runInContext('openCompany=savedOpenCompany;',context);
+console.log('Register navigation: evidence links and expanded boundaries keep the register open; company cells navigate.');
