@@ -10,6 +10,12 @@ grid-integration requirements.
 ## Current checked state — 13 October 2026
 
 [Open the hosted SME-ETOI dashboard](https://sme-etoi.fairorbit8.chatgpt.site).
+The technical-priority chart maps the strongest A/B-confidence technical signal
+to A/High, B/Medium or C/Low. Research-only/missing levels remain open and SME
+gates remain separate. A commercial `RESEARCH` status cannot turn every company
+into Low/C. This is a research priority, not a final ETOI or commercial rating;
+see [technical priority](docs/technical_priority.md).
+
 Access is private to the owner; deployment details and update instructions are
 in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
