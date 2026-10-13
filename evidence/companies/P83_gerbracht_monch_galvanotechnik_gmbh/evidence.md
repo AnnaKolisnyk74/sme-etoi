@@ -93,3 +93,14 @@ Funding/capacity announcements lack energy-project commissioning proof. Ministry
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own automated rack/drum galvanics;555000EUR ministry capacity GRW grant not actual completed energy investment. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Gerbracht & Mönch ist auf der offiziellen nicht-www-Domain wieder abrufbar. Stadtbesuch Juli2026 bestätigt Betrieb, beschreibt neue Linie weiterhin zukunftsbezogen; Förderung und Kapazität sind kein belegter Energieumbau. Tonnage/3-Schichten keine Last- oder Speicherwerte. Alle zehn Lücken bleiben UNKNOWN.
+
+Quellen: S-P83-03, S-P83-04, S-P83-05, S-P83-06.
+
+Nächster Schritt: Energieumfang/Inbetriebnahme der Erweiterung und eigene Bad-/Heizungs-, Speicher-/Last- und Energiemanagement-Unterlagen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

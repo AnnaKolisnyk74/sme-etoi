@@ -9,44 +9,50 @@ grid-integration requirements.
 
 ## Current checked state — 13 October 2026
 
-The registered-source inventory has a complete documented content pass:
-**603/603 sources assessed, 538 rechecked within their stated scope,
-53 context-only, 12 unavailable and zero without a content record**.
-This includes excluded candidates. The retrieval inventory covers **862 URLs,
-806 retrievable**, including redirects and research attempts.
-The [first full coverage report](evidence/source_content_review_20261012.md)
-remains a dated 578-source baseline. Complete coverage does not mean every
-original claim was confirmed, all field questions answered or personal approval granted.
+[Open the hosted SME-ETOI dashboard](https://sme-etoi.fairorbit8.chatgpt.site).
+Access is private to the owner; deployment details and update instructions are
+in [web access](docs/web_access.md). The online snapshot is refreshed after the
+corresponding tested repository change is merged.
 
-All 100 provisional companies have all 15 fields assessed: **645 CHECKED
-proposals (Geprüft), 855 blank NEEDS_RESEARCH fields and zero approved fields**.
-The 554 original numeric decisions remain 503 confirmed, 46 corrected and five
-withdrawn; 96 formerly unknown fields now have new evidence. Source/anchor
+The registered-source inventory has a complete documented content pass:
+**617/617 sources assessed, 552 rechecked within their stated scope,
+53 context-only, 12 unavailable and zero without a content record**.
+The separate retrieval inventory covers **882 URLs,818 retrievable**.
+Dated content provenance can remain valid when a later GET fails; failures and
+recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
+remains a dated578-source baseline. Coverage does not mean every claim was
+confirmed, every field answered or personal approval granted.
+
+All100 provisional companies have all15 fields assessed: **652 CHECKED
+proposals (Geprüft),848 blank NEEDS_RESEARCH fields and zero approved fields**.
+The554 original numeric decisions remain503 confirmed,46 corrected and five
+withdrawn;103 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Six decision-research blocks cover **60 technical companies, 12 SME/group cases
-and two identity conflicts**. The latest block continues the frozen12October
-selection of ten firms. Its **105 open fields yield six new checked proposals;
-99 remain unknown**. Cumulatively523 selected gaps were investigated and48
-closed. All prior checked proposals and four B+T reassessments remain unchanged.
+Seven decision-research blocks cover **70 technical companies,12 SME/group cases
+and two identity conflicts**. The latest ten-company block investigates98
+open fields: **seven new checked proposals;91 remain UNKNOWN**. Cumulatively
+621 selected gaps were investigated and55 closed. All prior checked proposals,
+including four B+T reassessments, remain unchanged.
 
-[The latest report](evidence/decision_research_20261012c.md),
-[ten profiles](evidence/decision_research_profiles_20261012c.json),
-[41 source-body checks](evidence/decision_source_checks_20261012c.csv) and
-[105 field attempts](evidence/field_research_deep_20261012c.csv) document evidence
-and limits. Horstmann's owner2024 report supports bounded electric-heat, gas-duty
-and drive relevance, functional partial energy management and two distinct
-completed energy projects. Contracting ended2022; precise2026 configuration
-and fuel shares are not authenticated. KPM's vacancy supports limited machine
-control only; desired SiemensS5 skills are not proof of installed S5 equipment.
+[Latest report](evidence/decision_research_20261013.md),
+[ten profiles](evidence/decision_research_profiles_20261013.json),
+[39 body checks](evidence/decision_source_checks_20261013.csv) and
+[98 field attempts](evidence/field_research_deep_20261013.csv) document scope.
+Flötzinger's own process page supports temperature/control relevance, and the
+exact supplier documents a Schechen waste-heat heat pump and process-heat buffer.
+The Rosenheim brewhouse remains separate;900kW is backup boiler heat output,
+not heat-pump electricity. Storage does not authenticate a safe grid-dispatch
+window. TechnoKer BDE and Hagen's automatic line support limited coordination
+only. Kundmüller's2023 PV and2024 efficient filler count as distinct projects;
+its2020 brewhouse is not redated by the2022 inauguration.
 
-Twelve public YES findings are retained separately; five match generated queue
-tasks. New findings cover Dorn's electrical battery, Horstmann's heat recovery
-and functional EMS, and KPM's ongoing kiln heat recovery. Canonical deployment
-flags are not silently overwritten. Electrical batteries are not thermal stores,
-heat recovery is not heat pumping, and fair exhibits/customer equipment belong
-to their actual owners. All12 SME gates remain open. The dashboard shows all74
-profiles and the latest block separately.
+Fifteen public YES findings remain separate; six match generated queue tasks.
+Canonical deployment flags are not silently overwritten. Product-specific
+renewable-energy brands, guesthouse solar heat, product-test temperatures,
+capacity grants and quality certification do not become whole-site heat balances,
+industrial storage, completed energy CAPEX or certified EnMS. All12 SME gates
+remain open. The dashboard shows all84 profiles and the latest block separately.
 
 ## Research question
 

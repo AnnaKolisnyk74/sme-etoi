@@ -92,3 +92,14 @@ Generic plant descriptions do not supply owned operating heat temperatures, ther
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Hagen unterscheidet eigene automatische und manuelle Verzinkungslinie. Das belegt nur begrenzte Automatisierungsrelevanz. Verladezeiten sind kein Produktionsfenster,3-Schichten keine garantierte Flexibilität. Alter Huster-Qualitätsstandard ist kein aktuelles EnMS; ein Feld neu, zwölf UNKNOWN.
+
+Quellen: S-P82-02, S-P82-03, S-P82-04, S-P82-05.
+
+Nächster Schritt: Konkrete Badtemperaturen/-heizmedien, Pumpen-/Antriebs-/Steuerungsdaten sowie Energie- und Speicher-/Lastunterlagen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

@@ -90,3 +90,14 @@ Codex: 12 zuvor offene Felder bearbeitet; 2 zusätzliche Felder quellen- und ank
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Maisels2020-Erhebung ist tatsächlich datiert, PV/KWK bleiben darin Varianten und umzusetzen. Heutige allgemeine Rückgewinnung beschreibt weder eine neue Inbetriebnahme noch Wärme-Speicher/Heizträger. Alle zehn Lücken bleiben UNKNOWN.
+
+Quellen: S-P74-03, S-P74-04.
+
+Nächster Schritt: Abschluss-/Betriebsnachweise der Energiekonzeptmaßnahmen sowie aktuelle Heizmedien, Temperatur-/Leistungs- und Speicher-/Lastunterlagen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

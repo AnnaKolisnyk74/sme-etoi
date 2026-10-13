@@ -93,3 +93,14 @@ Vapour condensation/hot-water recovery is not independently useful thermal stora
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Kundmüller-Chronik belegt PV-Erweiterung2023 und energieeffizienten Flaschenfüller2024 als zwei Projekte. Sudhaus läuft seit2020; Feier2022 ist keine neue Inbetriebnahme. Solarbier-Claim betrifft Produkte, Solaranlage Gastwirtschaft; kein Vollbetriebs-Heizplan. Offizielle.com-Broschüre ist derselbe01/2026-Body wie zuvor, nicht2025. Ein Feld neu, fünf UNKNOWN.
+
+Quellen: S-P73-03, S-P73-04, S-P73-05, S-P73-07, S-P73-08, S-P73-09.
+
+Nächster Schritt: Eigene Wärme-/Heizmedien und thermische Speicherfunktion ermitteln;2011/2012-Branddatierung getrennt von ISO-Prüfung klären.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

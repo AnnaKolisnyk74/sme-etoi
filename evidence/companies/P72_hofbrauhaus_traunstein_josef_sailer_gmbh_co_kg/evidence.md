@@ -99,3 +99,14 @@ Existing PV/robotics evidence retained. Product cold storage is not dispatchable
 | management_gap_score | Weiter offen / UNKNOWN | Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Traunstein bestätigt eigene PV, Kältestrom und Palettierkontrolle. Bierlagerung über Wochen ist kein thermischer Netzspeicher, PV kein Prozessheizmedium. Reinigungswasser ohne Zahl/Träger und Energiestrategie ohne EnMS-Nachweis schließen die sieben Lücken nicht.
+
+Quellen: S-P72-03, S-P72-04, S-P72-05, S-P72-06.
+
+Nächster Schritt: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.
