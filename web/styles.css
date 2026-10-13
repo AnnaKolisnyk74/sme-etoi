@@ -244,3 +244,5 @@ tr.selected .radio{background:#0f6cbd;border-color:#0f6cbd;color:#fff}
 
 .priority-open{background:#edebe9;color:#605e5c}
 .priority-note{font-size:10px;color:#605e5c;line-height:1.4;margin:0 16px 12px}
+
+.audit-details{white-space:normal}.audit-details summary{cursor:pointer;color:#0f6cbd;margin:6px 0}.audit-details p{margin:8px 0}.missing-fact{margin-top:8px;padding:8px;background:#fff4ce;white-space:normal}.section-card .functional-table-wrap{max-height:480px;overflow:auto}

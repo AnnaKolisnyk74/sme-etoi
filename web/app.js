@@ -112,7 +112,7 @@ function renderEvidenceOverview(){
   const count=key=>rows.filter(c=>["VALID","CURRENT","YES"].includes(c.certifications?.[key])).length;
   $("#evidenceOverview").innerHTML='<div><strong>'+n(checked)+' Felder · Geprüft</strong><span>'+n(open)+' Feldfragen offen · '+rows.length+' Unternehmen</span></div><div><strong>Gültig belegt: ISO 50001 '+count("iso_50001")+' · ISO 14001 '+count("iso_14001")+' · EMAS '+count("emas")+'</strong><span>Feldprüfung: '+esc(state.data.proposal_check_summary?.checked_date||"—")+' · KMU-Einstufung und finale Score-Freigabe separat</span></div>';
 }
-function topTask(c){return (c.research_tasks||[]).slice().sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999))[0]||null}
+function topTask(c){return (c.research_tasks||[]).filter(t=>t.task_status!=='EVIDENCE_FOUND').slice().sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999))[0]||null}
 function decisionProfile(c){
   const p=c.decision_research_profile;
   if(!p)return "";
@@ -134,6 +134,59 @@ function decisionResearchOverview(){
   const latest=b?'<p>Letzter Rechercheblock: '+esc(b.profile_count)+' Firmen · '+esc(b.field_attempt_count)+' offene Felder untersucht · '+esc(b.new_checked_field_count)+' zusätzlich geprüft · '+esc(b.still_unknown_field_count)+' weiterhin offen.</p>'+corrections:"";
   return '<section class="functional-card"><h3>Vertiefte Firmenprüfung · '+esc(r.checked_date)+'</h3><p>'+esc(r.technical_company_count)+' technische Firmenprofile · '+esc(r.eligibility_company_count)+' KMU-Prüfungen · '+esc(r.identity_company_count)+' Firmenzuordnungen. '+esc(r.field_attempt_count)+' offene Felder untersucht, '+esc(r.new_checked_field_count)+' zusätzlich geprüft.</p>'+latest+genericTable(['Unternehmen','Prüfung','Ergebnis / nächster Schritt'],r.profiles.map(p=>'<tr data-company-id="'+esc(p.company_id)+'"><td><strong>'+esc(p.legal_entity)+'</strong></td><td>'+esc({TECHNICAL:'Technik',ELIGIBILITY:'KMU',IDENTITY:'Firmenzuordnung'}[p.workstream])+'</td><td class="wrap-cell">'+esc(p.finding)+'<div class="source-meta">'+esc(p.next_action)+'</div></td></tr>'))+'</section>';
 }
+function allSourceRecords(){
+  return (state.data.companies||[]).flatMap(c=>(c.sources||[]).map(s=>({...s,company_id:c.company_id,legal_entity:c.legal_entity,sample_member:true}))).concat(state.data.additional_sources||[]);
+}
+function allCertificateRecords(){
+  return (state.data.companies||[]).flatMap(c=>(c.certificate_checks||[]).map(r=>({...r,company_id:c.company_id,legal_entity:c.legal_entity,sample_member:true}))).concat(state.data.additional_certificate_checks||[]);
+}
+function sourceLinks(ids){
+  const sources=allSourceRecords();
+  return String(ids||'').split('|').map(s=>s.trim()).filter(Boolean).map(id=>{const s=sources.find(r=>r.source_id===id);return s?safeLink(s.source_link,id):esc(id)}).join(' · ')||'—';
+}
+function knownValue(v){return v===null||v===undefined||v===''?'UNKNOWN':String(v)}
+function publicFindings(findings){
+  if(!findings.length)return '<p class="functional-empty">Keine zusätzlichen Recherchebefunde dokumentiert.</p>';
+  return genericTable(['Firma / Datum','Befund','Ergebnis / Status','Aussageumfang / Belege'],findings.map(r=>
+    '<tr data-finding-id="'+esc(r.task_id)+'" data-company-id="'+esc(r.company_id)+'"><td><strong>'+esc(r.legal_entity)+'</strong><div class="source-meta">'+esc(r.company_id)+' · '+esc(r.checked_date)+'</div></td><td class="wrap-cell">'+esc(r.finding_summary)+'<div class="source-meta">'+esc(r.missing_fact)+'</div></td><td>'+esc(knownValue(r.resulting_value))+'<div class="source-meta">'+esc(titleCase(r.research_status))+' · '+esc(r.evidence_level)+'</div><div class="source-meta">Nächste Prüfung: '+esc(r.next_review_date||'—')+'</div></td><td class="wrap-cell">'+esc(r.search_scope)+'<div>'+sourceLinks(r.source_ids)+'</div><div class="source-meta">'+esc(r.decision_effect)+'</div></td></tr>'
+  ));
+}
+function companyFindings(c){
+  const rows=(state.data.research_findings||[]).filter(r=>r.company_id===c.company_id);
+  return '<section class="section-card"><div class="section-card-title">Öffentliche Recherchebefunde · '+rows.length+'</div><div class="section-card-body"><p>Datierte Beobachtungen mit ihrem Aussageumfang; die Übernahme in Stammdaten und finale Scores erfolgt separat.</p>'+publicFindings(rows)+'</div></section>';
+}
+function fieldProof(p){
+  const labels={CONFIRMED:'Bestätigt',CORRECTED:'Korrigiert',NEEDS_RESEARCH:'Zurückgenommen / offen',NEW_EVIDENCE:'Neuer Beleg',REASSESSED:'Erneut bewertet'};
+  return '<div>'+esc(p.evidence_basis||'')+'</div>'+
+    (p.missing_fact?'<div class="missing-fact"><strong>Fehlender Fakt:</strong> '+esc(p.missing_fact)+'</div>':'')+
+    '<div class="source-meta">'+sourceLinks(p.evidence_source_ids)+' · '+esc(p.proposal_confidence)+'</div>'+
+    ((p.check_history||[]).length?'<details class="audit-details"><summary>Prüfverlauf · '+p.check_history.length+'</summary>'+p.check_history.map(r=>'<div class="source-item"><strong>'+esc(r.checked_date)+' · '+esc(labels[r.outcome]||r.outcome)+'</strong><div>'+esc(knownValue(r.original_value))+' ('+esc(r.original_confidence||'UNKNOWN')+') → '+esc(knownValue(r.checked_value))+' ('+esc(r.checked_confidence||'UNKNOWN')+')</div><p>'+esc(r.checked_evidence_basis||r.decision_note||'')+'</p><div>'+sourceLinks(r.checked_source_ids)+'</div><div class="source-meta">Quellen-/Ankerprüfung: '+esc(r.checked_by||'—')+' · Finale Freigabe: '+esc(r.final_score_approval==='NOT_GRANTED'?'nicht erteilt':r.final_score_approval||'offen')+'</div></div>').join('')+'</details>':'');
+}
+function companyFacts(c){
+  const fields={three_shift_operation:'Dreischichtbetrieb',pv_present:'Photovoltaik',public_load_profile_available:'Öffentliches Lastprofil',public_fossil_heat_signal:'Fossiler Wärmehinweis',refrigeration_or_compressor_signal:'Kälte / Druckluft',batch_or_refrigeration_signal:'Chargen / Kühlung',rectifier_converter_furnace_signal:'Gleichrichter / Umrichter / Ofen',multi_shift_or_batch_signal:'Mehrschicht / Chargen'};
+  const deployments={heat_recovery_deployed:'Wärmerückgewinnung',energy_management_deployed:'Energiemanagement',flexibility_solution_deployed:'Lastflexibilität',thermal_storage_deployed:'Thermischer Speicher',battery_storage_deployed:'Batteriespeicher',power_quality_solution_deployed:'Power Quality',industrial_heat_electrification_deployed:'Elektrische Prozesswärme'};
+  const value=v=>({YES:'Ja',NO:'Nein',UNKNOWN:'Unbekannt'}[v]||'Unbekannt');
+  return '<section class="section-card"><div class="section-card-title">Energie- und Prozessstammdaten · '+esc(c.last_verified_date||'—')+'</div><div class="section-card-body"><details class="audit-details"><summary>Öffentliche Signale und Technikbestand</summary>'+genericTable(['Signal','Stammdatenwert'],Object.entries(fields).map(([k,l])=>'<tr><td>'+l+'</td><td>'+value(c.public_signals?.[k])+'</td></tr>'))+genericTable(['Technikbestand','Stammdatenwert'],Object.entries(deployments).map(([k,l])=>'<tr><td>'+l+'</td><td>'+value(c.canonical_deployments?.[k])+'</td></tr>'))+'<p>Neu recherchierte Befunde sind mit Datum im Rechercheprotokoll sichtbar.</p></details><h4>Dokumentierte Ziele</h4><p>'+esc(c.public_signals?.public_targets_summary||'Keine Angabe')+'</p><h4>Dokumentierte Investitionen</h4><p>'+esc(c.public_signals?.public_investments_summary||'Keine Angabe')+'</p>'+genericTable(['Eigener Prozess','Beleg / Aussageumfang'],(c.processes||[]).map(p=>'<tr><td>'+esc(p.process_name_raw||p.process_name)+'<div class="source-meta">'+esc(p.process_id)+' · '+esc(p.confidence)+' · '+esc(p.review_status)+'</div></td><td class="wrap-cell">'+esc(p.evidence_note||'')+'<div>'+safeLink(p.evidence_url,'Prozessbeleg')+'</div></td></tr>'))+'</div></section>';
+}
+function companyQA(c){
+  const q=c.qa_review||{};
+  if(!q.company_id)return '';
+  return '<section class="section-card"><div class="section-card-title">QA-Prüfprotokoll · '+esc(q.qa_date)+'</div><div class="section-card-body"><p>'+esc(q.qa_result)+' · Unabhängige Zweitprüfung: '+esc(titleCase(q.independent_human_review_status||'UNKNOWN'))+'</p><p>'+esc(q.remaining_limitation||'Keine weitere Einschränkung dokumentiert.')+'</p><div class="source-meta">Prüfperson / Methode: '+esc(q.qa_reviewer||'—')+'</div></div></section>';
+}
+function sourceRecoveryDetails(c){
+  const rows=(state.data.source_audit_summary?.recovery_cases||[]).filter(r=>r.company_id===c.company_id);
+  if(!rows.length)return '';
+  return '<section class="section-card"><div class="section-card-title">Ersatzbelege und Zugriffsgrenzen · '+rows.length+'</div><div class="section-card-body">'+rows.map(r=>'<div class="source-item">'+safeLink(r.original_url,'Originalquelle')+'<div class="source-meta">'+esc(r.checked_date)+' · '+esc(titleCase(r.resolution_status))+'</div><p>'+esc(r.supported_scope)+'</p><div>'+sourceLinks(r.replacement_source_ids)+'</div><div class="action-text"><strong>Offen:</strong> '+esc(r.remaining_gap||'—')+'</div></div>').join('')+'</div></section>';
+}
+function fullSourceRegister(){
+  const rows=allSourceRecords();
+  return '<section class="functional-card"><h3>Vollständiges Quellenregister · '+rows.length+'</h3><p>'+rows.filter(s=>s.sample_member).length+' Quellen des aktuellen Samples · '+rows.filter(s=>!s.sample_member).length+' außerhalb des Samples.</p>'+genericTable(['Firma / Umfang','Quelle','Abruf / Inhalt','Aussage / Zeitraum'],rows.map(s=>'<tr data-source-id="'+esc(s.source_id)+'" data-company-id="'+esc(s.company_id)+'"><td>'+esc(s.company_id+' · '+s.legal_entity)+'<div class="source-meta">'+(s.sample_member?'Aktuelles Sample':'Außerhalb des Samples')+'</div></td><td class="wrap-cell">'+safeLink(s.source_link,s.source_id+' · '+s.document_title)+'</td><td>'+esc(titleCase(s.retrieval_status))+'<div class="source-meta">Inhalt: '+esc(titleCase(s.content_review_status))+'</div></td><td class="wrap-cell"><details class="audit-details"><summary>Aussage und Prüfgrenzen</summary><p>'+esc(s.evidence_fact)+'</p><p>'+esc(s.content_scope_note)+'</p><p><strong>Ursprünglich registrierte Aussage:</strong> '+esc(s.registered_evidence_fact)+'</p><div class="source-meta">Zeitraum: '+esc(s.reporting_period||'offen')+' · Veröffentlichung: '+esc(s.publication_date||'nicht angegeben')+' · Inhalt geprüft: '+esc(s.content_checked_at?.slice(0,10)||'—')+'</div><div class="source-meta">Fundstelle: '+esc(s.relevant_location||'—')+' · Abruf geprüft: '+esc(s.retrieval_checked_at||'—')+' · Registerzugriff: '+esc(s.access_date||'—')+'</div></details></td></tr>'))+'</section>';
+}
+function fullCertificateRegister(){
+  const rows=allCertificateRecords();
+  return '<section class="functional-card"><h3>Vollständiges Zertifikatsregister · '+rows.length+'</h3><p>Alle dokumentierten ISO-50001-, ISO-14001- und EMAS-Prüfungen; außerhalb des Samples geführte Nachweise werden separat gekennzeichnet.</p>'+genericTable(['Firma / Standard','Status / Gültigkeit','Inhaber / Beleg'],rows.map(r=>'<tr data-certificate-key="'+esc(r.company_id+'-'+r.standard)+'" data-company-id="'+esc(r.company_id)+'"><td>'+esc(r.company_id+' · '+r.legal_entity)+'<div>'+esc(r.standard)+'</div><div class="source-meta">'+(r.sample_member?'Aktuelles Sample':'Außerhalb des Samples')+'</div></td><td>'+certificateCell(r.certificate_status)+'<div class="source-meta">'+esc(r.valid_from||'offen')+' – '+esc(r.valid_until||'offen')+'</div></td><td class="wrap-cell">'+esc(r.certificate_holder||'Inhaber nicht dokumentiert')+'<div class="source-meta">'+esc(r.certificate_number||'—')+' · '+esc(r.issuer||'—')+'</div>'+safeLink(r.direct_certificate_url||r.certificate_index_url,'Nachweis / geprüfte Quelle')+'<details class="audit-details"><summary>Prüfhinweis · '+esc(r.checked_date)+'</summary>'+esc(r.notes)+'</details></td></tr>'))+'</section>';
+}
+
 function storageGet(key,fallback){
   try{const value=localStorage.getItem(key);return value?JSON.parse(value):fallback}catch(_){return fallback}
 }
@@ -179,7 +232,7 @@ function aggregateBy(items,keyFn){
   return map;
 }
 function bindFunctionalCompanyRows(){
-  $$("#functionalContent [data-company-id]").forEach(row=>row.addEventListener("click",()=>openCompany(row.dataset.companyId)));
+  $$("#functionalContent [data-company-id]").forEach(row=>row.addEventListener("click",event=>{if(event.target.closest("a,button,input,select,textarea,details"))return;openCompany(row.dataset.companyId)}));
 }
 function companies(){
   let rows=state.data.companies.slice();
@@ -319,7 +372,7 @@ function renderDetail(){
           (why.length?'<ul class="bullet-list">'+why.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>':'<span class="action-text">Kein zusätzlicher Why-Now-Faktor dokumentiert.</span>')+
         '</div></section>'+
       '</div>'+
-      decisionProfile(c)+certificateDetails(c)+
+      decisionProfile(c)+certificateDetails(c)+companyFacts(c)+
       '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box"><div class="action-icon">▤</div><div><div class="action-title">'+esc(task?titleCase(task.opportunity_type):"Keine offene Aufgabe")+'</div><div class="action-text">'+esc(task?.research_question||"Keine priorisierte Research-Aufgabe vorhanden.")+'</div></div><div class="action-meta">'+esc(titleCase(task?.task_status||""))+'</div></div></section>'+
     '</div>';
   }else if(state.detailTab==="analysis"){
@@ -339,21 +392,21 @@ function renderDetail(){
         '<div class="action-text" style="margin-top:10px"><strong>Nächster Score-Schritt:</strong> '+esc(sr.next_action||"—")+'</div>'+
         (sr.blocking_reasons?'<div class="action-text" style="margin-top:7px"><strong>Blocker:</strong> '+esc(sr.blocking_reasons)+'</div>':"")+
       '</div></section>'+
-      '<section class="section-card"><div class="section-card-title">Feldprüfung</div><div class="section-card-body"><p>Geprüfte Vorschläge und offene Belegfragen. Werte sind keine freigegebenen Scores.</p>'+genericTable(["Feld","Vorschlag","Status","Beleg"],(c.score_proposals||[]).map(p=>'<tr data-score-field="'+esc(p.score_field)+'"><td>'+esc(titleCase(p.score_field))+'</td><td>'+esc(p.proposed_value??"UNKNOWN")+'</td><td>'+esc(p.proposal_status==="NEEDS_RESEARCH"?"Recherche nötig":titleCase(p.proposal_status))+'</td><td class="wrap-cell">'+esc(p.evidence_basis)+'<div class="source-meta">'+esc(p.evidence_source_ids)+' · '+esc(p.proposal_confidence)+'</div></td></tr>'))+'</div></section>'+
+      '<section class="section-card"><div class="section-card-title">Feldprüfung</div><div class="section-card-body"><p>Geprüfte Vorschläge und offene Belegfragen. Werte sind keine freigegebenen Scores.</p>'+genericTable(["Feld","Vorschlag","Status","Beleg"],(c.score_proposals||[]).map(p=>'<tr data-score-field="'+esc(p.score_field)+'"><td>'+esc(titleCase(p.score_field))+'</td><td>'+esc(p.proposed_value??"UNKNOWN")+'</td><td>'+esc(p.proposal_status==="NEEDS_RESEARCH"?"Recherche nötig":titleCase(p.proposal_status))+'</td><td class="wrap-cell">'+fieldProof(p)+'</td></tr>'))+'</div></section>'+
       '<section class="section-card"><div class="section-card-title">Scoring Work Queue · '+(c.score_work_tasks||[]).length+'</div><div class="section-card-body source-list">'+
         ((c.score_work_tasks||[]).length?(c.score_work_tasks||[]).map(t=>
           '<div class="source-item"><strong>#'+esc(t.work_rank??"—")+' · '+esc(t.dimension?titleCase(t.dimension):titleCase(t.task_type))+'</strong><div class="action-text"><strong>Canonical missing:</strong> '+esc(t.missing_fields||"Keine offenen Felder")+'</div>'+(t.proposal_status_summary?'<div class="action-text"><strong>Proposal:</strong> '+esc(proposalSummaryLabel(t.proposal_status_summary))+'</div>':"")+(t.research_gap_fields?'<div class="action-text"><strong>Research gaps:</strong> '+esc(t.research_gap_fields)+'</div>':"")+'<div class="source-meta">'+esc(t.workstream)+' · '+esc(t.work_priority)+' · '+esc(titleCase(t.task_status))+'</div><div class="action-text">'+esc(t.next_action||"")+'</div></div>'
         ).join(""):'Keine offene Scoring-Arbeit.')+
-      '</div></section></div>';
+      '</div></section>'+companyQA(c)+'</div>';
   }else if(state.detailTab==="research"){
-    body='<div class="detail-body">'+decisionProfile(c)+'<section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
+    body='<div class="detail-body">'+decisionProfile(c)+companyFindings(c)+'<section class="section-card"><div class="section-card-title">Research Queue · '+(c.research_tasks||[]).length+'</div><div class="section-card-body source-list">'+
       ((c.research_tasks||[]).length?(c.research_tasks||[]).map(t=>'<div class="source-item"><strong>#'+esc(t.research_rank??"—")+' · '+esc(titleCase(t.opportunity_type))+'</strong><div class="action-text">'+esc(t.research_question)+'</div>'+(t.last_finding?'<p>'+esc(t.last_finding)+'</p>':"")+'<div class="source-meta">'+esc(t.research_priority)+' priority · '+esc(t.task_status==='EVIDENCE_FOUND'?'Beleg gefunden':titleCase(t.task_status||"OPEN"))+'</div></div>').join(""):'Keine offenen Tasks')+
       '</div></section></div>';
   }else{
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">Evidence Trail · '+(c.sources||[]).length+' Quellen</div><div class="section-card-body source-list">'+
       '<p>Abrufprüfung und inhaltliche Nachprüfung sind getrennt dokumentiert. Erreichbarkeit allein bestätigt keine Aussage oder Zertifikatsgültigkeit.</p>'+
       ((c.sources||[]).length?(c.sources||[]).map(s=>'<div class="source-item">'+safeLink(s.final_url,s.document_title||s.publisher||s.source_id)+'<div class="source-meta">'+esc([s.source_id,titleCase(s.source_type),s.publisher].filter(Boolean).join(" · "))+'</div><div class="source-meta">Abruf: '+esc(titleCase(s.retrieval_status||"NOT_CHECKED"))+' · '+esc(s.link_check_date||"—")+'</div><div class="source-meta">Inhaltsprüfung: '+esc(titleCase(s.content_review_status||"NOT_CHECKED"))+(s.content_checked_at?' · '+esc(s.content_checked_at.slice(0,10)):'')+'</div><div class="action-text">'+esc(s.evidence_fact||"")+'</div>'+(s.content_scope_note?'<div class="source-meta">Aussageumfang: '+esc(s.content_scope_note)+'</div>':'')+'</div>').join(""):'Keine Quellen im Register')+
-      '</div></section></div>';
+      '</div></section>'+sourceRecoveryDetails(c)+'</div>';
   }
   const isPinned=pinnedIds().includes(c.company_id);
   $("#detailContent").innerHTML=
@@ -368,6 +421,8 @@ function renderResearch(){
   tasks.sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
   if(q) tasks=tasks.filter(t=>[t.legal_entity,t.opportunity_type,t.research_question].join(" ").toLowerCase().includes(q));
   $("#researchRows").innerHTML=tasks.map(t=>'<tr data-id="'+esc(t.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.legal_entity)+'</strong></td><td>'+esc(titleCase(t.opportunity_type))+'</td><td style="white-space:normal;min-width:420px">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.decision_impact)+'</td><td>'+esc(titleCase(t.task_status||"OPEN"))+'</td></tr>').join("");
+  const found=(state.data.research_findings||[]).filter(r=>!q||[r.legal_entity,r.finding_summary,r.missing_fact,r.source_ids].join(' ').toLowerCase().includes(q));
+  $("#researchFindings").innerHTML='<section class="functional-card"><h3>Recherchebefund-Protokoll · '+found.length+'</h3><p>Alle datierten Befunde, einschließlich Einträgen ohne eigene Queue-Aufgabe. '+found.filter(r=>r.resulting_value==='YES').length+' dokumentierte YES-Befunde im aktuellen Suchumfang. Stammdaten und finale Freigaben bleiben separat.</p>'+publicFindings(found)+'</section>';
   $$("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>openCompany(r.dataset.id)));
 }
 function renderFunctional(view){
@@ -389,8 +444,9 @@ function renderFunctional(view){
     root.innerHTML='<section class="functional-card"><h3>Inhaltsprüfung des Quellenbestands</h3><p>'+esc(content.assessed_source_count??0)+' / '+esc(content.registered_source_count??0)+' registrierte Quellen eingestuft · '+esc(content.rechecked_source_count??0)+' im dokumentierten Umfang nachgeprüft · '+esc(content.context_only_source_count??0)+' nur Kontext · '+esc(content.unavailable_source_count??0)+' nicht abrufbar · '+esc(content.missing_source_count??0)+' ohne Inhaltsprüfung</p><p>Der Durchgang umfasst auch ausgeschlossene Kandidaten. Geprüft wurde jeweils die dokumentierte Aussage oder der relevante Abschnitt. Eine Einstufung als Kontext oder nicht abrufbar bestätigt die ursprüngliche Aussage nicht. Offene Feldfragen und persönliche Freigabe bleiben separat.</p></section>'+
       '<section class="functional-card"><h3>Öffentliche Quellen · Abrufprüfung</h3><p>'+esc(audit.checked_company_count??0)+' / '+esc(audit.sample_company_count??0)+' Sample-Firmen geprüft · '+esc(audit.retrievable_url_count??0)+' / '+esc(audit.audited_url_count??0)+' URLs abrufbar · Stand '+esc(audit.last_checked_at||"—")+'</p><p>Die URL-Zahlen enthalten auch ausgeschlossene Kandidaten, Weiterleitungsziele und Ersatzbelege. HTTP 200 bestätigt keine Unternehmenszuordnung, aktuelle Zertifikatsgültigkeit oder Human Review. UNKNOWN bleibt UNKNOWN.</p></section>'+
       '<section class="functional-card"><h3>Inhaltliche Grenzen im Quellenbestand</h3>'+genericTable(["Firma","Quelle","Inhaltsprüfung","Aussagegrenze"],(content.boundary_sources||[]).map(r=>'<tr data-company-id="'+esc(r.company_id)+'"><td>'+esc(r.company_id)+'</td><td class="wrap-cell">'+safeLink(r.source_url,r.source_id+' · '+r.document_title)+'</td><td>'+esc(titleCase(r.content_review_status))+'</td><td class="wrap-cell">'+esc(r.scope_note||"—")+'</td></tr>'))+'</section>'+
-      '<section class="functional-card"><h3>Ersatzbelege und offene Aussagegrenzen</h3>'+genericTable(["Firma","Originalquelle","Ergebnis","Ersatz-/Kontext-IDs","Belegter Umfang","Offene Lücke"],cases.map(r=>'<tr data-company-id="'+esc(r.company_id)+'"><td>'+esc(r.company_id)+'</td><td class="wrap-cell"><a href="'+esc(r.original_url)+'" target="_blank" rel="noopener">'+esc(r.original_url)+'</a></td><td>'+esc(titleCase(r.resolution_status))+'</td><td>'+esc(r.replacement_source_ids||"—")+'</td><td class="wrap-cell">'+esc(r.supported_scope)+'</td><td class="wrap-cell">'+esc(r.remaining_gap||"—")+'</td></tr>'))+'</section>'+
+      '<section class="functional-card"><h3>Ersatzbelege und offene Aussagegrenzen</h3>'+genericTable(["Firma","Originalquelle","Ergebnis","Ersatz-/Kontext-IDs","Belegter Umfang","Offene Lücke"],cases.map(r=>'<tr data-company-id="'+esc(r.company_id)+'"><td>'+esc(r.company_id)+'</td><td class="wrap-cell">'+safeLink(r.original_url,r.original_url)+'</td><td>'+esc(titleCase(r.resolution_status))+'</td><td>'+sourceLinks(r.replacement_source_ids)+'</td><td class="wrap-cell">'+esc(r.supported_scope)+'</td><td class="wrap-cell">'+esc(r.remaining_gap||"—")+'</td></tr>'))+'</section>'+
       '<section class="functional-card"><h3>Prüfabdeckung aller Sample-Firmen</h3>'+genericTable(["Firma","Coding bereits begonnen","Geprüfte URLs","Abrufbar","Abrufprobleme","Offene Beleggrenzen"],(audit.companies||[]).map(r=>'<tr data-company-id="'+esc(r.company_id)+'"><td><strong>'+esc(r.company_id)+' · '+esc(r.legal_entity)+'</strong></td><td>'+esc(r.has_coding_assessment==="YES"?"Ja":"Nein")+'</td><td>'+esc(r.audited_url_count)+'</td><td>'+esc(r.retrievable_url_count)+'</td><td>'+esc(r.retrieval_issue_count)+'</td><td>'+esc(r.scope_gap_count)+'</td></tr>'))+'</section>';
+    root.innerHTML+=fullSourceRegister()+fullCertificateRegister();
     bindFunctionalCompanyRows();return;
   }
 
@@ -451,7 +507,7 @@ function renderFunctional(view){
     title.textContent="Opportunities";
     sub.textContent="Alle vom Opportunity Engine abgeleiteten technischen und kommerziellen Signale.";
     const rows=all.flatMap(c=>(c.opportunities||[]).map(o=>({company:c,...o}))).sort((a,b)=>a.company.legal_entity.localeCompare(b.company.legal_entity)||a.opportunity_type.localeCompare(b.opportunity_type));
-    root.innerHTML=genericTable(["Unternehmen","Technologie","Level","Commercial Status","Actionability","Confidence","Why Now"],rows.map(o=>'<tr data-company-id="'+esc(o.company.company_id)+'"><td><strong>'+esc(o.company.legal_entity)+'</strong></td><td>'+esc(titleCase(o.opportunity_type))+'</td><td>'+esc(o.opportunity_level||"—")+'</td><td>'+esc(titleCase(o.commercial_status))+'</td><td>'+esc(titleCase(o.actionability_status))+'</td><td>'+esc(o.confidence||"—")+'</td><td class="wrap-cell">'+esc(o.why_now||"—")+'</td></tr>'));
+    root.innerHTML=genericTable(["Unternehmen","Technologie","Level","Commercial Status","Actionability","Confidence","Begründung / nächster Schritt"],rows.map(o=>'<tr data-company-id="'+esc(o.company.company_id)+'"><td><strong>'+esc(o.company.legal_entity)+'</strong></td><td>'+esc(titleCase(o.opportunity_type))+'</td><td>'+esc(o.opportunity_level||"—")+'</td><td>'+esc(titleCase(o.commercial_status))+'</td><td>'+esc(titleCase(o.actionability_status))+'</td><td>'+esc(o.confidence||"—")+'</td><td class="wrap-cell">'+esc(o.why_now||"—")+'<div class="action-text"><strong>Nächster Schritt:</strong> '+esc(o.next_action||"—")+'</div><div class="source-meta">Regel: '+esc(o.rule_id||"—")+'</div></td></tr>'));
     bindFunctionalCompanyRows();return;
   }
 
@@ -527,7 +583,8 @@ function renderFunctional(view){
     const allOpps=all.flatMap(c=>c.opportunities||[]);
     const groups=aggregateBy(allOpps,o=>o.opportunity_type);
     const rows=Array.from(groups.entries()).map(([name,list])=>({name,total:list.length,high:list.filter(o=>(o.opportunity_level||o.priority)==="HIGH").length,medium:list.filter(o=>(o.opportunity_level||o.priority)==="MEDIUM").length,research:list.filter(o=>o.commercial_status==="RESEARCH_REQUIRED").length})).sort((a,b)=>b.total-a.total);
-    root.innerHTML=genericTable(["Technologie","Signale","High","Medium","Research Required"],rows.map(r=>'<tr><td><strong>'+esc(titleCase(r.name))+'</strong></td><td>'+r.total+'</td><td>'+r.high+'</td><td>'+r.medium+'</td><td>'+r.research+'</td></tr>'));return;
+    root.innerHTML=genericTable(["Technologie","Signale","High","Medium","Research Required"],rows.map(r=>'<tr><td><strong>'+esc(titleCase(r.name))+'</strong></td><td>'+r.total+'</td><td>'+r.high+'</td><td>'+r.medium+'</td><td>'+r.research+'</td></tr>'))+
+      '<section class="functional-card"><h3>Technologiebibliothek · '+(state.data.reference_libraries?.technologies||[]).length+'</h3><p>Generische Referenzprofile. Ein Prozessfit ist kein Nachweis einer Anlage oder ihrer Wirtschaftlichkeit bei einer Firma; der dokumentierte Prüfstatus gilt je Profil.</p>'+genericTable(['Technologie / Status','Prozessfit / Signale','Standort- und Wirtschaftlichkeitsbedarf','Referenz'],(state.data.reference_libraries?.technologies||[]).map(t=>'<tr data-technology-id="'+esc(t.technology_id)+'"><td>'+esc(t.technology_name)+'<div class="source-meta">'+esc(t.technology_family)+' · '+esc(t.review_status)+' · Confidence-Cap '+esc(t.default_confidence_cap)+'</div></td><td class="wrap-cell">'+esc(t.process_fit_logic)+'<p>'+esc(t.public_evidence_signals)+'</p><div>'+esc(t.primary_energy_service)+'</div></td><td class="wrap-cell">'+esc(t.site_constraints_required)+'<p>'+esc(t.economic_inputs_required)+'</p></td><td class="wrap-cell">'+safeLink(t.generic_evidence_url,'Generischer Beleg')+'<p>'+esc(t.generic_evidence_note)+'</p></td></tr>'))+'</section>';return;
   }
 
   if(view==="methodology"){
@@ -540,17 +597,32 @@ function renderFunctional(view){
       '<section class="functional-card"><h3>Research Safeguard</h3><p><strong>UNKNOWN bleibt UNKNOWN.</strong> Fehlende öffentliche Evidenz ist kein Beweis für Nicht-Deployment oder White Space.</p></section>'+
       '<section class="functional-card"><h3>Finale Score-Freigabe</h3><p>Geprüfte Feldvorschläge haben einen eigenen Status. Ihre Übernahme in die endgültigen Scores braucht eine separate Freigabe.</p></section>'+
       '<section class="functional-card"><h3>Eligibility</h3><p>Technische Relevanz bleibt sichtbar, aber ungeklärte SME-/Gruppenstruktur blockiert die Actionability.</p></section>'+
-    '</div>';return;
+    '</div>'+
+      '<section class="functional-card"><h3>ETOI-Felder und Obergrenzen · '+esc(state.data.scoring_methodology?.maximum_total)+' Punkte</h3><p>Fünf Dimensionen, 15 Felder. Offene Werte bleiben UNKNOWN; generische Temperaturbereiche liefern keine firmenspezifischen Punkte. Technische Priorität A/B/C, Quellenconfidence und finale Scores sind getrennte Größen.</p>'+genericTable(['Dimension / Maximum','Feld','Maximum'],Object.entries(state.data.scoring_methodology?.dimensions||{}).flatMap(([d,fields])=>Object.entries(fields).map(([f,max])=>'<tr data-score-field="'+esc(f)+'"><td>'+esc(titleCase(d))+' · '+Object.values(fields).reduce((a,b)=>a+b,0)+'</td><td>'+esc(titleCase(f))+'</td><td>'+esc(max)+'</td></tr>')))+'<p>Dokumentiertes Investitionsfenster: 07.10.2021 bis 07.10.2026. Es verschiebt sich nicht automatisch mit dem Abrufdatum.</p></section>'+
+      '<section class="functional-card"><h3>Prozessbibliothek · '+(state.data.reference_libraries?.processes||[]).length+'</h3><p>Generische Referenzbereiche; keine gemessenen Unternehmenswerte. Antrieb, Wärme, Kühlung, Flexibilität und Power Quality werden als Prozessmerkmale dokumentiert.</p>'+genericTable(['Prozess / Temperaturbereich','Energiedienste / Relevanz','Flexibilität / Betriebsweise','Prüfstatus / Referenz'],(state.data.reference_libraries?.processes||[]).map(p=>'<tr data-process-id="'+esc(p.process_id)+'"><td>'+esc(p.process_name)+'<div class="source-meta">'+esc(p.process_family)+' · '+esc(knownValue(p.typical_temperature_min_c))+' bis '+esc(knownValue(p.typical_temperature_max_c))+' °C</div></td><td class="wrap-cell">'+esc(p.dominant_energy_service)+'<div>Antrieb: '+esc(p.drive_relevance)+' · Wärme: '+esc(p.process_heat_relevance)+' · Kälte: '+esc(p.cooling_relevance)+'</div><div>Leistungselektronik: '+esc(p.power_electronics_relevance)+' · Power Quality: '+esc(p.power_quality_relevance)+'</div></td><td class="wrap-cell">'+esc(p.batch_continuous)+' · Planung: '+esc(p.schedulability)+' · Speicher / Trägheit: '+esc(p.thermal_inertia_storage)+'</td><td class="wrap-cell">'+esc(p.review_status)+'<div>'+safeLink(p.generic_evidence_url,'Generischer Beleg')+'</div><p>'+esc(p.generic_evidence_note)+'</p></td></tr>'))+'</section>'+
+      '<section class="functional-card"><h3>Opportunity-Regeln · '+(state.data.reference_libraries?.opportunity_rules||[]).length+'</h3>'+genericTable(['Regel / Ergebnis','Benötigte Signale / Blocker','Begründung / Confidence'],(state.data.reference_libraries?.opportunity_rules||[]).map(r=>'<tr data-rule-id="'+esc(r.rule_id)+'"><td>'+esc(r.rule_id)+' · '+esc(titleCase(r.opportunity_type))+'<div>'+esc(r.output_level)+' · '+esc(r.rule_status)+'</div></td><td class="wrap-cell">Prozess: '+esc(r.required_process_signal)+'<div>Firma: '+esc(r.required_company_signal)+'</div><div>Blocker: '+esc(r.blocking_signal)+'</div></td><td class="wrap-cell">'+esc(r.reason_template)+'<div>Confidence-Cap: '+esc(r.confidence_cap)+'</div></td></tr>'))+'</section>';return;
+  }
+
+  if(view==="quality"){
+    title.textContent="Qualitätssicherung";
+    sub.textContent="Dokumentierte QA und unabhängige Zweitprüfung mit ihren tatsächlichen Grenzen.";
+    const q=state.data.quality_assurance||{};
+    const checks=q.company_checks||[];
+    const reliability=q.reliability||[];
+    const conflicts=q.double_code_conflicts||[];
+    root.innerHTML='<section class="functional-card"><h3>QA-Protokolle · '+checks.length+'</h3><p>Eine dokumentarische QA ersetzt keine unabhängige Prüfung. Datum, Prüfmethode und verbleibende Grenzen werden je Firma gezeigt.</p>'+genericTable(['Firma / Datum','Identität / KMU','Prozess / Zertifikate / Quellen','Ergebnis / Einschränkung'],checks.map(r=>'<tr data-qa-company="'+esc(r.company_id)+'" data-company-id="'+esc(r.company_id)+'"><td>'+esc(r.legal_entity)+'<div>'+esc(r.qa_date)+' · '+esc(r.qa_reviewer)+'</div></td><td class="wrap-cell">'+esc(r.legal_entity_check)+'<div>'+esc(r.group_sme_check)+'</div></td><td class="wrap-cell">'+esc(r.process_check)+'<div>'+esc(r.certificate_check)+'</div><div>'+esc(r.evidence_traceability_check)+'</div></td><td class="wrap-cell">'+esc(r.qa_result)+'<p>'+esc(r.remaining_limitation)+'</p><div>Unabhängige Prüfung: '+esc(r.independent_human_review_status)+'</div></td></tr>'))+'</section>'+
+      '<section class="functional-card"><h3>Unabhängige Zweitcodierung</h3><p>'+Object.entries(q.independent_review_status_counts||{}).map(([k,v])=>esc(k)+': '+esc(v)).join(' · ')+'</p><p>Ohne abgeschlossene unabhängige Vergleichspaare bleiben Übereinstimmung und Kappa UNKNOWN. Eine leere Konfliktliste bestätigt keine Übereinstimmung.</p>'+genericTable(['Feld','Abgeschlossene Paare','Übereinstimmung / Differenzen','Anteil / Kappa','Interpretation'],reliability.map(r=>'<tr data-reliability-field="'+esc(r.field)+'"><td>'+esc(r.field)+'</td><td>'+esc(r.completed_pairs)+'</td><td>'+esc(r.agreements)+' / '+esc(r.disagreements)+'</td><td>'+esc(knownValue(r.percent_agreement))+' / '+esc(knownValue(r.cohens_kappa))+'</td><td>'+esc(r.interpretation)+'</td></tr>'))+'<h4>Dokumentierte Konflikte · '+conflicts.length+'</h4>'+genericTable(['Firma / Feld','Werte','Prüfung / Auflösung'],conflicts.map(r=>'<tr><td>'+esc(r.company_id)+' · '+esc(r.field)+'</td><td>'+esc(knownValue(r.canonical_value))+' / '+esc(knownValue(r.reviewer_value))+'</td><td>'+esc(r.reviewer)+' · '+esc(r.review_date)+' · '+esc(r.resolution_status)+'</td></tr>'))+'</section>';
+    bindFunctionalCompanyRows();return;
   }
 
   if(view==="documentation"){
     title.textContent="Dokumentation";
-    sub.textContent="Aktueller Projektaufbau und reproduzierbare Ausführung.";
+    sub.textContent="Projektunterlagen, Datenstand und Zugriff auf die private Weboberfläche.";
     root.innerHTML='<div class="functional-two-col">'+
-      '<section class="functional-card"><h3>Pipeline</h3><pre>python src/run_pipeline.py\npython src/run_pipeline.py --check-only</pre><p>QA → Opportunity Engine → Research Queue → Output Checks → Web Snapshot</p></section>'+
-      '<section class="functional-card"><h3>Web-App</h3><pre>python -m http.server 8000 --directory web</pre><p>Browser: http://localhost:8000</p></section>'+
-      '<section class="functional-card"><h3>Wichtige Dateien</h3><p><code>docs/product_architecture.md</code><br><code>data/company_intelligence.csv</code><br><code>outputs/opportunities.csv</code><br><code>outputs/research_queue.csv</code></p></section>'+
-      '<section class="functional-card"><h3>Current Pilot</h3><p>'+state.data.meta.company_count+' Unternehmen · '+state.data.meta.opportunity_count+' Opportunity-Zeilen · '+state.data.meta.research_task_count+' Research Tasks · '+state.data.meta.eligibility_gate_count+' Eligibility Gates</p></section>'+
+      '<section class="functional-card"><h3>Webzugriff</h3><p>'+safeLink('https://sme-etoi.fairorbit8.chatgpt.site','Private SME-ETOI-Weboberfläche')+'</p><p>Im zugeordneten ChatGPT-Konto öffnen. Aktualisieren lädt den veröffentlichten Datenstand; neue Recherche wird nach Prüfung und Veröffentlichung sichtbar.</p></section>'+
+      '<section class="functional-card"><h3>Aktuelles Sample</h3><p>'+esc(state.data.meta.company_count)+' Unternehmen · '+esc(state.data.meta.opportunity_count)+' Opportunity-Zeilen · '+esc(state.data.meta.research_task_count)+' Rechercheaufgaben · '+esc(state.data.meta.eligibility_gate_count)+' offene KMU-Gates</p><p>Stammdaten tragen ihr eigenes Prüfdatum. Spätere Quellen- und Feldprüfungen werden mit ihrem jeweiligen Datum angezeigt.</p></section>'+
+      '<section class="functional-card"><h3>Projektunterlagen</h3>'+ (state.data.documentation_links||[]).map(d=>'<p>'+safeLink(d.url,d.path)+'</p>').join('')+'</section>'+
+      '<section class="functional-card"><h3>Reproduzierbare Ausführung</h3><details class="audit-details"><summary>Lokaler Zugriff und Pipeline</summary><pre>python src/run_pipeline.py\npython src/run_pipeline.py --check-only\npython -m http.server 8000 --directory web</pre><p>Lokaler Browser: http://localhost:8000. Historische Snapshots und synthetische Demos werden in der Abdeckungsprüfung getrennt vom aktuellen Sample beschrieben.</p></details></section>'+
     '</div>';return;
   }
 }
@@ -601,7 +673,7 @@ function bind(){
   $("#filterButton").addEventListener("click",()=>{$("#focusFilter").focus();showToast("Fokusfilter geöffnet.")});
   $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;$("#tableSearch").value="";$("#globalSearch").value="";$("#focusFilter").value="";renderAll();showToast("Ansicht zurückgesetzt")});
   $("#exportCommand").addEventListener("click",exportCsv);
-  $("#chartsCommand").addEventListener("click",()=>{$("#analyticsBand").scrollIntoView({behavior:"smooth"});showCompanies()});
+  $("#chartsCommand").addEventListener("click",()=>{showCompanies();$("#analyticsBand").scrollIntoView({behavior:"smooth"})});
   $("#methodCommand").addEventListener("click",()=>showNav("methodology"));
   $("#backCommand").addEventListener("click",()=>history.back());
   $("#viewModeSelect").addEventListener("change",e=>{$("#analyticsBand").hidden=e.target.value==="table"});
