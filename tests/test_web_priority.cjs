@@ -15,6 +15,53 @@ const context = vm.createContext({Intl, document: {
 const code = fs.readFileSync(path.join(root, 'web/app.js'), 'utf8').replace(/init\(\);\s*$/, '');
 vm.runInContext(code, context);
 context.payload = JSON.parse(fs.readFileSync(path.join(root, 'web/data/sme_etoi.json'), 'utf8'));
+// A commercial RESEARCH status must not erase an evidenced technical level.
+const fixture = (level, confidence='B', commercial='RESEARCH') => ({
+  opportunities: [{opportunity_level:level, confidence, priority:commercial,
+    sample_eligibility_status:'PROVISIONAL_PASS', commercial_status:'RESEARCH_REQUIRED'}],
+  score_readiness:{score_status:'NEEDS_NUMERIC_CODING'}, opportunity_score:null,
+});
+for (const [company, expected] of [
+  [fixture('HIGH'), 'A'], [fixture('MEDIUM'), 'B'], [fixture('LOW'), 'C'],
+  [fixture('RESEARCH_REQUIRED'), 'UNKNOWN'], [fixture('', 'A', 'HIGH'), 'UNKNOWN'],
+  [fixture('HIGH', 'C'), 'UNKNOWN'], [{opportunities:[]}, 'UNKNOWN'],
+  [{opportunities:[],score_readiness:{score_status:'NOT_SCOREABLE_ELIGIBILITY'}}, 'BLOCKED'],
+  [{...fixture('HIGH'),opportunities:[{...fixture('HIGH').opportunities[0],sample_eligibility_status:'ELIGIBILITY_PENDING'}]}, 'BLOCKED'],
+]) {
+  context.priorityFixture = company;
+  const before = JSON.stringify(company);
+  assert.equal(vm.runInContext('priority(priorityFixture)',context), expected);
+  assert.equal(JSON.stringify(company),before);
+}
+context.priorityFixture = {...fixture('MEDIUM'),opportunities:[...fixture('HIGH','C').opportunities,...fixture('MEDIUM','B').opportunities]};
+assert.equal(vm.runInContext('priority(priorityFixture)',context),'B');
+const untouched = JSON.stringify(context.payload);
+vm.runInContext('state.data=payload; renderPriority();',context);
+let priorityHtml=sinks.get('#priorityDonut').innerHTML;
+assert.ok(priorityHtml.includes('data-priority="UNKNOWN"'));
+assert.ok(priorityHtml.includes('data-priority="BLOCKED"'));
+assert.ok(priorityHtml.includes('Low (C)</span><strong>0</strong>'));
+const priorityCounts=JSON.parse(vm.runInContext('JSON.stringify(payload.companies.reduce((a,c)=>{const p=priority(c);a[p]=(a[p]||0)+1;return a},{}))',context));
+assert.ok(priorityCounts.A>0 && priorityCounts.B>0);
+assert.equal(priorityCounts.BLOCKED,12);
+assert.equal(Object.values(priorityCounts).reduce((a,b)=>a+b,0),100);
+assert.equal(JSON.stringify(context.payload),untouched);
+vm.runInContext('state.focus="high"; state.scope="potential"; renderPriority();',context);
+assert.equal(vm.runInContext('companies().length',context),priorityCounts.A);
+assert.ok(sinks.get('#priorityDonut').innerHTML.includes('High (A)</span><strong>'+priorityCounts.A+'</strong>'));
+vm.runInContext('state.query="__no_such_company__"; renderPriority();',context);
+assert.ok(!sinks.get('#priorityDonut').innerHTML.includes('NaN'));
+assert.ok(sinks.get('#priorityDonut').innerHTML.includes('background:#edebe9'));
+vm.runInContext('state.focus=""; state.query=""; state.scope="all";',context);
+let exported='';
+context.Blob=class {constructor(parts){exported=parts.join('');}};
+context.URL={createObjectURL(){return 'blob:test'},revokeObjectURL(){}};
+context.document.createElement=()=>({click(){}});
+vm.runInContext('exportCsv();',context);
+assert.ok(exported.split('\n')[0].includes('technical_priority'));
+assert.ok(exported.includes('"UNKNOWN"') && exported.includes('"BLOCKED"'));
+assert.equal(JSON.stringify(context.payload),untouched);
+console.log('Technical priority: A/B survive commercial research; open facts and gates stay separate; filter, empty state and CSV passed.');
 vm.runInContext('state.data = payload; renderFunctional("analysis");', context);
 let html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /Erstbewertung abgeschlossen/);

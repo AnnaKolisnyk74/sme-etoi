@@ -47,13 +47,20 @@ function sectorLabel(c){
   };
   return map[c.process_stratum]||titleCase(c.process_stratum)||"Industrie";
 }
+// Technical research priority is separate from commercial status and ETOI scores.
 function priority(c){
-  const values=(c.opportunities||[]).map(o=>(o.priority||o.opportunity_level||"").toUpperCase());
+  if(["ELIGIBILITY_PENDING","EXCLUDED"].includes(eligibility(c))) return "BLOCKED";
+  const values=(c.opportunities||[])
+    .filter(o=>["A","B"].includes(String(o.confidence||"").toUpperCase()))
+    .map(o=>String(o.opportunity_level||"").toUpperCase());
   if(values.includes("HIGH")) return "A";
   if(values.includes("MEDIUM")) return "B";
-  return "C";
+  if(values.includes("LOW")) return "C";
+  return "UNKNOWN";
 }
-function priorityClass(p){return p==="A"?"priority-a":p==="B"?"priority-b":"priority-c"}
+function priorityLabel(p){return p==="UNKNOWN"?"Belege offen":p==="BLOCKED"?"KMU offen":p}
+function priorityRank(c){return {A:0,B:1,C:2,UNKNOWN:3,BLOCKED:4}[priority(c)]}
+function priorityClass(p){return p==="A"?"priority-a":p==="B"?"priority-b":p==="C"?"priority-c":"priority-open"}
 function statusInfo(c){
   const e=eligibility(c);
   if(e==="CONFIRMED") return ["KMU bestätigt","status-qualified"];
@@ -184,7 +191,7 @@ function companies(){
   if(state.focus==="pending") rows=rows.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING");
   if(state.focus==="high") rows=rows.filter(c=>priority(c)==="A");
   if(state.focus==="score") rows=rows.filter(c=>c.opportunity_score!==null&&c.opportunity_score!==undefined);
-  if(state.scope==="potential") rows.sort((a,b)=>priority(a).localeCompare(priority(b))-(0)||((b.opportunity_score||-1)-(a.opportunity_score||-1))||a.legal_entity.localeCompare(b.legal_entity));
+  if(state.scope==="potential") rows.sort((a,b)=>priorityRank(a)-priorityRank(b)||((b.opportunity_score||-1)-(a.opportunity_score||-1))||a.legal_entity.localeCompare(b.legal_entity));
   else if(state.scope==="region") rows.sort((a,b)=>(a.state||"").localeCompare(b.state||"")||a.legal_entity.localeCompare(b.legal_entity));
   else if(state.scope==="sector") rows.sort((a,b)=>sectorLabel(a).localeCompare(sectorLabel(b))||a.legal_entity.localeCompare(b.legal_entity));
   else rows.sort((a,b)=>a.legal_entity.localeCompare(b.legal_entity));
@@ -219,18 +226,23 @@ function renderRegionChart(){
   ).join("");
 }
 function renderPriority(){
-  const rows=companies(), counts={A:0,B:0,C:0};
+  const rows=companies(), counts={A:0,B:0,C:0,UNKNOWN:0,BLOCKED:0};
   rows.forEach(c=>counts[priority(c)]++);
-  const total=rows.length||1;
-  const a=counts.A/total*100,b=counts.B/total*100;
-  const bg='conic-gradient(#107c10 0 '+a+'%, #0f6cbd '+a+'% '+(a+b)+'%, #ff8c00 '+(a+b)+'% 100%)';
+  const categories=[
+    ["A","High (A)","#107c10"],
+    ["B","Medium (B)","#0f6cbd"],
+    ["C","Low (C)","#ff8c00"],
+    ["UNKNOWN","Belege offen","#c8c6c4"],
+    ["BLOCKED","KMU-Prüfung offen","#605e5c"]
+  ];
+  let end=0;
+  const stops=categories.map(([key,,color])=>{const start=end;end+=counts[key]/(rows.length||1)*100;return color+" "+start+"% "+end+"%"});
+  const bg=rows.length?'conic-gradient('+stops.join(', ')+')':'#edebe9';
   $("#priorityDonut").innerHTML=
     '<div class="priority-donut" style="background:'+bg+'"><div class="priority-center"><strong>'+rows.length+'</strong><span>Zielunternehmen</span></div></div>'+
-    '<div class="priority-legend">'+
-      '<div class="priority-legend-row"><span class="legend-dot" style="background:#107c10"></span><span>High (A)</span><strong>'+counts.A+'</strong></div>'+
-      '<div class="priority-legend-row"><span class="legend-dot" style="background:#0f6cbd"></span><span>Medium (B)</span><strong>'+counts.B+'</strong></div>'+
-      '<div class="priority-legend-row"><span class="legend-dot" style="background:#ff8c00"></span><span>Low (C)</span><strong>'+counts.C+'</strong></div>'+
-    '</div>';
+    '<div class="priority-legend">'+categories.map(([key,label,color])=>
+      '<div class="priority-legend-row" data-priority="'+key+'"><span class="legend-dot" style="background:'+color+'"></span><span>'+label+'</span><strong>'+counts[key]+'</strong></div>'
+    ).join('')+'</div>';
 }
 function renderTable(){
   const all=companies(), pages=Math.max(1,Math.ceil(all.length/state.pageSize));
@@ -246,7 +258,7 @@ function renderTable(){
       '<td>'+esc(sectorLabel(c))+'</td>'+
       '<td>'+esc(stateAbbr[c.state]||c.state||"—")+'</td>'+
       '<td>'+(score!=null?'<div class="score-cell"><div class="score-track"><div class="score-fill" style="width:'+Math.min(100,score)+'%"></div></div><span>'+score+'</span></div>':'—')+'</td>'+
-      '<td><span class="priority-badge '+priorityClass(p)+'">'+p+'</span></td>'+
+      '<td><span class="priority-badge '+priorityClass(p)+'">'+esc(priorityLabel(p))+'</span></td>'+
       '<td>'+isoCell(c)+'</td>'+
       '<td>'+fieldProgressCell(c)+'</td>'+
       '<td><span class="status-badge '+statusClass+'">'+esc(status)+'</span></td>'+
@@ -288,7 +300,7 @@ function renderDetail(){
         '<div class="info-item"><span>ISO 14001</span><strong>'+certificateCell(c.certifications?.iso_14001)+'</strong></div>'+
       '</div><div class="score-box">'+
         '<div class="score-box-row"><span>ETOI Score</span><span class="score-big">'+(score!=null?score:"—")+'</span></div>'+
-        '<div class="score-box-row"><span>Priorität</span><span class="priority-badge '+priorityClass(p)+'">'+p+'</span></div>'+
+        '<div class="score-box-row"><span>Technische Priorität</span><span class="priority-badge '+priorityClass(p)+'">'+esc(priorityLabel(p))+'</span></div>'+
         '<div class="score-box-row"><span>KMU-Einstufung</span><span class="status-badge '+statusClass+'">'+esc(status)+'</span></div>'+
         '<div class="score-box-row"><span>Feldprüfung</span><span>'+fieldProgressCell(c)+'</span></div>'+
         '<div class="score-box-row"><span>Confidence</span><span class="confidence-badge '+confClass(c.evidence_confidence)+'">'+esc(c.evidence_confidence||"?")+'</span></div>'+
@@ -387,7 +399,7 @@ function renderFunctional(view){
     sub.textContent="Arbeitsübersicht über Zielunternehmen, offene Research-Fragen und aktuelle persönliche Arbeitslisten.";
     const tasks=all.flatMap(c=>c.research_tasks||[]);
     const recent=recentIds().map(companyById).filter(Boolean).slice(0,5);
-    const top=all.slice().sort((a,b)=>priority(a).localeCompare(priority(b))||((b.opportunities||[]).length-(a.opportunities||[]).length)).slice(0,5);
+    const top=all.slice().sort((a,b)=>priorityRank(a)-priorityRank(b)||((b.opportunities||[]).length-(a.opportunities||[]).length)).slice(0,5);
     root.innerHTML=
       '<div class="functional-kpis">'+
         '<div class="functional-kpi"><span>Zielunternehmen</span><strong>'+all.length+'</strong></div>'+
@@ -396,8 +408,8 @@ function renderFunctional(view){
         '<div class="functional-kpi"><span>Eligibility offen</span><strong>'+all.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING").length+'</strong></div>'+
       '</div>'+
       '<div class="functional-two-col">'+
-        '<section class="functional-card"><h3>Zuletzt geöffnet</h3>'+(recent.length?genericTable(["Unternehmen","Branche","Priorität"],recent.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(sectorLabel(c))+'</td><td>'+priority(c)+'</td></tr>')):'<p class="functional-empty">Noch keine Firmen geöffnet.</p>')+'</section>'+
-        '<section class="functional-card"><h3>Top Potenzial</h3>'+genericTable(["Unternehmen","Signale","Priorität"],top.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunities||[]).length+'</td><td>'+priority(c)+'</td></tr>'))+'</section>'+
+        '<section class="functional-card"><h3>Zuletzt geöffnet</h3>'+(recent.length?genericTable(["Unternehmen","Branche","Technische Priorität"],recent.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(sectorLabel(c))+'</td><td>'+esc(priorityLabel(priority(c)))+'</td></tr>')):'<p class="functional-empty">Noch keine Firmen geöffnet.</p>')+'</section>'+
+        '<section class="functional-card"><h3>Top Potenzial</h3>'+genericTable(["Unternehmen","Signale","Technische Priorität"],top.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+(c.opportunities||[]).length+'</td><td>'+esc(priorityLabel(priority(c)))+'</td></tr>'))+'</section>'+
       '</div>';
     bindFunctionalCompanyRows();return;
   }
@@ -407,7 +419,7 @@ function renderFunctional(view){
     const rows=ids.map(companyById).filter(Boolean);
     title.textContent=view==="recent"?"Letzte":"Angeheftet";
     sub.textContent=view==="recent"?"Zuletzt geöffnete Unternehmen auf diesem Gerät.":"Deine lokal angehefteten Unternehmen.";
-    root.innerHTML=rows.length?genericTable(["Unternehmen","Branche","Region","Priorität","Tasks"],rows.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(sectorLabel(c))+'</td><td>'+esc(c.state||"—")+'</td><td>'+priority(c)+'</td><td>'+(c.research_tasks||[]).length+'</td></tr>')):'<div class="functional-empty">'+(view==="recent"?"Noch keine Firmen geöffnet.":"Noch keine Firmen angeheftet. Öffne eine Firma und nutze ☆ im Detailpanel.")+'</div>';
+    root.innerHTML=rows.length?genericTable(["Unternehmen","Branche","Region","Technische Priorität","Tasks"],rows.map(c=>'<tr data-company-id="'+esc(c.company_id)+'"><td><strong>'+esc(c.legal_entity)+'</strong></td><td>'+esc(sectorLabel(c))+'</td><td>'+esc(c.state||"—")+'</td><td>'+esc(priorityLabel(priority(c)))+'</td><td>'+(c.research_tasks||[]).length+'</td></tr>')):'<div class="functional-empty">'+(view==="recent"?"Noch keine Firmen geöffnet.":"Noch keine Firmen angeheftet. Öffne eine Firma und nutze ☆ im Detailpanel.")+'</div>';
     bindFunctionalCompanyRows();return;
   }
 
@@ -498,7 +510,7 @@ function renderFunctional(view){
     const rows=Array.from(groups.entries()).map(([name,list])=>({name,list,opps:list.reduce((s,c)=>s+(c.opportunities||[]).length,0),tasks:list.reduce((s,c)=>s+(c.research_tasks||[]).length,0),high:list.filter(c=>priority(c)==="A").length,pending:list.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING").length})).sort((a,b)=>b.list.length-a.list.length);
     title.textContent=view==="market"?"Marktanalyse":"Branchen";
     sub.textContent=view==="market"?"Aggregierte Sicht nach SME-ETOI-Prozess-/Branchencluster.":"Branchenverteilung auf Basis der vorhandenen NACE-/Unternehmensdaten.";
-    root.innerHTML=genericTable([view==="market"?"Cluster":"Branche","Unternehmen","High Priority","Eligibility offen","Opportunity Signale","Research Tasks"],rows.map(r=>'<tr><td><strong>'+esc(r.name)+'</strong></td><td>'+r.list.length+'</td><td>'+r.high+'</td><td>'+r.pending+'</td><td>'+r.opps+'</td><td>'+r.tasks+'</td></tr>'));return;
+    root.innerHTML=genericTable([view==="market"?"Cluster":"Branche","Unternehmen","Technisch A","Eligibility offen","Opportunity Signale","Research Tasks"],rows.map(r=>'<tr><td><strong>'+esc(r.name)+'</strong></td><td>'+r.list.length+'</td><td>'+r.high+'</td><td>'+r.pending+'</td><td>'+r.opps+'</td><td>'+r.tasks+'</td></tr>'));return;
   }
 
   if(view==="regions"){
@@ -506,7 +518,7 @@ function renderFunctional(view){
     sub.textContent="Verteilung und Opportunity-Dichte nach Bundesland.";
     const groups=aggregateBy(all,c=>c.state||"Unbekannt");
     const rows=Array.from(groups.entries()).map(([name,list])=>({name,list,opps:list.reduce((s,c)=>s+(c.opportunities||[]).length,0),tasks:list.reduce((s,c)=>s+(c.research_tasks||[]).length,0),high:list.filter(c=>priority(c)==="A").length})).sort((a,b)=>b.list.length-a.list.length);
-    root.innerHTML=genericTable(["Region","Unternehmen","High Priority","Opportunity Signale","Research Tasks"],rows.map(r=>'<tr><td><strong>'+esc(r.name)+'</strong></td><td>'+r.list.length+'</td><td>'+r.high+'</td><td>'+r.opps+'</td><td>'+r.tasks+'</td></tr>'));return;
+    root.innerHTML=genericTable(["Region","Unternehmen","Technisch A","Opportunity Signale","Research Tasks"],rows.map(r=>'<tr><td><strong>'+esc(r.name)+'</strong></td><td>'+r.list.length+'</td><td>'+r.high+'</td><td>'+r.opps+'</td><td>'+r.tasks+'</td></tr>'));return;
   }
 
   if(view==="technologies"){
@@ -569,7 +581,7 @@ function showResearch(){
   $("#functionalPage").hidden=true;$("#evidenceOverview").hidden=true;$("#analyticsBand").hidden=true;$(".master-detail").hidden=true;$("#researchPage").hidden=false;renderResearch();
 }
 function exportCsv(){
-  const rows=companies(), header=["company_id","legal_entity","sector","region","score","priority","confidence","kmu_einstufung","gepruefte_felder","offene_feldfragen","iso_50001_nachweis","iso_14001_nachweis","emas_nachweis"];
+  const rows=companies(), header=["company_id","legal_entity","sector","region","score","technical_priority","confidence","kmu_einstufung","gepruefte_felder","offene_feldfragen","iso_50001_nachweis","iso_14001_nachweis","emas_nachweis"];
   const lines=[header.join(",")].concat(rows.map(c=>{
     const [status]=statusInfo(c);
     const fields=fieldProgress(c);
