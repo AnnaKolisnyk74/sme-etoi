@@ -95,3 +95,14 @@ Own brochure distinguishes CHP/PV from adjacent supplier advertisements. No comm
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own galvanic services and XRF;250C solderability TEST not bath temperature. Historical2020-upload brochure KWKK+PV50-55% combined electricity lacks2026 continuity. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Horstmanns Umweltbericht2024 nennt elektrische Bad-/Trocknungswärme, Druckluft/Lüftung und weiterhin Erdgaswärme. Wärmecontracting endete2022; keine heutige Vollkonfiguration wird erfunden. Umgesetzter Durchlauferhitzer2022 und PVV Dezember2024 sind zwei Projekte; EMS2022/zusätzliche Messungen2024 ist ein partielles System ohne ISO50001-/EMAS-Authentifizierung. Fünf Vorschläge sind belegt, vier Felder bleiben UNKNOWN.
+
+Quellen: S-P61-03, S-P61-05, S-P61-06, S-P61-07.
+
+Nächster Schritt: Aktuellen Gas-/Wärmeplan nach Contractingende, Ist-Temperaturen, reale Lasten und sichere Verschiebungs-/Speichergrenzen nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

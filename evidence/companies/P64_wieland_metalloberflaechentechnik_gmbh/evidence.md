@@ -92,3 +92,14 @@ Three-shift operation is not permission to shift production loads. Some source a
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Exact Schwetzingen own rack/drum/manual plating; PV/wind CUSTOMER applications and Wieland Group facts not own energy portfolio. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Wieland betreibt Hand-/Automatenanlagen in drei Schichten. Kundenteile für PV/Wind/E-Mobilität sind keine eigenen Energieanlagen. Prüfung11.03.2025 ist keine Energie-Inbetriebnahme; alle zehn Lücken bleiben UNKNOWN.
+
+Quellen: S-P64-01, S-P64-02, S-P64-03.
+
+Nächster Schritt: Eigene Anlagen-/Wärme-/Lastdaten und datierte Energieprojekte getrennt von Kundenanwendungen nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

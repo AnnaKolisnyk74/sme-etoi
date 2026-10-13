@@ -97,3 +97,14 @@ Machine clamping forces are not energy powers. Mills/dryers provide no attributa
 | incremental_load_score | Weiter offen / UNKNOWN | Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own2022 PV and undated950kWh ELECTRICAL battery, current ISO14001 and CNC/EDM/laser; battery not thermal storage or dated additional investment. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Eigene PV2022 und950kWh Strombatterie sind bestätigt. Die Batterie ist elektrisch und kein thermischer Speicher; Inbetriebnahmedatum der Batterie bleibt offen. Alle sechs offenen Wärme-/Lastfelder bleiben UNKNOWN; Batterie-YES wird separat dokumentiert.
+
+Quellen: S-P58-02, S-P58-03, S-P58-04, S-P58-06.
+
+Nächster Schritt: Thermische Heizmedien, tatsächliche Sollwerte, Speicherfunktion und Lastgrenzen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

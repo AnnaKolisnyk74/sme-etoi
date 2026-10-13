@@ -102,3 +102,14 @@ Test equipment and additive-manufacturing descriptions lack operating heat duty/
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Beck beschreibt eigene Beschichtung und mechanische Bearbeitung.66000L Elektrolyt und60000A sind kein Wärmespeicher und keine elektrische Heizleistung. DQS bestätigt ISO9001, nicht die allgemeinen ISO50001/14001-Navigationsangebote. Elf Lücken bleiben UNKNOWN.
+
+Quellen: S-P60-03, S-P60-04, S-P60-05, S-P60-06, S-P60-07.
+
+Nächster Schritt: Badheizung/-temperaturen, thermische Speicher und datierte Energieprojekte beschaffen; alte404-Anwendungsseite nicht als frisch gelesen ausgeben.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

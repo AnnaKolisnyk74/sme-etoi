@@ -93,3 +93,14 @@ Production heat recovery for floor/room heating is not dispatchable thermal stor
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+AK nutzt Kühlwasser-/Abluftwärme für Gebäude und Fußbodenheizung. Dies ist kein quantifizierter Wärmespeicher; Schließkräfte/Teilgewichte keine Heizleistung. Werkzeugbau wird extern beschafft, QS/ERP belegt kein EnMS. Alle elf offenen Felder bleiben UNKNOWN.
+
+Quellen: S-P59-02, S-P59-03, S-P59-04.
+
+Nächster Schritt: Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.
