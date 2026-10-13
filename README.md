@@ -7,50 +7,46 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 12 October 2026
+## Current checked state — 13 October 2026
 
-The registered-source inventory retains a complete documented content pass:
-**595/595 sources assessed, 530 rechecked within their stated scope,
+The registered-source inventory has a complete documented content pass:
+**603/603 sources assessed, 538 rechecked within their stated scope,
 53 context-only, 12 unavailable and zero without a content record**.
-This includes excluded candidates. The separate retrieval inventory covers
-851 URLs (796 retrievable), including redirect targets and research attempts.
+This includes excluded candidates. The retrieval inventory covers **862 URLs,
+806 retrievable**, including redirects and research attempts.
 The [first full coverage report](evidence/source_content_review_20261012.md)
-remains a dated 578-source baseline; the latest research adds 17 inspected
-sources. Complete coverage does not mean every original claim was confirmed,
-all field questions answered or personal approval granted.
+remains a dated 578-source baseline. Complete coverage does not mean every
+original claim was confirmed, all field questions answered or personal approval granted.
 
-All 100 provisional companies have all 15 fields assessed: **639 CHECKED
-proposals (Geprüft), 861 blank NEEDS_RESEARCH fields and zero approved fields**.
+All 100 provisional companies have all 15 fields assessed: **645 CHECKED
+proposals (Geprüft), 855 blank NEEDS_RESEARCH fields and zero approved fields**.
 The 554 original numeric decisions remain 503 confirmed, 46 corrected and five
-withdrawn; 90 formerly unknown fields now have new evidence. Source/anchor
+withdrawn; 96 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Five decision-research blocks cover **50 technical companies, 12 SME/group cases
-and two identity conflicts**. The second 12 October block selects the next ten
-firms from the frozen decision queue, excluding prior profiles and upstream
-gates. Its 93 open fields yield 16 new checked proposals; 77 remain unknown.
-Cumulatively 418 selected gaps were investigated and 42 closed. All prior
-checked proposals and the four B+T reassessments remain unchanged.
+Six decision-research blocks cover **60 technical companies, 12 SME/group cases
+and two identity conflicts**. The latest block continues the frozen12October
+selection of ten firms. Its **105 open fields yield six new checked proposals;
+99 remain unknown**. Cumulatively523 selected gaps were investigated and48
+closed. All prior checked proposals and four B+T reassessments remain unchanged.
 
-[The latest report](evidence/decision_research_20261012b.md),
-[ten profiles](evidence/decision_research_profiles_20261012b.json),
-[40 source-body checks](evidence/decision_source_checks_20261012b.csv) and
-[93 field attempts](evidence/field_research_deep_20261012b.csv) document evidence
-and limits. Alpirsbacher's supplier case supports bounded process/energy control
-and selected-load peak management; current owner and own public project sources
-support implemented measures and a summer2023 integrated biogas investment.
-Rittmayer's treatment factsheet supports pumps/control, and its own timelines
-support distinct PV/electric-forklift investments while preserving the PV-year
-conflict. Distelhäuser and Waldhaus each have one supported integrated recent
-energy-efficiency project. Aying's2023 programme supports announcements only,
-not completed projects, a usable store or current post2024 targets.
+[The latest report](evidence/decision_research_20261012c.md),
+[ten profiles](evidence/decision_research_profiles_20261012c.json),
+[41 source-body checks](evidence/decision_source_checks_20261012c.csv) and
+[105 field attempts](evidence/field_research_deep_20261012c.csv) document evidence
+and limits. Horstmann's owner2024 report supports bounded electric-heat, gas-duty
+and drive relevance, functional partial energy management and two distinct
+completed energy projects. Contracting ended2022; precise2026 configuration
+and fuel shares are not authenticated. KPM's vacancy supports limited machine
+control only; desired SiemensS5 skills are not proof of installed S5 equipment.
 
-Eight public YES findings are now retained in the research ledger; five correspond
-to generated queue tasks. Canonical deployment flags are not silently overwritten.
-Hypothetical ISO50001 readiness, an uncertain standard label, customer research
-applications, biological buffers and cold generation do not become certificates,
-owner thermal stores or deployed industrial electric heat. All 12 SME gates
-remain open. The dashboard shows all 64 profiles and the latest block separately.
+Twelve public YES findings are retained separately; five match generated queue
+tasks. New findings cover Dorn's electrical battery, Horstmann's heat recovery
+and functional EMS, and KPM's ongoing kiln heat recovery. Canonical deployment
+flags are not silently overwritten. Electrical batteries are not thermal stores,
+heat recovery is not heat pumping, and fair exhibits/customer equipment belong
+to their actual owners. All12 SME gates remain open. The dashboard shows all74
+profiles and the latest block separately.
 
 ## Research question
 

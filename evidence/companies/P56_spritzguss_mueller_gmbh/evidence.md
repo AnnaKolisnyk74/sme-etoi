@@ -94,3 +94,14 @@ Electrical assemblies and mechanical systems supplied to customers are excluded 
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Actual own CNC/EDM/TIG/SPS/assembly, not unreported injection heater/drive mix or current energy project. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Müller in Buchbach betreibt20 Spritzgussmaschinen und eigenen Werkzeugbau. Schließkraft ist keine elektrische Leistung, eine beheizbare Kundenform kein eigener Wärmeprozess. PV-/ISO-Nachweise namensgleicher Firmen werden ausgeschlossen; alle zehn offenen Felder bleiben UNKNOWN.
+
+Quellen: S-P56-02, S-P56-03, S-P56-04, S-P56-05.
+
+Nächster Schritt: Eigene Heizmedien, reale Temperaturen/Leistungen, Speicher und datierte Energieprojekte beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

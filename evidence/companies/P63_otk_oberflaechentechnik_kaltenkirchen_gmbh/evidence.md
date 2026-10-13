@@ -92,3 +92,14 @@ Generic technical/process list supplies no individually attributed heat temperat
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Exact Kaltenkirchen production automaton; other OTK firms and adviser contact hours not owned certificate or production window. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+OTK-Impressum bestätigt die juristische Einheit; der Funktionskopf ist keine Umfirmierung. Badstraßenbilder und700/1000mm Formate belegen keine Temperatur oder Wärmequelle. Kontaktöffnungszeiten sind kein Produktionsverschiebefenster; elf Lücken bleiben UNKNOWN.
+
+Quellen: S-P63-01, S-P63-03, S-P63-04, S-P63-05.
+
+Nächster Schritt: Betriebliche Badheizung, Temperaturen, Antriebe, Energieprojekte und Speicher-/Lastfenster beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

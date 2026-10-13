@@ -94,3 +94,14 @@ Owner exports waste heat to an external utility. External utility energy assets/
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+KPM-Stellenanzeige belegt begrenzte Maschinensteuerungsaufgaben, bevorzugte S5-Kenntnisse keine installierte S5-Flotte. BEW bestätigt laufende Rückgewinnung aus vier Brennöfen seit2017.110°C Rücklaufwasser und1000kW Abwärmepotenzial sind weder Ofenstromlast noch Wärmepumpe; andere Berliner Wärmepumpen gehören anderen Standorten. Ein Vorschlag neu, elf Lücken bleiben UNKNOWN.
+
+Quellen: S-P66-03, S-P66-04, S-P66-05, S-P66-06, S-P66-07, S-P66-08, S-P66-09.
+
+Nächster Schritt: Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

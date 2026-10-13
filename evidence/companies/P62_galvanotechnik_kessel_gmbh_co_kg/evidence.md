@@ -97,3 +97,14 @@ Existing energy management retained. Management financial goals are not implemen
 | investment_gap_score | Weiter offen / UNKNOWN | Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Kessels bestehende geprüfte ISO50001-/14001-Nachweise bleiben erhalten. EnMS-Richtlinie benennt keine konkrete Produktionssteuerung oder Antriebsflotte. Allgemeine Mess-/Umweltpolitik wird nicht zu SCADA, PV oder Wärmespeicher; alle elf Lücken bleiben UNKNOWN.
+
+Quellen: S-P62-03, S-P62-06, S-P62-07.
+
+Nächster Schritt: Konkrete eigene Bad-/Antriebs-/Steuerungsunterlagen und datierte Energieanlagen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

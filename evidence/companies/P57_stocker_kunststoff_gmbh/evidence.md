@@ -93,3 +93,14 @@ Stock-photo equipment and material property/test temperatures are not owned oper
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Nine own injection machines; mould manufacture outsourced, stock photos and theoretical SPC not owned machines/control. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 12. Oktober2026, dritter Block
+
+Stocker nennt neun eigene Maschinen; die auffälligen18,4kW/350t-Angaben betreffen Toyo-Messeexponate. Werkzeugbau ist extern, statistische Qualitätserläuterung kein installierter EnMS-/Automatisierungsnachweis. Alle14 Lücken bleiben UNKNOWN.
+
+Quellen: S-P57-02, S-P57-03, S-P57-04, S-P57-05.
+
+Nächster Schritt: Betriebsbezogene Maschinen-/Heizungsunterlagen und datierte Energieprojekte getrennt von Messe- und Kundentechnik nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

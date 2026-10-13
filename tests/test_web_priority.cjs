@@ -21,8 +21,8 @@ assert.match(html, /Erstbewertung abgeschlossen/);
 assert.ok(!html.includes('<h3>Next Best Coding Companies</h3>'));
 assert.match(html, /100 \/ 100 Unternehmen/);
 assert.match(html, /1500 \/ 1500 Felder bewertet/);
-assert.match(html, /639 Zahlenvorschläge · Geprüft/);
-assert.match(html, /861 dokumentierte Recherchelücken/);
+assert.match(html, /645 Zahlenvorschläge · Geprüft/);
+assert.match(html, /855 dokumentierte Recherchelücken/);
 assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
 assert.ok(!/KI[- ·]*geprüft/i.test(html));
 assert.ok(!html.includes('Zahlenvorschläge warten auf Human Review'));
@@ -78,8 +78,8 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /100 \/ 100 Sample-Firmen geprüft/);
 assert.match(html, /HTTP 200 bestätigt keine Unternehmenszuordnung/);
 assert.match(html, /Prüfabdeckung aller Sample-Firmen/);
-assert.match(html, /595 \/ 595 registrierte Quellen eingestuft/);
-assert.match(html, /530 im dokumentierten Umfang nachgeprüft/);
+assert.match(html, /603 \/ 603 registrierte Quellen eingestuft/);
+assert.match(html, /538 im dokumentierten Umfang nachgeprüft/);
 assert.match(html, /53 nur Kontext/);
 assert.match(html, /12 nicht abrufbar/);
 assert.match(html, /0 ohne Inhaltsprüfung/);
@@ -132,8 +132,8 @@ assert.match(html, /Gültig belegt/);
 assert.match(html, /Geprüft: [0-9]+ \/ 15/);
 assert.ok(!sinks.get('#kpiQuality').innerHTML.includes('Qualifiziert'));
 html = sinks.get('#evidenceOverview').innerHTML;
-assert.match(html, /639 Felder · Geprüft/);
-assert.match(html, /861 Feldfragen offen/);
+assert.match(html, /645 Felder · Geprüft/);
+assert.match(html, /855 Feldfragen offen/);
 assert.match(html, /ISO 50001 13 · ISO 14001 27 · EMAS 4/);
 vm.runInContext('state.query="FM-Plast"; renderEvidenceOverview();', context);
 html = sinks.get('#evidenceOverview').innerHTML;
@@ -161,9 +161,9 @@ console.log('Company view: ISO evidence, separate SME status, filtered field cou
 // Decision findings stay visible and escaped, including conflicting legal names.
 vm.runInContext('renderFunctional("analysis");', context);
 html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /50 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
-assert.match(html, /418 offene Felder untersucht, 42 zusätzlich geprüft/);
-assert.match(html, /Letzter Rechercheblock: 10 Firmen · 93 offene Felder untersucht · 16 zusätzlich geprüft · 77 weiterhin offen/);
+assert.match(html, /60 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
+assert.match(html, /523 offene Felder untersucht, 48 zusätzlich geprüft/);
+assert.match(html, /Letzter Rechercheblock: 10 Firmen · 105 offene Felder untersucht · 6 zusätzlich geprüft · 99 weiterhin offen/);
 assert.equal(context.payload.decision_research_summary.batches[2].reassessed_checked_field_count, 4);
 assert.ok(!html.includes('4 ältere geprüfte Vorschläge anhand neuer Quellen korrigiert')); // Latest block made no reassessments.
 for (const cid of ['P47','P65','P88','P109','P110','P18','P77','P96','P98','P99','P11','P21','P107']) {
