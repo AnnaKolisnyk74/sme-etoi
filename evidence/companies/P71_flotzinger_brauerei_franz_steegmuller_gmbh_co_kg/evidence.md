@@ -90,3 +90,14 @@ Warehouse heat pump/PV are building/logistics assets. Their operating temperatur
 | targets_gap_score | Weiter offen / UNKNOWN | Owned energy/climate target, date, scope and roadmap, or documented sufficient defined search. General quality/resource sustainability not energy target. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Flötzinger nennt50–78°C Maische,83°C Flaschenwäsche und geregelte Abläufe. Lieferant bestätigt Schechen2024 mit Abwärmewärmepumpe und Prozesswärmepuffer; Betreiber nennt Betrieb2025. Sudhaus blieb zunächst Rosenheim. Vier neue Vorschläge;900kW ist Backup-Kesselwärme, kein Wärmepumpenstrom. Speicher belegt keine Netzverschiebung; fünf UNKNOWN.
+
+Quellen: S-P71-03, S-P71-04, S-P71-05, S-P71-06, S-P71-07.
+
+Nächster Schritt: Aktuelle Standort-/Heizmedien, Wärmepumpen-Elektroleistung, Speicher-Nutzenergie und zulässige Lastfenster getrennt nach Rosenheim/Schechen beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

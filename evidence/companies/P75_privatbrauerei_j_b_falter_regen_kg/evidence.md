@@ -97,3 +97,14 @@ Unnumbered brewery heat stages and cold fermentation do not establish specific h
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own beer pumping, unquantified mash heating and vague resource ambition;4-6weeks maturation not flexible store;2018/2024 cellar capacity not proved energy CAPEX. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Falter nennt Maische-Erwärmung ohne Zahlen/Träger und Kellererweiterung2024 ohne klaren Energieumfang. Nachhaltigkeitswörter sind keine konkret installierte Regelung; Produkttanks kein Wärmespeicher. Alle13 Lücken bleiben UNKNOWN.
+
+Quellen: S-P75-03, S-P75-04, S-P75-05, S-P75-06, S-P75-07.
+
+Nächster Schritt: Betriebliche Heizmedien/Sollwerte, definierte Energie-Projekte, installierte Regelung und nutzbare thermische Puffer/Lastfenster nachweisen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

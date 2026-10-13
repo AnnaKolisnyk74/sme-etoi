@@ -72,6 +72,41 @@ class DecisionResearchTests(unittest.TestCase):
             self.assertEqual(r['review_status'], 'PROVISIONAL')
             self.assertEqual(canonical[r['company_id']][r['missing_fact']], 'UNKNOWN')
 
+    def test_october13_preserves_checked_baseline_and_all91_unknowns(self):
+        before = {(r['company_id'], r['score_field']): r for r in rows(
+            ROOT, 'data/history/score_coding_proposals_before_deep_20261013.csv')}
+        now = {(r['company_id'], r['score_field']): r for r in rows(ROOT, 'data/score_coding_proposals.csv')}
+        attempts = rows(ROOT, 'evidence/field_research_deep_20261013.csv')
+        self.assertEqual((len(attempts), sum(a['outcome'] == 'NEW_EVIDENCE' for a in attempts)), (98, 7))
+        for key, old in before.items():
+            if old['proposal_status'] == 'CHECKED':
+                self.assertEqual(now[key], old)
+        for a in attempts:
+            if a['outcome'] == 'STILL_UNKNOWN':
+                p = now[a['company_id'], a['score_field']]
+                self.assertEqual((p['proposed_value'], p['proposal_confidence']), ('', 'UNKNOWN'))
+                self.assertTrue(a['remaining_fact'])
+
+    def test_thermal_buffer_is_separate_from_dispatch_and_digital_reports_from_closed_loop_control(self):
+        p = {(r['company_id'], r['score_field']): r for r in rows(ROOT, 'data/score_coding_proposals.csv')}
+        self.assertEqual(p['P71', 'thermal_storage_flex_score']['proposed_value'], '5')
+        self.assertEqual(p['P71', 'scheduling_flex_score']['proposal_status'], 'NEEDS_RESEARCH')
+        heat = p['P71', 'process_electrification_score']['evidence_basis']
+        self.assertIn('900kW is backup boiler thermal output', heat)
+        self.assertIn('Rosenheim brewhouse', heat)
+        for cid in ('P68', 'P82'):
+            self.assertEqual((p[cid, 'automation_control_score']['proposed_value'],
+                              p[cid, 'automation_control_score']['proposal_confidence']), ('1', 'C'))
+        investment = p['P73', 'investment_gap_score']['evidence_basis']
+        self.assertIn('summer2020', investment)
+        self.assertIn('2022 inauguration does not move', investment)
+        self.assertIn('two distinct completed', investment)
+        canonical = next(r for r in rows(ROOT, 'data/company_intelligence.csv') if r['company_id'] == 'P71')
+        self.assertEqual(canonical['thermal_storage_deployed'], 'UNKNOWN')
+        result = next(r for r in rows(ROOT, 'data/research_results.csv')
+                      if r['task_id'] == 'DR-20261013-P71-thermal_storage')
+        self.assertEqual((result['resulting_value'], result['review_status']), ('YES', 'PROVISIONAL'))
+
     def test_actual_selected_load_control_is_separate_from_heat_storage_and_certification(self):
         p = {(r['company_id'], r['score_field']): r for r in rows(ROOT, 'data/score_coding_proposals.csv')}
         self.assertEqual(p['P52', 'scheduling_flex_score']['proposed_value'], '5')
@@ -109,9 +144,9 @@ class DecisionResearchTests(unittest.TestCase):
         s = summary(ROOT)
         self.assertEqual((s['profile_count'], s['technical_company_count'],
                           s['eligibility_company_count'], s['identity_company_count']),
-                         (74, 60, 12, 2))
+                         (84, 70, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (523, 48, 475))
+                          s['still_unknown_field_count']), (621, 55, 566))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -138,7 +173,7 @@ class DecisionResearchTests(unittest.TestCase):
         found = {(q['company_id'], q['missing_fact']): q for q in queue
                  if q['task_status'] == 'EVIDENCE_FOUND'}
         self.assertEqual(set(found), {('P79','energy_management_deployed'), ('P100','heat_recovery_deployed'),
-            ('P77','heat_recovery_deployed'), ('P77','energy_management_deployed'), ('P52','flexibility_solution_deployed')})
+            ('P77','heat_recovery_deployed'), ('P77','energy_management_deployed'), ('P52','flexibility_solution_deployed'), ('P71','thermal_storage_deployed')})
         self.assertTrue(all(q['last_resulting_value'] == 'YES' for q in found.values()))
         results = [r for r in rows(ROOT, 'data/research_results.csv')
                    if r['checked_date'] == '2026-10-08' and r['research_status'] == 'EVIDENCE_FOUND']
@@ -185,7 +220,7 @@ class DecisionResearchTests(unittest.TestCase):
         self.assertEqual(s['batches'][1]['still_unknown_field_count'], 90)
         self.assertEqual((s['latest_batch']['field_attempt_count'],
                           s['latest_batch']['new_checked_field_count'],
-                          s['latest_batch']['still_unknown_field_count']), (105, 6, 99))
+                          s['latest_batch']['still_unknown_field_count']), (98, 7, 91))
         self.assertEqual(validate(ROOT), [])
 
     def test_period_and_claim_boundaries_survive_pipeline_export(self):

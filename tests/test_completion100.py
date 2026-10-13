@@ -46,7 +46,7 @@ class Completion100Tests(unittest.TestCase):
                 self.assertTrue(r['missing_fact'])
         s=self.payload['field_assessment_summary']
         self.assertEqual((s['complete_company_count'],s['assessed_field_count']),(100,1500))
-        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(645,855,0))
+        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(652,848,0))
         self.assertEqual(s['awaiting_human_review_fields'],0)
 
     def test_duplicate_or_unknown_fields_cannot_inflate_completion(self):
@@ -124,12 +124,19 @@ class Completion100Tests(unittest.TestCase):
         for cid in ['P46','P47','P62','P104']:
             self.assertEqual(self.p[cid,'management_gap_score']['proposed_value'],'0')
 
-    def test_building_heat_and_dated_awards_do_not_become_recent_process_investments(self):
-        self.assertEqual(self.p['P71','investment_gap_score']['proposed_value'],'2')
-        for f in ['temperature_fit_score','fossil_heat_displacement_score','thermal_storage_flex_score']:
-            self.assertEqual(self.p['P71',f]['proposal_status'],'NEEDS_RESEARCH')
-        for cid in ['P73','P10','P40']:
+    def test_new_process_sources_do_not_rewrite_building_investment_or_redate_brewhouse(self):
+        before = {(r['company_id'], r['score_field']): r for r in read_csv(
+            ROOT / 'data/history/score_coding_proposals_before_deep_20261013.csv')}
+        self.assertEqual(self.p['P71','investment_gap_score'],before['P71','investment_gap_score'])
+        for field, sid in [('temperature_fit_score','S-P71-07'), ('thermal_storage_flex_score','S-P71-04')]:
+            self.assertEqual(before['P71',field]['proposal_status'],'NEEDS_RESEARCH')
+            self.assertEqual(self.p['P71',field]['proposal_status'],'CHECKED')
+            self.assertIn(sid,self.p['P71',field]['evidence_source_ids'])
+        self.assertEqual(self.p['P71','fossil_heat_displacement_score']['proposal_status'],'NEEDS_RESEARCH')
+        for cid in ['P10','P40']:
             self.assertEqual(self.p[cid,'investment_gap_score']['proposal_status'],'NEEDS_RESEARCH')
+        self.assertEqual(self.p['P73','investment_gap_score']['proposed_value'],'0')
+        self.assertIn('summer2020',self.p['P73','investment_gap_score']['evidence_basis'])
         self.assertEqual(self.p['P03','temperature_fit_score']['proposed_value'],'10')
 
     def test_zero_fossil_displacement_requires_affirmative_heat_baseline(self):

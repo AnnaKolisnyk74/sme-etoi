@@ -1,0 +1,11 @@
+selection_rank,company_id,legal_entity,research_rank,missing_fact,selection_rule,checked_date
+1,P68,TechnoKer GmbH,140,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+2,P70,ceram GmbH,142,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+3,P71,Flötzinger Brauerei Franz Steegmüller GmbH & Co. KG,144,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+4,P72,Hofbräuhaus Traunstein Josef Sailer GmbH & Co. KG,146,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+5,P73,Brauerei-Gasthof Kundmüller GmbH,148,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+6,P74,Brauerei Gebr. Maisel GmbH & Co. KG,150,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+7,P75,Privatbrauerei J.B. Falter Regen KG,152,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+8,P81,Eloxalwerk Ludwigsburg Helmut Zerrer GmbH,159,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+9,P82,Galvanotec-Hagen GmbH & Co. KG,161,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13
+10,P83,Gerbracht & Mönch Galvanotechnik GmbH,163,flexibility_solution_deployed,FIRST_UNIQUE_NON_GATED_NOT_PREVIOUSLY_PROFILED_COMPANY_BY_RESEARCH_RANK,2026-10-13

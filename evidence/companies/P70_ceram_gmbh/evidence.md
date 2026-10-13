@@ -93,3 +93,14 @@ Own spray drying/sintering identified but thermal carrier, actual heat duty, use
 | investment_gap_score | Weiter offen / UNKNOWN | Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+Ceram in Albbruck-Birndorf fertigt eigene Schmelz-/Spritz-/Sinterprodukte; Kundentemperaturen bleiben ausgeschlossen. ISO14001-Claim ist vorhanden, alter Direktlink weiterhin404. Heizträger, thermische Sollwerte und neue Energieprojekte fehlen; elf UNKNOWN.
+
+Quellen: S-P70-02, S-P70-03.
+
+Nächster Schritt: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.

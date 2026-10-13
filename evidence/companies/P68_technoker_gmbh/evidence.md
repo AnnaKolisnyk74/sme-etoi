@@ -94,3 +94,14 @@ Biogas versus bio-liquid-gas wording conflicts remain unresolved. Thermal oxidis
 | management_gap_score | Weiter offen / UNKNOWN | Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Own2022 PV205kWp; regional-biogas claim distinct from2023 BIO-LPG delivery4436litres. Customer electric heaters not own electric kilns;2023 planned digitalisation unconfirmed;2021 kiln month unknown at window boundary. |
 
 Feldspur: `evidence/field_research_all_open_20261008.csv`; Quellenabrufe: `evidence/research_source_attempts_20261008.csv`. Persönliche Freigabe bleibt separat.
+
+
+## Vertiefte Feldprüfung — 13. Oktober2026
+
+TechnoKer bleibt vom Kunden-Heizelement getrennt. Neuer Lieferantenfall bestätigt digitale BDE mit sechs Tablets; dies stützt nur begrenzte Steuerungsrelevanz, keine physische Regelung oder EnMS-Zertifizierung.2021-Ofenmonat fehlt, Bio-LPG-Nachweis ist kein Bad-/Ofen-Heizplan. Ein neues Feld, acht UNKNOWN.
+
+Quellen: S-P68-02, S-P68-03, S-P68-04, S-P68-06.
+
+Nächster Schritt: Eigene Ofentemperaturen/Heizmedien, reale Antriebe, sichere Speicher-/Lastfenster und formale Energie-Systemnachweise beschaffen.
+
+Geprüft bezeichnet Quellen-/Ankerprüfung; persönliche/finale Score-Freigaben bleiben getrennt.
