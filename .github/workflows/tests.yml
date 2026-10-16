@@ -24,3 +24,6 @@ jobs:
 
       - name: Check scoring priority rendering
         run: node tests/test_web_priority.cjs
+
+      - name: Check web navigation and personal views
+        run: node tests/test_web_navigation.cjs
