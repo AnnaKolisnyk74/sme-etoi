@@ -112,3 +112,12 @@ fire('.nav-toggle');assert.equal(element('.app').classList.contains('nav-collaps
 fire('#waffleCommand');assert.equal(element('.app').classList.contains('nav-collapsed'),false);
 assert.equal(JSON.stringify(context.payload),before,'navigation must not change company facts or evidence');
 console.log('Navigation: filtered company links, paging/detail, close, pins, research links/search, chrome and chart mode passed on all 100 companies.');
+
+// A firm without generated opportunities still opens its outstanding field work.
+run('openCompany("P35");');
+assert.match(element('#detailContent').innerHTML,/data-next-action="field"/);
+fire('#nextActionCommand');assert.equal(run('state.detailTab'),'analysis');
+assert.match(element('#detailContent').innerHTML,/Fehlender Fakt:/);
+fire('#viewDocsCommand');assert.equal(run('state.activeNav'),'documentation');
+assert.equal(JSON.stringify(context.payload),before);
+console.log('Next action: a company with no generated opportunity opens its actual field questions; view help opens documentation.');

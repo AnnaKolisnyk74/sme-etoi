@@ -288,3 +288,54 @@ rowClick({target:{closest(){return null;}}});
 assert.equal(vm.runInContext('clickedCompany',context),'P11');
 vm.runInContext('openCompany=savedOpenCompany;',context);
 console.log('Register navigation: evidence links and expanded boundaries keep the register open; company cells navigate.');
+
+// Qualitative engine levels must not manufacture percentages or inherit a
+// commercial HIGH/RESEARCH priority when the technical level is unknown.
+context.document.querySelectorAll=()=>[];
+for(const [o,expected] of [[{opportunity_level:'HIGH',priority:'RESEARCH'},'HIGH'],[{opportunity_level:'MEDIUM'},'MEDIUM'],[{opportunity_level:'LOW'},'LOW'],[{priority:'HIGH'},'UNKNOWN'],[{opportunity_level:'RESEARCH_REQUIRED',priority:'HIGH'},'UNKNOWN']]){
+  context.signalFixture=o;
+  assert.equal(vm.runInContext('technicalLevel(signalFixture)',context),expected);
+  const output=vm.runInContext('technicalSignalRow(signalFixture)',context);
+  assert.ok(output.includes('data-tech-level="'+expected+'"'));
+  assert.ok(!output.includes('style="width:'));
+  assert.ok(!output.includes('tech-fill'));
+}
+for(const value of ['',null,'UNKNOWN','not-a-grade']){
+  context.confFixture=value;assert.equal(vm.runInContext('confClass(confFixture)',context),'conf-open');
+}
+context.signalFixture={opportunity_type:'<script>bad type</script>',confidence:'<script>bad confidence</script>',commercial_status:'<script>bad status</script>'};
+const safeSignal=vm.runInContext('technicalSignalRow(signalFixture)',context);
+assert.ok(!safeSignal.includes('<script>'));assert.match(safeSignal,/&lt;script&gt;bad type/i);
+context.payload=JSON.parse(fs.readFileSync(path.join(root,'web/data/sme_etoi.json'),'utf8'));
+const signalInput=JSON.stringify(context.payload);
+vm.runInContext('state.data=payload;state.query="";state.focus="";state.scope="all";state.pageSize=100;renderTable();',context);
+assert.equal(vm.runInContext('payload.companies.filter(c=>!nextStep(c)).length',context),0);
+assert.equal(vm.runInContext('payload.companies.filter(c=>nextStep(c).kind==="eligibility").length',context),12);
+for(const id of ['P35','P87','P110']){
+  context.caseId=id;
+  vm.runInContext('state.selectedId=caseId;state.detailTab="overview";renderDetail();',context);
+  const output=sinks.get('#detailContent').innerHTML;
+  assert.ok(!output.includes('Keine offene Aufgabe'));
+  assert.ok(output.includes('id="nextActionCommand"'));
+  assert.ok(!output.includes('tech-fill'));
+}
+for(const company of context.payload.companies){
+  context.caseId=company.company_id;
+  for(const tab of ['overview','analysis']){
+    context.caseTab=tab;
+    vm.runInContext('state.selectedId=caseId;state.detailTab=caseTab;renderDetail();',context);
+    assert.equal((sinks.get('#detailContent').innerHTML.match(/data-tech-level=/g)||[]).length,company.opportunities.length);
+  }
+}
+assert.equal(vm.runInContext('nextStep(companyById("P35")).kind',context),'field');
+assert.equal(vm.runInContext('nextStep(companyById("P110")).kind',context),'identity');
+context.stepFixture={opportunities:[],research_tasks:[{task_status:'EVIDENCE_FOUND',research_question:'already found'}],score_proposals:[{proposal_status:'NEEDS_RESEARCH',missing_fact:'<script>missing fact</script>'}]};
+assert.equal(vm.runInContext('nextStep(stepFixture).kind',context),'field');
+assert.ok(vm.runInContext('nextActionCard(stepFixture,nextStep(stepFixture))',context).includes('&lt;script&gt;missing fact'));
+context.stepFixture={opportunities:[],score_proposals:[{proposal_status:'CHECKED'}]};
+assert.equal(vm.runInContext('nextStep(stepFixture).kind',context),'approval');
+assert.equal(vm.runInContext('nextStep(stepFixture).status',context),'CHECKED_PROPOSALS');
+context.stepFixture={opportunities:[],score_proposals:[{proposal_status:'CHECKED'}],score_readiness:{score_status:'FINAL_SCORE_READY'}};
+assert.equal(vm.runInContext('nextStep(stepFixture)',context),null);
+assert.equal(JSON.stringify(context.payload),signalInput);
+console.log('Signal/action semantics: categorical levels without invented percentages; unknown confidence stays neutral; all 100 companies retain their actual open work.');

@@ -68,7 +68,7 @@ function statusInfo(c){
   if(e==="EXCLUDED") return ["Blockiert","status-blocked"];
   return ["KMU wahrscheinlich","status-watch"];
 }
-function confClass(g){return g==="A"?"conf-a":g==="B"?"conf-b":"conf-c"}
+function confClass(g){return {A:"conf-a",B:"conf-b",C:"conf-c"}[String(g||"").toUpperCase()]||"conf-open"}
 function scoreStatusClass(c){
   const s=c.score_readiness?.score_status||"";
   if(s==="FINAL_SCORE_READY")return "status-qualified";
@@ -113,6 +113,28 @@ function renderEvidenceOverview(){
   $("#evidenceOverview").innerHTML='<div><strong>'+n(checked)+' Felder · Geprüft</strong><span>'+n(open)+' Feldfragen offen · '+rows.length+' Unternehmen</span></div><div><strong>Gültig belegt: ISO 50001 '+count("iso_50001")+' · ISO 14001 '+count("iso_14001")+' · EMAS '+count("emas")+'</strong><span>Feldprüfung: '+esc(state.data.proposal_check_summary?.checked_date||"—")+' · KMU-Einstufung und finale Score-Freigabe separat</span></div>';
 }
 function topTask(c){return (c.research_tasks||[]).filter(t=>t.task_status!=='EVIDENCE_FOUND').slice().sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999))[0]||null}
+function nextStep(c){
+  const sr=c.score_readiness||{},profile=c.decision_research_profile;
+  if(["ELIGIBILITY_PENDING","EXCLUDED"].includes(eligibility(c))){
+    const gate=(c.score_work_tasks||[]).find(t=>t.task_status==="OPEN_GATE");
+    return {kind:"eligibility",title:"KMU-Zuordnung klären",text:gate?.next_action||sr.next_action||"Eigentümer- und Gruppenverhältnisse mit firmenspezifischen Belegen klären.",status:"OPEN_GATE",tab:"analysis"};
+  }
+  if(sr.score_status==="NOT_SCOREABLE_CERTIFICATES")return {kind:"certificate",title:"Zertifikatsprüfung abschließen",text:sr.next_action||"Zertifikatsnachweise und ihre Gültigkeit prüfen.",status:"NEEDS_RESEARCH",tab:"sources"};
+  if(profile?.workstream==="IDENTITY")return {kind:"identity",title:"Firmenzuordnung prüfen",text:profile.next_action||"Rechtsträger und eigene Standorte eindeutig zuordnen.",status:"NEEDS_RESEARCH",tab:"research"};
+  const task=topTask(c);
+  if(task)return {kind:"research",title:titleCase(task.opportunity_type),text:task.research_question,status:task.task_status||"OPEN",tab:"research"};
+  const gaps=(c.score_proposals||[]).filter(p=>p.proposal_status==="NEEDS_RESEARCH");
+  if(gaps.length){
+    const work=(c.score_work_tasks||[]).filter(t=>t.task_status==="RESEARCH_NEEDED").slice().sort((a,b)=>(a.work_rank||999999)-(b.work_rank||999999))[0];
+    return {kind:"field",title:"Feldbelege recherchieren · "+gaps.length+" offen",text:gaps[0].missing_fact||work?.next_action||sr.next_action||"Die offenen Feldbelege prüfen; UNKNOWN bleibt UNKNOWN.",status:"NEEDS_RESEARCH",tab:"analysis"};
+  }
+  if(sr.score_status!=="FINAL_SCORE_READY"&&(c.score_proposals||[]).some(p=>p.proposal_status==="CHECKED"))return {kind:"approval",title:"Geprüfte Vorschläge zur Übernahme prüfen",text:"Geprüfte Feldvorschläge sind getrennt von kanonischen Scores. Ihre Übernahme und die unabhängige Freigabe stehen separat aus.",status:"CHECKED_PROPOSALS",tab:"analysis"};
+  if(sr.score_status&&sr.score_status!=="FINAL_SCORE_READY")return {kind:"score",title:"Offene Score-Prüfung",text:sr.next_action||sr.blocking_reasons||"Die dokumentierten Score-Voraussetzungen prüfen.",status:sr.score_status,tab:"analysis"};
+  return null;
+}
+function nextActionCard(c,step){
+  return '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box" data-next-action="'+esc(step?.kind||'none')+'"><div class="action-icon">▤</div><div><div class="action-title">'+esc(step?.title||"Keine weitere Maßnahme dokumentiert")+'</div><div class="action-text">'+esc(step?.text||"In den vorliegenden Arbeitslisten ist kein nächster Schritt verzeichnet. Das ist keine Bestätigung vollständiger Evidenz.")+'</div>'+(step?'<button id="nextActionCommand" class="primary-action">Prüfung öffnen</button>':'')+'</div><div class="action-meta">'+esc(titleCase(step?.status||""))+'</div></div></section>';
+}
 function decisionProfile(c){
   const p=c.decision_research_profile;
   if(!p)return "";
@@ -319,7 +341,7 @@ function renderTable(selectFirst=true){
   if(state.selectedId&&!visible.some(c=>c.company_id===state.selectedId))state.selectedId=null;
   if(selectFirst&&!state.selectedId)state.selectedId=visible[0]?.company_id||null;
   $("#companyRows").innerHTML=visible.map(c=>{
-    const p=priority(c),[status,statusClass]=statusInfo(c),task=topTask(c);
+    const p=priority(c),[status,statusClass]=statusInfo(c),step=nextStep(c);
     const score=c.opportunity_score;
     return '<tr class="'+(c.company_id===state.selectedId?"selected":"")+'" data-id="'+esc(c.company_id)+'">'+
       '<td><span class="radio">'+(c.company_id===state.selectedId?"✓":"")+'</span></td>'+
@@ -332,7 +354,7 @@ function renderTable(selectFirst=true){
       '<td>'+fieldProgressCell(c)+'</td>'+
       '<td><span class="status-badge '+statusClass+'">'+esc(status)+'</span></td>'+
       '<td><span class="confidence-badge '+confClass(c.evidence_confidence)+'">'+esc(c.evidence_confidence||"?")+'</span></td>'+
-      '<td class="next-step" title="'+esc(task?.research_question||"Keine offene priorisierte Aufgabe")+'">'+esc(task?task.research_question:"—")+'</td>'+
+      '<td class="next-step" title="'+esc(step?.text||"Keine weitere Maßnahme dokumentiert")+'">'+esc(step?.title||"—")+'</td>'+
       '<td>⋮</td>'+
     '</tr>';
   }).join("")||'<tr><td colspan="12">'+(state.scope==="mine"?'Keine angehefteten Unternehmen für diesen Filter. Nutze ☆ in der Firmenansicht.':'Keine Zielunternehmen für diesen Filter.')+'</td></tr>';
@@ -341,17 +363,25 @@ function renderTable(selectFirst=true){
   $("#prevPage").disabled=state.page<=1;$("#nextPage").disabled=state.page>=pages;
   $$("#companyRows tr[data-id]").forEach(row=>row.addEventListener("click",()=>{state.selectedId=row.dataset.id;markRecent(row.dataset.id);renderTable();renderDetail()}));
 }
-function techStrength(o){
-  const l=(o.opportunity_level||o.priority||"").toUpperCase();
-  return l==="HIGH"?92:l==="MEDIUM"?68:l==="LOW"?42:25;
+function technicalLevel(o){
+  const level=String(o.opportunity_level||"").toUpperCase();
+  return ["HIGH","MEDIUM","LOW"].includes(level)?level:"UNKNOWN";
+}
+function technicalRank(o){return {HIGH:3,MEDIUM:2,LOW:1,UNKNOWN:0}[technicalLevel(o)]}
+function technicalSignalRow(o){
+  const level=technicalLevel(o),label={HIGH:"HIGH · Hoch",MEDIUM:"MEDIUM · Mittel",LOW:"LOW · Niedrig",UNKNOWN:"Belege offen"}[level];
+  return '<div class="tech-row" data-tech-level="'+level+'"><span>'+esc(titleCase(o.opportunity_type))+'</span><strong class="signal-label signal-'+level.toLowerCase()+'">'+label+'</strong><div class="signal-meta">Belegqualität: <span class="confidence-badge '+confClass(o.confidence)+'">'+esc(o.confidence||"UNKNOWN")+'</span> · Kommerzieller Status: '+esc(titleCase(o.commercial_status||"UNKNOWN"))+'</div></div>';
+}
+function technicalSignals(ops){
+  return '<p class="signal-note">Qualitative technische Einordnung, kein Prozentwert und kein ETOI-Score. Die Firmenpriorität berücksichtigt zusätzlich Belegqualität A/B und KMU-Gates.</p>'+ (ops.length?ops.map(technicalSignalRow).join(""):'Keine technischen Signale dokumentiert; offene Feldfragen bleiben separat sichtbar.');
 }
 function renderDetail(){
   const c=state.data.companies.find(x=>x.company_id===state.selectedId);
   if(!c){$("#detailContent").innerHTML='<div class="detail-body">Kein Unternehmen ausgewählt.</div>';return}
   const [status,statusClass]=statusInfo(c),p=priority(c);
-  const ops=(c.opportunities||[]).slice().sort((a,b)=>techStrength(b)-techStrength(a));
+  const ops=(c.opportunities||[]).slice().sort((a,b)=>technicalRank(b)-technicalRank(a));
   const why=uniq(ops.map(o=>o.why_now).filter(Boolean)).slice(0,4);
-  const task=topTask(c);
+  const step=nextStep(c);
   const initial=(c.legal_entity||"?").trim().charAt(0).toUpperCase();
   const score=c.opportunity_score;
   const tabs='<div class="detail-tabs">'+
@@ -375,7 +405,7 @@ function renderDetail(){
         '<div class="score-box-row"><span>Confidence</span><span class="confidence-badge '+confClass(c.evidence_confidence)+'">'+esc(c.evidence_confidence||"?")+'</span></div>'+
       '</div></div>'+
       '<section class="section-card"><div class="section-card-title">Technische Relevanz</div><div class="section-card-body tech-list">'+
-        (ops.length?ops.slice(0,6).map(o=>'<div class="tech-row"><span>'+esc(titleCase(o.opportunity_type))+'</span><div class="tech-track"><div class="tech-fill" style="width:'+techStrength(o)+'%"></div></div><strong>'+esc((o.opportunity_level||o.priority||"—").toUpperCase())+'</strong></div>').join(""):'Keine Opportunities')+
+        technicalSignals(ops)+
       '</div></section>'+
       '<div class="detail-two-col">'+
         '<section class="section-card"><div class="section-card-title">Wichtige Informationen</div><div class="section-card-body info-list">'+
@@ -389,12 +419,12 @@ function renderDetail(){
         '</div></section>'+
       '</div>'+
       decisionProfile(c)+certificateDetails(c)+companyFacts(c)+
-      '<section class="section-card"><div class="section-card-title">Nächste Maßnahme</div><div class="section-card-body next-action-box"><div class="action-icon">▤</div><div><div class="action-title">'+esc(task?titleCase(task.opportunity_type):"Keine offene Aufgabe")+'</div><div class="action-text">'+esc(task?.research_question||"Keine priorisierte Research-Aufgabe vorhanden.")+'</div></div><div class="action-meta">'+esc(titleCase(task?.task_status||""))+'</div></div></section>'+
+      nextActionCard(c,step)+
     '</div>';
   }else if(state.detailTab==="analysis"){
     const sr=c.score_readiness||{};
     body='<div class="detail-body"><section class="section-card"><div class="section-card-title">ETOI Analyse</div><div class="section-card-body tech-list">'+
-      (ops.length?ops.map(o=>'<div class="tech-row"><span>'+esc(titleCase(o.opportunity_type))+'</span><div class="tech-track"><div class="tech-fill" style="width:'+techStrength(o)+'%"></div></div><strong>'+esc(o.opportunity_level||o.priority||"—")+'</strong></div>').join(""):'Keine Opportunity-Signale')+
+      technicalSignals(ops)+
       '</div></section>'+
       '<section class="section-card"><div class="section-card-title">Score Readiness</div><div class="section-card-body">'+
         '<div class="info-list">'+
@@ -428,6 +458,7 @@ function renderDetail(){
   $("#detailContent").innerHTML=
     '<div class="detail-header"><div class="detail-title-row"><div class="company-icon">'+esc(initial)+'</div><div class="detail-title"><h2>'+esc(c.legal_entity)+'</h2><div class="sub">'+esc(c.company_id)+' · '+esc(sectorLabel(c))+'</div></div><button class="detail-pin" id="detailPin" title="Anheften">'+(isPinned?"★":"☆")+'</button><button class="detail-close" id="detailClose">×</button></div>'+tabs+'</div>'+body;
   $$("[data-detail-tab]").forEach(b=>b.addEventListener("click",()=>{state.detailTab=b.dataset.detailTab;renderDetail()}));
+  $("#nextActionCommand")?.addEventListener("click",()=>{if(step){state.detailTab=step.tab;renderDetail()}});
   $("#detailPin")?.addEventListener("click",()=>{const now=togglePinned(c.company_id);showToast(now?"Unternehmen angeheftet.":"Anheftung entfernt.");if(state.scope==="mine")renderAll();else renderDetail()});
   $("#detailClose")?.addEventListener("click",()=>{state.selectedId=null;renderTable(false);renderDetail()});
 }
@@ -694,6 +725,7 @@ function bind(){
   $("#createCommand").addEventListener("click",()=>showNav("notes"));
   $("#settingsCommand").addEventListener("click",()=>{document.body.classList.toggle("dense-mode");showToast(document.body.classList.contains("dense-mode")?"Kompakte Darstellung aktiviert.":"Normale Darstellung aktiviert.")});
   $("#helpCommand").addEventListener("click",()=>showNav("documentation"));
+  $("#viewDocsCommand").addEventListener("click",()=>showNav("documentation"));
   $("#moreCommand").addEventListener("click",()=>showNav("documentation"));
   $("#filterButton").addEventListener("click",()=>{$("#focusFilter").focus();showToast("Fokusfilter geöffnet.")});
   $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;showNav("companies");showToast("Ansicht zurückgesetzt")});

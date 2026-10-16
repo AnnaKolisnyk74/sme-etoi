@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="SME-ETOI Industrial Energy Intelligence">
   <title>SME ETOI — Industrial Energy Intelligence</title>
-  <link rel="stylesheet" href="styles.css?v=20261016-navigation">
+  <link rel="stylesheet" href="styles.css?v=20261016-signals-actions">
 </head>
 <body>
   <div class="app">
@@ -29,7 +29,7 @@
 
     <div class="commandbar">
       <div class="commandbar-left">
-        <button id="backCommand">←</button>
+        <button id="backCommand" title="Zurück im Browser" aria-label="Zurück im Browser">←</button>
         <button id="newViewCommand">＋ Ansicht</button>
         <button id="refreshCommand">↻ Aktualisieren</button>
         <button id="exportCommand">▣ CSV exportieren</button>
@@ -91,7 +91,7 @@
           <button class="tab" data-scope="sector">Nach Branche</button>
           <button class="tab" data-scope="potential">Top Potenzial</button>
           <button class="tab" data-scope="research">Research Queue</button>
-          <button class="tab">•••</button>
+          <button class="tab" id="viewDocsCommand" title="Ansichten und Methodik erklären" aria-label="Dokumentation öffnen">•••</button>
         </div>
       </section>
 
@@ -223,6 +223,6 @@
     <span>Bitte die Seite neu laden und die Verbindung prüfen.</span>
   </div>
 
-  <script src="app.js?v=20261016-navigation" defer></script>
+  <script src="app.js?v=20261016-signals-actions" defer></script>
 </body>
 </html>
