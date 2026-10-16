@@ -86,3 +86,29 @@ A separate JavaScript navigation suite exercises the actual handlers against the
 100-company export and runs in CI alongside the existing rendering suite. These
 changes do not alter source facts, proposals, scores or canonical company data.
 Visual browser QA remains unavailable in this managed environment.
+
+## Signal and next-action follow-up — 2026-10-16
+
+Company technical signals are qualitative HIGH/MEDIUM/LOW categories, with missing
+or research-required technical levels explicitly open. Fixed 92/68/42/25-percent
+bar lengths have been removed: they were display constants, not derived scores.
+Commercial priority is never used as a fallback technical level. Signal confidence
+and commercial status are displayed alongside each category; missing confidence
+has neutral styling rather than the styling of confidence C. All company signals
+are retained in both overview and analysis, without a six-row truncation.
+
+The company list and overview now use the same next-action selection. Eligibility
+and certificate gates, entity-attribution conflicts, open generated research,
+unresolved field evidence and separate proposal approval are considered in that
+order. A company with no generated opportunity can still have missing field
+facts; it no longer appears to have no work solely because its opportunity queue
+is empty. All 100 current companies retain a next step, and the detail action opens
+the matching analysis, research or source tab. This display selection does not
+write proposal statuses, canonical scores or human-review decisions. A genuine
+final-score-ready state is not reopened just because it retains checked history.
+
+Renderer and actual-handler tests cover commercial-versus-technical fallbacks,
+missing confidence, HTML escaping, the 12 open eligibility gates, identity cases,
+companies without opportunities, the next-action link and unchanged input data.
+The remaining view-help button opens documentation. The browser-back control is
+explicitly labelled as browser navigation.
