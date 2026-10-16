@@ -8,7 +8,7 @@ const state={
   scope:"all",
   detailTab:"overview",
   researchQuery:"",
-  sortMode:"name",
+  viewMode:"analysis",
   activeNav:"companies"
 };
 const $=s=>document.querySelector(s);
@@ -208,10 +208,24 @@ function togglePinned(id){
   return next.includes(id);
 }
 function companyById(id){return state.data?.companies?.find(c=>c.company_id===id)||null}
-function openCompany(id){
+function syncCompanyControls(){
+  $("#tableSearch").value=state.query;$("#globalSearch").value=state.query;
+  $("#focusFilter").value=state.focus;
+  $$(".tab[data-scope]").forEach(b=>b.classList.toggle("active",b.dataset.scope===state.scope));
+}
+function openCompany(id,detailTab="overview"){
   if(!companyById(id))return;
-  state.selectedId=id;markRecent(id);state.detailTab="overview";
-  setActiveNav("companies");showCompanies();renderTable();renderDetail();
+  // Cross-area links must reveal the requested company even under an old filter.
+  if(!companies().some(c=>c.company_id===id)){
+    state.query="";state.focus="";
+    if(state.scope==="mine"&&!pinnedIds().includes(id))state.scope="all";
+  }
+  if(state.scope==="research")state.scope="all";
+  syncCompanyControls();
+  const index=companies().findIndex(c=>c.company_id===id);
+  state.page=Math.floor(index/state.pageSize)+1;
+  state.selectedId=id;markRecent(id);state.detailTab=detailTab;
+  showNav("companies");
 }
 function setActiveNav(view){
   state.activeNav=view;
@@ -238,9 +252,10 @@ function companies(){
   let rows=state.data.companies.slice();
   const q=state.query.trim().toLowerCase();
   if(q) rows=rows.filter(c=>[
-    c.legal_entity,c.city,c.state,c.process_stratum,c.nace_label,
+    c.company_id,c.legal_entity,c.city,c.state,c.process_stratum,c.nace_label,
     ...(c.processes||[]).map(p=>p.process_name+" "+p.process_name_raw)
   ].join(" ").toLowerCase().includes(q));
+  if(state.scope==="mine")rows=rows.filter(c=>pinnedIds().includes(c.company_id));
   if(state.focus==="pending") rows=rows.filter(c=>eligibility(c)==="ELIGIBILITY_PENDING");
   if(state.focus==="high") rows=rows.filter(c=>priority(c)==="A");
   if(state.focus==="score") rows=rows.filter(c=>c.opportunity_score!==null&&c.opportunity_score!==undefined);
@@ -297,11 +312,12 @@ function renderPriority(){
       '<div class="priority-legend-row" data-priority="'+key+'"><span class="legend-dot" style="background:'+color+'"></span><span>'+label+'</span><strong>'+counts[key]+'</strong></div>'
     ).join('')+'</div>';
 }
-function renderTable(){
+function renderTable(selectFirst=true){
   const all=companies(), pages=Math.max(1,Math.ceil(all.length/state.pageSize));
   if(state.page>pages) state.page=pages;
   const start=(state.page-1)*state.pageSize, visible=all.slice(start,start+state.pageSize);
-  if(!state.selectedId||!all.some(c=>c.company_id===state.selectedId)) state.selectedId=visible[0]?.company_id||all[0]?.company_id||null;
+  if(state.selectedId&&!visible.some(c=>c.company_id===state.selectedId))state.selectedId=null;
+  if(selectFirst&&!state.selectedId)state.selectedId=visible[0]?.company_id||null;
   $("#companyRows").innerHTML=visible.map(c=>{
     const p=priority(c),[status,statusClass]=statusInfo(c),task=topTask(c);
     const score=c.opportunity_score;
@@ -319,7 +335,7 @@ function renderTable(){
       '<td class="next-step" title="'+esc(task?.research_question||"Keine offene priorisierte Aufgabe")+'">'+esc(task?task.research_question:"—")+'</td>'+
       '<td>⋮</td>'+
     '</tr>';
-  }).join("")||'<tr><td colspan="12">Keine Zielunternehmen für diesen Filter.</td></tr>';
+  }).join("")||'<tr><td colspan="12">'+(state.scope==="mine"?'Keine angehefteten Unternehmen für diesen Filter. Nutze ☆ in der Firmenansicht.':'Keine Zielunternehmen für diesen Filter.')+'</td></tr>';
   $("#pagerText").textContent=(all.length?start+1:0)+" - "+Math.min(start+state.pageSize,all.length)+" von "+all.length;
   $("#pageLabel").textContent="Seite "+state.page+" / "+pages;
   $("#prevPage").disabled=state.page<=1;$("#nextPage").disabled=state.page>=pages;
@@ -412,18 +428,23 @@ function renderDetail(){
   $("#detailContent").innerHTML=
     '<div class="detail-header"><div class="detail-title-row"><div class="company-icon">'+esc(initial)+'</div><div class="detail-title"><h2>'+esc(c.legal_entity)+'</h2><div class="sub">'+esc(c.company_id)+' · '+esc(sectorLabel(c))+'</div></div><button class="detail-pin" id="detailPin" title="Anheften">'+(isPinned?"★":"☆")+'</button><button class="detail-close" id="detailClose">×</button></div>'+tabs+'</div>'+body;
   $$("[data-detail-tab]").forEach(b=>b.addEventListener("click",()=>{state.detailTab=b.dataset.detailTab;renderDetail()}));
-  $("#detailPin")?.addEventListener("click",()=>{const now=togglePinned(c.company_id);showToast(now?"Unternehmen angeheftet.":"Anheftung entfernt.");renderDetail()});
-  $("#detailClose")?.addEventListener("click",()=>{state.selectedId=null;renderTable();renderDetail()});
+  $("#detailPin")?.addEventListener("click",()=>{const now=togglePinned(c.company_id);showToast(now?"Unternehmen angeheftet.":"Anheftung entfernt.");if(state.scope==="mine")renderAll();else renderDetail()});
+  $("#detailClose")?.addEventListener("click",()=>{state.selectedId=null;renderTable(false);renderDetail()});
+}
+function researchMatches(r,q){
+  return !q||[r.company_id,r.legal_entity,r.opportunity_type,r.research_question,r.missing_fact,r.finding_summary,r.source_ids,r.task_status,r.research_status,r.resulting_value].join(" ").toLowerCase().includes(q);
 }
 function renderResearch(){
   const q=state.researchQuery.trim().toLowerCase();
   let tasks=state.data.companies.flatMap(c=>(c.research_tasks||[]).map(t=>({...t,company_id:c.company_id,legal_entity:c.legal_entity})));
   tasks.sort((a,b)=>(a.research_rank||9999)-(b.research_rank||9999));
-  if(q) tasks=tasks.filter(t=>[t.legal_entity,t.opportunity_type,t.research_question].join(" ").toLowerCase().includes(q));
+  if(q) tasks=tasks.filter(t=>researchMatches(t,q));
   $("#researchRows").innerHTML=tasks.map(t=>'<tr data-id="'+esc(t.company_id)+'"><td>'+esc(t.research_rank??"—")+'</td><td><strong>'+esc(t.legal_entity)+'</strong></td><td>'+esc(titleCase(t.opportunity_type))+'</td><td style="white-space:normal;min-width:420px">'+esc(t.research_question)+'</td><td>'+esc(t.research_priority)+'</td><td>'+esc(t.decision_impact)+'</td><td>'+esc(titleCase(t.task_status||"OPEN"))+'</td></tr>').join("");
-  const found=(state.data.research_findings||[]).filter(r=>!q||[r.legal_entity,r.finding_summary,r.missing_fact,r.source_ids].join(' ').toLowerCase().includes(q));
+  if(!tasks.length)$("#researchRows").innerHTML='<tr><td colspan="7">Keine Rechercheaufgaben für diese Suche.</td></tr>';
+  const found=(state.data.research_findings||[]).filter(r=>researchMatches(r,q));
   $("#researchFindings").innerHTML='<section class="functional-card"><h3>Recherchebefund-Protokoll · '+found.length+'</h3><p>Alle datierten Befunde, einschließlich Einträgen ohne eigene Queue-Aufgabe. '+found.filter(r=>r.resulting_value==='YES').length+' dokumentierte YES-Befunde im aktuellen Suchumfang. Stammdaten und finale Freigaben bleiben separat.</p>'+publicFindings(found)+'</section>';
-  $$("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>openCompany(r.dataset.id)));
+  $$("#researchRows tr[data-id]").forEach(r=>r.addEventListener("click",()=>openCompany(r.dataset.id,"research")));
+  $$("#researchFindings [data-company-id]").forEach(r=>r.addEventListener("click",event=>{if(event.target.closest("a,button,input,select,textarea,details"))return;openCompany(r.dataset.companyId,"research")}));
 }
 function renderFunctional(view){
   const root=$("#functionalContent");
@@ -631,12 +652,15 @@ function showFunctional(view){
   $(".master-detail").hidden=true;
   $("#researchPage").hidden=true;
   $("#functionalPage").hidden=false;$("#evidenceOverview").hidden=true;
-  setPageChrome(view==="home"?"Startseite":titleCase(view),false);
   renderFunctional(view);
+  setPageChrome($("#functionalTitle").textContent,false);
 }
 function showNav(view){
   setActiveNav(view);
   if(view==="companies"||view==="dashboard"){
+    if(view==="dashboard"){state.viewMode="analysis";$("#viewModeSelect").value="analysis";}
+    if(state.scope==="research")state.scope="all";
+    syncCompanyControls();
     setPageChrome(view==="dashboard"?"Dashboard":"Zielunternehmen",true);
     showCompanies();renderAll();if(view==="dashboard")$("#analyticsBand").scrollIntoView({behavior:"smooth"});return;
   }
@@ -647,7 +671,7 @@ function showNav(view){
 }
 function renderAll(){renderEvidenceOverview();renderMetrics();renderRegionChart();renderPriority();renderTable();renderDetail();renderResearch()}
 function showCompanies(){
-  $("#functionalPage").hidden=true;$("#evidenceOverview").hidden=false;$("#analyticsBand").hidden=false;$(".master-detail").hidden=false;$("#researchPage").hidden=true;
+  $("#functionalPage").hidden=true;$("#evidenceOverview").hidden=false;$("#analyticsBand").hidden=state.viewMode==="table";$(".master-detail").hidden=false;$("#researchPage").hidden=true;
 }
 function showResearch(){
   $("#functionalPage").hidden=true;$("#evidenceOverview").hidden=true;$("#analyticsBand").hidden=true;$(".master-detail").hidden=true;$("#researchPage").hidden=false;renderResearch();
@@ -665,28 +689,29 @@ function exportCsv(){
 function bind(){
   $("#refreshCommand").addEventListener("click",()=>location.reload());
   $("#waffleCommand").addEventListener("click",()=>$(".app").classList.toggle("nav-collapsed"));
+  $(".nav-toggle").addEventListener("click",()=>$(".app").classList.toggle("nav-collapsed"));
   $("#alertsCommand").addEventListener("click",()=>showNav("tasks"));
   $("#createCommand").addEventListener("click",()=>showNav("notes"));
   $("#settingsCommand").addEventListener("click",()=>{document.body.classList.toggle("dense-mode");showToast(document.body.classList.contains("dense-mode")?"Kompakte Darstellung aktiviert.":"Normale Darstellung aktiviert.")});
   $("#helpCommand").addEventListener("click",()=>showNav("documentation"));
   $("#moreCommand").addEventListener("click",()=>showNav("documentation"));
   $("#filterButton").addEventListener("click",()=>{$("#focusFilter").focus();showToast("Fokusfilter geöffnet.")});
-  $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;$("#tableSearch").value="";$("#globalSearch").value="";$("#focusFilter").value="";renderAll();showToast("Ansicht zurückgesetzt")});
+  $("#newViewCommand").addEventListener("click",()=>{state.query="";state.focus="";state.scope="all";state.page=1;showNav("companies");showToast("Ansicht zurückgesetzt")});
   $("#exportCommand").addEventListener("click",exportCsv);
-  $("#chartsCommand").addEventListener("click",()=>{showCompanies();$("#analyticsBand").scrollIntoView({behavior:"smooth"})});
+  $("#chartsCommand").addEventListener("click",()=>{state.viewMode="analysis";$("#viewModeSelect").value="analysis";showNav("dashboard")});
   $("#methodCommand").addEventListener("click",()=>showNav("methodology"));
   $("#backCommand").addEventListener("click",()=>history.back());
-  $("#viewModeSelect").addEventListener("change",e=>{$("#analyticsBand").hidden=e.target.value==="table"});
+  $("#viewModeSelect").addEventListener("change",e=>{state.viewMode=e.target.value;showNav("companies")});
   $("#focusFilter").addEventListener("change",e=>{state.focus=e.target.value;state.page=1;renderAll()});
   $("#tableSearch").addEventListener("input",e=>{state.query=e.target.value;$("#globalSearch").value=e.target.value;state.page=1;renderAll()});
-  $("#globalSearch").addEventListener("input",e=>{state.query=e.target.value;$("#tableSearch").value=e.target.value;state.page=1;renderAll();showCompanies()});
-  $("#prevPage").addEventListener("click",()=>{if(state.page>1){state.page--;renderTable()}});
-  $("#nextPage").addEventListener("click",()=>{state.page++;renderTable()});
+  $("#globalSearch").addEventListener("input",e=>{state.query=e.target.value;state.page=1;showNav("companies")});
+  $("#prevPage").addEventListener("click",()=>{if(state.page>1){state.page--;renderTable();renderDetail()}});
+  $("#nextPage").addEventListener("click",()=>{state.page++;renderTable();renderDetail()});
   $("#researchSearch").addEventListener("input",e=>{state.researchQuery=e.target.value;renderResearch()});
   $$(".tab[data-scope]").forEach(b=>b.addEventListener("click",()=>{
-    $$(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");
     state.scope=b.dataset.scope;state.page=1;
-    if(state.scope==="research") showResearch(); else {showCompanies();renderAll()}
+    syncCompanyControls();
+    if(state.scope==="research"){setActiveNav("research");showResearch()}else showNav("companies");
   }));
   $$("[data-nav]").forEach(b=>b.addEventListener("click",()=>showNav(b.dataset.nav)));
 }

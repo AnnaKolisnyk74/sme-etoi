@@ -62,3 +62,27 @@ company histories, missing-fact display and unsafe-link/HTML escaping. The Pytho
 suite, JavaScript suite and pipeline consistency check must pass before merging
 and updating the existing private Site. This environment does not provide browser
 visual QA; rendering checks here validate generated HTML and data coverage.
+
+## Navigation follow-up — 2026-10-16
+
+Cross-area company links now open the requested company and its actual table
+page. Incompatible previous company filters are cleared, while compatible
+filters stay active; the controls, counters and page heading follow the visible
+view. Company IDs can be searched directly. Paging updates the selected row and
+detail together, and closing the detail leaves it closed until another selection.
+
+The personal company tab now contains only locally pinned companies and is
+labelled accordingly. Removing a pin updates that subset and its counts
+immediately, including its empty state. Pins and notes remain browser-local.
+
+Both research tasks and historical findings open the corresponding company's
+research detail. Research search covers IDs, missing facts, source IDs and status
+as well as names and questions; no-match states are explicit. Evidence links
+retain their own navigation. Table-only mode persists across company links;
+opening the dashboard or the chart command deliberately enables charts. The
+sidebar toggle and the reset/search commands keep navigation chrome consistent.
+
+A separate JavaScript navigation suite exercises the actual handlers against the
+100-company export and runs in CI alongside the existing rendering suite. These
+changes do not alter source facts, proposals, scores or canonical company data.
+Visual browser QA remains unavailable in this managed environment.
