@@ -1,0 +1,109 @@
+[
+  {
+    "company_id": "P43",
+    "legal_entity": "WZR ceramic solutions GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 101,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Eigener Bericht2020 belegt real um600°C dichtgesinterte Aluminiumproben. Das Betriebsfoto zur InbetriebnahmeJuni2021 zeigt TF3-1600; die Herstellerdokumentation bestätigt elektrische SiC-Heizelemente und dreizonige Programmregelung dieser Familie. Damit sind drei begrenzte technische Vorschläge belegbar.1600°C ist eine Obergrenze; konkrete Variante, installierte kW und heutige Auslastung bleiben offen. Formiergas ist Atmosphäre. Der2026-Händlertext wiederholt den älteren Fall und datiert keinen neuen Ofenkauf;Juni2021 liegt vor dem festen Investitionsfenster.",
+    "implemented_summary": "Eigener Bericht2020 belegt real um600°C dichtgesinterte Aluminiumproben. Das Betriebsfoto zur InbetriebnahmeJuni2021 zeigt TF3-1600; die Herstellerdokumentation bestätigt elektrische SiC-Heizelemente und dreizonige Programmregelung dieser Familie. Damit sind drei begrenzte technische Vorschläge belegbar.1600°C ist eine Obergrenze; konkrete Variante, installierte kW und heutige Auslastung bleiben offen. Formiergas ist Atmosphäre. Der2026-Händlertext wiederholt den älteren Fall und datiert keinen neuen Ofenkauf;Juni2021 liegt vor dem festen Investitionsfenster.",
+    "finding": "Eigener Bericht2020 belegt real um600°C dichtgesinterte Aluminiumproben. Das Betriebsfoto zur InbetriebnahmeJuni2021 zeigt TF3-1600; die Herstellerdokumentation bestätigt elektrische SiC-Heizelemente und dreizonige Programmregelung dieser Familie. Damit sind drei begrenzte technische Vorschläge belegbar.1600°C ist eine Obergrenze; konkrete Variante, installierte kW und heutige Auslastung bleiben offen. Formiergas ist Atmosphäre. Der2026-Händlertext wiederholt den älteren Fall und datiert keinen neuen Ofenkauf;Juni2021 liegt vor dem festen Investitionsfenster.",
+    "next_action": "Genaue TF3-Variante, installierte Anschlussleistung und heutige Temperatur-/Auslastungsdaten belegen. Aktuellen fossilen Wärmeanteil, thermischen Speicher und eigenständige zusätzliche Wärmeroute getrennt von vorhandener elektrischer Laboranlage prüfen;2021-Inbetriebnahme nicht neu datieren.",
+    "source_ids": [
+      "S-P43-09",
+      "S-P43-13",
+      "S-P43-14",
+      "S-P43-15"
+    ],
+    "checked_date": "2026-10-18",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261018-P43",
+    "previous_profile_sha256": "d9cf8319668f4ef4a52ee8e485c870e41b1764a8d09943b5f7ffa387943e4114",
+    "followup_reason": "Source-led technical follow-up; all frozen open fields plus explicit reassessment of five prior conditional Nymphenburg proposals. Preserve legal/SME gates, existing-versus-additional load, catalogue and historical boundaries.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "power_conversion_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "power_quality_score",
+      "onsite_integration_score",
+      "investment_gap_score"
+    ]
+  },
+  {
+    "company_id": "P65",
+    "legal_entity": "Porzellanmanufaktur FÜRSTENBERG GmbH",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 10,
+    "outcome": "PUBLIC_CONTROL_EXCEPTION_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "98 Prozent Fürstenberg-Holding-Anteil und staatliche Kette sind amtlich belegt. Manufaktur 2024: 79 Beschäftigte, Umsatz 6,198 Mio. EUR, Bilanz 6,916 Mio. EUR; diese Werte allein entscheiden die Unabhängigkeitsregel nicht.",
+    "technical_summary": "Das direkte Interview mit Florian Marquardt vom02.03.2025 bestätigt Gas als Brennstoff der Porzellanöfen. Ein materialer, bedingter Substitutionsvorschlag ist damit belegt; heutige2026-Messwerte, elektrische Umrüstbarkeit und neue Energieinvestitionen werden nicht behauptet. Die amtlich dokumentierte staatliche Kontrollkette und die offene EU-KMU-Entscheidung bleiben unverändert. Weitere acht eingefrorene Technik-/Energie-/Systemlücken bleiben offen.",
+    "implemented_summary": "Das direkte Interview mit Florian Marquardt vom02.03.2025 bestätigt Gas als Brennstoff der Porzellanöfen. Ein materialer, bedingter Substitutionsvorschlag ist damit belegt; heutige2026-Messwerte, elektrische Umrüstbarkeit und neue Energieinvestitionen werden nicht behauptet. Die amtlich dokumentierte staatliche Kontrollkette und die offene EU-KMU-Entscheidung bleiben unverändert. Weitere acht eingefrorene Technik-/Energie-/Systemlücken bleiben offen.",
+    "finding": "Das direkte Interview mit Florian Marquardt vom02.03.2025 bestätigt Gas als Brennstoff der Porzellanöfen. Ein materialer, bedingter Substitutionsvorschlag ist damit belegt; heutige2026-Messwerte, elektrische Umrüstbarkeit und neue Energieinvestitionen werden nicht behauptet. Die amtlich dokumentierte staatliche Kontrollkette und die offene EU-KMU-Entscheidung bleiben unverändert. Weitere acht eingefrorene Technik-/Energie-/Systemlücken bleiben offen.",
+    "next_action": "Offene Kontroll-/KMU-Entscheidung anhand Beteiligungsquoten und EU-Ausnahme weiter prüfen. Aktuelle Energiebilanz, elektrische Umrüstbarkeit, Motor-/Steuerungsinventur, Speicher und datierte eigene Energieprojekte mit enger Standortzuordnung beschaffen.",
+    "source_ids": [
+      "S-P65-03",
+      "S-P65-05"
+    ],
+    "checked_date": "2026-10-18",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261018-P65",
+    "previous_profile_sha256": "1e74b601525e1d027ec02f4399aaa2392f0a0124bb0c0198bb2c61c2608c3d18",
+    "followup_reason": "Source-led technical follow-up; all frozen open fields plus explicit reassessment of five prior conditional Nymphenburg proposals. Preserve legal/SME gates, existing-versus-additional load, catalogue and historical boundaries.",
+    "field_research_scope": [
+      "fossil_heat_displacement_score",
+      "motor_drive_score",
+      "automation_control_score",
+      "thermal_storage_flex_score",
+      "onsite_integration_score",
+      "measures_gap_score",
+      "management_gap_score",
+      "targets_gap_score",
+      "investment_gap_score"
+    ]
+  },
+  {
+    "company_id": "P109",
+    "legal_entity": "Porzellan Manufaktur Nymphenburg GmbH & Co. KG",
+    "workstream": "IDENTITY",
+    "selection_rank": null,
+    "queue_rank": null,
+    "outcome": "NAME_CORRECTION_PROPOSED",
+    "verified_legal_entity": "Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG",
+    "entity_scope": "Aktuelles Impressum: Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG, München HRA 48197; gespeicherter Name ist verkürzt.",
+    "technical_summary": "Die BR-Vor-Ort-Reportage vom05.06.2024 beschreibt elektrische Brennöfen; eigene aktuelle Seiten bestätigen950/etwa1400°C-Brände und angepasste Brenntechnik. Fünf frühere geprüfte Vorschläge werden mit Vorher-/Nachher-Spur erneut bewertet: elektrische Temperatur-Eignung ist etabliert, Prozess-/Umrichter-/mögliche Netzrelevanz werden als bestehender Fall eingegrenzt. Die hypothetische Zusatzlast5 wird ohne neue zusätzliche Wärmeroute zurückgenommen und bleibt UNKNOWN. Keines der sieben vorher offenen Felder wird geschlossen; vollständiger2026-Brennstoff-/Heizmix und aktuelle Betreiber/Registerkontinuität bleiben gesondert offen.",
+    "implemented_summary": "Die BR-Vor-Ort-Reportage vom05.06.2024 beschreibt elektrische Brennöfen; eigene aktuelle Seiten bestätigen950/etwa1400°C-Brände und angepasste Brenntechnik. Fünf frühere geprüfte Vorschläge werden mit Vorher-/Nachher-Spur erneut bewertet: elektrische Temperatur-Eignung ist etabliert, Prozess-/Umrichter-/mögliche Netzrelevanz werden als bestehender Fall eingegrenzt. Die hypothetische Zusatzlast5 wird ohne neue zusätzliche Wärmeroute zurückgenommen und bleibt UNKNOWN. Keines der sieben vorher offenen Felder wird geschlossen; vollständiger2026-Brennstoff-/Heizmix und aktuelle Betreiber/Registerkontinuität bleiben gesondert offen.",
+    "finding": "Die BR-Vor-Ort-Reportage vom05.06.2024 beschreibt elektrische Brennöfen; eigene aktuelle Seiten bestätigen950/etwa1400°C-Brände und angepasste Brenntechnik. Fünf frühere geprüfte Vorschläge werden mit Vorher-/Nachher-Spur erneut bewertet: elektrische Temperatur-Eignung ist etabliert, Prozess-/Umrichter-/mögliche Netzrelevanz werden als bestehender Fall eingegrenzt. Die hypothetische Zusatzlast5 wird ohne neue zusätzliche Wärmeroute zurückgenommen und bleibt UNKNOWN. Keines der sieben vorher offenen Felder wird geschlossen; vollständiger2026-Brennstoff-/Heizmix und aktuelle Betreiber/Registerkontinuität bleiben gesondert offen.",
+    "next_action": "Konkrete zusätzliche thermische Elektrifizierungsroute mit Nettomehrlast und genehmigter Anschlussleistung nachweisen; vorhandene elektrische Öfen nicht als Lastwachstum zählen. Aktuellen Brennstoff-/Heizmix, Speicher und Management-/Investitionsnachweise sowie Rechtsnamen/Registerkontinuität getrennt klären.",
+    "source_ids": [
+      "S-P109-01",
+      "S-P109-03",
+      "S-P109-05",
+      "S-P109-06"
+    ],
+    "checked_date": "2026-10-18",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261018-P109",
+    "previous_profile_sha256": "dacb0dd9937324526cc200de8031aa3593b9bc9b2457623c7d2905b311aff9ae",
+    "followup_reason": "Source-led technical follow-up; all frozen open fields plus explicit reassessment of five prior conditional Nymphenburg proposals. Preserve legal/SME gates, existing-versus-additional load, catalogue and historical boundaries.",
+    "field_research_scope": [
+      "fossil_heat_displacement_score",
+      "motor_drive_score",
+      "automation_control_score",
+      "thermal_storage_flex_score",
+      "onsite_integration_score",
+      "management_gap_score",
+      "investment_gap_score"
+    ]
+  }
+]

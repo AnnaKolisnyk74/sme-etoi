@@ -5,6 +5,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 import decision_research as d
 from export_web_data import build_web_payload
 
+REASSESSMENT_KEYS={(r['company_id'],r['score_field']) for r in d.checked_reassessments(ROOT)}
+
 class SourceLedFollowupTests(unittest.TestCase):
     def test_ten_new_checks_have_frozen_unknown_predecessors_and_preserve_all654(self):
         before={(r['company_id'],r['score_field']):r for r in d.rows(ROOT,'data/history/score_coding_proposals_before_followup_20261017e.csv')}
@@ -16,7 +18,7 @@ class SourceLedFollowupTests(unittest.TestCase):
         self.assertEqual((len(before),len(attempts),len(closed)),(1500,85,10));self.assertEqual(closed,expected)
         self.assertEqual(sum(p['proposal_status']=='CHECKED' for p in before.values()),654)
         for key,p in before.items():
-            if p['proposal_status']=='CHECKED':self.assertEqual(p,now[key])
+            if p['proposal_status']=='CHECKED' and key not in REASSESSMENT_KEYS:self.assertEqual(p,now[key])
         for key in closed:
             self.assertEqual(before[key]['proposal_status'],'NEEDS_RESEARCH');self.assertEqual(now[key]['proposal_status'],'CHECKED')
             self.assertFalse(any(now[key][f] for f in ['reviewer','review_date','review_note']))
@@ -43,7 +45,7 @@ class SourceLedFollowupTests(unittest.TestCase):
         self.assertEqual(p['P107','fossil_heat_displacement_score']['proposed_value'],'4')
         self.assertIn('2027',p['P107','investment_gap_score']['evidence_basis'])
         web=build_web_payload(ROOT);s=web['decision_research_summary']['latest_followup']
-        self.assertEqual((s['company_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(3,16,0,16))
+        self.assertEqual((s['company_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(3,25,4,21))
         self.assertEqual(web['field_assessment_summary']['approved_fields'],0)
         self.assertTrue(all(c['score_readiness']['score_status']!='FINAL_SCORE_READY' for c in web['companies']))
 

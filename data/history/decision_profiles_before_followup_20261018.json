@@ -1,0 +1,69 @@
+[
+  {
+    "company_id": "P43",
+    "legal_entity": "WZR ceramic solutions GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 101,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Eigener Metallsinterofen wurde im Juni2021 in Betrieb genommen und liegt außerhalb des festen Investitionsfensters. Formiergas bezeichnet die Atmosphäre, nicht den Heizbrennstoff. AMAZING2025 und Porotherm2024 betreffen frühe Forschungs-/Kundenanwendungen; daraus werden keine eigenen Wärmespeicher oder betrieblichen Energieinvestitionen.",
+    "implemented_summary": "Eigener Metallsinterofen wurde im Juni2021 in Betrieb genommen und liegt außerhalb des festen Investitionsfensters. Formiergas bezeichnet die Atmosphäre, nicht den Heizbrennstoff. AMAZING2025 und Porotherm2024 betreffen frühe Forschungs-/Kundenanwendungen; daraus werden keine eigenen Wärmespeicher oder betrieblichen Energieinvestitionen.",
+    "finding": "Eigener Metallsinterofen wurde im Juni2021 in Betrieb genommen und liegt außerhalb des festen Investitionsfensters. Formiergas bezeichnet die Atmosphäre, nicht den Heizbrennstoff. AMAZING2025 und Porotherm2024 betreffen frühe Forschungs-/Kundenanwendungen; daraus werden keine eigenen Wärmespeicher oder betrieblichen Energieinvestitionen.",
+    "next_action": "Eigene Ofenheizung, tatsächliche Sollwerte, elektrische Leistung, Speicherbetrieb und Energieumfang neuer Projekte getrennt von Kunden-/Forschungsanwendungen beschaffen.",
+    "source_ids": [
+      "S-P43-04",
+      "S-P43-05",
+      "S-P43-06",
+      "S-P43-07",
+      "S-P43-09",
+      "S-P43-10",
+      "S-P43-11",
+      "S-P43-12"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P65",
+    "legal_entity": "Porzellanmanufaktur FÜRSTENBERG GmbH",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 10,
+    "outcome": "PUBLIC_CONTROL_EXCEPTION_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "98 Prozent Fürstenberg-Holding-Anteil und staatliche Kette sind amtlich belegt. Manufaktur 2024: 79 Beschäftigte, Umsatz 6,198 Mio. EUR, Bilanz 6,916 Mio. EUR; diese Werte allein entscheiden die Unabhängigkeitsregel nicht.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "98 Prozent Fürstenberg-Holding-Anteil und staatliche Kette sind amtlich belegt. Manufaktur 2024: 79 Beschäftigte, Umsatz 6,198 Mio. EUR, Bilanz 6,916 Mio. EUR; diese Werte allein entscheiden die Unabhängigkeitsregel nicht.",
+    "next_action": "Art. 3 Abs. 2/4 der EU-KMU-Definition einschließlich möglicher öffentlicher-Investment-Ausnahme und Kontrollvertrag prüfen; Holdingzahlen getrennt behandeln.",
+    "source_ids": [
+      "S-P65-04"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P109",
+    "legal_entity": "Porzellan Manufaktur Nymphenburg GmbH & Co. KG",
+    "workstream": "IDENTITY",
+    "selection_rank": null,
+    "queue_rank": null,
+    "outcome": "NAME_CORRECTION_PROPOSED",
+    "verified_legal_entity": "Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG",
+    "entity_scope": "Aktuelles Impressum: Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG, München HRA 48197; gespeicherter Name ist verkürzt.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "Aktuelles Impressum: Königliche Porzellan Manufaktur Nymphenburg GmbH & Co. KG, München HRA 48197; gespeicherter Name ist verkürzt.",
+    "next_action": "Registeridentität gegen historischen Datensatz bestätigen und dann exakten Rechtsnamen konsistent übernehmen; bis dahin aktuelle Bezeichnung separat zeigen.",
+    "source_ids": [
+      "S-P109-01"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

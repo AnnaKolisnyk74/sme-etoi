@@ -166,9 +166,16 @@ def validate(root: Path):
         baseline = {(p['company_id'], p['score_field']): p for p in rows(
             root, f'data/history/score_coding_proposals_before_deep_{stamp}.csv')}
         old, new = baseline.get(key, {}), current.get(key, {})
+        expected_status = r.get('checked_status', 'CHECKED')
+        withdrawal = expected_status == 'NEEDS_RESEARCH'
         if (r['checked_by'] != 'Codex' or r['final_score_approval'] != 'NOT_GRANTED'
                 or old.get('proposal_status') != 'CHECKED'
-                or new.get('proposal_status') != 'CHECKED'):
+                or expected_status not in {'CHECKED', 'NEEDS_RESEARCH'}
+                or new.get('proposal_status') != expected_status
+                or (not withdrawal and not new.get('proposed_value'))
+                or (withdrawal and (r.get('outcome') != 'WITHDRAWN'
+                    or new.get('proposed_value') or new.get('proposal_confidence') != 'UNKNOWN'
+                    or not new.get('missing_fact') or not r.get('decision_note')))):
             errors.append(f'{key}: invalid checked-field reassessment provenance')
         for field, before, after in (
                 ('proposed_value', 'previous_value', 'checked_value'),
@@ -271,6 +278,8 @@ def summary(root: Path):
                              'field_attempt_count': len(rows(root, f'evidence/field_research_followup_{followup_blocks[-1][0]}.csv')),
                              'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in rows(root, f'evidence/field_research_followup_{followup_blocks[-1][0]}.csv')),
                              'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in rows(root, f'evidence/field_research_followup_{followup_blocks[-1][0]}.csv')),
+                             'reassessed_checked_field_count': len(rows(root, f'evidence/checked_field_reassessments_{followup_blocks[-1][0]}.csv')),
+                             'reopened_field_count': sum(r.get('checked_status') == 'NEEDS_RESEARCH' for r in rows(root, f'evidence/checked_field_reassessments_{followup_blocks[-1][0]}.csv')),
                              'entity_clarified_company_count': sum(
                                  p['outcome'] == 'ENTITY_IDENTIFIED_ASSET_SCOPE_OPEN'
                                  for p in followup_blocks[-1][1])}

@@ -24,7 +24,7 @@ class FinalSixTests(unittest.TestCase):
         before={(r['company_id'],r['score_field']):r for r in d.rows(ROOT,'data/history/score_coding_proposals_before_deep_20261017b.csv')}
         current={(r['company_id'],r['score_field']):r for r in d.rows(ROOT,'data/score_coding_proposals.csv')}
         for key,p in before.items():
-            if p['proposal_status']=='CHECKED':self.assertEqual(p,current[key])
+            if p['proposal_status']=='CHECKED' and key not in {(r['company_id'],r['score_field']) for r in d.checked_reassessments(ROOT)}:self.assertEqual(p,current[key])
         for f in fields:
             p=current[f['company_id'],f['score_field']];self.assertEqual(p['proposed_value'],'');self.assertEqual(p['proposal_confidence'],'UNKNOWN')
         for p in json.loads((ROOT/'evidence/decision_research_profiles_20261017b.json').read_text()):
