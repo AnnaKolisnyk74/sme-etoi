@@ -68,8 +68,8 @@ assert.match(html, /Erstbewertung abgeschlossen/);
 assert.ok(!html.includes('<h3>Next Best Coding Companies</h3>'));
 assert.match(html, /100 \/ 100 Unternehmen/);
 assert.match(html, /1500 \/ 1500 Felder bewertet/);
-assert.match(html, /664 Zahlenvorschläge · Geprüft/);
-assert.match(html, /836 dokumentierte Recherchelücken/);
+assert.match(html, /667 Zahlenvorschläge · Geprüft/);
+assert.match(html, /833 dokumentierte Recherchelücken/);
 assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
 assert.ok(!/KI[- ·]*geprüft/i.test(html));
 assert.ok(!html.includes('Zahlenvorschläge warten auf Human Review'));
@@ -125,8 +125,8 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /100 \/ 100 Sample-Firmen geprüft/);
 assert.match(html, /HTTP 200 bestätigt keine Unternehmenszuordnung/);
 assert.match(html, /Prüfabdeckung aller Sample-Firmen/);
-assert.match(html, /658 \/ 658 registrierte Quellen eingestuft/);
-assert.match(html, /595 im dokumentierten Umfang nachgeprüft/);
+assert.match(html, /663 \/ 663 registrierte Quellen eingestuft/);
+assert.match(html, /600 im dokumentierten Umfang nachgeprüft/);
 assert.match(html, /53 nur Kontext/);
 assert.match(html, /10 nicht abrufbar/);
 assert.match(html, /0 ohne Inhaltsprüfung/);
@@ -179,8 +179,8 @@ assert.match(html, /Gültig belegt/);
 assert.match(html, /Geprüft: [0-9]+ \/ 15/);
 assert.ok(!sinks.get('#kpiQuality').innerHTML.includes('Qualifiziert'));
 html = sinks.get('#evidenceOverview').innerHTML;
-assert.match(html, /664 Felder · Geprüft/);
-assert.match(html, /836 Feldfragen offen/);
+assert.match(html, /667 Felder · Geprüft/);
+assert.match(html, /833 Feldfragen offen/);
 assert.match(html, /ISO 50001 13 · ISO 14001 27 · EMAS 4/);
 vm.runInContext('state.query="FM-Plast"; renderEvidenceOverview();', context);
 html = sinks.get('#evidenceOverview').innerHTML;
@@ -209,10 +209,20 @@ console.log('Company view: ISO evidence, separate SME status, filtered field cou
 vm.runInContext('renderFunctional("analysis");', context);
 html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /86 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
-assert.match(html, /879 offene Felder untersucht, 67 zusätzlich geprüft/);
+assert.match(html, /904 offene Felder untersucht, 71 zusätzlich geprüft/);
 assert.match(html, /Letzter Rechercheblock: 6 Firmen · 60 offene Felder untersucht · 0 zusätzlich geprüft · 60 weiterhin offen/);
-assert.match(html,/Zusätzliche Nachprüfung: 3 Firmen · 16 Feldfragen untersucht · 0 zusätzlich geprüft · 16 weiterhin offen/);
+assert.match(html,/Zusätzliche Nachprüfung: 3 Firmen · 25 Feldfragen untersucht · 4 zusätzlich geprüft · 21 weiterhin offen/);
 assert.equal(context.payload.decision_research_summary.batches[2].reassessed_checked_field_count, 4);
+assert.match(html, /5 frühere Feldvorschläge erneut bewertet/);
+assert.match(html, /1 Zahlenvorschlag zurückgenommen/);
+context.loadProofFixture=context.payload.companies.find(c=>c.company_id==='P109').score_proposals.find(p=>p.score_field==='incremental_load_score');
+assert.equal(context.loadProofFixture.proposed_value,null);
+assert.match(vm.runInContext('fieldProof(loadProofFixture)',context),/Frühere Begründung/);
+context.loadProofFixture.check_history.at(-1).original_evidence_basis='<script>old rationale unsafe</script>';
+const oldProof=vm.runInContext('fieldProof(loadProofFixture)',context);
+assert.ok(oldProof.includes('&lt;script&gt;old rationale unsafe&lt;/script&gt;'));
+assert.ok(!oldProof.includes('<script>old rationale unsafe</script>'));
+
 assert.ok(!html.includes('4 ältere geprüfte Vorschläge anhand neuer Quellen korrigiert')); // Latest block made no reassessments.
 for (const cid of ['P47','P65','P88','P109','P110','P18','P77','P96','P98','P99','P11','P21','P107']) {
   context.profileCompany=context.payload.companies.find(c=>c.company_id===cid);
@@ -239,9 +249,9 @@ for(const view of ['home','recent','pinned','tasks','notes','opportunities','ana
 }
 vm.runInContext('renderFunctional("sources");',context);
 html=sinks.get('#functionalContent').innerHTML;
-assert.equal((html.match(/data-source-id=/g)||[]).length,658);
+assert.equal((html.match(/data-source-id=/g)||[]).length,663);
 assert.equal((html.match(/data-certificate-key=/g)||[]).length,321);
-assert.ok(html.includes('632 Quellen des aktuellen Samples · 26 außerhalb des Samples'));
+assert.ok(html.includes('637 Quellen des aktuellen Samples · 26 außerhalb des Samples'));
 vm.runInContext('renderResearch();',context);
 html=sinks.get('#researchFindings').innerHTML;
 assert.equal((html.match(/data-finding-id=/g)||[]).length,105);
@@ -278,7 +288,7 @@ assert.ok(sinks.get('#researchFindings').innerHTML.includes('&lt;script&gt;unsaf
 assert.ok(!sinks.get('#functionalContent').innerHTML.includes('href="javascript:'));
 context.taskFixture={research_tasks:[{research_rank:1,task_status:'EVIDENCE_FOUND'},{research_rank:2,task_status:'OPEN'}]};
 assert.equal(vm.runInContext('topTask(taskFixture).research_rank',context),2);
-console.log('Coverage: all 658 sources, 321 certificates, 105 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
+console.log('Coverage: all 663 sources, 321 certificates, 105 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
 // Expanding source boundaries or opening evidence links must keep the register visible.
 let rowClick;
 context.document.querySelectorAll=()=>[{dataset:{companyId:'P11'},addEventListener(type,callback){rowClick=callback;}}];

@@ -19,7 +19,7 @@ class DecisionResearchTests(unittest.TestCase):
     def assert_unknown_or_recorded_followup(self, proposal):
         key = proposal['company_id'], proposal['score_field']
         followups = [r for r in field_attempts(ROOT) if (r['company_id'], r['score_field']) == key
-                     and r['attempt_id'].startswith('DRF-20261017e-')]
+                     and r['attempt_id'].startswith('DRF-')]
         if followups and followups[-1]['outcome'] == 'NEW_EVIDENCE':
             self.assertEqual(proposal['proposal_status'], 'CHECKED')
             self.assertTrue(proposal['evidence_source_ids'])
@@ -35,7 +35,7 @@ class DecisionResearchTests(unittest.TestCase):
         self.assertEqual(len(attempts), 93)
         self.assertEqual(sum(r['outcome'] == 'NEW_EVIDENCE' for r in attempts), 16)
         for key, row in before.items():
-            if row['proposal_status'] == 'CHECKED':
+            if row['proposal_status'] == 'CHECKED' and key not in REASSESSMENT_KEYS:
                 self.assertEqual(now[key], row)
         for a in attempts:
             p = now[a['company_id'], a['score_field']]
@@ -50,7 +50,7 @@ class DecisionResearchTests(unittest.TestCase):
         attempts = rows(ROOT, 'evidence/field_research_deep_20261012c.csv')
         self.assertEqual((len(attempts), sum(r['outcome'] == 'NEW_EVIDENCE' for r in attempts)), (105, 6))
         for key, old in before.items():
-            if old['proposal_status'] == 'CHECKED':
+            if old['proposal_status'] == 'CHECKED' and key not in REASSESSMENT_KEYS:
                 self.assertEqual(now[key], old)
         for a in attempts:
             if a['outcome'] == 'STILL_UNKNOWN':
@@ -91,7 +91,7 @@ class DecisionResearchTests(unittest.TestCase):
         attempts = rows(ROOT, 'evidence/field_research_deep_20261013.csv')
         self.assertEqual((len(attempts), sum(a['outcome'] == 'NEW_EVIDENCE' for a in attempts)), (98, 7))
         for key, old in before.items():
-            if old['proposal_status'] == 'CHECKED':
+            if old['proposal_status'] == 'CHECKED' and key not in REASSESSMENT_KEYS:
                 self.assertEqual(now[key], old)
         for a in attempts:
             if a['outcome'] == 'STILL_UNKNOWN':
@@ -158,7 +158,7 @@ class DecisionResearchTests(unittest.TestCase):
                           s['eligibility_company_count'], s['identity_company_count']),
                          (100, 86, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (879, 67, 812))
+                          s['still_unknown_field_count']), (904, 71, 833))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -264,6 +264,8 @@ class DecisionResearchTests(unittest.TestCase):
                             'data/history/*_before_deep_*.csv']:
                 paths.extend(ROOT.glob(pattern))
             for source in paths:
+                if source.name == 'checked_field_reassessments_20261018.csv':
+                    continue
                 dest = root / source.relative_to(ROOT)
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(ROOT / 'data/history/score_coding_proposals_before_followup_20261017e.csv' if source == ROOT / 'data/score_coding_proposals.csv' else source, dest)
@@ -279,7 +281,7 @@ class DecisionResearchTests(unittest.TestCase):
         decisions = {(r['company_id'], r['score_field']): r for r in checked_reassessments(ROOT)}
         changed = {k for k in old if old[k]['proposal_status'] == 'CHECKED' and old[k] != current[k]}
         self.assertEqual(changed, set(decisions))
-        self.assertEqual({k[1]: (r['previous_value'], r['checked_value']) for k, r in decisions.items()},
+        self.assertEqual({k[1]: (r['previous_value'], r['checked_value']) for k, r in decisions.items() if k[0] == 'P11'},
                          {'automation_control_score': ('1','3'), 'measures_gap_score': ('7','0'),
                           'targets_gap_score': ('3','2'), 'investment_gap_score': ('3','2')})
         for key, r in decisions.items():

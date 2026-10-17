@@ -179,3 +179,16 @@ The complete register renders 658 sources: 595 scoped RECHECKED, 53 CONTEXT_ONLY
 10 UNAVAILABLE. Office diffuser ratings, historical store evidence and planned
 energy projects remain visible with explicit limits. No numeric proposal or
 canonical deployment/system fact was inferred from them.
+
+
+## Electric firing follow-up18October2026
+
+The latest block displays25 frozen open-field attempts:four additional checked,
+21 still unknown. It separately exposes five reassessed older proposals and one
+reopened additional-load field. Current coverage is667 checked/833 unknown/zero
+approved; historical work is904 attempts/71 closures/833 unknown at attempt date.
+All663 source rows remain visible (600 scoped RECHECKED,53 CONTEXT_ONLY,10
+UNAVAILABLE), including installed-photo/manufacturer scope and archive dates.
+Before/after history retains original evidence wording. Existing electric heat is
+not counted as prospective grid growth. Canonical facts and twelve SME gates
+remain unchanged. Five follow-up blocks retain27 records and100 unique profiles.

@@ -57,7 +57,7 @@ class AllOpenResearchTests(unittest.TestCase):
         baseline = rows('data/history/score_coding_proposals_before_all_open_20261008.csv')
         current = {(r['company_id'], r['score_field']): r for r in rows('data/score_coding_proposals.csv')}
         reassessed = {(r['company_id'], r['score_field']) for r in
-                      rows('evidence/checked_field_reassessments_20261011.csv')}
+                      [r for path in sorted((ROOT/'evidence').glob('checked_field_reassessments_*.csv')) for r in rows(str(path.relative_to(ROOT)))]}
         for old in baseline:
             new = current[old['company_id'], old['score_field']]
             if old['proposal_status'] == 'CHECKED' and (old['company_id'], old['score_field']) not in reassessed:

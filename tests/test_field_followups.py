@@ -5,6 +5,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 import decision_research as d
 import source_content_review as review
 
+REASSESSMENT_KEYS={(r['company_id'],r['score_field']) for r in d.checked_reassessments(ROOT)}
+
 class FieldFollowupTests(unittest.TestCase):
     def test_22_frozen_gaps_close_only_two_brewery_pv_fields(self):
         self.assertEqual(d.validate(ROOT),[])
@@ -14,11 +16,11 @@ class FieldFollowupTests(unittest.TestCase):
         self.assertEqual(closed,{('P32','onsite_integration_score'),('P32','investment_gap_score')})
         before={(p['company_id'],p['score_field']):p for p in d.rows(ROOT,'data/history/score_coding_proposals_before_followup_20261017d.csv')}
         now={(p['company_id'],p['score_field']):p for p in d.rows(ROOT,'data/score_coding_proposals.csv')}
-        self.assertTrue(all(p==now[k] for k,p in before.items() if p['proposal_status']=='CHECKED'))
+        self.assertTrue(all(p==now[k] for k,p in before.items() if p['proposal_status']=='CHECKED' and k not in REASSESSMENT_KEYS))
         for k in closed:
             self.assertEqual((before[k]['proposal_status'],now[k]['proposed_value'],now[k]['proposal_status']),('NEEDS_RESEARCH','2','CHECKED'))
             self.assertFalse(now[k]['reviewer']);self.assertIn('OPEN_GATE',now[k]['evidence_basis'])
-        s=d.summary(ROOT);self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(100,879,67,812))
+        s=d.summary(ROOT);self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(100,904,71,833))
 
     def test_plans_badge_and_social_lead_do_not_become_owned_commissioned_assets(self):
         current={(p['company_id'],p['score_field']):p for p in d.rows(ROOT,'data/score_coding_proposals.csv')}

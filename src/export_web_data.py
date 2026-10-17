@@ -166,8 +166,10 @@ def build_web_payload(root: Path = ROOT) -> dict:
         check = {key: row[key] for key in ('checked_date', 'checked_by', 'checked_value',
                  'checked_confidence', 'checked_source_ids', 'checked_evidence_basis', 'final_score_approval')}
         check.update(original_value=row['previous_value'], original_confidence=row['previous_confidence'],
-                     original_source_ids=row['previous_source_ids'], outcome='REASSESSED',
-                     decision_note='Later reassessment; earlier source/anchor decision retained.')
+                     original_source_ids=row['previous_source_ids'],
+                     original_evidence_basis=row['previous_evidence_basis'], is_reassessment=True,
+                     outcome='NEEDS_RESEARCH' if row.get('checked_status') == 'NEEDS_RESEARCH' else 'REASSESSED',
+                     decision_note=row.get('decision_note') or 'Later reassessment; earlier source/anchor decision retained.')
         checks_by_field.setdefault((row['company_id'], row['score_field']), []).append(check)
     for history in checks_by_field.values():
         history.sort(key=lambda r: r['checked_date'])
@@ -542,7 +544,8 @@ def build_web_payload(root: Path = ROOT) -> dict:
                 'evidence/decision_research_followup_20261017c.md',
                 'evidence/decision_research_followup_20261017d.md',
                 'evidence/decision_research_followup_20261017e.md',
-                'evidence/decision_research_followup_20261017f.md'] if (root / p).exists()],
+                'evidence/decision_research_followup_20261017f.md',
+                'evidence/decision_research_followup_20261018.md'] if (root / p).exists()],
         "field_assessment_summary": field_assessment_summary(companies, proposals, company_work_priority),
         "proposal_check_summary": proposal_checks.summary(root),
         "decision_research_summary": decision_research.summary(root),

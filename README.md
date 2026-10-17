@@ -7,7 +7,7 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 17 October 2026
+## Current checked state — 18 October 2026
 
 [Open the hosted SME-ETOI dashboard](https://sme-etoi.fairorbit8.chatgpt.site).
 The technical-priority chart maps the strongest A/B-confidence technical signal
@@ -21,33 +21,39 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**658/658 sources assessed, 595 rechecked within their stated scope,
+**663/663 sources assessed, 600 rechecked within their stated scope,
 53 context-only, 10 unavailable and zero without a content record**.
-The separate retrieval inventory covers **944 URLs,865 retrievable**.
+The separate retrieval inventory covers **957 URLs,877 retrievable**.
 Dated content provenance can remain valid when a later GET fails; failures and
 recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
 remains a dated578-source baseline. Coverage does not mean every claim was
 confirmed, every field answered or personal approval granted.
 
-All100 provisional companies have all15 fields assessed: **664 CHECKED
-proposals (Geprüft),836 blank NEEDS_RESEARCH fields and zero approved fields**.
-The554 original numeric decisions remain503 confirmed,46 corrected and five
-withdrawn;115 formerly unknown fields now have new evidence. Source/anchor
+All100 provisional companies have all15 fields assessed: **667 CHECKED
+proposals (Geprüft),833 blank NEEDS_RESEARCH fields and zero approved fields**.
+The554 original numeric decisions remain498 confirmed,50 corrected and six
+withdrawn;119 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
 Nine initial blocks cover all 100 companies: 86 technical profiles, twelve SME/group
-cases and two identity profiles. Four later blocks contain 24 follow-up records.
-The latest three-company technical block re-examines **16 frozen open fields**
-for Meckatzer, Aying and metak. Three additional primary sources improve the
-provenance trail, but none establishes a new numeric anchor. All 16 fields stay
-UNKNOWN and all 664 previously checked proposals remain unchanged.
+cases and two identity profiles. Five later blocks contain27 follow-up records.
+The latest three-company block examines25 frozen open fields: three WZR
+technical proposals and Fürstenberg's gas-fired-kiln proposal gain support.
+Five earlier Nymphenburg proposals are reassessed from electric-kiln evidence;
+the additional-load value5 is withdrawn because no new thermal route is proved.
+Net checked coverage increases by three:664+4−1=667. The other659 checked
+predecessor rows remain identical. Existing load never becomes invented growth.
 
-Cumulative historical work: **879 field attempts, 67 closures, 812 still unknown
-at their attempt date**. These differ from the current 836 unknown fields.
+Cumulative historical work: **904 field attempts,71 closures,833 still unknown
+at their attempt date**. The current833 unknown fields additionally reflect the
+separate withdrawal; equal totals have different meanings.
 
-- [Technical follow-up and source boundaries](evidence/decision_research_followup_20261017f.md)
-- [16 exact-once field attempts](evidence/field_research_followup_20261017f.csv)
-- [Eight scoped body checks](evidence/decision_source_checks_20261017f.csv)
+- [Electric firing and fossil-heat follow-up](evidence/decision_research_followup_20261018.md)
+- [25 exact-once field attempts](evidence/field_research_followup_20261018.csv)
+- [Five dated before/after decisions](evidence/checked_field_reassessments_20261018.csv)
+
+The preceding [three-company technical block](evidence/decision_research_followup_20261017f.md)
+retains16 unresolved fields at Meckatzer,Aying and metak without numeric invention.
 
 The previous [ten-company block](evidence/decision_research_followup_20261017e.md)
 closed ten fields, including five bounded public-management-documentation gaps.
