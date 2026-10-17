@@ -9,13 +9,24 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
-from decision_research import profiles, rows, select_companies, validate, summary, checked_reassessments
+from decision_research import profiles, rows, select_companies, validate, summary, checked_reassessments, field_attempts
 from export_web_data import build_web_payload
 
 REASSESSMENT_KEYS = {(r['company_id'], r['score_field']) for r in checked_reassessments(ROOT)}
 
 
 class DecisionResearchTests(unittest.TestCase):
+    def assert_unknown_or_recorded_followup(self, proposal):
+        key = proposal['company_id'], proposal['score_field']
+        followups = [r for r in field_attempts(ROOT) if (r['company_id'], r['score_field']) == key
+                     and r['attempt_id'].startswith('DRF-20261017e-')]
+        if followups and followups[-1]['outcome'] == 'NEW_EVIDENCE':
+            self.assertEqual(proposal['proposal_status'], 'CHECKED')
+            self.assertTrue(proposal['evidence_source_ids'])
+            self.assertTrue(proposal['proposed_value'])
+        else:
+            self.assertEqual((proposal['proposed_value'], proposal['proposal_confidence']), ('', 'UNKNOWN'))
+
     def test_latest_block_preserves_prior_checked_fields_and_leaves_77_gaps_blank(self):
         before = {(r['company_id'], r['score_field']): r for r in rows(
             ROOT, 'data/history/score_coding_proposals_before_deep_20261012b.csv')}
@@ -29,7 +40,7 @@ class DecisionResearchTests(unittest.TestCase):
         for a in attempts:
             p = now[a['company_id'], a['score_field']]
             if a['outcome'] == 'STILL_UNKNOWN':
-                self.assertEqual((p['proposed_value'], p['proposal_confidence']), ('', 'UNKNOWN'))
+                self.assert_unknown_or_recorded_followup(p)
                 self.assertTrue(a['remaining_fact'])
 
     def test_third_block_preserves_previous_checked_rows_and_all_unknowns(self):
@@ -44,7 +55,7 @@ class DecisionResearchTests(unittest.TestCase):
         for a in attempts:
             if a['outcome'] == 'STILL_UNKNOWN':
                 row = now[a['company_id'], a['score_field']]
-                self.assertEqual((row['proposed_value'], row['proposal_confidence']), ('', 'UNKNOWN'))
+                self.assert_unknown_or_recorded_followup(row)
                 self.assertTrue(a['remaining_fact'])
 
     def test_reported_heat_ems_and_machine_controls_retain_ownership_and_period_boundaries(self):
@@ -52,7 +63,8 @@ class DecisionResearchTests(unittest.TestCase):
         for cid in ('P56', 'P57', 'P58', 'P59', 'P60', 'P62', 'P63', 'P64'):
             old = [r for r in rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261012c.csv')
                    if r['company_id'] == cid and r['proposal_status'] == 'NEEDS_RESEARCH']
-            self.assertTrue(all(p[cid, r['score_field']]['proposal_status'] == 'NEEDS_RESEARCH' for r in old))
+            for r in old:
+                self.assert_unknown_or_recorded_followup(p[cid, r['score_field']])
         self.assertIn('contracting expired2022', p['P61', 'fossil_heat_displacement_score']['evidence_basis'])
         self.assertIn('not certified ISO50001', p['P61', 'management_gap_score']['evidence_basis'])
         investment = p['P61', 'investment_gap_score']['evidence_basis']
@@ -84,7 +96,7 @@ class DecisionResearchTests(unittest.TestCase):
         for a in attempts:
             if a['outcome'] == 'STILL_UNKNOWN':
                 p = now[a['company_id'], a['score_field']]
-                self.assertEqual((p['proposed_value'], p['proposal_confidence']), ('', 'UNKNOWN'))
+                self.assert_unknown_or_recorded_followup(p)
                 self.assertTrue(a['remaining_fact'])
 
     def test_thermal_buffer_is_separate_from_dispatch_and_digital_reports_from_closed_loop_control(self):
@@ -146,7 +158,7 @@ class DecisionResearchTests(unittest.TestCase):
                           s['eligibility_company_count'], s['identity_company_count']),
                          (100, 86, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (778, 57, 721))
+                          s['still_unknown_field_count']), (863, 67, 796))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -196,7 +208,7 @@ class DecisionResearchTests(unittest.TestCase):
                         'evidence/decision_source_checks_20261011.csv']:
                 dest = root / rel
                 dest.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(ROOT / rel, dest)
+                shutil.copyfile(ROOT / ('data/history/score_coding_proposals_before_followup_20261017e.csv' if rel == 'data/score_coding_proposals.csv' else rel), dest)
             self.assertEqual(validate(root), [])
             data = copy.deepcopy(profiles(root))
             data[0]['source_ids'] = ['S-P18-06']
@@ -254,7 +266,7 @@ class DecisionResearchTests(unittest.TestCase):
             for source in paths:
                 dest = root / source.relative_to(ROOT)
                 dest.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(source, dest)
+                shutil.copyfile(ROOT / 'data/history/score_coding_proposals_before_followup_20261017e.csv' if source == ROOT / 'data/score_coding_proposals.csv' else source, dest)
             self.assertEqual(validate(root), [])
             (root / 'data/history/research_queue_before_deep_20261009.csv').unlink()
             self.assertTrue(any('missing frozen selection or queue' in e for e in validate(root)))
@@ -332,7 +344,7 @@ class DecisionResearchTests(unittest.TestCase):
                 for source in ROOT.glob(pattern):
                     dest = root / source.relative_to(ROOT)
                     dest.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copyfile(source, dest)
+                    shutil.copyfile(ROOT / 'data/history/score_coding_proposals_before_followup_20261017e.csv' if source == ROOT / 'data/score_coding_proposals.csv' else source, dest)
             self.assertTrue(any('without a later reassessment' in e for e in validate(root)))
             path = 'evidence/checked_field_reassessments_20261011.csv'
             shutil.copyfile(ROOT / path, root / path)

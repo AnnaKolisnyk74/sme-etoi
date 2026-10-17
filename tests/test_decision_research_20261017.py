@@ -12,7 +12,7 @@ class ResearchOctober17Tests(unittest.TestCase):
         fields=d.rows(ROOT,'evidence/field_research_deep_20261017.csv')
         self.assertEqual(len(fields),75);self.assertTrue(all(r['outcome']=='STILL_UNKNOWN' for r in fields))
         before={(r['company_id'],r['score_field']):r for r in d.rows(ROOT,'data/history/score_coding_proposals_before_deep_20261017.csv')}
-        current={(r['company_id'],r['score_field']):r for r in d.rows(ROOT,'data/score_coding_proposals.csv')}
+        current={(r['company_id'],r['score_field']):r for r in d.rows(ROOT,'data/history/score_coding_proposals_before_followup_20261017e.csv')}
         for key,row in before.items():
             if row['proposal_status']=='CHECKED':self.assertEqual(row,current[key])
         for f in fields:
@@ -38,7 +38,7 @@ class ResearchOctober17Tests(unittest.TestCase):
         self.assertEqual(by['P95']['decision_research_profile']['outcome'],'ENTITY_IDENTIFIED_ASSET_SCOPE_OPEN')
         self.assertEqual(by['P95']['decision_research_profile']['verified_legal_entity'],'Winkler Bräu GmbH & Co. KG')
         self.assertNotEqual(by['P95']['legal_entity'],'Winkler Bräustüberl GmbH')
-        self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields']),(654,846))
+        self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields']),(664,836))
         for cid in ['P84','P85','P86','P89','P91','P92','P93','P94','P95','P22']:
             self.assertEqual(by[cid]['decision_research_profile']['final_score_approval'],'NOT_GRANTED')
         latest=p['decision_research_summary']['batches'][-2];self.assertEqual((latest['field_attempt_count'],latest['new_checked_field_count'],latest['still_unknown_field_count']),(75,0,75))

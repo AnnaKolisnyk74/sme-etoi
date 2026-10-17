@@ -153,3 +153,16 @@ Hochdorfer's implemented2023 PV is separated from planned2026/2027 projects,
 expired compensation labels and the cooperative-owned2020 array. OFTECH/OT
 ownership gaps remain separate from primary legal/site facts. See the
 [latest follow-up report](../evidence/decision_research_followup_20261017d.md).
+
+
+## 17 October 2026 — source-led follow-up
+
+The new ten-company block retains 100 unique profiles and exposes 85 repeat field
+attempts, ten new checks and 75 retained unknowns. All 654 earlier checked rows
+remain unchanged. Current totals: 664 checked / 836 unknown / 0 approved; 655
+classified sources (592 scoped rechecked, 53 context-only, ten unavailable).
+Five new management anchors describe bounded public-documentation gaps; one
+other describes a named partial audit. Neither claims current ISO certification
+or internal system absence. Historical attempts are 863 / 67 closures; 21
+follow-up records remain separate from unique-company coverage. The new report
+and all source/field provenance are linked in the web export.

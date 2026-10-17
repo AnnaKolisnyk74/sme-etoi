@@ -46,7 +46,7 @@ class Completion100Tests(unittest.TestCase):
                 self.assertTrue(r['missing_fact'])
         s=self.payload['field_assessment_summary']
         self.assertEqual((s['complete_company_count'],s['assessed_field_count']),(100,1500))
-        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(654,846,0))
+        self.assertEqual((s['checked_fields'],s['needs_research_fields'],s['approved_fields']),(664,836,0))
         self.assertEqual(s['awaiting_human_review_fields'],0)
 
     def test_duplicate_or_unknown_fields_cannot_inflate_completion(self):
@@ -143,7 +143,7 @@ class Completion100Tests(unittest.TestCase):
         row=self.p['P32','fossil_heat_displacement_score']
         self.assertEqual(row['proposed_value'],'0')
         self.assertIn('all brewery heat from woodchips',row['evidence_basis'])
-        for cid in ['P40','P73','P107']:
+        for cid in ['P40','P73']:
             self.assertEqual(self.p[cid,'fossil_heat_displacement_score']['proposal_status'],'NEEDS_RESEARCH')
 
 

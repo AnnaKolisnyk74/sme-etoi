@@ -21,36 +21,37 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**642/642 sources assessed, 579 rechecked within their stated scope,
+**655/655 sources assessed, 592 rechecked within their stated scope,
 53 context-only, 10 unavailable and zero without a content record**.
-The separate retrieval inventory covers **923 URLs,850 retrievable**.
+The separate retrieval inventory covers **939 URLs,861 retrievable**.
 Dated content provenance can remain valid when a later GET fails; failures and
 recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
 remains a dated578-source baseline. Coverage does not mean every claim was
 confirmed, every field answered or personal approval granted.
 
-All100 provisional companies have all15 fields assessed: **654 CHECKED
-proposals (Geprüft),846 blank NEEDS_RESEARCH fields and zero approved fields**.
+All100 provisional companies have all15 fields assessed: **664 CHECKED
+proposals (Geprüft),836 blank NEEDS_RESEARCH fields and zero approved fields**.
 The554 original numeric decisions remain503 confirmed,46 corrected and five
-withdrawn;105 formerly unknown fields now have new evidence. Source/anchor
+withdrawn;115 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Nine initial blocks cover **all100 companies:86 technical profiles,12 SME/group
-cases and two dedicated identity profiles**. Two subsequent follow-up blocks
-revisit11 existing profiles without inflating that100-company count. The latest
-six-company follow-up investigates22 open fields and supports **two additional
-checked proposals**: Hochdorfer's35kWp PV implemented2023 supports one onsite
-integration case and one dated energy investment. The planned100kWp2026 expansion
-and2027 pasteur replacement are kept separate. Its expired compensation badge is
-not an EnMS or current climate-neutrality certificate.
+Nine initial blocks cover all 100 companies: 86 technical profiles, twelve SME/group
+cases and two identity profiles. Three later blocks contain 21 follow-up records.
+The latest ten-company block examines **85 frozen open fields and closes ten**:
+four technical/investment proposals, one partial energy-audit reference, and five
+bounded public-management-documentation gaps. Internal system absence is never
+inferred from the latter. All 654 earlier checked proposals remain unchanged.
 
-Cumulative historical attempts: **778 fields,57 closures,721 still unknown at
-their attempt date**. Current totals are654 CHECKED/846 UNKNOWN. All earlier
-checked proposals remain unchanged. The latest report and source/field trail:
+Cumulative historical work: **863 field attempts, 67 closures, 796 still unknown
+at their attempt date**. These differ from the current 836 unknown fields.
 
-- [Six-company follow-up](evidence/decision_research_followup_20261017d.md)
-- [22 field attempts](evidence/field_research_followup_20261017d.csv)
-- [22 scoped body records](evidence/decision_source_checks_20261017d.csv)
+- [Ten-company source-led follow-up](evidence/decision_research_followup_20261017e.md)
+- [85 field attempts](evidence/field_research_followup_20261017e.csv)
+- [Six explicit management-gap scope checks](evidence/management_gap_checks_20261017e.csv)
+
+The preceding [six-company block](evidence/decision_research_followup_20261017d.md)
+closed two Hochdorfer PV fields. Its 2023 implemented project remains separate
+from planned 2026/2027 projects and an expired compensation badge.
 
 OFTECH's primary imprint is recovered; OT Schwerin directly names arc GmbH as a
 subsidiary. The four SME gates remain open. Schmalriede's first-person PV-install
