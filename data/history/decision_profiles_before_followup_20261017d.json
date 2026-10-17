@@ -1,0 +1,126 @@
+[
+  {
+    "company_id": "P32",
+    "legal_entity": "Kronenbrauerei Otto Haizmann KG",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 4,
+    "outcome": "FINANCIAL_AND_OWNERSHIP_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "Brauprozess ist belegt; keine aktuelle öffentliche vollständige Eigentümer- und Finanzprüfung abgeschlossen.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "Brauprozess ist belegt; keine aktuelle öffentliche vollständige Eigentümer- und Finanzprüfung abgeschlossen.",
+    "next_action": "Gesellschafterkette, Jahresarbeitseinheiten sowie Umsatz oder Bilanzsumme für zwei Geschäftsjahre verifizieren.",
+    "source_ids": [
+      "S-P32-02"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P34",
+    "legal_entity": "KTS Kunststoff Technik Schmölln GmbH",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 5,
+    "outcome": "AGGREGATION_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "Losse Holding nennt KTS als Beteiligung. Rund 85 Beschäftigte im Stadtbericht 2025 betreffen KTS allein.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "Losse Holding nennt KTS als Beteiligung. Rund 85 Beschäftigte im Stadtbericht 2025 betreffen KTS allein.",
+    "next_action": "Beteiligungsquote, Holding-Portfolio und konsolidierte/anteilige Finanz- und Personalzahlen beschaffen.",
+    "source_ids": [
+      "S-P34-05",
+      "S-P34-06"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P40",
+    "legal_entity": "OFTECH Oberflächentechnik GmbH & Co. KG",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 6,
+    "outcome": "SOURCE_ACCESS_AND_FINANCIAL_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "Offizielle Seiten liefern keinen belastbaren vollständigen Eigentümer- oder Finanzabschluss; Abrufgrenzen sind im Quellenprotokoll erfasst.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "Offizielle Seiten liefern keinen belastbaren vollständigen Eigentümer- oder Finanzabschluss; Abrufgrenzen sind im Quellenprotokoll erfasst.",
+    "next_action": "Konkretes Impressum und Registereintrag sowie vollständige Eigentümerkette und aktuelle KMU-Kennzahlen prüfen.",
+    "source_ids": [],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P42",
+    "legal_entity": "OT Oberflächentechnik GmbH & Co. KG",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 7,
+    "outcome": "AGGREGATION_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "OT Beteiligungsgesellschaft mbH ist als Komplementärin belegt. Personalangabe aus Profilsuche ist kein geprüfter Gruppenabschluss.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "OT Beteiligungsgesellschaft mbH ist als Komplementärin belegt. Personalangabe aus Profilsuche ist kein geprüfter Gruppenabschluss.",
+    "next_action": "Unternehmensprofil erneut abrufen; Gesellschafterquoten und Gruppenfinanzen einschließlich Komplementärin prüfen.",
+    "source_ids": [
+      "S-P42-04"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P26",
+    "legal_entity": "Barth Galvanik GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "queue_rank": 75,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected entity; historical equipment, staging, group assets and intention boundaries retained.",
+    "technical_summary": "Eigene Bandöfen und Induktivhärtung bestätigt. Glühtemperaturen sind belegt; Brennstoff der übrigen Öfen, zulässige Verschiebefenster, Speicher und datierte Energieinvestitionen bleiben offen.",
+    "implemented_summary": "Eigene Bandöfen und Induktivhärtung bestätigt. Glühtemperaturen sind belegt; Brennstoff der übrigen Öfen, zulässige Verschiebefenster, Speicher und datierte Energieinvestitionen bleiben offen.",
+    "finding": "Eigene Bandöfen und Induktivhärtung bestätigt. Glühtemperaturen sind belegt; Brennstoff der übrigen Öfen, zulässige Verschiebefenster, Speicher und datierte Energieinvestitionen bleiben offen.",
+    "next_action": "Ofenbezogene Brennstoffe, Betriebs-/Puffergrenzen und Originalunterlagen zu Energieprojekten beschaffen.",
+    "source_ids": [
+      "S-P26-06",
+      "S-P26-07",
+      "S-P26-10"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P13",
+    "legal_entity": "Schmalriede-Zink GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 5,
+    "queue_rank": 62,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene Barcode-/Softwarelogistik stützt begrenzte Steuerungsrelevanz.2024-Erweiterung und Abwasser-Chemikalienoptimierung belegen weder Energie-CAPEX noch Inbetriebnahme. Ziel2025 ist kein Nachweis erreichter Klimaneutralität.",
+    "implemented_summary": "Eigene Barcode-/Softwarelogistik stützt begrenzte Steuerungsrelevanz.2024-Erweiterung und Abwasser-Chemikalienoptimierung belegen weder Energie-CAPEX noch Inbetriebnahme. Ziel2025 ist kein Nachweis erreichter Klimaneutralität.",
+    "finding": "Eigene Barcode-/Softwarelogistik stützt begrenzte Steuerungsrelevanz.2024-Erweiterung und Abwasser-Chemikalienoptimierung belegen weder Energie-CAPEX noch Inbetriebnahme. Ziel2025 ist kein Nachweis erreichter Klimaneutralität.",
+    "next_action": "Eigene Badsteuerung, Wärmeversorgung und Energieumfang/Inbetriebnahme der2024-Maßnahmen verifizieren.",
+    "source_ids": [
+      "S-P13-07",
+      "S-P13-06",
+      "S-P13-04",
+      "S-P13-09"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

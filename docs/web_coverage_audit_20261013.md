@@ -141,3 +141,15 @@ footer-based operator conflict without transferring hotel energy assets to the
 brewery. The latest gate-specific next action uses the attributed profile finding.
 652 checked field proposals,848 unknowns,12 SME gates and zero final-score-ready
 companies remain. See the [follow-up report](../evidence/decision_research_followup_20261017c.md).
+
+## Further 17 October field follow-up
+
+The current export contains642 assessed sources,321 certificate records,105
+research observations(16 YES) and100 unique company profiles. Eleven follow-ups
+are separate from original profile coverage. The latest six-company follow-up
+has22 attributed field attempts, two new checked proposals and20 remaining gaps.
+Total field history778 attempts/57 closures; current654 checked/846 unknown.
+Hochdorfer's implemented2023 PV is separated from planned2026/2027 projects,
+expired compensation labels and the cooperative-owned2020 array. OFTECH/OT
+ownership gaps remain separate from primary legal/site facts. See the
+[latest follow-up report](../evidence/decision_research_followup_20261017d.md).

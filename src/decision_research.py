@@ -55,7 +55,9 @@ def source_checks(root: Path):
 
 
 def field_attempts(root: Path):
-    return [r for path in sorted((root / 'evidence').glob('field_research_deep_*.csv'))
+    paths = [* (root / 'evidence').glob('field_research_deep_*.csv'),
+             * (root / 'evidence').glob('field_research_followup_*.csv')]
+    return [r for path in sorted(paths, key=lambda p: p.stem.rsplit('_', 1)[1])
             for r in rows(root, str(path.relative_to(root)))]
 
 
@@ -123,6 +125,19 @@ def validate(root: Path):
                     or not p.get('followup_reason')):
                 errors.append(f"{stamp}: invalid follow-up provenance for {p['company_id']}")
             previous[p['company_id']] = p
+        fields = rows(root, f'evidence/field_research_followup_{stamp}.csv')
+        scoped = {p['company_id']: p['field_research_scope'] for p in block
+                  if p.get('field_research_scope')}
+        if scoped or fields:
+            baseline = rows(root, f'data/history/score_coding_proposals_before_followup_{stamp}.csv')
+            expected = {(p['company_id'], p['score_field']) for p in baseline
+                        if p['company_id'] in scoped and p['proposal_status'] == 'NEEDS_RESEARCH'}
+            declared = {(cid, f) for cid, fs in scoped.items() for f in fs}
+            actual = {(f['company_id'], f['score_field']) for f in fields}
+            if (not baseline or expected != declared or expected != actual
+                    or len(actual) != len(fields)
+                    or sum(map(len, scoped.values())) != len(declared)):
+                errors.append(f'{stamp}: follow-up field attempts differ from frozen gaps')
     sources = {s['source_id']: s for s in rows(root, 'evidence/source_register.csv')}
     bodies = source_checks(root)
     for p in data:
@@ -253,6 +268,9 @@ def summary(root: Path):
         'followup_company_count': len({p['company_id'] for p in followups}),
         'latest_followup': ({'checked_date': max(p['checked_date'] for p in followup_blocks[-1][1]),
                              'company_count': len(followup_blocks[-1][1]),
+                             'field_attempt_count': len(rows(root, f'evidence/field_research_followup_{followup_blocks[-1][0]}.csv')),
+                             'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in rows(root, f'evidence/field_research_followup_{followup_blocks[-1][0]}.csv')),
+                             'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in rows(root, f'evidence/field_research_followup_{followup_blocks[-1][0]}.csv')),
                              'entity_clarified_company_count': sum(
                                  p['outcome'] == 'ENTITY_IDENTIFIED_ASSET_SCOPE_OPEN'
                                  for p in followup_blocks[-1][1])}

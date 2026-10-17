@@ -16,12 +16,12 @@ class SourceContentReviewTests(unittest.TestCase):
         self.assertEqual(review.validate(ROOT), [])
         result = review.build(ROOT)
         self.assertEqual(result['coverage_status'], 'COMPLETE')
-        self.assertEqual(result['registered_source_count'], 632)
-        self.assertEqual(result['assessed_source_count'], 632)
+        self.assertEqual(result['registered_source_count'], 642)
+        self.assertEqual(result['assessed_source_count'], 642)
         self.assertEqual(result['missing_source_ids'], [])
         self.assertEqual(result['human_review_status'], 'PENDING')
         self.assertEqual(len(review.new_checks(ROOT)), 231)
-        self.assertEqual(len(result['boundary_sources']), 64)
+        self.assertEqual(len(result['boundary_sources']), 63)
         # A current Chinese quality holder is not the sampled German entity.
         foreign = review.checks(ROOT)['S-P87-04']
         self.assertEqual(foreign['content_review_status'], 'CONTEXT_ONLY')
