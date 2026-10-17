@@ -142,7 +142,7 @@ function decisionProfile(c){
   const proof=(c.sources||[]).filter(s=>(p.source_ids||[]).includes(s.source_id));
   return '<section class="section-card"><div class="section-card-title">Vertiefte Firmenprüfung · '+esc(p.checked_date)+'</div><div class="section-card-body">'+
     '<strong>'+esc(label)+'</strong>'+
-    (p.selection_rank?'<div class="source-meta">Auswahl '+esc(p.selection_rank)+' von 10 · Entscheidungsrang '+esc(p.queue_rank)+'</div>':"")+
+    (p.selection_rank?'<div class="source-meta">Auswahl '+esc(p.selection_rank)+' von '+esc(p.selection_count||10)+' · '+(p.queue_source==='SCORE_WORK_QUEUE'?'Feldarbeitsrang ':'Entscheidungsrang ')+esc(p.queue_rank)+'</div>':"")+
     (p.verified_legal_entity?'<p><strong>Aktuelles Impressum:</strong> '+esc(p.verified_legal_entity)+'</p>':"")+
     '<p>'+esc(p.finding)+'</p><div class="action-text"><strong>Nächster Schritt:</strong> '+esc(p.next_action)+'</div>'+
     '<div class="source-meta">'+(proof.length?proof.map(s=>safeLink(s.source_link,s.source_id)).join(' · '):'Kein belastbarer neuer Inhaltsbeleg; Abrufgrenze dokumentiert.')+'</div>'+
