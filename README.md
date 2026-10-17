@@ -21,46 +21,48 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**632/632 sources assessed, 568 rechecked within their stated scope,
-52 context-only, 12 unavailable and zero without a content record**.
-The separate retrieval inventory covers **910 URLs,835 retrievable**.
+**642/642 sources assessed, 579 rechecked within their stated scope,
+53 context-only, 10 unavailable and zero without a content record**.
+The separate retrieval inventory covers **923 URLs,850 retrievable**.
 Dated content provenance can remain valid when a later GET fails; failures and
 recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
 remains a dated578-source baseline. Coverage does not mean every claim was
 confirmed, every field answered or personal approval granted.
 
-All100 provisional companies have all15 fields assessed: **652 CHECKED
-proposals (Geprüft),848 blank NEEDS_RESEARCH fields and zero approved fields**.
+All100 provisional companies have all15 fields assessed: **654 CHECKED
+proposals (Geprüft),846 blank NEEDS_RESEARCH fields and zero approved fields**.
 The554 original numeric decisions remain503 confirmed,46 corrected and five
-withdrawn;103 formerly unknown fields now have new evidence. Source/anchor
+withdrawn;105 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Nine decision-research blocks cover **all100 current companies:86 technical
-profiles,12 SME/group cases and two dedicated identity profiles**. The final six
-are selected by frozen field-work rank only after the opportunity-research queue
-is exhausted. All60 open fields were investigated: **zero new numeric anchors;
-all60 remain UNKNOWN**. Cumulatively756 selected gaps were investigated and55
-closed at their attempt date. All prior checked proposals remain unchanged.
+Nine initial blocks cover **all100 companies:86 technical profiles,12 SME/group
+cases and two dedicated identity profiles**. Two subsequent follow-up blocks
+revisit11 existing profiles without inflating that100-company count. The latest
+six-company follow-up investigates22 open fields and supports **two additional
+checked proposals**: Hochdorfer's35kWp PV implemented2023 supports one onsite
+integration case and one dated energy investment. The planned100kWp2026 expansion
+and2027 pasteur replacement are kept separate. Its expired compensation badge is
+not an EnMS or current climate-neutrality certificate.
 
-[Latest report](evidence/decision_research_20261017b.md),
-[six profiles](evidence/decision_research_profiles_20261017b.json),
-[20 scoped body checks](evidence/decision_source_checks_20261017b.csv) and
-[60 field attempts](evidence/field_research_deep_20261017b.csv) document scope.
-Electric drives, tool cooling and room-heat recovery remain separate from process
-heating, useful storage and dispatch permission. Ceramany's Chinese quality
-holders and KITO/KLAX firing are not assigned to the sampled German operators.
-The preceding [ten-company block](evidence/decision_research_20261017.md)
-retains75 attempted gaps, the Ketterer date conflict and Winkler operator boundary.
+Cumulative historical attempts: **778 fields,57 closures,721 still unknown at
+their attempt date**. Current totals are654 CHECKED/846 UNKNOWN. All earlier
+checked proposals remain unchanged. The latest report and source/field trail:
 
-A [five-company follow-up](evidence/decision_research_followup_20261017c.md)
-revisits four priority SME gates and the Winkler identity boundary. The complete
-embedded company imprint identifies hotel GmbH and brewery KG separately,
-correcting the earlier footer-based conflict. The brewery legal operator is now
-identified; energy-asset attribution remains open. Two IFGL years show100percent
-Hofmann group interest and1181/1180 parent employees at the respective reporting
-dates; point headcounts are not silently converted to annual work units.
-Four new research-result records bring the ledger to100 observations,15 YES.
-These follow-ups add neither unique companies nor numeric-field closures.
+- [Six-company follow-up](evidence/decision_research_followup_20261017d.md)
+- [22 field attempts](evidence/field_research_followup_20261017d.csv)
+- [22 scoped body records](evidence/decision_source_checks_20261017d.csv)
+
+OFTECH's primary imprint is recovered; OT Schwerin directly names arc GmbH as a
+subsidiary. The four SME gates remain open. Schmalriede's first-person PV-install
+report is a context-only lead with commissioning/site attribution unresolved.
+Two previously unavailable Barth bodies now have fresh scoped content reviews.
+
+The preceding [five-company follow-up](evidence/decision_research_followup_20261017c.md)
+corrects Winkler's footer-based operator conflict using the complete embedded
+imprint. Hotel and brewery operators are separate; energy assets are not merged.
+The results ledger now contains105 observations/16 YES, of which six match the
+192 generated research tasks. Research evidence never changes canonical facts
+or independent/final approval automatically.
 
 In the [13October block](evidence/decision_research_20261013.md),
 Flötzinger's own process page supports temperature/control relevance, and the
@@ -71,7 +73,7 @@ window. TechnoKer BDE and Hagen's automatic line support limited coordination
 only. Kundmüller's2023 PV and2024 efficient filler count as distinct projects;
 its2020 brewhouse is not redated by the2022 inauguration.
 
-Fifteen public YES findings remain separate; six match generated queue tasks.
+Sixteen public YES findings remain separate; six match generated queue tasks.
 Canonical deployment flags are not silently overwritten. Product-specific
 renewable-energy brands, guesthouse solar heat, product-test temperatures,
 capacity grants and quality certification do not become whole-site heat balances,
