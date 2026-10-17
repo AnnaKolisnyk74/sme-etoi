@@ -125,14 +125,14 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /100 \/ 100 Sample-Firmen geprüft/);
 assert.match(html, /HTTP 200 bestätigt keine Unternehmenszuordnung/);
 assert.match(html, /Prüfabdeckung aller Sample-Firmen/);
-assert.match(html, /617 \/ 617 registrierte Quellen eingestuft/);
-assert.match(html, /552 im dokumentierten Umfang nachgeprüft/);
-assert.match(html, /53 nur Kontext/);
+assert.match(html, /624 \/ 624 registrierte Quellen eingestuft/);
+assert.match(html, /560 im dokumentierten Umfang nachgeprüft/);
+assert.match(html, /52 nur Kontext/);
 assert.match(html, /12 nicht abrufbar/);
 assert.match(html, /0 ohne Inhaltsprüfung/);
 const boundaries = html.split('<h3>Inhaltliche Grenzen im Quellenbestand</h3>')[1].split('</section>')[0];
 const boundaryRows = [...boundaries.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
-assert.equal(boundaryRows.length, 65);
+assert.equal(boundaryRows.length, 64);
 for (const [, row] of boundaryRows) assert.equal((row.match(/<td(?:\s|>)/g) || []).length, 4);
 context.payload.source_content_review_summary.boundary_sources[0].scope_note = '<script>bad content</script>';
 const coverage = html.split('<h3>Prüfabdeckung aller Sample-Firmen</h3>')[1].split('</section>')[0];
@@ -208,9 +208,9 @@ console.log('Company view: ISO evidence, separate SME status, filtered field cou
 // Decision findings stay visible and escaped, including conflicting legal names.
 vm.runInContext('renderFunctional("analysis");', context);
 html = sinks.get('#functionalContent').innerHTML;
-assert.match(html, /70 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
-assert.match(html, /621 offene Felder untersucht, 55 zusätzlich geprüft/);
-assert.match(html, /Letzter Rechercheblock: 10 Firmen · 98 offene Felder untersucht · 7 zusätzlich geprüft · 91 weiterhin offen/);
+assert.match(html, /80 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
+assert.match(html, /696 offene Felder untersucht, 55 zusätzlich geprüft/);
+assert.match(html, /Letzter Rechercheblock: 10 Firmen · 75 offene Felder untersucht · 0 zusätzlich geprüft · 75 weiterhin offen/);
 assert.equal(context.payload.decision_research_summary.batches[2].reassessed_checked_field_count, 4);
 assert.ok(!html.includes('4 ältere geprüfte Vorschläge anhand neuer Quellen korrigiert')); // Latest block made no reassessments.
 for (const cid of ['P47','P65','P88','P109','P110','P18','P77','P96','P98','P99','P11','P21','P107']) {
@@ -236,9 +236,9 @@ for(const view of ['home','recent','pinned','tasks','notes','opportunities','ana
 }
 vm.runInContext('renderFunctional("sources");',context);
 html=sinks.get('#functionalContent').innerHTML;
-assert.equal((html.match(/data-source-id=/g)||[]).length,617);
+assert.equal((html.match(/data-source-id=/g)||[]).length,624);
 assert.equal((html.match(/data-certificate-key=/g)||[]).length,321);
-assert.ok(html.includes('591 Quellen des aktuellen Samples · 26 außerhalb des Samples'));
+assert.ok(html.includes('598 Quellen des aktuellen Samples · 26 außerhalb des Samples'));
 vm.runInContext('renderResearch();',context);
 html=sinks.get('#researchFindings').innerHTML;
 assert.equal((html.match(/data-finding-id=/g)||[]).length,96);
@@ -275,7 +275,7 @@ assert.ok(sinks.get('#researchFindings').innerHTML.includes('&lt;script&gt;unsaf
 assert.ok(!sinks.get('#functionalContent').innerHTML.includes('href="javascript:'));
 context.taskFixture={research_tasks:[{research_rank:1,task_status:'EVIDENCE_FOUND'},{research_rank:2,task_status:'OPEN'}]};
 assert.equal(vm.runInContext('topTask(taskFixture).research_rank',context),2);
-console.log('Coverage: all 617 sources, 321 certificates, 96 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
+console.log('Coverage: all 624 sources, 321 certificates, 96 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
 // Expanding source boundaries or opening evidence links must keep the register visible.
 let rowClick;
 context.document.querySelectorAll=()=>[{dataset:{companyId:'P11'},addEventListener(type,callback){rowClick=callback;}}];

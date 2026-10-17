@@ -1,7 +1,7 @@
 # Web coverage audit — 2026-10-13
 
 This audit compares the current repository data with the private hosted interface
-at https://sme-etoi.fairorbit8.chatgpt.site. It checks display coverage, not new
+at https://sme-etoi.fairorbit8.chatgpt.site. The table below records the 13October2026 baseline; dated follow-ups describe later changes. It checks display coverage, not new
 scientific evidence or independent human approval. The deployed snapshot is
 updated from the tested, merged repository web export.
 
@@ -112,3 +112,21 @@ missing confidence, HTML escaping, the 12 open eligibility gates, identity cases
 companies without opportunities, the next-action link and unchanged input data.
 The remaining view-help button opens documentation. The browser-back control is
 explicitly labelled as browser navigation.
+
+
+## Research follow-up — 2026-10-17
+
+The next frozen decision block covers ten further firms and all75 of their
+previously open fields. None supports a new numeric anchor; the global652
+CHECKED /848 UNKNOWN proposals remain unchanged. There are now94 profiles
+(80 technical,12 eligibility,2 identity), with696 historical field attempts.
+
+The full register contains624 records:560 scoped rechecks,52 context-only and12
+unavailable. The change from53 to52 context records is the recovered exact
+Heilbronn operator/imprint scope for S-P85-01; it is not an upgrade of energy
+certification or of a score. The separate URL audit has897 rows,823 retrievable.
+Failed fresh retrievals preserve the date and scope of earlier content records.
+
+The new Winkler website-operator conflict is displayed separately from the
+canonical brewery entity and now takes precedence in its next review action.
+See the [complete research record](../evidence/decision_research_20261017.md).

@@ -120,7 +120,7 @@ function nextStep(c){
     return {kind:"eligibility",title:"KMU-Zuordnung klären",text:gate?.next_action||sr.next_action||"Eigentümer- und Gruppenverhältnisse mit firmenspezifischen Belegen klären.",status:"OPEN_GATE",tab:"analysis"};
   }
   if(sr.score_status==="NOT_SCOREABLE_CERTIFICATES")return {kind:"certificate",title:"Zertifikatsprüfung abschließen",text:sr.next_action||"Zertifikatsnachweise und ihre Gültigkeit prüfen.",status:"NEEDS_RESEARCH",tab:"sources"};
-  if(profile?.workstream==="IDENTITY")return {kind:"identity",title:"Firmenzuordnung prüfen",text:profile.next_action||"Rechtsträger und eigene Standorte eindeutig zuordnen.",status:"NEEDS_RESEARCH",tab:"research"};
+  if(profile?.workstream==="IDENTITY"||profile?.outcome==="ENTITY_CONFLICT")return {kind:"identity",title:"Firmenzuordnung prüfen",text:profile.next_action||"Rechtsträger und eigene Standorte eindeutig zuordnen.",status:"NEEDS_RESEARCH",tab:"research"};
   const task=topTask(c);
   if(task)return {kind:"research",title:titleCase(task.opportunity_type),text:task.research_question,status:task.task_status||"OPEN",tab:"research"};
   const gaps=(c.score_proposals||[]).filter(p=>p.proposal_status==="NEEDS_RESEARCH");
