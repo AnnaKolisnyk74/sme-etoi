@@ -21,9 +21,9 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**655/655 sources assessed, 592 rechecked within their stated scope,
+**658/658 sources assessed, 595 rechecked within their stated scope,
 53 context-only, 10 unavailable and zero without a content record**.
-The separate retrieval inventory covers **939 URLs,861 retrievable**.
+The separate retrieval inventory covers **944 URLs,865 retrievable**.
 Dated content provenance can remain valid when a later GET fails; failures and
 recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
 remains a dated578-source baseline. Coverage does not mean every claim was
@@ -36,18 +36,22 @@ withdrawn;115 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
 Nine initial blocks cover all 100 companies: 86 technical profiles, twelve SME/group
-cases and two identity profiles. Three later blocks contain 21 follow-up records.
-The latest ten-company block examines **85 frozen open fields and closes ten**:
-four technical/investment proposals, one partial energy-audit reference, and five
-bounded public-management-documentation gaps. Internal system absence is never
-inferred from the latter. All 654 earlier checked proposals remain unchanged.
+cases and two identity profiles. Four later blocks contain 24 follow-up records.
+The latest three-company technical block re-examines **16 frozen open fields**
+for Meckatzer, Aying and metak. Three additional primary sources improve the
+provenance trail, but none establishes a new numeric anchor. All 16 fields stay
+UNKNOWN and all 664 previously checked proposals remain unchanged.
 
-Cumulative historical work: **863 field attempts, 67 closures, 796 still unknown
+Cumulative historical work: **879 field attempts, 67 closures, 812 still unknown
 at their attempt date**. These differ from the current 836 unknown fields.
 
-- [Ten-company source-led follow-up](evidence/decision_research_followup_20261017e.md)
-- [85 field attempts](evidence/field_research_followup_20261017e.csv)
-- [Six explicit management-gap scope checks](evidence/management_gap_checks_20261017e.csv)
+- [Technical follow-up and source boundaries](evidence/decision_research_followup_20261017f.md)
+- [16 exact-once field attempts](evidence/field_research_followup_20261017f.csv)
+- [Eight scoped body checks](evidence/decision_source_checks_20261017f.csv)
+
+The previous [ten-company block](evidence/decision_research_followup_20261017e.md)
+closed ten fields, including five bounded public-management-documentation gaps.
+Internal system absence is never inferred from these public gaps.
 
 The preceding [six-company block](evidence/decision_research_followup_20261017d.md)
 closed two Hochdorfer PV fields. Its 2023 implemented project remains separate

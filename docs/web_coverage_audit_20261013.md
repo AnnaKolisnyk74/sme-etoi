@@ -166,3 +166,16 @@ other describes a named partial audit. Neither claims current ISO certification
 or internal system absence. Historical attempts are 863 / 67 closures; 21
 follow-up records remain separate from unique-company coverage. The new report
 and all source/field provenance are linked in the web export.
+
+
+## Technical follow-up 17 October 2026, block f
+
+All 16 frozen open fields for Meckatzer, Aying and metak have fresh documented
+attempts in the export. The latest follow-up shows three companies / 16 attempts /
+zero new checked / 16 still unknown. Counts remain 664 checked / 836 unknown /
+zero approved. Historical field work is 879 attempts / 67 closures / 812 unknown
+at attempt date; 24 follow-up records are retained across four blocks.
+The complete register renders 658 sources: 595 scoped RECHECKED, 53 CONTEXT_ONLY,
+10 UNAVAILABLE. Office diffuser ratings, historical store evidence and planned
+energy projects remain visible with explicit limits. No numeric proposal or
+canonical deployment/system fact was inferred from them.

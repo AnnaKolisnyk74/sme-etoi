@@ -1,0 +1,66 @@
+[
+  {
+    "company_id": "P29",
+    "legal_entity": "Meckatzer Löwenbräu Benedikt Weiß KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 7,
+    "queue_rank": 22,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Eigene Gesellschaft/Standort; Gruppenmaßnahmen nur bei belegter Zuordnung.",
+    "technical_summary": "Erdgas-Dampf/BHKW und Ammoniakkälte. Bericht mischt aktuelle und ältere Betriebsbeschreibungen.",
+    "implemented_summary": "Wärmerückgewinnung, Reifekeller Juli 2022 und weitere Maßnahmen sind dokumentiert; Reparatur des Brüdenverdichters offen.",
+    "finding": "Erdgas-Dampf/BHKW und Ammoniakkälte. Bericht mischt aktuelle und ältere Betriebsbeschreibungen. Wärmerückgewinnung, Reifekeller Juli 2022 und weitere Maßnahmen sind dokumentiert; Reparatur des Brüdenverdichters offen.",
+    "next_action": "Aktuellen Brüdenverdichterbetrieb und konkrete thermische Speicher mit Lade-/Entladefenstern prüfen.",
+    "source_ids": [
+      "S-P29-03"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P50",
+    "legal_entity": "Brauerei Aying Franz Inselkammer KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 5,
+    "queue_rank": 110,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Die gescannte Umwelterklärung2023 wurde im Ziel-/Maßnahmenteil visuell gelesen. Sie nennt für2023 Energieprojekte in Planung oder Umsetzung; das stützt nur den Ankündigungsanker. Wärmeziele2020–2024 und bereits erreichte Ziele sind kein neuer aktueller Fahrplan. Zukunftspläne für Speicher/Logistik werden nicht zu Betrieb; Waschmaschine/Wärmepumpe2018/2019 bleiben historisch.",
+    "implemented_summary": "Die gescannte Umwelterklärung2023 wurde im Ziel-/Maßnahmenteil visuell gelesen. Sie nennt für2023 Energieprojekte in Planung oder Umsetzung; das stützt nur den Ankündigungsanker. Wärmeziele2020–2024 und bereits erreichte Ziele sind kein neuer aktueller Fahrplan. Zukunftspläne für Speicher/Logistik werden nicht zu Betrieb; Waschmaschine/Wärmepumpe2018/2019 bleiben historisch.",
+    "finding": "Die gescannte Umwelterklärung2023 wurde im Ziel-/Maßnahmenteil visuell gelesen. Sie nennt für2023 Energieprojekte in Planung oder Umsetzung; das stützt nur den Ankündigungsanker. Wärmeziele2020–2024 und bereits erreichte Ziele sind kein neuer aktueller Fahrplan. Zukunftspläne für Speicher/Logistik werden nicht zu Betrieb; Waschmaschine/Wärmepumpe2018/2019 bleiben historisch.",
+    "next_action": "Aktualisierte Zielperiode nach2024 und Abschluss-/Betriebsnachweise der2023 angekündigten Energieprojekte beschaffen.",
+    "source_ids": [
+      "S-P50-03",
+      "S-P50-04",
+      "S-P50-05",
+      "S-P50-07"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P77",
+    "legal_entity": "metak GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 24,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Eigene Gesellschaft/Standort; Gruppenmaßnahmen nur bei belegter Zuordnung.",
+    "technical_summary": "Spritzguss mit servo-/vollelektrischen Maschinen, Kühlung und Heizöl für Heiz-/Prozesszwecke.",
+    "implemented_summary": "Wärmerückgewinnung und Freikühlung direkt belegt. ISO 50001 001117.E gilt bis 22.09.2029.",
+    "finding": "Spritzguss mit servo-/vollelektrischen Maschinen, Kühlung und Heizöl für Heiz-/Prozesszwecke. Wärmerückgewinnung und Freikühlung direkt belegt. ISO 50001 001117.E gilt bis 22.09.2029.",
+    "next_action": "Energieanlage und Zertifikat vom Investitionsprojekt trennen; aktuelle thermische Speicher und Heizöl-Restverbrauch klären.",
+    "source_ids": [
+      "S-P77-03",
+      "S-P77-06"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

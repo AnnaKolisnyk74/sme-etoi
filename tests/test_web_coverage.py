@@ -17,7 +17,7 @@ class WebCoverageTests(unittest.TestCase):
         sources = [s for c in self.p['companies'] for s in c['sources']] + self.p['additional_sources']
         expected = read_csv(ROOT, 'evidence/source_register.csv')
         self.assertEqual(Counter(s['source_id'] for s in sources), Counter(s['source_id'] for s in expected))
-        self.assertEqual(len(sources), 655)
+        self.assertEqual(len(sources), 658)
         self.assertEqual(len(self.p['additional_sources']), 26)
         sample = {c['company_id'] for c in self.p['companies']}
         self.assertTrue(all(s['company_id'] not in sample and not s['sample_member'] for s in self.p['additional_sources']))
@@ -53,7 +53,7 @@ class WebCoverageTests(unittest.TestCase):
         for c in self.p['companies']:
             for k,v in c['canonical_deployments'].items(): self.assertEqual(v,canonical[c['company_id']][k])
             self.assertEqual(c['last_verified_date'],canonical[c['company_id']]['last_verified_date'])
-        self.assertEqual(len(self.p['documentation_links']),12)
+        self.assertEqual(len(self.p['documentation_links']),13)
         self.assertIn('evidence/decision_research_followup_20261017c.md', {r['path'] for r in self.p['documentation_links']})
 
 if __name__=='__main__': unittest.main()

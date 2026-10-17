@@ -16,8 +16,8 @@ class SourceContentReviewTests(unittest.TestCase):
         self.assertEqual(review.validate(ROOT), [])
         result = review.build(ROOT)
         self.assertEqual(result['coverage_status'], 'COMPLETE')
-        self.assertEqual(result['registered_source_count'], 655)
-        self.assertEqual(result['assessed_source_count'], 655)
+        self.assertEqual(result['registered_source_count'], 658)
+        self.assertEqual(result['assessed_source_count'], 658)
         self.assertEqual(result['missing_source_ids'], [])
         self.assertEqual(result['human_review_status'], 'PENDING')
         self.assertEqual(len(review.new_checks(ROOT)), 231)
@@ -54,7 +54,8 @@ class SourceContentReviewTests(unittest.TestCase):
         newest = review.checks(ROOT)['S-P50-07']
         self.assertGreater(newest['checked_at'], older['checked_at'])
         self.assertIn('printed pages18–21', newest['relevant_location'])
-        self.assertIn('planned/in implementation', newest['scope_note'])
+        self.assertIn('keinen abgeschlossenen Speicher', newest['scope_note'])
+        self.assertIn('geplante Sudhaussteuerung', newest['scope_note'])
         # File category order cannot hide a newer technical review.
         self.assertNotEqual(newest['scope_note'], older['scope_note'])
 
