@@ -125,8 +125,8 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /100 \/ 100 Sample-Firmen geprüft/);
 assert.match(html, /HTTP 200 bestätigt keine Unternehmenszuordnung/);
 assert.match(html, /Prüfabdeckung aller Sample-Firmen/);
-assert.match(html, /626 \/ 626 registrierte Quellen eingestuft/);
-assert.match(html, /562 im dokumentierten Umfang nachgeprüft/);
+assert.match(html, /632 \/ 632 registrierte Quellen eingestuft/);
+assert.match(html, /568 im dokumentierten Umfang nachgeprüft/);
 assert.match(html, /52 nur Kontext/);
 assert.match(html, /12 nicht abrufbar/);
 assert.match(html, /0 ohne Inhaltsprüfung/);
@@ -211,6 +211,7 @@ html = sinks.get('#functionalContent').innerHTML;
 assert.match(html, /86 technische Firmenprofile · 12 KMU-Prüfungen · 2 Firmenzuordnungen/);
 assert.match(html, /756 offene Felder untersucht, 55 zusätzlich geprüft/);
 assert.match(html, /Letzter Rechercheblock: 6 Firmen · 60 offene Felder untersucht · 0 zusätzlich geprüft · 60 weiterhin offen/);
+assert.match(html,/Zusätzliche Nachprüfung: 5 Firmen · 1 Betreiberzuordnung geklärt · keine zusätzliche Feldschließung/);
 assert.equal(context.payload.decision_research_summary.batches[2].reassessed_checked_field_count, 4);
 assert.ok(!html.includes('4 ältere geprüfte Vorschläge anhand neuer Quellen korrigiert')); // Latest block made no reassessments.
 for (const cid of ['P47','P65','P88','P109','P110','P18','P77','P96','P98','P99','P11','P21','P107']) {
@@ -238,12 +239,12 @@ for(const view of ['home','recent','pinned','tasks','notes','opportunities','ana
 }
 vm.runInContext('renderFunctional("sources");',context);
 html=sinks.get('#functionalContent').innerHTML;
-assert.equal((html.match(/data-source-id=/g)||[]).length,626);
+assert.equal((html.match(/data-source-id=/g)||[]).length,632);
 assert.equal((html.match(/data-certificate-key=/g)||[]).length,321);
-assert.ok(html.includes('600 Quellen des aktuellen Samples · 26 außerhalb des Samples'));
+assert.ok(html.includes('606 Quellen des aktuellen Samples · 26 außerhalb des Samples'));
 vm.runInContext('renderResearch();',context);
 html=sinks.get('#researchFindings').innerHTML;
-assert.equal((html.match(/data-finding-id=/g)||[]).length,96);
+assert.equal((html.match(/data-finding-id=/g)||[]).length,100);
 assert.match(html,/15 dokumentierte YES-Befunde/);
 vm.runInContext('renderFunctional("quality");',context);
 html=sinks.get('#functionalContent').innerHTML;
@@ -277,7 +278,7 @@ assert.ok(sinks.get('#researchFindings').innerHTML.includes('&lt;script&gt;unsaf
 assert.ok(!sinks.get('#functionalContent').innerHTML.includes('href="javascript:'));
 context.taskFixture={research_tasks:[{research_rank:1,task_status:'EVIDENCE_FOUND'},{research_rank:2,task_status:'OPEN'}]};
 assert.equal(vm.runInContext('topTask(taskFixture).research_rank',context),2);
-console.log('Coverage: all 626 sources, 321 certificates, 96 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
+console.log('Coverage: all 632 sources, 321 certificates, 100 findings, 100 QA protocols, libraries, methodology, history and safe links passed.');
 // Expanding source boundaries or opening evidence links must keep the register visible.
 let rowClick;
 context.document.querySelectorAll=()=>[{dataset:{companyId:'P11'},addEventListener(type,callback){rowClick=callback;}}];
@@ -341,3 +342,7 @@ context.stepFixture={opportunities:[],score_proposals:[{proposal_status:'CHECKED
 assert.equal(vm.runInContext('nextStep(stepFixture)',context),null);
 assert.equal(JSON.stringify(context.payload),signalInput);
 console.log('Signal/action semantics: categorical levels without invented percentages; unknown confidence stays neutral; all 100 companies retain their actual open work.');
+
+context.gateCompany=context.payload.companies.find(c=>c.company_id==='P47');
+assert.equal(vm.runInContext('nextStep(gateCompany).kind',context),'eligibility');
+assert.match(vm.runInContext('nextStep(gateCompany).text',context),/Jahresarbeitseinheiten/);

@@ -130,3 +130,14 @@ Failed fresh retrievals preserve the date and scope of earlier content records.
 The new Winkler website-operator conflict is displayed separately from the
 canonical brewery entity and now takes precedence in its next review action.
 See the [complete research record](../evidence/decision_research_20261017.md).
+
+## 17 October follow-up update
+
+The current web export contains all100 dedicated company profiles,632 sources,
+321 certificate records,100 public-research observations and100 QA protocols.
+Five follow-ups are shown separately from the nine initial decision blocks and
+756 historical field attempts. The recovered Winkler imprint supersedes the
+footer-based operator conflict without transferring hotel energy assets to the
+brewery. The latest gate-specific next action uses the attributed profile finding.
+652 checked field proposals,848 unknowns,12 SME gates and zero final-score-ready
+companies remain. See the [follow-up report](../evidence/decision_research_followup_20261017c.md).

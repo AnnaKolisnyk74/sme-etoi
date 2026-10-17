@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -21,9 +22,27 @@ def batches(root: Path):
             for p in sorted((root / 'evidence').glob('decision_research_profiles_*.json'))]
 
 
-def profiles(root: Path):
+def base_profiles(root: Path):
     latest = {}
     for _, block in batches(root):
+        latest.update({p['company_id']: p for p in block})
+    return list(latest.values())
+
+
+def followup_batches(root: Path):
+    """Revisit existing profiles without pretending they are new field attempts."""
+    return [(p.stem.rsplit('_', 1)[1], json.loads(p.read_text()))
+            for p in sorted((root / 'evidence').glob('decision_research_followups_*.json'))]
+
+
+def profile_digest(profile):
+    return hashlib.sha256(json.dumps(profile, ensure_ascii=False, sort_keys=True,
+                                    separators=(',', ':')).encode()).hexdigest()
+
+
+def profiles(root: Path):
+    latest = {p['company_id']: p for p in base_profiles(root)}
+    for _, block in followup_batches(root):
         latest.update({p['company_id']: p for p in block})
     return list(latest.values())
 
@@ -91,6 +110,19 @@ def validate(root: Path):
     if not data:
         return []
     errors = []
+    previous = {p['company_id']: p for p in base_profiles(root)}
+    for stamp, block in followup_batches(root):
+        if len({p['company_id'] for p in block}) != len(block):
+            errors.append(f'{stamp}: duplicate follow-up profile')
+        for p in block:
+            old = previous.get(p['company_id'])
+            if (old is None or p.get('previous_profile_sha256') != profile_digest(old)
+                    or p.get('workstream') != old.get('workstream')
+                    or p.get('legal_entity') != old.get('legal_entity')
+                    or p.get('checked_date', '') < old.get('checked_date', '')
+                    or not p.get('followup_reason')):
+                errors.append(f"{stamp}: invalid follow-up provenance for {p['company_id']}")
+            previous[p['company_id']] = p
     sources = {s['source_id']: s for s in rows(root, 'evidence/source_register.csv')}
     bodies = source_checks(root)
     for p in data:
@@ -196,6 +228,8 @@ def validate(root: Path):
 def summary(root: Path):
     data = profiles(root)
     fields = field_attempts(root)
+    followup_blocks = followup_batches(root)
+    followups = [p for _, block in followup_blocks for p in block]
     blocks = []
     for stamp, block in batches(root):
         attempts = rows(root, f'evidence/field_research_deep_{stamp}.csv')
@@ -215,6 +249,14 @@ def summary(root: Path):
         'new_checked_field_count': sum(f['outcome'] == 'NEW_EVIDENCE' for f in fields),
         'still_unknown_field_count': sum(f['outcome'] == 'STILL_UNKNOWN' for f in fields),
         'reassessed_checked_field_count': len(checked_reassessments(root)),
+        'followup_count': len(followups),
+        'followup_company_count': len({p['company_id'] for p in followups}),
+        'latest_followup': ({'checked_date': max(p['checked_date'] for p in followup_blocks[-1][1]),
+                             'company_count': len(followup_blocks[-1][1]),
+                             'entity_clarified_company_count': sum(
+                                 p['outcome'] == 'ENTITY_IDENTIFIED_ASSET_SCOPE_OPEN'
+                                 for p in followup_blocks[-1][1])}
+                            if followup_blocks else {}),
         'profiles': data,
         'batches': blocks,
         'latest_batch': blocks[-1] if blocks else {},

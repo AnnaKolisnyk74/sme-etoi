@@ -80,3 +80,8 @@ and the Winkler next-action path pass. Pipeline write/check and whitespace check
 pass. Canonical company/process/certificate/QA/coding/independent-review/score
 files, previous findings and all prior score-check decisions are byte-identical
 to the starting main. Browser visual QA is unavailable in this environment.
+
+Subsequent source-scope correction: the [five-company follow-up](decision_research_followup_20261017c.md)
+recovers Winkler's complete embedded imprint. It identifies both the hotel GmbH
+and brewery KG; the footer-based conflict recorded above is superseded. This
+report remains the dated first-pass trail, not the latest identity conclusion.

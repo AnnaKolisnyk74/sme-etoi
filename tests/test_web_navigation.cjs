@@ -122,9 +122,9 @@ fire('#viewDocsCommand');assert.equal(run('state.activeNav'),'documentation');
 assert.equal(JSON.stringify(context.payload),before);
 console.log('Next action: a company with no generated opportunity opens its actual field questions; view help opens documentation.');
 
-// A newly researched website-operator conflict precedes technical follow-up.
+// The recovered complete imprint removes the false operator conflict.
 run('openCompany("P95");');
-assert.match(element('#detailContent').innerHTML,/data-next-action="identity"/);
+assert.match(element('#detailContent').innerHTML,/data-next-action="research"/);
 fire('#nextActionCommand');assert.equal(run('state.detailTab'),'research');
-assert.match(element('#detailContent').innerHTML,/Firmenzuordnung widersprüchlich/);
+assert.match(element('#detailContent').innerHTML,/Betreiber identifiziert · Anlagenzuordnung offen/);
 assert.equal(JSON.stringify(context.payload),before);
