@@ -1,0 +1,107 @@
+[
+  {
+    "company_id": "P07",
+    "legal_entity": "VARIOPLAST Konrad Däbritz GmbH",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 1,
+    "outcome": "AGGREGATION_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "Eigene Hongkong-Tochter ist belegt; bisherige Einzelgesellschafts-Zahlen reichen nicht für eine Gruppenentscheidung.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "Eigene Hongkong-Tochter ist belegt; bisherige Einzelgesellschafts-Zahlen reichen nicht für eine Gruppenentscheidung.",
+    "next_action": "Aktuelle Eigentümerquoten und Jahresarbeitseinheiten/Umsatz oder Bilanzsumme einschließlich VARIOPLAST CO. (HK) Ltd beschaffen.",
+    "source_ids": [
+      "S-P07-10"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P10",
+    "legal_entity": "Oskar Lehmann GmbH & Co. KG",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 2,
+    "outcome": "AGGREGATION_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "Komplementär-GmbH ist belegt. Einzelgesellschafts-Umsatz und Mitarbeiterzahl ersetzen keine vollständige Partner-/Verbundaggregation.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "Komplementär-GmbH ist belegt. Einzelgesellschafts-Umsatz und Mitarbeiterzahl ersetzen keine vollständige Partner-/Verbundaggregation.",
+    "next_action": "Anteile der KG und Beteiligungs-GmbH, weitere verbundene Firmen und gleichperiodige aggregierte Zahlen beschaffen.",
+    "source_ids": [
+      "S-P10-01"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P104",
+    "legal_entity": "Holder GmbH Oberflächentechnik",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 3,
+    "outcome": "FINANCIAL_AND_OWNERSHIP_OPEN",
+    "verified_legal_entity": "",
+    "entity_scope": "HRB 230335 und genaue Oberflächentechnik-Gesellschaft sind belegt. Namensgleiche Motoren-/Kommunalfahrzeugfirmen gehören nicht in diesen Datensatz.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "HRB 230335 und genaue Oberflächentechnik-Gesellschaft sind belegt. Namensgleiche Motoren-/Kommunalfahrzeugfirmen gehören nicht in diesen Datensatz.",
+    "next_action": "Eigentümerquoten und eventuelle Schwesterfirmen plus aktuelle Beschäftigten- und Finanzwerte verifizieren.",
+    "source_ids": [
+      "S-P104-08"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P47",
+    "legal_entity": "hofmann CERAMiC GmbH",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 9,
+    "outcome": "EXCLUSION_SIGNAL",
+    "verified_legal_entity": "",
+    "entity_scope": "IFGL-Bericht 2025/26 bestätigt 100 Prozent Kontrolle und HRB 7319; allein die Mutter nennt 1.180 dauerhafte Beschäftigte am 31.03.2026. Alte Teilgruppen-Angabe von rund 150 darf nicht für den Gesamtverbund stehen.",
+    "technical_summary": "",
+    "implemented_summary": "",
+    "finding": "IFGL-Bericht 2025/26 bestätigt 100 Prozent Kontrolle und HRB 7319; allein die Mutter nennt 1.180 dauerhafte Beschäftigte am 31.03.2026. Alte Teilgruppen-Angabe von rund 150 darf nicht für den Gesamtverbund stehen.",
+    "next_action": "KMU-Ausschluss anhand vollständiger IFGL-Kette, Jahresarbeitseinheiten und Zweijahresregel abschließend dokumentieren; Gate bleibt bis zur kanonischen Entscheidung offen.",
+    "source_ids": [
+      "S-P47-08",
+      "S-P47-09"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P95",
+    "legal_entity": "Winkler-Bräu GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 182,
+    "outcome": "ENTITY_CONFLICT",
+    "verified_legal_entity": "Winkler Bräustüberl GmbH",
+    "entity_scope": "Current website operator only; no automatic replacement of canonical brewery entity.",
+    "technical_summary": "Das aktuelle Web-Impressum nennt Winkler Bräustüberl GmbH statt des kanonischen Brauereirechtsträgers. Eine Lieferantenreferenz nennt ein realisiertes BHKW-Projekt ohne Inbetriebnahmedatum oder eindeutigen aktuellen Anlagenhalter. Hotel-/Brauereigrenze bleibt vor technischer Zuordnung zu klären.",
+    "implemented_summary": "Das aktuelle Web-Impressum nennt Winkler Bräustüberl GmbH statt des kanonischen Brauereirechtsträgers. Eine Lieferantenreferenz nennt ein realisiertes BHKW-Projekt ohne Inbetriebnahmedatum oder eindeutigen aktuellen Anlagenhalter. Hotel-/Brauereigrenze bleibt vor technischer Zuordnung zu klären.",
+    "finding": "Das aktuelle Web-Impressum nennt Winkler Bräustüberl GmbH statt des kanonischen Brauereirechtsträgers. Eine Lieferantenreferenz nennt ein realisiertes BHKW-Projekt ohne Inbetriebnahmedatum oder eindeutigen aktuellen Anlagenhalter. Hotel-/Brauereigrenze bleibt vor technischer Zuordnung zu klären.",
+    "next_action": "Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären.",
+    "source_ids": [
+      "S-P95-04",
+      "S-P95-05",
+      "S-P95-06",
+      "S-P95-07",
+      "S-P95-08"
+    ],
+    "checked_date": "2026-10-17",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

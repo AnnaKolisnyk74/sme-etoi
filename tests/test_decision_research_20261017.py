@@ -35,8 +35,8 @@ class ResearchOctober17Tests(unittest.TestCase):
     def test_date_entity_and_thermal_boundaries_are_visible_without_approval(self):
         p=build_web_payload(ROOT);by={c['company_id']:c for c in p['companies']}
         self.assertIn('2021',by['P92']['decision_research_profile']['finding']);self.assertIn('2023',by['P92']['decision_research_profile']['finding'])
-        self.assertEqual(by['P95']['decision_research_profile']['outcome'],'ENTITY_CONFLICT')
-        self.assertEqual(by['P95']['decision_research_profile']['verified_legal_entity'],'Winkler Bräustüberl GmbH')
+        self.assertEqual(by['P95']['decision_research_profile']['outcome'],'ENTITY_IDENTIFIED_ASSET_SCOPE_OPEN')
+        self.assertEqual(by['P95']['decision_research_profile']['verified_legal_entity'],'Winkler Bräu GmbH & Co. KG')
         self.assertNotEqual(by['P95']['legal_entity'],'Winkler Bräustüberl GmbH')
         self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields']),(652,848))
         for cid in ['P84','P85','P86','P89','P91','P92','P93','P94','P95','P22']:

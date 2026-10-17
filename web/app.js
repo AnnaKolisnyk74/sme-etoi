@@ -117,7 +117,7 @@ function nextStep(c){
   const sr=c.score_readiness||{},profile=c.decision_research_profile;
   if(["ELIGIBILITY_PENDING","EXCLUDED"].includes(eligibility(c))){
     const gate=(c.score_work_tasks||[]).find(t=>t.task_status==="OPEN_GATE");
-    return {kind:"eligibility",title:"KMU-Zuordnung klären",text:gate?.next_action||sr.next_action||"Eigentümer- und Gruppenverhältnisse mit firmenspezifischen Belegen klären.",status:"OPEN_GATE",tab:"analysis"};
+    return {kind:"eligibility",title:"KMU-Zuordnung klären",text:(profile?.workstream==="ELIGIBILITY"?profile.next_action:"")||gate?.next_action||sr.next_action||"Eigentümer- und Gruppenverhältnisse mit firmenspezifischen Belegen klären.",status:"OPEN_GATE",tab:"analysis"};
   }
   if(sr.score_status==="NOT_SCOREABLE_CERTIFICATES")return {kind:"certificate",title:"Zertifikatsprüfung abschließen",text:sr.next_action||"Zertifikatsnachweise und ihre Gültigkeit prüfen.",status:"NEEDS_RESEARCH",tab:"sources"};
   if(profile?.workstream==="IDENTITY"||profile?.outcome==="ENTITY_CONFLICT")return {kind:"identity",title:"Firmenzuordnung prüfen",text:profile.next_action||"Rechtsträger und eigene Standorte eindeutig zuordnen.",status:"NEEDS_RESEARCH",tab:"research"};
@@ -138,12 +138,13 @@ function nextActionCard(c,step){
 function decisionProfile(c){
   const p=c.decision_research_profile;
   if(!p)return "";
-  const label={EXCLUSION_SIGNAL:"KMU-Ausschluss prüfen",PUBLIC_CONTROL_EXCEPTION_OPEN:"Öffentliche Kontrolle: Ausnahme prüfen",ENTITY_CONFLICT:"Firmenzuordnung widersprüchlich",NAME_CORRECTION_PROPOSED:"Rechtsname präzisieren",NEW_FIELD_EVIDENCE:"Neue Feldbelege gefunden",PARTIAL_EVIDENCE:"Teilweise belegt",AGGREGATION_OPEN:"Gruppenaggregation offen",FINANCIAL_AND_OWNERSHIP_OPEN:"Eigentümer und Finanzdaten offen",SOURCE_ACCESS_AND_FINANCIAL_OPEN:"Quellenzugang und Finanzdaten offen"}[p.outcome]||titleCase(p.outcome);
+  const label={EXCLUSION_SIGNAL:"KMU-Ausschluss prüfen",ENTITY_IDENTIFIED_ASSET_SCOPE_OPEN:"Betreiber identifiziert · Anlagenzuordnung offen",PUBLIC_CONTROL_EXCEPTION_OPEN:"Öffentliche Kontrolle: Ausnahme prüfen",ENTITY_CONFLICT:"Firmenzuordnung widersprüchlich",NAME_CORRECTION_PROPOSED:"Rechtsname präzisieren",NEW_FIELD_EVIDENCE:"Neue Feldbelege gefunden",PARTIAL_EVIDENCE:"Teilweise belegt",AGGREGATION_OPEN:"Gruppenaggregation offen",FINANCIAL_AND_OWNERSHIP_OPEN:"Eigentümer und Finanzdaten offen",SOURCE_ACCESS_AND_FINANCIAL_OPEN:"Quellenzugang und Finanzdaten offen"}[p.outcome]||titleCase(p.outcome);
   const proof=(c.sources||[]).filter(s=>(p.source_ids||[]).includes(s.source_id));
   return '<section class="section-card"><div class="section-card-title">Vertiefte Firmenprüfung · '+esc(p.checked_date)+'</div><div class="section-card-body">'+
     '<strong>'+esc(label)+'</strong>'+
     (p.selection_rank?'<div class="source-meta">Auswahl '+esc(p.selection_rank)+' von '+esc(p.selection_count||10)+' · '+(p.queue_source==='SCORE_WORK_QUEUE'?'Feldarbeitsrang ':'Entscheidungsrang ')+esc(p.queue_rank)+'</div>':"")+
     (p.verified_legal_entity?'<p><strong>Aktuelles Impressum:</strong> '+esc(p.verified_legal_entity)+'</p>':"")+
+    (p.followup_reason?'<p class="source-meta">Nachprüfung: '+esc(p.followup_reason)+'</p>':'')+
     '<p>'+esc(p.finding)+'</p><div class="action-text"><strong>Nächster Schritt:</strong> '+esc(p.next_action)+'</div>'+
     '<div class="source-meta">'+(proof.length?proof.map(s=>safeLink(s.source_link,s.source_id)).join(' · '):'Kein belastbarer neuer Inhaltsbeleg; Abrufgrenze dokumentiert.')+'</div>'+
     '<div class="source-meta">Belegte Feldvorschläge: Geprüft. KMU-Entscheidung und finale Score-Freigabe separat.</div></div></section>';
@@ -152,9 +153,11 @@ function decisionResearchOverview(){
   const r=state.data.decision_research_summary;
   if(!r?.profile_count)return "";
   const b=r.latest_batch;
+  const f=r.latest_followup;
+  const followup=f?.company_count?'<p>Zusätzliche Nachprüfung: '+esc(f.company_count)+' Firmen · '+esc(f.entity_clarified_company_count)+' Betreiberzuordnung geklärt · keine zusätzliche Feldschließung.</p>':"";
   const corrections=b?.reassessed_checked_field_count?'<p>'+esc(b.reassessed_checked_field_count)+' ältere geprüfte Vorschläge anhand neuer Quellen korrigiert; Vorher-/Nachher-Entscheidungen dokumentiert.</p>':"";
   const latest=b?'<p>Letzter Rechercheblock: '+esc(b.profile_count)+' Firmen · '+esc(b.field_attempt_count)+' offene Felder untersucht · '+esc(b.new_checked_field_count)+' zusätzlich geprüft · '+esc(b.still_unknown_field_count)+' weiterhin offen.</p>'+corrections:"";
-  return '<section class="functional-card"><h3>Vertiefte Firmenprüfung · '+esc(r.checked_date)+'</h3><p>'+esc(r.technical_company_count)+' technische Firmenprofile · '+esc(r.eligibility_company_count)+' KMU-Prüfungen · '+esc(r.identity_company_count)+' Firmenzuordnungen. '+esc(r.field_attempt_count)+' offene Felder untersucht, '+esc(r.new_checked_field_count)+' zusätzlich geprüft.</p>'+latest+genericTable(['Unternehmen','Prüfung','Ergebnis / nächster Schritt'],r.profiles.map(p=>'<tr data-company-id="'+esc(p.company_id)+'"><td><strong>'+esc(p.legal_entity)+'</strong></td><td>'+esc({TECHNICAL:'Technik',ELIGIBILITY:'KMU',IDENTITY:'Firmenzuordnung'}[p.workstream])+'</td><td class="wrap-cell">'+esc(p.finding)+'<div class="source-meta">'+esc(p.next_action)+'</div></td></tr>'))+'</section>';
+  return '<section class="functional-card"><h3>Vertiefte Firmenprüfung · '+esc(r.checked_date)+'</h3><p>'+esc(r.technical_company_count)+' technische Firmenprofile · '+esc(r.eligibility_company_count)+' KMU-Prüfungen · '+esc(r.identity_company_count)+' Firmenzuordnungen. '+esc(r.field_attempt_count)+' offene Felder untersucht, '+esc(r.new_checked_field_count)+' zusätzlich geprüft.</p>'+latest+followup+genericTable(['Unternehmen','Prüfung','Ergebnis / nächster Schritt'],r.profiles.map(p=>'<tr data-company-id="'+esc(p.company_id)+'"><td><strong>'+esc(p.legal_entity)+'</strong></td><td>'+esc({TECHNICAL:'Technik',ELIGIBILITY:'KMU',IDENTITY:'Firmenzuordnung'}[p.workstream])+'</td><td class="wrap-cell">'+esc(p.finding)+'<div class="source-meta">'+esc(p.next_action)+'</div></td></tr>'))+'</section>';
 }
 function allSourceRecords(){
   return (state.data.companies||[]).flatMap(c=>(c.sources||[]).map(s=>({...s,company_id:c.company_id,legal_entity:c.legal_entity,sample_member:true}))).concat(state.data.additional_sources||[]);

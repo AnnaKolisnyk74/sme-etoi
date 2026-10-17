@@ -21,9 +21,9 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**626/626 sources assessed, 562 rechecked within their stated scope,
+**632/632 sources assessed, 568 rechecked within their stated scope,
 52 context-only, 12 unavailable and zero without a content record**.
-The separate retrieval inventory covers **900 URLs,825 retrievable**.
+The separate retrieval inventory covers **910 URLs,835 retrievable**.
 Dated content provenance can remain valid when a later GET fails; failures and
 recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
 remains a dated578-source baseline. Coverage does not mean every claim was
@@ -51,6 +51,16 @@ heating, useful storage and dispatch permission. Ceramany's Chinese quality
 holders and KITO/KLAX firing are not assigned to the sampled German operators.
 The preceding [ten-company block](evidence/decision_research_20261017.md)
 retains75 attempted gaps, the Ketterer date conflict and Winkler operator boundary.
+
+A [five-company follow-up](evidence/decision_research_followup_20261017c.md)
+revisits four priority SME gates and the Winkler identity boundary. The complete
+embedded company imprint identifies hotel GmbH and brewery KG separately,
+correcting the earlier footer-based conflict. The brewery legal operator is now
+identified; energy-asset attribution remains open. Two IFGL years show100percent
+Hofmann group interest and1181/1180 parent employees at the respective reporting
+dates; point headcounts are not silently converted to annual work units.
+Four new research-result records bring the ledger to100 observations,15 YES.
+These follow-ups add neither unique companies nor numeric-field closures.
 
 In the [13October block](evidence/decision_research_20261013.md),
 Flötzinger's own process page supports temperature/control relevance, and the
