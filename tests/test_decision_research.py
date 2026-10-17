@@ -144,9 +144,9 @@ class DecisionResearchTests(unittest.TestCase):
         s = summary(ROOT)
         self.assertEqual((s['profile_count'], s['technical_company_count'],
                           s['eligibility_company_count'], s['identity_company_count']),
-                         (94, 80, 12, 2))
+                         (100, 86, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (696, 55, 641))
+                          s['still_unknown_field_count']), (756, 55, 701))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -220,7 +220,7 @@ class DecisionResearchTests(unittest.TestCase):
         self.assertEqual(s['batches'][1]['still_unknown_field_count'], 90)
         self.assertEqual((s['latest_batch']['field_attempt_count'],
                           s['latest_batch']['new_checked_field_count'],
-                          s['latest_batch']['still_unknown_field_count']), (75, 0, 75))
+                          s['latest_batch']['still_unknown_field_count']), (60, 0, 60))
         self.assertEqual(validate(ROOT), [])
 
     def test_period_and_claim_boundaries_survive_pipeline_export(self):

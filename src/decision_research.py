@@ -63,6 +63,29 @@ def select_companies(queue, size=10, identity_blocks=()):
     return selected
 
 
+def select_field_companies(queue, size=10, identity_blocks=()):
+    """Continue exhausted opportunity research using the frozen field-work rank.
+
+    research_rank is the existing selection-file column; queue_source explicitly
+    identifies that its value is a work_rank, not an opportunity research rank.
+    """
+    blocked = set(identity_blocks) | {r['company_id'] for r in queue
+                                     if r['task_status'] == 'OPEN_GATE'}
+    selected, seen = [], set()
+    for row in sorted(queue, key=lambda r: int(r['work_rank'])):
+        cid = row['company_id']
+        if (cid in blocked or cid in seen or row['task_status'] != 'RESEARCH_NEEDED'
+                or not row['research_gap_fields']):
+            continue
+        selected.append({**row, 'research_rank': row['work_rank'],
+                         'missing_fact': row['research_gap_fields'],
+                         'queue_source': 'SCORE_WORK_QUEUE'})
+        seen.add(cid)
+        if len(selected) == size:
+            break
+    return selected
+
+
 def validate(root: Path):
     data = profiles(root)
     if not data:
@@ -120,6 +143,14 @@ def validate(root: Path):
         if not selections or not frozen:
             errors.append(f'{stamp}: missing frozen selection or queue')
         expected = select_companies(frozen, identity_blocks=prior_ids)
+        field_queue = rows(root, f'data/history/score_work_queue_before_deep_{stamp}.csv')
+        if field_queue:
+            if expected:
+                errors.append(f'{stamp}: field fallback requires exhausted opportunity queue')
+            expected = select_field_companies(field_queue, identity_blocks=prior_ids)
+            if any(s.get('queue_source') != 'SCORE_WORK_QUEUE' or s.get('selection_rule') !=
+                   'EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK' for s in selections):
+                errors.append(f'{stamp}: field selection lacks explicit work-rank provenance')
         if [s['company_id'] for s in selections] != [s['company_id'] for s in expected]:
             errors.append(f'{stamp}: selection differs from frozen queue')
         technical = sorted((p for p in block if p['workstream'] == 'TECHNICAL'),

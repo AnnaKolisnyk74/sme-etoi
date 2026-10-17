@@ -7,7 +7,7 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 13 October 2026
+## Current checked state — 17 October 2026
 
 [Open the hosted SME-ETOI dashboard](https://sme-etoi.fairorbit8.chatgpt.site).
 The technical-priority chart maps the strongest A/B-confidence technical signal
@@ -21,9 +21,9 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**624/624 sources assessed, 560 rechecked within their stated scope,
+**626/626 sources assessed, 562 rechecked within their stated scope,
 52 context-only, 12 unavailable and zero without a content record**.
-The separate retrieval inventory covers **897 URLs,823 retrievable**.
+The separate retrieval inventory covers **900 URLs,825 retrievable**.
 Dated content provenance can remain valid when a later GET fails; failures and
 recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
 remains a dated578-source baseline. Coverage does not mean every claim was
@@ -35,20 +35,22 @@ The554 original numeric decisions remain503 confirmed,46 corrected and five
 withdrawn;103 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Eight decision-research blocks cover **80 technical companies,12 SME/group cases
-and two dedicated identity profiles**. The latest ten-company block investigates75
-open fields: **zero new numeric anchors; all75 remain UNKNOWN**. Cumulatively
-696 selected gaps were investigated and55 closed. All prior checked proposals,
-including four B+T reassessments, remain unchanged.
+Nine decision-research blocks cover **all100 current companies:86 technical
+profiles,12 SME/group cases and two dedicated identity profiles**. The final six
+are selected by frozen field-work rank only after the opportunity-research queue
+is exhausted. All60 open fields were investigated: **zero new numeric anchors;
+all60 remain UNKNOWN**. Cumulatively756 selected gaps were investigated and55
+closed at their attempt date. All prior checked proposals remain unchanged.
 
-[Latest report](evidence/decision_research_20261017.md),
-[ten profiles](evidence/decision_research_profiles_20261017.json),
-[32 body checks](evidence/decision_source_checks_20261017.csv) and
-[75 field attempts](evidence/field_research_deep_20261017.csv) document scope.
-Ketterer's own sites disagree on the nitrogen-generator year. Winkler's current
-website imprint names a different operator; no hotel energy asset is transferred
-to the canonical brewery. Riedenburger's new-build concept does not identify the
-old plant's fuel balance. All existing numeric proposals remain unchanged.
+[Latest report](evidence/decision_research_20261017b.md),
+[six profiles](evidence/decision_research_profiles_20261017b.json),
+[20 scoped body checks](evidence/decision_source_checks_20261017b.csv) and
+[60 field attempts](evidence/field_research_deep_20261017b.csv) document scope.
+Electric drives, tool cooling and room-heat recovery remain separate from process
+heating, useful storage and dispatch permission. Ceramany's Chinese quality
+holders and KITO/KLAX firing are not assigned to the sampled German operators.
+The preceding [ten-company block](evidence/decision_research_20261017.md)
+retains75 attempted gaps, the Ketterer date conflict and Winkler operator boundary.
 
 In the [13October block](evidence/decision_research_20261013.md),
 Flötzinger's own process page supports temperature/control relevance, and the
@@ -64,7 +66,7 @@ Canonical deployment flags are not silently overwritten. Product-specific
 renewable-energy brands, guesthouse solar heat, product-test temperatures,
 capacity grants and quality certification do not become whole-site heat balances,
 industrial storage, completed energy CAPEX or certified EnMS. All12 SME gates
-remain open. The dashboard shows all94 profiles and the latest block separately.
+remain open. The dashboard shows all100 profiles and the latest block separately.
 
 ## Research question
 

@@ -41,6 +41,6 @@ class ResearchOctober17Tests(unittest.TestCase):
         self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields']),(652,848))
         for cid in ['P84','P85','P86','P89','P91','P92','P93','P94','P95','P22']:
             self.assertEqual(by[cid]['decision_research_profile']['final_score_approval'],'NOT_GRANTED')
-        latest=p['decision_research_summary']['latest_batch'];self.assertEqual((latest['field_attempt_count'],latest['new_checked_field_count'],latest['still_unknown_field_count']),(75,0,75))
+        latest=p['decision_research_summary']['batches'][-2];self.assertEqual((latest['field_attempt_count'],latest['new_checked_field_count'],latest['still_unknown_field_count']),(75,0,75))
 
 if __name__=='__main__':unittest.main()

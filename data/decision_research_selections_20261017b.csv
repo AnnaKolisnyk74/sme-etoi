@@ -1,0 +1,7 @@
+selection_rank,company_id,legal_entity,research_rank,queue_source,missing_fact,selection_rule,checked_date
+1,P24,H&K Müller GmbH & Co. KG,33,SCORE_WORK_QUEUE,temperature_fit_score | process_electrification_score | fossil_heat_displacement_score,EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK,2026-10-17
+2,P23,FM-Plast GmbH,58,SCORE_WORK_QUEUE,temperature_fit_score | process_electrification_score | fossil_heat_displacement_score,EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK,2026-10-17
+3,P35,MACK KUNSTSTOFFTECHNIK GMBH & CO. KG,218,SCORE_WORK_QUEUE,temperature_fit_score | process_electrification_score | fossil_heat_displacement_score,EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK,2026-10-17
+4,P87,Ceramany GmbH,333,SCORE_WORK_QUEUE,temperature_fit_score | process_electrification_score | fossil_heat_displacement_score,EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK,2026-10-17
+5,P90,InnoKeramik & Technik GmbH,403,SCORE_WORK_QUEUE,temperature_fit_score | process_electrification_score | fossil_heat_displacement_score,EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK,2026-10-17
+6,P106,Felix Vuckovic - Technische Keramik GmbH,418,SCORE_WORK_QUEUE,temperature_fit_score | process_electrification_score | fossil_heat_displacement_score,EXHAUSTED_RESEARCH_QUEUE_THEN_FIRST_UNIQUE_BY_WORK_RANK,2026-10-17
