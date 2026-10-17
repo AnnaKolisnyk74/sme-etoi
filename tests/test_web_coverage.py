@@ -17,7 +17,7 @@ class WebCoverageTests(unittest.TestCase):
         sources = [s for c in self.p['companies'] for s in c['sources']] + self.p['additional_sources']
         expected = read_csv(ROOT, 'evidence/source_register.csv')
         self.assertEqual(Counter(s['source_id'] for s in sources), Counter(s['source_id'] for s in expected))
-        self.assertEqual(len(sources), 642)
+        self.assertEqual(len(sources), 655)
         self.assertEqual(len(self.p['additional_sources']), 26)
         sample = {c['company_id'] for c in self.p['companies']}
         self.assertTrue(all(s['company_id'] not in sample and not s['sample_member'] for s in self.p['additional_sources']))
@@ -34,9 +34,9 @@ class WebCoverageTests(unittest.TestCase):
         checks = [r for c in self.p['companies'] for p in c['score_proposals'] for r in p['check_history']]
         originals = read_csv(ROOT,'evidence/score_proposal_checks.csv')
         self.assertEqual(Counter(tuple(sorted(r.items())) for r in checks if r['outcome']!='REASSESSED'),Counter(tuple(sorted(r.items())) for r in originals))
-        self.assertEqual(len(checks),663)
+        self.assertEqual(len(checks),673)
         self.assertEqual(sum(r['outcome']=='REASSESSED' for r in checks),4)
-        self.assertEqual(sum(p['proposal_status']=='NEEDS_RESEARCH' for c in self.p['companies'] for p in c['score_proposals']),846)
+        self.assertEqual(sum(p['proposal_status']=='NEEDS_RESEARCH' for c in self.p['companies'] for p in c['score_proposals']),836)
 
     def test_methodology_libraries_qa_and_canonical_values(self):
         self.assertEqual(self.p['scoring_methodology']['dimensions'],DIMENSIONS)
@@ -53,7 +53,7 @@ class WebCoverageTests(unittest.TestCase):
         for c in self.p['companies']:
             for k,v in c['canonical_deployments'].items(): self.assertEqual(v,canonical[c['company_id']][k])
             self.assertEqual(c['last_verified_date'],canonical[c['company_id']]['last_verified_date'])
-        self.assertEqual(len(self.p['documentation_links']),11)
+        self.assertEqual(len(self.p['documentation_links']),12)
         self.assertIn('evidence/decision_research_followup_20261017c.md', {r['path'] for r in self.p['documentation_links']})
 
 if __name__=='__main__': unittest.main()

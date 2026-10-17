@@ -1,0 +1,221 @@
+[
+  {
+    "company_id": "P74",
+    "legal_entity": "Brauerei Gebr. Maisel GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 6,
+    "queue_rank": 150,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Maisels2020-Erhebung ist tatsächlich datiert, PV/KWK bleiben darin Varianten und umzusetzen. Heutige allgemeine Rückgewinnung beschreibt weder eine neue Inbetriebnahme noch Wärme-Speicher/Heizträger. Alle zehn Lücken bleiben UNKNOWN.",
+    "implemented_summary": "Maisels2020-Erhebung ist tatsächlich datiert, PV/KWK bleiben darin Varianten und umzusetzen. Heutige allgemeine Rückgewinnung beschreibt weder eine neue Inbetriebnahme noch Wärme-Speicher/Heizträger. Alle zehn Lücken bleiben UNKNOWN.",
+    "finding": "Maisels2020-Erhebung ist tatsächlich datiert, PV/KWK bleiben darin Varianten und umzusetzen. Heutige allgemeine Rückgewinnung beschreibt weder eine neue Inbetriebnahme noch Wärme-Speicher/Heizträger. Alle zehn Lücken bleiben UNKNOWN.",
+    "next_action": "Abschluss-/Betriebsnachweise der Energiekonzeptmaßnahmen sowie aktuelle Heizmedien, Temperatur-/Leistungs- und Speicher-/Lastunterlagen beschaffen.",
+    "source_ids": [
+      "S-P74-03",
+      "S-P74-04"
+    ],
+    "checked_date": "2026-10-13",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P96",
+    "legal_entity": "PEKA Spritzguss GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 3,
+    "queue_rank": 30,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene Laserbeschriftung liefert einen begrenzten technischen Umwandlungs-Anwendungsfall. 1K/2K/GID-Produktion und ISO14001 sind belegt; Gasinnendruck ist kein Beleg für Erdgas als Wärmequelle.",
+    "implemented_summary": "Eigene Laserbeschriftung liefert einen begrenzten technischen Umwandlungs-Anwendungsfall. 1K/2K/GID-Produktion und ISO14001 sind belegt; Gasinnendruck ist kein Beleg für Erdgas als Wärmequelle.",
+    "finding": "Eigene Laserbeschriftung liefert einen begrenzten technischen Umwandlungs-Anwendungsfall. 1K/2K/GID-Produktion und ISO14001 sind belegt; Gasinnendruck ist kein Beleg für Erdgas als Wärmequelle.",
+    "next_action": "Laser-/Antriebsdaten, tatsächliche Prozesswärmetemperaturen und eigene Wärmerückgewinnung/Speicher prüfen.",
+    "source_ids": [
+      "S-P96-05",
+      "S-P96-06",
+      "S-P96-04"
+    ],
+    "checked_date": "2026-10-09",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P107",
+    "legal_entity": "Dibbern Porzellanmanufaktur GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 53,
+    "outcome": "SOURCE_ACCESS_PARTIAL",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Hohenberger Fertigung und Ofenabwärme zur Gebäudeheizung sind belegt. Vier Hauptseiten-/Katalogabrufe liefern403. Neuer Ofen aus Suchtreffern ohne zugängliche Original-Inbetriebnahmeunterlage nicht übernommen.",
+    "implemented_summary": "Hohenberger Fertigung und Ofenabwärme zur Gebäudeheizung sind belegt. Vier Hauptseiten-/Katalogabrufe liefern403. Neuer Ofen aus Suchtreffern ohne zugängliche Original-Inbetriebnahmeunterlage nicht übernommen.",
+    "finding": "Hohenberger Fertigung und Ofenabwärme zur Gebäudeheizung sind belegt. Vier Hauptseiten-/Katalogabrufe liefern403. Neuer Ofen aus Suchtreffern ohne zugängliche Original-Inbetriebnahmeunterlage nicht übernommen.",
+    "next_action": "Zugängliche eigene Ofen-/Inbetriebnahmeunterlage mit Temperatur, Brennstoff, Steuerung und Herstellergesellschaft verifizieren.",
+    "source_ids": [
+      "S-P107-03",
+      "S-P107-04"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P28",
+    "legal_entity": "Berg Brauerei Ulrich Zimmermann GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 3,
+    "queue_rank": 79,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected entity; historical equipment, staging, group assets and intention boundaries retained.",
+    "technical_summary": "Nacht-/Tag-Kältepuffer und PV-Kühlung bleiben belegt. Die auffällige90°C-Eiswasserangabe wird weder korrigiert noch als Prozesswärme verwendet. Nahwärme der Neubauten und DEHOGA-Auszeichnung der Gastronomie beantworten den Brauereibrennstoff und das Produktions-EnMS nicht.",
+    "implemented_summary": "Nacht-/Tag-Kältepuffer und PV-Kühlung bleiben belegt. Die auffällige90°C-Eiswasserangabe wird weder korrigiert noch als Prozesswärme verwendet. Nahwärme der Neubauten und DEHOGA-Auszeichnung der Gastronomie beantworten den Brauereibrennstoff und das Produktions-EnMS nicht.",
+    "finding": "Nacht-/Tag-Kältepuffer und PV-Kühlung bleiben belegt. Die auffällige90°C-Eiswasserangabe wird weder korrigiert noch als Prozesswärme verwendet. Nahwärme der Neubauten und DEHOGA-Auszeichnung der Gastronomie beantworten den Brauereibrennstoff und das Produktions-EnMS nicht.",
+    "next_action": "Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären.",
+    "source_ids": [
+      "S-P28-03",
+      "S-P28-04",
+      "S-P28-08"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P54",
+    "legal_entity": "Privatbrauerei Waldhaus Joh. Schmid GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 117,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Betreiberberichte2024/2025 bestätigen dieselbe integrierte Abfüllanlage mit erneuerten Bändern und Bandsteuerungen sowie Energieeffizienzzweck. Drei Felder sind belegbar: Antriebe, klare Regelungsrelevanz und ein jüngeres Energieprojekt. Kapazität in Flaschen/h ist keine elektrische Leistung; das Gesamtprojekt zählt einmal.",
+    "implemented_summary": "Betreiberberichte2024/2025 bestätigen dieselbe integrierte Abfüllanlage mit erneuerten Bändern und Bandsteuerungen sowie Energieeffizienzzweck. Drei Felder sind belegbar: Antriebe, klare Regelungsrelevanz und ein jüngeres Energieprojekt. Kapazität in Flaschen/h ist keine elektrische Leistung; das Gesamtprojekt zählt einmal.",
+    "finding": "Betreiberberichte2024/2025 bestätigen dieselbe integrierte Abfüllanlage mit erneuerten Bändern und Bandsteuerungen sowie Energieeffizienzzweck. Drei Felder sind belegbar: Antriebe, klare Regelungsrelevanz und ein jüngeres Energieprojekt. Kapazität in Flaschen/h ist keine elektrische Leistung; das Gesamtprojekt zählt einmal.",
+    "next_action": "Eigene Temperatur-/Heizmedien, reale elektrische Leistungen und nachgemessene Einsparungen beschaffen.",
+    "source_ids": [
+      "S-P54-03",
+      "S-P54-04",
+      "S-P54-05",
+      "S-P54-06"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P57",
+    "legal_entity": "Stocker Kunststoff GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 121,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Stocker nennt neun eigene Maschinen; die auffälligen18,4kW/350t-Angaben betreffen Toyo-Messeexponate. Werkzeugbau ist extern, statistische Qualitätserläuterung kein installierter EnMS-/Automatisierungsnachweis. Alle14 Lücken bleiben UNKNOWN.",
+    "implemented_summary": "Stocker nennt neun eigene Maschinen; die auffälligen18,4kW/350t-Angaben betreffen Toyo-Messeexponate. Werkzeugbau ist extern, statistische Qualitätserläuterung kein installierter EnMS-/Automatisierungsnachweis. Alle14 Lücken bleiben UNKNOWN.",
+    "finding": "Stocker nennt neun eigene Maschinen; die auffälligen18,4kW/350t-Angaben betreffen Toyo-Messeexponate. Werkzeugbau ist extern, statistische Qualitätserläuterung kein installierter EnMS-/Automatisierungsnachweis. Alle14 Lücken bleiben UNKNOWN.",
+    "next_action": "Betriebsbezogene Maschinen-/Heizungsunterlagen und datierte Energieprojekte getrennt von Messe- und Kundentechnik nachweisen.",
+    "source_ids": [
+      "S-P57-02",
+      "S-P57-03",
+      "S-P57-04",
+      "S-P57-05"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P72",
+    "legal_entity": "Hofbräuhaus Traunstein Josef Sailer GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 4,
+    "queue_rank": 146,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, historical/current, planned/completed, integrated-project and dispatch boundaries explicit.",
+    "technical_summary": "Traunstein bestätigt eigene PV, Kältestrom und Palettierkontrolle. Bierlagerung über Wochen ist kein thermischer Netzspeicher, PV kein Prozessheizmedium. Reinigungswasser ohne Zahl/Träger und Energiestrategie ohne EnMS-Nachweis schließen die sieben Lücken nicht.",
+    "implemented_summary": "Traunstein bestätigt eigene PV, Kältestrom und Palettierkontrolle. Bierlagerung über Wochen ist kein thermischer Netzspeicher, PV kein Prozessheizmedium. Reinigungswasser ohne Zahl/Träger und Energiestrategie ohne EnMS-Nachweis schließen die sieben Lücken nicht.",
+    "finding": "Traunstein bestätigt eigene PV, Kältestrom und Palettierkontrolle. Bierlagerung über Wochen ist kein thermischer Netzspeicher, PV kein Prozessheizmedium. Reinigungswasser ohne Zahl/Träger und Energiestrategie ohne EnMS-Nachweis schließen die sieben Lücken nicht.",
+    "next_action": "Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen.",
+    "source_ids": [
+      "S-P72-03",
+      "S-P72-04",
+      "S-P72-05",
+      "S-P72-06"
+    ],
+    "checked_date": "2026-10-13",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P84",
+    "legal_entity": "Sauer Oberflächentechnik GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "queue_rank": 165,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected operator; own/customer, hotel/brewery, new-build/existing and date boundaries retained.",
+    "technical_summary": "Eigene Anlage und Produktion sind dem Standort Neckarwestheim zugeordnet. Der Umzug erfolgte 2019/2020. Anlagenmaße, Traversen und Schichtbetrieb belegen weder Heizmedium und Betriebstemperatur noch Antriebsleistung, sichere Lastverschiebung oder aktuelle Energie-CAPEX.",
+    "implemented_summary": "Eigene Anlage und Produktion sind dem Standort Neckarwestheim zugeordnet. Der Umzug erfolgte 2019/2020. Anlagenmaße, Traversen und Schichtbetrieb belegen weder Heizmedium und Betriebstemperatur noch Antriebsleistung, sichere Lastverschiebung oder aktuelle Energie-CAPEX.",
+    "finding": "Eigene Anlage und Produktion sind dem Standort Neckarwestheim zugeordnet. Der Umzug erfolgte 2019/2020. Anlagenmaße, Traversen und Schichtbetrieb belegen weder Heizmedium und Betriebstemperatur noch Antriebsleistung, sichere Lastverschiebung oder aktuelle Energie-CAPEX.",
+    "next_action": "Eigenen Ofentyp, Heizmedium, Solltemperaturen, reale Antriebe/Steuerung und Energie-Projektdaten belegen.",
+    "source_ids": [
+      "S-P84-01",
+      "S-P84-02",
+      "S-P84-03"
+    ],
+    "checked_date": "2026-10-17",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P85",
+    "legal_entity": "Die Schweizer Galvanotechnic GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "queue_rank": 166,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "Schweizer Galvanotechnic GmbH & Co. KG",
+    "entity_scope": "Exact selected operator; own/customer, hotel/brewery, new-build/existing and date boundaries retained. The current imprint omits the stored name prefix Die; no canonical name is changed.",
+    "technical_summary": "Aktuelles Impressum bestätigt den Heilbronner Betreiber. Eigene PV/BHKW/Abwärme und Prozessbeschreibungen bleiben von Nutzspeicher, verbleibender fossiler Wärmelast, Energiezertifizierung und datierter Inbetriebnahme getrennt; ISO9001 ist kein Energie-Systemnachweis.",
+    "implemented_summary": "Aktuelles Impressum bestätigt den Heilbronner Betreiber. Eigene PV/BHKW/Abwärme und Prozessbeschreibungen bleiben von Nutzspeicher, verbleibender fossiler Wärmelast, Energiezertifizierung und datierter Inbetriebnahme getrennt; ISO9001 ist kein Energie-Systemnachweis.",
+    "finding": "Aktuelles Impressum bestätigt den Heilbronner Betreiber. Eigene PV/BHKW/Abwärme und Prozessbeschreibungen bleiben von Nutzspeicher, verbleibender fossiler Wärmelast, Energiezertifizierung und datierter Inbetriebnahme getrennt; ISO9001 ist kein Energie-Systemnachweis.",
+    "next_action": "BHKW-Brennstoff und Wärmeanteil, Nutzspeicher, formales EnMS und Inbetriebnahmedaten verifizieren.",
+    "source_ids": [
+      "S-P85-01",
+      "S-P85-03",
+      "S-P85-04"
+    ],
+    "checked_date": "2026-10-17",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P04",
+    "legal_entity": "Neumarkter Lammsbräu Gebr. Ehrnsperger KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "queue_rank": 13,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Eigene Gesellschaft/Standort; Gruppenmaßnahmen nur bei belegter Zuordnung.",
+    "technical_summary": "Brauerei und Mälzerei mit dokumentierter gasbasierter Wärmeerzeugung.",
+    "implemented_summary": "PV 2023 und Energiecontrolling dokumentiert; neues Wärmenetz/Wärmepumpen/Speicher als Planung behandeln.",
+    "finding": "Brauerei und Mälzerei mit dokumentierter gasbasierter Wärmeerzeugung. PV 2023 und Energiecontrolling dokumentiert; neues Wärmenetz/Wärmepumpen/Speicher als Planung behandeln.",
+    "next_action": "Aktuellen Inbetriebnahmenachweis für Wärmeprojekt und Speicher mit nutzbarem Temperatur-/Ladefenster beschaffen.",
+    "source_ids": [
+      "S-P04-06"
+    ],
+    "checked_date": "2026-10-08",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]
