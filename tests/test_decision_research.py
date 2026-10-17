@@ -158,7 +158,7 @@ class DecisionResearchTests(unittest.TestCase):
                           s['eligibility_company_count'], s['identity_company_count']),
                          (100, 86, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (863, 67, 796))
+                          s['still_unknown_field_count']), (879, 67, 812))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}

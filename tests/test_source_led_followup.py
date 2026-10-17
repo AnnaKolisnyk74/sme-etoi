@@ -43,7 +43,7 @@ class SourceLedFollowupTests(unittest.TestCase):
         self.assertEqual(p['P107','fossil_heat_displacement_score']['proposed_value'],'4')
         self.assertIn('2027',p['P107','investment_gap_score']['evidence_basis'])
         web=build_web_payload(ROOT);s=web['decision_research_summary']['latest_followup']
-        self.assertEqual((s['company_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(10,85,10,75))
+        self.assertEqual((s['company_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(3,16,0,16))
         self.assertEqual(web['field_assessment_summary']['approved_fields'],0)
         self.assertTrue(all(c['score_readiness']['score_status']!='FINAL_SCORE_READY' for c in web['companies']))
 

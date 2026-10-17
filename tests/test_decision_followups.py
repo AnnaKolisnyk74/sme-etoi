@@ -15,8 +15,8 @@ class DecisionFollowupTests(unittest.TestCase):
             self.assertEqual(latest[cid]['workstream'],p['workstream'])
             self.assertEqual(latest[cid]['final_score_approval'],'NOT_GRANTED')
         s=d.summary(ROOT)
-        self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count']),(100,863,67))
-        self.assertEqual((s['followup_count'],s['latest_followup']['company_count'],s['latest_followup']['entity_clarified_company_count']),(21,10,0))
+        self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count']),(100,879,67))
+        self.assertEqual((s['followup_count'],s['latest_followup']['company_count'],s['latest_followup']['entity_clarified_company_count']),(24,3,0))
 
     def test_complete_embedded_imprint_supersedes_footer_conflict_without_moving_assets(self):
         p=next(p for p in d.profiles(ROOT) if p['company_id']=='P95')
