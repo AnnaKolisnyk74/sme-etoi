@@ -21,36 +21,38 @@ in [web access](docs/web_access.md). The online snapshot is refreshed after the
 corresponding tested repository change is merged.
 
 The registered-source inventory has a complete documented content pass:
-**663/663 sources assessed, 600 rechecked within their stated scope,
-53 context-only, 10 unavailable and zero without a content record**.
-The separate retrieval inventory covers **957 URLs,877 retrievable**.
-Dated content provenance can remain valid when a later GET fails; failures and
-recovery limits are retained. The [first full coverage report](evidence/source_content_review_20261012.md)
-remains a dated578-source baseline. Coverage does not mean every claim was
-confirmed, every field answered or personal approval granted.
+**673/673 sources assessed,610 rechecked within their stated scope,
+53 context-only,10 unavailable and zero without a content record**.
+The separate retrieval inventory covers **968URLs,888 retrievable**.
+Dated content provenance remains scoped; failures and recovery limits are retained.
+The [first coverage report](evidence/source_content_review_20261012.md) is a
+historical578-source baseline. Coverage does not mean every claim was confirmed,
+every field answered or personal approval granted.
 
-All100 provisional companies have all15 fields assessed: **667 CHECKED
-proposals (Geprüft),833 blank NEEDS_RESEARCH fields and zero approved fields**.
+All100 provisional companies have all15 fields assessed: **670 CHECKED
+proposals (Geprüft),830 blank NEEDS_RESEARCH fields and zero approved fields**.
 The554 original numeric decisions remain498 confirmed,50 corrected and six
-withdrawn;119 formerly unknown fields now have new evidence. Source/anchor
+withdrawn;122 formerly unknown fields now have new evidence. Source/anchor
 checking remains separate from personal or final score approval.
 
-Nine initial blocks cover all 100 companies: 86 technical profiles, twelve SME/group
-cases and two identity profiles. Five later blocks contain27 follow-up records.
-The latest three-company block examines25 frozen open fields: three WZR
-technical proposals and Fürstenberg's gas-fired-kiln proposal gain support.
-Five earlier Nymphenburg proposals are reassessed from electric-kiln evidence;
-the additional-load value5 is withdrawn because no new thermal route is proved.
-Net checked coverage increases by three:664+4−1=667. The other659 checked
-predecessor rows remain identical. Existing load never becomes invented growth.
+Nine initial blocks cover all100 companies:86 technical profiles,twelve SME/group
+cases and two identity profiles. Six later blocks contain30 follow-up records.
+The latest three-company block examines29 frozen open fields at Sembach,
+Lamberts Wunsiedel and DERIX Glasstudios. Three proposals gain support:
+Sembach's material conditional gas-heat displacement and Lamberts' limited
+maintenance-machining drive case plus clear local recipe-based process control.
+The other26 fields remain unknown; all667 checked predecessor rows are identical.
+Lamberts'2021 EPD and undated renewable-conversion project do not establish its
+present fuel mix, electric melting or recent completed energy investment.
 
-Cumulative historical work: **904 field attempts,71 closures,833 still unknown
-at their attempt date**. The current833 unknown fields additionally reflect the
-separate withdrawal; equal totals have different meanings.
+Cumulative historical work: **933 field attempts,74 closures,859 still unknown
+at their attempt date**. Repeated historical attempts differ from830 current gaps.
+The preceding electric-firing block's five explicit Nymphenburg reassessments,
+including withdrawal of unsupported additional load, remain visible unchanged.
 
-- [Electric firing and fossil-heat follow-up](evidence/decision_research_followup_20261018.md)
-- [25 exact-once field attempts](evidence/field_research_followup_20261018.csv)
-- [Five dated before/after decisions](evidence/checked_field_reassessments_20261018.csv)
+- [Latest source-backed follow-up](evidence/decision_research_followup_20261018b.md)
+- [29 exact-once field attempts](evidence/field_research_followup_20261018b.csv)
+- [Electric-firing reassessments](evidence/decision_research_followup_20261018.md)
 
 The preceding [three-company technical block](evidence/decision_research_followup_20261017f.md)
 retains16 unresolved fields at Meckatzer,Aying and metak without numeric invention.

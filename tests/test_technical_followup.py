@@ -31,8 +31,8 @@ class TechnicalFollowupTests(unittest.TestCase):
   self.assertIn('2023–2030',checks['S-P50-07']['scope_note'])
  def test_current_payload_contains_every_latest_field_and_source(self):
   p=build_web_payload(ROOT);s=p['decision_research_summary']
-  self.assertEqual((s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(904,71,833))
-  self.assertEqual((s['followup_count'],s['latest_followup']['company_count'],s['latest_followup']['field_attempt_count']),(27,3,25))
-  self.assertEqual(s['latest_followup']['new_checked_field_count'],4)
-  self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields'],p['field_assessment_summary']['approved_fields']),(667,833,0))
+  self.assertEqual((s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(933,74,859))
+  self.assertEqual((s['followup_count'],s['latest_followup']['company_count'],s['latest_followup']['field_attempt_count']),(30,3,29))
+  self.assertEqual(s['latest_followup']['new_checked_field_count'],3)
+  self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields'],p['field_assessment_summary']['approved_fields']),(670,830,0))
 if __name__=='__main__':unittest.main()

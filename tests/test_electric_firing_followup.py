@@ -42,11 +42,11 @@ class ElectricFiringFollowupTests(unittest.TestCase):
    self.assertTrue(any('without a later reassessment' in e for e in d.validate(root)))
  def test_web_exposes_reopening_and_keeps_approval_and_canonical_flags_separate(self):
   p=build_web_payload(ROOT);s=p['decision_research_summary'];f=s['latest_followup']
-  self.assertEqual((s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(904,71,833))
-  self.assertEqual((f['company_count'],f['field_attempt_count'],f['new_checked_field_count'],f['still_unknown_field_count'],f['reassessed_checked_field_count'],f['reopened_field_count']),(3,25,4,21,5,1))
+  self.assertEqual((s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(933,74,859))
+  self.assertEqual((f['company_count'],f['field_attempt_count'],f['new_checked_field_count'],f['still_unknown_field_count'],f['reassessed_checked_field_count'],f['reopened_field_count']),(3,29,3,26,0,0))
   c=next(c for c in p['companies'] if c['company_id']=='P109');r=next(r for r in c['score_proposals'] if r['score_field']=='incremental_load_score')
   self.assertIsNone(r['proposed_value']);self.assertEqual(r['check_history'][-1]['outcome'],'NEEDS_RESEARCH')
   self.assertEqual(r['check_history'][-1]['original_value'],'5');self.assertTrue(r['check_history'][-1]['original_evidence_basis'])
-  self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields'],p['field_assessment_summary']['approved_fields']),(667,833,0))
+  self.assertEqual((p['field_assessment_summary']['checked_fields'],p['field_assessment_summary']['needs_research_fields'],p['field_assessment_summary']['approved_fields']),(670,830,0))
   self.assertTrue(all(c['score_readiness']['score_status']!='FINAL_SCORE_READY' for c in p['companies']))
 if __name__=='__main__':unittest.main()
