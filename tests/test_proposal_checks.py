@@ -33,13 +33,13 @@ class ProposalCheckTests(unittest.TestCase):
     def test_all554_original_numeric_decisions_are_accounted_for(self):
         self.assertEqual(validate(ROOT), [])
         summary = proposal_checks.summary(ROOT)
-        self.assertEqual(summary['reviewed_proposal_count'], 673)
-        self.assertEqual(summary['outcome_counts'], {'CONFIRMED': 498, 'CORRECTED': 50, 'NEEDS_RESEARCH': 6, 'NEW_EVIDENCE': 119})
-        self.assertEqual(summary['source_check_count'], 355)
-        self.assertEqual(summary['retrievable_source_count'], 348)
+        self.assertEqual(summary['reviewed_proposal_count'], 676)
+        self.assertEqual(summary['outcome_counts'], {'CONFIRMED': 498, 'CORRECTED': 50, 'NEEDS_RESEARCH': 6, 'NEW_EVIDENCE': 122})
+        self.assertEqual(summary['source_check_count'], 359)
+        self.assertEqual(summary['retrievable_source_count'], 352)
         self.assertEqual(summary['checked_by'], 'Codex')
         self.assertEqual(summary['final_score_approval'], 'NOT_GRANTED')
-        self.assertEqual(sum(r['proposal_status'] == 'CHECKED' for r in self.current), 667)
+        self.assertEqual(sum(r['proposal_status'] == 'CHECKED' for r in self.current), 670)
         self.assertFalse(any(r['proposal_status'] == 'AWAITING_HUMAN_REVIEW' for r in self.current))
         self.assertTrue(all(not r['reviewer'] and not r['review_date'] and not r['review_note'] for r in self.current))
 
@@ -77,7 +77,7 @@ class ProposalCheckTests(unittest.TestCase):
 
     def test_checked_values_are_exported_separately_and_never_final_scores(self):
         payload = build_web_payload(ROOT)
-        self.assertEqual(payload['field_assessment_summary']['checked_fields'], 667)
+        self.assertEqual(payload['field_assessment_summary']['checked_fields'], 670)
         self.assertEqual(payload['field_assessment_summary']['approved_fields'], 0)
         for company in payload['companies']:
             self.assertEqual(len(company['score_proposals']), 15)
@@ -88,7 +88,7 @@ class ProposalCheckTests(unittest.TestCase):
         self.assertIsNone(row['proposed_value'])
         self.assertEqual(row['proposal_status'], 'NEEDS_RESEARCH')
         self.assertIn('S-P45-05', self.by_key['P45', 'onsite_integration_score']['evidence_source_ids'])
-        self.assertEqual(payload['proposal_check_summary']['reviewed_proposal_count'], 673)
+        self.assertEqual(payload['proposal_check_summary']['reviewed_proposal_count'], 676)
 
     def test_checked_work_does_not_reopen_first_pass_or_bypass_upstream_gate(self):
         proposals = {('X', 'motor_drive_score'): {'proposal_status': 'CHECKED'}}
@@ -163,7 +163,7 @@ class ProposalCheckTests(unittest.TestCase):
         frozen = {(r['company_id'], r['score_field']): r for r in
                   proposal_checks.rows(ROOT / 'data/history/score_coding_proposals_before_recheck_20261007.csv')}
         added = [r for r in self.checks if r['outcome'] == 'NEW_EVIDENCE']
-        self.assertEqual(len(added), 119)
+        self.assertEqual(len(added), 122)
         self.assertEqual(len(self.checks) - len(added), 554)
         for check in added:
             key = check['company_id'], check['score_field']

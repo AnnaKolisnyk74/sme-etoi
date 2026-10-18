@@ -1,0 +1,66 @@
+[
+  {
+    "company_id": "P16",
+    "legal_entity": "Sembach GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 7,
+    "queue_rank": 66,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene1100°C-Entbinderung und1200–1750°C-Sinterung sowie Ofenabwärme zur Fertigungsheizung bestätigt. Ofenaustausch1999–2003 ist historisch; Kunden-Energieprodukte sind keine eigenen PV-/Stromerzeugungsanlagen.",
+    "implemented_summary": "Eigene1100°C-Entbinderung und1200–1750°C-Sinterung sowie Ofenabwärme zur Fertigungsheizung bestätigt. Ofenaustausch1999–2003 ist historisch; Kunden-Energieprodukte sind keine eigenen PV-/Stromerzeugungsanlagen.",
+    "finding": "Eigene1100°C-Entbinderung und1200–1750°C-Sinterung sowie Ofenabwärme zur Fertigungsheizung bestätigt. Ofenaustausch1999–2003 ist historisch; Kunden-Energieprodukte sind keine eigenen PV-/Stromerzeugungsanlagen.",
+    "next_action": "Aktuelle Ofenenergieträger, Elektro-/Umrichtertopologie, nutzbare Speicher und neuere Energieinvestitionen verifizieren.",
+    "source_ids": [
+      "S-P16-03",
+      "S-P16-06"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P19",
+    "legal_entity": "Glasfabrik Lamberts GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 8,
+    "queue_rank": 70,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Wunsiedeler Glasfabrik von Waldsassener Glashütte getrennt. Historische EcoGlass-Broschüre nennt Sauerstofffeuerung und Grünstrom ab2011; Sauerstoff ist kein Brennstoff und Grünstrom kein Nachweis elektrischer Hauptbeheizung.",
+    "implemented_summary": "Wunsiedeler Glasfabrik von Waldsassener Glashütte getrennt. Historische EcoGlass-Broschüre nennt Sauerstofffeuerung und Grünstrom ab2011; Sauerstoff ist kein Brennstoff und Grünstrom kein Nachweis elektrischer Hauptbeheizung.",
+    "finding": "Wunsiedeler Glasfabrik von Waldsassener Glashütte getrennt. Historische EcoGlass-Broschüre nennt Sauerstofffeuerung und Grünstrom ab2011; Sauerstoff ist kein Brennstoff und Grünstrom kein Nachweis elektrischer Hauptbeheizung.",
+    "next_action": "Aktuelle Schmelzofen-/Brennstoff-/Steuerungsdaten sowie Originalunterlage zu Energieumfang und Inbetriebnahme neuer Investitionen beschaffen.",
+    "source_ids": [
+      "S-P19-07",
+      "S-P19-03"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P20",
+    "legal_entity": "DERIX Glasstudios GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 71,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Eigene600°C-Farbbrände und800°C-Heißverformung bestätigt. Ofenseite nennt sieben, Werkstatt acht Öfen; genaue Zahl offen. Keine Energiedaten der gleichnamigen Holzbaugruppe übertragen.",
+    "implemented_summary": "Eigene600°C-Farbbrände und800°C-Heißverformung bestätigt. Ofenseite nennt sieben, Werkstatt acht Öfen; genaue Zahl offen. Keine Energiedaten der gleichnamigen Holzbaugruppe übertragen.",
+    "finding": "Eigene600°C-Farbbrände und800°C-Heißverformung bestätigt. Ofenseite nennt sieben, Werkstatt acht Öfen; genaue Zahl offen. Keine Energiedaten der gleichnamigen Holzbaugruppe übertragen.",
+    "next_action": "Aktuelle Ofenanzahl, Heiz-/Steuerungstechnik, Motor-/Netzmessdaten und eigene Energieinvestitionen verifizieren.",
+    "source_ids": [
+      "S-P20-04",
+      "S-P20-05",
+      "S-P20-06"
+    ],
+    "checked_date": "2026-10-11",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]
