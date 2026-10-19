@@ -99,7 +99,7 @@ class CodingBatch040702Tests(unittest.TestCase):
         payload=build_web_payload(ROOT)
         batch=next(b for b in payload['coding_batches'] if b['batch_id']=='NBCC-2026-10-07-02')
         self.assertEqual([r['company_id'] for r in batch['companies']],['P26','P28','P29','P33'])
-        for r,n,g in zip(batch['companies'],[10,11,11,7],[5,4,4,8]):
+        for r,n,g in zip(batch['companies'],[10,11,11,8],[5,4,4,7]):
             self.assertEqual((r['checked_fields'],r['needs_research_fields']),(n,g))
             self.assertEqual(r['current_workflow_action'],'RESEARCH_FIRST')
             self.assertNotIn('score',r);self.assertNotIn('proposal_total',r)

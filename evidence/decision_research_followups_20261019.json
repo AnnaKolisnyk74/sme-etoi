@@ -1,0 +1,112 @@
+[
+  {
+    "company_id": "P23",
+    "legal_entity": "FM-Plast GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "selection_count": 6,
+    "queue_rank": 58,
+    "queue_source": "SCORE_WORK_QUEUE",
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Own production separated from supplier/customer assets, drives, room heat, cooling and thermal routes.",
+    "technical_summary": "Der ARBURG-Bericht51/2013 belegt frühere Automatisierung, aber keine heutige Steuerung oder jüngste Energieinvestition. Die aktuelle undatierte ECS-Seite datiert den Maschinenpark nicht. Kühlwasser und Hallenabwärme belegen keinen nutzbaren Wärmespeicher; neun Felder bleiben offen.",
+    "implemented_summary": "Der ARBURG-Bericht51/2013 belegt frühere Automatisierung, aber keine heutige Steuerung oder jüngste Energieinvestition. Die aktuelle undatierte ECS-Seite datiert den Maschinenpark nicht. Kühlwasser und Hallenabwärme belegen keinen nutzbaren Wärmespeicher; neun Felder bleiben offen.",
+    "finding": "Der ARBURG-Bericht51/2013 belegt frühere Automatisierung, aber keine heutige Steuerung oder jüngste Energieinvestition. Die aktuelle undatierte ECS-Seite datiert den Maschinenpark nicht. Kühlwasser und Hallenabwärme belegen keinen nutzbaren Wärmespeicher; neun Felder bleiben offen.",
+    "next_action": "Aktuelle tatsächliche Steuerungsarchitektur, Heizträger/Sollwerte, Speicher, eigene Erzeugung und datierte Inbetriebnahmen beschaffen; den2013-geplanten Leitrechner nicht als realisiert übernehmen.",
+    "source_ids": [
+      "S-P23-02",
+      "S-P23-05",
+      "S-P23-06",
+      "S-P23-07"
+    ],
+    "checked_date": "2026-10-19",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261019-P23",
+    "previous_profile_sha256": "1c67506838e1118a6bb1a287ac2e985d21b9d5c12d70e81586dfd668c7558c6d",
+    "followup_reason": "Revisit every frozen open field using current owner pages and supplier process evidence; separate existing electric joining, historical plans, commissioning and dispatch rights.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "automation_control_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "onsite_integration_score",
+      "investment_gap_score"
+    ]
+  },
+  {
+    "company_id": "P24",
+    "legal_entity": "H&K Müller GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "selection_count": 6,
+    "queue_rank": 33,
+    "queue_source": "SCORE_WORK_QUEUE",
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Own production separated from supplier/customer assets, drives, room heat, cooling and thermal routes.",
+    "technical_summary": "Die eigene Seite nennt weiterhin Gas-Vorbeflammung; deren Anteil und elektrische Ersatzroute fehlen. Der Ausbau auf1,6MWp bleibt mit Ziel Q4/2025 angekündigt, ohne nachgewiesene Inbetriebnahme. Allgemeine Plastifizierung und Wasserkühlung liefern keine eigenen Heizer-/Speicherdaten; sechs Felder bleiben offen.",
+    "implemented_summary": "Die eigene Seite nennt weiterhin Gas-Vorbeflammung; deren Anteil und elektrische Ersatzroute fehlen. Der Ausbau auf1,6MWp bleibt mit Ziel Q4/2025 angekündigt, ohne nachgewiesene Inbetriebnahme. Allgemeine Plastifizierung und Wasserkühlung liefern keine eigenen Heizer-/Speicherdaten; sechs Felder bleiben offen.",
+    "finding": "Die eigene Seite nennt weiterhin Gas-Vorbeflammung; deren Anteil und elektrische Ersatzroute fehlen. Der Ausbau auf1,6MWp bleibt mit Ziel Q4/2025 angekündigt, ohne nachgewiesene Inbetriebnahme. Allgemeine Plastifizierung und Wasserkühlung liefern keine eigenen Heizer-/Speicherdaten; sechs Felder bleiben offen.",
+    "next_action": "PV-Inbetriebnahme gesondert bestätigen; heutigen Gasbedarf der Vorbeflammung und elektrische Ersatztechnik, eigene Heizer und zulässige Betriebs-/Speicherfenster dokumentieren.",
+    "source_ids": [
+      "S-P24-04",
+      "S-P24-05",
+      "S-P24-06"
+    ],
+    "checked_date": "2026-10-19",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261019-P24",
+    "previous_profile_sha256": "5eca1160917f036f506e8218c694babcefa4a5c1b94767a8750844a06d8d2f0e",
+    "followup_reason": "Revisit every frozen open field using current owner pages and supplier process evidence; separate existing electric joining, historical plans, commissioning and dispatch rights.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score"
+    ]
+  },
+  {
+    "company_id": "P33",
+    "legal_entity": "Gindele GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 6,
+    "queue_rank": 88,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected entity; historical equipment, staging, group assets and intention boundaries retained.",
+    "technical_summary": "Eigene Prozessbeschreibung und der namentlich zugeordnete Robomotion-Betriebsbericht belegen Ultraschallschweißen in der Sekretbeutelfertigung. Die technische Herstellerbeschreibung erklärt die elektrische lokale Erwärmung: ein vorhandener elektrischer Prozessfall7/B. Keine Übernahme von Herstellerdaten als installierte Technik, keine zusätzliche Last oder fossile Substitution; sieben Felder bleiben offen.",
+    "implemented_summary": "Eigene Prozessbeschreibung und der namentlich zugeordnete Robomotion-Betriebsbericht belegen Ultraschallschweißen in der Sekretbeutelfertigung. Die technische Herstellerbeschreibung erklärt die elektrische lokale Erwärmung: ein vorhandener elektrischer Prozessfall7/B. Keine Übernahme von Herstellerdaten als installierte Technik, keine zusätzliche Last oder fossile Substitution; sieben Felder bleiben offen.",
+    "finding": "Eigene Prozessbeschreibung und der namentlich zugeordnete Robomotion-Betriebsbericht belegen Ultraschallschweißen in der Sekretbeutelfertigung. Die technische Herstellerbeschreibung erklärt die elektrische lokale Erwärmung: ein vorhandener elektrischer Prozessfall7/B. Keine Übernahme von Herstellerdaten als installierte Technik, keine zusätzliche Last oder fossile Substitution; sieben Felder bleiben offen.",
+    "next_action": "Eigene Schweiß-/Heizerdaten und aktuelle Betriebsmessungen, zulässige Unterbrechungen sowie datierte Energieinvestitionen klären.2025-Seitenmetadaten sind kein Baujahr; durchgehende Montage und vermiedene Zwischenpuffer belegen keine Lastverschiebung.",
+    "source_ids": [
+      "S-P33-03",
+      "S-P33-04",
+      "S-P33-10",
+      "S-P33-11"
+    ],
+    "checked_date": "2026-10-19",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261019-P33",
+    "previous_profile_sha256": "d4f9b7d834b057bcdb6929ed30e1dda1a0db0dbaf731cce91a624556bd9377fd",
+    "followup_reason": "Revisit every frozen open field using current owner pages and supplier process evidence; separate existing electric joining, historical plans, commissioning and dispatch rights.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "onsite_integration_score",
+      "investment_gap_score"
+    ]
+  }
+]

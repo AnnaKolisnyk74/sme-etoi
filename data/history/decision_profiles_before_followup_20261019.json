@@ -1,0 +1,73 @@
+[
+  {
+    "company_id": "P23",
+    "legal_entity": "FM-Plast GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 2,
+    "selection_count": 6,
+    "queue_rank": 58,
+    "queue_source": "SCORE_WORK_QUEUE",
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Own production separated from supplier/customer assets, drives, room heat, cooling and thermal routes.",
+    "technical_summary": "Eigene Green Productionline nennt elektrische Spritzgießmaschinen, Heißkanäle, Werkzeug-Wasserkühlung und Hallen-Abwärme. Die ECS-Seite nennt undatiert Maschinenalter und elektrische/Hybrid-Anteile. Antriebe, kurze Zyklen und intelligente Farbwechsel bestätigen keine thermische Ersatzroute, koordinierte Energieregelung, Nutzspeicher oder Inbetriebnahme im festen Investitionsfenster.",
+    "implemented_summary": "Eigene Green Productionline nennt elektrische Spritzgießmaschinen, Heißkanäle, Werkzeug-Wasserkühlung und Hallen-Abwärme. Die ECS-Seite nennt undatiert Maschinenalter und elektrische/Hybrid-Anteile. Antriebe, kurze Zyklen und intelligente Farbwechsel bestätigen keine thermische Ersatzroute, koordinierte Energieregelung, Nutzspeicher oder Inbetriebnahme im festen Investitionsfenster.",
+    "finding": "Eigene Green Productionline nennt elektrische Spritzgießmaschinen, Heißkanäle, Werkzeug-Wasserkühlung und Hallen-Abwärme. Die ECS-Seite nennt undatiert Maschinenalter und elektrische/Hybrid-Anteile. Antriebe, kurze Zyklen und intelligente Farbwechsel bestätigen keine thermische Ersatzroute, koordinierte Energieregelung, Nutzspeicher oder Inbetriebnahme im festen Investitionsfenster.",
+    "next_action": "Eigene thermische Anlagen, Heizträger/Sollwerte, tatsächliche Regelungskoordination, Speicher, Zusatzlastpfad und datierte Energieprojekte dokumentieren.",
+    "source_ids": [
+      "S-P23-01",
+      "S-P23-02",
+      "S-P23-05"
+    ],
+    "checked_date": "2026-10-17",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P24",
+    "legal_entity": "H&K Müller GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 1,
+    "selection_count": 6,
+    "queue_rank": 33,
+    "queue_source": "SCORE_WORK_QUEUE",
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Own production separated from supplier/customer assets, drives, room heat, cooling and thermal routes.",
+    "technical_summary": "Eigene PV, Abwärme-Raumheizung und vollelektrische Spritzgießantriebe sind beschrieben. Die Vorbeflammung verbraucht laut eigener Seite weiterhin Gas in reduziertem Umfang. Eine allgemeine Plastifizierbeschreibung nennt Reibung und äußere Wärmezufuhr, aber keine eigenen Heizträger oder Sollwerte. Wasserkühlung und Energiemonitoring belegen weder Nutzspeicher noch freigegebene Lastverschiebung.",
+    "implemented_summary": "Eigene PV, Abwärme-Raumheizung und vollelektrische Spritzgießantriebe sind beschrieben. Die Vorbeflammung verbraucht laut eigener Seite weiterhin Gas in reduziertem Umfang. Eine allgemeine Plastifizierbeschreibung nennt Reibung und äußere Wärmezufuhr, aber keine eigenen Heizträger oder Sollwerte. Wasserkühlung und Energiemonitoring belegen weder Nutzspeicher noch freigegebene Lastverschiebung.",
+    "finding": "Eigene PV, Abwärme-Raumheizung und vollelektrische Spritzgießantriebe sind beschrieben. Die Vorbeflammung verbraucht laut eigener Seite weiterhin Gas in reduziertem Umfang. Eine allgemeine Plastifizierbeschreibung nennt Reibung und äußere Wärmezufuhr, aber keine eigenen Heizträger oder Sollwerte. Wasserkühlung und Energiemonitoring belegen weder Nutzspeicher noch freigegebene Lastverschiebung.",
+    "next_action": "Eigenes Heizmedium, Solltemperaturen, Gas-Vorbeflammungsanteil, konkrete elektrische Ersatzroute sowie nutzbare Speicher und zulässige Betriebsfenster belegen.",
+    "source_ids": [
+      "S-P24-01",
+      "S-P24-04",
+      "S-P24-06"
+    ],
+    "checked_date": "2026-10-17",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  },
+  {
+    "company_id": "P33",
+    "legal_entity": "Gindele GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 6,
+    "queue_rank": 88,
+    "outcome": "NEW_FIELD_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected entity; historical equipment, staging, group assets and intention boundaries retained.",
+    "technical_summary": "Netzwerkorganisator nennt Gindele in Neuhausen als Teilnehmer2025. Die erklärte Effizienzabsicht stützt nur den Absichtsanker; umgesetzte Energieanlagen, Investitionsdaten und Einsparungen bleiben unbestätigt. Animierte Nullzähler werden nicht als Maschinenzahlen oder Betriebsstunden übernommen.",
+    "implemented_summary": "Netzwerkorganisator nennt Gindele in Neuhausen als Teilnehmer2025. Die erklärte Effizienzabsicht stützt nur den Absichtsanker; umgesetzte Energieanlagen, Investitionsdaten und Einsparungen bleiben unbestätigt. Animierte Nullzähler werden nicht als Maschinenzahlen oder Betriebsstunden übernommen.",
+    "finding": "Netzwerkorganisator nennt Gindele in Neuhausen als Teilnehmer2025. Die erklärte Effizienzabsicht stützt nur den Absichtsanker; umgesetzte Energieanlagen, Investitionsdaten und Einsparungen bleiben unbestätigt. Animierte Nullzähler werden nicht als Maschinenzahlen oder Betriebsstunden übernommen.",
+    "next_action": "Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen.",
+    "source_ids": [
+      "S-P33-01",
+      "S-P33-03",
+      "S-P33-04",
+      "S-P33-09"
+    ],
+    "checked_date": "2026-10-12",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED"
+  }
+]

@@ -58,7 +58,7 @@ class FactoryProcessFollowupTests(unittest.TestCase):
         p = build_web_payload(ROOT)
         s = p['decision_research_summary']['latest_followup']
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (29, 3, 26))
+                          s['still_unknown_field_count']), (23, 1, 22))
         by = {c['company_id']: c for c in p['companies']}
         self.assertEqual(by['P19']['decision_research_profile']['followup_id'],
                          'DRFU-20261018b-P19')

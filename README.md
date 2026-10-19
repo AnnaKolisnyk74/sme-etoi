@@ -7,91 +7,56 @@ process data can identify German industrial SMEs whose electrification could
 create substantial decarbonisation potential, flexible electricity demand and
 grid-integration requirements.
 
-## Current checked state — 18 October 2026
+## Current checked state — 19 October 2026
 
 [Open the hosted SME-ETOI dashboard](https://sme-etoi.fairorbit8.chatgpt.site).
-The technical-priority chart maps the strongest A/B-confidence technical signal
-to A/High, B/Medium or C/Low. Research-only/missing levels remain open and SME
-gates remain separate. A commercial `RESEARCH` status cannot turn every company
-into Low/C. This is a research priority, not a final ETOI or commercial rating;
-see [technical priority](docs/technical_priority.md).
+Access is private to the owner; see [web access](docs/web_access.md).
+The online snapshot is updated separately after tested changes merge.
+The technical A/B/C view is research priority, not final ETOI or commercial
+rating; missing levels and SME gates remain separate. See
+[technical priority](docs/technical_priority.md).
 
-Access is private to the owner; deployment details and update instructions are
-in [web access](docs/web_access.md). The online snapshot is refreshed after the
-corresponding tested repository change is merged.
+All **100 provisional companies** have all **1,500 fields assessed**:
+**671 CHECKED proposals (Geprüft), 829 blank NEEDS_RESEARCH fields,
+zero approved fields and zero final-score-ready companies**. All twelve
+SME/group-eligibility gates remain open. Public absence is never deployment
+absence; no internal employer/CRM data is used.
 
-The registered-source inventory has a complete documented content pass:
-**673/673 sources assessed,610 rechecked within their stated scope,
-53 context-only,10 unavailable and zero without a content record**.
-The separate retrieval inventory covers **968URLs,888 retrievable**.
-Dated content provenance remains scoped; failures and recovery limits are retained.
-The [first coverage report](evidence/source_content_review_20261012.md) is a
-historical578-source baseline. Coverage does not mean every claim was confirmed,
-every field answered or personal approval granted.
+The latest block revisits **23 frozen open fields** at FM-Plast, H&K Müller
+and Gindele: **one supported closure, 22 still unknown**. Owner and named
+supplier evidence establish Gindele's existing ultrasonic joining; technology
+mechanism is separate from installed brand/rating, new demand and fossil
+substitution. FM-Plast's 2013 customer report and H&K Müller's planned Q4/2025
+PV commissioning do not establish current assets or recent completed investments.
+All 670 previously checked rows remain identical.
 
-All100 provisional companies have all15 fields assessed: **670 CHECKED
-proposals (Geprüft),830 blank NEEDS_RESEARCH fields and zero approved fields**.
-The554 original numeric decisions remain498 confirmed,50 corrected and six
-withdrawn;122 formerly unknown fields now have new evidence. Source/anchor
-checking remains separate from personal or final score approval.
+- [Latest findings and boundaries](evidence/decision_research_followup_20261019.md)
+- [23 exact-once field attempts](evidence/field_research_followup_20261019.csv)
+- [Preceding factory-process follow-up](evidence/decision_research_followup_20261018b.md)
+- [Electric-firing reassessments and withdrawal](evidence/decision_research_followup_20261018.md)
 
-Nine initial blocks cover all100 companies:86 technical profiles,twelve SME/group
-cases and two identity profiles. Six later blocks contain30 follow-up records.
-The latest three-company block examines29 frozen open fields at Sembach,
-Lamberts Wunsiedel and DERIX Glasstudios. Three proposals gain support:
-Sembach's material conditional gas-heat displacement and Lamberts' limited
-maintenance-machining drive case plus clear local recipe-based process control.
-The other26 fields remain unknown; all667 checked predecessor rows are identical.
-Lamberts'2021 EPD and undated renewable-conversion project do not establish its
-present fuel mix, electric melting or recent completed energy investment.
+Registered-source inventory: **677/677 assessed, 614 rechecked within their
+stated scope, 53 context-only, ten unavailable, zero without a record**.
+A failed unregistered Gindele PDF discovery remains separately documented with
+partial alternate process evidence; indexed availability is not direct retrieval.
+The [first content report](evidence/source_content_review_20261012.md) remains
+a historical 578-source baseline. Content coverage is not confirmation of every
+claim, complete field evidence or personal approval.
 
-Cumulative historical work: **933 field attempts,74 closures,859 still unknown
-at their attempt date**. Repeated historical attempts differ from830 current gaps.
-The preceding electric-firing block's five explicit Nymphenburg reassessments,
-including withdrawal of unsupported additional load, remain visible unchanged.
+Nine initial blocks cover 100 companies: 86 technical profiles, twelve SME/group
+cases and two identity profiles. Seven later blocks contain 33 follow-up records.
+Cumulative historical field work: **956 attempts, 75 closures, 881 still unknown
+at their attempt date**. These repeated historical attempts differ from the
+829 current gaps. Original numeric decisions remain 498 confirmed, 50 corrected
+and six withdrawn, with 123 formerly unknown fields now supported. Prior
+Nymphenburg reassessments and the unsupported additional-load withdrawal remain
+visible. Canonical datasets and independent approval are unchanged.
 
-- [Latest source-backed follow-up](evidence/decision_research_followup_20261018b.md)
-- [29 exact-once field attempts](evidence/field_research_followup_20261018b.csv)
-- [Electric-firing reassessments](evidence/decision_research_followup_20261018.md)
-
-The preceding [three-company technical block](evidence/decision_research_followup_20261017f.md)
-retains16 unresolved fields at Meckatzer,Aying and metak without numeric invention.
-
-The previous [ten-company block](evidence/decision_research_followup_20261017e.md)
-closed ten fields, including five bounded public-management-documentation gaps.
-Internal system absence is never inferred from these public gaps.
-
-The preceding [six-company block](evidence/decision_research_followup_20261017d.md)
-closed two Hochdorfer PV fields. Its 2023 implemented project remains separate
-from planned 2026/2027 projects and an expired compensation badge.
-
-OFTECH's primary imprint is recovered; OT Schwerin directly names arc GmbH as a
-subsidiary. The four SME gates remain open. Schmalriede's first-person PV-install
-report is a context-only lead with commissioning/site attribution unresolved.
-Two previously unavailable Barth bodies now have fresh scoped content reviews.
-
-The preceding [five-company follow-up](evidence/decision_research_followup_20261017c.md)
-corrects Winkler's footer-based operator conflict using the complete embedded
-imprint. Hotel and brewery operators are separate; energy assets are not merged.
-The results ledger now contains105 observations/16 YES, of which six match the
-192 generated research tasks. Research evidence never changes canonical facts
-or independent/final approval automatically.
-
-In the [13October block](evidence/decision_research_20261013.md),
-Flötzinger's own process page supports temperature/control relevance, and the
-exact supplier documents a Schechen waste-heat heat pump and process-heat buffer.
-The Rosenheim brewhouse remains separate;900kW is backup boiler heat output,
-not heat-pump electricity. Storage does not authenticate a safe grid-dispatch
-window. TechnoKer BDE and Hagen's automatic line support limited coordination
-only. Kundmüller's2023 PV and2024 efficient filler count as distinct projects;
-its2020 brewhouse is not redated by the2022 inauguration.
-
-Sixteen public YES findings remain separate; six match generated queue tasks.
-Canonical deployment flags are not silently overwritten. Product-specific
-renewable-energy brands, guesthouse solar heat, product-test temperatures,
-capacity grants and quality certification do not become whole-site heat balances,
-industrial storage, completed energy CAPEX or certified EnMS. All12 SME gates
-remain open. The dashboard shows all100 profiles and the latest block separately.
+Public results remain 105 observations/16 YES, six matching generated research
+tasks. Deployment findings do not silently overwrite canonical deployment flags.
+Sources, findings, all profiles and the full research/withdrawal history are
+exported to the existing dashboard. Later README sections retain explicitly
+dated historical batches and should not be read as current aggregate counts.
 
 ## Research question
 

@@ -1,0 +1,10 @@
+query_id,checked_date,query,scope_note
+DRQ-20261019-001,2026-10-19,"""FM-Plast"" Photovoltaik Automatisierung Energie","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-002,2026-10-19,"""Gindele"" Wärmerückgewinnung Spritzguss Energie","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-003,2026-10-19,"""H&K Müller"" Photovoltaik 2025 2024","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-004,2026-10-19,"""FM-Plast"" ""Automatisierung""","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-005,2026-10-19,"""H&K Müller"" ""Inbetriebnahme"" Photovoltaik","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-006,2026-10-19,"""Gindele"" ""Energie"" ""Wärme""","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-007,2026-10-19,"site:fm-plast.de ""automatisch""","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-008,2026-10-19,"site:fm-plast.de ""Steuerung""","Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."
+DRQ-20261019-009,2026-10-19,site:sonotronic.de Ultraschall Kunststoff Generator Schweißen elektrisch,"Executed discovery only; source-body checks and limits recorded separately. Search timestamps, snippets and crawl dates are not installation evidence."

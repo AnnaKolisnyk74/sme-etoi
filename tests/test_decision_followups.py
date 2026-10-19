@@ -15,8 +15,8 @@ class DecisionFollowupTests(unittest.TestCase):
             self.assertEqual(latest[cid]['workstream'],p['workstream'])
             self.assertEqual(latest[cid]['final_score_approval'],'NOT_GRANTED')
         s=d.summary(ROOT)
-        self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count']),(100,933,74))
-        self.assertEqual((s['followup_count'],s['latest_followup']['company_count'],s['latest_followup']['entity_clarified_company_count']),(30,3,0))
+        self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count']),(100,956,75))
+        self.assertEqual((s['followup_count'],s['latest_followup']['company_count'],s['latest_followup']['entity_clarified_company_count']),(33,3,0))
 
     def test_complete_embedded_imprint_supersedes_footer_conflict_without_moving_assets(self):
         p=next(p for p in d.profiles(ROOT) if p['company_id']=='P95')
@@ -30,7 +30,7 @@ class DecisionFollowupTests(unittest.TestCase):
         self.assertEqual(historic['outcome'],'ENTITY_CONFLICT')
         payload=build_web_payload(ROOT);c=next(c for c in payload['companies'] if c['company_id']=='P95')
         self.assertEqual(c['legal_entity'],'Winkler-Bräu GmbH & Co. KG')
-        self.assertEqual((payload['field_assessment_summary']['checked_fields'],payload['field_assessment_summary']['needs_research_fields']),(670,830))
+        self.assertEqual((payload['field_assessment_summary']['checked_fields'],payload['field_assessment_summary']['needs_research_fields']),(671,829))
 
     def test_two_headcounts_and_partial_gates_remain_distinct_from_annual_work_units(self):
         payload=build_web_payload(ROOT);by={c['company_id']:c for c in payload['companies']}

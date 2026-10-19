@@ -20,7 +20,7 @@ class FieldFollowupTests(unittest.TestCase):
         for k in closed:
             self.assertEqual((before[k]['proposal_status'],now[k]['proposed_value'],now[k]['proposal_status']),('NEEDS_RESEARCH','2','CHECKED'))
             self.assertFalse(now[k]['reviewer']);self.assertIn('OPEN_GATE',now[k]['evidence_basis'])
-        s=d.summary(ROOT);self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(100,933,74,859))
+        s=d.summary(ROOT);self.assertEqual((s['profile_count'],s['field_attempt_count'],s['new_checked_field_count'],s['still_unknown_field_count']),(100,956,75,881))
 
     def test_plans_badge_and_social_lead_do_not_become_owned_commissioned_assets(self):
         current={(p['company_id'],p['score_field']):p for p in d.rows(ROOT,'data/score_coding_proposals.csv')}
