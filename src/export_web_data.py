@@ -103,10 +103,8 @@ def coding_batch_history(selections, proposals, priority_rows):
                 'coverage_source_ids_at_selection': r['coverage_source_ids'],
                 'priority_reason_at_selection': r['priority_reason'],
                 'current_workflow_action': by_company.get(r['company_id'], {}).get('workflow_action', 'UNKNOWN'),
-                'checked_fields': (
-                    field_states.get(r['company_id'], {}).get('CHECKED', 0)
-                    + field_states.get(r['company_id'], {}).get('AWAITING_HUMAN_REVIEW', 0)
-                ),
+                'awaiting_human_review_fields': field_states.get(r['company_id'], {}).get('AWAITING_HUMAN_REVIEW', 0),
+                'checked_fields': field_states.get(r['company_id'], {}).get('CHECKED', 0),
                 'needs_research_fields': field_states.get(r['company_id'], {}).get('NEEDS_RESEARCH', 0),
             } for r in sorted(rows, key=lambda r: int(r['selection_rank']))],
         })
@@ -133,7 +131,8 @@ def field_assessment_summary(companies, proposals, priority_rows):
             'company_id': cid, 'legal_entity': company['legal_entity'],
             'assessed_field_count': len(assessed), 'expected_field_count': len(expected),
             'complete_first_pass': len(assessed) == len(expected),
-            'checked_fields': states['CHECKED'] + states['AWAITING_HUMAN_REVIEW'],
+            'awaiting_human_review_fields': states['AWAITING_HUMAN_REVIEW'],
+            'checked_fields': states['CHECKED'],
             'needs_research_fields': states['NEEDS_RESEARCH'],
             'approved_fields': states['APPROVED'],
             'eligibility_gate_open': priority.get(cid, {}).get('workflow_action') == 'ELIGIBILITY_FIRST',
@@ -143,6 +142,7 @@ def field_assessment_summary(companies, proposals, priority_rows):
         'complete_company_count': sum(r['complete_first_pass'] for r in result),
         'expected_field_count': len(result) * len(expected),
         'assessed_field_count': sum(r['assessed_field_count'] for r in result),
+        'awaiting_human_review_fields': sum(r['awaiting_human_review_fields'] for r in result),
         'checked_fields': sum(r['checked_fields'] for r in result),
         'needs_research_fields': sum(r['needs_research_fields'] for r in result),
         'approved_fields': sum(r['approved_fields'] for r in result),
@@ -371,24 +371,13 @@ def build_web_payload(root: Path = ROOT) -> dict:
                     "process_mapping_status": normalise(readiness.get("process_mapping_status")),
                     "certificate_check_status": normalise(readiness.get("certificate_check_status")),
                     "numeric_coding_status": normalise(readiness.get("numeric_coding_status")),
-                    "verification_status": normalise(readiness.get("verification_status")),
+                    "independent_human_review_status": normalise(readiness.get("independent_human_review_status")),
                     "existing_score_status": normalise(readiness.get("existing_score_status")),
                     "blocking_reasons": normalise(readiness.get("blocking_reasons")),
                     "next_action": normalise(readiness.get("next_action")),
                 },
                 "process_stratum": normalise(candidate.get("process_stratum")),
-                "qa_review": {
-                    **{
-                        key: normalise(value)
-                        for key, value in qa_by_company.get(company_id, {}).items()
-                        if key != "independent_human_review_status"
-                    },
-                    "review_status": (
-                        "CHECKED"
-                        if normalise(qa_by_company.get(company_id, {}).get("qa_result")).upper() == "PASS"
-                        else "REVIEW_NEEDED"
-                    ),
-                },
+                "qa_review": qa_by_company.get(company_id, {}),
                 "canonical_deployments": {key: normalise(company.get(key)) for key in (
                     'heat_recovery_deployed', 'energy_management_deployed', 'flexibility_solution_deployed',
                     'thermal_storage_deployed', 'battery_storage_deployed', 'power_quality_solution_deployed',
