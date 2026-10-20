@@ -74,7 +74,7 @@ function statusInfo(c){
 }
 function confClass(g){return {A:"conf-a",B:"conf-b",C:"conf-c"}[String(g||"").toUpperCase()]||"conf-open"}
 function scoreStatusClass(c){
-  const s=c.score_readiness?.score_status||"";
+  const s=scoreStatusForDisplay(c);
   if(s==="FINAL_SCORE_READY")return "status-qualified";
   if(s==="NEEDS_NUMERIC_CODING"||s==="PROVISIONAL_SCORE_ONLY")return "status-review";
   if(s.startsWith("NOT_SCOREABLE")||s==="EXCLUDED")return "status-blocked";
