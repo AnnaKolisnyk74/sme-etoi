@@ -44,7 +44,7 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(summary["numeric_coding_tasks"], 440)
         self.assertEqual(summary["ready_to_code_tasks"], 0)
         self.assertEqual(summary["research_needed_tasks"], 357)
-        self.assertEqual(summary["awaiting_human_review_tasks"], 0)
+        self.assertEqual(summary["review_needed_tasks"], 0)
         self.assertEqual(summary["code_now_companies"], 0)
         self.assertEqual(summary["checked_tasks"], 83)
         self.assertEqual(summary["research_first_companies"], 88)

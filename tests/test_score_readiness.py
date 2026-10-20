@@ -54,7 +54,7 @@ class ScoreReadinessUnitTests(unittest.TestCase):
             company,
             process_rows=[{"process_id": "PR001"}],
             certificate_rows=self.complete_certificates(),
-            qa_row={"independent_human_review_status": "APPROVED"},
+            qa_row={"qa_result": "PASS"},
             coded_row=self.complete_coded_row(),
             scored_row={
                 "opportunity_score": "70",
@@ -76,7 +76,7 @@ class ScoreReadinessUnitTests(unittest.TestCase):
             self.base_company(),
             process_rows=[{"process_id": "PR001"}],
             certificate_rows=certificates,
-            qa_row={"independent_human_review_status": "APPROVED"},
+            qa_row={"qa_result": "PASS"},
             coded_row=self.complete_coded_row(),
             scored_row=None,
         )
@@ -88,19 +88,19 @@ class ScoreReadinessUnitTests(unittest.TestCase):
             self.base_company(),
             process_rows=[{"process_id": "PR001"}],
             certificate_rows=self.complete_certificates(),
-            qa_row={"independent_human_review_status": "APPROVED"},
+            qa_row={"qa_result": "PASS"},
             coded_row=None,
             scored_row=None,
         )
         self.assertEqual(row["score_status"], "NEEDS_NUMERIC_CODING")
         self.assertEqual(row["numeric_coding_status"], "MISSING")
 
-    def test_human_review_is_required_for_final_score(self):
+    def test_documentary_qa_is_required_for_final_score(self):
         row = evaluate_company(
             self.base_company(),
             process_rows=[{"process_id": "PR001"}],
             certificate_rows=self.complete_certificates(),
-            qa_row={"independent_human_review_status": "PENDING"},
+            qa_row={"qa_result": "PENDING"},
             coded_row=self.complete_coded_row(),
             scored_row={
                 "opportunity_score": "55",
@@ -109,14 +109,15 @@ class ScoreReadinessUnitTests(unittest.TestCase):
             },
         )
         self.assertEqual(row["score_status"], "PROVISIONAL_SCORE_ONLY")
-        self.assertIn("independent human review=PENDING", row["blocking_reasons"])
+        self.assertIn("documentary QA=PENDING", row["blocking_reasons"])
+        self.assertEqual(row["verification_status"], "REVIEW_NEEDED")
 
     def test_final_score_ready_requires_all_gates(self):
         row = evaluate_company(
             self.base_company(),
             process_rows=[{"process_id": "PR001"}],
             certificate_rows=self.complete_certificates(),
-            qa_row={"independent_human_review_status": "APPROVED"},
+            qa_row={"qa_result": "PASS"},
             coded_row=self.complete_coded_row(),
             scored_row={
                 "opportunity_score": "55",
@@ -180,10 +181,7 @@ class ScoreReadinessIntegrationTests(unittest.TestCase):
             self.assertEqual(row["process_mapping_status"], "PRESENT")
             self.assertEqual(row["certificate_check_status"], "COMPLETE")
             self.assertEqual(row["numeric_coding_status"], "COMPLETE")
-            self.assertIn(
-                row["independent_human_review_status"],
-                {"APPROVED", "COMPLETE", "COMPLETED", "REVIEWED", "DONE"},
-            )
+            self.assertEqual(row["verification_status"], "CHECKED")
 
 
 if __name__ == "__main__":

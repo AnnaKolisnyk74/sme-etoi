@@ -73,7 +73,7 @@ assert.match(html, /830 dokumentierte Recherchelücken/);
 assert.match(html, /Erstbewertung ist keine Score-Freigabe/);
 assert.ok(!/KI[- ·]*geprüft/i.test(html));
 assert.ok(!html.includes('Zahlenvorschläge warten auf Human Review'));
-assert.match(html, /Finale Score-Freigabe abgeschlossen:<\/strong> 0 \/ 100/);
+assert.match(html, /Dokumentarische Prüfung abgeschlossen:<\/strong> 100 \/ 100/);
 const batch = html.split('<h3>Zuletzt ausgewählter Coding-Batch · NBCC-2026-10-07-07</h3>')[1].split('</section>')[0];
 const batchRows = [...batch.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)].filter(m => m[1].includes('<td'));
 assert.equal(batchRows.length, 16);

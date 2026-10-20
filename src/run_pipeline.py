@@ -280,7 +280,6 @@ def validate_score_work_queue(
         "IN_PROGRESS",
         "RESEARCH_NEEDED",
         "REWORK_REQUIRED",
-        "AWAITING_HUMAN_REVIEW",
         "AWAITING_CANONICAL_UPDATE",
     }
     for row in work_queue:
@@ -300,13 +299,6 @@ def validate_score_work_queue(
             ):
                 errors.append(
                     f"{row['task_key']} requires research but has no research_gap_fields"
-                )
-            if (
-                row.get("task_status") == "AWAITING_HUMAN_REVIEW"
-                and not row.get("proposal_covered_fields")
-            ):
-                errors.append(
-                    f"{row['task_key']} awaits review but has no proposal coverage"
                 )
 
     return errors
@@ -354,9 +346,9 @@ def validate_score_readiness(
                 errors.append(
                     f"{row['company_id']} is FINAL_SCORE_READY without complete numeric coding"
                 )
-            if row.get("independent_human_review_status") not in score_readiness.HUMAN_REVIEW_COMPLETE:
+            if row.get("verification_status") != "CHECKED":
                 errors.append(
-                    f"{row['company_id']} is FINAL_SCORE_READY without completed independent human review"
+                    f"{row['company_id']} is FINAL_SCORE_READY without checked documentary QA"
                 )
 
     return errors
@@ -401,8 +393,8 @@ def pipeline_summary(
             row.get("task_status") == "RESEARCH_NEEDED"
             for row in (score_work or [])
         ),
-        "awaiting_human_review_tasks": sum(
-            row.get("task_status") == "AWAITING_HUMAN_REVIEW"
+        "review_needed_tasks": sum(
+            row.get("task_status") == "REVIEW_NEEDED"
             for row in (score_work or [])
         ),
         "checked_tasks": sum(
@@ -544,7 +536,7 @@ def main() -> int:
         f"{summary['numeric_coding_tasks']} numeric-coding tasks, "
         f"{summary['ready_to_code_tasks']} ready to code, "
         f"{summary['research_needed_tasks']} research needed, "
-        f"{summary['awaiting_human_review_tasks']} awaiting human review, "
+        f"{summary['review_needed_tasks']} review needed, "
         f"{summary['code_now_companies']} companies ready to code. "
         f"Next to code: {summary['next_to_code_company']}."
     )
