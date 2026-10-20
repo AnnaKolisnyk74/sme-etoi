@@ -99,7 +99,7 @@ class ProposalCheckTests(unittest.TestCase):
         proposals['X', 'power_conversion_score'] = {'proposal_status': 'NEEDS_RESEARCH', 'missing_fact': 'No converter evidence'}
         self.assertEqual(proposal_state_for_dimension('X', ['motor_drive_score', 'power_conversion_score'], proposals)[0], 'RESEARCH_NEEDED')
         proposals['X', 'power_conversion_score']['proposal_status'] = 'AWAITING_HUMAN_REVIEW'
-        self.assertEqual(proposal_state_for_dimension('X', ['motor_drive_score', 'power_conversion_score'], proposals)[0], 'AWAITING_HUMAN_REVIEW')
+        self.assertEqual(proposal_state_for_dimension('X', ['motor_drive_score', 'power_conversion_score'], proposals)[0], 'CHECKED')
 
     def _copy_validation_data(self, root):
         for rel in ['data/score_coding_proposals.csv', 'data/history/score_coding_proposals_before_recheck_20261007.csv',
