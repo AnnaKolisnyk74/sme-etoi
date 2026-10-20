@@ -67,7 +67,7 @@ OUTPUT_FIELDS = [
     "process_confidence",
     "source_count",
     "qa_result",
-    "independent_human_review_status",
+    "verification_status",
     "score_status",
     "research_rank",
     "queue_reason",
@@ -145,7 +145,8 @@ def proposal_state_for_dimension(
         == "NEEDS_RESEARCH"
     ]
     statuses = [
-        normalise(proposals[field].get("proposal_status")).upper()
+        ("CHECKED" if normalise(proposals[field].get("proposal_status")).upper() == "AWAITING_HUMAN_REVIEW"
+         else normalise(proposals[field].get("proposal_status")).upper())
         for field in covered
     ]
 
@@ -179,7 +180,7 @@ def proposal_state_for_dimension(
             covered,
             [],
             summary,
-            "Rework rejected or superseded coding proposals before human review.",
+            "Rework rejected or superseded coding proposals before the next QA check.",
         )
 
     if len(covered) == len(missing_fields) and missing_fields:
@@ -196,17 +197,6 @@ def proposal_state_for_dimension(
                 [],
                 summary,
                 "Transfer the approved anchors in a separate canonical update, then rerun the pipeline.",
-            )
-        if all(
-            status in {"APPROVED", "AWAITING_HUMAN_REVIEW", "CHECKED"}
-            for status in statuses
-        ):
-            return (
-                "AWAITING_HUMAN_REVIEW",
-                covered,
-                [],
-                summary,
-                "Review the proposed anchors and evidence. Do not update canonical scoring data until review is complete.",
             )
 
     if covered:
@@ -337,11 +327,9 @@ def generate_score_work_queue(
             "process_confidence": process_conf,
             "source_count": str(source_count),
             "qa_result": normalise(qa_row.get("qa_result")) or "NOT_RECORDED",
-            "independent_human_review_status": normalise(
-                readiness.get("independent_human_review_status")
-            ),
+            "verification_status": normalise(readiness.get("verification_status")),
             "score_status": status,
-            "work_queue_version": "1.1.0",
+            "work_queue_version": "1.2.0",
         }
 
         if status == "NOT_SCOREABLE_ELIGIBILITY":
@@ -475,22 +463,21 @@ def generate_score_work_queue(
             tasks.append(
                 {
                     **common,
-                    "task_key": f"{company_id}|HUMAN_REVIEW",
-                    "workstream": "HUMAN_REVIEW",
-                    "task_type": "INDEPENDENT_REVIEW",
+                    "task_key": f"{company_id}|DOCUMENTARY_QA",
+                    "workstream": "DOCUMENTARY_QA",
+                    "task_type": "QA_REVIEW",
                     "dimension": "",
-                    "required_fields": "independent_human_review_status",
-                    "missing_fields": "independent_human_review_status",
+                    "required_fields": "verification_status",
+                    "missing_fields": "verification_status",
                     "missing_field_count": "1",
                     "proposal_covered_fields": "",
                     "research_gap_fields": "",
                     "proposal_status_summary": "",
-                    "task_status": "AWAITING_HUMAN_REVIEW",
+                    "task_status": "REVIEW_NEEDED",
                     "work_priority": "P1",
                     "research_rank": "",
                     "queue_reason": (
-                        "Numeric coding is complete, but the score cannot be final "
-                        "until independent human review is recorded."
+                        "Numeric coding is complete, but the documentary QA check is not complete."
                     ),
                     "next_action": normalise(readiness.get("next_action")),
                 }
