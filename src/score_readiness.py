@@ -39,13 +39,7 @@ PENDING_CERTIFICATE_STATUSES = {
     "UNKNOWN",
 }
 
-HUMAN_REVIEW_COMPLETE = {
-    "APPROVED",
-    "COMPLETE",
-    "COMPLETED",
-    "REVIEWED",
-    "DONE",
-}
+QA_VERIFICATION_COMPLETE = {"PASS"}
 
 OUTPUT_FIELDS = [
     "company_id",
@@ -56,7 +50,7 @@ OUTPUT_FIELDS = [
     "process_mapping_status",
     "certificate_check_status",
     "numeric_coding_status",
-    "independent_human_review_status",
+    "verification_status",
     "score_status",
     "existing_score",
     "existing_band",
@@ -172,12 +166,11 @@ def evaluate_company(
         numeric_coding_status = "MISSING"
         blocking.append("numeric ETOI coding missing")
 
-    human_review = normalise(
-        (qa_row or {}).get("independent_human_review_status")
-    ).upper() or "NOT_RECORDED"
-    human_review_ready = human_review in HUMAN_REVIEW_COMPLETE
-    if not human_review_ready:
-        blocking.append(f"independent human review={human_review}")
+    qa_result = normalise((qa_row or {}).get("qa_result")).upper() or "NOT_RECORDED"
+    verification_status = "CHECKED" if qa_result in QA_VERIFICATION_COMPLETE else "REVIEW_NEEDED"
+    verification_ready = verification_status == "CHECKED"
+    if not verification_ready:
+        blocking.append(f"documentary QA={qa_result}")
 
     if eligibility_gate == "EXCLUDED":
         score_status = "EXCLUDED"
@@ -208,11 +201,10 @@ def evaluate_company(
             "Code the existing methodology v0.2 numeric anchors with source-linked "
             "justifications; do not infer missing values from generic process data."
         )
-    elif not human_review_ready:
+    elif not verification_ready:
         score_status = "PROVISIONAL_SCORE_ONLY"
         next_action = (
-            "Complete independent human review before treating the score or band as "
-            "final."
+            "Complete the documentary QA check before treating the score or band as final."
         )
     else:
         score_status = "FINAL_SCORE_READY"
@@ -242,7 +234,7 @@ def evaluate_company(
         "process_mapping_status": process_mapping_status,
         "certificate_check_status": certificate_check_status,
         "numeric_coding_status": numeric_coding_status,
-        "independent_human_review_status": human_review,
+        "verification_status": verification_status,
         "score_status": score_status,
         "existing_score": existing_score,
         "existing_band": existing_band,
@@ -250,7 +242,7 @@ def evaluate_company(
         "existing_score_status": existing_score_status,
         "blocking_reasons": " | ".join(blocking),
         "next_action": next_action,
-        "readiness_version": "1.0.0",
+        "readiness_version": "1.1.0",
     }
 
 
