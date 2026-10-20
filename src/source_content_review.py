@@ -53,7 +53,7 @@ def build(root=ROOT):
         'coverage_status': 'COMPLETE' if sum(counts[s] for s in STATUSES) == len(sources) else 'INCOMPLETE',
         'status_counts': dict(sorted(counts.items())),
         'last_checked_at': max((r.get('checked_at', '') for r in reviewed.values()), default=''),
-        'review_status': 'CHECKED' if sum(counts[s] for s in STATUSES) == len(sources) else 'REVIEW_NEEDED',
+        'human_review_status': 'PENDING',
         'boundary_sources': [{
             'source_id': s['source_id'], 'company_id': s['candidate_id'],
             'document_title': s['document_title'], 'source_url': s['source_link'],
