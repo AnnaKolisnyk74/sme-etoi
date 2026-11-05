@@ -1,0 +1,81 @@
+[
+  {
+    "company_id": "P34",
+    "legal_entity": "KTS Kunststoff Technik Schmölln GmbH",
+    "workstream": "ELIGIBILITY",
+    "selection_rank": null,
+    "queue_rank": 5,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected site; external network assets and group eligibility remain separate.",
+    "technical_summary": "Neue Primärbelege bestätigen betriebliche Abwärmeabgabe und Energiemonitoring sowie ein bis 1. Dezember 2027 gültiges ISO-50001-Zertifikat. Maßnahmenlücke 3/B und Managementlücke 0/B. Wohngebäude-Wärmepumpen, Netz-PV und Förderkosten sind keine KTS-Anlagen oder KTS-Investitionen. OPEN_GATE bleibt bestehen.",
+    "implemented_summary": "Neue Primärbelege bestätigen betriebliche Abwärmeabgabe und Energiemonitoring sowie ein bis 1. Dezember 2027 gültiges ISO-50001-Zertifikat. Maßnahmenlücke 3/B und Managementlücke 0/B. Wohngebäude-Wärmepumpen, Netz-PV und Förderkosten sind keine KTS-Anlagen oder KTS-Investitionen. OPEN_GATE bleibt bestehen.",
+    "finding": "Neue Primärbelege bestätigen betriebliche Abwärmeabgabe und Energiemonitoring sowie ein bis 1. Dezember 2027 gültiges ISO-50001-Zertifikat. Maßnahmenlücke 3/B und Managementlücke 0/B. Wohngebäude-Wärmepumpen, Netz-PV und Förderkosten sind keine KTS-Anlagen oder KTS-Investitionen. OPEN_GATE bleibt bestehen.",
+    "next_action": "Gruppenzugehörigkeit, eigene Prozessheizung, Temperaturniveaus, Zusatzlast, Verschiebefenster, Speicher und eigene Netz-/Erzeugungstopologie klären. Kosten/Anlageneigentum der Abwärmeschnittstelle separat belegen; Netztemperatur und fremde Wärmepumpen nicht der Produktion zurechnen.",
+    "source_ids": [
+      "S-P34-08",
+      "S-P34-09",
+      "S-P34-10"
+    ],
+    "checked_date": "2026-11-05",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261105-P34",
+    "previous_profile_sha256": "a755243e4cfd829357686126c73ddec49c3b9ef155d66d1734cb5a54a54286f8",
+    "followup_reason": "Targeted new primary-source retrieval and anchor review; all frozen open fields retained, only directly supported gaps closed.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "power_quality_score",
+      "onsite_integration_score",
+      "measures_gap_score",
+      "management_gap_score",
+      "targets_gap_score",
+      "investment_gap_score"
+    ]
+  },
+  {
+    "company_id": "P38",
+    "legal_entity": "Krämer + Eckert GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 92,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected site; external network assets and group eligibility remain separate.",
+    "technical_summary": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
+    "implemented_summary": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
+    "finding": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
+    "next_action": "Aktuelle Heizmedien, elektrische Wärmerouten, Motor-/Regelungstopologie, Speicher, Lastfenster und Netzqualitätsdaten belegen. PV-Inbetriebnahme und jüngere Energieinvestitionen datieren; 2013 undatiert nicht in den Lookback übertragen.",
+    "source_ids": [
+      "S-P38-06",
+      "S-P38-07",
+      "S-P38-08"
+    ],
+    "checked_date": "2026-11-05",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261105-P38",
+    "previous_profile_sha256": "a7acf132f7aed31712fa15b3d9ecc123f699e32bb5da7debc8b384b40b9b496d",
+    "followup_reason": "Targeted new primary-source retrieval and anchor review; all frozen open fields retained, only directly supported gaps closed.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "motor_drive_score",
+      "automation_control_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "onsite_integration_score",
+      "measures_gap_score",
+      "management_gap_score",
+      "targets_gap_score",
+      "investment_gap_score"
+    ]
+  }
+]
