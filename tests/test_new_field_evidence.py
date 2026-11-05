@@ -14,7 +14,7 @@ class NewFieldEvidenceTests(unittest.TestCase):
         before = {(r['company_id'], r['score_field']): r for r in d.rows(
             ROOT, 'data/history/score_coding_proposals_before_followup_20261105.csv')}
         now = {(r['company_id'], r['score_field']): r for r in d.rows(
-            ROOT, 'data/score_coding_proposals.csv')}
+            ROOT, 'data/history/score_coding_proposals_before_followup_20261105b.csv')}
         expected = {('P34', 'measures_gap_score'), ('P34', 'management_gap_score'),
                     ('P38', 'measures_gap_score'), ('P38', 'onsite_integration_score')}
         self.assertEqual({k for k in before if before[k] != now[k]}, expected)

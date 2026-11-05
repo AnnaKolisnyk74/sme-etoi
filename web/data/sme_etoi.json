@@ -5251,8 +5251,8 @@
     "expected_field_count": 1500,
     "assessed_field_count": 1500,
     "awaiting_human_review_fields": 0,
-    "checked_fields": 674,
-    "needs_research_fields": 826,
+    "checked_fields": 676,
+    "needs_research_fields": 824,
     "approved_fields": 0,
     "eligibility_gate_company_count": 12,
     "companies": [
@@ -5623,8 +5623,8 @@
         "expected_field_count": 15,
         "complete_first_pass": true,
         "awaiting_human_review_fields": 0,
-        "checked_fields": 4,
-        "needs_research_fields": 11,
+        "checked_fields": 5,
+        "needs_research_fields": 10,
         "approved_fields": 0,
         "eligibility_gate_open": false
       },
@@ -6427,8 +6427,8 @@
         "expected_field_count": 15,
         "complete_first_pass": true,
         "awaiting_human_review_fields": 0,
-        "checked_fields": 6,
-        "needs_research_fields": 9,
+        "checked_fields": 7,
+        "needs_research_fields": 8,
         "approved_fields": 0,
         "eligibility_gate_open": false
       },
@@ -6459,15 +6459,15 @@
     ]
   },
   "proposal_check_summary": {
-    "reviewed_proposal_count": 680,
+    "reviewed_proposal_count": 682,
     "outcome_counts": {
       "CONFIRMED": 498,
       "CORRECTED": 50,
       "NEEDS_RESEARCH": 6,
-      "NEW_EVIDENCE": 126
+      "NEW_EVIDENCE": 128
     },
-    "source_check_count": 364,
-    "retrievable_source_count": 357,
+    "source_check_count": 368,
+    "retrievable_source_count": 361,
     "checked_date": "2026-11-05",
     "checked_by": "Codex",
     "final_score_approval": "NOT_GRANTED"
@@ -6478,18 +6478,18 @@
     "technical_company_count": 86,
     "eligibility_company_count": 12,
     "identity_company_count": 2,
-    "field_attempt_count": 958,
-    "new_checked_field_count": 78,
-    "still_unknown_field_count": 880,
+    "field_attempt_count": 978,
+    "new_checked_field_count": 80,
+    "still_unknown_field_count": 898,
     "reassessed_checked_field_count": 9,
-    "followup_count": 32,
-    "followup_company_count": 31,
+    "followup_count": 34,
+    "followup_company_count": 32,
     "latest_followup": {
       "checked_date": "2026-11-05",
       "company_count": 2,
-      "field_attempt_count": 25,
-      "new_checked_field_count": 4,
-      "still_unknown_field_count": 21,
+      "field_attempt_count": 20,
+      "new_checked_field_count": 2,
+      "still_unknown_field_count": 18,
       "reassessed_checked_field_count": 0,
       "reopened_field_count": 0,
       "entity_clarified_company_count": 0
@@ -7404,17 +7404,30 @@
         "outcome": "PARTIAL_EVIDENCE",
         "verified_legal_entity": "",
         "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
-        "technical_summary": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
-        "implemented_summary": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
-        "finding": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
-        "next_action": "Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.",
+        "technical_summary": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+        "implemented_summary": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+        "finding": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+        "next_action": "Aktuelle Heizmedien, Motor-/Regelungsinventur, Speicher, Vor-Ort-Erzeugung, Management, datierte Ziele und Investitionen separat belegen. Volle Ofenbeladung ist keine gemessene Energieeinsparung und keine gesicherte Demand-Response-Funktion.",
         "source_ids": [
-          "S-P108-03",
-          "S-P108-04"
+          "S-P108-05"
         ],
-        "checked_date": "2026-10-11",
+        "checked_date": "2026-11-05",
         "checked_by": "Codex",
-        "final_score_approval": "NOT_GRANTED"
+        "final_score_approval": "NOT_GRANTED",
+        "followup_id": "DRFU-20261105b-P108",
+        "previous_profile_sha256": "5e5635ecdfda022cfa23955ddd54d5e906f72ce0e5ac18591af8fdd33859f865",
+        "followup_reason": "New own operational descriptions; complete frozen open-field scope retained with no automatic engineering or investment inference.",
+        "field_research_scope": [
+          "fossil_heat_displacement_score",
+          "motor_drive_score",
+          "automation_control_score",
+          "thermal_storage_flex_score",
+          "onsite_integration_score",
+          "measures_gap_score",
+          "management_gap_score",
+          "targets_gap_score",
+          "investment_gap_score"
+        ]
       },
       {
         "company_id": "P11",
@@ -7846,21 +7859,22 @@
         "outcome": "PARTIAL_EVIDENCE",
         "verified_legal_entity": "",
         "entity_scope": "Exact selected site; external network assets and group eligibility remain separate.",
-        "technical_summary": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
-        "implemented_summary": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
-        "finding": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
-        "next_action": "Aktuelle Heizmedien, elektrische Wärmerouten, Motor-/Regelungstopologie, Speicher, Lastfenster und Netzqualitätsdaten belegen. PV-Inbetriebnahme und jüngere Energieinvestitionen datieren; 2013 undatiert nicht in den Lookback übertragen.",
+        "technical_summary": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+        "implemented_summary": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+        "finding": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+        "next_action": "Heizmedien/Temperaturen, elektrische Wärmeroute, explizite Motorinventur, Speicher-/Lastfenster, Netzparameter, Energiemanagement und Investitionsdaten belegen. Automatische Produktion ist keine Freigabe für Lastverschiebung.",
         "source_ids": [
+          "S-P38-09",
+          "S-P38-10",
           "S-P38-06",
-          "S-P38-07",
           "S-P38-08"
         ],
         "checked_date": "2026-11-05",
         "checked_by": "Codex",
         "final_score_approval": "NOT_GRANTED",
-        "followup_id": "DRFU-20261105-P38",
-        "previous_profile_sha256": "a7acf132f7aed31712fa15b3d9ecc123f699e32bb5da7debc8b384b40b9b496d",
-        "followup_reason": "Targeted new primary-source retrieval and anchor review; all frozen open fields retained, only directly supported gaps closed.",
+        "followup_id": "DRFU-20261105b-P38",
+        "previous_profile_sha256": "e2201994f985b4f65ef8740d8b41cc44fa9a417976095705111913127f8690ee",
+        "followup_reason": "New own operational descriptions; complete frozen open-field scope retained with no automatic engineering or investment inference.",
         "field_research_scope": [
           "temperature_fit_score",
           "process_electrification_score",
@@ -7870,8 +7884,6 @@
           "scheduling_flex_score",
           "thermal_storage_flex_score",
           "incremental_load_score",
-          "onsite_integration_score",
-          "measures_gap_score",
           "management_gap_score",
           "targets_gap_score",
           "investment_gap_score"
@@ -9280,13 +9292,13 @@
   "source_audit_summary": {
     "checked_company_count": 100,
     "sample_company_count": 100,
-    "registered_source_count": 679,
-    "audited_url_count": 976,
-    "retrievable_url_count": 894,
+    "registered_source_count": 682,
+    "audited_url_count": 981,
+    "retrievable_url_count": 899,
     "retrieval_status_counts": {
       "ACCESS_BLOCKED": 4,
       "HTTP_ERROR": 24,
-      "HTTP_OK": 857,
+      "HTTP_OK": 862,
       "NETWORK_ERROR": 22,
       "NOT_FOUND": 32,
       "REDIRECT_OK": 37
@@ -9302,7 +9314,7 @@
       "UNRESOLVED": 28,
       "UNRESOLVED_SOURCE_ACCESS": 18
     },
-    "last_checked_at": "2026-11-05T20:57:53.980738+00:00",
+    "last_checked_at": "2026-11-05T21:15:10.916038+00:00",
     "human_review_status": "PENDING",
     "companies": [
       {
@@ -9699,14 +9711,14 @@
         "company_id": "P38",
         "legal_entity": "Krämer + Eckert GmbH & Co. KG",
         "has_coding_assessment": "YES",
-        "audited_url_count": 10,
-        "retrievable_url_count": 8,
+        "audited_url_count": 13,
+        "retrievable_url_count": 11,
         "retrieval_issue_count": 2,
-        "registered_source_count": 8,
+        "registered_source_count": 10,
         "scope_gap_count": 6,
         "recovery_case_count": 6,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-11-05T20:57:53.980738+00:00"
+        "last_checked_at": "2026-11-05T21:15:10.916038+00:00"
       },
       {
         "company_id": "P39",
@@ -10570,14 +10582,14 @@
         "company_id": "P108",
         "legal_entity": "Porzellanmanufaktur Reichenbach GmbH",
         "has_coding_assessment": "YES",
-        "audited_url_count": 8,
-        "retrievable_url_count": 8,
+        "audited_url_count": 10,
+        "retrievable_url_count": 10,
         "retrieval_issue_count": 0,
-        "registered_source_count": 4,
+        "registered_source_count": 5,
         "scope_gap_count": 0,
         "recovery_case_count": 0,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-10-12T16:35:00.549395+00:00"
+        "last_checked_at": "2026-11-05T21:15:10.916038+00:00"
       },
       {
         "company_id": "P109",
@@ -12094,9 +12106,9 @@
     ]
   },
   "source_content_review_summary": {
-    "registered_source_count": 679,
-    "assessed_source_count": 679,
-    "rechecked_source_count": 616,
+    "registered_source_count": 682,
+    "assessed_source_count": 682,
+    "rechecked_source_count": 619,
     "context_only_source_count": 53,
     "unavailable_source_count": 10,
     "missing_source_count": 0,
@@ -12104,10 +12116,10 @@
     "coverage_status": "COMPLETE",
     "status_counts": {
       "CONTEXT_ONLY": 53,
-      "RECHECKED": 616,
+      "RECHECKED": 619,
       "UNAVAILABLE": 10
     },
-    "last_checked_at": "2026-11-05T20:57:53.980738+00:00",
+    "last_checked_at": "2026-11-05T21:15:10.916038+00:00",
     "human_review_status": "PENDING",
     "boundary_sources": [
       {
@@ -12962,8 +12974,8 @@
           "priority_reason_at_selection": "QA PASS; rank by worst confidence, evidence/process confidence, documentary gain, coverage breadth, unassessed fields, verified URLs (cap 4), then company ID. Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
           "current_workflow_action": "RESEARCH_FIRST",
           "awaiting_human_review_fields": 0,
-          "checked_fields": 4,
-          "needs_research_fields": 11
+          "checked_fields": 5,
+          "needs_research_fields": 10
         },
         {
           "company_id": "P39",
@@ -13554,8 +13566,8 @@
           "priority_reason_at_selection": "QA PASS; rank by worst confidence, evidence/process confidence, documentary gain, coverage breadth, unassessed fields, verified URLs (cap 4), then company ID. Documentary gain proxy MEDIUM: 15 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
           "current_workflow_action": "RESEARCH_FIRST",
           "awaiting_human_review_fields": 0,
-          "checked_fields": 6,
-          "needs_research_fields": 9
+          "checked_fields": 7,
+          "needs_research_fields": 8
         },
         {
           "company_id": "P109",
@@ -14009,8 +14021,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 393,
-          "company_work_rank": 89,
+          "work_rank": 398,
+          "company_work_rank": 90,
           "task_key": "P59|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14031,8 +14043,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen.; process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 394,
-          "company_work_rank": 89,
+          "work_rank": 399,
+          "company_work_rank": 90,
           "task_key": "P59|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14053,8 +14065,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Named current own material rectifier/converter/controlled-heat use case; customer product applications, AC charging sockets and unspecified machine carriers are insufficient. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 395,
-          "company_work_rank": 89,
+          "work_rank": 400,
+          "company_work_rank": 90,
           "task_key": "P59|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14075,8 +14087,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen.; thermal_storage_flex_score: Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 396,
-          "company_work_rank": 89,
+          "work_rank": 401,
+          "company_work_rank": 90,
           "task_key": "P59|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14097,8 +14109,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen.; power_quality_score: Current firm-specific converter/peak/reactive-power signals; grid connection or a transformer alone is not a measured power-quality issue. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen.; onsite_integration_score: Own PV/battery/microgrid/load-management use case and actual integration; supplier green power and customer applications are not own deployment. Own picker/robot/QS/ERP and cooling/exhaust recovery for underfloor building heat; external toolshops not own CNC; slab not validated thermal store. Continuation2026-10-08: Production heat recovery for floor/room heating is not dispatchable thermal storage. Supplied automation is not automatically owned coordinated control. Vertiefung2026-10-12 (dritter Block): Betriebliche Heizmedien, Temperaturen, Speicher-/Lastfunktionen und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 397,
-          "company_work_rank": 89,
+          "work_rank": 402,
+          "company_work_rank": 90,
           "task_key": "P59|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -14359,11 +14371,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 77,
+        "company_rank": 78,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 393,
+        "first_work_rank": 398,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -17348,8 +17360,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 118,
-          "company_work_rank": 34,
+          "work_rank": 123,
+          "company_work_rank": 35,
           "task_key": "P27|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -17370,8 +17382,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Source-linked operating temperatures and a firm-specific technology/temperature fit. Continuation2026-10-08: Own PV article separates2017commissioning/2022operation from2026migration metadata.2009-2012electrical-kiln research does not prove current whole-fleet fossil independence or recent investment. Vertiefung2026-10-12: Aktuelle Ofen-/Brennstoffdaten, elektrische Antriebstopologie und datierte Energieinvestitionen nachweisen.; fossil_heat_displacement_score: Current fossil energy carrier and significance of fossil process heat at this site. Continuation2026-10-08: Own PV article separates2017commissioning/2022operation from2026migration metadata.2009-2012electrical-kiln research does not prove current whole-fleet fossil independence or recent investment. Vertiefung2026-10-12: Aktuelle Ofen-/Brennstoffdaten, elektrische Antriebstopologie und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 119,
-          "company_work_rank": 34,
+          "work_rank": 124,
+          "company_work_rank": 35,
           "task_key": "P27|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -17392,8 +17404,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 120,
-          "company_work_rank": 34,
+          "work_rank": 125,
+          "company_work_rank": 35,
           "task_key": "P27|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -17414,8 +17426,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Current operating schedule, buffer constraints and usable load-shifting capability. Continuation2026-10-08: Own PV article separates2017commissioning/2022operation from2026migration metadata.2009-2012electrical-kiln research does not prove current whole-fleet fossil independence or recent investment. Vertiefung2026-10-12: Aktuelle Ofen-/Brennstoffdaten, elektrische Antriebstopologie und datierte Energieinvestitionen nachweisen.; thermal_storage_flex_score: Deployed thermal buffer/storage or documented usable thermal inertia, not an intention. Continuation2026-10-08: Own PV article separates2017commissioning/2022operation from2026migration metadata.2009-2012electrical-kiln research does not prove current whole-fleet fossil independence or recent investment. Vertiefung2026-10-12: Aktuelle Ofen-/Brennstoffdaten, elektrische Antriebstopologie und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 121,
-          "company_work_rank": 34,
+          "work_rank": 126,
+          "company_work_rank": 35,
           "task_key": "P27|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -17436,8 +17448,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: A current additional electrification route and ordinal incremental-load relevance. Continuation2026-10-08: Own PV article separates2017commissioning/2022operation from2026migration metadata.2009-2012electrical-kiln research does not prove current whole-fleet fossil independence or recent investment. Vertiefung2026-10-12: Aktuelle Ofen-/Brennstoffdaten, elektrische Antriebstopologie und datierte Energieinvestitionen nachweisen."
         },
         {
-          "work_rank": 122,
-          "company_work_rank": 34,
+          "work_rank": 127,
+          "company_work_rank": 35,
           "task_key": "P27|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -17793,11 +17805,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 22,
+        "company_rank": 23,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 118,
+        "first_work_rank": 123,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 0,
@@ -18215,8 +18227,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 88,
-          "company_work_rank": 28,
+          "work_rank": 93,
+          "company_work_rank": 29,
           "task_key": "P28|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -18237,8 +18249,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heat temperature and electric thermal-route fit; cooling/maturation temperatures do not establish this. Suspect 90-deg-C ice-water claim is unresolved, not corrected or used. Continuation2026-10-08: Cold-store investment is not a hot-process temperature or documented useful dispatch buffer. Process heat carrier, current management maturity and additional electrical heat duties remain unknown. Vertiefung2026-10-12: Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären. Nachprüfung2026-10-17e: Für die interne Systemrealität fehlen aktuelles EnMS-/Umweltmanual, Auditbericht oder gültiger Rechtsträgernachweis; öffentliche Dokumentationslücke nicht mit Nichtvorhandensein gleichsetzen. Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären.; process_electrification_score: Defined owned heat-electrification route and current process-heat carrier; electric refrigeration/PV do not establish brewery heat conversion. Continuation2026-10-08: Cold-store investment is not a hot-process temperature or documented useful dispatch buffer. Process heat carrier, current management maturity and additional electrical heat duties remain unknown. Vertiefung2026-10-12: Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären. Nachprüfung2026-10-17e: Für die interne Systemrealität fehlen aktuelles EnMS-/Umweltmanual, Auditbericht oder gültiger Rechtsträgernachweis; öffentliche Dokumentationslücke nicht mit Nichtvorhandensein gleichsetzen. Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären.; fossil_heat_displacement_score: Actual brewery process-steam fuel mix and material remaining fossil heat. Local heat for new buildings does not establish fossil-free brewery processing. Continuation2026-10-08: Cold-store investment is not a hot-process temperature or documented useful dispatch buffer. Process heat carrier, current management maturity and additional electrical heat duties remain unknown. Vertiefung2026-10-12: Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären. Nachprüfung2026-10-17e: Für die interne Systemrealität fehlen aktuelles EnMS-/Umweltmanual, Auditbericht oder gültiger Rechtsträgernachweis; öffentliche Dokumentationslücke nicht mit Nichtvorhandensein gleichsetzen. Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären."
         },
         {
-          "work_rank": 89,
-          "company_work_rank": 28,
+          "work_rank": 94,
+          "company_work_rank": 29,
           "task_key": "P28|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -18259,8 +18271,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 90,
-          "company_work_rank": 28,
+          "work_rank": 95,
+          "company_work_rank": 29,
           "task_key": "P28|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -18281,8 +18293,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 91,
-          "company_work_rank": 28,
+          "work_rank": 96,
+          "company_work_rank": 29,
           "task_key": "P28|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -18303,8 +18315,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional heat-electrification route and ordinal new-load materiality; existing cooling/PV do not establish incremental load. Continuation2026-10-08: Cold-store investment is not a hot-process temperature or documented useful dispatch buffer. Process heat carrier, current management maturity and additional electrical heat duties remain unknown. Vertiefung2026-10-12: Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären. Nachprüfung2026-10-17e: Für die interne Systemrealität fehlen aktuelles EnMS-/Umweltmanual, Auditbericht oder gültiger Rechtsträgernachweis; öffentliche Dokumentationslücke nicht mit Nichtvorhandensein gleichsetzen. Brauereispezifische Heißprozessdaten und Managementsystem beschaffen;90°C-Quellenkonflikt klären."
         },
         {
-          "work_rank": 92,
-          "company_work_rank": 28,
+          "work_rank": 97,
+          "company_work_rank": 29,
           "task_key": "P28|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -18698,11 +18710,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 16,
+        "company_rank": 17,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 88,
+        "first_work_rank": 93,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 2,
         "awaiting_human_review_tasks": 0,
@@ -20020,8 +20032,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 388,
-          "company_work_rank": 88,
+          "work_rank": 393,
+          "company_work_rank": 89,
           "task_key": "P31|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -20042,8 +20054,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: A company-specific electric-heat technology/temperature fit; cold maturation temperatures alone do not establish process-heat electrification fit. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen.; process_electrification_score: A firm-specific industrial electric-heat route; efficient cooling, biomass heat and electric logistics do not prove such a route. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen."
         },
         {
-          "work_rank": 389,
-          "company_work_rank": 88,
+          "work_rank": 394,
+          "company_work_rank": 89,
           "task_key": "P31|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -20064,8 +20076,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Firm-specific motor/compressor equipment and application intensity, beyond cooled tanks and unspecified refrigeration supply. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen.; power_conversion_score: Rectifier/converter/controlled-heat equipment topology and materiality; PV existence alone does not document production conversion equipment. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen.; automation_control_score: Firm-specific process automation or control equipment; manual quality checks and climate-framework participation are insufficient. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen."
         },
         {
-          "work_rank": 390,
-          "company_work_rank": 88,
+          "work_rank": 395,
+          "company_work_rank": 89,
           "task_key": "P31|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -20086,8 +20098,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: A controllable heat/cold buffer or documented usable thermal inertia respecting product-quality constraints; maturation duration is not a storage-service proof. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen."
         },
         {
-          "work_rank": 391,
-          "company_work_rank": 88,
+          "work_rank": 396,
+          "company_work_rank": 89,
           "task_key": "P31|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -20108,8 +20120,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: An identified additional industrial electrification route and ordinal incremental-load relevance; EVs do not establish a process-heat route. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen.; power_quality_score: Documented harmonic/reactive-power/peak-load signals or relevant electrical topology; renewable supply alone is insufficient. Continuation2026-10-08: Existing biomass/biogas/PV facts retained. Cold fermentation temperature is not thermal electrification fit; no additional drive inventory or useful thermal store identified. Vertiefung2026-10-12: Sudhaus-/Dampftemperatur, konkrete elektrische Wärmeroute, Motor-/Regelungsliste und sichere Speicherfenster beschaffen."
         },
         {
-          "work_rank": 392,
-          "company_work_rank": 88,
+          "work_rank": 397,
+          "company_work_rank": 89,
           "task_key": "P31|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -20427,11 +20439,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 76,
+        "company_rank": 77,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 388,
+        "first_work_rank": 393,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 0,
@@ -24024,8 +24036,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 413,
-          "company_work_rank": 93,
+          "work_rank": 418,
+          "company_work_rank": 94,
           "task_key": "P94|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24046,8 +24058,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen.; process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen."
         },
         {
-          "work_rank": 414,
-          "company_work_rank": 93,
+          "work_rank": 419,
+          "company_work_rank": 94,
           "task_key": "P94|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24068,8 +24080,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: automation_control_score: Actual current owned sensing/control applications and coordination; generic modernity or staging-site claims need corroboration. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen."
         },
         {
-          "work_rank": 415,
-          "company_work_rank": 93,
+          "work_rank": 420,
+          "company_work_rank": 94,
           "task_key": "P94|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24090,8 +24102,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen.; thermal_storage_flex_score: Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen."
         },
         {
-          "work_rank": 416,
-          "company_work_rank": 93,
+          "work_rank": 421,
+          "company_work_rank": 94,
           "task_key": "P94|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24112,8 +24124,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Actual logistics PV/battery/room HP/charging; builder2024-09-21opening. Room heat not brewery process heat; electrical battery not thermal store; centre climate-positive not whole-company neutrality. Continuation2026-10-08: Logistics PV/electrical storage/room heat pump are separate from brewery process heat. Electrical storage is not a thermal store; no own admissible process dispatch windows found. Vertiefung2026-10-17: Brauprozess und Logistik-Raumklima mit getrennten Fließbildern, Sollwerten, Speichern und Regelung belegen."
         },
         {
-          "work_rank": 417,
-          "company_work_rank": 93,
+          "work_rank": 422,
+          "company_work_rank": 94,
           "task_key": "P94|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24431,11 +24443,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 81,
+        "company_rank": 82,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 413,
+        "first_work_rank": 418,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -24762,8 +24774,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 108,
-          "company_work_rank": 32,
+          "work_rank": 113,
+          "company_work_rank": 33,
           "task_key": "P73|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24784,8 +24796,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Vapour condensation/hot-water recovery is not independently useful thermal storage. Solar-brewery branding does not establish100percent renewable thermal fuel; some newer source access failed. Vertiefung2026-10-13: Eigene Wärme-/Heizmedien und thermische Speicherfunktion ermitteln;2011/2012-Branddatierung getrennt von ISO-Prüfung klären."
         },
         {
-          "work_rank": 109,
-          "company_work_rank": 32,
+          "work_rank": 114,
+          "company_work_rank": 33,
           "task_key": "P73|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24806,8 +24818,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Owned rectifier/inverter/controlled-electric-heat applications, scope and duty; mechanical water power not electricity generation. Continuation2026-10-08: Vapour condensation/hot-water recovery is not independently useful thermal storage. Solar-brewery branding does not establish100percent renewable thermal fuel; some newer source access failed. Vertiefung2026-10-13: Eigene Wärme-/Heizmedien und thermische Speicherfunktion ermitteln;2011/2012-Branddatierung getrennt von ISO-Prüfung klären."
         },
         {
-          "work_rank": 110,
-          "company_work_rank": 32,
+          "work_rank": 115,
+          "company_work_rank": 33,
           "task_key": "P73|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24828,8 +24840,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Vapour condensation/hot-water recovery is not independently useful thermal storage. Solar-brewery branding does not establish100percent renewable thermal fuel; some newer source access failed. Vertiefung2026-10-13: Eigene Wärme-/Heizmedien und thermische Speicherfunktion ermitteln;2011/2012-Branddatierung getrennt von ISO-Prüfung klären."
         },
         {
-          "work_rank": 111,
-          "company_work_rank": 32,
+          "work_rank": 116,
+          "company_work_rank": 33,
           "task_key": "P73|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -24850,8 +24862,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_quality_score: Owned relevant converter/peak topology or measured harmonic/reactive/voltage findings; product resistance/current amps not measured power-quality evidence. Continuation2026-10-08: Vapour condensation/hot-water recovery is not independently useful thermal storage. Solar-brewery branding does not establish100percent renewable thermal fuel; some newer source access failed. Vertiefung2026-10-13: Eigene Wärme-/Heizmedien und thermische Speicherfunktion ermitteln;2011/2012-Branddatierung getrennt von ISO-Prüfung klären."
         },
         {
-          "work_rank": 112,
-          "company_work_rank": 32,
+          "work_rank": 117,
+          "company_work_rank": 33,
           "task_key": "P73|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25226,11 +25238,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 20,
+        "company_rank": 21,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 108,
+        "first_work_rank": 113,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -25670,8 +25682,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 398,
-          "company_work_rank": 90,
+          "work_rank": 403,
+          "company_work_rank": 91,
           "task_key": "P70|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25692,8 +25704,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen.; process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen."
         },
         {
-          "work_rank": 399,
-          "company_work_rank": 90,
+          "work_rank": 404,
+          "company_work_rank": 91,
           "task_key": "P70|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25714,8 +25726,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Named current own material rectifier/converter/controlled-heat use case; customer product applications, AC charging sockets and unspecified machine carriers are insufficient. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen."
         },
         {
-          "work_rank": 400,
-          "company_work_rank": 90,
+          "work_rank": 405,
+          "company_work_rank": 91,
           "task_key": "P70|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25736,8 +25748,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen.; thermal_storage_flex_score: Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen."
         },
         {
-          "work_rank": 401,
-          "company_work_rank": 90,
+          "work_rank": 406,
+          "company_work_rank": 91,
           "task_key": "P70|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -25758,8 +25770,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen.; power_quality_score: Current firm-specific converter/peak/reactive-power signals; grid connection or a transformer alone is not a measured power-quality issue. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen.; onsite_integration_score: Own PV/battery/microgrid/load-management use case and actual integration; supplier green power and customer applications are not own deployment. Own milling/air classification/XRF/sinter/melt; current ISO14001CLAIM_ONLY, oldPDF404, no current direct body. Customer material ratings not own heat carrier/temperature. Continuation2026-10-08: Own spray drying/sintering identified but thermal carrier, actual heat duty, useful storage and converter topology remain unspecified. Vertiefung2026-10-13: Aktuelle Betreiber-Ofenunterlagen und gültigen Direktnachweis zum Zertifikatsclaim beschaffen."
         },
         {
-          "work_rank": 402,
-          "company_work_rank": 90,
+          "work_rank": 407,
+          "company_work_rank": 91,
           "task_key": "P70|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -26020,11 +26032,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 78,
+        "company_rank": 79,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 398,
+        "first_work_rank": 403,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -37604,8 +37616,8 @@
       "research_tasks": [],
       "score_work_tasks": [
         {
-          "work_rank": 423,
-          "company_work_rank": 95,
+          "work_rank": 428,
+          "company_work_rank": 96,
           "task_key": "P106|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -37626,8 +37638,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen.; process_electrification_score: Named owned thermal route, current heat carrier and feasible remaining substitution case; separate electric drives and room heat. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen.; fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen."
         },
         {
-          "work_rank": 424,
-          "company_work_rank": 95,
+          "work_rank": 429,
+          "company_work_rank": 96,
           "task_key": "P106|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -37648,8 +37660,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 425,
-          "company_work_rank": 95,
+          "work_rank": 430,
+          "company_work_rank": 96,
           "task_key": "P106|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -37670,8 +37682,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Permitted timing shifts, quality/cooling/order constraints and spare capacity. Batch/24h operation alone not flexibility permission. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen.; thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen."
         },
         {
-          "work_rank": 426,
-          "company_work_rank": 95,
+          "work_rank": 431,
+          "company_work_rank": 96,
           "task_key": "P106|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -37692,8 +37704,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen.; onsite_integration_score: Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. Continuation2026-10-08: Owner manufacturing/quality page and general annual machine investment supply no thermal duty/fuel, completed energy project date or public quantified climate target. Vertiefung2026-10-17 (Feldarbeitsliste): Eigene Wärme-/Brennstoffdienste, nutzbare Speicher und Lastfenster sowie konkrete Energieprojekte, Managementsysteme und Ziele mit datierten Belegen beschaffen."
         },
         {
-          "work_rank": 427,
-          "company_work_rank": 95,
+          "work_rank": 432,
+          "company_work_rank": 96,
           "task_key": "P106|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -37954,11 +37966,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 83,
+        "company_rank": 84,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 423,
+        "first_work_rank": 428,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 0,
@@ -43732,8 +43744,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 403,
-          "company_work_rank": 91,
+          "work_rank": 408,
+          "company_work_rank": 92,
           "task_key": "P86|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -43754,8 +43766,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Customer1700degreesCmaterial resistance and solar containers are not own firing temperature or owned onsite PV. Vertiefung2026-10-17: Eigene Fertigungs- und Energieanlagen getrennt vom Kundenproduktprogramm dokumentieren.; fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Customer1700degreesCmaterial resistance and solar containers are not own firing temperature or owned onsite PV. Vertiefung2026-10-17: Eigene Fertigungs- und Energieanlagen getrennt vom Kundenproduktprogramm dokumentieren."
         },
         {
-          "work_rank": 404,
-          "company_work_rank": 91,
+          "work_rank": 409,
+          "company_work_rank": 92,
           "task_key": "P86|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -43776,8 +43788,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: automation_control_score: Owned process control/monitoring inventory and operational coordination; quality claims not EnMS maturity. Continuation2026-10-08: Customer1700degreesCmaterial resistance and solar containers are not own firing temperature or owned onsite PV. Vertiefung2026-10-17: Eigene Fertigungs- und Energieanlagen getrennt vom Kundenproduktprogramm dokumentieren."
         },
         {
-          "work_rank": 405,
-          "company_work_rank": 91,
+          "work_rank": 410,
+          "company_work_rank": 92,
           "task_key": "P86|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -43798,8 +43810,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Customer1700degreesCmaterial resistance and solar containers are not own firing temperature or owned onsite PV. Vertiefung2026-10-17: Eigene Fertigungs- und Energieanlagen getrennt vom Kundenproduktprogramm dokumentieren."
         },
         {
-          "work_rank": 406,
-          "company_work_rank": 91,
+          "work_rank": 411,
+          "company_work_rank": 92,
           "task_key": "P86|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -43820,8 +43832,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: onsite_integration_score: Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. Continuation2026-10-08: Customer1700degreesCmaterial resistance and solar containers are not own firing temperature or owned onsite PV. Vertiefung2026-10-17: Eigene Fertigungs- und Energieanlagen getrennt vom Kundenproduktprogramm dokumentieren."
         },
         {
-          "work_rank": 407,
-          "company_work_rank": 91,
+          "work_rank": 412,
+          "company_work_rank": 92,
           "task_key": "P86|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -44120,11 +44132,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 79,
+        "company_rank": 80,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 403,
+        "first_work_rank": 408,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -44422,8 +44434,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 93,
-          "company_work_rank": 29,
+          "work_rank": 98,
+          "company_work_rank": 30,
           "task_key": "P33|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -44444,8 +44456,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual barrel/mould/process-heat temperatures and fit; 25-250 tonnes is closing force, not power or temperature. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen.; process_electrification_score: Firm-specific thermal energy carriers and defined conversion route; computer-controlled injection machines and ultrasonic assembly do not establish current/new injection-heat electrification. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen.; fossil_heat_displacement_score: Actual remaining fossil process heat and site fuel mix; manufacturing capability and ISO 14001 do not establish this. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen."
         },
         {
-          "work_rank": 94,
-          "company_work_rank": 29,
+          "work_rank": 99,
+          "company_work_rank": 30,
           "task_key": "P33|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -44466,8 +44478,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 95,
-          "company_work_rank": 29,
+          "work_rank": 100,
+          "company_work_rank": 30,
           "task_key": "P33|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -44488,8 +44500,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Actual production hours, restart/interruption tolerance and buffers; capability labels, sequence steps and animated zero counters do not establish load-shifting windows. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen.; thermal_storage_flex_score: Named thermal store or validated usable thermal inertia and dispatch window; moulding process itself is not storage. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen."
         },
         {
-          "work_rank": 96,
-          "company_work_rank": 29,
+          "work_rank": 101,
+          "company_work_rank": 30,
           "task_key": "P33|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -44510,8 +44522,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing automation does not establish incremental energy demand. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen.; onsite_integration_score: Own PV/battery/microgrid/load-management integration evidence; resource policy and environmental certification are not deployed technology. Continuation2026-10-08: Supplied automation/customer equipment and technical glossary entries are not evidence of owned heating, installed converters or energy projects. Vertiefung2026-10-12: Teilnehmerbezogene abgeschlossene Maßnahmen, Ofen-/Heizerdaten, PV-/Speichernachweis und Inbetriebnahmeunterlagen suchen."
         },
         {
-          "work_rank": 97,
-          "company_work_rank": 29,
+          "work_rank": 102,
+          "company_work_rank": 30,
           "task_key": "P33|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -44829,11 +44841,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 17,
+        "company_rank": 18,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 93,
+        "first_work_rank": 98,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 0,
@@ -50173,8 +50185,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 103,
-          "company_work_rank": 31,
+          "work_rank": 108,
+          "company_work_rank": 32,
           "task_key": "P72|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -50195,8 +50207,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Existing PV/robotics evidence retained. Product cold storage is not dispatchable thermal storage; lauter construction is not final commissioning and PV area is not kWp. Vertiefung2026-10-13: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen. Nachprüfung2026-10-17e: Datum und Betriebs-/Rechtsträgerumfang des FfE-Audits sowie aktuellen Energie-/Umweltsystemnachweis beschaffen; Wärme- und Speicherfelder bleiben separat offen.; process_electrification_score: Named owned thermal route, current heat carrier and feasible remaining substitution case; separate electric drives and room heat. Continuation2026-10-08: Existing PV/robotics evidence retained. Product cold storage is not dispatchable thermal storage; lauter construction is not final commissioning and PV area is not kWp. Vertiefung2026-10-13: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen. Nachprüfung2026-10-17e: Datum und Betriebs-/Rechtsträgerumfang des FfE-Audits sowie aktuellen Energie-/Umweltsystemnachweis beschaffen; Wärme- und Speicherfelder bleiben separat offen.; fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Existing PV/robotics evidence retained. Product cold storage is not dispatchable thermal storage; lauter construction is not final commissioning and PV area is not kWp. Vertiefung2026-10-13: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen. Nachprüfung2026-10-17e: Datum und Betriebs-/Rechtsträgerumfang des FfE-Audits sowie aktuellen Energie-/Umweltsystemnachweis beschaffen; Wärme- und Speicherfelder bleiben separat offen."
         },
         {
-          "work_rank": 104,
-          "company_work_rank": 31,
+          "work_rank": 109,
+          "company_work_rank": 32,
           "task_key": "P72|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -50217,8 +50229,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 105,
-          "company_work_rank": 31,
+          "work_rank": 110,
+          "company_work_rank": 32,
           "task_key": "P72|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -50239,8 +50251,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Permitted timing shifts, quality/cooling/order constraints and spare capacity. Batch/24h operation alone not flexibility permission. Continuation2026-10-08: Existing PV/robotics evidence retained. Product cold storage is not dispatchable thermal storage; lauter construction is not final commissioning and PV area is not kWp. Vertiefung2026-10-13: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen. Nachprüfung2026-10-17e: Datum und Betriebs-/Rechtsträgerumfang des FfE-Audits sowie aktuellen Energie-/Umweltsystemnachweis beschaffen; Wärme- und Speicherfelder bleiben separat offen.; thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Existing PV/robotics evidence retained. Product cold storage is not dispatchable thermal storage; lauter construction is not final commissioning and PV area is not kWp. Vertiefung2026-10-13: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen. Nachprüfung2026-10-17e: Datum und Betriebs-/Rechtsträgerumfang des FfE-Audits sowie aktuellen Energie-/Umweltsystemnachweis beschaffen; Wärme- und Speicherfelder bleiben separat offen."
         },
         {
-          "work_rank": 106,
-          "company_work_rank": 31,
+          "work_rank": 111,
+          "company_work_rank": 32,
           "task_key": "P72|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -50261,8 +50273,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. Continuation2026-10-08: Existing PV/robotics evidence retained. Product cold storage is not dispatchable thermal storage; lauter construction is not final commissioning and PV area is not kWp. Vertiefung2026-10-13: Reale Wärme-/Solltemperaturen, thermische Speicherfunktion, sichere Lastfenster und Energie-Systemnachweise nachweisen. Nachprüfung2026-10-17e: Datum und Betriebs-/Rechtsträgerumfang des FfE-Audits sowie aktuellen Energie-/Umweltsystemnachweis beschaffen; Wärme- und Speicherfelder bleiben separat offen."
         },
         {
-          "work_rank": 107,
-          "company_work_rank": 31,
+          "work_rank": 112,
+          "company_work_rank": 32,
           "task_key": "P72|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -50618,11 +50630,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 19,
+        "company_rank": 20,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 103,
+        "first_work_rank": 108,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 3,
         "awaiting_human_review_tasks": 0,
@@ -54153,8 +54165,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 98,
-          "company_work_rank": 30,
+          "work_rank": 103,
+          "company_work_rank": 31,
           "task_key": "P66|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -54175,8 +54187,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen."
         },
         {
-          "work_rank": 99,
-          "company_work_rank": 30,
+          "work_rank": 104,
+          "company_work_rank": 31,
           "task_key": "P66|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -54197,8 +54209,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Named current owned motor/pump/compressor/drive applications and their materiality; production sector and historical steam/ice machines alone are insufficient. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen.; power_conversion_score: Named current own material rectifier/converter/controlled-heat use case; customer product applications, AC charging sockets and unspecified machine carriers are insufficient. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen."
         },
         {
-          "work_rank": 100,
-          "company_work_rank": 30,
+          "work_rank": 105,
+          "company_work_rank": 31,
           "task_key": "P66|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -54219,8 +54231,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen.; thermal_storage_flex_score: Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen."
         },
         {
-          "work_rank": 101,
-          "company_work_rank": 30,
+          "work_rank": 106,
+          "company_work_rank": 31,
           "task_key": "P66|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -54241,8 +54253,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen.; power_quality_score: Current firm-specific converter/peak/reactive-power signals; grid connection or a transformer alone is not a measured power-quality issue. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen.; onsite_integration_score: Own PV/battery/microgrid/load-management use case and actual integration; supplier green power and customer applications are not own deployment. Own980/1420C firing;2017 heat export described by provider2023,110C recovered water not kiln temperature. Adjacent Siemens heat-pump project not KPM. Continuation2026-10-08: Owner exports waste heat to an external utility. External utility energy assets/heat storage are not owned plant storage; no new fuel or drive inventory established. Vertiefung2026-10-12 (dritter Block): Aktuelle Ofenheizmedien, tatsächlich installierte Steuerung, sichere Produktions-/Speicherfenster und Energieprojekte im festen Zeitraum nachweisen."
         },
         {
-          "work_rank": 102,
-          "company_work_rank": 30,
+          "work_rank": 107,
+          "company_work_rank": 31,
           "task_key": "P66|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -54503,11 +54515,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 18,
+        "company_rank": 19,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 98,
+        "first_work_rank": 103,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -55713,8 +55725,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 128,
-          "company_work_rank": 36,
+          "work_rank": 83,
+          "company_work_rank": 27,
           "task_key": "P38|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -55729,14 +55741,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 8,
+          "source_count": 10,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen."
         },
         {
-          "work_rank": 129,
-          "company_work_rank": 36,
+          "work_rank": 84,
+          "company_work_rank": 27,
           "task_key": "P38|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -55745,20 +55757,20 @@
           "missing_fields": "motor_drive_score | power_conversion_score | automation_control_score",
           "missing_field_count": 3,
           "proposal_covered_fields": "motor_drive_score | power_conversion_score | automation_control_score",
-          "research_gap_fields": "motor_drive_score | automation_control_score",
-          "proposal_status_summary": "CHECKED=1 | NEEDS_RESEARCH=2",
+          "research_gap_fields": "motor_drive_score",
+          "proposal_status_summary": "CHECKED=2 | NEEDS_RESEARCH=1",
           "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 8,
+          "source_count": 10,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Named current owned motor/pump/compressor/drive applications and their materiality; production sector and historical steam/ice machines alone are insufficient. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; automation_control_score: Actual current owned sensing/control applications and coordination; generic modernity or staging-site claims need corroboration. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Named current owned motor/pump/compressor/drive applications and their materiality; production sector and historical steam/ice machines alone are insufficient. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen."
         },
         {
-          "work_rank": 130,
-          "company_work_rank": 36,
+          "work_rank": 85,
+          "company_work_rank": 27,
           "task_key": "P38|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -55773,14 +55785,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 8,
+          "source_count": 10,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; thermal_storage_flex_score: Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen."
         },
         {
-          "work_rank": 131,
-          "company_work_rank": 36,
+          "work_rank": 86,
+          "company_work_rank": 27,
           "task_key": "P38|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -55795,14 +55807,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 8,
+          "source_count": 10,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen."
         },
         {
-          "work_rank": 132,
-          "company_work_rank": 36,
+          "work_rank": 87,
+          "company_work_rank": 27,
           "task_key": "P38|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -55817,7 +55829,7 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 8,
+          "source_count": 10,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: management_gap_score: Current verified site EnMS/environmental system or bounded claim; ISO9001, an inaccessible/staging certificate page and missing evidence are not certified mature EnMS. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; targets_gap_score: Current attributed energy/decarbonisation target or bounded public-documentation ambition; historical/staging claims require current confirmation. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; investment_gap_score: Dated completed energy-transition investment within2021-10-07 to2026-10-07; old projects, certificate renewal, crawl dates and undifferentiated capacity/wastewater expansion are insufficient. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen."
@@ -55895,13 +55907,32 @@
         },
         {
           "score_field": "automation_control_score",
-          "proposed_value": null,
-          "proposal_status": "NEEDS_RESEARCH",
-          "proposal_confidence": "UNKNOWN",
-          "evidence_source_ids": "S-P38-03",
-          "evidence_basis": "Public firm-specific evidence reviewed. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Missing public evidence is not proof of non-deployment; UNKNOWN remains UNKNOWN.",
-          "missing_fact": "Actual current owned sensing/control applications and coordination; generic modernity or staging-site claims need corroboration. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.",
-          "check_history": []
+          "proposed_value": 3,
+          "proposal_status": "CHECKED",
+          "proposal_confidence": "B",
+          "evidence_source_ids": "S-P38-09 | S-P38-10 | S-P38-08",
+          "evidence_basis": "Own operator identifies three fully automatic powder-coating lines and automatic film application on a laminating machine. Clear local control relevance supports 3/B. No coordinated site energy control, motor/converter ratings, thermal fuel or safe load-shifting window inferred.",
+          "missing_fact": "",
+          "check_history": [
+            {
+              "check_id": "RC-20261105b-P38-automation_control_score",
+              "company_id": "P38",
+              "score_field": "automation_control_score",
+              "original_value": "",
+              "checked_value": "3",
+              "original_confidence": "UNKNOWN",
+              "checked_confidence": "B",
+              "outcome": "NEW_EVIDENCE",
+              "checked_by": "Codex",
+              "check_method": "PRIMARY_SOURCE_RECHECK_AND_ANCHOR_REVIEW",
+              "checked_date": "2026-11-05",
+              "original_source_ids": "S-P38-03",
+              "checked_source_ids": "S-P38-09 | S-P38-10 | S-P38-08",
+              "decision_note": "New attributed primary operating description closes this formerly UNKNOWN field. No rating, date, dispatch right, final score or personal approval invented.",
+              "checked_evidence_basis": "Own operator identifies three fully automatic powder-coating lines and automatic film application on a laminating machine. Clear local control relevance supports 3/B. No coordinated site energy control, motor/converter ratings, thermal fuel or safe load-shifting window inferred.",
+              "final_score_approval": "NOT_GRANTED"
+            }
+          ]
         },
         {
           "score_field": "scheduling_flex_score",
@@ -56052,8 +56083,8 @@
         }
       ],
       "workflow_priority": {
-        "source_count": 8,
-        "verified_source_count": 6,
+        "source_count": 10,
+        "verified_source_count": 8,
         "unassessed_field_count": 0,
         "qa_result": "PASS",
         "source_coverage": "PROCESS",
@@ -56063,11 +56094,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 24,
+        "company_rank": 15,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 128,
+        "first_work_rank": 83,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -56075,7 +56106,7 @@
         "open_gate_tasks": 0,
         "work_priority": "P2",
         "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own website is marked TEST-SYSTEM; association covers entity/anodising only; group280 staff and heat treatment not inherited. Continuation2026-10-08: Publicly reachable environment site explicitly labels itself TEST-SYSTEM/non-live. BHKW/PV statements there are not accepted as confirmed current deployment without corroboration. Vertiefung2026-10-12: Unabhängige betreiberbezogene Anlagen-/Zertifikatsunterlagen oder einen bestätigten Live-Auftritt beschaffen.",
-        "priority_reason": "At least one score dimension contains an explicit unresolved fact: temperature_fit_score | process_electrification_score | fossil_heat_displacement_score; motor_drive_score | automation_control_score; scheduling_flex_score | thermal_storage_flex_score"
+        "priority_reason": "At least one score dimension contains an explicit unresolved fact: temperature_fit_score | process_electrification_score | fossil_heat_displacement_score; motor_drive_score; scheduling_flex_score | thermal_storage_flex_score"
       },
       "sources": [
         {
@@ -56253,20 +56284,64 @@
           "content_review_status": "RECHECKED",
           "content_checked_at": "2026-11-05T20:57:53.980738+00:00",
           "content_scope_note": "Imprint attributes this website to the selected Ehingen operator at the matching site. It does not assign Weil der Stadt assets or combined group headcounts to Ehingen."
+        },
+        {
+          "source_id": "S-P38-09",
+          "source_type": "company_website",
+          "publisher": "Krämer + Eckert GmbH & Co. KG",
+          "document_title": "Pulverbeschichten – three fully automatic lines",
+          "final_url": "https://www.eloxalwerk-ehingen.com/leistungen/pulverbeschichten/",
+          "evidence_fact": "Own Ehingen operator reports three fully automatic horizontal/vertical powder-coating lines. Supports clear local process-control relevance. No PLC brand, drive inventory, coordinated site energy control, oven temperature or dispatch permission is established.",
+          "registered_evidence_fact": "Own Ehingen operator reports three fully automatic horizontal/vertical powder-coating lines. Supports clear local process-control relevance. No PLC brand, drive inventory, coordinated site energy control, oven temperature or dispatch permission is established.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://www.eloxalwerk-ehingen.com/leistungen/pulverbeschichten/",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-11-05",
+          "reporting_period": "undated",
+          "publication_date": "",
+          "access_date": "2026-11-05",
+          "relevant_location": "Opening own-installation paragraph",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-11-05T21:15:10.916038+00:00",
+          "content_review_status": "RECHECKED",
+          "content_checked_at": "2026-11-05T21:15:10.916038+00:00",
+          "content_scope_note": "Own Ehingen operator reports three fully automatic horizontal/vertical powder-coating lines. Supports clear local process-control relevance. No PLC brand, drive inventory, coordinated site energy control, oven temperature or dispatch permission is established."
+        },
+        {
+          "source_id": "S-P38-10",
+          "source_type": "company_website",
+          "publisher": "Krämer + Eckert GmbH & Co. KG",
+          "document_title": "Folieren – automatic laminating machine",
+          "final_url": "https://www.eloxalwerk-ehingen.com/leistungen/folieren/",
+          "evidence_fact": "Operator describes automatic protective-film application using its laminating machine. Supports local automation alongside coating lines. No explicit motor or converter topology, power rating or energy investment date is established.",
+          "registered_evidence_fact": "Operator describes automatic protective-film application using its laminating machine. Supports local automation alongside coating lines. No explicit motor or converter topology, power rating or energy investment date is established.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://www.eloxalwerk-ehingen.com/leistungen/folieren/",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-11-05",
+          "reporting_period": "undated",
+          "publication_date": "",
+          "access_date": "2026-11-05",
+          "relevant_location": "Opening automatic-foiling paragraph",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-11-05T21:15:10.916038+00:00",
+          "content_review_status": "RECHECKED",
+          "content_checked_at": "2026-11-05T21:15:10.916038+00:00",
+          "content_scope_note": "Operator describes automatic protective-film application using its laminating machine. Supports local automation alongside coating lines. No explicit motor or converter topology, power rating or energy investment date is established."
         }
       ],
       "source_audit": {
         "company_id": "P38",
         "legal_entity": "Krämer + Eckert GmbH & Co. KG",
         "has_coding_assessment": "YES",
-        "audited_url_count": 10,
-        "retrievable_url_count": 8,
+        "audited_url_count": 13,
+        "retrievable_url_count": 11,
         "retrieval_issue_count": 2,
-        "registered_source_count": 8,
+        "registered_source_count": 10,
         "scope_gap_count": 6,
         "recovery_case_count": 6,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-11-05T20:57:53.980738+00:00"
+        "last_checked_at": "2026-11-05T21:15:10.916038+00:00"
       },
       "decision_research_profile": {
         "company_id": "P38",
@@ -56277,21 +56352,22 @@
         "outcome": "PARTIAL_EVIDENCE",
         "verified_legal_entity": "",
         "entity_scope": "Exact selected site; external network assets and group eligibility remain separate.",
-        "technical_summary": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
-        "implemented_summary": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
-        "finding": "Die rohe Betreiberseite zeigt den TEST-SYSTEM-Hinweis als verborgenes Element, das nur auf test.-Hostnamen aktiviert wird. Der öffentliche www-Auftritt und das passende Impressum belegen eigenes BHKW und PV: Maßnahmenlücke 3/B, Vor-Ort-Integration 2/B. BHKW-Inbetriebnahme 2013 ist keine jüngste Investition; kein Brennstoffmix oder koordinierter Microgridbetrieb belegt.",
-        "next_action": "Aktuelle Heizmedien, elektrische Wärmerouten, Motor-/Regelungstopologie, Speicher, Lastfenster und Netzqualitätsdaten belegen. PV-Inbetriebnahme und jüngere Energieinvestitionen datieren; 2013 undatiert nicht in den Lookback übertragen.",
+        "technical_summary": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+        "implemented_summary": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+        "finding": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+        "next_action": "Heizmedien/Temperaturen, elektrische Wärmeroute, explizite Motorinventur, Speicher-/Lastfenster, Netzparameter, Energiemanagement und Investitionsdaten belegen. Automatische Produktion ist keine Freigabe für Lastverschiebung.",
         "source_ids": [
+          "S-P38-09",
+          "S-P38-10",
           "S-P38-06",
-          "S-P38-07",
           "S-P38-08"
         ],
         "checked_date": "2026-11-05",
         "checked_by": "Codex",
         "final_score_approval": "NOT_GRANTED",
-        "followup_id": "DRFU-20261105-P38",
-        "previous_profile_sha256": "a7acf132f7aed31712fa15b3d9ecc123f699e32bb5da7debc8b384b40b9b496d",
-        "followup_reason": "Targeted new primary-source retrieval and anchor review; all frozen open fields retained, only directly supported gaps closed.",
+        "followup_id": "DRFU-20261105b-P38",
+        "previous_profile_sha256": "e2201994f985b4f65ef8740d8b41cc44fa9a417976095705111913127f8690ee",
+        "followup_reason": "New own operational descriptions; complete frozen open-field scope retained with no automatic engineering or investment inference.",
         "field_research_scope": [
           "temperature_fit_score",
           "process_electrification_score",
@@ -56301,8 +56377,6 @@
           "scheduling_flex_score",
           "thermal_storage_flex_score",
           "incremental_load_score",
-          "onsite_integration_score",
-          "measures_gap_score",
           "management_gap_score",
           "targets_gap_score",
           "investment_gap_score"
@@ -71116,8 +71190,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 418,
-          "company_work_rank": 94,
+          "work_rank": 423,
+          "company_work_rank": 95,
           "task_key": "P97|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -71138,8 +71212,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen.; process_electrification_score: Named owned thermal route, current heat carrier and feasible remaining substitution case; separate electric drives and room heat. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen.; fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen."
         },
         {
-          "work_rank": 419,
-          "company_work_rank": 94,
+          "work_rank": 424,
+          "company_work_rank": 95,
           "task_key": "P97|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -71160,8 +71234,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 420,
-          "company_work_rank": 94,
+          "work_rank": 425,
+          "company_work_rank": 95,
           "task_key": "P97|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -71182,8 +71256,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Permitted timing shifts, quality/cooling/order constraints and spare capacity. Batch/24h operation alone not flexibility permission. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen.; thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen."
         },
         {
-          "work_rank": 421,
-          "company_work_rank": 94,
+          "work_rank": 426,
+          "company_work_rank": 95,
           "task_key": "P97|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -71204,8 +71278,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen.; onsite_integration_score: Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. Continuation2026-10-08: Owner describes injection machines with temperature-control equipment; operating temperatures/carriers are not given. Renewable grid-electricity purchase is not own generation or a verified management certificate. Vertiefung2026-10-09: Operatives Energiemanagement oder direkten Zertifikatsnachweis sowie Heiz-/Kühltechnik und zulässige Unterbrechungsfenster belegen."
         },
         {
-          "work_rank": 422,
-          "company_work_rank": 94,
+          "work_rank": 427,
+          "company_work_rank": 95,
           "task_key": "P97|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -71542,11 +71616,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 82,
+        "company_rank": 83,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 418,
+        "first_work_rank": 423,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 3,
         "awaiting_human_review_tasks": 0,
@@ -74031,8 +74105,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 428,
-          "company_work_rank": 96,
+          "work_rank": 388,
+          "company_work_rank": 88,
           "task_key": "P108|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74047,14 +74121,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen."
         },
         {
-          "work_rank": 429,
-          "company_work_rank": 96,
+          "work_rank": 389,
+          "company_work_rank": 88,
           "task_key": "P108|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74069,14 +74143,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: motor_drive_score: Owned electrical motor/compressor inventory, process roles and duty; mechanical drive not automatically electric. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.; automation_control_score: Owned process control/monitoring inventory and operational coordination; quality claims not EnMS maturity. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen."
         },
         {
-          "work_rank": 430,
-          "company_work_rank": 96,
+          "work_rank": 390,
+          "company_work_rank": 88,
           "task_key": "P108|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74091,14 +74165,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen."
         },
         {
-          "work_rank": 431,
-          "company_work_rank": 96,
+          "work_rank": 391,
+          "company_work_rank": 88,
           "task_key": "P108|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74113,14 +74187,14 @@
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
           "next_action": "Research the unresolved score evidence before proposing an anchor: onsite_integration_score: Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen."
         },
         {
-          "work_rank": 432,
-          "company_work_rank": 96,
+          "work_rank": 392,
+          "company_work_rank": 88,
           "task_key": "P108|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74129,16 +74203,16 @@
           "missing_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
           "missing_field_count": 4,
           "proposal_covered_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
-          "research_gap_fields": "measures_gap_score | management_gap_score | targets_gap_score | investment_gap_score",
-          "proposal_status_summary": "NEEDS_RESEARCH=4",
+          "research_gap_fields": "management_gap_score | targets_gap_score | investment_gap_score",
+          "proposal_status_summary": "CHECKED=1 | NEEDS_RESEARCH=3",
           "task_status": "RESEARCH_NEEDED",
           "work_priority": "P2",
           "evidence_confidence": "B",
           "process_confidence": "B",
-          "source_count": 4,
+          "source_count": 5,
           "research_rank": null,
           "queue_reason": "Eligibility, process mapping and certificate gates pass. Canonical numeric anchors remain uncoded; proposal state is tracked separately and never mutates canonical values.",
-          "next_action": "Research the unresolved score evidence before proposing an anchor: measures_gap_score: Named current implemented energy measures with exact entity/site/technology scope. Generic efficient/green production and resource recycling not adequate negative-search proof. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.; management_gap_score: Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.; targets_gap_score: Owned energy/climate target, date, scope and roadmap, or documented sufficient defined search. General quality/resource sustainability not energy target. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.; investment_gap_score: Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen."
+          "next_action": "Research the unresolved score evidence before proposing an anchor: management_gap_score: Current direct ISO 50001/14001/EMAS or operational energy-management evidence for exact holder; quality-only and absent public certificate not no-management conclusion. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.; targets_gap_score: Owned energy/climate target, date, scope and roadmap, or documented sufficient defined search. General quality/resource sustainability not energy target. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.; investment_gap_score: Completed owned energy investments with commissioning dates in 2021-10-07 to 2026-10-07. Operation/report/filename dates, generic annual CAPEX and other group companies not sufficient. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen."
         }
       ],
       "score_proposals": [
@@ -74368,13 +74442,32 @@
         },
         {
           "score_field": "measures_gap_score",
-          "proposed_value": null,
-          "proposal_status": "NEEDS_RESEARCH",
-          "proposal_confidence": "UNKNOWN",
-          "evidence_source_ids": "S-P108-03|S-P108-04",
-          "evidence_basis": "Checked owner/issuer/public-agency content establishes only the bounded facts recorded in the source register. This field lacks sufficient attributable evidence.",
-          "missing_fact": "Named current implemented energy measures with exact entity/site/technology scope. Generic efficient/green production and resource recycling not adequate negative-search proof. Continuation2026-10-08: Own firing temperatures retained. Sustainability article concerns materials, packaging and grounds, not concrete plant energy deployment, heat fuel or useful thermal storage. Vertiefung2026-10-11: Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.",
-          "check_history": []
+          "proposed_value": 3,
+          "proposal_status": "CHECKED",
+          "proposal_confidence": "B",
+          "evidence_source_ids": "S-P108-05",
+          "evidence_basis": "Named managing director states that kilns are fired only when fully loaded, explicitly linking this operating rule to firing energy. Some concrete operational measures support 3/B. No quantified savings, new hardware, commissioning date, EnMS, thermal storage or dispatchable shifting is inferred.",
+          "missing_fact": "",
+          "check_history": [
+            {
+              "check_id": "RC-20261105b-P108-measures_gap_score",
+              "company_id": "P108",
+              "score_field": "measures_gap_score",
+              "original_value": "",
+              "checked_value": "3",
+              "original_confidence": "UNKNOWN",
+              "checked_confidence": "B",
+              "outcome": "NEW_EVIDENCE",
+              "checked_by": "Codex",
+              "check_method": "PRIMARY_SOURCE_RECHECK_AND_ANCHOR_REVIEW",
+              "checked_date": "2026-11-05",
+              "original_source_ids": "S-P108-03|S-P108-04",
+              "checked_source_ids": "S-P108-05",
+              "decision_note": "New attributed primary operating description closes this formerly UNKNOWN field. No rating, date, dispatch right, final score or personal approval invented.",
+              "checked_evidence_basis": "Named managing director states that kilns are fired only when fully loaded, explicitly linking this operating rule to firing energy. Some concrete operational measures support 3/B. No quantified savings, new hardware, commissioning date, EnMS, thermal storage or dispatchable shifting is inferred.",
+              "final_score_approval": "NOT_GRANTED"
+            }
+          ]
         },
         {
           "score_field": "management_gap_score",
@@ -74408,8 +74501,8 @@
         }
       ],
       "workflow_priority": {
-        "source_count": 4,
-        "verified_source_count": 4,
+        "source_count": 5,
+        "verified_source_count": 5,
         "unassessed_field_count": 0,
         "qa_result": "PASS",
         "source_coverage": "ENERGY_TRANSITION | PROCESS",
@@ -74419,11 +74512,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 84,
+        "company_rank": 76,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 428,
+        "first_work_rank": 388,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
@@ -74521,20 +74614,42 @@
           "content_review_status": "RECHECKED",
           "content_checked_at": "2026-10-11T13:58:22+00:00",
           "content_scope_note": "Resource reuse, packaging and grounds concern materials/environment, not commissioned energy equipment or a dated energy/climate target."
+        },
+        {
+          "source_id": "S-P108-05",
+          "source_type": "company_website",
+          "publisher": "Porzellanmanufaktur Reichenbach GmbH",
+          "document_title": "Nachhaltigkeit meets Kulturgut",
+          "final_url": "https://reichenbach-porzellan.de/nachhaltigkeit-meets-kulturgut/",
+          "evidence_fact": "Named operator describes firing only fully loaded kilns as an implemented operating practice. Supports some energy measures, without quantified savings, demand-response permission, thermal storage, an EnMS or a dated energy investment. Insulation of the jug is a customer-product property, not a factory heat store.",
+          "registered_evidence_fact": "Named operator describes firing only fully loaded kilns as an implemented operating practice. Supports some energy measures, without quantified savings, demand-response permission, thermal storage, an EnMS or a dated energy investment. Insulation of the jug is a customer-product property, not a factory heat store.",
+          "review_status": "RESEARCHED",
+          "source_link": "https://reichenbach-porzellan.de/nachhaltigkeit-meets-kulturgut/",
+          "link_check_status": "VERIFIED",
+          "link_check_date": "2026-11-05",
+          "reporting_period": "undated",
+          "publication_date": "",
+          "access_date": "2026-11-05",
+          "relevant_location": "Named managing-director statement on filling kilns before firing",
+          "retrieval_status": "HTTP_OK",
+          "retrieval_checked_at": "2026-11-05T21:15:10.916038+00:00",
+          "content_review_status": "RECHECKED",
+          "content_checked_at": "2026-11-05T21:15:10.916038+00:00",
+          "content_scope_note": "Named operator describes firing only fully loaded kilns as an implemented operating practice. Supports some energy measures, without quantified savings, demand-response permission, thermal storage, an EnMS or a dated energy investment. Insulation of the jug is a customer-product property, not a factory heat store."
         }
       ],
       "source_audit": {
         "company_id": "P108",
         "legal_entity": "Porzellanmanufaktur Reichenbach GmbH",
         "has_coding_assessment": "YES",
-        "audited_url_count": 8,
-        "retrievable_url_count": 8,
+        "audited_url_count": 10,
+        "retrievable_url_count": 10,
         "retrieval_issue_count": 0,
-        "registered_source_count": 4,
+        "registered_source_count": 5,
         "scope_gap_count": 0,
         "recovery_case_count": 0,
         "audit_status": "CHECKED",
-        "last_checked_at": "2026-10-12T16:35:00.549395+00:00"
+        "last_checked_at": "2026-11-05T21:15:10.916038+00:00"
       },
       "decision_research_profile": {
         "company_id": "P108",
@@ -74545,17 +74660,30 @@
         "outcome": "PARTIAL_EVIDENCE",
         "verified_legal_entity": "",
         "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
-        "technical_summary": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
-        "implemented_summary": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
-        "finding": "Eigene950/1380°C-Brände bestätigt. Nachhaltigkeitsbeiträge behandeln Rohstoffe, Verpackung und Gelände; daraus folgen weder Heizenergieträger noch thermische Speicher oder abgeschlossene Energieinvestitionen.",
-        "next_action": "Eigene Ofen-/Motorinventur, Heizmedien und datierte Energie-/Managementunterlagen beschaffen.",
+        "technical_summary": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+        "implemented_summary": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+        "finding": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+        "next_action": "Aktuelle Heizmedien, Motor-/Regelungsinventur, Speicher, Vor-Ort-Erzeugung, Management, datierte Ziele und Investitionen separat belegen. Volle Ofenbeladung ist keine gemessene Energieeinsparung und keine gesicherte Demand-Response-Funktion.",
         "source_ids": [
-          "S-P108-03",
-          "S-P108-04"
+          "S-P108-05"
         ],
-        "checked_date": "2026-10-11",
+        "checked_date": "2026-11-05",
         "checked_by": "Codex",
-        "final_score_approval": "NOT_GRANTED"
+        "final_score_approval": "NOT_GRANTED",
+        "followup_id": "DRFU-20261105b-P108",
+        "previous_profile_sha256": "5e5635ecdfda022cfa23955ddd54d5e906f72ce0e5ac18591af8fdd33859f865",
+        "followup_reason": "New own operational descriptions; complete frozen open-field scope retained with no automatic engineering or investment inference.",
+        "field_research_scope": [
+          "fossil_heat_displacement_score",
+          "motor_drive_score",
+          "automation_control_score",
+          "thermal_storage_flex_score",
+          "onsite_integration_score",
+          "measures_gap_score",
+          "management_gap_score",
+          "targets_gap_score",
+          "investment_gap_score"
+        ]
       }
     },
     {
@@ -74749,8 +74877,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 123,
-          "company_work_rank": 35,
+          "work_rank": 128,
+          "company_work_rank": 36,
           "task_key": "P30|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74771,8 +74899,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: A company-specific electric-heat technology/temperature fit; cold maturation temperatures alone do not establish process-heat electrification fit. Continuation2026-10-08: Fermentation/cold maturation descriptions do not establish heat-process temperatures or an independently usable dispatchable thermal store. Vertiefung2026-10-12: Aktuelle Umrichter-/Anlagenkonfiguration, Heißprozess-Heizmedien und nutzbare Speicherfenster beschaffen; defekte EMAS-Berichtlinks ersetzen.; process_electrification_score: A firm-specific industrial electric-heat route; efficient cooling, biomass heat and electric logistics do not prove such a route. Continuation2026-10-08: Fermentation/cold maturation descriptions do not establish heat-process temperatures or an independently usable dispatchable thermal store. Vertiefung2026-10-12: Aktuelle Umrichter-/Anlagenkonfiguration, Heißprozess-Heizmedien und nutzbare Speicherfenster beschaffen; defekte EMAS-Berichtlinks ersetzen.; fossil_heat_displacement_score: Fuel and materiality of remaining fossil process heat; an unspecified CHP fuel cannot be assumed fossil. Continuation2026-10-08: Fermentation/cold maturation descriptions do not establish heat-process temperatures or an independently usable dispatchable thermal store. Vertiefung2026-10-12: Aktuelle Umrichter-/Anlagenkonfiguration, Heißprozess-Heizmedien und nutzbare Speicherfenster beschaffen; defekte EMAS-Berichtlinks ersetzen."
         },
         {
-          "work_rank": 124,
-          "company_work_rank": 35,
+          "work_rank": 129,
+          "company_work_rank": 36,
           "task_key": "P30|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74793,8 +74921,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 125,
-          "company_work_rank": 35,
+          "work_rank": 130,
+          "company_work_rank": 36,
           "task_key": "P30|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74815,8 +74943,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: A controllable heat/cold buffer or documented usable thermal inertia respecting product-quality constraints; maturation duration is not a storage-service proof. Continuation2026-10-08: Fermentation/cold maturation descriptions do not establish heat-process temperatures or an independently usable dispatchable thermal store. Vertiefung2026-10-12: Aktuelle Umrichter-/Anlagenkonfiguration, Heißprozess-Heizmedien und nutzbare Speicherfenster beschaffen; defekte EMAS-Berichtlinks ersetzen."
         },
         {
-          "work_rank": 126,
-          "company_work_rank": 35,
+          "work_rank": 131,
+          "company_work_rank": 36,
           "task_key": "P30|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -74837,8 +74965,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: An identified additional industrial electrification route and ordinal incremental-load relevance; EVs do not establish a process-heat route. Continuation2026-10-08: Fermentation/cold maturation descriptions do not establish heat-process temperatures or an independently usable dispatchable thermal store. Vertiefung2026-10-12: Aktuelle Umrichter-/Anlagenkonfiguration, Heißprozess-Heizmedien und nutzbare Speicherfenster beschaffen; defekte EMAS-Berichtlinks ersetzen."
         },
         {
-          "work_rank": 127,
-          "company_work_rank": 35,
+          "work_rank": 132,
+          "company_work_rank": 36,
           "task_key": "P30|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -75213,11 +75341,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 23,
+        "company_rank": 24,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 123,
+        "first_work_rank": 128,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 3,
         "awaiting_human_review_tasks": 0,
@@ -84465,8 +84593,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 113,
-          "company_work_rank": 33,
+          "work_rank": 118,
+          "company_work_rank": 34,
           "task_key": "P76|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -84487,8 +84615,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Actual process-heating temperatures and supported electric-heat fit, rather than part dimensions, cold maturation, material/customer ratings or historical boiler baselines. Own PV, robots/automatic handling and current ISO14001 incl Siemens15 assembly annex; tools outsourced, PV commissioning undated;2018/2020 projects outsidewindow. Continuation2026-10-08: Three-shift production and machine count do not establish safe interruption/shift windows or dated energy-asset commissioning. Vertiefung 2026-10-08: Kühl- und Druckluftsysteme mit Rückgewinnung, Wärmeverbrauchern und datierten Anlagenprojekten prüfen.; process_electrification_score: Named own actual/planned electric thermal route; electrochemical coating, generic production or customer energy applications alone do not establish electric process heat. Own PV, robots/automatic handling and current ISO14001 incl Siemens15 assembly annex; tools outsourced, PV commissioning undated;2018/2020 projects outsidewindow. Continuation2026-10-08: Three-shift production and machine count do not establish safe interruption/shift windows or dated energy-asset commissioning. Vertiefung 2026-10-08: Kühl- und Druckluftsysteme mit Rückgewinnung, Wärmeverbrauchern und datierten Anlagenprojekten prüfen.; fossil_heat_displacement_score: Actual current fossil thermal carrier, centrality and displacement materiality; unspecified CHP/ovens and historic gas baselines do not establish remaining fuel mix. Own PV, robots/automatic handling and current ISO14001 incl Siemens15 assembly annex; tools outsourced, PV commissioning undated;2018/2020 projects outsidewindow. Continuation2026-10-08: Three-shift production and machine count do not establish safe interruption/shift windows or dated energy-asset commissioning. Vertiefung 2026-10-08: Kühl- und Druckluftsysteme mit Rückgewinnung, Wärmeverbrauchern und datierten Anlagenprojekten prüfen."
         },
         {
-          "work_rank": 114,
-          "company_work_rank": 33,
+          "work_rank": 119,
+          "company_work_rank": 34,
           "task_key": "P76|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -84509,8 +84637,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 115,
-          "company_work_rank": 33,
+          "work_rank": 120,
+          "company_work_rank": 34,
           "task_key": "P76|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -84531,8 +84659,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: scheduling_flex_score: Admissible operating/start/interruption windows and actual buffers; product maturation, process cycles or programmable furnace recipes are not dispatch permission. Own PV, robots/automatic handling and current ISO14001 incl Siemens15 assembly annex; tools outsourced, PV commissioning undated;2018/2020 projects outsidewindow. Continuation2026-10-08: Three-shift production and machine count do not establish safe interruption/shift windows or dated energy-asset commissioning. Vertiefung 2026-10-08: Kühl- und Druckluftsysteme mit Rückgewinnung, Wärmeverbrauchern und datierten Anlagenprojekten prüfen.; thermal_storage_flex_score: Named own usable heat/cold store or validated thermal inertia with operating window; cooling, absorption chilling, production tanks and glass melt mass alone do not establish storage. Own PV, robots/automatic handling and current ISO14001 incl Siemens15 assembly annex; tools outsourced, PV commissioning undated;2018/2020 projects outsidewindow. Continuation2026-10-08: Three-shift production and machine count do not establish safe interruption/shift windows or dated energy-asset commissioning. Vertiefung 2026-10-08: Kühl- und Druckluftsysteme mit Rückgewinnung, Wärmeverbrauchern und datierten Anlagenprojekten prüfen."
         },
         {
-          "work_rank": 116,
-          "company_work_rank": 33,
+          "work_rank": 121,
+          "company_work_rank": 34,
           "task_key": "P76|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -84553,8 +84681,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Defined additional thermal electrification route and ordinal new-load materiality; existing electric assets, PV expansion and EV charging are not an additional heat-route load. Own PV, robots/automatic handling and current ISO14001 incl Siemens15 assembly annex; tools outsourced, PV commissioning undated;2018/2020 projects outsidewindow. Continuation2026-10-08: Three-shift production and machine count do not establish safe interruption/shift windows or dated energy-asset commissioning. Vertiefung 2026-10-08: Kühl- und Druckluftsysteme mit Rückgewinnung, Wärmeverbrauchern und datierten Anlagenprojekten prüfen."
         },
         {
-          "work_rank": 117,
-          "company_work_rank": 33,
+          "work_rank": 122,
+          "company_work_rank": 34,
           "task_key": "P76|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -84891,11 +85019,11 @@
         "expected_information_gain": "HIGH",
         "information_gain_basis": "Documentary gain proxy HIGH: 0 unassessed fields; verified coverage=ENERGY_TRANSITION,PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 21,
+        "company_rank": 22,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 113,
+        "first_work_rank": 118,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 0,
@@ -86702,8 +86830,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 408,
-          "company_work_rank": 92,
+          "work_rank": 413,
+          "company_work_rank": 93,
           "task_key": "P89|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -86724,8 +86852,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Maximum1700degreesCfurnace capability is not an actual reported production temperature. Inert atmosphere is not the heating energy carrier. Vertiefung2026-10-17: Direkten Dokumentzugang und aktuelle eigene Ofen-/Versorgungsdaten beschaffen; maximale Ofenkapazität nicht als Sollwert verwenden.; fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Maximum1700degreesCfurnace capability is not an actual reported production temperature. Inert atmosphere is not the heating energy carrier. Vertiefung2026-10-17: Direkten Dokumentzugang und aktuelle eigene Ofen-/Versorgungsdaten beschaffen; maximale Ofenkapazität nicht als Sollwert verwenden."
         },
         {
-          "work_rank": 409,
-          "company_work_rank": 92,
+          "work_rank": 414,
+          "company_work_rank": 93,
           "task_key": "P89|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -86746,8 +86874,8 @@
           "next_action": "Source and anchor checks are complete. Preserve the checked proposals; final-score approval and canonical scoring remain separate gates."
         },
         {
-          "work_rank": 410,
-          "company_work_rank": 92,
+          "work_rank": 415,
+          "company_work_rank": 93,
           "task_key": "P89|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -86768,8 +86896,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Maximum1700degreesCfurnace capability is not an actual reported production temperature. Inert atmosphere is not the heating energy carrier. Vertiefung2026-10-17: Direkten Dokumentzugang und aktuelle eigene Ofen-/Versorgungsdaten beschaffen; maximale Ofenkapazität nicht als Sollwert verwenden."
         },
         {
-          "work_rank": 411,
-          "company_work_rank": 92,
+          "work_rank": 416,
+          "company_work_rank": 93,
           "task_key": "P89|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -86790,8 +86918,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: onsite_integration_score: Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. Continuation2026-10-08: Maximum1700degreesCfurnace capability is not an actual reported production temperature. Inert atmosphere is not the heating energy carrier. Vertiefung2026-10-17: Direkten Dokumentzugang und aktuelle eigene Ofen-/Versorgungsdaten beschaffen; maximale Ofenkapazität nicht als Sollwert verwenden."
         },
         {
-          "work_rank": 412,
-          "company_work_rank": 92,
+          "work_rank": 417,
+          "company_work_rank": 93,
           "task_key": "P89|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -87109,11 +87237,11 @@
         "expected_information_gain": "UNKNOWN",
         "information_gain_basis": "Documentary gain proxy UNKNOWN: 0 unassessed fields; verified coverage=NONE; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 80,
+        "company_rank": 81,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 408,
+        "first_work_rank": 413,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 4,
         "awaiting_human_review_tasks": 0,
@@ -90557,8 +90685,8 @@
       ],
       "score_work_tasks": [
         {
-          "work_rank": 83,
-          "company_work_rank": 27,
+          "work_rank": 88,
+          "company_work_rank": 28,
           "task_key": "P95|process_electrification_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -90579,8 +90707,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: temperature_fit_score: Owned process operating temperatures and actual heat/cold duties; separate product ratings and room heating. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären.; process_electrification_score: Named owned thermal route, current heat carrier and feasible remaining substitution case; separate electric drives and room heat. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären.; fossil_heat_displacement_score: Current company/site process heat carrier mix and attributable fossil thermal duty. No public evidence is not zero fossil heat. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären."
         },
         {
-          "work_rank": 84,
-          "company_work_rank": 27,
+          "work_rank": 89,
+          "company_work_rank": 28,
           "task_key": "P95|power_electronics_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -90601,8 +90729,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: power_conversion_score: Owned rectifier/inverter/controlled-electric-heat applications, scope and duty; mechanical water power not electricity generation. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären."
         },
         {
-          "work_rank": 85,
-          "company_work_rank": 27,
+          "work_rank": 90,
+          "company_work_rank": 28,
           "task_key": "P95|load_flexibility_potential",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -90623,8 +90751,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: thermal_storage_flex_score: Actual useful heat/cold buffer capacity, temperature, connection and timing freedom; thermal mass, room heat and electrical batteries not sufficient. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären."
         },
         {
-          "work_rank": 86,
-          "company_work_rank": 27,
+          "work_rank": 91,
+          "company_work_rank": 28,
           "task_key": "P95|grid_power_quality_relevance",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -90645,8 +90773,8 @@
           "next_action": "Research the unresolved score evidence before proposing an anchor: incremental_load_score: Owned feasible thermal substitution case and baseline remaining thermal duty; no grid capacity or kW inferred. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären.; power_quality_score: Owned relevant converter/peak topology or measured harmonic/reactive/voltage findings; product resistance/current amps not measured power-quality evidence. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären.; onsite_integration_score: Owned electricity generation/storage/load-management topology; mechanical hydropower, purchased renewables or group assets not inherited. Continuation2026-10-08: Previously inspected brewery supplier case retained. Hotel assets and Amberg namesake are excluded; no new heat fuel, usable thermal storage, temperature or energy CAPEX established. Vertiefung2026-10-17: Beziehung zwischen Winkler-Bräu GmbH & Co. KG und Winkler Bräustüberl GmbH sowie tatsächlichen Betreiber der Brauerei-/Hotel-Energieanlagen klären."
         },
         {
-          "work_rank": 87,
-          "company_work_rank": 27,
+          "work_rank": 92,
+          "company_work_rank": 28,
           "task_key": "P95|observed_transition_gap",
           "workstream": "NUMERIC_CODING",
           "task_type": "CODE_DIMENSION",
@@ -90888,11 +91016,11 @@
         "expected_information_gain": "MEDIUM",
         "information_gain_basis": "Documentary gain proxy MEDIUM: 0 unassessed fields; verified coverage=PROCESS; process coverage requires a source-linked firm-specific mapping. Energy/management coverage uses explicit source types, not inferred facts. Historical projects may inform coding but do not prove current deployment. This is not a predicted numeric-field yield or an SME-ETOI score.",
         "priority_version": "2.0.0",
-        "company_rank": 15,
+        "company_rank": 16,
         "coding_rank": null,
         "workflow_action": "RESEARCH_FIRST",
         "is_next_to_code": "NO",
-        "first_work_rank": 83,
+        "first_work_rank": 88,
         "ready_to_code_tasks": 0,
         "research_needed_tasks": 5,
         "awaiting_human_review_tasks": 0,
