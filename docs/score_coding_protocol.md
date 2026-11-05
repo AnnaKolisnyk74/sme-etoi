@@ -5,8 +5,8 @@
 `data/score_coding_proposals.csv` is a review layer between the scoring work
 queue and the canonical numeric scoring input.
 
-It exists so that a first coder or an AI-assisted research pass can propose
-numeric anchors with evidence while preserving a strict human review gate.
+It exists so that source-backed research can document proposed numeric anchors
+without treating an evidence check as final score approval.
 
 A proposal is **not** a canonical score value.
 
@@ -37,8 +37,8 @@ Scoring Work Queue
         -> NEEDS_RESEARCH
         -> new evidence -> new coding assessment
         or
-        -> AWAITING_HUMAN_REVIEW
-        -> APPROVED or REJECTED
+        -> CHECKED (source and anchor evidence assessed)
+        -> separate documented approval, if applicable
         -> separate canonical update
     -> rerun Score Readiness
     -> rerun scoring pipeline
@@ -64,19 +64,22 @@ reviewed, attributable body. A prior numeric recheck cannot be relabelled
 
 See [the 2026-10-08 research record](../evidence/research_open_fields_20261008.md).
 
-## Human-review rule
+## Check and approval provenance
 
-`AWAITING_HUMAN_REVIEW` proposals must have blank `reviewer` and
-`review_date` fields.
+`CHECKED` means that the cited source and proposed anchor were assessed; it is
+not personal approval, nor an authorization to write a canonical score.
+The check and its limitations belong in `evidence/score_proposal_checks.csv`.
 
-`APPROVED` and `REJECTED` require:
+Historical `AWAITING_HUMAN_REVIEW` values may remain in older artifacts for
+traceability; they must not be displayed as a new request for approval. A
+historical status normalization alone is not evidence of a completed check.
 
-- a real reviewer;
-- a review date;
-- preferably a short review note.
+`APPROVED` and `REJECTED`, where used, require a real reviewer, a review date,
+and preferably a short review note. No automated validator may invent or
+backfill those personal approval fields.
 
-The automated validator may reject malformed proposals, but it must never mark
-a proposal as human-reviewed.
+Current UI terminology is **Geprüft**, not **Freigegeben**. Source checking,
+canonical adoption, and final publication remain separate decisions.
 
 ## Evidence rule
 
