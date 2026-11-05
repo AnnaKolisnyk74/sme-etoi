@@ -777,3 +777,10 @@ gates, deployment UNKNOWNs and final numeric scores are preserved.
 See [the evidence record](evidence/decision_research_followup_20261105.md),
 including certificate retrieval limits and the resolved hostname-specific
 test-banner interpretation.
+
+
+The second 5 November follow-up adds two operating-evidence fields: Ehingen
+local process automation and Reichenbach kiln-loading practice. Current live
+coverage is **676/1,500 checked, 824 unresolved**. No dispatch capability,
+measured saving, storage or new investment is inferred from these statements.
+See [the operating evidence record](evidence/decision_research_followup_20261105b.md).

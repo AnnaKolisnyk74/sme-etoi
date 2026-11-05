@@ -1,0 +1,75 @@
+[
+  {
+    "company_id": "P38",
+    "legal_entity": "Krämer + Eckert GmbH & Co. KG",
+    "workstream": "TECHNICAL",
+    "selection_rank": 9,
+    "queue_rank": 92,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected site; external network assets and group eligibility remain separate.",
+    "technical_summary": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+    "implemented_summary": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+    "finding": "Eigene Betreiberseiten benennen drei vollautomatische Pulverbeschichtungsanlagen und automatisches Folieren mittels Kaschiermaschine: klare lokale Automatisierung 3/B. BHKW/PV-Nachweise bleiben bestehen. Heizmedien, Antriebs-/Umrichterdaten, Speicher, Lastverschiebung und jüngste Investitionen sind weiter offen.",
+    "next_action": "Heizmedien/Temperaturen, elektrische Wärmeroute, explizite Motorinventur, Speicher-/Lastfenster, Netzparameter, Energiemanagement und Investitionsdaten belegen. Automatische Produktion ist keine Freigabe für Lastverschiebung.",
+    "source_ids": [
+      "S-P38-09",
+      "S-P38-10",
+      "S-P38-06",
+      "S-P38-08"
+    ],
+    "checked_date": "2026-11-05",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261105b-P38",
+    "previous_profile_sha256": "e2201994f985b4f65ef8740d8b41cc44fa9a417976095705111913127f8690ee",
+    "followup_reason": "New own operational descriptions; complete frozen open-field scope retained with no automatic engineering or investment inference.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "motor_drive_score",
+      "automation_control_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "management_gap_score",
+      "targets_gap_score",
+      "investment_gap_score"
+    ]
+  },
+  {
+    "company_id": "P108",
+    "legal_entity": "Porzellanmanufaktur Reichenbach GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 3,
+    "queue_rank": 55,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Public facts attributed to the selected legal entity; historical, supplier-model and other-company boundaries preserved.",
+    "technical_summary": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+    "implemented_summary": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+    "finding": "Die namentliche Geschäftsführeraussage belegt den Betrieb der Öfen erst bei voller Beladung als konkrete energiebezogene Betriebspraxis: Maßnahmenlücke 3/B. Sie belegt keine Einsparmenge, automatische Lastverschiebung, Speicher, neue Energietechnik oder datierte Investition.",
+    "next_action": "Aktuelle Heizmedien, Motor-/Regelungsinventur, Speicher, Vor-Ort-Erzeugung, Management, datierte Ziele und Investitionen separat belegen. Volle Ofenbeladung ist keine gemessene Energieeinsparung und keine gesicherte Demand-Response-Funktion.",
+    "source_ids": [
+      "S-P108-05"
+    ],
+    "checked_date": "2026-11-05",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261105b-P108",
+    "previous_profile_sha256": "5e5635ecdfda022cfa23955ddd54d5e906f72ce0e5ac18591af8fdd33859f865",
+    "followup_reason": "New own operational descriptions; complete frozen open-field scope retained with no automatic engineering or investment inference.",
+    "field_research_scope": [
+      "fossil_heat_displacement_score",
+      "motor_drive_score",
+      "automation_control_score",
+      "thermal_storage_flex_score",
+      "onsite_integration_score",
+      "measures_gap_score",
+      "management_gap_score",
+      "targets_gap_score",
+      "investment_gap_score"
+    ]
+  }
+]

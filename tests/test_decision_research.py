@@ -158,7 +158,7 @@ class DecisionResearchTests(unittest.TestCase):
                           s['eligibility_company_count'], s['identity_company_count']),
                          (100, 86, 12, 2))
         self.assertEqual((s['field_attempt_count'], s['new_checked_field_count'],
-                          s['still_unknown_field_count']), (958, 78, 880))
+                          s['still_unknown_field_count']), (978, 80, 898))
         baseline = rows(ROOT, 'data/history/score_coding_proposals_before_deep_20261008.csv')
         current = {(p['company_id'], p['score_field']): p
                    for p in rows(ROOT, 'data/score_coding_proposals.csv')}
@@ -326,14 +326,14 @@ class DecisionResearchTests(unittest.TestCase):
         self.assertEqual(proposals['P33', 'investment_gap_score']['proposal_status'], 'NEEDS_RESEARCH')
         staging = [p for (cid, _), p in proposals.items() if cid == 'P38'
                    and p['proposal_status'] == 'NEEDS_RESEARCH']
-        self.assertEqual(len(staging), 11)
+        self.assertEqual(len(staging), 10)
         self.assertTrue(all(not p['proposed_value'] and p['proposal_confidence'] == 'UNKNOWN'
                             for p in staging))
         canonical = next(r for r in rows(ROOT, 'data/company_intelligence.csv')
                          if r['company_id'] == 'P38')
         self.assertEqual(canonical['pv_present'], 'UNKNOWN')
         profile = next(p for p in profiles(ROOT) if p['company_id'] == 'P38')
-        self.assertIn('TEST-SYSTEM', profile['finding'])
+        self.assertIn('Automatisierung', profile['finding'])
         self.assertIn('S-P38-06', profile['source_ids'])
         self.assertEqual(proposals['P38', 'measures_gap_score']['proposed_value'], '3')
         self.assertEqual(proposals['P38', 'onsite_integration_score']['proposed_value'], '2')
