@@ -18,8 +18,8 @@ class WebExportTests(unittest.TestCase):
     def test_web_payload_covers_exactly_current_pilot(self):
         meta = self.payload["meta"]
         self.assertEqual(meta["company_count"], 100)
-        self.assertEqual(meta["opportunity_count"], 198)
-        self.assertEqual(meta["research_task_count"], 192)
+        self.assertEqual(meta["opportunity_count"], 199)
+        self.assertEqual(meta["research_task_count"], 193)
         self.assertEqual(meta["score_work_task_count"], 452)
         self.assertEqual(meta["numeric_coding_task_count"], 440)
         self.assertEqual(meta["code_now_company_count"], 0)
@@ -50,9 +50,9 @@ class WebExportTests(unittest.TestCase):
     def test_certificate_details_preserve_missing_and_expired_evidence(self):
         companies = {c['company_id']: c for c in self.payload['companies']}
         self.assertEqual(sum(c['certifications']['iso_50001'] == 'VALID'
-                             for c in companies.values()), 13)
+                             for c in companies.values()), 14)
         self.assertEqual(sum(c['certifications']['iso_50001'] == 'NOT_FOUND_AFTER_CHECK'
-                             for c in companies.values()), 87)
+                             for c in companies.values()), 86)
         for company in companies.values():
             checks = company['certificate_checks']
             self.assertTrue(checks)
@@ -79,10 +79,10 @@ class WebExportTests(unittest.TestCase):
             self.assertTrue(sources[sid]['content_checked_at'].startswith('2026-10-17'))
         self.assertTrue(all(s['content_review_status'] for s in sources.values()))
         summary = self.payload['source_content_review_summary']
-        self.assertEqual(summary['registered_source_count'], 673)
-        self.assertEqual(summary['assessed_source_count'], 673)
+        self.assertEqual(summary['registered_source_count'], 679)
+        self.assertEqual(summary['assessed_source_count'], 679)
         self.assertEqual(summary['missing_source_count'], 0)
-        self.assertEqual(summary['status_counts'], {'RECHECKED': 610, 'CONTEXT_ONLY': 53, 'UNAVAILABLE': 10})
+        self.assertEqual(summary['status_counts'], {'RECHECKED': 616, 'CONTEXT_ONLY': 53, 'UNAVAILABLE': 10})
         self.assertEqual(summary['human_review_status'], 'PENDING')
         # A generic directory cannot inherit the originally registered company claim.
         context = sources['S-P41-02']

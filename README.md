@@ -765,3 +765,15 @@ including new redirect endpoints and the recovered Frömgen machine park.
 The three completion retrieval failures remain explicit: two Dibbern403 pages
 and Erlemann/Huckenbeck502; alternative primary/company-authored evidence is
 bounded rather than used to invent operating details.
+
+
+## New primary evidence — 5 November 2026
+
+Four previously unresolved proposals are now checked: KTS Schmölln energy
+measures and ISO 50001 management; Krämer + Eckert energy measures and onsite
+generation. Current coverage is **674/1,500 checked fields; 826 unresolved**.
+The web snapshot and field-gap register are regenerated. Company eligibility
+gates, deployment UNKNOWNs and final numeric scores are preserved.
+See [the evidence record](evidence/decision_research_followup_20261105.md),
+including certificate retrieval limits and the resolved hostname-specific
+test-banner interpretation.
