@@ -13,7 +13,7 @@ class OperatingEvidenceFollowupTests(unittest.TestCase):
         before = {(r['company_id'], r['score_field']): r for r in d.rows(
             ROOT, 'data/history/score_coding_proposals_before_followup_20261105b.csv')}
         now = {(r['company_id'], r['score_field']): r for r in d.rows(
-            ROOT, 'data/score_coding_proposals.csv')}
+            ROOT, 'data/history/score_coding_proposals_before_followup_20261106.csv')}
         self.assertEqual({k for k in before if before[k] != now[k]},
                          {('P38', 'automation_control_score'), ('P108', 'measures_gap_score')})
         self.assertEqual(sum(p['proposal_status'] == 'CHECKED' for p in before.values()), 674)

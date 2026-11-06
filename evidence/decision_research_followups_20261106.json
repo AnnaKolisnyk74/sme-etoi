@@ -1,0 +1,35 @@
+[
+  {
+    "company_id": "P37",
+    "legal_entity": "atka Kunststoffverarbeitung GmbH",
+    "workstream": "TECHNICAL",
+    "selection_rank": 8,
+    "queue_rank": 91,
+    "outcome": "PARTIAL_EVIDENCE",
+    "verified_legal_entity": "",
+    "entity_scope": "Exact selected entity; historical equipment, staging, group assets and intention boundaries retained.",
+    "technical_summary": "Die Stadt Lohne dokumentiert Atka als PV-Investor im Anlagenzubau 2024; die eigene Seite bestätigt PV im Anlagenbestand. Ein jüngstes Energieinvestitionsprojekt ist belegt (2/B). Keine genaue Inbetriebnahme, Projektkosten oder zweite Investition abgeleitet. Raumwärme des Werkes 2 ist keine belegte Prozesswärmeelektrifizierung.",
+    "implemented_summary": "Die Stadt Lohne dokumentiert Atka als PV-Investor im Anlagenzubau 2024; die eigene Seite bestätigt PV im Anlagenbestand. Ein jüngstes Energieinvestitionsprojekt ist belegt (2/B). Keine genaue Inbetriebnahme, Projektkosten oder zweite Investition abgeleitet. Raumwärme des Werkes 2 ist keine belegte Prozesswärmeelektrifizierung.",
+    "finding": "Die Stadt Lohne dokumentiert Atka als PV-Investor im Anlagenzubau 2024; die eigene Seite bestätigt PV im Anlagenbestand. Ein jüngstes Energieinvestitionsprojekt ist belegt (2/B). Keine genaue Inbetriebnahme, Projektkosten oder zweite Investition abgeleitet. Raumwärme des Werkes 2 ist keine belegte Prozesswärmeelektrifizierung.",
+    "next_action": "Prozessheizmedien und Temperaturen, verbleibende thermische Lasten sowie nutzbare Speicher- und zulässige Lastverschiebungsfenster separat belegen.",
+    "source_ids": [
+      "S-P37-07",
+      "S-P37-02"
+    ],
+    "checked_date": "2026-11-06",
+    "checked_by": "Codex",
+    "final_score_approval": "NOT_GRANTED",
+    "followup_id": "DRFU-20261106-P37",
+    "previous_profile_sha256": "5cc39a5b27f30660792b6811dc8951fe81d6873c49d9f4032c1282bb6f86fc67",
+    "followup_reason": "New dated municipal PV installation report with owner asset attribution; count one project and preserve all existing checked fields.",
+    "field_research_scope": [
+      "temperature_fit_score",
+      "process_electrification_score",
+      "fossil_heat_displacement_score",
+      "scheduling_flex_score",
+      "thermal_storage_flex_score",
+      "incremental_load_score",
+      "investment_gap_score"
+    ]
+  }
+]

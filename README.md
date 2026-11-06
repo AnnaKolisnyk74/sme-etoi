@@ -784,3 +784,8 @@ local process automation and Reichenbach kiln-loading practice. Current live
 coverage is **676/1,500 checked, 824 unresolved**. No dispatch capability,
 measured saving, storage or new investment is inferred from these statements.
 See [the operating evidence record](evidence/decision_research_followup_20261105b.md).
+
+The 6 November follow-up adds one dated atka PV investment field:
+**677/1,500 checked, 823 unresolved**. A conflicting Oskar Lehmann management
+claim remains UNKNOWN after comparing search content with the direct page body.
+See [the dated PV and management-conflict record](evidence/decision_research_followup_20261106.md).

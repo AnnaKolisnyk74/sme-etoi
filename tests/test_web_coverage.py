@@ -17,7 +17,7 @@ class WebCoverageTests(unittest.TestCase):
         sources = [s for c in self.p['companies'] for s in c['sources']] + self.p['additional_sources']
         expected = read_csv(ROOT, 'evidence/source_register.csv')
         self.assertEqual(Counter(s['source_id'] for s in sources), Counter(s['source_id'] for s in expected))
-        self.assertEqual(len(sources), 682)
+        self.assertEqual(len(sources), 685)
         self.assertEqual(len(self.p['additional_sources']), 26)
         sample = {c['company_id'] for c in self.p['companies']}
         self.assertTrue(all(s['company_id'] not in sample and not s['sample_member'] for s in self.p['additional_sources']))
@@ -34,9 +34,9 @@ class WebCoverageTests(unittest.TestCase):
         checks = [r for c in self.p['companies'] for p in c['score_proposals'] for r in p['check_history']]
         originals = read_csv(ROOT,'evidence/score_proposal_checks.csv')
         self.assertEqual(Counter(tuple(sorted(r.items())) for r in checks if not r.get('is_reassessment')),Counter(tuple(sorted(r.items())) for r in originals))
-        self.assertEqual(len(checks),691)
+        self.assertEqual(len(checks),692)
         self.assertEqual(sum(r['outcome']=='REASSESSED' for r in checks),8)
-        self.assertEqual(sum(p['proposal_status']=='NEEDS_RESEARCH' for c in self.p['companies'] for p in c['score_proposals']),824)
+        self.assertEqual(sum(p['proposal_status']=='NEEDS_RESEARCH' for c in self.p['companies'] for p in c['score_proposals']),823)
 
     def test_methodology_libraries_qa_and_canonical_values(self):
         self.assertEqual(self.p['scoring_methodology']['dimensions'],DIMENSIONS)
